@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>svg</title>
+	</head>
+	<body>
+		<script type="text/javascript" src="./js/uni.webview.1.5.5.js"></script>
+		<script type="text/javascript">
+			
+			/**
+			 * 响应 web-view png 数据
+			 * @param {Object} svg svg格式参数
+			 */
+			function onReceiveSvg(svg) {
+				svgTurnPng(svg).then(res => {
+					uni.postMessage({data: {png: res.png}})
+				}).catch(() => {
+					uni.postMessage({data: {png: ''}})
+				});
+			};
+			
+			/**
+			 * svg转png
+			 * @param {Object} svg svg格式参数
+			 */
+			function svgTurnPng(svg) {
+				const src = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(svg)))}`;
+				const img = new Image();
+				img.src = src;
+				return new Promise((resolve, rej) => {
+					img.onload = () => {
+						const canvas = document.createElement('canvas');
+						canvas.width = img.width;
+						canvas.height = img.height;
+						const context = canvas.getContext('2d');
+						context.drawImage(img, 0, 0);
+						const ImgBase64 = canvas.toDataURL('image/png');
+						resolve({
+							png: ImgBase64
+						});
+					};
+					
+					img.onerror = () => {
+						rej()
+					}
+				});
+			};
+			
+			uni.postMessage({data: {init: true}});
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style type="text/css">
+			html,
+			body,
+			canvas {
+				padding: 0;
+				margin: 0;
+				overflow-y: hidden;
+				background-color: transparent;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script src="./js/qrious.min.js"></script>
+		<script src="./js/uni.webview.1.5.5.js"></script>
+	</head>
+	<body>
+		<canvas id="qrcode"></canvas>
+		<script type="text/javascript">
+			let iframeId = ''
+			if(window.frameElement) {
+				iframeId = window.frameElement.getAttribute('id') ?? ''
+				document.addEventListener('UniAppJSBridgeReady', () => {
+					emit({
+						action: 'init',
+						iframeId: iframeId,
+					})
+				})
+			}
+			
+			let qrious = null
+			
+			function make({
+				text,
+				size,
+				img,
+				imgSize,
+				background,
+				foreground,
+				scale
+			}) {
+				
+				if (!text) {
+					return emit({
+						action: 'error',
+						msg: 'text is null'
+					})
+				}
+			
+				try {
+					let canvas = document.getElementById('qrcode')
+					let ctx = canvas.getContext('2d');
+					let scale = 
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+				
+					qrious = new QRious({
+						element: canvas,
+						value: text,
+						size: size,
+						background: background || '#ffffff',
+						backgroundAlpha: 1,
+						foreground: foreground || '#000000',
+						foregroundAlpha: 1,
+						level: 'H',
+						padding: null,
+					})
+					
+					if(img){
+						let ctx = canvas.getContext('2d');
+						
+						let image = new Image();
+						image.width = `${imgSize}px`
+						image.height = `${imgSize}px`
+						image.src = img
+						
+						image.onload = () => {
+							let x = (size - imgSize) / 2
+							let y = (size - imgSize) / 2
+							
+							ctx.drawImage(image, x, y, imgSize, imgSize)
+						}
+					}
+				} catch (e) {
+					emit({
+						action: 'error',
+						msg: e.toString()
+					})
+				}
+			}
+			
+			function gen(){
+				let imgdata = qrious.toDataURL();
+				
+				emit({
+					action: 'gen',
+					url: imgdata,
+					iframeId: iframeId,
+				})
+			}
+			
+			function emit(data) {
+				window.parent.postMessage(data, '*');
+				uni.postMessage({
+					data: data
+				});
+			}
+			
+			emit({
+				action: 'init',
+			})
+		</script>
+	</body>
+</html>
