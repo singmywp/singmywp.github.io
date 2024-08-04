@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Markdown It</title>
+		<script src="./scripts/markdownit.js"></script>
+		<script src="./scripts/uni.webview.1.5.5.js"></script>
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+		<link href="./styles/atom-one-dark.css" rel="stylesheet" />
+		<link href="./styles/atom-one-light.css" rel="stylesheet" />
+		<script src="./scripts/highlight.js"></script>
+		<script src="./scripts/markdown-it-sub.js"></script>
+		<script src="./scripts/markdown-it-sup.js"></script>
+		<script src="./scripts/markdown-it-container.js"></script>
+		<script src="./scripts/emoji-defs.js"></script>
+		<script src="./scripts/emojies_shortcuts.js"></script>
+		<script src="./scripts/markdown-it-emoji.js"></script>
+		<script>
+			var md;
+			function loadContainer() {
+				// 自定义容器
+				let containers = ['warning', 'info', 'tip', 'danger', 'details']
+				for (let i = 0; i < containers.length; i++) {
+					let name = containers[i]
+					let regexp = new RegExp(`^${name}(\\s+.*)?$`)
+					md.use(container_plugin, name, {
+						validate: function(params) {
+							return params.trim().match(regexp);
+						},
+						render: function(tokens, idx) {
+							var m = tokens[idx].info.trim().match(regexp);
+							if (tokens[idx].nesting === 1) {
+								let t = m[1] ? m[1] : name.toUpperCase()
+								return (name == 'details' ? '<details class="details custom-block"><summary' :
+										`<div class="${name} custom-block"><p`) + ' class="custom-block-title">' + md
+									.utils.escapeHtml(t) + (name == 'details' ? '</summary>' : '</p>')
+
+							} else {
+								return name == 'details' ? '</details>' : '</div>' + '\n';
+							}
+						}
+					})
+				}
+			}
+
+			window.render = (markdown, theme = "light", options = {}, plugins = {}) => {
+				const themes = ["light", "dark"];
+				document.body.className = themes.includes(theme) ? theme : "light";
+				document.body.innerHTML = `HHH: ${window.markdownit}`
+				if (md || window.markdownit) {
+					if (!md) {
+						md = window.markdownit(options);
+						if (plugins.sub) md.use(sub_plugin);
+						if (plugins.sup) md.use(sup_plugin);
+						if (plugins.emoji) md.use(emoji_plugin);
+						if (plugins.container) loadContainer()
+					}
+					if (options.$platform == 'web') {
+						document.body.innerHTML = md.render(decodeURIComponent(markdown).replaceAll('\\n', '\n'));
+					} else {
+						document.body.innerHTML = md.render(markdown.replaceAll('\\n', '\n'));
+					}
+					hljs.highlightAll();
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>
