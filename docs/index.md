@@ -26,7 +26,7 @@ features:
     details: SinleUI 秉承“轻·简·快”的原则，在组件、API设计方面做到保留必要，去除繁杂。非必要功能，不会被包含在框架内。插件内置字体较大，如不需要可自行删除（remixicon 勿删）
   - title: 跨平台
     icon: 🖥️
-    details: 基于 uni-app x 开发，在Android编译为 Kotlin、在Web编译为 JavaScript。可实现一套代码、多端发布（目前暂不支持 iOS）。
+    details: 基于 uni-app x 开发，在Android编译为 Kotlin、在Web编译为 JavaScript。可实现一套代码、多端发布（暂无计划支持 iOS）。
   - title: 高性能
     icon: ⚡
     details: 在原生平台编译为原生语言，性能与原生无异，完全达到了原生应用的功能、性能。
