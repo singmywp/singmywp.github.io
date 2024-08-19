@@ -1,0 +1,50 @@
+
+
+# Avatar 头像
+
+## 基本使用
+
+- 用以展示用户头像。
+
+```vue
+<template>
+	<sn-avatar src="https://www.example.com/example.png" shape="circle" size="60px">
+	</sn-avatar>
+</template>
+```
+
+**更多演示请下载 demo 查看**
+
+## 属性
+
+| 参数            | 说明                                       | 类型            | 默认值       | 可选值                                                       |
+| --------------- | ------------------------------------------ | --------------- | ------------ | ------------------------------------------------------------ |
+| mode            | 头像展示模式                               | String        | `image`      | `image` \| `text` \| `icon`                                  |
+| imageMode       | 图片模式下头像的裁剪方式                   | String        | -            | 同内置[`image`](https://doc.dcloud.net.cn/uni-app-x/component/image.html#image-mode-values) |
+| src             | 图片模式下头像图片地址                     | String        | -            | -                                                            |
+| text            | 文本模式下头像内部文本                     | String        | -            | -                                                            |
+| icon            | 图标模式下头像内部图标名                   | String        | -            | -                                                            |
+| size            | 头像尺寸（外框的边长）                     | String        | `40px`       | -                                                            |
+| textSize        | 文本模式下头像内部文本大小                 | String        | `25px`       | -                                                            |
+| textColor       | 文本模式下头像内部文本颜色                 | String        | `$infoDark`  | -                                                            |
+| iconSize        | 图标模式下头像内部图标大小                 | String        | `25px`       | -                                                            |
+| iconColor       | 图标模式下头像内部图标颜色                 | String        | `$infoColor` | -                                                            |
+| bgColor         | 非图片模式下头像背景颜色                   | String        | `$info`      | -                                                            |
+| shape           | 头像形状                                   | String        | `square`     | `square` \| `circle`                                         |
+| borderRadius    | 头像圆角大小（仅 `shape="square"` 时生效） | String        | `$xsmall`    | -                                                            |
+| enablePreview   | 图片模式下启用图片预览                     | Boolean       | `false`      | `true` \| `false`                                            |
+| customStyle     | 自定义头像样式                             | UTSJSONObject | `{}`         | -                                                            |
+| customTextStyle | 自定义头像内部文本样式                     | UTSJSONObject | `{}`         | -                                                            |
+| customIconStyle | 自定义头像内部图标样式                     | UTSJSONObject | `{}`         | -                                                            |
+
+## 事件
+
+| 名称      | 类型                              | 说明               |
+| --------- | --------------------------------- | ------------------ |
+| click     | `(e: UniPointerEvent) => void`    | 点击头像时触发     |
+| dbclick   | `(e: UniPointerEvent) => void`    | 双击头像时触发     |
+| load      | `(e: UniImageLoadEvent) => void`  | 头像加载完成时触发 |
+| error     | `(e: UniImageErrorEvent) => void` | 头像加载失败时触发 |
+| longpress | `(e: UniEvent) => void`           | 长按头像时触发     |
+
+<DemoPhone name="sn-avatar" />
