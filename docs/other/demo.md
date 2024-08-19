@@ -2,7 +2,7 @@
 
 目前 SinleUI 已在 Android、Web 平台上线。
 
-两个平台的 Demo 如下
+两个平台的 Demo 如下：
 
 <div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;">
 
