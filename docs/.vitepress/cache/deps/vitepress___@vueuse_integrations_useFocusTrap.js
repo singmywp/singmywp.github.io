@@ -1,13 +1,16 @@
 import {
+  notNullish,
+  toValue,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-E5DZZB2I.js";
+} from "./chunk-CH6D53XC.js";
 import {
+  computed,
   ref,
   watch
-} from "./chunk-574YRH25.js";
+} from "./chunk-DWRCMDDG.js";
 
-// node_modules/tabbable/dist/index.esm.js
+// node_modules/.store/tabbable@6.2.0/node_modules/tabbable/dist/index.esm.js
 var candidateSelectors = ["input:not([inert])", "select:not([inert])", "textarea:not([inert])", "a[href]:not([inert])", "button:not([inert])", "[tabindex]:not(slot):not([inert])", "audio[controls]:not([inert])", "video[controls]:not([inert])", '[contenteditable]:not([contenteditable="false"]):not([inert])', "details>summary:first-of-type:not([inert])", "details:not([inert])"];
 var candidateSelector = candidateSelectors.join(",");
 var NoElement = typeof Element === "undefined";
@@ -338,7 +341,7 @@ var isFocusable = function isFocusable2(node, options) {
   return isNodeMatchingSelectorFocusable(options, node);
 };
 
-// node_modules/focus-trap/dist/focus-trap.esm.js
+// node_modules/.store/focus-trap@7.5.4/node_modules/focus-trap/dist/focus-trap.esm.js
 function ownKeys(e, r) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
@@ -1018,7 +1021,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
   return trap;
 };
 
-// node_modules/@vueuse/integrations/useFocusTrap.mjs
+// node_modules/.store/@vueuse+integrations@11.0.1/node_modules/@vueuse/integrations/useFocusTrap.mjs
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
@@ -1038,12 +1041,19 @@ function useFocusTrap(target, options = {}) {
       isPaused.value = false;
     }
   };
+  const targets = computed(() => {
+    const _targets = toValue(target);
+    return (Array.isArray(_targets) ? _targets : [_targets]).map((el) => {
+      const _el = toValue(el);
+      return typeof _el === "string" ? _el : unrefElement(_el);
+    }).filter(notNullish);
+  });
   watch(
-    () => unrefElement(target),
-    (el) => {
-      if (!el)
+    targets,
+    (els) => {
+      if (!els.length)
         return;
-      trap = createFocusTrap(el, {
+      trap = createFocusTrap(els, {
         ...focusTrapOptions,
         onActivate() {
           hasFocus.value = true;

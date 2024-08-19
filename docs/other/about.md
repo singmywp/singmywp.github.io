@@ -23,7 +23,7 @@ layout: page
     {
       avatar: '/assets/images/dcloud.png',
       name: 'Dcloud',
-      title: '感谢 Dcloud 为诸多开发者提供便捷的开发工具和庞大的开发平台',
+      title: '感谢 Dcloud 为诸多开发者提供便捷的开发工具以及庞大的开发平台',
       links: [
         { icon: 'web', link: 'https://dcloud.net.cn/' }
       ]
@@ -87,7 +87,7 @@ layout: page
     <template #lead>
       SinleUI 框架部分代码基于大神们的开源插件二次开发。
       <br />
-      特别感谢各位插件作者对于 SinleUI 的贡献！
+      感谢各位插件作者对于 SinleUI 的贡献！
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers
