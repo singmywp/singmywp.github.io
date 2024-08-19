@@ -9,7 +9,10 @@
 <div style="padding: 5px">
 
 ::: info Android
-<div class="primaryButton" style="margin: 10px 20px;"><a href="https://mp-89934525-7d76-46c4-971b-68d2f781ca56.cdn.bspapp.com/apks/sinleuidemo.apk">立即下载😃</a></div>
+<div style="display:flex;flex-direction:row;">
+<div class="primaryButton" style="margin: 10px 0px 0px 20px;"><a href="https://github.com/singmywp/SinleUI-X/releases">Github😎</a></div>
+<div class="primaryButton" style="margin: 10px 20px 0px 20px;"><a href="https://gitee.com/singmywp/SinleUI-X/releases">Gitee☺️</a></div>
+</div>
 <img src="/assets/images/android_demo.svg" 
 width="250px"
 style="background: white;margin: 20px;" />
@@ -27,3 +30,6 @@ style="background: white;margin: 20px;" />
 :::
 </div>
 </div>
+
+### 其他地址
+请前往 [SinleUI插件](https://ext.dcloud.net.cn/plugin?id=19887) Demo 展示处下载
