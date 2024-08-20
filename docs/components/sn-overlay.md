@@ -13,7 +13,7 @@
 | maskClose   | 点击遮罩是否关闭遮罩层             | Boolean       | `true`  | `true` \| `false`  |
 | renderMode  | 遮罩层的渲染方式（v-if 或 v-show） | String        | `v-if`  | `v-if` \| `v-show` |
 | opacity     | 遮罩层的透明度                     | Number        | `0.3`   | -                  |
-| aniDur      | 遮罩层动画时长                     | Number        | `$long` | -                  |
+| aniTime      | 遮罩层动画时长                     | Number        | `$long` | -                  |
 | bgColor     | 遮罩层背景颜色                     | String        | `#000`  | -                  |
 | customStyle | 自定义遮罩层样式                   | UTSJSONObject | `{}`    | -                  |
 ## 方法

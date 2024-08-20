@@ -25,7 +25,7 @@
 | level       | 回到顶部按钮等级                                             | String        | `first`        | `first` \|`second` \|`third` \| `least`               |
 | bgColor     | 回到顶部按钮背景颜色，设置后将覆盖 `type` 和 `level` 所设置的主题色 | String        | -              | -                                                     |
 | zIndex      | 回到顶部按钮的 `z-index`                                     | Number        | `$floatButton` | -                                                     |
-| aniDur      | 回到顶部按钮动画时长                                         | Number        | `$normal`      | -                                                     |
+| aniTime      | 回到顶部按钮动画时长                                         | Number        | `$normal`      | -                                                     |
 | size        | 回到顶部按钮尺寸                                             | String        | `50px`         | -                                                     |
 | top         | 滚动条滑动多少距离时显示，单位 `px`                          | Number        | `400`          | -                                                     |
 | right       | 回到顶部按钮距右边界距离，单位 `px`                          | Number        | `30`           | -                                                     |

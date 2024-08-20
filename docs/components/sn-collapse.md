@@ -29,7 +29,7 @@
 | 参数              | 说明                           | 类型            | 默认值     | 可选值            |
 | :---------------- | :----------------------------- | :-------------- | :--------- | :---------------- |
 | accordion         | 是否开启手风琴模式             | Boolean       | `false`    | `true` \| `false` |
-| aniDur            | 动画时长（单位 `ms`）          | Number        | `$normal`  | -                 |
+| aniTime            | 动画时长（单位 `ms`）          | Number        | `$normal`  | -                 |
 | bgColor           | 折叠面板背景颜色               | String        | `$front`   | -                 |
 | titleSize         | 折叠面板子项标题字体大小       | String        | `$3`       | -                 |
 | titleColor        | 折叠面板子项标题颜色           | String        | `$title`   | -                 |

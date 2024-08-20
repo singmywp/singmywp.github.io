@@ -40,7 +40,7 @@
 | lineColor    | 抽屉指示条颜色                                  | String        | `$lineText`           | -                                      |
 | padding      | 抽屉内边距                                      | String        | `25px 15px 10px 15px` | -                                      |
 | borderRadius | 抽屉圆角大小                                    | String        | `$xlarge`             | -                                      |
-| aniDur       | 抽屉显示/关闭动画时长（单位 `ms`）              | Number        | `$long`               | -                                      |
+| aniTime       | 抽屉显示/关闭动画时长（单位 `ms`）              | Number        | `$long`               | -                                      |
 | preventBack  | 抽屉显示时是否阻止页面返回事件                  | Boolean       | `false`               | `true` \| `false`                      |
 | maskClose    | 是否启用点击遮罩关闭                            | Boolean       | `true`                | `true` \| `false`                      |
 | maskOpacity  | 遮罩透明度                                      | Number        | `0.3`                 | -                                      |

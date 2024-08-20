@@ -13,7 +13,7 @@
 | ----------- | ---------------------------------- | ------------- | -------- | -------------------------------------------------- |
 | renderMode  | 弹出层的渲染方式（v-if 或 v-show） | String        | `v-if`   | `v-if` \| `v-show`                                 |
 | position    | 弹出层位置（动画也会随之而变）     | String        | `center` | `center` \| `top` \| `bottom` \| `left` \| `right` |
-| aniDur      | 动画持续时间                       | Number        | `$long`  | -                                                  |
+| aniTime      | 动画持续时间                       | Number        | `$long`  | -                                                  |
 | preventBack | 是否阻止返回键关闭弹出层           | Boolean       | `false`  | `true` \| `false`                                  |
 | maskClose   | 点击遮罩是否关闭弹出层             | Boolean       | `true`   | `true` \| `false`                                  |
 | maskOpacity | 遮罩透明度                         | Number        | `0.3`    | -                                                  |
