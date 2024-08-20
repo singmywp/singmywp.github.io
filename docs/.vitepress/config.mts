@@ -1,6 +1,5 @@
 import { defineConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/",
   title: "SinleUI",
@@ -138,6 +137,7 @@ export default defineConfig({
             { text: "Modal 模态框", link: "/components/sn-modal" },
             { text: "Overlay 遮罩层", link: "/components/sn-overlay" },
             { text: "Popup 弹出层", link: "/components/sn-popup" },
+            { text: "Progress 进度条", link: "/components/sn-progress" },
             { text: "Refresher 下拉刷新", link: "/components/sn-refresher" },
             { text: "Result 结果页", link: "/components/sn-result" },
             { text: "Toast 轻提示", link: "/components/sn-toast" },
@@ -705,5 +705,5 @@ export default defineConfig({
         },
       ],
     },
-  },
+  }
 });

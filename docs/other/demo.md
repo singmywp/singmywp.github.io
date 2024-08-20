@@ -8,6 +8,7 @@
 
 <div style="padding: 5px">
 
+
 ::: info Android
 <div style="display:flex;flex-direction:row;">
 <div class="primaryButton" style="margin: 10px 0px 0px 20px;"><a href="https://github.com/singmywp/SinleUI-Demo/releases">Github😎</a></div>
