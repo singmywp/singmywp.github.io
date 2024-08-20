@@ -10,8 +10,8 @@
 
 ::: info Android
 <div style="display:flex;flex-direction:row;">
-<div class="primaryButton" style="margin: 10px 0px 0px 20px;"><a href="https://github.com/singmywp/SinleUI-X/releases">Github😎</a></div>
-<div class="primaryButton" style="margin: 10px 20px 0px 20px;"><a href="https://gitee.com/singmywp/SinleUI-X/releases">Gitee☺️</a></div>
+<div class="primaryButton" style="margin: 10px 0px 0px 20px;"><a href="https://github.com/singmywp/SinleUI-Demo/releases">Github😎</a></div>
+<div class="primaryButton" style="margin: 10px 20px 0px 20px;"><a href="https://gitee.com/singmywp/SinleUI-Demo/releases">Gitee☺️</a></div>
 </div>
 <img src="/assets/images/android_demo.svg" 
 width="250px"
