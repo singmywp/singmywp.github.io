@@ -21,12 +21,13 @@
 
 | 参数         | 说明             | 类型          | 默认值  | 可选值           |
 | :----------- | :--------------- | :------------ | :------ | :--------------- |
-| loading      | 是否显示加载动画 | Boolean       | `false` | `true` | `false` |
+| loading      | 是否区域加载状态，为 `true` 时不会载入默认插槽的组件 | Boolean       | `false` | `true` \| `false` |
+| disabled | 是否区域禁用状态，为 `true` 时会屏蔽区域内所有组件的使用 | Boolean | `false` | `true` \| `false` |
 | bgColor      | 背景颜色         | String        | -       | -                |
 | borderRadius | 圆角大小         | String        | -       | -                |
 | margin       | 外边距           | String        | `0`     | -                |
 | padding      | 内边距           | String        | `0`     | -                |
-| boxShadow    | 阴影             | String        | -       | -                |
+| boxShadow    | 阴影，一般不要设置，`uni-app x` 的阴影在 App 端时有异常 | String        | -       | -                |
 | customStyle  | 自定义样式       | UTSJSONObject | `{}`    | -                |
 
 ## 事件

@@ -1,55 +1,43 @@
 {
-  "hash": "0b4d0324",
+  "hash": "dd15ea56",
   "configHash": "5e881ac9",
-  "lockfileHash": "e558fdad",
-  "browserHash": "a287f224",
+  "lockfileHash": "444155a4",
+  "browserHash": "7def4c42",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6213d752",
+      "fileHash": "ed966784",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "5ba5066b",
+      "fileHash": "83803919",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "b63b465a",
+      "fileHash": "a62c9af2",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "fd40d3e5",
+      "fileHash": "aa2da3fe",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "738712ab",
+      "fileHash": "eaf03501",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "5ce2e152",
-      "needsInterop": false
-    },
-    "naive-ui": {
-      "src": "../../../../node_modules/naive-ui/es/index.mjs",
-      "file": "naive-ui.js",
-      "fileHash": "fd0e0400",
-      "needsInterop": false
-    },
-    "@css-render/vue3-ssr": {
-      "src": "../../../../node_modules/@css-render/vue3-ssr/esm/index.js",
-      "file": "@css-render_vue3-ssr.js",
-      "fileHash": "69a26644",
+      "fileHash": "6b8117d0",
       "needsInterop": false
     }
   },
@@ -57,14 +45,8 @@
     "chunk-B2PTEGHR": {
       "file": "chunk-B2PTEGHR.js"
     },
-    "chunk-SCCMZNAI": {
-      "file": "chunk-SCCMZNAI.js"
-    },
     "chunk-PAUCAATC": {
       "file": "chunk-PAUCAATC.js"
-    },
-    "chunk-G3PMV62Z": {
-      "file": "chunk-G3PMV62Z.js"
     }
   }
 }

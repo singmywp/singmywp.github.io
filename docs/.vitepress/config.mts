@@ -122,6 +122,7 @@ export default defineConfig({
             },
             { text: "Longlist 长列表", link: "/components/sn-longlist" },
             { text: "Markdown 富文本", link: "/components/sn-markdown" },
+            { text: "More 查看更多", link: "/components/sn-more" },
             { text: "Notice Bar 通知栏", link: "/components/sn-notice-bar" },
             { text: "Skeleton 骨架屏", link: "/components/sn-skeleton" }, 
             { text: "Tag 标签", link: "/components/sn-tag" }, 
@@ -178,6 +179,8 @@ export default defineConfig({
           link: "/components/ext-com",
           items: [
             { text: "Gesture 手势", link: "/components/sn-e-gesture" },
+            { text: "Scan Provider 扫码核心", link: "/components/sn-e-scan-provider" },
+            { text: "Svg 可缩放矢量图形", link: "/components/sn-e-svg" },
           ]
         },
         {
