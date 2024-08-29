@@ -31,6 +31,12 @@
 | aniTime | 动画时长 | Number | `$normal` | - |
 | customStyle  | 自定义样式       | UTSJSONObject | `{}`    | -                |
 
+## 插槽
+
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 在这里放置内容 |
+
 ## 事件
 
 | 名称        | 类型                                                         | 说明         |
@@ -43,3 +49,5 @@
 | touchend    | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 手指抬起事件 |
 | touchcancel | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 触摸打断事件 |
 | down        | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => void | 按下事件     |
+
+<DemoPhone name="sn-view" />

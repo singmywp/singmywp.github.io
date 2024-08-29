@@ -2,8 +2,7 @@
 
 ## 基本使用
 
-- 分为两个组件：`sn-button-group` 和  `sn-button` 。
-- `sn-button` 可以独立使用，如果需要显示多个并列按钮（合并样式），请使用 `sn-button-group` 作为父级
+- 内置一些主题，设计样式更方便
 
 ```vue
 <template>
@@ -41,18 +40,7 @@
 | customStyle       | 自定义按钮样式                                                                               | UTSJSONObject | `{}`        | -                                              |
 | customTextStyle   | 自定义按钮文本样式                                                                           | UTSJSONObject | `{}`        | -                                              |
 
-**sn-button-group**
-
-| 参数     | 说明                                              | 类型      | 默认值       | 可选值                                                       |
-| -------- | ------------------------------------------------- | --------- | ------------ | ------------------------------------------------------------ |
-| vertical | 是否纵向排列                                      | Boolean | `false`      | `true` | `false`                                             |
-| merge    | 是否合并按钮（强制设置 `spacing` 为 `0`）         | Boolean | `false`      | `true` | `false`                                             |
-| justify  | 主轴子元素排列方式（flex布局中的justify-content） | String  | `flex-start` | `center` | `flex-start` | `flex-end` | `space-between` | `space-around` |
-| align    | 侧轴子元素排列方式（flex布局中的align-items）     | String  | `flex-start` | `center` | `flex-start` | `flex-end` | `stretch` | `baseline` |
-
 ## 事件
-
-**sn-button**
 
 | 名称  | 类型                           | 说明           |
 | :---- | :----------------------------- | :------------- |
@@ -60,17 +48,9 @@
 
 ## 插槽
 
-**sn-button**
-
 | 名称    | 说明                                       |
 | ------- | ------------------------------------------ |
 | default | 替换按钮内部原有的 `text` ，可以是任意组件 |
-
-**sn-button-group**
-
-| 名称    | 说明                         |
-| ------- | ---------------------------- |
-| default | 在这里放置子组件 `sn-button` |
 
 
 <DemoPhone name="sn-button" />

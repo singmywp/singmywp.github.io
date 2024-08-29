@@ -25,7 +25,6 @@
 | menuButton            | 是否显示菜单按钮   | Boolean                                                 | `false`                                            | `true` \| `false`             |
 | buttonSize            | 按钮大小           | String                                                  | `35px`                                             | -                             |
 | buttonBgColor         | 按钮背景颜色       | String                                                  | -                                                  | -                             |
-| buttonSpacing         | 按钮间隔           | String                                                  | `0px`                                              | -                             |
 | titleAlign            | 标题对齐方式       | String                                                  | `left`                                             | `left` \| `center` \| `right` |
 | features              | 功能按钮数据       | Array\<[SnDataItem](/api/types/components#sndataitem)\> | -                                                  | -                             |
 | menuData              | 菜单数据           | Array\<[SnDataItem](/api/types/components#sndataitem)\> | -                                                  | -                             |
@@ -46,3 +45,5 @@
 | ------------ | ---------------------------- | ------------ |
 | button-click | `(item: SnDataItem) => void` | 按钮点击事件 |
 | menu-click   | `(item: SnDataItem) => void` | 菜单点击事件 |
+
+<DemoPhone name="sn-topbar" />

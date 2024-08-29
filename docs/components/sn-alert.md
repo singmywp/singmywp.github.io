@@ -21,6 +21,7 @@
 | icon            | 警告信息左侧图标名                 | String      | -         | -                                                        |
 | type            | 警告信息主题样式类型               | String      | `primary` | `info` \| `primary` \| `success` \| `error` \| `warning` |
 | effect          | 警告信息显示效果，可设为暗色和亮色 | String      | `light`   | `light` \| `dark`                                        |
+| borderRadius | 警告信息圆角大小 | String | `$small` | - |
 | bgColor         | 警告信息背景颜色                   | String        | -         | -                                                        |
 | textColor       | 警告信息文本颜色                   | String        | -         | -                                                        |
 | textSize        | 警告信息文本大小                   | String        | `14px`    | -                                                        |

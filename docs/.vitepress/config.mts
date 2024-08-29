@@ -103,6 +103,7 @@ export default defineConfig({
             { text: "Slider 滑动选择", link: "/components/sn-slider" },
             { text: "Stepper 步进器", link: "/components/sn-stepper" },
             { text: "Switch 开关", link: "/components/sn-switch" },
+            { text: "Upload Media 媒体上传", link: "/components/sn-upload-media" },
           ],
         },
         {
@@ -158,11 +159,12 @@ export default defineConfig({
             {
               text: "Float Button 浮动按钮",
               link: "/components/sn-float-button",
-            }, 
+            },  
             { text: "Gap 占位间隔", link: "/components/sn-gap" },
             { text: "Grid 宫格布局", link: "/components/sn-grid" },
             { text: "Page 页面", link: "/components/sn-page" },
             { text: "Row 水平布局", link: "/components/sn-row" },
+            { text: "Search 搜索框", link: "/components/sn-search" },
             { text: "Subsection 分段器", link: "/components/sn-subsection" }, 
             { text: "Tabs 标签页", link: "/components/sn-tabs" },
             { text: "Topbar 导航栏", link: "/components/sn-topbar" },
@@ -172,20 +174,20 @@ export default defineConfig({
           text: "功能组件",
           items: [
             { text: "Scan 扫码", link: "/components/sn-scan" },
+            { text: "Signature 签名", link: "/components/sn-signature" },
           ]
         },
         {
-          text: "扩展组件（须额外下载）",
+          text: "扩展组件（部分须额外下载）",
           link: "/components/ext-com",
           items: [
+            { text: "Barcode 条形码", link: "/components/sn-e-barcode" },
             { text: "Gesture 手势", link: "/components/sn-e-gesture" },
             { text: "Scan Provider 扫码核心", link: "/components/sn-e-scan-provider" },
+            { text: "Qrcode 二维码", link: "/components/sn-e-qrcode" },
             { text: "Svg 可缩放矢量图形", link: "/components/sn-e-svg" },
           ]
         },
-        {
-          text: "文档尚不完善，部分组件未收录，持续更新中，如有不明，请参见源码",
-        }
       ],
       "/libs/": [
         {

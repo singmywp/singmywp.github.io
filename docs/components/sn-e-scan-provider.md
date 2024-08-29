@@ -57,8 +57,8 @@ type ScanResult = {
 }
 ```
 
-`ScanResult` 及其相关的类型均在扩展插件 `sn-e-scan-provider` 目录下的 `interface.uts` 导出，使用时根据路径导入即可。例如：
+`ScanResult` 及其相关的类型均在扩展插件 `sn-e-scan-provider` 导出，使用时根据路径导入即可。例如：
 
 ```typescript
-import { ScanResult } from "@/uni_modules/sn-e-scan-provider/interface.uts"
+import { ScanResult } from "@/uni_modules/sn-e-scan-provider"
 ```

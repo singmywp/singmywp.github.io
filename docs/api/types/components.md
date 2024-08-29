@@ -47,14 +47,25 @@
 | s    | Number | 是   | -    |
 | ms   | Number | 是   | -    |
 
+### SnDataItem
+
+`sn-picker-view` 、`sn-select` 、`sn-topbar` 等数据组件的 `data` 属性需要传入一个 `SnDataItem[]` 的对象，组件事件触发时返回 `SnDataItem` 对象
+
+| 名称     | 类型    | 必填 | 描述                                       |
+| :------- | :------ | :--- | :----------------------------------------- |
+| id       | String  | 是   | 数据的唯一标识                             |
+| text     | String  | 否   | 数据显示文本（不一定必备，视组件具体要求） |
+| icon     | String  | 否   | 数据显示图标（不一定必备，视组件具体要求） |
+| disabled | Boolean | 否   | 是否禁用子项（不一定必备，视组件具体要求） |
+
 ### SnFormItemData<Badge type="warning" text="内部使用" />
 
 `sn-form-item` 内部注册组件数据类型
 
-| 名称     | 类型                      | 必填 | 描述 |
-| :------- | :------------------------ | :--- | :--- |
+| 名称     | 类型                    | 必填 | 描述 |
+| :------- | :---------------------- | :--- | :--- |
 | field    | String                  | 是   | -    |
-| instance | `ComponentPublicInstance` | 是   | -    |
+| instance | ComponentPublicInstance | 是   | -    |
 
 ### SnEmptyColorConfig<Badge type="warning" text="内部使用" />
 
@@ -75,18 +86,18 @@
 
 `sn-form-item` 的 `rule` 属性需要传入一个 `SnFormItemRule` 类型的对象
 
-| 名称      | 类型                     | 必填 | 描述 |
-| :-------- | :----------------------- | :--- | :--- |
+| 名称      | 类型                   | 必填 | 描述 |
+| :-------- | :--------------------- | :--- | :--- |
 | type      | String                 | 是   | …    |
 | required  | Boolean                | 否   | -    |
 | message   | String                 | 否   | -    |
-| pattern   | `RegExp`                 | 否   | -    |
+| pattern   | RegExp                 | 否   | -    |
 | min       | Number                 | 否   | -    |
 | max       | Number                 | 否   | -    |
 | len       | Number                 | 否   | -    |
-| enum      | `Array<any>`             | 否   | -    |
-| transform | `(value: any) => any`    | 否   | -    |
-| valid     | `(value: any) => string` | 否   | -    |
+| enum      | Array\<Any\>           | 否   | -    |
+| transform | (value: Any) => Any    | 否   | -    |
+| valid     | (value: Any) => String | 否   | -    |
 
 ### SnFormItemVerifyResult<Badge type="warning" text="内部使用" />
 
@@ -102,10 +113,10 @@
 
 `sn-form` 的 `submit` 方法需要传入一个 `SnFormValidResult` 类型的回调对象
 
-| 名称    | 类型                                              | 必填 | 描述 |
-| :------ | :------------------------------------------------ | :--- | :--- |
-| success | `() => void`                                      | 否   | -    |
-| fail    | `(failResults: SnFormItemVerifyResult[]) => void` | 否   | -    |
+| 名称    | 类型                                            | 必填 | 描述 |
+| :------ | :---------------------------------------------- | :--- | :--- |
+| success | () => void                                      | 否   | -    |
+| fail    | (failResults: SnFormItemVerifyResult[]) => void | 否   | -    |
 
 ### SnLoadmoreParams
 
@@ -124,6 +135,25 @@
 | lineHeight   | String  | 否   | -    |
 | dashed       | Boolean | 否   | -    |
 | disabled     | Boolean | 否   | -    |
+
+### SnMediaStatus<Badge type="warning" text="内部使用" />
+
+`sn-media` 组件的传递选择的媒体文件数据的 `status` 属性
+
+| 可选值                                               |
+| :--------------------------------------------------- |
+| `uploaded` \| `uploading` \| `unuploaded` \| `error` |
+
+### SnMedia<Badge type="warning" text="内部使用" />
+
+`sn-media` 组件的传递选择的媒体文件数据
+
+| 名称   | 类型           | 必填 | 描述                          |
+| :----- | :------------- | :--- | :---------------------------- |
+| file   | Any \| null    | 否   | File 对象                     |
+| src    | String \| null | 否   | 选中文件临时路径              |
+| name   | String         | 是   | 文件 uuid，由组件内部随机生成 |
+| status | SnMediaStatus  | 是   | 媒体文件状态                  |
 
 ### SnRefresherParams
 
@@ -163,13 +193,13 @@
 
 `sn-tabs` 组件的 `data` 属性需要传入一个 `SnTabParams[]` 类型的对象
 
-| 名称        | 类型            | 必填 | 描述 |
-| :---------- | :-------------- | :--- | :--- |
+| 名称        | 类型          | 必填 | 描述 |
+| :---------- | :------------ | :--- | :--- |
 | id          | String        | 是   | -    |
 | text        | String        | 是   | -    |
 | icon        | String        | 否   | -    |
 | disabled    | Boolean       | 否   | -    |
-| badgeConfig | `SnBadgeParams` | 否   | -    |
+| badgeConfig | SnBadgeParams | 否   | -    |
 
 ### SnTimerTime
 
@@ -206,13 +236,4 @@
 | textLines    | Number  | 否   | -    |
 | textAlign    | String  | 否   | -    |
 
-### SnDataItem
-
-`sn-picker-view` 、`sn-select` 、`sn-topbar` 等数据组件的 `data` 属性需要传入一个 `SnDataItem[]` 的对象，组件事件触发时返回 `SnDataItem` 对象
-
-| 名称     | 类型    | 必填 | 描述                                       |
-| :------- | :------ | :--- | :----------------------------------------- |
-| id       | String  | 是   | 数据的唯一标识                             |
-| text     | String  | 否   | 数据显示文本（不一定必备，视组件具体要求） |
-| icon     | String  | 否   | 数据显示图标（不一定必备，视组件具体要求） |
-| disabled | Boolean | 否   | 是否禁用子项（不一定必备，视组件具体要求） |
+### 

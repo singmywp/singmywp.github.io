@@ -60,7 +60,8 @@
 | showAni            | 是否显示动画                                      | Boolean       | `true`                                                       | `true` \|`false`               |
 | enableZoom         | 是否允许缩放                                      | Boolean       | `true`                                                       | `true` \|`false`               |
 | initZoomScale      | 初始缩放比例                                      | Number        | `0`                                                          | -                              |
-| cameraPermTip      | 相机权限提示                                      | String        | `\u3000 本应用正在请求您的相机权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用扫码功能。` | -                              |
+| cameraPermTip      | 相机权限请求提示                                    | String        | `\u3000 本应用正在请求您的相机权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用扫码功能。` | -                              |
+| albumPermTip | 相册权限请求提示 | String | `\u3000 本应用正在请求您的相册权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用图片扫码功能。` | - |
 | customDotStyle     | 自定义识别点样式                                  | UTSJSONObject | `{border: '2px solid #fff',background:$primary}`             | -                              |
 | customDotIconStyle | 自定义识别点图标样式                              | UTSJSONObject | `{color:'#fff'}`                                             | -                              |
 | customTitleStyle   | 自定义标题样式                                    | UTSJSONObject | -                                                            | -                              |
@@ -108,10 +109,10 @@ type ScanResult = {
 }
 ```
 
-`ScanResult` 及其相关的类型均在扩展插件 `sn-e-scan-provider` 目录下的 `interface.uts` 导出，使用时根据路径导入即可。例如：
+`ScanResult` 及其相关的类型均在扩展插件 `sn-e-scan-provider` 导出，使用时根据路径导入即可。例如：
 
 ```typescript
-import { ScanResult } from "@/uni_modules/sn-e-scan-provider/interface.uts"
+import { ScanResult } from "@/uni_modules/sn-e-scan-provider"
 ```
 
 

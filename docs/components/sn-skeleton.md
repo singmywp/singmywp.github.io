@@ -17,4 +17,11 @@
 | margin       | 骨架屏外边距         | String        | -         | -      |
 | aniTime      | 动画时间，单位为毫秒 | Number        | `1000`    | -      |
 | customStyle  | 自定义骨架屏样式     | UTSJSONObject | `{}`      | -      |
+
+## 插槽
+
+| 名称    | 说明         |
+| ------- | ------------ |
+| default | 这里放置内容 |
+
 <DemoPhone name="sn-skeleton" />

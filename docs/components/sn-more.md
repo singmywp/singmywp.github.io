@@ -27,5 +27,10 @@
 | fold   | `() => void` | 收起时触发 |
 | unfold | `() => void` | 展开时触发 |
 
+## 插槽
+
+| 名称    | 说明         |
+| ------- | ------------ |
+| default | 这里放置内容 |
 
 <DemoPhone name="sn-more" />

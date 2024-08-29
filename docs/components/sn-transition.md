@@ -25,4 +25,11 @@
 | leave         | `()=>void` | 动画结束时触发             |
 | afterLeave    | `()=>void` | 动画结束后触发             |
 | transitionend | `()=>void` | 每个过渡动画阶段结束时触发 |
+
+## 插槽
+
+| 名称    | 说明         |
+| ------- | ------------ |
+| default | 这里放置内容 |
+
 <DemoPhone name="sn-transition" />
