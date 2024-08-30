@@ -1,5 +1,5 @@
 # Search 搜索框
-## 基本使用
+## 基础用法
 - Search 是基于 Input 的二次封装，比 Input 更为简洁，更方便实现一个搜索框
 - 支持输入模式、背景颜色、边框颜色等属性。
 ```vue
@@ -12,10 +12,10 @@
 ## 属性
 | 参数              | 说明                                                         | 类型          | 默认值           | 可选值                                |
 | ----------------- | ------------------------------------------------------------ | ------------- | ---------------- | ------------------------------------- |
-| v-model           | 输入框的值                                                   | String        | ``               | -                                     |
+| vModel           | 输入框的值                                                   | String        | ``               | -                                     |
 | placeholder       | 输入框占位文本                                               | String        | `请输入搜索内容` | -                                     |
 | type              | 输入框类型。同 [`input`](https://doc.dcloud.net.cn/uni-app-x/component/input.html#%E5%B1%9E%E6%80%A7)。 | String        | `text`           | `text` \|` number` \|` digit` \|`tel` |
-| inputmode         | 输入模式。同 [`input`](https://doc.dcloud.net.cn/uni-app-x/component/input.html#%E5%B1%9E%E6%80%A7)。 | String        | `text`           | `text` \| `numeric` \| ...            |
+| inputmode         | 输入模式。同 [`input`](https://doc.dcloud.net.cn/uni-app-x/component/input.html#%E5%B1%9E%E6%80%A7)。 | String        | `text`           | `none` \|` text` \|` decimal` \|` numeric` \|` tel` \|` search` \|` email` \|`url` |
 | padding           | 输入框内边距                                                 | String        | `4px 10px`       | -                                     |
 | textColor         | 输入文本颜色                                                 | String        | -                | -                                     |
 | textSize          | 输入文本大小                                                 | String        | -                | -                                     |

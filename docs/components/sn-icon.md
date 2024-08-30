@@ -1,6 +1,6 @@
 # Icon  图标
 
-## 基本使用
+## 基础用法
 
 - 内置开源图标库 [Remix Icon](https://remixicon.com/)。
 

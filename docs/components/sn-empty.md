@@ -2,7 +2,7 @@
 
 基于 [邓琪昌](https://ext.dcloud.net.cn/publisher?id=68708) 大佬的开源组件 [`flower-empty`](https://ext.dcloud.net.cn/plugin?name=flower-empty) 实现的缺省页组件。使用方法有改动。
 
-## 基本使用
+## 基础用法
 
 - 页面处于异常、无内容、加载等时状态时给予用户友好提示
 

@@ -1,6 +1,6 @@
 # Image 图片
 
-## 基本使用
+## 基础用法
 
 - 相比于内置 `image` 组件更加方便使用。
 - 支持图片加载占位、图片预览、懒加载（同 `image` 组件）、动画效果（同 `image` 组件）
@@ -30,5 +30,15 @@
 | customStyle        | 自定义图片容器样式                                           | UTSJSONObject | {}          | -                                                            |
 | customImageStyle   | 自定义图片（内置 `image`）样式                               | UTSJSONObject | {}          | -                                                            |
 | customLoadingStyle | 自定义图片加载占位块样式                                     | UTSJSONObject | {}          | -                                                            |
+
+## 事件
+
+| 名称      | 类型                        | 说明           |
+| :-------- | :-------------------------- | :------------- |
+| error     | (event: UniImageErrorEvent) | 加载错误时触发 |
+| load      | (event: UniImageLoadEvent)  | 加载成功时触发 |
+| click     | (event : UniPointerEvent)   | 单击图片时触发 |
+| dbclick   | (event : UniPointerEvent)   | 双击图片时触发 |
+| longpress | (event : UniTouchEvent)     | 长按图片时触发 |
 
 <DemoPhone name="sn-image" />

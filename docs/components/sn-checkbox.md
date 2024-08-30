@@ -1,6 +1,6 @@
 # Checkbox  复选
 
-## 基本使用
+## 基础用法
 
 - 分为三个组件：`sn-checkbox-group` , `sn-chekbox` , `sn-checkbox-tag`。
 - 每一个选项（`sn-checkbox`或`sn-checkbox-tag`）必须是`sn-checkbox-group`的子代。
@@ -44,7 +44,7 @@
 
 | 参数                         | 说明                                                         | 类型            | 默认值              | 可选值                                       |
 | ---------------------------- | ------------------------------------------------------------ | --------------- | ------------------- | -------------------------------------------- |
-| v-model                      | 当前选中项的索引数组                                         | Array\<Number\> | `[]`                | -                                            |
+| vModel                      | 当前选中项的索引数组                                         | Array\<Number\> | `[]`                | -                                            |
 | vertical                     | 是否纵向排列                                                 | Boolean       | `false`             | `true` \| `false`                            |
 | boxSize                      | box复选组件左侧方框边长                                      | String        | `$3+6`          | -                                            |
 | boxBorderRadius              | box复选组件左侧方框的圆角大小                                | String        | `5px`               | -                                            |

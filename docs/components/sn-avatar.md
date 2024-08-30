@@ -2,7 +2,7 @@
 
 # Avatar 头像
 
-## 基本使用
+## 基础用法
 
 - 用以展示用户头像。
 
@@ -17,10 +17,10 @@
 
 ## 属性
 
-| 参数            | 说明                                       | 类型            | 默认值       | 可选值                                                       |
-| --------------- | ------------------------------------------ | --------------- | ------------ | ------------------------------------------------------------ |
+| 参数            | 说明                                       | 类型          | 默认值       | 可选值                                                       |
+| --------------- | ------------------------------------------ | ------------- | ------------ | ------------------------------------------------------------ |
 | mode            | 头像展示模式                               | String        | `image`      | `image` \| `text` \| `icon`                                  |
-| imageMode       | 图片模式下头像的裁剪方式                   | String        | -            | 同内置[`image`](https://doc.dcloud.net.cn/uni-app-x/component/image.html#image-mode-values) |
+| imageMode       | 图片模式下头像的裁剪方式                   | String        | -            | `scaleToFill` \|`aspectFit` \|`aspectFill` \|`widthFix` \|`heightFix` \|`top` \|`bottom` \|`center` \|`left` \|`right` \|`top left` \|`top right` \|`bottom left` \|`bottom right` |
 | src             | 图片模式下头像图片地址                     | String        | -            | -                                                            |
 | text            | 文本模式下头像内部文本                     | String        | -            | -                                                            |
 | icon            | 图标模式下头像内部图标名                   | String        | -            | -                                                            |

@@ -103,6 +103,7 @@ export default defineConfig({
             { text: "Slider 滑动选择", link: "/components/sn-slider" },
             { text: "Stepper 步进器", link: "/components/sn-stepper" },
             { text: "Switch 开关", link: "/components/sn-switch" },
+            { text: "Textarea 文本域", link: "/components/sn-textarea" },
             {
               text: "Upload Media 媒体上传",
               link: "/components/sn-upload-media",
@@ -518,11 +519,7 @@ export default defineConfig({
                 {
                   text: "获取平台主题",
                   link: "/libs/utils/platform#snu-getostheme",
-                },
-                {
-                  text: "获取窗口高度",
-                  link: "/libs/utils/platform#snu-getwindowheight",
-                },
+                }
               ],
             },
             {

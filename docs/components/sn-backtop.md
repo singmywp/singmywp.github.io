@@ -1,6 +1,6 @@
 # Backtop 回到顶部
 
-## 基本使用
+## 基础用法
 
 - 用于长页面，滑动一定距离后，出现回到顶部按钮，点击按钮快速返回顶部。自动绑定同级或父级 `sn-scroll`/`sn-longlist`/`sn-page`（不可用作 `sn-longlist` 子节点）
 
@@ -35,10 +35,5 @@
 | disabled    | 是否禁用                                                     | Boolean       | `false`        | `true` \| `false`                                     |
 | customStyle | 自定义回到顶部按钮样式                                       | UTSJSONObject | `{}`           | -                                                     |
 
-## 事件
-
-| 名称  | 类型                    | 说明           |
-| ----- | ----------------------- | -------------- |
-| click | `(e: UniEvent) => void` | 点击按钮时触发 |
 
 <DemoPhone name="sn-backtop" />

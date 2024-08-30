@@ -1,6 +1,6 @@
 # Text  文本
 
-## 基本使用
+## 基础用法
 
 - 只支持通过 `text` 属性传值（这个要是用插槽，反而会多套一层 `text`）
 
@@ -52,20 +52,20 @@
 
 | 参数            | 说明                                                         | 类型    | 默认值        | 可选值                                                       |
 | :-------------- | :----------------------------------------------------------- | :------ | :------------ | :----------------------------------------------------------- |
-| mode            | 文本显示模式                                                 | String  | `text`        | `date` | `price` | `name` | `bankcard` | `idcard` | `email` | `phone` |
+| mode            | 文本显示模式                                                 | String  | `text`        | `text`\|`date`\| `date-cn` \| `price` \| `price-upper` \| `name` \| `phone` \| `phone-direct` |
 | text            | 文本内容                                                     | String  | -             | -                                                            |
 | color           | 文本颜色                                                     | String  | -             | -                                                            |
-| type            | 文本类型                                                     | String  | `info`        | `warning` | `error` | `success` | `primary`                  |
+| type            | 文本类型                                                     | String  | `info`        | `primary`\|`info`\|`error`\|`warning`\|`success`             |
 | font            | 字体名称                                                     | String  | `$mainFamily` | -                                                            |
 | size            | 字体大小                                                     | String  | `$2`          | -                                                            |
-| align           | 对齐方式                                                     | String  | `left`        | `right` | `center`                                           |
-| overflow        | 文本溢出处理                                                 | String  | `ellipsis`    | -                                                            |
+| align           | 对齐方式                                                     | String  | `left`        | `left`\|`center`\|`right`                                    |
+| overflow        | 文本溢出处理                                                 | String  | `ellipsis`    | `ellipsis` \| `clip`                                         |
 | decorationLine  | 文本装饰线                                                   | String  | -             | -                                                            |
 | space           | 字符间距。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | String  | -             | -                                                            |
-| decode          | 是否解码 (app平台如需解析字符实体，需要配置为 true)。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true` | `false`                                             |
-| selectable      | 是否可选择同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true` | `false`                                             |
-| bold            | 是否加粗                                                     | Boolean | `false`       | `true` | `false`                                             |
-| encrypt         | 是否加密                                                     | Boolean | `false`       | `true` | `false`                                             |
+| decode          | 是否解码 (app平台如需解析字符实体，需要配置为 true)。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
+| selectable      | 是否可选择同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
+| bold            | 是否加粗                                                     | Boolean | `false`       | `true`                                                       |
+| encrypt         | 是否加密                                                     | Boolean | `false`       | `true`                                                       |
 | customStyle     | 自定义样式                                                   | Object  | `{}`          | -                                                            |
 | customTextStyle | 自定义文本样式                                               | Object  | `{}`          | -                                                            |
 

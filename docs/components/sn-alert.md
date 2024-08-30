@@ -1,6 +1,6 @@
 # Alert  警告信息
 
-## 基本使用
+## 基础用法
 
 - 用以展示警告信息。
 - 多个属性，支持完全自定义样式。
@@ -20,7 +20,7 @@
 | text            | 警告信息文本内容                   | String      | -         | -                                                        |
 | icon            | 警告信息左侧图标名                 | String      | -         | -                                                        |
 | type            | 警告信息主题样式类型               | String      | `primary` | `info` \| `primary` \| `success` \| `error` \| `warning` |
-| effect          | 警告信息显示效果，可设为暗色和亮色 | String      | `light`   | `light` \| `dark`                                        |
+| effect          | 警告信息显示效果，可设为深色和淡色 | String      | `light`   | `light` \| `dark`                                        |
 | borderRadius | 警告信息圆角大小 | String | `$small` | - |
 | bgColor         | 警告信息背景颜色                   | String        | -         | -                                                        |
 | textColor       | 警告信息文本颜色                   | String        | -         | -                                                        |

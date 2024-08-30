@@ -1,5 +1,5 @@
 # Rate 评分组件
-## 基本使用
+## 基础用法
 - 普普通通的评分组件
 ```vue
 <template>
@@ -11,7 +11,7 @@
 ## 属性
 | 参数          | 说明                       | 类型          | 默认值           | 可选值            |
 | ------------- | -------------------------- | ------------- | ---------------- | ----------------- |
-| v-model       | 当前选中的评分值           | Number        | `0`              | -                 |
+| vModel       | 当前选中的评分值           | Number        | `0`              | -                 |
 | count         | 总评分数量                 | Number        | `5`              | -                 |
 | readonly      | 是否为只读状态             | Boolean       | `false`          | `true` \| `false` |
 | clearable     | 是否允许点击当前值清除评分 | Boolean       | `false`          | `true` \| `false` |
@@ -24,6 +24,8 @@
 | activeIcon    | 选中图标的名称             | String        | -                | -                 |
 | halfIcon      | 半星图标的名称             | String        | `star-half-fill` | -                 |
 | customStyle   | 自定义评分组件样式         | UTSJSONObject | `{}`             | -                 |
+
+
 ## 事件
 
 | 事件名 | 类型                | 说明             |

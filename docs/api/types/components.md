@@ -1,23 +1,29 @@
+### SnAvatarShape 
+
+| 可选值               |
+| :------------------- |
+| `circle` \| `square` |
+
 ### SnAvatarParams
 
 部分内置 `sn-avatar` 的组件可通过 `SnAvatarParams` 类型的 `avatarConfig` 属性配置参数
 
-| 名称          | 类型      | 必填 | 描述 |
-| :------------ | :-------- | :--- | :--- |
-| mode          | String  | 否   | -    |
-| imageMode     | String  | 否   | -    |
-| size          | String  | 否   | -    |
-| src           | String  | 否   | -    |
-| text          | String  | 否   | -    |
-| icon          | String  | 否   | -    |
-| iconSize      | String  | 否   | -    |
-| iconColor     | String  | 否   | -    |
-| shape         | String  | 否   | -    |
-| textColor     | String  | 否   | -    |
-| bgColor       | String  | 否   | -    |
-| textSize      | String  | 否   | -    |
-| borderRadius  | String  | 否   | -    |
-| enablePreview | Boolean | 否   | -    |
+| 名称          | 类型                            | 必填 | 描述 |
+| :------------ | :------------------------------ | :--- | :--- |
+| mode          | String                          | 否   | -    |
+| imageMode     | String                          | 否   | -    |
+| size          | String                          | 否   | -    |
+| src           | String                          | 否   | -    |
+| text          | String                          | 否   | -    |
+| icon          | String                          | 否   | -    |
+| iconSize      | String                          | 否   | -    |
+| iconColor     | String                          | 否   | -    |
+| shape         | [SnAvatarShape](#SnAvatarShape) | 否   | -    |
+| textColor     | String                          | 否   | -    |
+| bgColor       | String                          | 否   | -    |
+| textSize      | String                          | 否   | -    |
+| borderRadius  | String                          | 否   | -    |
+| enablePreview | Boolean                         | 否   | -    |
 
 ### SnBadgeParams
 

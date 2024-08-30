@@ -1,5 +1,5 @@
 # LoadingPage 加载页
-## 基本使用
+## 基础用法
 - 在页面信息尚未完全加载时使用，避免出现视觉空白
 ```vue
 <template>
@@ -22,4 +22,6 @@
 | aniTime          | 加载页动画持续时间             | Number        | `$normal`                                    | -                 |
 | customImgStyle  | 加载页图片自定义样式           | UTSJSONObject | `{width: '70px', height: '70px'}`            | -                 |
 | customTextStyle | 加载页文本自定义样式           | UTSJSONObject | `{marginTop: '15px'}`                        | -                 |
+
+
 <DemoPhone name="sn-loading-page" />

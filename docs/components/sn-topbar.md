@@ -1,5 +1,5 @@
 # Topbar 导航栏
-## 基本使用
+## 基础用法
 - 用于页面顶部导航，包含标题、返回按钮和功能按钮。
 - 可固定在顶部，自定义样式。
 ```vue
@@ -16,6 +16,7 @@
 | titleSize             | 标题字体大小       | String                                                  | `$4`                                               | -                             |
 | bgColor               | 背景颜色           | String                                                  | `$page`                                            | -                             |
 | menuBgColor           | 菜单背景颜色       | String                                                  | `$front`（亮色模式）<br />`$info` （暗黑模式）     | -                             |
+| menuBorderRadius      | 菜单圆角大小       | String                                                  | `$normal`                                          | -                             |
 | activeMenuBgColor     | 激活菜单项背景颜色 | String                                                  | `$info`（亮色模式）<br />`$infoLight` （暗黑模式） | -                             |
 | fixed                 | 是否固定在顶部     | Boolean                                                 | `true`                                             | `true` \| `false`             |
 | boxShadow             | 导航栏阴影         | String                                                  | -                                                  | -                             |

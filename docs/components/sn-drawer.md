@@ -1,6 +1,6 @@
 # Drawer 抽屉
 
-## 基本使用
+## 基础用法
 
 - 通常用于半屏窗口的场景。
 - 请注意区分 `sn-popup` 和 `sn-drawer`。`sn-popup`只控制动画和显隐逻辑，UI 需要自己写。而  `sn-drawer` 则是在 `sn-popup` 的基础上加了一层 UI 模板。

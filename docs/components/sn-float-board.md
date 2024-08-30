@@ -1,6 +1,6 @@
 # Float Board 浮动面板
 
-## 基本使用
+## 基础用法
 
 - 通常用于半屏窗口的场景。
 - 请注意区分  `sn-drawer`和 `sn-float-board`。 `sn-drawer`是弹出层，需要调用方法才能显示；而  `sn-float-board` 则始终显示，且可以通过用户手势操作完全显露。（可以把  `sn-drawer` 理解为关闭的浮动面板， `sn-float-board` 则是半开的浮动面板）
@@ -21,10 +21,10 @@
 | ------------ | --------------------------------------------------------- | --------------- | --------------------- | -------------------------------------- |
 | position     | 浮动面板显示的位置                                        | String        | `bottom`              | `top` \| `right` \| `bottom` \| `left` |
 | showLine     | 是否显示指示条                                            | Boolean       | `true`                | `true` \| `false`                      |
-| max-width    | 当 `position` 为 `left` \| `right` 且展开时浮动面板的宽度 | String        | `300px`               | -                                      |
-| min-width    | 当 `position` 为 `left` \| `right` 且折叠时浮动面板的宽度 | String        | `50px`                | -                                      |
-| max-height   | 当 `position` 为 `top` \| `bottom` 且展开时浮动面板的宽度 | String        | `300px`               | -                                      |
-| min-height   | 当 `position` 为 `top` \| `bottom` 且折叠时浮动面板的宽度 | String        | `50px`                | -                                      |
+| maxWidth   | 当 `position` 为 `left` \| `right` 且展开时浮动面板的宽度 | String        | `300px`               | -                                      |
+| minWidth    | 当 `position` 为 `left` \| `right` 且折叠时浮动面板的宽度 | String        | `50px`                | -                                      |
+| maxHeight   | 当 `position` 为 `top` \| `bottom` 且展开时浮动面板的宽度 | String        | `300px`               | -                                      |
+| minHeight   | 当 `position` 为 `top` \| `bottom` 且折叠时浮动面板的宽度 | String        | `50px`                | -                                      |
 | slideHeight  | 浮动面板纵向滑动阈值（达到阈值则折叠或展开）              | String        | `100px`               | -                                      |
 | slideWidth   | 浮动面板横向滑动阈值（达到阈值则折叠或展开）              | String        | `100px`               | -                                      |
 | bgColor      | 浮动面板的背景颜色                                        | String        | `$front`              | -                                      |

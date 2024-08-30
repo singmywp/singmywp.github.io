@@ -1,8 +1,8 @@
 # Input 输入框
 
-## 基本使用
+## 基础用法
 
-- 普普通通的输入框
+- 普普通通的输入框，在内置 `input` 组件上进一步扩展
 
 ```vue
 <template>
@@ -16,7 +16,7 @@
 
 | 参数            | 说明                               | 类型            | 默认值    | 可选值                                                   |
 | --------------- | ---------------------------------- | --------------- | --------- | -------------------------------------------------------- |
-| v-model     | 输入框文本内容                   | String      | -         | -                                                        |
+| vModel     | 输入框文本内容                   | String      | -         | -                                                        |
 | name | 表单的控件名称，作为键值对的一部分与表单(form组件)一同提交。同 [`input`](https://doc.dcloud.net.cn/uni-app-x/component/input.html#%E5%B1%9E%E6%80%A7)。 | String | - | - |
 | showBorder | 是否显示边框 | Boolean | `true` | `true` \| `false` |
 | showActiveBorder | 激活状态下是否显示边框 | Boolean | `true` | `true` \| `false` |
@@ -58,7 +58,7 @@
 | maxlength             | 最大输入长度，0和正数为合法值，非法值的时候不限制最大长度    | Number        | `-1`            | -                                                            |
 | textSize              | 输入框文本字体大小                                           | String        | `$2`            | -                                                            |
 | textFont              | 输入框文本字体                                               | String        | -               | -                                                            |
-| align                 | 输入框文本对齐方式                                           | String        | -               | `flex-start` \| `center` \| `flex-end`                       |
+| align                 | 输入框文本对齐方式                                           | String        | `left`        | `left` \| `right` \| `center`                       |
 | customStyle     | 自定义输入框样式                 | UTSJSONObject | `{}`      | -                                                        |
 | customPrefixIconStyle | 自定义输入框前置图标样式 | UTSJSONObject | `{}` | - |
 | customSuffixIconStyle | 自定义输入框后置图标样式 | UTSJSONObject | `{}` | - |

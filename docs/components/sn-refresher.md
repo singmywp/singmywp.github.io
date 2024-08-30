@@ -1,5 +1,5 @@
 # Refresher 下拉刷新
-## 基本使用
+## 基础用法
 - 自定义 `scroll-view` 和 `list-view` 下拉刷新样式
 ```vue
 <template>
