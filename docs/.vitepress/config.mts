@@ -62,7 +62,10 @@ export default defineConfig({
         },
         {
           text: "配置",
-          items: [{ text: "全局配置", link: "/api/config/index" }],
+          items: [
+            { text: "全局配置", link: "/api/config/index" },
+            { text: "初始化配置", link: "/api/config/init" },
+          ],
         },
         {
           text: "类型",
@@ -519,7 +522,7 @@ export default defineConfig({
                 {
                   text: "获取平台主题",
                   link: "/libs/utils/platform#snu-getostheme",
-                }
+                },
               ],
             },
             {
