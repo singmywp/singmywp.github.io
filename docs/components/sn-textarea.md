@@ -1,14 +1,20 @@
 # Textarea 文本域
+
 ## 基本使用
+
 - 用于创建一个可输入和展示多行文本的文本域。
 - 支持自动高度、最大长度、禁用等功能。
+
 ```vue
 <template>
 	<sn-textarea v-model="text"></sn-textarea>
 </template>
 ```
+
 **更多演示请下载 demo 查看**
+
 ## 属性
+
 | 参数               | 说明                                                         | 类型          | 默认值          | 可选值                                                       |
 | ------------------ | ------------------------------------------------------------ | ------------- | --------------- | ------------------------------------------------------------ |
 | vModel             | 文本域的值                                                   | String        | -               | -                                                            |
@@ -57,16 +63,18 @@
 ## 事件
 
 | 名称                 | 类型                                                 | 说明                                                         |
-| :------------------- | :--------------------------------------------------- | :----------------------------------------------------------- |
-| input                | `(event: UniInputEvent) => void`                     | 当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上 |
-| confirm              | `	(event: UniInputConfirmEvent) => void`          | 点击完成时， 触发 confirm 事件，event.detail = {value: value} |
-| blur                 | `(event: UniTextareaBlurEvent) => void	`          | 输入框失去焦点时触发，event.detail = {value, cursor}         |
-| focus                | `(event: UniTextareaFocusEvent) => void	`         | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度，在基础库 1.9.90 起支持 |
-| keyboardheightchange | `(event: UniInputKeyboardHeightChangeEvent) => void` | 键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration} |
-| linechange           | `(event: UniTextareaLineChangeEvent) => void`        | 输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0} |
+| -------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| input                | `(event: UniInputEvent) => void`                     | 当键盘输入时，触发 input 事件，`event.detail = {value, cursor}`， @input 处理函数的返回值并不会反映到 textarea 上 |
+| confirm              | `  (event: UniInputConfirmEvent) => void`            | 点击完成时， 触发 confirm 事件，`event.detail = {value: value}` |
+| blur                 | `(event: UniTextareaBlurEvent) => void `             | 输入框失去焦点时触发，`event.detail = {value, cursor}`         |
+| focus                | `(event: UniTextareaFocusEvent) => void    `         | `输入框聚焦时触发，event.detail = { value, height }`，height 为键盘高度，在基础库 1.9.90 起支持 |
+| keyboardheightchange | `(event: UniInputKeyboardHeightChangeEvent) => void` | 键盘高度发生变化的时候触发此事件，`event.detail = {height: height, duration: duration}` |
+| linechange | `(event: UniTextareaLineChangeEvent) => void` | 输入框行数变化时调用，`event.detail = {height: 0, heightRpx: 0, lineCount: 0}` |
 
 ## 插槽
 
 | 名称    | 说明             |
 | :------ | :--------------- |
 | counter | 替换内置的计字器 |
+
+<DemoPhone name="sn-textarea" />
