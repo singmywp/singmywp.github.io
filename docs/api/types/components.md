@@ -158,6 +158,7 @@
 | :----- | :------------- | :--- | :---------------------------- |
 | file   | Any \| null    | 否   | File 对象                     |
 | src    | String \| null | 否   | 选中文件临时路径              |
+| thumb  | String \| null | 否   | 缩略图地址。视频类模式专用。  |
 | name   | String         | 是   | 文件 uuid，由组件内部随机生成 |
 | status | SnMediaStatus  | 是   | 媒体文件状态                  |
 
@@ -195,29 +196,44 @@
 | showAni         | Boolean | 否   | -    |
 | enableZoom      | Boolean | 否   | -    |
 
+### SnTabbarItem
+
+`sn-tabbar` 组件的 `data` 属性需要传入一个 `SnTabbarItem[]` 类型的对象
+
+| 名称        | 类型                            | 必填 | 描述                                                        |
+| :---------- | :------------------------------ | :--- | :---------------------------------------------------------- |
+| text        | String \| null                  | 否   | 子项文本                                                    |
+| icon        | String \| null                  | 否   | 子项图标                                                    |
+| image       | String \| null                  | 否   | 子项图片                                                    |
+| activeText  | String \| null                  | 否   | 选中子项文本                                                |
+| activeIcon  | String \| null                  | 否   | 选中子项图标                                                |
+| activeImage | String \| null                  | 否   | 选中子项图片                                                |
+| interceptor | () => Boolean                   | 否   | 拦截器方法，可以在此方法内鉴权。如果返回 `false` 则拦截跳转 |
+| badge       | [SnBadgeParams](#SnBadgeParams) | 否   | 子项徽标配置                                                |
+
 ### SnTabParams
 
 `sn-tabs` 组件的 `data` 属性需要传入一个 `SnTabParams[]` 类型的对象
 
-| 名称        | 类型          | 必填 | 描述 |
-| :---------- | :------------ | :--- | :--- |
-| id          | String        | 是   | -    |
-| text        | String        | 是   | -    |
-| icon        | String        | 否   | -    |
-| disabled    | Boolean       | 否   | -    |
-| badgeConfig | SnBadgeParams | 否   | -    |
+| 名称        | 类型                            | 必填 | 描述                              |
+| :---------- | :------------------------------ | :--- | :-------------------------------- |
+| id          | String                          | 是   | 子项标识符。组件事件将返回此 `id` |
+| text        | String                          | 是   | 子项文本                          |
+| icon        | String                          | 否   | 子项图标                          |
+| disabled    | Boolean                         | 否   | 是否禁用子项                      |
+| badgeConfig | [SnBadgeParams](#SnBadgeParams) | 否   | 子项徽标配置                      |
 
 ### SnTimerTime
 
 `sn-timer` 的 `change` 事件返回 `SnTimerTime` 类型的时间数据
 
-| 名称 | 类型     | 必填 | 描述 |
-| :--- | :------- | :--- | :--- |
-| d    | Number | 是   | -    |
-| h    | Number | 是   | -    |
-| m    | Number | 是   | -    |
-| s    | Number | 是   | -    |
-| ms   | Number | 是   | -    |
+| 名称 | 类型   | 必填 | 描述 |
+| :--- | :----- | :--- | :--- |
+| d    | Number | 是   | 天   |
+| h    | Number | 是   | 时   |
+| m    | Number | 是   | 分   |
+| s    | Number | 是   | 秒   |
+| ms   | Number | 是   | 毫秒 |
 
 ### SnToastParams
 
@@ -242,4 +258,15 @@
 | textLines    | Number  | 否   | -    |
 | textAlign    | String  | 否   | -    |
 
-### 
+### SnWaterfallItem<Badge type="warning" text="内部使用" />
+
+`sn-waterfall` 及 `sn-waterfall-item` 组件内部传递数据使用
+
+| 名称   | 类型                                   | 必填 | 描述         |
+| :----- | :------------------------------------- | :--- | :----------- |
+| id     | String                                 | 是   | 子项标识符。 |
+| top    | Number                                 | 是   | -            |
+| left   | Number                                 | 是   | -            |
+| width  | Number                                 | 是   | -            |
+| height | Number                                 | 是   | -            |
+| niode  | SnWaterfallItemComponentPublicInstance | 是   | -            |

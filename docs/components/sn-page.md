@@ -11,16 +11,18 @@
 
 
 ## 属性
-| 参数                | 说明                               | 类型          | 默认值     | 可选值                     |
-| ------------------- | ---------------------------------- | ------------- | ---------- | -------------------------- |
-| scrollOn            | 是否开启滚动功能                   | Boolean       | `true`     | `true` \| `false`          |
-| scrollTop           | 设置竖向滚动条位置                 | Number        | `0`        | -                          |
-| scrollWithAnimation | 滚动是否使用动画                   | Boolean       | `true`     | `true` \| `false`          |
-| direction           | 滚动方向（vertical 或 horizontal） | String        | `vertical` | `vertical` \| `horizontal` |
-| bgColor             | 页面背景颜色                       | String        | `$page`    | -                          |
-| padding             | 页面内边距                         | String        | `0 15px`   | -                          |
-| bounces             | 是否启用回弹效果                   | Boolean       | `true`     | `true` \| `false`          |
-| customStyle         | 自定义页面样式                     | UTSJSONObject | `{}`       | -                          |
+| 参数                | 说明                                       | 类型          | 默认值     | 可选值                     |
+| ------------------- | ------------------------------------------ | ------------- | ---------- | -------------------------- |
+| scrollOn            | 是否开启滚动功能                           | Boolean       | `true`     | `true` \| `false`          |
+| scrollTop           | 设置竖向滚动条位置                         | Number        | `0`        | -                          |
+| scrollWithAnimation | 滚动是否使用动画                           | Boolean       | `true`     | `true` \| `false`          |
+| direction           | 滚动方向（vertical 或 horizontal）         | String        | `vertical` | `vertical` \| `horizontal` |
+| upperThreshold      | 距顶部/左边多远时，触发 scrolltoupper 事件 | Number        | `50`       | -                          |
+| lowerThreshold      | 距底部/右边多远时，触发 scrolltolower 事件 | Number        | `50`       | -                          |
+| bgColor             | 页面背景颜色                               | String        | `$page`    | -                          |
+| padding             | 页面内边距                                 | String        | `0 15px`   | -                          |
+| bounces             | 是否启用回弹效果                           | Boolean       | `true`     | `true` \| `false`          |
+| customStyle         | 自定义页面样式                             | UTSJSONObject | `{}`       | -                          |
 
 
 ## 方法
@@ -28,7 +30,21 @@
 | :------- | :----------------------- | :----- | :----------------- |
 | scrollTo | `(x: number, y: number)` | -      | 滚动页面到指定位置 |
 
+## 事件
 
+| 名称              | 类型                                            | 说明                                                         |
+| :---------------- | :---------------------------------------------- | :----------------------------------------------------------- |
+| scrolltoupper     | `(e: UniScrollToUpperEvent) => void`            | 滚动到顶部时触发                                             |
+| scrolltolower     | `(e: UniScrollToLowerEvent) => void`            | 滚动到底部时触发                                             |
+| scroll            | `(e: UniScrollEvent) => void`                   | 滚动时触发                                                   |
+| scrollend         | `(e: UniScrollEvent) => void`                   | 滚动结束时触发                                               |
+| refresherpulling  | `(event: UniRefresherEvent) => void`            | 下拉刷新控件被下拉                                           |
+| refresherrefresh  | `(event: UniRefresherEvent) => void`            | 下拉刷新被触发                                               |
+| refresherrestore  | `(event: UniRefresherEvent) => void`            | 下拉刷新被复位                                               |
+| refresherabort    | `(event: UniRefresherEvent) => void`            | 下拉刷新被中止                                               |
+| startnestedscroll | `(event: UniStartNestedScrollEvent) => Boolean` | 子元素开始滚动时触发, return true表示与子元素开启滚动协商 默认return false! event = {node} |
+| nestedprescroll   | `(event: UniNestedPreScrollEvent) => void`      | 子元素滚动时触发，可执行event.consumed(x,y)告知子元素deltaX、deltaY各消耗多少。子元素将执行差值后的deltaX、deltaY滚动距离。不执行consumed(x,y)则表示父元素不消耗deltaX、deltaY。event = {deltaX, deltaY} |
+| stopnestedscroll  | `(event: UniStopNestedScrollEvent) => void`     | 子元素滚动结束或意外终止时触发                               |
 
 ## 插槽
 

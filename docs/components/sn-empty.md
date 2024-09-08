@@ -1,6 +1,6 @@
 # Empty 缺省页
 
-基于 [邓琪昌](https://ext.dcloud.net.cn/publisher?id=68708) 大佬的开源组件 [`flower-empty`](https://ext.dcloud.net.cn/plugin?name=flower-empty) 实现的缺省页组件。使用方法有改动。
+> *基于 [邓琪昌](https://ext.dcloud.net.cn/publisher?id=68708) 大佬的开源组件 [`flower-empty`](https://ext.dcloud.net.cn/plugin?name=flower-empty) 实现的缺省页组件。使用方法有改动。*
 
 ## 基础用法
 

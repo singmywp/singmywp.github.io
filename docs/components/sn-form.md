@@ -9,7 +9,7 @@
 
 ::: code-group
 
-```vue [html]
+```vue [template]
 <template>
 	<sn-form ref="formEle"
 	v-model="formData">
