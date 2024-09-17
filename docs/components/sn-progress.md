@@ -23,7 +23,7 @@
 | activeColor       | 进度条激活部分颜色             | String        | `$primary` | -                     |
 | textColor         | 进度值文本颜色                 | String        | -          | -                     |
 | borderRadius      | 进度条圆角大小                 | String        | `$circle`  | -                     |
-| aniTime           | 进度条动画时间                 | Number        | `$normal`  | -                     |
+| aniTime           | 进度条动画时间                 | String        | `$normal`  | -                     |
 | customStyle       | 自定义进度条样式               | UTSJSONObject | `{}`       | -                     |
 | customTextStyle   | 自定义进度值文本样式           | UTSJSONObject | `{}`       | -                     |
 | customActiveStyle | 自定义激活部分样式             | UTSJSONObject | `{}`       | -                     |

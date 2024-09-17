@@ -35,7 +35,7 @@
 | cancelTextColor  | 取消按钮文本颜色 | String        | `$text`             | -                                                  |
 | cancelTextSize   | 取消按钮文本大小 | String        | `$3`                | -                                                  |
 | position         | 弹出位置         | String        | `center`            | `center` \| `top` \| `bottom` \| `left` \| `right` |
-| aniTime           | 动画持续时间     | Number        | `350`               | -                                                  |
+| aniTime           | 动画持续时间     | String        | `350ms`               | -                                                  |
 | maskClose        | 点击蒙层是否关闭 | Boolean       | `false`             | `true` \| `false`                                  |
 | disabled         | 是否禁用         | Boolean       | `false`             | `true` \| `false`                                  |
 | preventBack      | 是否阻止返回事件 | Boolean       | `false`             | `true` \| `false`                                  |

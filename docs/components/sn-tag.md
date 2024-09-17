@@ -24,6 +24,7 @@
 | textColor         | 标签文本颜色                                                 | String        | - | -                                          |
 | disabledTextColor | 禁用状态下标签文本颜色                                       | String        | - | -                                          |
 | bgColor           | 标签背景颜色                                                 | String        | - | -                                          |
+| borderRadius | 标签圆角大小 | String | `$small` | - |
 | disabledBgColor   | 禁用状态下标签背景颜色                                       | String        | `$disabled` | -                                          |
 | textSize          | 标签文本大小                                                 | String        | `$2`   | -                                          |
 | iconColor         | 关闭图标和加载图标颜色                                       | String        | - | -                                          |

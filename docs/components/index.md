@@ -28,9 +28,23 @@ SinleUI 主题内置有 `primary`、`info`、`warning`、`success`、`error` 五
 
 ::: warning 注意
 
-使用这些以 `$` 开头的简写表达式仅是为了简化文档，开发时不可使用
+`v1.1.2` 版本之前，使用这些以 `$` 开头的简写表达式仅是为了简化文档，开发时不可使用
 
-例如：文档中出现 `$primary`，代码中只支持 `$snui.colors.primary`
+`v1.1.2` 版本之后，也同时支持在代码中使用以 `$` 开头的表达式，但有一定限制：无代码提示；不可使用[计算表达式](#计算表达式)。
+
+示例：
+
+```vue
+<template>
+	<sn-alert type="primary" 
+	iconColor="$error"
+	iconSize="$8"
+	text="通知" 
+	icon="notification-fill">
+</template>
+```
+
+
 
 :::
 
@@ -54,25 +68,13 @@ SinleUI 主题内置有 `primary`、`info`、`warning`、`success`、`error` 五
 
 `$topbarHeight` 意为 `$snui.configs.page.topbarHeight`。
 
+#### 计算表达式
 
-
-::: tip 注意
-
-`$snui.configs` 下的 `aniTime`、`radius`、`font.size()` 各配置项返回的都是带单位的字符串。
-
-如果组件的属性是 `Number` 类型，这时默认值 `$xxxx` 实际指 `parseFloat($snui.configs.xxx.xxxx)`
-
-有时默认值内还会出现计算表达式，同样也是自动将配置项转为 Number。例如 `$3+1`，实际指
+有时组件文档的默认值内还会出现计算表达式。例如 `$3+1`，实际指
 
 ```typescript
 `${parseFloat($snui.configs.font.size(3)) + 1)}px`
 ```
-
-
-
-:::
-
-
 
 
 

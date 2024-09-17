@@ -15,7 +15,7 @@
 | height       | 骨架屏高度           | String        | -         | -      |
 | borderRadius | 骨架屏圆角大小       | String        | `$xsmall` | -      |
 | margin       | 骨架屏外边距         | String        | -         | -      |
-| aniTime      | 动画时间，单位为毫秒 | Number        | `1000`    | -      |
+| aniTime      | 动画时间 | String        | `1000ms`    | -      |
 | customStyle  | 自定义骨架屏样式     | UTSJSONObject | `{}`      | -      |
 
 ## 插槽

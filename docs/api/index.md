@@ -23,3 +23,11 @@ import { $snui } from '@/uni_modules/sinle-ui'
 | store   | [StoreLib](/libs/store/index)             | 是   | Store 状态管理                                |
 | libs    | Core                                      | 是   | 其他核心库，[详见](/libs/utils/index)         |
 | configs | [Configs](/api/config/index#configs)      | 否   | SinleUI 的全局配置，[详见](/api/config/index) |
+
+### 方法
+
+| 名称        | 参数                                                         | 返回值 | 描述                                                         |
+| ----------- | :----------------------------------------------------------- | :----- | :----------------------------------------------------------- |
+| setColor    | (theme: string, key: string, value: string)                  | -      | 设置指定主题中的指定颜色变量的值。`theme` 可选值：`light` \| `dark`。 |
+| setColorSet | (theme: string, colorSet: [SnColorBase](/api/types/api#sncolorbase)) | -      | 设置指定主题中的所有颜色变量的集合，一键修改项目配色。`theme` 可选值：`light` \|`dark`。 |
+

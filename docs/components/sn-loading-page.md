@@ -19,7 +19,7 @@
 | textSize        | 加载页文本大小                 | String        | `$4`                                         | -                 |
 | iconColor       | 加载页图标颜色（如果显示图标） | String        | `$infoDark` （亮色模式） `$dark`（暗黑模式） | -                 |
 | iconSize        | 加载页图标大小（如果显示图标） | String        | `$7`                                         | -                 |
-| aniTime          | 加载页动画持续时间             | Number        | `$normal`                                    | -                 |
+| aniTime          | 加载页动画持续时间             | String        | `$normal`                                    | -                 |
 | customImgStyle  | 加载页图片自定义样式           | UTSJSONObject | `{width: '70px', height: '70px'}`            | -                 |
 | customTextStyle | 加载页文本自定义样式           | UTSJSONObject | `{marginTop: '15px'}`                        | -                 |
 

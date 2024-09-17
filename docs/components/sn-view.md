@@ -28,7 +28,7 @@
 | margin       | 外边距           | String        | `0`     | -                |
 | padding      | 内边距           | String        | `0`     | -                |
 | boxShadow    | 阴影，一般不要设置，`uni-app x` 的阴影在 App 端时有异常 | String        | -       | -                |
-| aniTime | 动画时长 | Number | `$normal` | - |
+| aniTime | 动画时长 | String | `$normal` | - |
 | customStyle  | 自定义样式       | UTSJSONObject | `{}`    | -                |
 
 ## 插槽

@@ -19,7 +19,7 @@
 | textColor   | 文本颜色                                           | String        | `$textLight`   | -                 |
 | bgColor     | 背景颜色                                           | String        | `$front`       | -                 |
 | disabled    | 是否禁用操作                                       | Boolean       | `false`        | `true` \| `false` |
-| aniTime     | 动画时间                                           | Number        | `$normal`      | -                 |
+| aniTime     | 动画时间                                           | String        | `$normal`      | -                 |
 | customStyle | 自定义样式                                         | UTSJSONObject | `{}`           | -                 |
 ## 事件
 | 名称   | 类型         | 说明       |

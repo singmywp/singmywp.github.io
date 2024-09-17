@@ -37,7 +37,7 @@
 | icon         | 浮动按钮内部图标                                 | String        | -                | -                                                            |
 | iconColor    | 浮动按钮内部图标颜色                             | String        | `$text`          | -                                                            |
 | icon         | 浮动按钮内部图标字体大小                         | String        | `$6`             | -                                                            |
-| aniTime       | 浮动按钮吸附动画时长                             | Number        | `$long`          | -                                                            |
+| aniTime       | 浮动按钮吸附动画时长                             | String        | `$long`          | -                                                            |
 | disabled     | 是否禁止拖动                                     | Boolean       | `false`          | `true` \| `false`                                            |
 | customStyle  | 自定义浮动按钮样式                               | UTSJSONObject | `{}`             | -                                                            |
 

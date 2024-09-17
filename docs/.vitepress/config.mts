@@ -106,6 +106,8 @@ export default defineConfig({
             { text: "Slider 滑动选择", link: "/components/sn-slider" },
             { text: "Stepper 步进器", link: "/components/sn-stepper" },
             { text: "Switch 开关", link: "/components/sn-switch" },
+            { text: "Picker 选择器", link: "/components/sn-picker" },
+            { text: "Picker View 选择器容器", link: "/components/sn-picker-view" },
             { text: "Textarea 文本域", link: "/components/sn-textarea" },
             {
               text: "Upload Media 媒体上传",
@@ -173,6 +175,7 @@ export default defineConfig({
             { text: "Page 页面", link: "/components/sn-page" },
             { text: "Row 水平布局", link: "/components/sn-row" },
             { text: "Search 搜索框", link: "/components/sn-search" },
+            { text: "Sidebar 侧边栏", link: "/components/sn-sidebar" },
             { text: "Subsection 分段器", link: "/components/sn-subsection" },
             { text: "Tabbar 底部导航栏", link: "/components/sn-tabbar" },
             { text: "Tabs 标签页", link: "/components/sn-tabs" },

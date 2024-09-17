@@ -48,7 +48,7 @@
 | torchTextSize      | 手电筒提示文字字体大小                            | String        | `$1`                                                         | -                              |
 | dotSize            | 识别点大小                                        | String        | `35px`                                                       | -                              |
 | scanType           | 扫码类型                                          | String        | `all`                                                        | `qrCode` \| `barCode` \| `all` |
-| lineaniTime         | 扫描线动画时长                                    | Number        | `5000`                                                       | -                              |
+| lineAniTime         | 扫描线动画时长                                    | String        | `5000ms`                                                       | -                              |
 | enableDing         | 是否开启声音提示                                  | Boolean       | `true`                                                       | `true` \| `false`              |
 | dingFileSrc        | 自定义声音文件路径                                | String        | -                                                            | -                              |
 | scanOnlyOnce       | 是否只扫描一次（与 `continuous` 不可同为 `true`） | Boolean       | `false`                                                      | `true` \|`false`               |

@@ -1,0 +1,1 @@
+import{B as e}from"./index-BDGnenFq.js";function n(n=null,i){let t=0,o=()=>{null!=t&&(clearTimeout(t),t=null),t=setTimeout((()=>{i()}),100)};window.addEventListener("resize",o),e((()=>{window.removeEventListener("resize",o)}))}export{n as u};

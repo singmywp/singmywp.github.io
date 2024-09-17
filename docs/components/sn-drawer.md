@@ -30,6 +30,7 @@
 | 参数         | 说明                                            | 类型            | 默认值                | 可选值                                 |
 | ------------ | ----------------------------------------------- | --------------- | --------------------- | -------------------------------------- |
 | position     | 抽屉显示的位置                                  | String        | `bottom`              | `top` \| `right` \| `bottom` \| `left` |
+| renderMode | 渲染模式 | String | `v-if` | `v-if` \| `v-show` |
 | showLine     | 是否显示指示条                                  | Boolean       | `true`                | `true` \| `false`                      |
 | slideClose   | 是否启用滑动关闭                                | Boolean       | `true`                | `true` \| `false`                      |
 | width        | 当 `position` 为 `left` \| `right` 时抽屉的宽度 | String        | `300px`               | -                                      |
@@ -40,7 +41,7 @@
 | lineColor    | 抽屉指示条颜色                                  | String        | `$lineText`           | -                                      |
 | padding      | 抽屉内边距                                      | String        | `25px 15px 10px 15px` | -                                      |
 | borderRadius | 抽屉圆角大小                                    | String        | `$xlarge`             | -                                      |
-| aniTime       | 抽屉显示/关闭动画时长（单位 `ms`）              | Number        | `$long`               | -                                      |
+| aniTime       | 抽屉显示/关闭动画时长              | String        | `$long`               | -                                      |
 | preventBack  | 抽屉显示时是否阻止页面返回事件                  | Boolean       | `false`               | `true` \| `false`                      |
 | maskClose    | 是否启用点击遮罩关闭                            | Boolean       | `true`                | `true` \| `false`                      |
 | maskOpacity  | 遮罩透明度                                      | Number        | `0.3`                 | -                                      |

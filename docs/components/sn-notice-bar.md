@@ -14,6 +14,7 @@
 | :-------------- | :---------------------------------------- | :-------------- | :--------------- | :------------------ |
 | texts           | 通知文本数组                              | Array\<String\> | -                | -                   |
 | bgColor         | 通知栏背景颜色                            | String          | `$warningLight`  | -                   |
+| borderRadius | 通知栏圆角大小 | String | `$small` | - |
 | textColor       | 通知文本颜色                              | String          | `$warning`       | -                   |
 | textSize        | 通知文本大小                              | String          | `$2`             | -                   |
 | icon            | 通知图标名称                              | String          | `volume-up-line` | -                   |

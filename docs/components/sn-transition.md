@@ -12,7 +12,7 @@
 | show           | 是否显示元素           | Boolean | `false`    | `true` \| `false`                                            |
 | placed         | 元素隐藏时是否占位     | Boolean | `true`     | `true` \| `false`                                            |
 | mode           | 动画模式               | String  | `fade`     | `fade` \| `zoom` \| `fadeZoom` \| `fadeUp` \| `fadeRight` \| `fadeDown` \| `fadeLeft` \| `slideUp` \| `slideRight` \| `slideDown` \| `slideLeft` |
-| aniTime         | 动画时长（单位：毫秒） | Number  | `$long`    | -                                                            |
+| aniTime         | 动画时长 | String  | `$long`    | -                                                            |
 | timingFunction | 动画时间函数           | String  | `ease-out` | -                                                            |
 | customStyle    | 自定义样式             | Object  | `{}`       | -                                                            |
 ## 事件

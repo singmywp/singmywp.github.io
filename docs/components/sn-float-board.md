@@ -31,7 +31,7 @@
 | lineColor    | 浮动面板指示条颜色                                        | String        | `$lineText`           | -                                      |
 | padding      | 浮动面板内边距                                            | String        | `25px 15px 10px 15px` | -                                      |
 | borderRadius | 浮动面板圆角大小                                          | String        | `$xlarge`             | -                                      |
-| aniTime       | 浮动面板展开/折叠动画时长（单位 `ms`）                    | Number        | `$long`               | -                                      |
+| aniTime       | 浮动面板展开/折叠动画时长                    | String        | `$long`               | -                                      |
 | disabled     | 是否禁用滑动手势                                          | Boolean       | `false`               | `true` \| `false`                      |
 | customStyle  | 自定义浮动面板样式                                        | UTSJSONObject | `{}`                  | -                                      |
 

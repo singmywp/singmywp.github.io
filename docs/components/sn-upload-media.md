@@ -53,8 +53,10 @@
 | 名称         | 类型                                    | 说明                   |
 | :----------- | :-------------------------------------- | :--------------------- |
 | uploaded     | `(response: UploadFileSuccess) => void` | 每个文件上传成功时触发 |
-| upload-error | `(error: UploadFileFail) => void`       | 每个文件上传失败时触发 |
-| choose-error | `(error: IMediaError) => void`          | 选择文件失败时触发     |
+| upload-error | `(error: Error) => void`       | 每个文件上传失败时触发 |
+| choose-error | `(error: Error) => void`          | 选择文件失败时触发     |
+| image-chose | `(res: ChooseImageSuccess)=>void`          | 选择图片成功时触发     |
+| video-chose | `(res: ChooseVideoSuccess)=>void`          | 选择视频成功时触发     |
 ## 插槽
 
 | 名称    | 说明                     |

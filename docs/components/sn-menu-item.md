@@ -19,6 +19,7 @@
 | borderRadius      | 菜单项圆角大小              | String        | -               | -                 |
 | iconColor         | 菜单项图标颜色              | String        | `$text`         | -                 |
 | iconSize          | 菜单项图标大小              | String        | `$4`            | -                 |
+| iconPosition      | 菜单项图标位置              | String        | `left`          | `left` \| `right` |
 | textColor         | 菜单项文本颜色              | String        | `$text`         | -                 |
 | textSize          | 菜单项文本大小              | String        | `$2`            | -                 |
 | textAlign         | 菜单项文本对齐方式          | String        | `left`          | -                 |
