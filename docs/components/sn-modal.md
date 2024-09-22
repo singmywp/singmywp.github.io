@@ -19,6 +19,7 @@
 | titleFont        | 标题字体样式     | String        | `misans-semibold`   | -                                                  |
 | titleColor       | 标题颜色         | String        | `$title`            | -                                                  |
 | bgColor          | 背景颜色         | String        | `$front`            | -                                                  |
+| borderRadius | 圆角大小 | String | `$normal` | - |
 | content          | 模态框内容       | String        | -                   | -                                                  |
 | contentAlign     | 内容对齐方式     | String        | `center`            | `left` \| `center` \| `right`                      |
 | contentSize      | 内容字体大小     | String        | `$2+1`              | -                                                  |

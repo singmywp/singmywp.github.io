@@ -124,6 +124,7 @@ export default defineConfig({
             { text: "Card 卡片", link: "/components/sn-card" },
             { text: "Countdown 倒计时", link: "/components/sn-countdown" },
             { text: "Countto 数字滚动", link: "/components/sn-countto" },
+            { text: "Dateformat 日期格式化", link: "/components/sn-dateformat" },
             { text: "List 列表", link: "/components/sn-list" },
             { text: "Loading 加载", link: "/components/sn-loading" },
             {
@@ -191,11 +192,15 @@ export default defineConfig({
           ],
         },
         {
-          text: "扩展组件（部分须额外下载）",
+          text: "扩展插件（部分须额外下载）",
           link: "/components/ext-com",
           items: [
             { text: "Barcode 条形码", link: "/components/sn-e-barcode" },
             { text: "Gesture 手势", link: "/components/sn-e-gesture" },
+            {
+              text: "ScanKit 华为扫码",
+              link: "/components/sn-e-scankit", 
+            },
             {
               text: "Scan Provider 扫码核心",
               link: "/components/sn-e-scan-provider",

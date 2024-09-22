@@ -104,15 +104,16 @@
 
 **sn-form-item**
 
-| 参数        | 说明                                                                                     | 类型                                                   | 默认值 | 可选值 |
-| ----------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------ | ------ |
+| 参数        | 说明                                                         | 类型                                                   | 默认值 | 可选值 |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------ | ------ |
 | type        | 表单项样式类型。分为 `embed`（嵌入式）和`float`（浮动式）（不为空则覆盖 `sn-form` 配置） | String                                                 | -      | -      |
-| labelColor  | 表单项标题颜色（不为空则覆盖 `sn-form` 配置）                                            | String                                                 | -      | -      |
-| labelSize   | 表单项标题字体大小（不为空则覆盖 `sn-form` 配置）                                        | String                                                 | -      | -      |
-| labelWidth  | 表单项标题宽度（不为空则覆盖 `sn-form` 配置）                                            | String                                                 | -      | -      |
-| field       | 表单项名称                                                                               | String                                                 | -      | -      |
-| rule        | 表单项校验规则                                                                           | [SnFormItemRule](/api/types/components#snformitemrule) | -      | -      |
-| customStyle | 自定义表单项样式                                                                         | UTSJSONObject                                          | `{}`   | -      |
+| label       | 表单项标题                                                   | String                                                 | -      | -      |
+| labelColor  | 表单项标题颜色（不为空则覆盖 `sn-form` 配置）                | String                                                 | -      | -      |
+| labelSize   | 表单项标题字体大小（不为空则覆盖 `sn-form` 配置）            | String                                                 | -      | -      |
+| labelWidth  | 表单项标题宽度（不为空则覆盖 `sn-form` 配置）                | String                                                 | -      | -      |
+| field       | 表单项名称                                                   | String                                                 | -      | -      |
+| rule        | 表单项校验规则                                               | [SnFormItemRule](/api/types/components#snformitemrule) | -      | -      |
+| customStyle | 自定义表单项样式                                             | UTSJSONObject                                          | `{}`   | -      |
 
 ## 事件
 

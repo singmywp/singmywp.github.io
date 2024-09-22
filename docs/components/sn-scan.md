@@ -23,7 +23,7 @@
 * 该组件是 UI 组件，基于 `sn-e-scan-provider` 的基础上内置一套扫码界面，如果你对界面不满意，除了修改属性以外，还可以复制本组件或修改本组件源码，自行定义
 * 由 uvue、ucss、uts 编写，而非 xml，自由度非常高，修改源码可以放置任意支持 uvue 的组件
 * 如果你习惯使用 xml 自定义布局，可以考虑 [kux-mlkit-scancode](https://ext.dcloud.net.cn/plugin?name=kux-mlkit-scancode)，功能更强大
-* 如果你希望使用更强大、更稳定的商用级的扫码功能，可以考虑接入 [mPaaS 扫一扫](https://help.aliyun.com/document_detail/52599.html?spm=a2c4g.52296.0.i0)，拥有与支付宝一致的扫码体验；或者华为的 [ScanKit](https://developer.huawei.com/consumer/cn/hms/huawei-scankit/)，体验更好
+* 如果你希望使用更强大、更稳定的商用级的扫码功能，可以考虑接入华为的 [ScanKit](/components/sn-e-scankit) ，体验更好；或者 [mPaaS 扫一扫](https://help.aliyun.com/document_detail/52599.html?spm=a2c4g.52296.0.i0)，拥有与支付宝一致的扫码体验。
 
 ```vue
 <template>
