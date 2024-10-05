@@ -4,6 +4,8 @@
 
 验证输入的值是否为有效的日期。
 
+如果传入Date构造器的参数字符串不合法，在web平台会抛出 Invalid Date 异常，即返回 `false`；在Android / iOS平台，会转换为程序执行时的时间，即返回 `true`
+
 ### 兼容性
 
 | Web  | Android |
@@ -21,6 +23,14 @@
 | 类型    | 必备 | 描述                      |
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是有效日期，返回 true |
+
+### 示例
+
+```typescript
+snu.isDate('2020-01-01'); // true
+snu.isDate('2020-01-32'); // false
+snu.isDate('This is not a date'); // false
+```
 
 ---
 
@@ -48,6 +58,16 @@
 | ------- | ---- | ------------------------ |
 | Boolean | 是   | 如果是有效URL，返回 true |
 
+### 示例
+
+```typescript
+snu.isURL('https://www.baidu.com'); // true
+snu.isURL('http://www.baidu.com');  // true
+snu.isURL('www.baidu.com');         // true
+snu.isURL('baidu.com');             // true
+snu.isURL('baidu');                 // false
+```
+
 ---
 
 # snu.isNumberString()
@@ -73,6 +93,14 @@
 | 类型    | 必备 | 描述                      |
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是有效数字，返回 true |
+
+### 示例
+
+```typescript
+snu.isNumberString('123'); // true
+snu.isNumberString('123.45'); // true
+snu.isNumberString('abc'); // false
+```
 
 ---
 
@@ -100,6 +128,14 @@
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是字母，返回 true |
 
+### 示例
+
+```typescript
+snu.isAbc('aBc'); // true
+snu.isAbc('123'); // false
+snu.isAbc('abc123'); // false
+```
+
 ---
 
 # snu.isChinese()
@@ -125,6 +161,14 @@
 | 类型    | 必备 | 描述                  |
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是中文，返回 true |
+
+### 示例
+
+```typescript
+snu.isChinese('中文'); // true
+snu.isChinese('123半中文'); // false
+snu.isChinese('abc'); // false
+```
 
 ---
 
@@ -152,6 +196,14 @@
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是邮箱，返回 true |
 
+### 示例
+
+```typescript
+snu.isEmail('abc@163.com'); // true
+snu.isEmail('abc@163.com.cn'); // true
+snu.isEmail('abc@163'); // false
+```
+
 ---
 
 # snu.isPhone()
@@ -177,6 +229,14 @@
 | 类型    | 必备 | 描述                    |
 | ------- | ---- | ----------------------- |
 | Boolean | 是   | 如果是手机号，返回 true |
+
+### 示例
+
+```typescript
+snu.isPhone('13800138000'); // true
+snu.isPhone('1380013800'); // false
+snu.isPhone('abc'); // false
+```
 
 ---
 
@@ -204,6 +264,14 @@
 | ------- | ---- | ----------------------- |
 | Boolean | 是   | 如果是座机号，返回 true |
 
+### 示例
+
+```typescript
+snu.isLandline('010-12345678'); // true
+snu.isLandline('021-1234567'); // false
+snu.isLandline('abc'); // false
+```
+
 ---
 
 # snu.isQQNumber()
@@ -229,6 +297,13 @@
 | 类型    | 必备 | 描述                  |
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是QQ号，返回 true |
+
+### 示例
+
+```typescript
+snu.isQQNumber('123456789'); // true
+snu.isQQNumber('abc'); // false
+```
 
 ---
 
@@ -256,6 +331,14 @@
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是IPv6地址，返回 true |
 
+### 示例
+
+```typescript
+snu.isIPv6('2001:0db8:85a3:0000:0000:8a2e:0370:7334'); // true
+snu.isIPv6('192.168.1.1'); // false
+snu.isIPv6('abc'); // false
+```
+
 ---
 
 # snu.isIPv4()
@@ -281,6 +364,14 @@
 | 类型    | 必备 | 描述                      |
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是IPv4地址，返回 true |
+
+### 示例
+
+```typescript
+snu.isIPv4('192.168.1.1'); // true
+snu.isIPv4('2001:0db8:85a3:0000:0000:8a2e:0370:7334'); // false
+snu.isIPv4('abc'); // false
+```
 
 ---
 
@@ -308,6 +399,15 @@
 | ------- | ---- | --------------------------- |
 | Boolean | 是   | 如果是身份证号码，返回 true |
 
+### 示例
+
+```typescript
+// 数据来源：公安部网站公开信息
+snu.isIDCard('350783199003058516'); // true
+snu.isIDCard('350783199003058510'); // false
+snu.isIDCard('abc'); // false
+```
+
 ---
 
 # snu.isImage()
@@ -333,6 +433,13 @@
 | 类型    | 必备 | 描述                      |
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是图片文件，返回 true |
+
+### 示例
+
+```typescript
+snu.isImage('image.jpg');           // true
+snu.isImage('/path/to/image.png');  // true
+```
 
 ---
 
@@ -360,6 +467,13 @@
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是视频文件，返回 true |
 
+### 示例
+
+```typescript
+snu.isVideo('video.mp4');           // true
+snu.isVideo('/path/to/video.mp4');  // true
+```
+
 ---
 
 # snu.isCarNumber()
@@ -385,6 +499,13 @@
 | 类型    | 必备 | 描述                      |
 | ------- | ---- | ------------------------- |
 | Boolean | 是   | 如果是车牌号码，返回 true |
+
+### 示例
+
+```typescript
+snu.isCarNumber('京A12345');    // true
+snu.isCarNumber('渝A000124');   // true
+```
 
 ---
 
@@ -412,6 +533,16 @@
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是整数，返回 true |
 
+### 示例
+
+```typescript
+snu.isInteger(123.0);   // true
+snu.isInteger(123);     // true
+snu.isInteger(123.45);  // false
+snu.isInteger(Infinity);// false
+snu.isInteger(NaN);     // false
+```
+
 ---
 
 # snu.isFloat()
@@ -437,3 +568,13 @@
 | 类型    | 必备 | 描述                  |
 | ------- | ---- | --------------------- |
 | Boolean | 是   | 如果是小数，返回 true |
+
+### 示例
+
+```typescript
+snu.isFloat(123.0);   // false
+snu.isFloat(123);     // false
+snu.isFloat(123.45);  // true
+snu.isFloat(Infinity);// false
+snu.isFloat(NaN);     // false
+```

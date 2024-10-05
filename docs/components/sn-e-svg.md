@@ -1,5 +1,11 @@
 # SVG 可缩放矢量图形
 
+:::info 扩展插件
+SinleUI 框架基于 SVG 实现的组件都依赖此组件，故 HBuilderX 安装 SinleUI 插件时会自动安装此组件，无需手动下载
+:::
+
+---
+
 * 主要因为 uni-app x 内置的 `image` 组件不支持 `svg` 格式，故使用此组件
 * SinleUI 框架基于 SVG 实现的组件都依赖此组件，故 HBuilderX 安装 SinleUI 插件时会自动安装此组件
 

@@ -13,14 +13,14 @@
 
 `sn-view` 和 `sn-e-gesture` 触摸类手势事件（`touchstart`、`touchend`、`touchmove`、`touchcancel`）（Web PC 端的鼠标事件同样适用）触摸信息
 
-| 名称      | 类型   | 必填 | 描述                                |
-| :-------- | :----- | :--- | :---------------------------------- |
-| x         | Number | 是   | 触摸点的横坐标                      |
-| y         | Number | 是   | 触摸点的纵坐标                      |
-| diffX     | Number | 是   | 手指距按下时的触摸点在 X 轴上的距离 |
-| diffY     | Number | 是   | 手指距按下时的触摸点在 Y 轴上的距离 |
-| direction | String | 是   | 手指移动的方向                      |
-| id        | Number | 是   | 手指 ID                             |
+| 名称      | 类型   | 必填 | 描述                                                                   |
+| :-------- | :----- | :--- | :--------------------------------------------------------------------- |
+| x         | Number | 是   | 触摸点的横坐标                                                         |
+| y         | Number | 是   | 触摸点的纵坐标                                                         |
+| diffX     | Number | 是   | 相对于上一次触摸点的横坐标差值，为正数则是向右移动，为负数则是向左移动 |
+| diffY     | Number | 是   | 相对于上一次触摸点的纵坐标差值，为正数则是向下移动，为负数则是向上移动 |
+| direction | String | 是   | 手指移动的方向                                                         |
+| id        | Number | 是   | 手指 ID                                                                |
 
 ### SnTouchEvent
 
@@ -36,15 +36,16 @@
 
  `sn-e-gesture` Android 原生 `Fling` 事件返回事件
 
-| 名称   | 类型   | 必填 | 描述 |
-| :----- | :----- | :--- | :--- |
-| type   | String | 是   | -    |
-| beginX | Number | 是   | -    |
-| beginY | Number | 是   | -    |
-| endX   | Number | 是   | -    |
-| endY   | Number | 是   | -    |
-| vX     | Number | 是   | -    |
-| vY     | Number | 是   | -    |
+| 名称   | 类型   | 必填 | 描述           |
+| :----- | :----- | :--- | :------------- |
+| type   | String | 是   | 事件类型       |
+| beginX | Number | 是   | 开始时的横坐标 |
+| beginY | Number | 是   | 开始时的纵坐标 |
+| endX   | Number | 是   | 结束时的横坐标 |
+| endY   | Number | 是   | 结束时的纵坐标 |
+| vX     | Number | 是   | 横向速度       |
+| vY     | Number | 是   | 纵向速度       |
+
 
 ### SnScaleEvent
 
@@ -58,11 +59,11 @@
 
  `snu.requestSystemPermission` 需要传入一个 `SnRequestSystemPermissionOptions` 类型的参数
 
-| 名称        | 类型                                                     | 必填 | 描述 |
-| :---------- | :------------------------------------------------------- | :--- | :--- |
-| permissions | string[]                                                 | 是   | -    |
-| success     | (allRight : boolean, grantedList : string[]) => void     | 否   | -    |
-| fail        | (doNotAskAgain : boolean, deniedList : string[]) => void | 否   | -    |
+| 名称        | 类型                                                     | 必填 | 描述                                                                     |
+| :---------- | :------------------------------------------------------- | :--- | :----------------------------------------------------------------------- |
+| permissions | String[]                                                 | 是   | 请求的系统权限列表                                                       |
+| success     | (allRight : Boolean, grantedList : String[]) => void     | 否   | 请求成功的回调函数，参数分别为是否所有权限都授权成功和授权成功的权限列表 |
+| fail        | (doNotAskAgain : Boolean, deniedList : String[]) => void | 否   | 请求失败的回调函数，参数分别为是否不再询问和被拒绝的权限列表             |
 
 ### SnRequestMediaPermissionOptionsType
 
@@ -76,11 +77,11 @@
 
  `snu.requestMediaPermission` 需要传入一个 `SnRequestMediaPermissionOptionsType` 类型的参数
 
-| 名称    | 类型                                                     | 必填 | 描述                   |
-| :------ | :------------------------------------------------------- | :--- | :--------------------- |
-| types   | SnRequestMediaPermissionOptionsType[]                    | 是   | 需要请求的媒体权限类型 |
-| success | (allRight : boolean, grantedList : string[]) => void     | 否   | -                      |
-| fail    | (doNotAskAgain : boolean, deniedList : string[]) => void | 否   | -                      |
+| 名称    | 类型                                                     | 必填 | 描述                                                                     |
+| :------ | :------------------------------------------------------- | :--- | :----------------------------------------------------------------------- |
+| types   | SnRequestMediaPermissionOptionsType[]                    | 是   | 需要请求的媒体权限类型                                                   |
+| success | (allRight : Boolean, grantedList : String[]) => void     | 否   | 请求成功的回调函数，参数分别为是否所有权限都授权成功和授权成功的权限列表 |
+| fail    | (doNotAskAgain : Boolean, deniedList : String[]) => void | 否   | 请求失败的回调函数，参数分别为是否不再询问和被拒绝的权限列表             |
 
 ### SnColorBase<Badge type="warning" text="内部使用" />
 
@@ -101,6 +102,7 @@
 | disabledDark       | String | 更深的禁用状态的背景颜色                                             |
 | disabledDarkText   | String | 更深的禁用状态的文字颜色                                             |
 | line               | String | 线条颜色                                                             |
+| lineDark           | String | 更深的线条颜色                                                       |
 | lineText           | String | 线条文字颜色                                                         |
 | title              | String | 标题颜色                                                             |
 | text               | String | 文本颜色                                                             |
@@ -151,6 +153,33 @@
 | warningDarkActive  | String | 更深的激活状态的警告色                                               |
 | warningDarkText    | String | 更深的警告色背景上的文字颜色                                         |
 | toast              | String | `sn-toast` 背景色                                                    |
+
+### SnShareConfig
+
+`snu.share` 需要传入一个 `SnShareConfig` 类型的对象作为分享配置
+
+| 名称     | 类型                        | 必填 | 描述                                                                                                  |
+| :------- | :-------------------------- | :--- | :---------------------------------------------------------------------------------------------------- |
+| type     | String                      | 是   | 分享类型，可选值 `text` \| `image` \| `video` \| `audio` \| `file`                                    |
+| title    | String                      | 否   | 分享标题                                                                                              |
+| content  | String                      | 否   | 分享内容（当 `type` 为 `text `时，`content` 为必填）                                                  |
+| path     | String                      | 否   | 分享文件路径（当 `type` 不为 `text` 时，`path` 为必填，支持本地路径、绝对路径、项目相对路径自动转换） |
+| success  | () => void                  | 否   | 分享成功回调                                                                                          |
+| fail     | (err: Error) => void        | 否   | 分享失败回调                                                                                          |
+| complete | (res?: Any \| null) => void | 否   | 分享完成回调                                                                                          |
+
+### SnToastConfig
+
+`snu.showToast` 需要传入一个 `SnToastConfig` 类型的对象作为提示框配置
+
+| 名称     | 类型   | 必填 | 描述                                                         |
+| :------- | :----- | :--- | :----------------------------------------------------------- |
+| text     | String | 是   | 提示框的文本内容                                             |
+| type     | String | 否   | 提示框的类型，不同的类型有不同的颜色风格，默认为 `normal`<br />可选值：`normal` \| `success` \| `error` \| `warning` \| `info` |
+| position | String | 否   | 提示框的位置，默认为 `center`。可选值：`top` \| `center` | `bottom` |
+| duration | String | 否   | 提示框的显示时间，默认为 `short`。可选值：`short` \| `long`  |
+| offsetX  | Number | 否   | 提示框的横向偏移量，用于微调提示框的位置                     |
+| offsetY  | Number | 否   | 提示框的纵向偏移量，用于微调提示框的位置                     |
 
 ### 其他类型
 

@@ -1,7 +1,12 @@
 # Scan Provider 扫码核心
 
+:::info 扩展插件
+本组件属于扩展插件，SinleUI 框架内置的 `sn-scan` 组件依赖此组件，故 HBuilderX 安装 SinleUI 插件时会自动安装此组件，无需手动下载
+:::
+
+---
+
 * 本组件是基于 Google MLKit 开发， SinleUI 扫码插件的核心部分，负责摄像头预览、扫码解析等基础工作，并向外部提供接口。
-* SinleUI 框架内置的 `sn-scan` 组件依赖此组件，故 HBuilderX 安装 SinleUI 插件时会自动安装此组件
 * 如果你不满意内置的 `sn-scan` 的界面，可以参考 `sn-scan` 组件，对本组件进行再封装
 * 如果你希望使用更强大、更稳定的商用级的扫码功能，可以考虑接入华为的 [ScanKit](/components/sn-e-scankit) ，体验更好；或者 [mPaaS 扫一扫](https://help.aliyun.com/document_detail/52599.html?spm=a2c4g.52296.0.i0)，拥有与支付宝一致的扫码体验。
 

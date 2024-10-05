@@ -8,7 +8,7 @@
 | 名称  | 类型          | 必备 | 默认值                | 描述             |
 | :---- | :------------ | :--- | :-------------------- | :--------------- |
 | color | Any           | 否   | `''`                    | 处理后的输入颜色 |
-| opts  | LColorOptions | 否   | `{} as LColorOptions` | 颜色配置         |
+| opts  | [LColorOptions](/libs/color/types#lcoloroptions) | 否   | `{} as LColorOptions` | 颜色配置         |
 
 ### 属性
 

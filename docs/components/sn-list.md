@@ -18,7 +18,7 @@
 
 | 参数        | 说明               | 类型          | 默认值   | 可选值            |
 | ----------- | ------------------ | ------------- | -------- | ----------------- |
-| showBorder  | 是否显示列表项边框 | Boolean       | `true`   | `true` \| `false` |
+| showBorder  | 是否显示列表项边框分割线 | Boolean       | `true`   | `true` \| `false` |
 | bgColor     | 列表背景颜色       | String        | `$front` | -                 |
 | customStyle | 自定义列表样式     | UTSJSONObject | `{}`     | -                 |
 **sn-list-item**

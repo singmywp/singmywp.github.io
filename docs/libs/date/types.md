@@ -2,26 +2,17 @@
 
 ### LDayutsConfig
 
-| 名称   | 类型           | 必填 | 描述                                                   |
-| :----- | :------------- | :--- | :----------------------------------------------------- |
-| date   | Any \| Null    | 否   | 输入日期                                               |
-| format | String \| Null | 否   | 字符串日期格式                                         |
-| locale | String \| Null | 否   | 语言。目前内置了中英两种语言，如有需要自行添加新的语言 |
+| 名称   | 类型   | 必填 | 描述                                                   |
+| :----- | :----- | :--- | :----------------------------------------------------- |
+| date   | Any    | 否   | 输入日期                                               |
+| format | String | 否   | 字符串日期格式                                         |
+| locale | String | 否   | 语言。目前内置了中英两种语言，如有需要自行添加新的语言 |
 
 ### LDayutsUnit
 
-| 名称        | 类型            | 描述 |
-| :---------- | :-------------- | :--- |
-| year        | `"year"`        | 年   |
-| month       | `"month"`       | 月   |
-| day         | `"day"`         | 日   |
-| week        | `"week"`        | 周   |
-| date        | `"date"`        | 日期 |
-| hour        | `"hour"`        | 小时 |
-| minute      | `"minute"`      | 分钟 |
-| second      | `"second"`      | 秒   |
-| millisecond | `"millisecond"` | 毫秒 |
-| quarter     | `"quarter"`     | 季度 |
+| 可选值                                                                                                         |
+| :------------------------------------------------------------------------------------------------------------- |
+| `year` \| `month` \| `day` \| `week` \| `date` \| `hour` \| `minute` \| `second` \| `millisecond` \| `quarter` |
 
 ### LDayutsFormats
 
@@ -58,20 +49,20 @@
 
 ### LDayutsLocale
 
-| 名称          | 类型                                                         | 必填 | 描述                                 |
-| :------------ | :----------------------------------------------------------- | :--- | :----------------------------------- |
-| name          | String                                                       | 是   | 区域设置名称。                       |
-| weekdays      | Array\<String\>                                              | 是   | 一周中每天的完整名称。               |
-| weekdaysShort | Array\<String\>                                              | 否   | 一周中每天的缩写名称。               |
-| weekdaysMin   | Array\<String\>                                              | 否   | 一周中每天的最小缩写名称。           |
-| months        | Array\<String\>                                              | 是   | 一年中的每个月份的名称。             |
-| monthsShort   | Array\<String\>                                              | 否   | 一年中的每个月份的缩写名称。         |
-| ordinal       | `(number: number, period: string) => string`                 | 是   | 返回序数词的函数。                   |
-| weekStart     | Number                                                       | 否   | 一周的开始日期（星期几）。           |
-| yearStart     | Number                                                       | 否   | 年的开始月份。                       |
-| formats       | LDayutsFormats                                               | 否   | 日期和时间格式化选项。               |
-| relativeTime  | LDayutsRelativeTime                                          | 否   | 相对时间格式化选项。                 |
-| meridiem      | `(hour: number, minute: number, isLowercase: boolean) => string` | 否   | 根据小时和分钟返回上午或下午的函数。 |
+| 名称          | 类型                                                           | 必填 | 描述                                 |
+| :------------ | :------------------------------------------------------------- | :--- | :----------------------------------- |
+| name          | String                                                         | 是   | 区域设置名称。                       |
+| weekdays      | Array\<String\>                                                | 是   | 一周中每天的完整名称。               |
+| weekdaysShort | Array\<String\>                                                | 否   | 一周中每天的缩写名称。               |
+| weekdaysMin   | Array\<String\>                                                | 否   | 一周中每天的最小缩写名称。           |
+| months        | Array\<String\>                                                | 是   | 一年中的每个月份的名称。             |
+| monthsShort   | Array\<String\>                                                | 否   | 一年中的每个月份的缩写名称。         |
+| ordinal       | (number: Number, period: String) => String                     | 是   | 返回序数词的函数。                   |
+| weekStart     | Number                                                         | 否   | 一周的开始日期（星期几）。           |
+| yearStart     | Number                                                         | 否   | 年的开始月份。                       |
+| formats       | LDayutsFormats                                                 | 否   | 日期和时间格式化选项。               |
+| relativeTime  | LDayutsRelativeTime                                            | 否   | 相对时间格式化选项。                 |
+| meridiem      | (hour: Number, minute: Number, isLowercase: Boolean) => String | 否   | 根据小时和分钟返回上午或下午的函数。 |
 
 ### LDayutsObject
 

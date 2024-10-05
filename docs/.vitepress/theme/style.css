@@ -271,17 +271,14 @@ button[aria-checked="true"].VPSwitch {
 
 :root {
   --vp-layout-max-width: 1650px;
-  --vp-nav-bg-color: rgba(255, 255, 255, 0.8);
+  --vp-nav-bg-color: #fff;
 }
 
 .dark {
   --vp-layout-max-width: 1650px;
-  --vp-nav-bg-color: rgba(0, 0, 0, 0.6);
+  --vp-nav-bg-color: #000;
 }
 
-.VPNavBar {
-  backdrop-filter: blur(20px);
-}
 
 .vp-doc [class*="language-"] > span.lang {
   user-select: none;
@@ -350,7 +347,5 @@ img {
 }
 
 .VPLocalNav{
-  background-color: rgba(255,255,255,0.8) !important;
-  backdrop-filter: blur(20px) !important;
   border-bottom: none !important;
 }

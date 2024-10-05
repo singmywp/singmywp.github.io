@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "@css-render/vue3-ssr": "^0.15.14",
+    "sass-embedded": "^1.79.4",
     "vitepress": "^1.2.3"
   },
   "dependencies": {

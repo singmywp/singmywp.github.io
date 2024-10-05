@@ -24,6 +24,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInSine(0.5);
+```
+
 ---
 
 # snu.easeOutSine()
@@ -49,6 +54,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutSine(0.5);
+```
 
 ---
 
@@ -76,6 +86,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutSine(0.5);
+```
+
 ---
 
 # snu.easeInQuad()
@@ -101,6 +116,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInQuad(0.5);
+```
 
 ---
 
@@ -128,6 +148,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeOutQuad(0.5);
+```
+
 ---
 
 # snu.easeInOutQuad()
@@ -153,6 +178,11 @@
 | 类型   | 必备 | 描述                     |
 | ------ | ---- | ------------------------ |
 | Number | 是   | 返回当前时间对应的动画值 |
+
+### 示例
+``` typescript
+const value = snu.easeInOutQuad(0.5);
+```
 
 ---
 
@@ -180,6 +210,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInCubic(0.5);
+```
+
 ---
 
 # snu.easeOutCubic()
@@ -205,6 +240,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutCubic(0.5);
+```
 
 ---
 
@@ -232,6 +272,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutCubic(0.5);
+```
+
 ---
 
 # snu.easeInQuart()
@@ -257,6 +302,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInQuart(0.5);
+```
 
 ---
 
@@ -284,6 +334,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeOutQuart(0.5);
+```
+
 ---
 
 # snu.easeInOutQuart()
@@ -309,6 +364,12 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInOutQuart(0.5);
+```
+
 
 ---
 
@@ -336,6 +397,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInQuint(0.5);
+```
+
 ---
 
 # snu.easeOutQuint()
@@ -361,6 +427,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutQuint(0.5);
+```
 
 ---
 
@@ -388,6 +459,12 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutQuint(0.5);
+```
+
+
 ---
 
 # snu.easeInExpo()
@@ -413,6 +490,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInExpo(0.5);
+```
 
 ---
 
@@ -440,6 +522,12 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeOutExpo(0.5);
+```
+
+
 ---
 
 # snu.easeInOutExpo()
@@ -465,6 +553,12 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInOutExpo(0.5);
+```
+
 
 ---
 
@@ -492,6 +586,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInCirc(0.5);
+```
+
 ---
 
 # snu.easeOutCirc()
@@ -517,6 +616,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutCirc(0.5);
+```
 
 ---
 
@@ -544,6 +648,12 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutCirc(0.5);
+```
+
+
 ---
 
 # snu.easeOutBack()
@@ -569,6 +679,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutBack(0.5);
+```
 
 ---
 
@@ -596,6 +711,12 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutBack(0.5);
+```
+
+
 ---
 
 # snu.easeInElastic()
@@ -621,6 +742,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInElastic(0.5);
+```
 
 ---
 
@@ -648,6 +774,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeOutElastic(0.5);
+```
+
 ---
 
 # snu.easeInOutElastic()
@@ -673,6 +804,12 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeInOutElastic(0.5);
+```
+
 
 ---
 
@@ -700,6 +837,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInBounce(0.5);
+```
+
 ---
 
 # snu.easeOutBounce()
@@ -725,6 +867,11 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.easeOutBounce(0.5);
+```
 
 ---
 
@@ -752,6 +899,11 @@
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
 
+### 示例
+``` typescript
+const value = snu.easeInOutBounce(0.5);
+```
+
 ---
 
 # snu.linear()
@@ -777,3 +929,8 @@
 | 类型   | 必备 | 描述                       |
 | ------ | ---- | -------------------------- |
 | Number | 是   | 返回当前时间对应的动画值。 |
+
+### 示例
+``` typescript
+const value = snu.linear(0.5);
+```

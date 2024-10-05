@@ -26,6 +26,13 @@
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
 
+### 示例
+
+```typescript
+const arr = snu.bubbleSort([5, 3, 8, 4, 2]); 
+console.log(arr) // [2, 3, 4, 5, 8]
+```
+
 ---
 
 # snu.selectionSort()
@@ -56,6 +63,13 @@
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
 
+### 示例
+
+```typescript
+const arr = snu.selectionSort([5, 3, 8, 4, 2]);
+console.log(arr) // [2, 3, 4, 5, 8]
+```
+
 ---
 
 # snu.insertionSort()
@@ -85,6 +99,12 @@
 | 类型            | 必备 | 描述           |
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
+
+### 示例
+```typescript
+const arr = snu.insertionSort([5, 3, 8, 4, 2]);
+console.log(arr) // [2, 3, 4, 5, 8]
+```
 
 ---
 
@@ -118,6 +138,12 @@
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
 
+### 示例
+```typescript
+const arr = snu.quickSort([5, 3, 8, 4, 2, ...]);
+console.log(arr) // [2, 3, 4, 5, 8, ...]
+```
+
 ---
 
 # snu.mergeSort()
@@ -147,6 +173,13 @@
 | 类型            | 必备 | 描述           |
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
+
+### 示例
+```typescript
+const arr = snu.mergeSort([5, 3, 8, 4, 2, ...]);
+console.log(arr) // [2, 3, 4, 5, 8, ...]
+```
+
 
 ---
 
@@ -178,6 +211,13 @@
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
 
+### 示例
+```typescript
+const arr = snu.heapSort([5, 3, 8, 4, 2, ...]);
+console.log(arr) // [2, 3, 4, 5, 8, ...]
+```
+
+
 ---
 
 # snu.shellSort()
@@ -207,6 +247,12 @@
 | 类型            | 必备 | 描述           |
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
+
+### 示例
+```typescript
+const arr = snu.shellSort([5, 3, 8, 4, 2, ...]);
+console.log(arr) // [2, 3, 4, 5, 8, ...]
+```
 
 ---
 
@@ -238,5 +284,8 @@
 | --------------- | ---- | -------------- |
 | Array\<Number\> | 是   | 排序后的数组。 |
 
----
-
+### 示例
+```typescript
+const arr = snu.bucketSort([5, 3, 8, 4, 2, ...]);
+console.log(arr) // [2, 3, 4, 5, 8, ...]
+```

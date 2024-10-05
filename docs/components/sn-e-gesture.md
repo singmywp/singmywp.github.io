@@ -1,5 +1,13 @@
 # Gesture 手势
 
+:::info 扩展插件
+本组件属于扩展插件，非框架内置，可根据需求自行下载
+
+下载地址：https://ext.dcloud.net.cn/plugin?name=sn-e-gesture
+:::
+
+---
+
 * `sn-e-gesture` 是 SinleUI 框架的手势库核心组件。
 
 * 主要集成了一些 App 端原生手势事件（非 uni 内置事件），以便开发使用。

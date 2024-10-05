@@ -22,6 +22,13 @@
 | ------ | ---- | -------------------- |
 | Number | 是   | 返回转换后的像素值。 |
 
+### 示例
+
+```typescript
+snu.getPx('100px') // 100
+snu.getPx('750rpx') // 375
+```
+
 ---
 
 # snu.addPx()
@@ -48,13 +55,19 @@
 | ------ | ---- | ---------------------------- |
 | String | 是   | 返回带有 `'px'` 单位的字符串。 |
 
+### 示例
+
+```typescript
+snu.addPx(100) // '100px'
+```
+
 ---
 
 # snu.addUnit()
 
 ### **添加单位**
 
-将一个长度值添加单位。纯数字将默认视为原数据以px为单位。百分比数据不做处理，返回原值。
+将一个长度值添加单位。如果值为数值，则加上unit参数的单位。如果值已有单位或为半分比数据，则直接原样返回。
 
 ### 兼容性
 
@@ -75,6 +88,15 @@
 | ------ | ---- | ------------------------ |
 | String | 是   | 返回添加单位后的字符串。 |
 
+### 示例
+
+```typescript
+snu.addUnit(100)            // '100px'
+snu.addUnit('150')          // '150px'
+snu.addUnit('375px', 'rpx') // '375px'
+snu.addUnit('50%')          // '50%'
+```
+
 ---
 
 # snu.getInnerRadius()
@@ -82,6 +104,8 @@
 ### **获取内圆角半径**
 
 根据父组件（矩形）宽度、父组件圆角半径、子组件（矩形）宽度计算子组件的圆角半径。
+
+方法来源：[关于内角圆半径的计算公式](https://www.zcool.com.cn/article/ZMzk2NDUy.html)
 
 ### 兼容性
 
@@ -102,6 +126,15 @@
 | 类型   | 必备 | 描述                 |
 | ------ | ---- | -------------------- |
 | Number | 是   | 返回子组件圆角半径。 |
+
+### 示例
+
+```typescript
+const outwidth = 100
+const outradius = 50
+const innerwidth = 10
+const innerRadius = snu.getInnerRadius(outwidth, outradius, innerwidth) // 5
+```
 
 ---
 
@@ -130,6 +163,16 @@
 | ----------------------- | ---- | ------------------------------------------------------------ |
 | `ComponentPublicInstance` | 否 | 如果找到对应的父系组件，则返回该组件的实例；如果没有找到，则返回 null。 |
 
+### 示例
+
+```typescript
+const instance = getCurrentInstance()!.proxy!  // 等价于选项式API的 this
+
+onReady(()=>{ // 在 onReady 中可确保 DOM 已渲染
+    const parent = snu.findParent(instance, ['list-view'])
+})
+```
+
 ---
 
 # snu.findBrother()
@@ -157,4 +200,12 @@
 | ----------------------- | ---- | ------------------------------------------------------------ |
 | `ComponentPublicInstance` | 否 | 如果找到对应的兄弟组件，则返回该组件的实例；如果没有找到，则返回 `null`。 |
 
----
+### 示例
+
+```typescript
+const instance = getCurrentInstance()!.proxy!  // 等价于选项式API的 this
+
+onReady(()=>{ // 在 onReady 中可确保 DOM 已渲染
+    const avatarEle = snu.findBrother(instance, ['sn-avatar'])
+})
+```

@@ -20,6 +20,11 @@
 | ------ | ---- | ------------------ |
 | String | 是   | 返回生成的随机ID。 |
 
+### 示例
+```typescript
+const id = snu.randomComId()
+```
+
 ---
 
 # snu.throttle()
@@ -46,6 +51,13 @@
 
 无
 
+### 示例
+```typescript
+snu.throttle(() => {
+  console.log('1s 内多次请求，只执行第一次')
+}, 1000, 'test')
+```
+
 ---
 
 # snu.debounce()
@@ -71,3 +83,10 @@
 ### 返回值
 
 无
+
+### 示例
+```typescript
+snu.debounce(() => {
+  console.log('多次请求，只在最后一次请求后1s执行此请求')
+}, 1000, 'test')
+```

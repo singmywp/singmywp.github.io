@@ -36,7 +36,8 @@
 | activeItemTextColor   | 激活选项文字颜色                   | String                      | -        | -                             |
 | disabled              | 是否禁用选择器                     | Boolean                     | `false`  | `true` \| `false`             |
 | disabledItemTextColor | 禁用选项文字颜色                   | String                      | -        | -                             |
-## 事件
+
+
 ## 事件
 | 名称    | 类型                    | 说明                                                         |
 | ------- | ----------------------- | ------------------------------------------------------------ |

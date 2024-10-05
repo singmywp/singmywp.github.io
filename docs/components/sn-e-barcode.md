@@ -1,5 +1,13 @@
 # Barcode 条形码
 
+:::info 扩展插件
+本组件属于扩展插件，非框架内置，可根据需求自行下载
+
+下载地址：https://ext.dcloud.net.cn/plugin?name=sn-e-barcode
+:::
+
+---
+
 * 支持 Android / Web 双端，Android 使用 Zxing 库，Web 使用 bwip-js 库，原生生成
 
 

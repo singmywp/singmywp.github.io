@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { provide } from "vue";
 
 export default defineConfig({
   base: "/",
@@ -10,6 +11,12 @@ export default defineConfig({
   markdown: {
     math: true,
   },
+  locales: {
+    root: {
+      label: '中文(简体)',
+      lang: 'zh'
+    },
+  },
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
@@ -19,7 +26,31 @@ export default defineConfig({
       { text: "API", link: "/api/index" },
       { text: "核心库", link: "/libs/utils/index" },
       { text: "关于&特别鸣谢", link: "/other/about" },
+      { text: "更新日志", link: "/other/changelog" },
     ],
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     socialLinks: [
       {
         icon: "dcloud-ext",
@@ -39,9 +70,6 @@ export default defineConfig({
     footer: {
       message: "使用 MIT 协议",
       copyright: "Copyright © 2023-present Singmy",
-    },
-    search: {
-      provider: "local",
     },
     sidebar: {
       "/get-started/": [
@@ -107,7 +135,10 @@ export default defineConfig({
             { text: "Stepper 步进器", link: "/components/sn-stepper" },
             { text: "Switch 开关", link: "/components/sn-switch" },
             { text: "Picker 选择器", link: "/components/sn-picker" },
-            { text: "Picker View 选择器容器", link: "/components/sn-picker-view" },
+            {
+              text: "Picker View 选择器容器",
+              link: "/components/sn-picker-view",
+            },
             { text: "Textarea 文本域", link: "/components/sn-textarea" },
             {
               text: "Upload Media 媒体上传",
@@ -120,11 +151,18 @@ export default defineConfig({
           items: [
             { text: "Alert 警告信息", link: "/components/sn-alert" },
             { text: "Avatar 头像", link: "/components/sn-avatar" },
+            {
+              text: "Avatar Group 头像组",
+              link: "/components/sn-avatar-group",
+            },
             { text: "Badge 徽标", link: "/components/sn-badge" },
             { text: "Card 卡片", link: "/components/sn-card" },
             { text: "Countdown 倒计时", link: "/components/sn-countdown" },
             { text: "Countto 数字滚动", link: "/components/sn-countto" },
-            { text: "Dateformat 日期格式化", link: "/components/sn-dateformat" },
+            {
+              text: "Dateformat 日期格式化",
+              link: "/components/sn-dateformat",
+            },
             { text: "List 列表", link: "/components/sn-list" },
             { text: "Loading 加载", link: "/components/sn-loading" },
             {
@@ -143,6 +181,10 @@ export default defineConfig({
         {
           text: "反馈组件",
           items: [
+            {
+              text: "Actionsheet 操作菜单",
+              link: "/components/sn-actionsheet",
+            },
             { text: "Drawer 抽屉", link: "/components/sn-drawer" },
             { text: "Empty 缺省页", link: "/components/sn-empty" },
             { text: "Loadmore 加载更多", link: "/components/sn-loadmore" },
@@ -196,10 +238,15 @@ export default defineConfig({
           link: "/components/ext-com",
           items: [
             { text: "Barcode 条形码", link: "/components/sn-e-barcode" },
+            { text: "Blurview 高斯模糊", link: "/components/sn-e-blurview" },
             { text: "Gesture 手势", link: "/components/sn-e-gesture" },
             {
               text: "ScanKit 华为扫码",
-              link: "/components/sn-e-scankit", 
+              link: "/components/sn-e-scankit",
+            },
+            {
+              text: "Scankit Code 华为码图",
+              link: "/components/sn-e-scankit-code",
             },
             {
               text: "Scan Provider 扫码核心",
@@ -230,45 +277,6 @@ export default defineConfig({
                 {
                   text: "防抖",
                   link: "/libs/utils/basic#snu-debounce",
-                },
-              ],
-            },
-            {
-              text: "OS 系统类",
-              collapsed: true,
-              items: [{ text: "振动设备", link: "/libs/utils/os#snu-vibrate" }],
-            },
-            {
-              text: "Object 对象类",
-              collapsed: true,
-              items: [
-                {
-                  text: "格式化数字",
-                  link: "/libs/utils/object#snu-formatnumber",
-                },
-                {
-                  text: "深拷贝（基础类型）",
-                  link: "/libs/utils/object#snu-deepclone",
-                },
-                {
-                  text: "数组重装（数组浅拷贝）",
-                  link: "/libs/utils/object#snu-rearray",
-                },
-                {
-                  text: "数组洗牌",
-                  link: "/libs/utils/object#snu-shuffle",
-                },
-                {
-                  text: "是否为Number类型",
-                  link: "/libs/utils/object#snu-isnumber",
-                },
-                {
-                  text: "设置元素Dataset",
-                  link: "/libs/utils/object#snu-setdataset",
-                },
-                {
-                  text: "获取元素Dataset",
-                  link: "/libs/utils/object#snu-getdataset",
                 },
               ],
             },
@@ -379,6 +387,252 @@ export default defineConfig({
               ],
             },
             {
+              text: "Object 对象类",
+              collapsed: true,
+              items: [
+                {
+                  text: "格式化数字",
+                  link: "/libs/utils/object#snu-formatnumber",
+                },
+                {
+                  text: "深拷贝",
+                  link: "/libs/utils/object#snu-deepclone",
+                },
+                {
+                  text: "数组重装（数组浅拷贝）",
+                  link: "/libs/utils/object#snu-rearray",
+                },
+                {
+                  text: "数组洗牌",
+                  link: "/libs/utils/object#snu-shuffle",
+                },
+                {
+                  text: "是否为Number类型",
+                  link: "/libs/utils/object#snu-isnumber",
+                },
+                {
+                  text: "设置元素Dataset",
+                  link: "/libs/utils/object#snu-setdataset",
+                },
+                {
+                  text: "获取元素Dataset",
+                  link: "/libs/utils/object#snu-getdataset",
+                },
+              ],
+            },
+            {
+              text: "OS 系统类",
+              collapsed: true,
+              items: [
+                { text: "振动设备", link: "/libs/utils/os#snu-vibrate" },
+                { text: "系统分享", link: "/libs/utils/os#snu-share" },
+              ],
+            },
+            {
+              text: "Permission 权限类",
+              collapsed: true,
+              items: [
+                {
+                  text: "是否具备指定权限",
+                  link: "/libs/utils/permission#snu-checksystempermissiongranted",
+                },
+                {
+                  text: "获取未授权的系统权限",
+                  link: "/libs/utils/permission#snu-getsystempermissiondenied",
+                },
+                {
+                  text: "请求系统权限",
+                  link: "/libs/utils/permission#snu-requestsystempermission",
+                },
+                {
+                  text: "跳转到系统权限设置页面",
+                  link: "/libs/utils/permission#snu-gotosystempermissionactivity",
+                },
+                {
+                  text: "请求媒体权限",
+                  link: "/libs/utils/permission#snu-requestmediapermission",
+                },
+                {
+                  text: "检查媒体权限",
+                  link: "/libs/utils/permission#snu-checkmediapermission",
+                },
+              ],
+            },
+            {
+              text: "Platform 平台类",
+              collapsed: true,
+              items: [
+                {
+                  text: "打开链接",
+                  link: "/libs/utils/platform#snu-openlink",
+                },
+                {
+                  text: "拨打电话",
+                  link: "/libs/utils/platform#snu-makephonecall",
+                },
+                {
+                  text: "写入剪切板",
+                  link: "/libs/utils/platform#snu-setclipboarddata",
+                },
+                {
+                  text: "从剪切板读取",
+                  link: "/libs/utils/platform#async-snu-getclipboarddata",
+                },
+                {
+                  text: "显示原生提示框",
+                  link: "/libs/utils/platform#snu-showsystoast",
+                },
+                {
+                  text: "显示提示框",
+                  link: "/libs/utils/platform#snu-showtoast",
+                },
+                {
+                  text: "使用内置全屏Webview打开网址",
+                  link: "/libs/utils/platform#snu-viewurlbywebview",
+                },
+                {
+                  text: "获取平台主题",
+                  link: "/libs/utils/platform#snu-getostheme",
+                },
+              ],
+            },
+            {
+              text: "Random 随机类",
+              collapsed: true,
+              items: [
+                {
+                  text: "生成随机整数",
+                  link: "/libs/utils/random#snu-randint",
+                },
+                {
+                  text: "生成指定位数的随机整数",
+                  link: "/libs/utils/random#snu-randomnumber",
+                },
+                {
+                  text: "生成UUID",
+                  link: "/libs/utils/random#snu-uuid",
+                },
+              ],
+            },
+            {
+              text: "Sort 排序类",
+              collapsed: true,
+              items: [
+                {
+                  text: "冒泡排序",
+                  link: "/libs/utils/sort#snu-bubblesort",
+                },
+                {
+                  text: "选择排序",
+                  link: "/libs/utils/sort#snu-selectionsort",
+                },
+                {
+                  text: "插入排序",
+                  link: "/libs/utils/sort#snu-insertionsort",
+                },
+                {
+                  text: "快速排序",
+                  link: "/libs/utils/sort#snu-quicksort",
+                },
+                {
+                  text: "归并排序",
+                  link: "/libs/utils/sort#snu-mergesort",
+                },
+                {
+                  text: "堆排序",
+                  link: "/libs/utils/sort#snu-heapsort",
+                },
+                {
+                  text: "希尔排序",
+                  link: "/libs/utils/sort#snu-shellsort",
+                },
+                {
+                  text: "桶排序",
+                  link: "/libs/utils/sort#snu-bucketsort",
+                },
+              ],
+            },
+            {
+              text: "Text 文本类",
+              collapsed: true,
+              items: [
+                {
+                  text: "是否为空文本",
+                  link: "/libs/utils/text#snu-isempty",
+                },
+                {
+                  text: "计算文本字数",
+                  link: "/libs/utils/text#snu-len",
+                },
+                {
+                  text: "Kebab命名法转小驼峰命名法",
+                  link: "/libs/utils/text#snu-kebabcasetocamelcase",
+                },
+                {
+                  text: "小驼峰命名法转Kebab命名法",
+                  link: "/libs/utils/text#snu-camelcasetokebabcase",
+                },
+                {
+                  text: "数字转大写金额",
+                  link: "/libs/utils/text#snu-numtoupper",
+                },
+                {
+                  text: "姓名脱敏",
+                  link: "/libs/utils/text#snu-encryptname",
+                },
+                {
+                  text: "电话号码脱敏",
+                  link: "/libs/utils/text#snu-encryptphone",
+                },
+                {
+                  text: "身份证号脱敏",
+                  link: "/libs/utils/text#snu-encryptidcard",
+                },
+                {
+                  text: "邮箱脱敏",
+                  link: "/libs/utils/text#snu-encryptemail",
+                },
+                {
+                  text: "银行卡号脱敏",
+                  link: "/libs/utils/text#snu-encryptbankcard",
+                },
+                {
+                  text: "分割数字",
+                  link: "/libs/utils/text#snu-separatenumber",
+                },
+              ],
+            },
+            {
+              text: "UI 界面类",
+              collapsed: true,
+              items: [
+                {
+                  text: "获取像素值",
+                  link: "/libs/utils/ui#snu-getpx",
+                },
+                {
+                  text: "添加像素单位",
+                  link: "/libs/utils/ui#snu-addpx",
+                },
+                {
+                  text: "添加单位",
+                  link: "/libs/utils/ui#snu-addunit",
+                },
+                {
+                  text: "获取内圆角半径",
+                  link: "/libs/utils/ui#snu-getinnerradius",
+                },
+                {
+                  text: "查找父系组件",
+                  link: "/libs/utils/ui#snu-findparent",
+                },
+                {
+                  text: "查找兄弟组件",
+                  link: "/libs/utils/ui#snu-findbrother",
+                },
+              ],
+            },
+            {
               text: "Verify 校验类",
               collapsed: true,
               items: [
@@ -449,198 +703,6 @@ export default defineConfig({
                 {
                   text: "是否为小数",
                   link: "/libs/utils/verify#snu-isfloat",
-                },
-              ],
-            },
-            {
-              text: "Text 文本类",
-              collapsed: true,
-              items: [
-                {
-                  text: "是否为空文本",
-                  link: "/libs/utils/text#snu-isempty",
-                },
-                {
-                  text: "计算文本字数",
-                  link: "/libs/utils/text#snu-len",
-                },
-                {
-                  text: "Kebab命名法转小驼峰命名法",
-                  link: "/libs/utils/text#snu-kebabcasetocamelcase",
-                },
-                {
-                  text: "小驼峰命名法转Kebab命名法",
-                  link: "/libs/utils/text#snu-camelcasetokebabcase",
-                },
-                {
-                  text: "数字转大写金额",
-                  link: "/libs/utils/text#snu-numtoupper",
-                },
-                {
-                  text: "姓名脱敏",
-                  link: "/libs/utils/text#snu-encryptname",
-                },
-                {
-                  text: "电话号码脱敏",
-                  link: "/libs/utils/text#snu-encryptphone",
-                },
-                {
-                  text: "身份证号脱敏",
-                  link: "/libs/utils/text#snu-encryptidcard",
-                },
-                {
-                  text: "邮箱脱敏",
-                  link: "/libs/utils/text#snu-encryptemail",
-                },
-                {
-                  text: "银行卡号脱敏",
-                  link: "/libs/utils/text#snu-encryptbankcard",
-                },
-                {
-                  text: "分割数字",
-                  link: "/libs/utils/text#snu-separatenumber",
-                },
-              ],
-            },
-            {
-              text: "Platform 平台类",
-              collapsed: true,
-              items: [
-                {
-                  text: "打开链接",
-                  link: "/libs/utils/platform#snu-openlink",
-                },
-                {
-                  text: "拨打电话",
-                  link: "/libs/utils/platform#snu-makephonecall",
-                },
-                {
-                  text: "写入剪切板",
-                  link: "/libs/utils/platform#snu-setclipboarddata",
-                },
-                {
-                  text: "从剪切板读取",
-                  link: "/libs/utils/platform#async-snu-getclipboarddata",
-                },
-                {
-                  text: "显示提示框",
-                  link: "/libs/utils/platform#snu-showtoast",
-                },
-                {
-                  text: "使用内置全屏Webview打开网址",
-                  link: "/libs/utils/platform#snu-viewurlbywebview",
-                },
-                {
-                  text: "获取平台主题",
-                  link: "/libs/utils/platform#snu-getostheme",
-                },
-              ],
-            },
-            {
-              text: "UI 界面类",
-              collapsed: true,
-              items: [
-                {
-                  text: "获取像素值",
-                  link: "/libs/utils/ui#snu-getpx",
-                },
-                {
-                  text: "添加像素单位",
-                  link: "/libs/utils/ui#snu-addpx",
-                },
-                {
-                  text: "添加单位",
-                  link: "/libs/utils/ui#snu-addunit",
-                },
-                {
-                  text: "获取内圆角半径",
-                  link: "/libs/utils/ui#snu-getinnerradius",
-                },
-                {
-                  text: "查找父系组件",
-                  link: "/libs/utils/ui#snu-findparent",
-                },
-                {
-                  text: "查找兄弟组件",
-                  link: "/libs/utils/ui#snu-findbrother",
-                },
-              ],
-            },
-            {
-              text: "Permission 权限类",
-              collapsed: true,
-              items: [
-                {
-                  text: "是否具备指定权限",
-                  link: "/libs/utils/permission#snu-checksystempermissiongranted",
-                },
-                {
-                  text: "获取未授权的系统权限",
-                  link: "/libs/utils/permission#snu-getsystempermissiondenied",
-                },
-                {
-                  text: "请求系统权限",
-                  link: "/libs/utils/permission#snu-requestsystempermission",
-                },
-                {
-                  text: "跳转到系统权限设置页面",
-                  link: "/libs/utils/permission#snu-gotosystempermissionactivity",
-                },
-              ],
-            },
-            {
-              text: "Random 随机类",
-              collapsed: true,
-              items: [
-                {
-                  text: "生成随机整数",
-                  link: "/libs/utils/random#snu-randint",
-                },
-                {
-                  text: "生成指定位数的随机整数",
-                  link: "/libs/utils/random#snu-randomnumber",
-                },
-                {
-                  text: "生成UUID",
-                  link: "/libs/utils/random#snu-uuid",
-                },
-              ],
-            },
-            {
-              text: "Sort 排序类",
-              collapsed: true,
-              items: [
-                {
-                  text: "冒泡排序",
-                  link: "/libs/utils/sort#snu-bubblesort",
-                },
-                {
-                  text: "选择排序",
-                  link: "/libs/utils/sort#snu-selectionsort",
-                },
-                {
-                  text: "插入排序",
-                  link: "/libs/utils/sort#snu-insertionsort",
-                },
-                {
-                  text: "快速排序",
-                  link: "/libs/utils/sort#snu-quicksort",
-                },
-                {
-                  text: "归并排序",
-                  link: "/libs/utils/sort#snu-mergesort",
-                },
-                {
-                  text: "堆排序",
-                  link: "/libs/utils/sort#snu-heapsort",
-                },
-                {
-                  text: "希尔排序",
-                  link: "/libs/utils/sort#snu-shellsort",
-                },
-                {
-                  text: "桶排序",
-                  link: "/libs/utils/sort#snu-bucketsort",
                 },
               ],
             },
