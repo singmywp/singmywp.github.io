@@ -20,7 +20,7 @@
 import FeedbackButton from "./feedback-button.vue";
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .NotFound {
   padding: 64px 24px 96px;
   text-align: center;
