@@ -6,12 +6,12 @@
   },
   "devDependencies": {
     "@css-render/vue3-ssr": "^0.15.14",
-    "sass": "^1.78.0",
     "sass-embedded": "^1.79.4",
     "vitepress": "^1.2.3"
   },
   "dependencies": {
     "markdown-it-mathjax3": "^4.3.2",
+    "sass": "^1.79.4",
     "vue": "^3.4.38"
   }
 }
