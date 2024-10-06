@@ -1,3 +1,24 @@
+## 1.1.4（2024-10-05）
+- 优化 文档 Utils 库所有方法新增示例代码
+- 优化 文档阅读体验
+- 新增 Utils 工具库 `share` 方法，调用系统分享功能，支持分享任何文件至其他应用
+- 新增 `$snui.configs.app.grayMode` 哀悼模式配置，支持为应用全局置灰，适用于全国性哀悼活动、重大人物逝世时设置
+- 新增 `sn-actionsheet` 操作菜单组件
+- 新增 `sn-e-blurview` 高斯模糊组件
+- 新增 `sn-avatar-group` 头像组组件
+- 新增 `sn-e-scankit-code` 华为码图组件，此组件属于 `sn-e-scankit` 插件的一部分
+- 新增 `sn-overlay` 事件 `open`、`close`
+- 新增 Demo 支持应用设置状态持久化
+- 新增 `sn-avatar` 插槽 `default`
+- 新增 `sn-collapse-group` 属性 `showBorder` ，便于统一样式
+- 新增 `sn-topbar` 属性 `blur` 支持毛玻璃背景
+- 调整 Utils 工具库 `showToast` 方法更名为 `showSysToast`，调用的是对应平台的 Toast，形态各异
+- 新增 Utils 工具库 `showToast` 方法，在各端提供基本一致的体验
+- 移除 `sn-collapse-item` 属性 `border` ，便于统一样式
+- 优化 `sn-collapse-group` 、`sn-collapse-item` 分割线显示效果
+- 优化 `sn-list-item` 、`sn-list` 、`sn-collapse-group` 、`sn-collapse-item` 渲染大量数据时的性能
+- 修复 `sn-modal` 当 `:maskClose="true"` 时点击模态框导致其意外关闭的问题
+- 修复 `sn-toast` 快速多次调用时只会执行第一次请求的定时关闭的问题
 ## 1.1.3（2024-09-22）
 - 新增 `sn-e-scankit` 华为扫码 ScanKit 扩展插件
 - 新增 `sn-dateformat` 日期格式化组件，基本与 `uni-dateformat` 对齐
