@@ -1,9 +1,7 @@
 # Blurview 高斯模糊
 
 :::info 扩展插件
-本组件属于扩展插件，非框架内置，可根据需求自行下载
-
-下载地址：https://ext.dcloud.net.cn/plugin?name=sn-e-blurview
+SinleUI 框架实现高斯模糊/毛玻璃效果的组件都依赖此插件，故 HBuilderX 安装 SinleUI 插件时会自动安装此插件，无需手动下载
 :::
 
 ---
