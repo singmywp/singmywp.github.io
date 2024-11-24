@@ -30,4 +30,9 @@
 | customTextStyle | 自定义通知栏文本样式                      | UTSJSONObject   | `{}`             | -                   |
 | customIconStyle | 自定义通知栏图标样式                      | UTSJSONObject   | `{}`             | -                   |
 
+## 事件
+| 名称   | 类型         | 说明       |
+| :----- | :----------- | :--------- |
+| close   | () => Void | 关闭时触发 |
+
 <DemoPhone name="sn-notice-bar" />

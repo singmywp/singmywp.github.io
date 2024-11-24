@@ -121,8 +121,8 @@
 
 | 名称     | 类型                             | 说明           |
 | :------- | :------------------------------- | :------------- |
-| submited | `() => void`                     | 提交成功时触发 |
-| change   | `(value: UTSJSONObject) => void` | 数据变化时触发 |
+| submited | () => Void                     | 提交成功时触发 |
+| change   | (value: UTSJSONObject) => Void | 数据变化时触发 |
 
 ## 插槽
 

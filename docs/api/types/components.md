@@ -49,17 +49,6 @@
 | textColor | String  | 否   | 文字颜色                 |
 | bgColor   | String  | 否   | 背景颜色                 |
 
-### SnCountdownTime
-
-`sn-countdown` 的 `change` 事件返回 `SnCountdownTime` 类型的时间数据
-
-| 名称 | 类型   | 必填 | 描述 |
-| :--- | :----- | :--- | :--- |
-| d    | Number | 是   | 天   |
-| h    | Number | 是   | 小时 |
-| m    | Number | 是   | 分钟 |
-| s    | Number | 是   | 秒   |
-| ms   | Number | 是   | 毫秒 |
 
 ### SnDataItem
 
@@ -132,8 +121,8 @@
 
 | 名称    | 类型                                                                       | 必填 | 描述                                                                          |
 | :------ | :------------------------------------------------------------------------- | :--- | :---------------------------------------------------------------------------- |
-| success | () => void                                                                 | 否   | 表单校验成功回调                                                              |
-| fail    | (failResults: [SnFormItemVerifyResult](#snformitemverifyresult)[]) => void | 否   | 表单校验失败回调，会将所有校验失败的子项的错误信息作为 `failResults` 数组参数 |
+| success | () => Void                                                                 | 否   | 表单校验成功回调                                                              |
+| fail    | (failResults: [SnFormItemVerifyResult](#snformitemverifyresult)[]) => Void | 否   | 表单校验失败回调，会将所有校验失败的子项的错误信息作为 `failResults` 数组参数 |
 
 
 ### SnLoadmoreParams
@@ -166,6 +155,7 @@
 | thumb  | String | 否   | 缩略图地址。视频类模式专用。                                               |
 | name   | String | 是   | 文件 uuid，由组件内部随机生成                                              |
 | status | String | 是   | 媒体文件状态。可选值：`uploaded` \| `uploading` \| `unuploaded` \| `error` |
+| type   | String | 是   | 媒体文件类型。可选值：`image` \| `video`                                   |
 
 ### SnRefresherParams
 
@@ -231,9 +221,9 @@
 | disabled    | Boolean                         | 否   | 是否禁用子项                      |
 | badgeConfig | [SnBadgeParams](#snbadgeparams) | 否   | 子项徽标配置                      |
 
-### SnTimerTime
+### SnTime
 
-`sn-timer` 的 `change` 事件返回 `SnTimerTime` 类型的时间数据
+SinleUI 的时间数据类型。`sn-timer`、`sn-countdown` 等组件的 `change` 事件返回 `SnTime` 类型的时间数据
 
 | 名称 | 类型   | 必填 | 描述 |
 | :--- | :----- | :--- | :--- |

@@ -46,10 +46,10 @@
 
 | 名称    | 类型       | 说明     |
 | :------ | :--------- | :------- |
-| confirm | () => void | 确定事件 |
-| undo    | () => void | 撤销事件 |
-| redo    | () => void | 重做事件 |
-| clear   | () => void | 清空事件 |
+| confirm | () => Void | 确定事件 |
+| undo    | () => Void | 撤销事件 |
+| redo    | () => Void | 重做事件 |
+| clear   | () => Void | 清空事件 |
 
 ## 方法
 

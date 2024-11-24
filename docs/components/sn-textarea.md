@@ -64,12 +64,12 @@
 
 | 名称                 | 类型                                                 | 说明                                                         |
 | -------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| input                | `(event: UniInputEvent) => void`                     | 当键盘输入时，触发 input 事件，`event.detail = {value, cursor}`， @input 处理函数的返回值并不会反映到 textarea 上 |
-| confirm              | `  (event: UniInputConfirmEvent) => void`            | 点击完成时， 触发 confirm 事件，`event.detail = {value: value}` |
-| blur                 | `(event: UniTextareaBlurEvent) => void `             | 输入框失去焦点时触发，`event.detail = {value, cursor}`         |
-| focus                | `(event: UniTextareaFocusEvent) => void    `         | `输入框聚焦时触发，event.detail = { value, height }`，height 为键盘高度，在基础库 1.9.90 起支持 |
-| keyboardheightchange | `(event: UniInputKeyboardHeightChangeEvent) => void` | 键盘高度发生变化的时候触发此事件，`event.detail = {height: height, duration: duration}` |
-| linechange | `(event: UniTextareaLineChangeEvent) => void` | 输入框行数变化时调用，`event.detail = {height: 0, heightRpx: 0, lineCount: 0}` |
+| input                | (event: UniInputEvent) => Void                     | 当键盘输入时，触发 input 事件，`event.detail = {value, cursor}`， @input 处理函数的返回值并不会反映到 textarea 上 |
+| confirm              | (event: UniInputConfirmEvent) => Void            | 点击完成时， 触发 confirm 事件，`event.detail = {value: value}` |
+| blur                 | (event: UniTextareaBlurEvent) => Void             | 输入框失去焦点时触发，`event.detail = {value, cursor}`         |
+| focus                | (event: UniTextareaFocusEvent) => Void    `         | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度，在基础库 1.9.90 起支持 |
+| keyboardheightchange | (event: UniInputKeyboardHeightChangeEvent) => Void` | 键盘高度发生变化的时候触发此事件，`event.detail = {height: height, duration: duration}` |
+| linechange | (event: UniTextareaLineChangeEvent) => Void` | 输入框行数变化时调用，`event.detail = {height: 0, heightRpx: 0, lineCount: 0}` |
 
 ## 插槽
 

@@ -55,11 +55,11 @@
 
 | 名称      | 类型         | 说明               |
 | :-------- | :----------- | :----------------- |
-| clickMask | `() => void` | 点击遮罩时触发     |
-| confirm   | `() => void` | 确认操作时触发     |
-| cancel    | `() => void` | 取消操作时触发     |
-| close     | `() => void` | 关闭时触发 |
-| open      | `() => void` | 打开时触发 |
+| clickMask | () => Void | 点击遮罩时触发     |
+| confirm   | () => Void | 确认操作时触发     |
+| cancel    | () => Void | 取消操作时触发     |
+| close     | () => Void | 关闭时触发 |
+| open      | () => Void | 打开时触发 |
 
 ## 方法
 

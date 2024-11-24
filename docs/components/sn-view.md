@@ -41,13 +41,13 @@
 
 | 名称        | 类型                                                         | 说明         |
 | :---------- | :----------------------------------------------------------- | :----------- |
-| click       | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => void | 点击事件     |
-| longpress   | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 长按事件     |
-| dbclick     | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => void | 双击事件     |
-| touchstart  | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 手指落下事件 |
-| touchmove   | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 手指移动事件 |
-| touchend    | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 手指抬起事件 |
-| touchcancel | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => void | 触摸打断事件 |
-| down        | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => void | 按下事件     |
+| click       | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => Void | 点击事件     |
+| longpress   | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => Void | 长按事件     |
+| dbclick     | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => Void | 双击事件     |
+| touchstart  | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => Void | 手指落下事件 |
+| touchmove   | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => Void | 手指移动事件 |
+| touchend    | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => Void | 手指抬起事件 |
+| touchcancel | (event: [SnTouchEvent](/api/types/api#sntouchevent)) => Void | 触摸打断事件 |
+| down        | (event: [SnPointerEvent](/api/types/api#snpointerevent)) => Void | 按下事件     |
 
 <DemoPhone name="sn-view" />

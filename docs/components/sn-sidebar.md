@@ -39,7 +39,7 @@
 ## 事件
 | 名称   | 类型                 | 说明           |
 | ------ | -------------------- | -------------- |
-| change | `(v:number) => void` | 选项改变时触发 |
+| change | (v: Number) => Void | 选项改变时触发 |
 
 
 <DemoPhone name="sn-sidebar" />

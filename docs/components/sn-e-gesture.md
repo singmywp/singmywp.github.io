@@ -43,16 +43,16 @@
 
 | 名称        | 类型                           | 说明                                                         |
 | :---------- | :----------------------------- | :----------------------------------------------------------- |
-| click       | (event: UTSJSONObject) => void | 点击事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
-| longpress   | (event: UTSJSONObject) => void | 长按事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
-| dbclick     | (event: UTSJSONObject) => void | 双击事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
-| touchstart  | (event: UTSJSONObject) => void | 手指落下事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
-| touchmove   | (event: UTSJSONObject) => void | 手指移动事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
-| touchend    | (event: UTSJSONObject) => void | 手指抬起事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
-| touchcancel | (event: UTSJSONObject) => void | 触摸打断事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
-| down        | (event: UTSJSONObject) => void | 按下事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
-| fling       | (event: UTSJSONObject) => void | 滑动事件（`event` 结构同 [SnFlingEvent](/api/types/api#snflingevent) ） |
-| scale       | (event: UTSJSONObject) => void | 双指缩放事件（`event` 结构同 [SnScaleEvent](/api/types/api#snscaleevent) ） |
+| click       | (event: UTSJSONObject) => Void | 点击事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
+| longpress   | (event: UTSJSONObject) => Void | 长按事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
+| dbclick     | (event: UTSJSONObject) => Void | 双击事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
+| touchstart  | (event: UTSJSONObject) => Void | 手指落下事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
+| touchmove   | (event: UTSJSONObject) => Void | 手指移动事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
+| touchend    | (event: UTSJSONObject) => Void | 手指抬起事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
+| touchcancel | (event: UTSJSONObject) => Void | 触摸打断事件（`event` 结构同 [SnTouchEvent](/api/types/api#sntouchevent) ） |
+| down        | (event: UTSJSONObject) => Void | 按下事件（`event` 结构同 [SnPointerEvent](/api/types/api#snpointerevent) ） |
+| fling       | (event: UTSJSONObject) => Void | 滑动事件（`event` 结构同 [SnFlingEvent](/api/types/api#snflingevent) ） |
+| scale       | (event: UTSJSONObject) => Void | 双指缩放事件（`event` 结构同 [SnScaleEvent](/api/types/api#snscaleevent) ） |
 
 
 

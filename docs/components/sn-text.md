@@ -64,9 +64,12 @@
 | space           | 字符间距。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | String  | -             | -                                                            |
 | decode          | 是否解码 (app平台如需解析字符实体，需要配置为 true)。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
 | selectable      | 是否可选择同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
+| lines           | 文本最大显示行数（默认为 `-1` 即不限制）                     | Number  | `-1`          | -                                                            |
+| lineHeight      | 文本行高                                                     | String  | `1.2`         | -                                                            |
+| aniTime         | 文本动画时长                                                 | String  | `$normal`     | -                                                            |
 | bold            | 是否加粗                                                     | Boolean | `false`       | `true`                                                       |
 | encrypt         | 是否加密                                                     | Boolean | `false`       | `true`                                                       |
-| customStyle     | 自定义样式                                                   | Object  | `{}`          | -                                                            |
-| customTextStyle | 自定义文本样式                                               | Object  | `{}`          | -                                                            |
+| customStyle     | 自定义样式                                                   | UTSJSONObject  | `{}`          | -                                                            |
+| customTextStyle | 自定义文本样式                                               | UTSJSONObject  | `{}`          | -                                                            |
 
 <DemoPhone name="sn-text" />

@@ -32,11 +32,11 @@
 
 | 名称      | 类型                             | 说明               |
 | :-------- | :------------------------------- | :----------------- |
-| clickMask | `() => void`                     | 点击遮罩时触发     |
-| clickItem | `(e: SnActionsheetItem) => void` | 点击选项时触发     |
-| cancel    | `() => void`                     | 取消操作时触发     |
-| close     | `() => void`                     | 操作菜单关闭时触发 |
-| open      | `() => void`                     | 操作菜单打开时触发 |
+| clickMask | () => Void                     | 点击遮罩时触发     |
+| clickItem | (e: SnActionsheetItem) => Void | 点击选项时触发     |
+| cancel    | () => Void                     | 取消操作时触发     |
+| close     | () => Void                     | 操作菜单关闭时触发 |
+| open      | () => Void                     | 操作菜单打开时触发 |
 
 ## 方法
 

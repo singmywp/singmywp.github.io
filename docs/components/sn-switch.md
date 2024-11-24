@@ -36,7 +36,7 @@
 ## 事件
 | 名称   | 类型                       | 说明           |
 | :----- | :------------------------- | :------------- |
-| change | `(value: boolean) => void` | 状态改变时触发 |
+| change | (value: Boolean) => Void | 状态改变时触发 |
 
 
 <DemoPhone name="sn-switch" />

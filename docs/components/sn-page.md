@@ -9,8 +9,8 @@
 ```
 **更多演示请下载 demo 查看**
 
-
 ## 属性
+
 | 参数                | 说明                                       | 类型          | 默认值     | 可选值                     |
 | ------------------- | ------------------------------------------ | ------------- | ---------- | -------------------------- |
 | scrollOn            | 是否开启滚动功能                           | Boolean       | `true`     | `true` \| `false`          |
@@ -26,6 +26,7 @@
 
 
 ## 方法
+
 | 名称     | 参数                     | 返回值 | 描述               |
 | :------- | :----------------------- | :----- | :----------------- |
 | scrollTo | `(x: number, y: number)` | -      | 滚动页面到指定位置 |
@@ -34,17 +35,17 @@
 
 | 名称              | 类型                                            | 说明                                                         |
 | :---------------- | :---------------------------------------------- | :----------------------------------------------------------- |
-| scrolltoupper     | `(e: UniScrollToUpperEvent) => void`            | 滚动到顶部时触发                                             |
-| scrolltolower     | `(e: UniScrollToLowerEvent) => void`            | 滚动到底部时触发                                             |
-| scroll            | `(e: UniScrollEvent) => void`                   | 滚动时触发                                                   |
-| scrollend         | `(e: UniScrollEvent) => void`                   | 滚动结束时触发                                               |
-| refresherpulling  | `(event: UniRefresherEvent) => void`            | 下拉刷新控件被下拉                                           |
-| refresherrefresh  | `(event: UniRefresherEvent) => void`            | 下拉刷新被触发                                               |
-| refresherrestore  | `(event: UniRefresherEvent) => void`            | 下拉刷新被复位                                               |
-| refresherabort    | `(event: UniRefresherEvent) => void`            | 下拉刷新被中止                                               |
-| startnestedscroll | `(event: UniStartNestedScrollEvent) => Boolean` | 子元素开始滚动时触发, return true表示与子元素开启滚动协商 默认return false! event = {node} |
-| nestedprescroll   | `(event: UniNestedPreScrollEvent) => void`      | 子元素滚动时触发，可执行event.consumed(x,y)告知子元素deltaX、deltaY各消耗多少。子元素将执行差值后的deltaX、deltaY滚动距离。不执行consumed(x,y)则表示父元素不消耗deltaX、deltaY。event = {deltaX, deltaY} |
-| stopnestedscroll  | `(event: UniStopNestedScrollEvent) => void`     | 子元素滚动结束或意外终止时触发                               |
+| scrolltoupper     | (e: UniScrollToUpperEvent) => Void            | 滚动到顶部时触发                                             |
+| scrolltolower     | (e: UniScrollToLowerEvent) => Void            | 滚动到底部时触发                                             |
+| scroll            | (e: UniScrollEvent) => Void                   | 滚动时触发                                                   |
+| scrollend         | (e: UniScrollEvent) => Void                   | 滚动结束时触发                                               |
+| refresherpulling  | (event: UniRefresherEvent) => Void            | 下拉刷新控件被下拉                                           |
+| refresherrefresh  | (event: UniRefresherEvent) => Void            | 下拉刷新被触发                                               |
+| refresherrestore  | (event: UniRefresherEvent) => Void            | 下拉刷新被复位                                               |
+| refresherabort    | (event: UniRefresherEvent) => Void            | 下拉刷新被中止                                               |
+| startnestedscroll | (event: UniStartNestedScrollEvent) => Boolean | 子元素开始滚动时触发, return true表示与子元素开启滚动协商 默认return false! event = {node} |
+| nestedprescroll   | (event: UniNestedPreScrollEvent) => Void      | 子元素滚动时触发，可执行event.consumed(x,y)告知子元素deltaX、deltaY各消耗多少。子元素将执行差值后的deltaX、deltaY滚动距离。不执行consumed(x,y)则表示父元素不消耗deltaX、deltaY。event = {deltaX, deltaY}。 |
+| stopnestedscroll  | (event: UniStopNestedScrollEvent) => Void     | 子元素滚动结束或意外终止时触发                               |
 
 ## 插槽
 

@@ -53,13 +53,13 @@
 
 | 名称   | 类型                      | 说明           |
 | :----- | :------------------------ | :------------- |
-| change | `(value: number) => void` | 数据变化时触发 |
+| change | (value: Number) => Void | 数据变化时触发 |
 
 **sn-slider-double**
 
 | 名称   | 类型                        | 说明             |
 | :----- | :-------------------------- | :--------------- |
-| change | `(value: number[]) => void` | 数据变化时触发。 |
+| change | (value: Number[]) => Void | 数据变化时触发。 |
 
 
 

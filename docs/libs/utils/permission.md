@@ -90,10 +90,10 @@ if (denied.length === 0) {
 
 | 名称                | 类型                             | 必填 | 默认值 | 描述                                                         |
 | ------------------- | -------------------------------- | ---- | ------ | ------------------------------------------------------------ |
-| options             | `SnRequestSystemPermissionOptions` | 是   | -      | 请求权限的配置选项。                                         |
+| options             | [SnRequestSystemPermissionOptions](/api/types/api#snrequestsystempermissionoptions) | 是   | -      | 请求权限的配置选项。                                         |
 | options.permissions | Array\<String\>                    | 是   | -      | 需要请求的系统权限名称数组。                                 |
-| options.success     | `(allRight: boolean, grantedList: string[])=>void` | 否   | -      | 请求权限成功时的回调函数，接受两个参数：allRight（所有权限是否都已授权）和 grantedList（已授权的权限列表）。 |
-| options.fail        | `(doNotAskAgain: boolean, grantedList: string[])=>void` | 否   | -      | 请求权限失败时的回调函数，接受两个参数：doNotAskAgain（用户是否选择了不再询问）和 grantedList（已授权的权限列表）。 |
+| options.success     | (allRight: Boolean, grantedList: String[]) => Void | 否   | -      | 请求权限成功时的回调函数，接受两个参数：allRight（所有权限是否都已授权）和 grantedList（已授权的权限列表）。 |
+| options.fail        | (doNotAskAgain: Boolean, grantedList: String[]) => Void | 否   | -      | 请求权限失败时的回调函数，接受两个参数：doNotAskAgain（用户是否选择了不再询问）和 grantedList（已授权的权限列表）。 |
 
 ### 返回值
 
@@ -184,8 +184,8 @@ snu.gotoSystemPermissionActivity(perms);
 | --------------- | ------------------------------------------------------- | ---- | ------ | ------------------------------------------------------------ |
 | options         | SnRequestMediaPermissionOptions                         | 是   | -      | 请求权限的配置选项。                                         |
 | options.types   | Array\<String\>                                         | 是   | -      | 需要请求的媒体类型，可选值为 `image`, `video`, `audio`。     |
-| options.success | `(allRight: boolean, grantedList: string[])=>void`      | 否   | -      | 请求权限成功时的回调函数                                     |
-| options.fail    | `(doNotAskAgain: boolean, grantedList: string[])=>void` | 否   | -      | 请求权限失败时的回调函数，接受两个参数：doNotAskAgain（用户是否选择了不再询问）和 grantedList（已授权的权限列表）。 |
+| options.success | (allRight: Boolean, grantedList: String[]) => Void      | 否   | -      | 请求权限成功时的回调函数                                     |
+| options.fail    | (doNotAskAgain: Boolean, grantedList: String[]) => Void | 否   | -      | 请求权限失败时的回调函数，接受两个参数：doNotAskAgain（用户是否选择了不再询问）和 grantedList（已授权的权限列表）。 |
 
 ### 返回值
 

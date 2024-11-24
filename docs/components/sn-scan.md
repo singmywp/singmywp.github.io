@@ -72,18 +72,18 @@
 
 | 名称         | 类型                        | 说明                                                         |
 | :----------- | :-------------------------- | :----------------------------------------------------------- |
-| button-click | `(name: string) => void`    | 点击界面按钮时触发，`name` 为点击按钮名称。可选值为：`return`（返回）、`album`（相册）、`torch`（手电筒） |
-| scanned      | `(res: ScanResult) => void` | 扫码成功时触发。`res` 的结构及说明见[下文](#类型)            |
-| goin         | `(value: string) => void`   | 选择识别点时触发，`value` 即为识别的文本数据                 |
+| button-click | (name: String) => Void    | 点击界面按钮时触发，`name` 为点击按钮名称。可选值为：`return`（返回）、`album`（相册）、`torch`（手电筒） |
+| scanned      | (res: ScanResult) => Void | 扫码成功时触发。`res` 的结构及说明见[下文](#类型)            |
+| goin         | (value: String) => Void   | 选择识别点时触发，`value` 即为识别的文本数据                 |
 
 ## 方法
 
 | 名称           | 参数                  | 返回值 | 描述              |
 | -------------- | --------------------- | ------ | ----------------- |
 | rescan         | -                     | -      | 重新扫描          |
-| setTorchStatus | `(value: boolean)`    | -      | 设置手电筒状态    |
-| scanImageByURI | `(src: string)`       | -      | 通过 URI 扫描图片 |
-| setZoomRatio   | `(zoomRatio: number)` | -      | 设置缩放比例      |
+| setTorchStatus | (value: Boolean)    | -      | 设置手电筒状态    |
+| scanImageByURI | (src: String)       | -      | 通过 URI 扫描图片 |
+| setZoomRatio   | (zoomRatio: Number)` | -      | 设置缩放比例      |
 | getZoomRatio   | -                     | Number | 获取当前缩放比例  |
 
 ## 类型

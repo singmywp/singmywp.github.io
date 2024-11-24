@@ -13,9 +13,12 @@
 | --------------------- | -------------------------------------------- | --------------------------------------------------------- | --------------- | ----------------- |
 | vModel               | 当前激活的标签页索引                         | Number                                                    | `0`             | -                 |
 | scrollable            | 标签是否可滚动                               | Boolean                                                   | `false`         | `true` \| `false` |
+| mode | 指示线移动动画模式。支持滑动式（`swipe`）和推压式（`push`） | String | `swipe` | `swipe` \| `push` |
 | data                  | 标签页数据数组，每个对象包含 id 和 text 属性 | Array\<[SnTabParams](/api/types/components#sntabparams)\> | `[]`            | -                 |
 | width                 | 标签宽度                                     | String                                                    | `100%`          | -                 |
 | height                | 标签高度                                     | String                                                    | `40px`          | -                 |
+| borderRadius | 标签圆角大小 | String | `$normal` | - |
+| aniTime | 标签及指示线动画时长（单位：ms） | String | `$long` | - |
 | bgColor               | 标签背景颜色                                 | String                                                    | `$front`        | -                 |
 | textColor             | 标签文本颜色                                 | String                                                    | `$title`        | -                 |
 | textSize              | 标签文本大小                                 | String                                                    | `$2`            | -                 |
@@ -34,9 +37,9 @@
 | left  | 在标签页左侧放置内容 |
 | right | 在标签页右侧放置内容 |
 ## 事件
-| 名称   | 类型                      | 说明             |
-| :----- | :------------------------ | :--------------- |
-| change | `(value: number) => void` | 标签页切换时触发 |
+| 名称   | 类型                    | 说明                                       |
+| :----- | :---------------------- | :----------------------------------------- |
+| change | (index: Number) => Void | 标签页切换时触发。`index` 即为标签页索引。 |
 
 
 <DemoPhone name="sn-tabs" />

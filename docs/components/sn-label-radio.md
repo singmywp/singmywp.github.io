@@ -12,7 +12,7 @@
 | 参数                | 说明                     | 类型                    | 默认值          | 可选值            |
 | ------------------- | ------------------------ | ----------------------- | --------------- | ----------------- |
 | v-model             | 当前选中值               | Number                  | `0`             | -                 |
-| data                | 选项数据数组             | Array\<SnDataItem\[\]\> | `[]`            | -                 |
+| data                | 选项数据数组             | Array\<SnDataItem[]\> | `[]`            | -                 |
 | disabled            | 是否禁用所有选项         | Boolean                 | ``false``       | `true` \| `false` |
 | disabledItemBgColor | 禁用选项的背景颜色       | String                  | `$disabled`     | -                 |
 | disabledTextColor   | 禁用选项的文本颜色       | String                  | `$disabledText` | -                 |
@@ -32,7 +32,7 @@
 ## 事件
 | 名称   | 类型                      | 说明           |
 | ------ | ------------------------- | -------------- |
-| change | `(value: number) => void` | 选项改变时触发 |
+| change | (value: number) => Void | 选项改变时触发 |
 
 
 <DemoPhone name="sn-label-radio" />  

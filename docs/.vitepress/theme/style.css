@@ -342,10 +342,15 @@ img {
   text-decoration: none;
 }
 
+
 .primaryButton a:hover {
   color: white !important;
 }
 
 .VPLocalNav{
   border-bottom: none !important;
+}
+
+.danger-text {
+  color: var(--vp-c-red-2);
 }

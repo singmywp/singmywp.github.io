@@ -23,6 +23,7 @@
 | border                | 导航栏边框         | String                                                  | -                                                  | -                             |
 | borderRadius          | 导航栏圆角大小     | String                                                  | -                                                  | -                             |
 | backButton            | 是否显示返回按钮   | Boolean                                                 | `true`                                             | `true` \| `false`             |
+| backButtonIcon        | 返回按钮图标       | String                                                  | `arrow-left-s-line`                                | -                             |
 | menuButton            | 是否显示菜单按钮   | Boolean                                                 | `false`                                            | `true` \| `false`             |
 | buttonSize            | 按钮大小           | String                                                  | `35px`                                             | -                             |
 | buttonBgColor         | 按钮背景颜色       | String                                                  | -                                                  | -                             |
@@ -44,7 +45,7 @@
 ## 事件
 | 名称         | 类型                         | 说明         |
 | ------------ | ---------------------------- | ------------ |
-| button-click | `(item: SnDataItem) => void` | 按钮点击事件 |
-| menu-click   | `(item: SnDataItem) => void` | 菜单点击事件 |
+| button-click | (item: SnDataItem) => Void | 按钮点击事件 |
+| menu-click   | (item: SnDataItem) => Void | 菜单点击事件 |
 
 <DemoPhone name="sn-topbar" />

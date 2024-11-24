@@ -41,11 +41,11 @@
 
 | 名称      | 类型                              | 说明               |
 | --------- | --------------------------------- | ------------------ |
-| click     | `(e: UniPointerEvent) => void`    | 点击头像时触发     |
-| dbclick   | `(e: UniPointerEvent) => void`    | 双击头像时触发     |
-| load      | `(e: UniImageLoadEvent) => void`  | 头像加载完成时触发 |
-| error     | `(e: UniImageErrorEvent) => void` | 头像加载失败时触发 |
-| longpress | `(e: UniEvent) => void`           | 长按头像时触发     |
+| click     | (e: UniPointerEvent) => Void    | 点击头像时触发     |
+| dbclick   | (e: UniPointerEvent) => Void    | 双击头像时触发     |
+| load      | (e: UniImageLoadEvent) => Void  | 头像加载完成时触发 |
+| error     | (e: UniImageErrorEvent) => Void | 头像加载失败时触发 |
+| longpress | (e: UniEvent) => Void           | 长按头像时触发     |
 
 ## 插槽
 

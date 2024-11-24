@@ -179,7 +179,7 @@ snu.showSysToast({
 snu.showToast({
     text: 'Hello World',
     type: 'info'
-} as SnToastConfig)
+})
 ```
 
 ---

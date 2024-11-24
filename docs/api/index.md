@@ -4,7 +4,7 @@ SinleUI 暴露出可操作的 API 对象 `$snui`，提供了丰富的 API 配置
 
 >[!WARNING] 注意
 >
->不可直接从插件内部任何 `uts` 文件导入对象或类型，所有对象/类型均从 `@/uni_modules/sinle-ui` 导入
+>不可直接从插件内部任何 `uts` 文件导入对象或类型，所有对象及大部分类型均从 `@/uni_modules/sinle-ui` 导入，部分特殊类型请参考[类型](/api/types/index)或按照文档说明路径导入。
 
 ```typescript
 import { $snui } from '@/uni_modules/sinle-ui'

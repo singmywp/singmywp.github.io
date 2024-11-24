@@ -35,8 +35,8 @@
 
 | 名称   | 类型                                                         | 说明                 |
 | :----- | :----------------------------------------------------------- | :------------------- |
-| finish | `() => void`                                                 | 倒计时完成时触发     |
-| change | (value: [`SnCountdownTime`](/api/types/components#sncountdowntime) ) => void | 倒计时时间变化时触发 |
+| finish | () => Void                                                 | 倒计时完成时触发     |
+| change | (value: [`SnTime`](/api/types/components#sntime) ) => Void | 倒计时时间变化时触发 |
 
 ## 方法
 

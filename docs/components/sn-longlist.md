@@ -46,14 +46,14 @@
 ## 事件
 | 名称             | 类型                                 | 说明               |
 | :--------------- | :----------------------------------- | :----------------- |
-| loadmore         | `() => void`                         | 加载更多时触发     |
-| scrolltoupper    | `(e: UniScrollToUpperEvent) => void` | 滚动到顶部时触发   |
-| scrolltolower    | `(e: UniScrollToLowerEvent) => void` | 滚动到底部时触发   |
-| scroll           | `(e: UniScrollEvent) => void`        | 滚动时触发         |
-| scrollend        | `(e: UniScrollEvent) => void`        | 滚动结束时触发     |
-| refresherpulling | `(event: UniRefresherEvent) => void` | 下拉刷新控件被下拉 |
-| refresherrefresh | `(event: UniRefresherEvent) => void` | 下拉刷新被触发     |
-| refresherrestore | `(event: UniRefresherEvent) => void` | 下拉刷新被复位     |
-| refresherabort   | `(event: UniRefresherEvent) => void` | 下拉刷新被中止     |
+| loadmore         | () => Void                         | 加载更多时触发     |
+| scrolltoupper    | (e: UniScrollToUpperEvent) => Void | 滚动到顶部时触发   |
+| scrolltolower    | (e: UniScrollToLowerEvent) => Void | 滚动到底部时触发   |
+| scroll           | (e: UniScrollEvent) => Void        | 滚动时触发         |
+| scrollend        | (e: UniScrollEvent) => Void        | 滚动结束时触发     |
+| refresherpulling | (event: UniRefresherEvent) => Void | 下拉刷新控件被下拉 |
+| refresherrefresh | (event: UniRefresherEvent) => Void | 下拉刷新被触发     |
+| refresherrestore | (event: UniRefresherEvent) => Void | 下拉刷新被复位     |
+| refresherabort   | (event: UniRefresherEvent) => Void | 下拉刷新被中止     |
 
 <DemoPhone name="sn-longlist" />

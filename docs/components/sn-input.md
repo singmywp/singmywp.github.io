@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-	<sn-input v-model="value"></sn-alert>
+	<sn-input v-model="value"></sn-input>
 </template>
 ```
 
@@ -75,12 +75,12 @@
 
 | 事件名               | 类型                                              | 说明                                                         |
 | -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
-| input                | `(event: UniInputEvent)=>void`                    | 当键盘输入时，触发input事件，`event.detail = {value, cursor}`，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
-| focus                | `(event: UniInputFocusEven) => void`              | 输入框聚焦时触发，`event.detail = { value, height }`，height 为键盘高度 |
-| blur                 | `(event : UniInputBlurEvent)=>void`               | 输入框失去焦点时触发，`event.detail = {value: value}`        |
-| keyboardheightchange | `(event:UniInputKeyboardHeightChangeEvent)=>void` | 键盘高度发生变化的时候触发此事件，`event.detail = {height: height, duration: duration}` |
-| confirm              | `(event : UniInputConfirmEvent)=>void`            | 点击完成按钮时触发，`event.detail = {value: value}`          |
-| suffix-click         | `()=>void`                                        | 点击后置图标时触发                                           |
-| prefix-click         | `()=>void`                                        | 点击前置图标时触发                                           |
+| input                | (event: UniInputEvent)=>Void                    | 当键盘输入时，触发input事件，`event.detail = {value, cursor}`，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
+| focus                | (event: UniInputFocusEven) => Void              | 输入框聚焦时触发，`event.detail = { value, height }`，height 为键盘高度 |
+| blur                 | (event : UniInputBlurEvent)=>Void               | 输入框失去焦点时触发，`event.detail = {value: value}`        |
+| keyboardheightchange | (event:UniInputKeyboardHeightChangeEvent)=>Void | 键盘高度发生变化的时候触发此事件，`event.detail = {height: height, duration: duration}` |
+| confirm              | (event : UniInputConfirmEvent)=>Void            | 点击完成按钮时触发，`event.detail = {value: value}`          |
+| suffix-click         | ()=>Void                                        | 点击后置图标时触发                                           |
+| prefix-click         | ()=>Void                                        | 点击前置图标时触发                                           |
 
 <DemoPhone name="sn-input" />

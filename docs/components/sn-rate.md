@@ -30,6 +30,6 @@
 
 | 事件名 | 类型                | 说明             |
 | :----- | :------------------ | :--------------- |
-| change | `(v: number)=>void` | 当前值变化时触发 |
+| change | (v: Number)=>Void | 当前值变化时触发 |
 
 <DemoPhone name="sn-rate" />

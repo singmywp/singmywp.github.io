@@ -1,3 +1,39 @@
+## 1.1.5（2024-11-24）
+- **重要** 插件最低运行版本为 HBuilder X **4.33**，如未适配暂勿升级
+- **重要** 移除 框架内置字体 **MiSans** ，插件体积减少 **60%**，如需继续使用此字体可自行下载并导入到项目中
+- 新增 `sn-native` 插件作为原生能力扩展库，原 `sn-e-toast` 及 `sinle-ui` 部分 API 迁移至 `sn-native`
+- 移除 `sn-e-toast` 插件，其所有 API 已迁移至 `sn-native`
+- 新增 `SnError` 错误规范，SinleUI 框架的 API 及组件报错将逐渐规范化，返回 `SnError` 类型的错误信息。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
+- 调整 Utils 工具库 原 `showToast` 更名为 `showToasty`，其参数 `config` 类型更名为 `SnToastyConfig`
+- 移除 Utils 工具库 `share` 分享及其参数相应类型，请使用官方 `uni.shareWithSystem` 代替
+- 新增 Utils 工具库 `showToast` 全局轻提示。与 `sn-toast` 不同的是，它可以在任意位置调用，无需放置组件；强制防穿透。与 `showToasty` 不同的是，它的样式配置更加丰富。
+- 新增 Utils 工具库 `showActionsheet` 全局操作菜单，与 `sn-actionsheet` 不同的是，它可以在任意位置调用，无需放置组件
+- 新增 Utils 工具库 `showModal` 全局模态窗，与 `sn-modal` 不同的是，它可以在任意位置调用，无需放置组件
+- 新增 Utils 工具库 `previewImage` 全局图片预览，目前仅支持单张图片预览，支持手势缩放、平移，支持长按唤出自定义菜单
+- 新增 Utils 工具库 `chooseMedia` 选择媒体文件方法，支持图片、视频和混选、多选
+- 新增 `sn-perm-listener` 权限申请监听组件，当前页面申请权限时自动弹出权限用途说明框
+- 新增 `sn-upload-media` 属性 `mode` 增加 `all`  选项，支持视频图片混传，使用系统相册选择
+- 新增 `sn-upload-media` 事件 `file-chose` 当媒体文件选择成功时都会触发，与 `image-chose` 和 `video-chose` 可以同时触发
+- 新增 `sn-upload-media-unicloud` 属性 `mode` 增加 `all`  选项，支持视频图片混传，使用系统相册选择
+- 新增 `sn-upload-media-unicloud` 事件 `file-chose` 当媒体文件选择成功时都会触发，与 `image-chose` 和 `video-chose` 可以同时触发
+- 新增 `sn-card` 属性 `titleLines` 卡片标题最大显示行数
+- 新增 `sn-tabbar` 属性 `v-model:height` 支持外部绑定 `tabbar` 占位高度
+- 新增 `sn-search` 属性 `focus` 是否获得焦点
+- 新增 `sn-topbar` 属性 `backButtonIcon` 返回按钮图标
+- 新增 `sn-grid-group` 属性 `gutter` 子项间距
+- 新增 `sn-collapse-group` 属性 `note` 、`noteColor` 、`noteSize` 支持自定义样式的说明文本
+- 新增 `sn-collapse-item` 插槽 `header` ，支持自定义配置头部区域
+- 新增 `sn-menu-item` 插槽 `header` 、`body`、`footer`，支持自定义配置各部分区域
+- 修复 `sn-menu-item` 默认插槽不生效的问题
+- 新增 `sn-tabs` 属性 `aniTime` 动画时长、`mode` 模式，新增推压动画
+- 优化 `sn-tabs` 动画显示更流畅
+- 新增 `sn-view` 事件 `scale` 和 `roate` ，主要为 Web 端提供缩放和旋转事件，与 App 端的 `sn-e-gesture` 对齐
+- 新增 Demo 右上角 *关于本应用* 入口
+- 重写 `sn-notice-bar`，解决了一些性能和显示问题
+- 优化 `sn-actionsheet` 在宽屏设备上的显示效果
+- 优化 `sn-tabbar` 最大插槽数增加至 `10`
+- 修复 `sn-e-scankit` 多页面调用 `scan` 方法回调函数混淆的问题
+- 优化 Demo 布局改为 Tabbar 式
 ## 1.1.4（2024-10-05）
 - 优化 文档 Utils 库所有方法新增示例代码
 - 优化 文档阅读体验

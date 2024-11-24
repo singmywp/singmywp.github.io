@@ -33,7 +33,7 @@ scan({} as ScanConfigs, (res: ScanResult)=>{
 
 | 名称 | 参数                                                         | 返回值 | 描述 |
 | :--- | :----------------------------------------------------------- | :----- | :--- |
-| scan | `(configs : ScanConfigs, callback: (res: ScanResult) => void)` | -      | 扫码 |
+| scan | (configs : ScanConfigs, callback: (res: ScanResult) => Void) | -      | 扫码 |
 
 ## 类型
 

@@ -18,13 +18,13 @@
 ## 事件
 | 名称          | 类型       | 说明                       |
 | ------------- | ---------- | -------------------------- |
-| beforeEnter   | `()=>void` | 动画开始前触发             |
-| enter         | `()=>void` | 动画开始时触发             |
-| afterEnter    | `()=>void` | 动画开始后触发             |
-| beforeLeave   | `()=>void` | 动画结束前前触发           |
-| leave         | `()=>void` | 动画结束时触发             |
-| afterLeave    | `()=>void` | 动画结束后触发             |
-| transitionend | `()=>void` | 每个过渡动画阶段结束时触发 |
+| beforeEnter   | () => Void | 动画开始前触发             |
+| enter         | () => Void | 动画开始时触发             |
+| afterEnter    | () => Void | 动画开始后触发             |
+| beforeLeave   | () => Void | 动画结束前前触发           |
+| leave         | () => Void | 动画结束时触发             |
+| afterLeave    | () => Void | 动画结束后触发             |
+| transitionend | ()=>Void | 每个过渡动画阶段结束时触发 |
 
 ## 插槽
 

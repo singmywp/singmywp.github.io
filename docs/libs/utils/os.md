@@ -58,3 +58,37 @@ snu.share({
     path: '/static/logo.png'
 } as SnShareConfig);
 ```
+
+
+# snu.chooseMedia()
+
+### **选择媒体文件**
+
+允许用户调用系统界面从设备选择图片或视频文件。
+
+### 兼容性
+
+| Web | Android |
+| --- | ------- |
+| √   | √       |
+
+### 参数
+
+| 名称    | 类型                             | 必填 | 描述             |
+| ------- | -------------------------------- | ---- | ---------------- |
+| options | [SnChooseMediaOptions](/api/types/api#snchoosemediaoptions) | 是   | 媒体选择配置对象。 |
+
+### 返回值
+
+无
+
+### 示例
+
+```typescript
+snu.chooseMedia({
+    type: 'image',
+	success: (files: SnFile[]) => {
+        console.log('选择的图片:', files)
+    }
+});
+```

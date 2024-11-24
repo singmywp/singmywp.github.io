@@ -32,7 +32,7 @@
 ## 事件
 | 名称   | 类型                      | 说明                 |
 | :----- | :------------------------ | :------------------- |
-| change | `(value: number) => void` | 进度变化时触发的事件 |
+| change | (value: Number) => Void | 进度变化时触发的事件 |
 
 
 <DemoPhone name="sn-progress" />

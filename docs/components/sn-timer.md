@@ -30,7 +30,7 @@
 ## 事件
 | 名称   | 类型                                                         | 说明           |
 | ------ | ------------------------------------------------------------ | -------------- |
-| change | (value: [SnTimerTime](/api/types/components#sntimertime)) => void | 时间变化时触发 |
+| change | (value: [SnTime](/api/types/components#sntime)) => Void | 时间变化时触发 |
 
 
 ## 方法

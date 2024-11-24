@@ -23,6 +23,6 @@
 
 | 事件名  | 类型       | 说明                             |
 | ------- | ---------- | -------------------------------- |
-| refresh | `()=>void` | `status` 切换为 `refresh` 时触发 |
+| refresh | ()=>Void | `status` 切换为 `refresh` 时触发 |
 
 <DemoPhone name="sn-refresher" />

@@ -34,6 +34,6 @@
 ## 事件
 | 名称   | 类型                      | 说明                                     |
 | ------ | ------------------------- | ---------------------------------------- |
-| change | `(value: number) => void` | 选中项变化时触发。`value` 即为选中项索引 |
+| change | (value: Number) => Void | 选中项变化时触发。`value` 即为选中项索引 |
 
 <DemoPhone name="sn-select" />

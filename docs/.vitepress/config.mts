@@ -103,6 +103,18 @@ export default defineConfig({
             { text: "API 类型", link: "/api/types/api" },
           ],
         },
+        {
+          text: "错误规范",
+          items: [
+            {
+              text: "SnError",
+              link: "/api/error/snerror"
+            },
+            {
+              text: "语义及错误码对照表", link: "/api/error/standard"
+            }
+          ]
+        }
       ],
       "/components/": [
         {
@@ -229,6 +241,7 @@ export default defineConfig({
         {
           text: "功能组件",
           items: [
+            { text: "Perm Listener 权限监听", link: "/components/sn-perm-listener" },
             { text: "Scan 扫码", link: "/components/sn-scan" },
             { text: "Signature 签名", link: "/components/sn-signature" },
           ],
@@ -425,7 +438,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: "振动设备", link: "/libs/utils/os#snu-vibrate" },
-                { text: "系统分享", link: "/libs/utils/os#snu-share" },
+                { text: "选择媒体文件", link: "/libs/utils/os#snu-choosemedia" }
               ],
             },
             {
@@ -630,6 +643,30 @@ export default defineConfig({
                   text: "查找兄弟组件",
                   link: "/libs/utils/ui#snu-findbrother",
                 },
+                {
+                  text: "预览图片",
+                  link: "/libs/utils/ui#snu-previewimage",
+                },
+                {
+                  text: "打开操作菜单",
+                  link: "/libs/utils/ui#snu-showactionsheet",
+                },
+                {
+                  text: "显示轻提示",
+                  link: "/libs/utils/ui#snu-showtoast",
+                },
+                {
+                  text: "显示模态框",
+                  link: "/libs/utils/ui#snu-showmodal",
+                },
+                {
+                  text: "计算两点距离",
+                  link: "/libs/utils/ui#snu-getdistance",
+                },
+                {
+                  text: "计算旋转角度",
+                  link: "/libs/utils/ui#snu-getrotateangle", 
+                },
               ],
             },
             {
@@ -772,6 +809,10 @@ export default defineConfig({
           text: "Store 状态管理",
           link: "/libs/store/index",
           items: [
+            {
+              text: "用法",
+              link: "/libs/store/usage"
+            },
             {
               text: "过期策略",
               link: "/libs/store/expire",

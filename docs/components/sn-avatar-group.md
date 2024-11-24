@@ -29,7 +29,7 @@
 ## 事件
 | 名称   | 类型                                                         | 说明               |
 | ------ | ------------------------------------------------------------ | ------------------ |
-| click  | `(item: SnAvatarGroupItem) => void`                           | 点击头像时触发     |
-| dbclick| `(item: SnAvatarGroupItem) => void`                           | 双击头像时触发     |
+| click  | (item: SnAvatarGroupItem) => Void                           | 点击头像时触发     |
+| dbclick| (item: SnAvatarGroupItem) => Void                           | 双击头像时触发     |
 
 <DemoPhone name="sn-avatar-group" />
