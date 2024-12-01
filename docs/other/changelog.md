@@ -1,8 +1,11 @@
+## 1.1.6（2024-11-24）
+- 修复 导入插件时插件内部页面未完全注册的问题
+- 修复 导出插件时错误地导入 `sn-e-toast` 插件的问题
 ## 1.1.5（2024-11-24）
 - **重要** 插件最低运行版本为 HBuilder X **4.33**，如未适配暂勿升级
 - **重要** 移除 框架内置字体 **MiSans** ，插件体积减少 **60%**，如需继续使用此字体可自行下载并导入到项目中
+- **重要** 移除 `sn-e-toast` 插件，其所有 API 已迁移至 `sn-native`，如果原来已下载此插件，请手动删除
 - 新增 `sn-native` 插件作为原生能力扩展库，原 `sn-e-toast` 及 `sinle-ui` 部分 API 迁移至 `sn-native`
-- 移除 `sn-e-toast` 插件，其所有 API 已迁移至 `sn-native`
 - 新增 `SnError` 错误规范，SinleUI 框架的 API 及组件报错将逐渐规范化，返回 `SnError` 类型的错误信息。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
 - 调整 Utils 工具库 原 `showToast` 更名为 `showToasty`，其参数 `config` 类型更名为 `SnToastyConfig`
 - 移除 Utils 工具库 `share` 分享及其参数相应类型，请使用官方 `uni.shareWithSystem` 代替
@@ -64,9 +67,9 @@
 - 修复 `sn-avatar`、`sn-collapse-group` 组件 `borderRadius` 属性无法使用 $ 变量的问题
 - 修复 `sn-form-item` 组件 文档及代码提示缺失 `label` 属性的问题
 ## 1.1.2（2024-09-17）
-* 【重要】新增 所有组件的颜色、圆角、字体大小、动画时长等支持使用 $ 变量，和文档[简写表达式](http://sinleui.pages.dev/components/#%E7%89%B9%E6%AE%8A%E5%80%BC)一样的体验。如输入`$primary` 直接映射到 `$snui.colors.primary`
-* 【重要】调整 所有组件 `aniTime` 属性类型改为 String ，支持 $ 变量，如需自行输入请带单位（`ms`）
-* 【重要】优化 所有组件属性处理底层逻辑
+* **【重要】**新增 所有组件的颜色、圆角、字体大小、动画时长等支持使用 $ 变量，和文档[简写表达式](http://sinleui.pages.dev/components/#%E7%89%B9%E6%AE%8A%E5%80%BC)一样的体验。如输入`$primary` 直接映射到 `$snui.colors.primary`
+* **【重要】**调整 所有组件 `aniTime` 属性类型改为 String ，支持 $ 变量，如需自行输入请带单位（`ms`）
+* **【重要】**优化 所有组件属性处理底层逻辑
 * 新增 `sn-picker-view` 选择器容器组件
 * 新增 `sn-picker` 选择器组件
 * 新增 `sn-label-radio` 标签单选组件
@@ -174,6 +177,7 @@
 * 优化 完善了所有基础组件的文档
 * 优化 修改部分组件的分类，更加合理
 * 移除 `sn-date-picker` 组件（此组件暂不完善，故此移除，需要用可参考 [官方实现案例](https://hellouniappx.dcloud.net.cn/web#/pages/component/picker-view/picker-view) 自行封装）
+
 * 修复 Demo 首页调整字体大小有时不生效的问题
 * 修复 `sn-date-picker` 组件引用已移除的 `sn-picker ` 及 `sn-picker-view` 组件致使云打包失败的问题
 * 修复 `sn-slider-double` 组件值变化时输出大量调试信息致使卡顿的问题
