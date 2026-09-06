@@ -42,7 +42,7 @@ layout: page
     {
       avatar: '/assets/images/lime.jpg',
       name: '陌上华年',
-      title: 'Color、Date、Utils.share 分别基于开源插件 lime-color、lime-dayuts、lime-share 开发',
+      title: 'Color、Date、sn-datetime-picker-view 分别基于开源插件 lime-color、lime-dayuts、lime-datetime-picker 开发',
       links: [
         { icon: 'gitee', link: 'https://gitee.com/liangei' },
         { icon: 'dcloud-ext', link: 'https://ext.dcloud.net.cn/publisher?id=242774' }

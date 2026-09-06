@@ -1,75 +1,55 @@
 # Text  文本
 
+> [查看 sn-text 的 2.0 版本差异](/differences/components/sn-text)
+
 ## 基础用法
 
-- 只支持通过 `text` 属性传值（这个要是用插槽，反而会多套一层 `text`）
+- 文本组件，既支持通过 `text` 属性传值，也支持通过默认插槽放置内容（使用插槽时优先显示插槽内容）。
+- 通过 `type` 设置文本类型（标题、正文、浅色文本及五种功能色），通过 `font-size`、`color`、`bold` 自定义外观。
+- 通过 `lines` 限制最大显示行数，超出部分自动隐藏；`selectable` 使文本可长按选择复制。
 
 ```vue
-<sn-text text="这是一段文本"></sn-text>
+<template>
+	<sn-text text="故人西辞黄鹤楼，烟花三月下扬州。"></sn-text>
+</template>
 ```
 
 **更多演示请下载 demo 查看**
 
-## 文本模式
+## 文本类型
 
-目前支持通过 `mode` 属性设置文本的模式，轻松实现常见功能，为您减少代码量。
+根据场景使用不同类型的文本，更具识别度：
 
-- text
+- `title`：标题（字号 16，主题标题色）
+- `text`：正文（默认，字号 14，主题文本色）
+- `text-light`：浅色辅助文本
+- `primary` / `info` / `success` / `warning` / `error`：对应功能色文本
 
-  默认模式，与内置 `text` 组件无异。
-
-- date
-
-  日期模式，支持通过传入时间戳（需转换为String类型），实现自动格式化日期为 `yyyy-mm-dd` 的形式（以后会支持自定义格式）。
-
-- date-cn
-
-  日期模式（中文），与 `date` 用法相同，但是能转成中文 `yyyy年mm月dd日`。
-
-- price
-
-  价格模式，很简单的功能，将传入的文本前加一个 ￥（挺没用的哈，以后可能会加以改进，支持更多功能，比如汇率、国际化之类的）
-
-- price-upper
-
-  价格模式（大写），自动识别传入数字，并将其转换为中文大写金额，精确到分。使用 [`snu.numToUpper()` ](/libs/utils/text#snu-numtoupper) 方法
-
-  例：`168201.03 => 壹拾陆万捌仟贰佰零壹元零叁分`
-
-- name 
-
-  姓名模式，需搭配 `encrypt` 属性使用，否则与 `text` 模式效果相同。
-
-- phone
-
-  电话模式，点击后向用户发送请求，用户同意后直接拨打电话。
-
-- phone-direct
-
-  电话模式（直接拨打），点击后无需征求用户同意，直接拨打电话（但如果没有权限，还是会先请求拨号权限）。
+```vue
+<template>
+	<sn-text type="title" text="登鹳雀楼"></sn-text>
+	<sn-text type="text-light" text="王之涣"></sn-text>
+</template>
+```
 
 ## 属性
 
-| 参数            | 说明                                                         | 类型    | 默认值        | 可选值                                                       |
-| :-------------- | :----------------------------------------------------------- | :------ | :------------ | :----------------------------------------------------------- |
-| mode            | 文本显示模式                                                 | String  | `text`        | `text`\|`date`\| `date-cn` \| `price` \| `price-upper` \| `name` \| `phone` \| `phone-direct` |
-| text            | 文本内容                                                     | String  | -             | -                                                            |
-| color           | 文本颜色                                                     | String  | -             | -                                                            |
-| type            | 文本类型                                                     | String  | `info`        | `primary`\|`info`\|`error`\|`warning`\|`success`             |
-| font            | 字体名称                                                     | String  | `$mainFamily` | -                                                            |
-| size            | 字体大小                                                     | String  | `$2`          | -                                                            |
-| align           | 对齐方式                                                     | String  | `left`        | `left`\|`center`\|`right`                                    |
-| overflow        | 文本溢出处理                                                 | String  | `ellipsis`    | `ellipsis` \| `clip`                                         |
-| decorationLine  | 文本装饰线                                                   | String  | -             | -                                                            |
-| space           | 字符间距。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | String  | -             | -                                                            |
-| decode          | 是否解码 (app平台如需解析字符实体，需要配置为 true)。同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
-| selectable      | 是否可选择同 [text](https://doc.dcloud.net.cn/uni-app-x/component/text.html#%E5%B1%9E%E6%80%A7)。 | Boolean | `false`       | `true`                                                       |
-| lines           | 文本最大显示行数（默认为 `-1` 即不限制）                     | Number  | `-1`          | -                                                            |
-| lineHeight      | 文本行高                                                     | String  | `1.2`         | -                                                            |
-| aniTime         | 文本动画时长                                                 | String  | `$normal`     | -                                                            |
-| bold            | 是否加粗                                                     | Boolean | `false`       | `true`                                                       |
-| encrypt         | 是否加密                                                     | Boolean | `false`       | `true`                                                       |
-| customStyle     | 自定义样式                                                   | UTSJSONObject  | `{}`          | -                                                            |
-| customTextStyle | 自定义文本样式                                               | UTSJSONObject  | `{}`          | -                                                            |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| :--- | :--- | :--- | :--- | :--- |
+| type | 文本类型，决定字号与颜色 | TextType | `text` | `title` \| `text` \| `text-light` \| `primary` \| `info` \| `success` \| `warning` \| `error` |
+| text | 文本内容 | String | - | - |
+| fontSize | 字体大小，支持 `$` 简写；为空时由 `type` 决定（title 16、其余 14，均乘以字体大小乘数） | String \| Number | - | - |
+| color | 文本颜色，支持 `$` 功能色简写；为空时由 `type` 决定 | String | - | - |
+| bold | 是否加粗 | Boolean | `false` | `true` \| `false` |
+| lines | 最大显示行数，超出隐藏；`0` 表示不限制 | Number | `0` | - |
+| selectable | 是否可选择（长按复制） | Boolean | `false` | `true` \| `false` |
+| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| textClass | 文本节点的外部样式类 | String | - | - |
+
+## 插槽
+
+| 名称 | 说明 |
+| :--- | :--- |
+| default | 替换原有的 `text` 文本内容 |
 
 <DemoPhone name="sn-text" />

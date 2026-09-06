@@ -1,4 +1,6 @@
-### SinleUI 错误码与错误信息对应表
+# 错误码对照表
+
+SinleUI 相关插件统一错误码与错误信息对照。各 API 失败时返回的 `UniError.errCode` 对应下表，`errMsg` 由各模块按表提供；也可通过 `sinle-logger` 的 `getErrMsg(errCode)` 查询。
 
 | errCode | errMsg                                                       | 含义                                                         |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -18,8 +20,16 @@
 | 9010013 | id of param feature's item cannot be "menu"                  | Topbar 组件 feature 属性子项 id 不能为“menu”                 |
 | 9010014 | param "digit" must be a positive integer                     | digits 参数必须为正整数                                      |
 | 9010015 | this storeKey already exists, please try another one         | StoreLib 实例的 `storeKey` 不得重复                          |
-| 9010051 | param "content"  not provided                                | 未提供 `content` 参数                                        |
-| 9010052 | param "path"  not provided                                   | 未提供 `path` 参数                                           |
+| 9010051 | param "content" not provided                                 | 未提供 `content` 参数                                        |
+| 9010052 | param "path" not provided                                    | 未提供 `path` 参数                                           |
 | 9010053 | invalid param "path"                                         | `path` 参数提供的路径不合法                                  |
 | 9010054 | failed to open dialogPage                                    | 打开弹窗页失败                                               |
+| 9010055 | failed to open modal dialogPage                              | 打开模态框弹窗页失败                                         |
+| 9010056 | failed to open actionsheet dialogPage                        | 打开操作菜单弹窗页失败                                       |
+| 9010057 | failed to open loading dialogPage                            | 打开加载弹窗页失败                                           |
+| 1602001 | camera permission denied                                     | 相机权限未授予                                               |
+| 1602002 | camera initialization failed                                 | 相机初始化失败                                               |
+| 1602003 | image scan failed                                            | 图片识别失败                                                 |
+| 1602004 | invalid image uri                                            | 图片路径不合法                                               |
+| 1602005 | internal error                                               | 内部错误                                                     |
 

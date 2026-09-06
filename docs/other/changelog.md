@@ -6,7 +6,7 @@
 - **重要** 移除 框架内置字体 **MiSans** ，插件体积减少 **60%**，如需继续使用此字体可自行下载并导入到项目中
 - **重要** 移除 `sn-e-toast` 插件，其所有 API 已迁移至 `sn-native`，如果原来已下载此插件，请手动删除
 - 新增 `sn-native` 插件作为原生能力扩展库，原 `sn-e-toast` 及 `sinle-ui` 部分 API 迁移至 `sn-native`
-- 新增 `SnError` 错误规范，SinleUI 框架的 API 及组件报错将逐渐规范化，返回 `SnError` 类型的错误信息。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
+- 新增错误规范（遵循 uni 错误规范，统一为 `UniError` 错误对象），SinleUI 框架的 API 及组件报错将逐渐规范化。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
 - 调整 Utils 工具库 原 `showToast` 更名为 `showToasty`，其参数 `config` 类型更名为 `SnToastyConfig`
 - 移除 Utils 工具库 `share` 分享及其参数相应类型，请使用官方 `uni.shareWithSystem` 代替
 - 新增 Utils 工具库 `showToast` 全局轻提示。与 `sn-toast` 不同的是，它可以在任意位置调用，无需放置组件；强制防穿透。与 `showToasty` 不同的是，它的样式配置更加丰富。

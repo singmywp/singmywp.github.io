@@ -1,57 +1,53 @@
-# Float Board 浮动按钮
+# Float Button  浮动按钮
+
+> [查看 sn-float-button 的 2.0 版本差异](/differences/components/sn-float-button)
 
 ## 基础用法
 
-- 通常用于悬浮按钮的场景。
-- 支持自动吸附、预设八个位置
+- 固定定位的悬浮按钮，可用于悬浮操作入口、回到顶部等场景。
+- 支持八方位预设位置（`position`）、自由拖动与松手自动吸附至左右两侧（`absorb`）。
+- 通过 `v-model` 双向绑定按钮当前位置坐标，位置变化时同步触发 `change` 事件。
+- Web 端支持鼠标拖动，窗口尺寸变化时自动重新校正位置。
 
-``` vue
+```vue
 <template>
-	<sn-float-button icon="add-line"
-	:bgColor="colors.primary"></sn-float-button>
+	<sn-float-button icon="add-line" bg-color="$primary"></sn-float-button>
 </template>
-
-<script setup>
-	import { $snui } from '@/uni_modules/sinle-ui'
-	const colors = $snui.colors
-</script>
 ```
-
-
 
 **更多演示请下载 demo 查看**
 
 ## 属性
 
-| 参数         | 说明                                             | 类型            | 默认值           | 可选值                                                       |
-| ------------ | ------------------------------------------------ | --------------- | ---------------- | ------------------------------------------------------------ |
-| vModel      | 浮动按钮当前位置                                 | Array\<Number\>    | `[0,0]`          | -                                                            |
-| position     | 浮动按钮预设位置                                 | String        | `bottom`         | `top` \| `right` \| `bottom` \| `left` \| `top-start` \| `top-end` \| `bottom-start` \| `bottom-end` |
-| init         | 是否在初始化时设置浮动按钮至 `position` 预设位置 | Boolean       | `true`           | `true` \| `false`                                            |
-| absorb       | 是否松手自动吸附至左右两侧                       | Boolean       | `true`           | `true` \| `false`                                            |
-| bgColor      | 浮动按钮的背景颜色                               | String        | `$front`         | -                                                            |
-| size         | 浮动按钮尺寸                                     | String        | `60px`           | -                                                            |
-| borderRadius | 浮动按钮圆角大小                                 | String          | `$circle`        | -                                                            |
-| boxShadow    | 浮动按钮阴影                                     | String          | `0 0 15px -10px` | -                                                            |
-| margin       | 浮动按钮处于预设位置时与页面的边距               | Number        | `20`             | -                                                            |
-| icon         | 浮动按钮内部图标                                 | String        | -                | -                                                            |
-| iconColor    | 浮动按钮内部图标颜色                             | String        | `$text`          | -                                                            |
-| icon         | 浮动按钮内部图标字体大小                         | String        | `$6`             | -                                                            |
-| aniTime       | 浮动按钮吸附动画时长                             | String        | `$long`          | -                                                            |
-| disabled     | 是否禁止拖动                                     | Boolean       | `false`          | `true` \| `false`                                            |
-| customStyle  | 自定义浮动按钮样式                               | UTSJSONObject | `{}`             | -                                                            |
-
-## 插槽
-
-| 名称    | 说明                                   |
-| :------ | :------------------------------------- |
-| default | 在浮动按钮内部放置组件以替换默认的图标 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| --- | --- | --- | --- | --- |
+| v-model | 按钮当前位置坐标，形如 `[x, y]` | Array\\<Number\\> | `[0, 0]` | - |
+| position | 预设位置（`init` 为 true 时初始化定位至此） | String | `bottom` | `top-start` \| `top` \| `top-end` \| `right` \| `bottom-end` \| `bottom` \| `bottom-start` \| `left` |
+| init | 是否在初始化时定位到 `position` 预设位置 | Boolean | `true` | `true` \| `false` |
+| absorb | 松手后是否自动吸附至左右两侧 | Boolean | `true` | `true` \| `false` |
+| disabled | 是否禁用（禁用后不可拖动、不响应点击） | Boolean | `false` | `true` \| `false` |
+| bgColor | 背景颜色，支持 `$` 简写 | String | `''`（实际取 `$front`） | - |
+| size | 按钮尺寸（宽高相同） | String \| Number | `60px` | - |
+| icon | 内置图标名称 | String | `''` | - |
+| iconColor | 图标颜色，支持 `$` 简写，禁用时为禁用色 | String | `''`（实际取 `$text`） | - |
+| iconSize | 图标字体大小 | String \| Number | `''`（实际为 `30 × fontsizeFactor px`） | - |
+| margin | 处于预设位置或吸附时与屏幕边缘的边距 | Number | `20` | - |
+| borderRadius | 圆角大小 | String \| Number | `''`（实际为 `12000 × radiusFactor px`，即圆形） | - |
+| boxShadow | 阴影 | String | `0 0 15px -10px` | - |
+| aniTime | 拖动松手 / 吸附时的过渡动画时长 | String \| Number | `''`（实际取 `$snui.aniTimeLong`） | - |
+| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
 
 ## 事件
 
-| 名称   | 类型         | 说明                       |
-| ------ | ------------ | -------------------------- |
-| change | () => Void | 浮动按钮位置发生变化时触发 |
-| click  | () => Void | 浮动按钮被点击时触发       |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| click | (event: UniPointerEvent) => Void | 点击按钮时触发（禁用时不触发） |
+| change | (position: Array\\<Number\\>) => Void | 初始化定位或拖动结束时触发，携带当前位置坐标 |
+
+## 插槽
+
+| 名称 | 说明 |
+| --- | --- |
+| default | 替换按钮内部默认的图标 |
 
 <DemoPhone name="sn-float-button" />

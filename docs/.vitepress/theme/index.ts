@@ -5,6 +5,7 @@ import DefaultTheme from "vitepress/theme";
 import "./style.css";
 import DemoPhone from "../../vue-components/demo-phone.vue";
 import NotFound from "../../vue-components/not-found.vue";
+import { onRouteChanged, setupTypeFields } from "./type-fields-client";
 
 export default {
   extends: DefaultTheme,
@@ -14,7 +15,15 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     });
   },
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, router }) {
     app.component("DemoPhone", DemoPhone);
+    if (typeof window !== "undefined") {
+      setupTypeFields();
+      const prev = router.onAfterRouteChanged;
+      router.onAfterRouteChanged = (to) => {
+        prev?.(to);
+        onRouteChanged();
+      };
+    }
   },
 } satisfies Theme;

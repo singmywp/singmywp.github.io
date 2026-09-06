@@ -354,3 +354,53 @@ img {
 .danger-text {
   color: var(--vp-c-red-2);
 }
+
+/* ---------- Type fields expandable sub-table ---------- */
+.vp-doc .vp-type-ref {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.vp-doc .vp-type-ref { color: var(--vp-c-brand-1); }
+.vp-doc .vp-type-ref .vp-type-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform var(--vp-transition-time, 0.2s);
+  transform: rotate(90deg);
+}
+.vp-doc .vp-type-ref:not(.vp-expanded) .vp-type-caret {
+  transform: rotate(0deg);
+}
+.vp-doc tr.vp-type-fields-row {
+  display: none;
+}
+.vp-doc tr.vp-type-fields-row.vp-open {
+  display: table-row;
+}
+.vp-doc tr.vp-type-fields-row > td {
+  padding: 0 16px 8px 16px !important;
+  background: var(--vp-c-bg-mute);
+  border: none !important;
+}
+.dark .vp-doc tr.vp-type-fields-row > td {
+  background: var(--vp-c-bg-soft);
+}
+.vp-doc tr.vp-type-fields-row .vp-type-fields {
+  border-radius: 8px;
+  overflow: auto;
+}
+.vp-doc tr.vp-type-fields-row .vp-type-fields table {
+  margin: 0;
+  width: 100%;
+  background: transparent;
+}
+.vp-doc tr.vp-type-fields-row .vp-type-fields table th:first-child,
+.vp-doc tr.vp-type-fields-row .vp-type-fields table td:first-child {
+  padding-left: 12px;
+}

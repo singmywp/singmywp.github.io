@@ -1,80 +1,119 @@
-# Scan Provider 扫码核心
+# Scan Provider  扫码核心
 
-:::info 扩展插件
-本组件属于扩展插件，SinleUI 框架内置的 `sn-scan` 组件依赖此组件，故 HBuilderX 安装 SinleUI 插件时会自动安装此组件，无需手动下载
-:::
+> [查看 sn-e-scan-provider 的 2.0 版本差异](/differences/components/sn-e-scan-provider)
 
----
+## 基础用法
 
-* 本组件是基于 Google MLKit 开发， SinleUI 扫码插件的核心部分，负责摄像头预览、扫码解析等基础工作，并向外部提供接口。
-* 如果你不满意内置的 `sn-scan` 的界面，可以参考 `sn-scan` 组件，对本组件进行再封装
-* 如果你希望使用更强大、更稳定的商用级的扫码功能，可以考虑接入华为的 [ScanKit](/components/sn-e-scankit) ，体验更好；或者 [mPaaS 扫一扫](https://help.aliyun.com/document_detail/52599.html?spm=a2c4g.52296.0.i0)，拥有与支付宝一致的扫码体验。
+- SinleUI 扫码插件的核心部分，基于 CameraX + ML Kit 实现，负责摄像头预览、扫码解析等基础工作，并向外部提供接口（仅支持 Android 平台）。
+- 支持二维码、条形码、全格式识别；支持扫描结果识别点坐标返回；支持图片扫码（`scanImageByURI`）；支持手势缩放、双击对焦（并复位缩放）、手电筒；支持扫码成功提示音（默认提示音 / `ding-file-src` 自定义音频）。
+- 摄像头扫码成功后画面会停止并释放相机资源，如需继续扫描请调用 `rescan()` 重新启动。
+- 如果不满意内置 `sn-scan` 组件的界面，可以参考 `sn-scan` 对本组件进行再封装。
+- 由于插件使用了第三方依赖，导入插件后**必须打包自定义基座**后运行。
 
 ```vue
 <template>
-	<sn-e-scan-provider></sn-e-scan-provider>
+	<sn-e-scan-provider ref="scanEle" scan-type="all" enable-zoom @scanned="onScanned" @error="onError"></sn-e-scan-provider>
 </template>
-```
+<script lang="uts" setup>
+import { SnScanResult } from '@/uni_modules/sn-e-scan-provider'
 
-**更多演示请下载 demo 查看**
+function onScanned(res: SnScanResult): void {
+	console.log(res.data, res.scanMode)
+}
+
+function onError(err: SnScanProviderErrorImpl): void {
+	console.log(err.errCode, err.errMsg)
+}
+</script>
+```
 
 ## 兼容性
 
-| Web  | Android |
-| :--- | :------ |
-| ×    | √       |
+| Web | Android |
+| --- | ------- |
+| ×   | √       |
+
+**更多演示请下载 demo 查看**
 
 ## 属性
 
-| 参数          | 说明             | 类型    | 默认值                                                       | 可选值                         |
-| ------------- | ---------------- | ------- | ------------------------------------------------------------ | ------------------------------ |
-| scanType      | 扫码类型         | String  | `all`                                                        | `qrCode` \| `barCode` \| `all` |
-| enableDing    | 是否开启声音提示 | Boolean | `true`                                                       | `true` \| `false`              |
-| enableZoom    | 是否允许缩放     | Boolean | `true`                                                       | `true` \|`false`               |
-| initZoomScale | 初始缩放比例     | Number  | `0`                                                          | -                              |
-| cameraPermTip | 相机权限请求提示 | String  | `\u3000 本应用正在请求您的相机权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用扫码功能。` | -                              |
-
-## 方法
-
-| 名称           | 参数                   | 返回值         | 描述                                       |
-| :------------- | :--------------------- | :------------- | :----------------------------------------- |
-| setTorchStatus | `(status : boolean)`   | -              | 设置手电筒开关状态                         |
-| scanImageByURI | `(uri : string) `      | -              | 提供指定图片的 `URI` 来识别图片一/二维码码 |
-| rescan         | -                      | -              | 扫描成功画面静止后使用此方法来重置摄像头   |
-| setZoomRatio   | `(zoomRatio : number)` | -              | 设置画面缩放比例，范围为 0 ~ 1             |
-| getZoomRatio   | -                      | Number \| null | 获取画面缩放比例                           |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| --- | --- | --- | --- | --- |
+| scanType | 扫码类型 | SnScanType | `'all'` | `'qrcode'` \| `'barcode'` \| `'all'` |
+| enableDing | 是否开启扫码成功提示音 | Boolean | `true` | `true` \| `false` |
+| dingFileSrc | 自定义提示音音频路径，留空使用内置提示音 | String | `''` | - |
+| enableZoom | 是否允许手势缩放（捏合缩放、双击对焦并复位缩放） | Boolean | `true` | `true` \| `false` |
+| initZoomScale | 初始缩放比例（线性缩放，0 ~ 1） | Number | `0` | - |
+| autoStart | 组件初始化后是否自动启动相机并请求权限 | Boolean | `true` | `true` \| `false` |
+| cameraPermTip | 相机权限请求说明文案 | String | `　本应用正在请求您的相机权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用扫码功能。` | - |
+| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customClass | 根节点外部样式类 | String | `''` | - |
 
 ## 事件
 
-| 名称    | 类型                        | 说明                                              |
-| :------ | :-------------------------- | :------------------------------------------------ |
-| scanned | (res: ScanResult) => Void | 扫码成功时触发。`res` 的结构及说明见[下文](#类型) |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| scanned | (result: SnScanResult) => Void | 扫码成功时触发，`result` 结构见[下文类型](#类型) |
+| error | (error: SnScanProviderErrorImpl) => Void | 扫码出错时触发（权限被拒、相机初始化失败、图片识别失败等），错误码见[下文错误码](#错误码) |
+
+## 方法
+
+| 名称 | 参数 | 返回值 | 描述 |
+| --- | --- | --- | --- |
+| start | - | - | 启动相机开始扫码（自动请求相机权限）；auto-start 为 false 时需手动调用 |  
+| stop | - | - | 停止扫码并释放相机资源 |  
+| rescan | - | - | 扫码成功画面静止后，重新启动相机继续扫描 |  
+| setTorchStatus | (status: boolean) | - | 设置手电筒开关状态 |  
+| scanImageByURI | (uri: String) | - | 识别指定图片中的一 / 二维码，相对路径会自动转为绝对路径 |  
+| setZoomRatio | (zoomRatio: number) | - | 设置缩放比例，自动约束在相机支持的最小 / 最大变焦范围内 |  
+| getZoomRatio | - | Number | 获取当前缩放比例，未启动相机时返回 1 |  
 
 ## 类型
 
-`sn-e-scan-provider` 和 `sn-scan` 的 `@scanned` 事件返回一个 `ScanResult` 对象 `res`
+`@scanned` 事件返回 `SnScanResult` 对象，相关类型均由本插件导出：
 
 ```typescript
-type ScanMode = 'camera' | 'image'
+type SnScanType = 'qrcode' | 'barcode' | 'all'
 
-type ScanDataPosition = {
-	centerX: number,
+type SnScanMode = 'camera' | 'image'
+
+type SnScanDataPosition = {
+	centerX: number
 	centerY: number
 }
 
-type ScanData = {
-	value: string,
-	position: ScanDataPosition
+type SnScanData = {
+	value: string
+	position: SnScanDataPosition
 }
 
-type ScanResult = {
-	data: ScanData[],
-	scanMode: ScanMode
+type SnScanResult = {
+	data: SnScanData[]
+	scanMode: SnScanMode
+	sourceWidth?: number
+	sourceHeight?: number
 }
 ```
 
-`ScanResult` 及其相关的类型均在扩展插件 `sn-e-scan-provider` 导出，使用时根据路径导入即可。例如：
+| 字段 | 说明 |
+| --- | --- |
+| data | 识别结果数组，每项含码值 value 与识别点坐标 position（centerX / centerY） |  
+| scanMode | 结果来源：'camera' 相机扫码 / 'image' 图片识别 |  
+| sourceWidth | 本次识别原图宽度（已按旋转方向修正），可选 |  
+| sourceHeight | 本次识别原图高度（已按旋转方向修正），可选 |  
 
 ```typescript
-import { ScanResult } from "@/uni_modules/sn-e-scan-provider"
+import { SnScanResult } from '@/uni_modules/sn-e-scan-provider'
 ```
+
+## 错误码
+
+`@error` 事件返回 `SnScanProviderErrorImpl`（`UniError` 子类），错误码定义：
+
+| 错误码 | 说明 |
+| --- | --- |
+| 1602001 | 相机权限被拒绝 |
+| 1602002 | 相机初始化失败 |
+| 1602003 | 图片扫码失败 |
+| 1602004 | 无效的图片 URI |
+| 1602005 | 内部错误 |

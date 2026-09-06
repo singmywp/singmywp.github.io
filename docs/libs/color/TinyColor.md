@@ -1,67 +1,120 @@
-# TinyColor
+# TinyColor  颜色实例
 
-### 构造函数
+`TinyColor` 是颜色库中对单个颜色的实例化封装，用于颜色的解析、计算与变换。构造后可读取 r/g/b/a 等通道，并调用方法获取指定格式或完成颜色运算。
 
-> [!important]
-> 构造颜色对象请不要直接 `new TinyColor()`，而是通过 `colorLib.tinyColor()` 函数创建。
+```typescript
+import { TinyColor } from '@/uni_modules/sinle-ui'
 
-| 名称  | 类型          | 必备 | 默认值                | 描述             |
-| :---- | :------------ | :--- | :-------------------- | :--------------- |
-| color | Any           | 否   | `''`                    | 处理后的输入颜色 |
-| opts  | [LColorOptions](/libs/color/types#lcoloroptions) | 否   | `{} as LColorOptions` | 颜色配置         |
+let c = new TinyColor('rgb(255, 0, 0)', {})
+```
 
-### 属性
+实例方法按功能可分为六类：**解析与比较**（`toString` / `equals`）、**明暗与亮度**（`isDark` / `isLight` / `getBrightness` / `getLuminance` / `isMonochrome`）、**Alpha 通道**（`getAlpha` / `setAlpha`）、**格式输出**（`toRgb` / `toHex` / `toHsl` / `toHsv` / `toHsb` / `toName` / `toNumber` 等系列）、**颜色变换**（明暗与饱和度调整、混合叠加）、**色轮配色**（类似色、互补色、三角/四角色等）。除颜色变换与色轮配色类方法返回新实例（不修改原对象）外，其余方法仅读取计算或返回自身。
 
-| 名称          | 类型    | 描述                                                         |
-| :------------ | :------ | :----------------------------------------------------------- |
-| originalInput | Any     | 传递到构造函数中用于创建 TinyColor 实例的原始输入          |
-| format        | String  | 返回用于创建 TinyColor 实例的格式                          |
-| isValid       | Boolean | 一个布尔值，指示颜色是否成功被解析。注意：如果颜色无效，那么输出颜色值时默认黑色 |
+## 属性
 
-### 方法
+以下实例属性在构造时解析填充：
 
-| 名称                  | 参数                                         | 返回值      | 描述                                                         |
-| :-------------------- | :------------------------------------------- | ----------- | :----------------------------------------------------------- |
-| getBrightness         | -                                            | Number      | 返回颜色的感知亮度，范围从 0-255，这是根据 [Web内容无障碍指南（第1版）](http://www.w3.org/TR/AERT#color-contrast) 定义的。 |
-| isLight               | -                                            | Boolean     | 返回一个布尔值，指示颜色的感知亮度是否为浅色。               |
-| isDark                | -                                            | Boolean     | 返回一个布尔值，指示颜色的感知亮度是否为深色。               |
-| getLuminance          | -                                            | Number      | 返回颜色的感知亮度（luminance），范围从 0-1，这是根据 [Web内容无障碍指南（第2版）](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef) 定义的。 |
-| getAlpha              | -                                            | Number      | 返回颜色的`alpha`（透明度）值，范围从 `0-1`。                |
-| setAlpha              | `(alpha: number)`                            | -           | 在当前颜色上设置`alpha`（透明度）值。接受的范围是 `0-1` 之间。 |
-| onBackground          | `(background: any)`                          | -           | 计算颜色在背景上的显示效果。当颜色完全透明（即 `getAlpha() == 0`）时，结果将是背景颜色。当颜色完全不透明（即 `getAlpha() == 1`）时，结果将是颜色本身。否则，你将得到一个计算结果。 |
-| toHsv                 | -                                            | HSVA        | 转为 `HSVA` 颜色对象                                         |
-| toHsvString           | -                                            | String      | 转为 `HSVA` 颜色字符串                                       |
-| toHsl                 | -                                            | HSLA        | 转为 `HSLA` 颜色对象                                         |
-| toHslString           | -                                            | String      | 转为 `HSLA` 颜色字符串                                       |
-| toNumber              | -                                            | Number      | 转为数字                                                     |
-| toHex                 | -                                            | String      | 转为 `Hex` 颜色（不带 `#` ）                                 |
-| toHexString           | -                                            | String      | 转为 `Hex` 颜色字符串（带 `#` ）                             |
-| toHex8                | -                                            | String      | 转为 `Hex` 颜色（不带 `#` 、有透明度）                       |
-| toHex8String          | -                                            | String      | 转为 `Hex` 颜色（带 `#` 、有透明度）                         |
-| toHexShortString      | -                                            | String      | 根据颜色的透明度（`alpha` 值）返回较短的十六进制值，并且带 `#` |
-| toRgb                 | -                                            | RGBA        | 转为 `RGBA` 颜色对象                                         |
-| toRgbString           | -                                            | String      | 转为 `RGBA` 颜色字符串                                       |
-| toPercentageRgb       | -                                            | RGBAString  | 将当前颜色转换为百分比表示的 `RGBA`                          |
-| toPercentageRgbString | -                                            | String      | 将当前颜色转换为百分比表示的 `RGBA`                          |
-| toName                | -                                            | String      | 尽可能转换为颜色名称                                         |
-| toString              | `(format: string)`                           | String      | 根据输入格式打印成字符串。你也可以通过向函数中传入以下之一来覆盖这个行为：`"rgb", "prgb", "hex6", "hex3", "hex8", "name", "hsl", "hsv"` |
-| lighten               | `(amount: Number = 10)`                      | TinyColor   | 根据给定的量（从0到100）淡化颜色。提供100将始终返回白色.     |
-| brighten              | `(amount: Number = 10)`                      | TinyColor   | 根据给定的量（从0到100）调高颜色亮度。提供100将始终返回白色. |
-| darken                | `(amount: Number = 10)`                      | TinyColor   | 根据给定的量（从0到100）深化颜色。提供100将始终返回白色.     |
-| tint                  | `(amount: Number = 10)`                      | TinyColor   | 将颜色与纯白色混合，范围从0到100。提供0将不进行任何操作，提供100将始终返回白色. |
-| shade                 | `(amount: Number = 10)`                      | TinyColor   | 将颜色与纯黑色混合，范围从0到100。提供0将不进行任何操作，提供100将始终返回黑色. |
-| desaturate            | `(amount: Number = 10)`                      | TinyColor   | 根据给定的量（从0到100）降低颜色的饱和度。提供100将与调用`greyscale`相同。 |
-| saturate              | `(amount: Number = 10)`                      | TinyColor   | 根据给定的量（从0到100）增加颜色的饱和度。                   |
-| greyscale             | -                                            | TinyColor   | 完全降低颜色的饱和度，使其变为灰度。与调用`desaturate(100)`相同。 |
-| spin                  | `(amount: Number = 0)`                       | TinyColor   | 根据给定的量（从-360到360）旋转色相。调用时使用0、360或-360将不进行任何操作（因为它将色相设置回原来的值）。 |
-| mix                   | `(amount: Number = 50)`                      | TinyColor   | 将当前颜色与另一种颜色按给定量（从0到100）混合。0表示不混合（返回当前颜色）。 |
-| analogous             | `(results: Number = 6, slices: Number = 30)` | TinyColor[] | 生成一组与当前颜色相似的颜色。这些颜色在色相环上是相邻的，形成一个类似于彩虹的颜色序列。<br />results - 要生成的相似颜色的数量；<br />slices - 将色相环划分为多少个部分 |
-| monochromatic         | `(results: Number = 6)`                      | TinyColor[] | 生成一组与当前颜色具有相同色相和饱和度的颜色。这些颜色的亮度值不同，形成一个单色调的颜色序列。<br />results - 要生成的单色调颜色的数量 |
-| splitcomplement       | -                                            | TinyColor[] | 生成当前颜色的分裂补色。分裂补色是指在色相环上位于当前颜色的两侧的颜色，它们的色相差为 180°。 |
-| triad                 | -                                            | TinyColor[] | 生成当前颜色的三色调。                                       |
-| tetrad                | -                                            | TinyColor[] | 生成当前颜色的四色调。                                       |
-| polyad                | `(n: number)`                                | TinyColor[] | 生成当前颜色的 `n` 色调。                                    |
-| complement            | -                                            | TinyColor   | 计算当前颜色的补色。                                         |
-| equals                | `(color?:any)`                               | Boolean     | 判断两色是否相同                                             |
-| clone                 | -                                            | TinyColor   | 使用相同的颜色实例化一个新的TinyColor对象。对新的对象的任何更改都不会影响旧的对象。 |
-| contrasting           | -                                            | TinyColor   | 获取以当前颜色为背景时前景的最佳颜色（黑色或白色）。即判断黑色与白色哪一个与当前颜色的视觉对比最大。 |
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| r | number | 红色通道（0-255） |
+| g | number | 绿色通道（0-255） |
+| b | number | 蓝色通道（0-255） |
+| a | number | 透明度（0-1） |
+| format | LColorFormats? | 输入颜色格式 |
+| originalInput | LColorInput | 原始输入值 |
+| isValid | boolean | 输入是否为有效颜色 |
+| gradientType | string? | 渐变类型 |
+| roundA | number | 舍入后的透明度值 |
+
+## 方法
+
+| 名称 | 参数 | 返回值 | 描述 |
+| --- | --- | --- | --- |
+| toString | format?: LColorFormats | string | 解析与比较。按指定格式输出字符串，缺省时用解析到的 format；未识别格式时回退为 `#hex` |
+| equals | other?: LColorInput | boolean | 解析与比较。判断两个颜色是否相等 |
+| isDark | - | boolean | 明暗与亮度。是否为深色（亮度 < 128） |
+| isLight | - | boolean | 明暗与亮度。是否为浅色（!isDark） |
+| getBrightness | - | number | 明暗与亮度。感知亮度（加权 RGB 亮度，0-255） |
+| getLuminance | - | number | 明暗与亮度。相对亮度（WCAG 相对亮度 0-1） |
+| isMonochrome | - | boolean | 明暗与亮度。是否单色（饱和度 0） |
+| getAlpha | - | number | Alpha 通道。获取透明度（0-1） |
+| setAlpha | alpha?: string \| number | TinyColor | Alpha 通道。设置透明度，返回自身，可链式调用 |
+| toRgb | - | RGBA | 格式输出。输出 RGB 对象（r/g/b/a） |
+| toRgbString | - | string | 格式输出。输出 `rgb()` / `rgba()` 字符串 |
+| toPercentageRgb | - | RGBAString | 格式输出。输出百分比 RGB 对象 |
+| toPercentageRgbString | - | string | 格式输出。输出百分比 `rgb()%` / `rgba()%` 字符串 |
+| toHex | allow3Char = false | string | 格式输出。输出 HEX（可选 3 位缩写） |
+| toHexString | allow3Char = false | string | 格式输出。输出带 `#` 的 HEX 字符串 |
+| toHex8 | allow4Char = false | string | 格式输出。输出含透明度的 8 位 HEX |
+| toHex8String | allow4Char = false | string | 格式输出。输出 `#` + 8 位 HEX |
+| toHexShortString | allowShortChar = false | string | 格式输出。根据透明度输出 6 或 8 位 HEX |
+| toHsl | - | HSLA | 格式输出。输出 HSL 对象 |
+| toHslString | - | string | 格式输出。输出 `hsl()` / `hsla()` 字符串 |
+| toHsv | - | HSVA | 格式输出。输出 HSV 对象 |
+| toHsvString | - | string | 格式输出。输出 `hsv()` / `hsva()` 字符串 |
+| toHsb | - | HSBA | 格式输出。输出 HSB 对象 |
+| toHsbString | - | string | 格式输出。输出 `hsb()` / `hsba()` 字符串 |
+| toName | - | string \| null | 格式输出。输出 CSS 颜色名（无对应名称时为 null） |
+| toNumber | - | number | 格式输出。输出数字（0xRRGGBB） |
+| lighten | amount = 10 | TinyColor | 颜色变换。提高明度（amount 为百分比数值） |
+| darken | amount = 10 | TinyColor | 颜色变换。降低明度 |
+| brighten | amount = 10 | TinyColor | 颜色变换。向白方向提亮 |
+| tint | amount = 10 | TinyColor | 颜色变换。与白色混合 amount% |
+| shade | amount = 10 | TinyColor | 颜色变换。与黑色混合 amount% |
+| saturate | amount = 10 | TinyColor | 颜色变换。提高饱和度 |
+| desaturate | amount = 10 | TinyColor | 颜色变换。降低饱和度 |
+| greyscale | - | TinyColor | 颜色变换。转为灰度（desaturate 100） |
+| spin | amount: number | TinyColor | 颜色变换。旋转色相（按角度，支持负值） |
+| mix | color: LColorInput / amount = 50 | TinyColor | 颜色变换。与另一颜色按比例混合（amount 为混合比例） |
+| onBackground | background: LColorInput | TinyColor | 颜色变换。将当前色叠加到背景色上（alpha 合成） |
+| clone | - | TinyColor | 颜色变换。克隆当前实例 |
+| analogous | results = 6 / slices = 30 | TinyColor[] | 色轮配色。类似色（相邻色相配色） |
+| complement | - | TinyColor | 色轮配色。互补色（色相 +180°） |
+| monochromatic | results = 6 | TinyColor[] | 色轮配色。单色系（同色相不同亮度） |
+| splitcomplement | - | TinyColor[] | 色轮配色。分裂互补色（含当前色的 3 色） |
+| triad | - | TinyColor[] | 色轮配色。三色配色 |
+| tetrad | - | TinyColor[] | 色轮配色。四色配色 |
+| polyad | n: number | TinyColor[] | 色轮配色。多色配色（按 n 均分色相环） |
+
+> 备注：`toHexString()` 默认只取 r/g/b；含透明度时请使用 `toHex8String()` / `toHexShortString()` 获取带 alpha 的 HEX。
+
+## 示例
+
+```typescript
+let c = new TinyColor('rgb(255, 0, 0)')
+c.toString()              // 'rgb(255, 0, 0)'
+c.toString('hex')         // '#ff0000'
+c.equals('#ff0000')       // true
+
+let dark = new TinyColor('#333333')
+dark.isDark()             // true
+dark.getBrightness()      // 约 51
+dark.getLuminance()       // 约 0.04
+
+let alpha = new TinyColor('#ff0000')
+alpha.getAlpha()          // 1
+alpha.setAlpha(0.5).toString()  // 返回自身，可链式调用
+
+let rgba = new TinyColor('rgba(255, 0, 0, 0.5)')
+rgba.toRgbString()        // 'rgba(255, 0, 0, 0.5)'
+rgba.toHexString()        // 默认只取 r/g/b：'#ff0000'
+rgba.toHslString()        // 'hsla(0, 100%, 50%, 0.5)'
+rgba.toName()             // null（含透明度时无颜色名）
+
+let base = new TinyColor('#1890ff')
+base.lighten(20)          // 变亮
+base.darken(10)           // 变暗
+base.saturate(20)         // 更饱和
+base.spin(120)            // 色相旋转 120°
+base.mix('#0000ff', 50)   // 与蓝色各半混合
+base.onBackground('#ffffff')  // 叠加到白色背景
+base.clone()              // 克隆实例
+
+let wheel = new TinyColor('#ff0000')
+wheel.complement()        // 青色
+wheel.analogous()         // 6 个类似色
+wheel.triad()             // 3 个三色配色
+wheel.polyad(5)           // 5 个均分布配色
+wheel.splitcomplement()   // 3 个分裂互补色
+wheel.monochromatic()     // 6 个单色系
+```

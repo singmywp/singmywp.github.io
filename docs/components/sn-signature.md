@@ -1,63 +1,115 @@
-# Signature 签名
+# Signature  签名
+
+> [查看 sn-signature 的 2.0 版本差异](/differences/components/sn-signature)
+
 ## 基础用法
-- 基于 canvas 的签名板，适配各端
-- 内置一套精美模版，提供 20+ 属性，支持插槽定制操作栏，任意搭配
+- 基于 canvas 的手写签名板，底部操作栏提供横/竖屏切换、撤销、重做、清空、设置与导出
+- 内置 17 种笔触（钢笔、毛笔、蜡笔、喷漆等），可在设置面板中切换笔触、画布背景、线条颜色与粗细、网格背景
+- 通过 ref 调用 `undo`、`redo`、`clear`、`exportImage`、`setLandscape` 方法可编程控制签名板
+
 ```vue
 <template>
-	<sn-signature></sn-signature>
+	<sn-signature @exported="onExported"></sn-signature>
 </template>
 ```
-**更多演示请下载 demo 查看**
-## 属性
-| 参数                  | 说明                   | 类型          | 默认值                                 | 可选值            |
-| --------------------- | ---------------------- | ------------- | -------------------------------------- | ----------------- |
-| text                  | 签名板上的提示文本     | String        | `请签名`                               | -                 |
-| textFont              | 提示文本的字体         | String        | -                                      | -                 |
-| textColor             | 提示文本颜色           | String        | `$line`                                | -                 |
-| penSize               | 笔触大小               | Number        | `3`                                    | -                 |
-| penColor              | 笔触颜色               | String        | `$text`                                | -                 |
-| height                | 签名板高度             | String        | `150px`                                | -                 |
-| bgColor               | 签名板背景颜色         | String        | `$front`                               | -                 |
-| disabled              | 是否禁用签名板         | Boolean       | `false`                                | `true` \| `false` |
-| borderRadius          | 签名板圆角大小         | String        | `$normal`                              | -                 |
-| buttonSpacing         | 操作按钮之间的间距     | String        | `5px`                                  | -                 |
-| maxHistory            | 最大历史记录数         | Number        | `20`                                   | -                 |
-| clearTip              | 清空签名的提示信息     | String        | `清空后数据无法找回，您确定要清空吗？` | -                 |
-| showClearTip          | 是否显示清空提示信息   | Boolean       | `true`                                 | `true` \| `false` |
-| showAction            | 是否显示操作按钮区域   | Boolean       | `true`                                 | `true` \| `false` |
-| showUndo              | 是否显示撤销按钮       | Boolean       | `true`                                 | `true` \| `false` |
-| showRedo              | 是否显示重做按钮       | Boolean       | `true`                                 | `true` \| `false` |
-| showConfirm           | 是否显示确定按钮       | Boolean       | `true`                                 | `true` \| `false` |
-| showClear             | 是否显示清空按钮       | Boolean       | `true`                                 | `true` \| `false` |
-| undoText              | 撤销按钮文本           | String        | `撤销`                                 | -                 |
-| redoText              | 重做按钮文本           | String        | `重做`                                 | -                 |
-| clearText             | 清空按钮文本           | String        | `清空`                                 | -                 |
-| confirmText           | 确定按钮文本           | String        | `确定`                                 | -                 |
-| customStyle           | 自定义签名板样式       | UTSJSONObject | `{}`                                   | -                 |
-| customCanvasStyle     | 自定义画布样式         | UTSJSONObject | `{}`                                   | -                 |
-| customActionAreaStyle | 自定义操作按钮区域样式 | UTSJSONObject | `{}`                                   | -                 |
-## 插槽
 
-| 名称   | 说明                             |
-| ------ | -------------------------------- |
-| action | 在这里放置内容以替换原有的操作栏 |
+**更多演示请下载 demo 查看**
+
+## 进阶用法
+
+### 自定义笔触
+
+通过 `brush` 属性指定初始笔触，设置面板内也可实时切换；`show-brush-settings` 为 `false` 时隐藏面板中的笔触选项。
+
+```vue
+<template>
+	<sn-signature brush="pen" height="220" :show-brush-settings="true"></sn-signature>
+</template>
+```
+
+### 横屏签名
+
+点击操作栏的横屏图标可全屏横置签名板（Web 端以固定定位铺满视口，App 端调用原生全屏横屏）；也可通过 ref 调用 `setLandscape` 方法控制。
+
+```vue
+<template>
+	<sn-signature ref="sigRef"></sn-signature>
+</template>
+<script lang="uts" setup>
+	const sigRef = ref<SnSignatureComponentPublicInstance | null>(null)
+	function toLandscape() {
+		sigRef.value?.$callMethod('setLandscape', true)
+	}
+</script>
+```
+
+## 属性
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| --- | --- | --- | --- | --- |
+| width | 签名板宽度，支持 `$` 动态尺寸语法 | String \| Number | `100%` | - |
+| height | 签名板（画布区）高度，数字单位为 px，支持 `$` 动态尺寸语法 | String \| Number | `280` | - |
+| bgColor | 画布背景颜色，同时作为导出图片的背景色 | String | `#FFFFFF` | - |
+| lineColor | 签名线条颜色 | String | `#1F1F1F` | - |
+| lineWidth | 线条粗细（px） | Number | `3` | - |
+| brush | 笔触样式 | [[SnSignatureBrush]] | `default` | `default`(默认) \| `pen`(钢笔) \| `gel`(中性笔) \| `pencil`(铅笔) \| `brush`(毛笔) \| `marker`(马克笔) \| `crayon`(蜡笔) \| `fur`(毛皮) \| `ink`(墨水) \| `longfur`(长绒毛) \| `ribbon`(丝带) \| `shaded`(阴影) \| `sketchy`(速写) \| `spray`(喷漆) \| `squares`(方格) \| `circle`(圆泡) \| `web`(蛛网) |
+| showBrushSettings | 设置面板中是否显示笔触选项 | Boolean | `true` | `true` \| `false` |
+| gridEnabled | 是否显示网格背景 | Boolean | `false` | `true` \| `false` |
+| gridColor | 网格线颜色 | String | `#B8B8B8` | - |
+| gridLineWidth | 网格线宽（px） | Number | `1` | - |
+| gridDensity | 网格密度，即网格间距（px） | Number | `20` | - |
+| maxHistory | 最大撤销历史记录数 | Number | `20` | - |
+| showActionBar | 是否显示底部操作栏（横竖屏、撤销、重做、清空、设置、导出） | Boolean | `true` | `true` \| `false` |
+| drawerPosition | 设置面板弹出位置 | String | `right` | `top` \| `right` \| `bottom` \| `left` |
+| drawerWidth | 设置面板宽度 | String \| Number | `300px` | - |
+| aniTime | 设置面板动画时长，支持 `$` 动态时长语法 | String \| Number | `''` | - |
+| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customClass | 根节点外部样式类 | String | `''` | - |
+| canvasWrapClass | 画布容器外部样式类 | String | `''` | - |
+| canvasWrapStyle | 自定义画布容器样式 | UTSJSONObject \| String | `''` | - |
+| barClass | 操作栏外部样式类 | String | `''` | - |
+| barStyle | 自定义操作栏样式 | UTSJSONObject \| String | `''` | - |
+| toolClass | 操作栏工具按钮外部样式类 | String | `''` | - |
+
+:::type-fields SnSignatureBrush
+
+```typescript
+type SnSignatureBrush = 'default' | 'pen' | 'gel' | 'pencil' | 'marker' | 'brush'
+```
+
+签名笔触类型。
+
+---
+
+:::
 
 ## 事件
 
-| 名称    | 类型       | 说明     |
-| :------ | :--------- | :------- |
-| confirm | () => Void | 确定事件 |
-| undo    | () => Void | 撤销事件 |
-| redo    | () => Void | 重做事件 |
-| clear   | () => Void | 清空事件 |
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| change | (data: SignatureData) => Void | 签名内容变化时触发（一笔结束、撤销、重做、清空），`data.dataUrl` 为空字符串，`width`/`height` 为当前画布尺寸 |
+| exported | (data: SignatureData) => Void | 导出签名图片成功后触发，`data.dataUrl` 为 base64 图片数据，`width`/`height` 为图片实际像素尺寸（已乘设备像素比） |
+| undo | () => Void | 撤销签名时触发 |
+| redo | () => Void | 重做签名时触发 |
+| clear | () => Void | 清空签名板时触发 |
+| orientationchange | (landscape: boolean) => Void | 横竖屏切换时触发，参数为是否横屏 |
+
+事件回调参数 `SignatureData` 结构：
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| dataUrl | String | base64 图片数据（`change` 事件中为空字符串） |
+| width | Number | 图片宽度 |
+| height | Number | 图片高度 |
 
 ## 方法
 
-| 名称      | 参数 | 返回值 | 描述                     |
-| :-------- | :--- | :----- | :----------------------- |
-| undo      | -    | -      | 撤销上一笔签名           |
-| redo      | -    | -      | 重做上一笔撤销的签名     |
-| clear     | -    | -      | 清空签名板               |
-| getBase64 | -    | String | 将签名导出为 base64 图片 |
+| 名称 | 参数 | 返回值 | 描述 |
+| --- | --- | --- | --- |
+| undo | - | - | 撤销上一笔签名 |
+| redo | - | - | 重做上一笔撤销的签名 |
+| clear | - | - | 清空签名板 |
+| exportImage | - | - | 将签名导出为 base64 图片并通过 `exported` 事件返回；画布未就绪或无内容时以 toast 提示且不导出 |
+| setLandscape | (land: Boolean) | - | 设置横屏（全屏）模式，`true` 进入横屏、`false` 退出 |
 
 <DemoPhone name="sn-signature" />
