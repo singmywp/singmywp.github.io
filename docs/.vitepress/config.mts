@@ -1249,6 +1249,54 @@ export default defineConfig({
               "link": "/libs/date/types"
             }
           ]
+        },
+        {
+          "text": "Store 状态管理库",
+          "link": "/libs/store/index",
+          "items": [
+            {
+              "text": "方法",
+              "collapsed": true,
+              "items": [
+                {
+                  "text": "获取数据",
+                  "link": "/libs/store/methods#storegetkey-defaultvalue"
+                },
+                {
+                  "text": "存储数据",
+                  "link": "/libs/store/methods#storesetkey-value-lasting-expire"
+                },
+                {
+                  "text": "删除数据",
+                  "link": "/libs/store/methods#storedeletekey"
+                },
+                {
+                  "text": "判断键是否存在",
+                  "link": "/libs/store/methods#storehaskey"
+                },
+                {
+                  "text": "获取全部键名",
+                  "link": "/libs/store/methods#storekeys"
+                },
+                {
+                  "text": "清空存储",
+                  "link": "/libs/store/methods#storeclear"
+                },
+                {
+                  "text": "数据总量",
+                  "link": "/libs/store/methods#storesize"
+                },
+                {
+                  "text": "订阅变更",
+                  "link": "/libs/store/methods#storesubscribekey-listener"
+                },
+                {
+                  "text": "取消订阅",
+                  "link": "/libs/store/methods#storeunsubscribekey-listener"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
