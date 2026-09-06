@@ -1255,44 +1255,52 @@ export default defineConfig({
           "link": "/libs/store/index",
           "items": [
             {
+              "text": "用法",
+              "link": "/libs/store/usage"
+            },
+            {
+              "text": "过期策略",
+              "link": "/libs/store/expire"
+            },
+            {
               "text": "方法",
               "collapsed": true,
               "items": [
                 {
                   "text": "获取数据",
-                  "link": "/libs/store/methods#storegetkey-defaultvalue"
+                  "link": "/libs/store/methods#store-get-key-defaultvalue"
                 },
                 {
                   "text": "存储数据",
-                  "link": "/libs/store/methods#storesetkey-value-lasting-expire"
+                  "link": "/libs/store/methods#store-set-key-value-lasting-expire"
                 },
                 {
                   "text": "删除数据",
-                  "link": "/libs/store/methods#storedeletekey"
+                  "link": "/libs/store/methods#store-delete-key"
                 },
                 {
                   "text": "判断键是否存在",
-                  "link": "/libs/store/methods#storehaskey"
+                  "link": "/libs/store/methods#store-has-key"
                 },
                 {
                   "text": "获取全部键名",
-                  "link": "/libs/store/methods#storekeys"
+                  "link": "/libs/store/methods#store-keys"
                 },
                 {
                   "text": "清空存储",
-                  "link": "/libs/store/methods#storeclear"
+                  "link": "/libs/store/methods#store-clear"
                 },
                 {
                   "text": "数据总量",
-                  "link": "/libs/store/methods#storesize"
+                  "link": "/libs/store/methods#store-size"
                 },
                 {
                   "text": "订阅变更",
-                  "link": "/libs/store/methods#storesubscribekey-listener"
+                  "link": "/libs/store/methods#store-subscribe-key-listener"
                 },
                 {
                   "text": "取消订阅",
-                  "link": "/libs/store/methods#storeunsubscribekey-listener"
+                  "link": "/libs/store/methods#store-unsubscribe-key-listener"
                 }
               ]
             }
