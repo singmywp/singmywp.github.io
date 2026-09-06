@@ -12,7 +12,7 @@
 
 | 项目 | 旧版 | 新版 |
 | :--- | :--- | :--- |
-| 入口 | `$snui.store`（另有插件内 `store` / `frameStore` 导出） | `import { store, frameStore, StoreLib } from '@/uni_modules/sinle-ui'`；`$snui.store` 保留 |
+| 入口 | `$snui.store`（另有插件内 `store` / `frameStore` 导出） | `import { store, frameStore, StoreLib } from '@/uni_modules/sinle-ui'` 独立导出，不再挂载 `$snui`（与 `ColorLib` / `DateLib` 一致） |
 | 内置实例 | `store`（`app_store`）、`frameStore`（`sinle_ui_store`） | 同旧版 |
 | 存储键前缀 | `sinle_ui_store_lib_*`、`{storeKey}_key_*` | `snui_store_{storeKey}_*`（实例级隔离） |
 
@@ -63,6 +63,6 @@
 
 ## 迁移建议
 
-- 原使用 `$snui.store.get / set / delete` 的代码无需改动（方法签名兼容），仅注意持久化键命名空间变化导致的旧数据不可见。
+- 原使用 `$snui.store.get / set / delete` 的代码改为 `import { store } from '@/uni_modules/sinle-ui'` 后直接调用（`$snui.store` 已移除），方法签名兼容，仅注意持久化键命名空间变化导致的旧数据不可见。
 - 若使用过 `storeKeys` 之外的旧版持久化键名，需手动迁移一次数据。
 - 框架内部（主题 / 风格 / 灰模、dialog 弹窗配置）已统一使用 `frameStore` 或基于 `StoreLib` 的实例管理，无需业务介入。

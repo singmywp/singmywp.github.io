@@ -10,7 +10,7 @@ SinleUI 2.0 对框架 API 做了**结构性重构**：旧版以 `$snui` 挂载 `
 
 - `$snui.utils` → 独立导出 `snu`（工具库门面）
 - `$snui.libs.color` / `$snui.libs.date` → 独立导出 `ColorLib/TinyColor` 与 `DateLib/Dayuts/dayuts/isDayuts/dayutsIntl`
-- `$snui.store` → **整个移除**（旧版 Store 状态管理不再提供）
+- `$snui.store` → **独立导出 `store` / `frameStore` / `StoreLib`**（不再挂载 `$snui`，与 `snu` / `ColorLib` / `DateLib` 一致）
 - `$snui.configs`（App/Page/Font/Radius/AniTime/zIndex 六大子配置）→ **移除**，改为 `$snui` 上的扁平属性直接读写（theme、autoTheme、currentStyleId、topbarHeight 等），并新增多风格切换与乘数体系
 - 入口导出：旧版根 `index.uts` 几乎只导出 `$snui` 与少量类型；新版导出 18 个值（对象/hooks/工具/常量/函数）+ 大量类型
 
@@ -20,7 +20,7 @@ SinleUI 2.0 对框架 API 做了**结构性重构**：旧版以 `$snui` 挂载 `
 | :--- | :--- | :--- |
 | `colors`（只读） | `colors`（只读） | 保留，语义不变 |
 | `utils` | 移除 | 改为独立导出 `snu` |
-| `store` | 移除 | Store 库整体移除 |
+| `store` | 独立导出 | Store 库重建为独立导出（`store` / `frameStore` / `StoreLib`），不再挂载 `$snui` |
 | `libs` | 移除 | 颜色/日期库改为独立导出 |
 | `configs` | 移除 | 见下方配置体系差异 |
 | - | `theme`（可写） | 新增，切换亮/暗主题，自动关闭 autoTheme |

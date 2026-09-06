@@ -107,7 +107,7 @@
 - 修复 Utils 工具库 isDate 在高版本 uni-app x 上报空指针异常的问题
 - 修复 sn-scan 图片扫描成功后预览图与识别点错位的问题
 - 修复 sn-scan 手指在扫描线上无法触发缩放事件的问题（即缩放具有明显的卡顿感的问题）
-- 移除 【破坏性变更】Store 状态管理库（`$snui.store` 及 `StoreLib` 全部废弃），蒸汽模式可直接使用 `pinia` 。
+- 更改 【破坏性变更】Store 状态管理库回归：旧版挂载于 `$snui.store` 的实现废弃重建，2.0 改为独立导出 `StoreLib` / `store` / `frameStore`，不再挂载 `$snui`（蒸汽模式也可直接使用 `pinia`）。
 - 移除 【破坏性变更】`configs.font.mainFamily` 内置字体配置与 `configs.app.grayMode` 哀悼置灰模式
 - 移除 【破坏性变更】`snu` 方法：`makePhoneCall`、`vibrate`、`addPx`、`share`、`chooseMedia`、`previewImage`、`showToasty`。上述方法官方基本已有实现或已不实用。
 - 移除 废弃类型：`SnShareConfig`、`SnChooseMediaOptions`、`SnPreviewImageConfig`、`SnPreviewImageLongPressActions`、`SnToastyConfig`

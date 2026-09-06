@@ -8,12 +8,7 @@
 import { store, frameStore, StoreLib } from '@/uni_modules/sinle-ui'
 ```
 
-框架也保留了旧版入口 `$snui.store`（等价于 `store`）：
-
-```typescript
-import { $snui } from '@/uni_modules/sinle-ui'
-const s = $snui.store
-```
+与 `ColorLib` / `DateLib` 等核心库一致，store 不再挂载在 `$snui` 上，请直接按命名导入使用。
 
 ### 内置实例
 
