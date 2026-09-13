@@ -1,7 +1,5 @@
 # Sorter  排序
 
-> [查看 sn-sorter 的 2.0 版本差异](/differences/components/sn-sorter)
-
 ## 基础用法
 
 - 排序组件，常用于列表排序切换，点击后通过 `v-model` 在无序（`0`）、升序（`1`）、降序（`-1`）之间循环切换

@@ -54,7 +54,7 @@
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
 | type | String | 是 | 事件类型：`touchstart` \| `touchend` \| `touchmove` \| `touchcancel` \| `longpress` \| `showpress` |
-| touches | Array\<[SnTouch](/api/types/api#sntouch)\> | 是 | 多指触摸信息 |
+| touches | Array<[SnTouch](/api/types/api#sntouch)> | 是 | 多指触摸信息 |
 | event | UniEvent | 否 | 原事件，可用以阻止默认行为、阻止冒泡 |
 
 :::
@@ -88,30 +88,6 @@
 | default | 放置手势监听区域内的内容 |
 
 ## 类型
-
-| 类型 | 字段 | 类型 | 描述 |
-| --- | --- | --- | --- |
-| [[SnPointerEvent@api]] | type | string | 事件类型（`click` / `dbclick`） |
-| | x | number | 触点横坐标 |
-| | y | number | 触点纵坐标 |
-| | event | UniPointerEvent | 原始指针事件 |
-| [[SnTouch@api]] | x | number | 触点横坐标 |
-| | y | number | 触点纵坐标 |
-| | diffX | number | 本次移动横向位移 |
-| | diffY | number | 本次移动纵向位移 |
-| | direction | string | 移动方向：`none` \| `left` \| `right` \| `up` \| `down` |
-| | id | number | 触点标识 |
-| [[SnTouchEvent@api]] | type | string | 事件类型（`longpress` / `touchstart` / `touchmove` / `touchend` / `touchcancel`） |
-| | touches | [[SnTouch@api]][] | 当前触点列表 |
-| | event | UniEvent | 原始触摸事件 |
-| [[SnScaleEvent@api]] | zoom | number | 缩放比例（两指距离相对初始距离的变化） |
-| [[SnFlingEvent@api]] | type | string | 事件类型（`fling`） |
-| | beginX | number | 起点横坐标 |
-| | beginY | number | 起点纵坐标 |
-| | endX | number | 终点横坐标 |
-| | endY | number | 终点纵坐标 |
-| | vX | number | 横向滑动速度 |
-| | vY | number | 纵向滑动速度 |
 
 :::type-fields SnTouch
 

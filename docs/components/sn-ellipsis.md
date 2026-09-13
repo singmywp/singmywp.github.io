@@ -1,7 +1,5 @@
 # Ellipsis  文本省略
 
-> [查看 sn-ellipsis 的 2.0 版本差异](/differences/components/sn-ellipsis)
-
 ## 基础用法
 
 - 多行文本省略组件：内容超出 `rows` 限制的行数时自动截断并显示省略号，内置隐藏测量节点自动计算可容纳的字符数。

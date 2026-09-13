@@ -1,7 +1,5 @@
 # CalendarWeek  周日历
 
-> [查看 sn-calendar-week 的 2.0 版本差异](/differences/components/sn-calendar-week)
-
 ## 基础用法
 
 - 本组件为 `sn-calendar` 的周视图形态：一次只显示一周（7 天）的周日历，左右滑动切换周，也可单独使用。
@@ -89,11 +87,12 @@
 
 :::type-fields SnCalendarDayFormatter
 
-```typescript
-type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | null
-```
-
 日期格格式化器：返回 `null` 表示使用默认内容。
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| day | [[SnCalendarDay]] | 日期格信息 |
+| 返回值 | [[SnCalendarDayContent]] \| null | 格式化后的内容，`null` 表示使用默认内容 |
 
 :::
 
@@ -107,7 +106,13 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 :::type-fields SnCalendarWeekChangeDetail
 
-`week-change` 事件返回详情：`timestamp`（当前周首日时间戳）、`year`、`month`。
+`week-change` 事件返回详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| timestamp | Number | 是 | 当前周第一天零点毫秒时间戳 |
+| year | Number | 是 | 当前周第一天所在年 |
+| month | Number | 是 | 当前周第一天所在月（1~12） |
 
 ---
 
@@ -125,27 +130,21 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 每周起始日：`'sunday'` | `'monday'` | `'tuesday'` | `'wednesday'` | `'thursday'` | `'friday'` | `'saturday'`。
 
-### SnCalendarWeekDay
+:::type-fields SnCalendarWeekDay
 
-单日数据（组件内部渲染使用）：
+单日数据（组件内部渲染使用）。
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| timestamp | Number | 当天零点毫秒时间戳 |
-| text | String | 日期文字（可被 `format` 覆盖） |
-| weekTitle | String | 周标题文字（如「周一」） |
-| today | Boolean | 是否今天 |
-| disabled | Boolean | 是否禁用 |
-| showDot | Boolean | 是否显示圆点 |
-| dotColor | String | 圆点颜色（支持 `$` 简写，默认警告色） |
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| timestamp | Number | 是 | 当天零点毫秒时间戳 |
+| text | String | 是 | 日期文字（可被 `format` 覆盖） |
+| weekTitle | String | 是 | 周标题文字（如「周一」） |
+| today | Boolean | 是 | 是否今天 |
+| disabled | Boolean | 是 | 是否禁用 |
+| showDot | Boolean | 是 | 是否显示圆点 |
+| dotColor | String | 是 | 圆点颜色（支持 `$` 简写，默认警告色） |
 
-### SnCalendarWeekChangeDetail
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| timestamp | Number | 当前周第一天零点毫秒时间戳 |
-| year | Number | 当前周第一天所在年 |
-| month | Number | 当前周第一天所在月（1~12） |
+:::
 
 `format` 相关的 `SnCalendarDay` / `SnCalendarDayContent` / `SnCalendarDayPaint` 等类型见 `sn-calendar-view` 文档的「类型」一节。
 

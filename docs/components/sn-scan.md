@@ -73,21 +73,57 @@
 
 ## 类型
 
-```typescript
-type SnScanType = 'qrcode' | 'barcode' | 'all'
-type SnScanMode = 'camera' | 'image'
-```
+:::type-fields SnScanType
 
-| 类型 | 字段 | 类型 | 描述 |
-| --- | --- | --- | --- |
-| SnScanDataPosition | centerX | number | 识别点在源图中的横向坐标 |
-| | centerY | number | 识别点在源图中的纵向坐标 |
-| SnScanData | value | string | 识别出的文本数据 |
-| | position | SnScanDataPosition | 识别点位置 |
-| SnScanResult | data | SnScanData[] | 识别出的数据列表 |
-| | scanMode | SnScanMode | 识别来源：`camera` 相机 \| `image` 相册图片 |
-| | sourceWidth | number | 可选，识别源图宽度 |
-| | sourceHeight | number | 可选，识别源图高度 |
+扫码类型。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `qrcode` | 二维码 |
+| `barcode` | 一维码 |
+| `all` | 两者均可识别 |
+
+:::
+
+:::type-fields SnScanMode
+
+扫码来源模式。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `camera` | 相机扫码 |
+| `image` | 相册图片识别 |
+
+:::
+
+:::type-fields SnScanDataPosition
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| centerX | number | 是 | 识别点在源图中的横向坐标 |
+| centerY | number | 是 | 识别点在源图中的纵向坐标 |
+
+:::
+
+:::type-fields SnScanData
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| value | string | 是 | 识别出的文本数据 |
+| position | SnScanDataPosition | 是 | 识别点位置 |
+
+:::
+
+:::type-fields SnScanResult
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| data | SnScanData[] | 是 | 识别出的数据列表 |
+| scanMode | SnScanMode | 是 | 识别来源：`camera` 相机 \| `image` 相册图片 |
+| sourceWidth | number | 否 | 可选，识别源图宽度 |
+| sourceHeight | number | 否 | 可选，识别源图高度 |
+
+:::
 
 `SnScanType`、`SnScanResult` 等类型由扩展插件 `sn-e-scan-provider` 导出；`SnScanParams` 为传参参数类型，由 SinleUI 框架导出（结构同上方属性表）。
 

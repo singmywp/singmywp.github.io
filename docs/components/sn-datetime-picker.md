@@ -139,11 +139,11 @@
 
 :::type-fields SnDatetimePickerValue
 
-```typescript
-type SnDatetimePickerValue = string | number
-```
-
 选中值（`v-model`）：时间戳数字或时间格式字符串。
+
+| 类型 | 说明 |
+| :--- | :--- |
+| `string \| number` | 时间格式字符串或时间戳数字 |
 
 :::
 

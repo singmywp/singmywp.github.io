@@ -1,7 +1,5 @@
 # RegionPicker  地区选择器
 
-> [查看 sn-region-picker 的 2.0 版本差异](/differences/components/sn-region-picker)
-
 ## 基础用法
 
 - 从底部弹出的省/市/县三级行政区划滚动选择器，基于 `sn-drawer` + `sn-region-picker-view` 封装（视图懒渲染，首开性能更佳），内置中国省市区数据，无需业务传入数据源。
@@ -110,11 +108,11 @@
 
 :::type-fields SnRegionValue
 
-```typescript
-type SnRegionValue = string[]
-```
-
 选中值（`v-model`）：各级区划代码数组。
+
+| 类型 | 说明 |
+| :--- | :--- |
+| `string[]` | 各级区划代码数组 |
 
 :::
 
@@ -137,7 +135,12 @@ type SnRegionValue = string[]
 
 :::type-fields SnRegionDetail
 
-`change` 事件返回详情：`codes`（各级代码数组）、`names`（各级名称数组）。
+`change` 事件返回详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| codes | String[] | 是 | 选中各级区划代码 |
+| names | String[] | 是 | 选中各级区划名称（无对应项时为空字符串） |
 
 ---
 
@@ -197,17 +200,15 @@ type SnRegionValue = string[]
 
 `'province' | 'city' | 'county'` —— 列类型枚举。
 
-### SnRegionNode
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| code | String | 行政区划代码 |
-| name | String | 区划名称 |
-| children | [[SnRegionNode]][] | 下级区划 |
-
 :::type-fields SnRegionNode
 
-行政区划节点：`code`（区划代码）、`name`（名称）、`children`（子级节点）。
+行政区划节点。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| code | String | 是 | 行政区划代码 |
+| name | String | 是 | 区划名称 |
+| children | [[SnRegionNode]][] | 否 | 下级区划 |
 
 :::
 
@@ -215,11 +216,5 @@ type SnRegionValue = string[]
 
 `String[]`：选中地区各级区划代码数组（按列顺序）。
 
-### SnRegionDetail
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| codes | String[] | 选中各级区划代码 |
-| names | String[] | 选中各级区划名称（无对应项时为空字符串） |
-
 <DemoPhone name="sn-region-picker" />
+

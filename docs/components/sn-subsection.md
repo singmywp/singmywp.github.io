@@ -42,7 +42,7 @@ const list = ['已付款', '已发货', '已收货', '已评价']
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | v-model | 绑定值，当前选中的分段索引 | Number | `0` | - |
-| data | 分段数据，数组中的每个元素代表一个分段的文本 | Array\<String\> | `[]` | - |
+| data | 分段数据，数组中的每个元素代表一个分段的文本 | `Array<String>` | `[]` | - |
 | disabled | 是否禁用分段选择器 | Boolean | `false` | `true` \| `false` |
 | padding | 分段器内边距 | String \| Number | `'3px'` | - |
 | blockPadding | 每个分段项的内边距 | String \| Number | `'10px'` | - |

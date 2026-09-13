@@ -1,7 +1,5 @@
 # Clipper  图片裁剪
 
-> [查看 sn-clipper 的 2.0 版本差异](/differences/components/sn-clipper)
-
 ## 基础用法
 - 内置完整裁剪交互的图片裁剪器：手势拖动/双指缩放图片，8 向手柄调整裁剪框，底部提供比例预设、旋转/镜像工具与还原按钮
 - 点击右上角对勾按钮或调用 `crop` 方法导出裁剪结果，结果为 base64 图片（PNG），并通过 `confirm` 事件返回尺寸、比例、旋转等详细信息
@@ -85,13 +83,19 @@
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
-`SnClipperRatioItem` 结构：
+:::type-fields SnClipperRatioItem
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| id | String | 比例项唯一标识 |
-| text | String | 按钮文本 |
-| ratio | Number | 宽高比（宽/高），`0` 表示自由比例 |
+比例预设项。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| id | String | 是 | 比例项唯一标识 |
+| text | String | 是 | 按钮文本 |
+| ratio | Number | 是 | 宽高比（宽/高），`0` 表示自由比例 |
+
+---
+
+:::
 
 ## 事件
 
@@ -103,23 +107,29 @@
 | cancel | () => Void | 点击取消（×）按钮时触发 |
 | error | (error: UTSJSONObject) => Void | 图片加载失败或导出失败时触发，`error.message` 为错误信息 |
 
-`confirm` 事件参数 `SnClipperConfirmDetail` 结构：
+:::type-fields SnClipperConfirmDetail
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| dataUrl | String | 裁剪结果 base64 图片数据（PNG） |
-| width | Number | 输出图片宽度（像素） |
-| height | Number | 输出图片高度（像素） |
-| ratio | Number | 当前裁剪比例 |
-| rotation | Number | 旋转角度（0/90/180/270） |
-| flipX | Number | 水平镜像系数（1 正常，-1 镜像） |
-| flipY | Number | 垂直镜像系数（1 正常，-1 镜像） |
-| imageWidth | Number | 原图宽度 |
-| imageHeight | Number | 原图高度 |
-| cropLeft | Number | 裁剪框在预览区中的横向位置 |
-| cropTop | Number | 裁剪框在预览区中的纵向位置 |
-| cropWidth | Number | 裁剪框宽度 |
-| cropHeight | Number | 裁剪框高度 |
+`confirm` 事件返回的裁剪导出详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| dataUrl | String | 是 | 裁剪结果 base64 图片数据（PNG） |
+| width | Number | 是 | 输出图片宽度（像素） |
+| height | Number | 是 | 输出图片高度（像素） |
+| ratio | Number | 是 | 当前裁剪比例 |
+| rotation | Number | 是 | 旋转角度（0/90/180/270） |
+| flipX | Number | 是 | 水平镜像系数（1 正常，-1 镜像） |
+| flipY | Number | 是 | 垂直镜像系数（1 正常，-1 镜像） |
+| imageWidth | Number | 是 | 原图宽度 |
+| imageHeight | Number | 是 | 原图高度 |
+| cropLeft | Number | 是 | 裁剪框在预览区中的横向位置 |
+| cropTop | Number | 是 | 裁剪框在预览区中的纵向位置 |
+| cropWidth | Number | 是 | 裁剪框宽度 |
+| cropHeight | Number | 是 | 裁剪框高度 |
+
+---
+
+:::
 
 ## 方法
 

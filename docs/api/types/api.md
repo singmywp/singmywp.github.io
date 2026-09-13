@@ -118,9 +118,13 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 五种功能色枚举，用于 `type` 类属性。
 
-| 可选值 |
-| :--- |
-| `primary` \| `info` \| `success` \| `error` \| `warning` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `primary` | 主色 |
+| `info` | 信息色 |
+| `success` | 成功色 |
+| `error` | 错误色 |
+| `warning` | 警告色 |
 
 ---
 
@@ -128,9 +132,12 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 自定义弹窗开合动画函数，接收遮罩元素、内容元素与动画时长。
 
-```typescript
-type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, duration: number) => void
-```
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| mask | UniElement \| null | 遮罩元素 |
+| content | UniElement \| null | 内容元素 |
+| duration | number | 动画时长（ms） |
+| 返回值 | void | - |
 
 ---
 
@@ -199,9 +206,11 @@ type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, 
 
 媒体权限类型。
 
-| 可选值 |
-| :--- |
-| `image` \| `video` \| `audio` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `image` | 图片 |
+| `video` | 视频 |
+| `audio` | 音频 |
 
 ---
 
@@ -221,9 +230,23 @@ type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, 
 
 [useResolve](/api/hooks/use-resolve) 解析函数的解析类型，决定 `$xxx` 乘以哪个乘数：`font` 字号、`radius` 圆角、`margin` 外间距、`padding` 内间距、`aniTime` 动画时长。
 
-| 可选值 |
-| :--- |
-| `font` \| `radius` \| `margin` \| `padding` \| `aniTime` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `font` | 字号 |
+| `radius` | 圆角 |
+| `margin` | 外间距 |
+| `padding` | 内间距 |
+| `aniTime` | 动画时长 |
+
+---
+
+# SnRotateEvent
+
+`sn-view`、`sn-gesture` 等组件的旋转手势事件返回类型。
+
+| 字段 | 类型 | 必备 | 描述 |
+| :--- | :--- | :--- | :--- |
+| degree | Number | 是 | 相对上一次旋转事件的角度增量（deg），顺时针为正 |
 
 ---
 
@@ -243,7 +266,7 @@ type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, 
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
-| actions | Array\<[SnDataItem](#sndataitem)\> | 是 | 操作项列表 |
+| actions | Array<[SnDataItem](#sndataitem)> | 是 | 操作项列表 |
 | title | String | 否 | 标题文本 |
 | titleColor | String | 否 | 标题颜色 |
 | titleSize | String | 否 | 标题字号 |
@@ -397,9 +420,10 @@ type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, 
 
 主题（颜色模式）枚举。
 
-| 可选值 |
-| :--- |
-| `light` \| `dark` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `light` | 亮色模式 |
+| `dark` | 暗色模式 |
 
 ---
 
@@ -431,7 +455,7 @@ type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
 | type | String | 是 | 事件类型：`touchstart` \| `touchend` \| `touchmove` \| `touchcancel` \| `longpress` \| `showpress` |
-| touches | Array\<[SnTouch](#sntouch)\> | 是 | 多指触摸信息 |
+| touches | Array<[SnTouch](#sntouch)> | 是 | 多指触摸信息 |
 | event | UniEvent | 否 | 原事件，可用以阻止默认行为、阻止冒泡 |
 
 ---

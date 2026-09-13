@@ -1,7 +1,5 @@
 # ScrollView  滚动视图
 
-> [查看 sn-scroll-view 的 2.0 版本差异](/differences/components/sn-scroll-view)
-
 ## 基础用法
 
 - 基于 `scroll-view` 封装的通用滚动视图容器，内置下拉刷新（`sn-refresher`）、加载更多（`sn-loadmore`）与回到顶部按钮（`sn-backtop`）。

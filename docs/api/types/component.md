@@ -8,11 +8,13 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 > [!TIP] 提示
 >
-> 标记「内部使用」的类型由框架组件之间传递，业务一般无需直接构造。组件与 API 公用或仅 API 使用的类型（颜色集、风格、手势事件、全局弹窗配置、权限等）见 [API 类型](/api/types/api)。本页类型按字母顺序排列。
+> 标记「内部使用」的类型由框架组件内部写入或回传，业务侧**只读、无需自行构造**：既包括仅在组件之间传递的类型，也包括组件事件 / 回调返回的详情类型（如各 `*-change`、`select` 事件的 detail）。业务**需要主动显式传入数据**的类型（组件 `data` / `v-model` / 配置类 props，以及 `load-data`、`format` 等回调函数的入参类型）均不加此标记。组件与 API 公用或仅 API 使用的类型（颜色集、风格、手势事件、全局弹窗配置、权限等）见 [API 类型](/api/types/api)。
+>
+> 本页与 [API 类型](/api/types/api) 覆盖框架内**全部**类型定义——公开类型与框架内部自用类型（分组组件 group config、子组件间注入 / 回传的类型等）均完整收录并列出字段，不做省略。内部类型仅供理解组件行为与排查问题，业务侧**不应**依赖，其字段可能随版本调整。本页类型按字母顺序排列。
 
 ---
 
-# AgreementLinkDetail
+# AgreementLinkDetail <Badge type="warning" text="内部使用" />
 
 `sn-agreement` 的 `open-link` 事件返回的链接详情。
 
@@ -23,7 +25,131 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# QrCellPoint
+# CheckboxGroupConfig <Badge type="warning" text="内部使用" />
+
+`sn-checkbox-group` 向其子组件（`sn-checkbox`、`sn-checkbox-tag`）注入的配置对象，用于统一子项的外观与样式。业务侧只读，请通过 `sn-checkbox-group` 的属性控制。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| boxSize | String \| Number | 是 | 勾选框尺寸 |
+| boxBorderRadius | String \| Number | 是 | 勾选框圆角 |
+| boxBorderWidth | String \| Number | 是 | 勾选框边框宽度 |
+| boxTextSize | String \| Number | 是 | 勾选框文字字号 |
+| boxTextColor | String | 是 | 勾选框文字颜色 |
+| disabledBoxTextColor | String | 是 | 禁用态勾选框文字颜色 |
+| boxIcon | String | 是 | 勾选框选中图标名 |
+| boxIconSize | String \| Number | 是 | 勾选框图标字号 |
+| boxIconColor | String | 是 | 勾选框图标颜色 |
+| disabledBoxIconColor | String | 是 | 禁用态勾选框图标颜色 |
+| boxBorderColor | String | 是 | 勾选框边框颜色 |
+| disabledBoxBorderColor | String | 是 | 禁用态勾选框边框颜色 |
+| boxActiveBorderColor | String | 是 | 选中态勾选框边框颜色 |
+| disabledBoxActiveBorderColor | String | 是 | 禁用态选中态勾选框边框颜色 |
+| boxBgColor | String | 是 | 勾选框背景颜色 |
+| disabledBoxBgColor | String | 是 | 禁用态勾选框背景颜色 |
+| boxActiveBgColor | String | 是 | 选中态勾选框背景颜色 |
+| disabledBoxActiveBgColor | String | 是 | 禁用态选中态勾选框背景颜色 |
+| tagType | String | 是 | 标签模式功能色（`primary` \| `info` \| `success` \| `error` \| `warning`） |
+| tagLevel | String | 是 | 标签模式表现程度等级（`first` \| `second` \| `third` \| `least`） |
+| tagBorderRadius | String \| Number | 是 | 标签圆角 |
+| tagPadding | String | 是 | 标签内边距 |
+| tagTextSize | String \| Number | 是 | 标签文字字号 |
+| tagBgColor | String | 是 | 标签背景颜色 |
+| disabledTagBgColor | String | 是 | 禁用态标签背景颜色 |
+| tagActiveBgColor | String | 是 | 选中态标签背景颜色 |
+| disabledTagActiveBgColor | String | 是 | 禁用态选中态标签背景颜色 |
+| tagTextColor | String | 是 | 标签文字颜色 |
+| disabledTagTextColor | String | 是 | 禁用态标签文字颜色 |
+| tagActiveTextColor | String | 是 | 选中态标签文字颜色 |
+| disabledTagActiveTextColor | String | 是 | 禁用态选中态标签文字颜色 |
+| boxContainStyle | UTSJSONObject \| String | 是 | 勾选框容器自定义样式 |
+| boxStyle | UTSJSONObject \| String | 是 | 勾选框自定义样式 |
+| boxIconStyle | UTSJSONObject \| String | 是 | 勾选框图标自定义样式 |
+| tagStyle | UTSJSONObject \| String | 是 | 标签自定义样式 |
+| textStyle | UTSJSONObject \| String | 是 | 文字自定义样式 |
+| boxContainClass | String | 是 | 勾选框容器外部样式类 |
+| boxClass | String | 是 | 勾选框外部样式类 |
+| boxIconClass | String | 是 | 勾选框图标外部样式类 |
+| tagClass | String | 是 | 标签外部样式类 |
+| textClass | String | 是 | 文字外部样式类 |
+
+---
+
+# ChooseMediaWebOptions <Badge type="warning" text="内部使用" />
+
+Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选择器入参，仅 Web 端编译，业务侧不应直接引用。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| type | String | 是 | 媒体类型，可选值 `image` \| `video` \| `all` |
+| multiple | Boolean \| null | 否 | 是否允许多选 |
+| maxCount | Number \| null | 否 | 最大选择数量 |
+| success | (files: [SnFile](#snfile)[]) => void \| null | 否 | 选择成功回调 |
+| fail | (err: UniError) => void \| null | 否 | 选择失败回调 |
+
+---
+
+# CollapseConfig <Badge type="warning" text="内部使用" />
+
+`sn-collapse` 向其子组件注入的配置对象，用于统一子项的外观与样式。业务侧只读，请通过 `sn-collapse` 的属性控制。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| accordion | Boolean | 是 | 是否手风琴模式（同时只展开一项） |
+| showBorder | Boolean | 是 | 是否显示边框 |
+| aniTime | String | 是 | 展开 / 收起动画时长 |
+| bgColor | String | 是 | 背景颜色 |
+| titleSize | String | 是 | 标题字号 |
+| titleColor | String | 是 | 标题颜色 |
+| noteSize | String | 是 | 备注字号 |
+| noteColor | String | 是 | 备注颜色 |
+| activeTitleColor | String | 是 | 展开态标题颜色 |
+| borderRadius | String | 是 | 圆角 |
+| titleStyle | UTSJSONObject | 是 | 标题自定义样式 |
+| holderStyle | UTSJSONObject | 是 | 内容容器自定义样式 |
+| noteStyle | UTSJSONObject | 是 | 备注自定义样式 |
+| titleClass | String | 是 | 标题外部样式类 |
+| noteClass | String | 是 | 备注外部样式类 |
+| holderClass | String | 是 | 内容容器外部样式类 |
+
+---
+
+# FingerOut <Badge type="warning" text="内部使用" />
+
+`sn-gesture` 内部手势识别器每帧回传的手指状态对象，含位移、缩放、旋转与速度等信息。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| type | String | 是 | 手势类型 |
+| x | Number | 是 | 当前触点横坐标 |
+| y | Number | 是 | 当前触点纵坐标 |
+| startX | Number | 是 | 起始横坐标 |
+| startY | Number | 是 | 起始纵坐标 |
+| endX | Number | 是 | 结束横坐标 |
+| endY | Number | 是 | 结束纵坐标 |
+| zoom | Number | 是 | 相对起始的缩放倍数 |
+| rotate | Number | 是 | 相对起始的旋转角度（deg） |
+| direction | String | 是 | 移动方向 |
+| deltaX | Number | 是 | 本帧横向位移增量 |
+| deltaY | Number | 是 | 本帧纵向位移增量 |
+| vX | Number | 是 | 横向速度 |
+| vY | Number | 是 | 纵向速度 |
+| evt | UniTouchEvent \| null | 否 | 原始触摸事件 |
+
+---
+
+# LoadingPageBridge <Badge type="warning" text="内部使用" />
+
+全局加载（`snu.showLoading`）与承载它的页面（`pages/popups/showLoading`）之间的通信桥接对象。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| page | any | 是 | 加载页实例引用 |
+| hide | () => void | 是 | 关闭加载页的方法 |
+
+---
+
+# QrCellPoint <Badge type="warning" text="内部使用" />
 
 二维码绘制点，`QrCodeData` 的 `points` 列表项。
 
@@ -35,9 +161,9 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# QrCodeData
+# QrCodeData <Badge type="warning" text="内部使用" />
 
-二维码绘制数据。
+二维码绘制数据，由组件内部编码生成。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -54,15 +180,18 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 二维码纠错等级。
 
-| 可选值 |
-| :--- |
-| `low` \| `medium` \| `quartile` \| `high` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `low` | 低（约 7% 纠错） |
+| `medium` | 中（约 15% 纠错） |
+| `quartile` | 四分位（约 25% 纠错） |
+| `high` | 高（约 30% 纠错） |
 
 ---
 
-# QrEncodeOptions
+# QrEncodeOptions <Badge type="warning" text="内部使用" />
 
-二维码编码配置。
+二维码编码配置，由组件内部按属性组装后传入编码器。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -77,9 +206,29 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 二维码模块形状。
 
-| 可选值 |
-| :--- |
-| `square` \| `rounded` \| `circle` \| `diamond` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `rounded` | 圆角方形 |
+| `circle` | 圆形 |
+| `diamond` | 菱形 |
+
+---
+
+# QrPointType <Badge type="warning" text="内部使用" />
+
+二维码模块的功能类型枚举，用于绘制时区分数据区与定位 / 校正 / 时序等特殊区域。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `DATA` | 数据模块 |
+| `POS_CENTER` | 定位图案中心 |
+| `POS_OTHER` | 定位图案其他 |
+| `ALIGN_CENTER` | 校正图案中心 |
+| `ALIGN_OTHER` | 校正图案其他 |
+| `TIMING` | 时序图案 |
+| `FORMAT` | 格式信息 |
+| `VERSION` | 版本信息 |
 
 ---
 
@@ -122,9 +271,11 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 头像显示模式。
 
-| 可选值 |
-| :--- |
-| `image` \| `text` \| `icon` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `image` | 图片 |
+| `text` | 文本 |
+| `icon` | 图标 |
 
 ---
 
@@ -132,9 +283,10 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 头像形状。
 
-| 可选值 |
-| :--- |
-| `square` \| `circle` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `circle` | 圆形 |
 
 ---
 
@@ -156,7 +308,7 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# SnBarcodeBarElement
+# SnBarcodeBarElement <Badge type="warning" text="内部使用" />
 
 条码单元。
 
@@ -167,9 +319,9 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# SnBarcodeData
+# SnBarcodeData <Badge type="warning" text="内部使用" />
 
-条码绘制数据。
+条码绘制数据，由组件内部编码生成。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -183,13 +335,44 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 条码格式。
 
-| 可选值 |
-| :--- |
-| `code128` \| `code39` \| `code93` \| `codabar` \| `ean8` \| `ean13` \| `upca` \| `upce` \| `itf` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `code128` | Code 128 |
+| `code39` | Code 39 |
+| `code93` | Code 93 |
+| `codabar` | Codabar |
+| `ean8` | EAN-8 |
+| `ean13` | EAN-13 |
+| `upca` | UPC-A |
+| `upce` | UPC-E |
+| `itf` | ITF（交错 2/5） |
 
 ---
 
-# SnCalendarDay
+# SnCalendarBoundaries <Badge type="warning" text="内部使用" />
+
+日历可选日期范围边界，由组件内部经 `min-date` / `max-date` 属性归一化后传递。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| minDate | Number | 是 | 可选最小日期时间戳（当日 0 点） |
+| maxDate | Number | 是 | 可选最大日期时间戳（当日 0 点） |
+
+---
+
+# SnCalendarSelectionResult <Badge type="warning" text="内部使用" />
+
+日历选中计算的结果，由 `sn-calendar-view` 内部根据当前值与点击日期推导。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| value | [SnCalendarValue](#sncalendarvalue) | 是 | 计算后的新选中值 |
+| changed | Boolean | 是 | 选中值是否发生变化 |
+| overRange | Boolean | 是 | 是否超出允许的选择范围 |
+
+---
+
+# SnCalendarDay <Badge type="warning" text="内部使用" />
 
 `formatter` 回调入参，单个日期格的完整信息。
 
@@ -211,7 +394,7 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# SnCalendarDayContent
+# SnCalendarDayContent <Badge type="warning" text="内部使用" />
 
 日期格内容（formatter 返回值）。
 
@@ -240,13 +423,16 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 ---
 
-# SnCalendarDayDotPosition
+# SnCalendarDayDotPosition <Badge type="warning" text="内部使用" />
 
 日历圆点标记位置。
 
-| 可选值 |
-| :--- |
-| `left` \| `right` \| `top` \| `bottom` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `left` | 左侧 |
+| `right` | 右侧 |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
 ---
 
@@ -254,13 +440,14 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 
 日期格格式化器：返回 `null` 表示使用默认内容。
 
-```typescript
-type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | null
-```
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| day | [SnCalendarDay](#sncalendarday) | 日期格信息 |
+| 返回值 | [SnCalendarDayContent](#sncalendardaycontent) \| null | 格式化后的内容，`null` 表示使用默认内容 |
 
 ---
 
-# SnCalendarDayPaint
+# SnCalendarDayPaint <Badge type="warning" text="内部使用" />
 
 日期格绘制配置（由 `SnCalendarDayContent.paint` 携带，经 formatter 或 `createCalendarDayPaint` 构造）。
 
@@ -288,15 +475,18 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 ---
 
-# SnCalendarDayState
+# SnCalendarDayState <Badge type="warning" text="内部使用" />
 
 日历日期格状态。
 
-| 可选值 |
-| :--- |
-| `normal` \| `selected` \| `range-start` \| `range-middle` \| `range-end` \| `range-start-end` |
-
-日期格状态含义依次为：普通 / 选中 / 范围起点 / 范围中间 / 范围终点 / 起终点同日。
+| 可选值 | 备注 |
+| :--- | :--- |
+| `normal` | 普通 |
+| `selected` | 选中 |
+| `range-start` | 范围起点 |
+| `range-middle` | 范围中间 |
+| `range-end` | 范围终点 |
+| `range-start-end` | 起终点同日 |
 
 ---
 
@@ -315,7 +505,7 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 ---
 
-# SnCalendarPanelChangeDetail
+# SnCalendarPanelChangeDetail <Badge type="warning" text="内部使用" />
 
 日历 `panel-change` 事件返回的面板切换详情。
 
@@ -327,9 +517,9 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 ---
 
-# SnCalendarPunchDay
+# SnCalendarPunchDay <Badge type="warning" text="内部使用" />
 
-打卡日历（sn-calendar-punch）单日信息。
+打卡日历（sn-calendar-punch）`select` 事件返回的单日信息。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -348,9 +538,10 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 日历面板切换粒度。
 
-| 可选值 |
-| :--- |
-| `month` \| `year-month` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `month` | 按月切换 |
+| `year-month` | 按年-月切换 |
 
 ---
 
@@ -358,9 +549,11 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 日历选择模式。
 
-| 可选值 |
-| :--- |
-| `single` \| `multiple` \| `range` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `single` | 单选 |
+| `multiple` | 多选 |
+| `range` | 范围选择 |
 
 ---
 
@@ -368,13 +561,15 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 日历选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number \| null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
 
-```typescript
-type SnCalendarValue = number | null | number[]
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| `number \| null` | `single` 模式：时间戳或空 |
+| `number[]` | `multiple` 模式：时间戳数组 |
+| `[]` \| `[start, end]` | `range` 模式：空或起止时间戳（单点范围写成 `[same, same]`） |
 
 ---
 
-# SnCalendarWeekChangeDetail
+# SnCalendarWeekChangeDetail <Badge type="warning" text="内部使用" />
 
 周日历（sn-calendar-week）`week-change` 事件返回详情。
 
@@ -386,9 +581,9 @@ type SnCalendarValue = number | null | number[]
 
 ---
 
-# SnCalendarWeekDay
+# SnCalendarWeekDay <Badge type="warning" text="内部使用" />
 
-周日历（sn-calendar-week）单日信息。
+周日历（sn-calendar-week）单日信息，由组件内部构建。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -406,13 +601,19 @@ type SnCalendarValue = number | null | number[]
 
 日历周起始日。
 
-| 可选值 |
-| :--- |
-| `sunday` \| `monday` \| `tuesday` \| `wednesday` \| `thursday` \| `friday` \| `saturday` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `sunday` | 星期日 |
+| `monday` | 星期一 |
+| `tuesday` | 星期二 |
+| `wednesday` | 星期三 |
+| `thursday` | 星期四 |
+| `friday` | 星期五 |
+| `saturday` | 星期六 |
 
 ---
 
-# SnCascaderDetail
+# SnCascaderDetail <Badge type="warning" text="内部使用" />
 
 `sn-cascader` 的 `change` 事件返回的详情。
 
@@ -428,11 +629,11 @@ type SnCalendarValue = number | null | number[]
 
 `sn-cascader` 的 `load-data` 属性接收 `SnCascaderLoadData` 函数：`parent` 为 `null` 表示加载第一级，`level` 为当前层级；成功经 `resolve(options)` 返回选项列表，失败调用 `reject()`。
 
-```typescript
-type SnCascaderResolve = (options: SnCascaderOption[]) => void
-type SnCascaderReject = () => void
-type SnCascaderLoadData = (parent: SnCascaderOption | null, level: number, resolve: SnCascaderResolve, reject: SnCascaderReject) => void
-```
+| 类型 | 签名 |
+| :--- | :--- |
+| SnCascaderResolve | (options: [SnCascaderOption](#sncascaderoption)[]) => void |
+| SnCascaderReject | () => void |
+| SnCascaderLoadData | (parent: [SnCascaderOption](#sncascaderoption) \| null, level: number, resolve: [SnCascaderResolve](#sncascaderresolve), reject: [SnCascaderReject](#sncascaderreject)) => void |
 
 ---
 
@@ -454,9 +655,9 @@ type SnCascaderLoadData = (parent: SnCascaderOption | null, level: number, resol
 
 级联选中值：各级选项 `value` 组成的数组（`v-model`）。
 
-```typescript
-type SnCascaderValue = string[]
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| `string[]` | 各级选中值数组 |
 
 ---
 
@@ -479,9 +680,14 @@ type SnCascaderValue = string[]
 
 日期时间选择器时间选择粒度模式。
 
-| 可选值 |
-| :--- |
-| `year` \| `month` \| `date` \| `hour` \| `minute` \| `second` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `year` | 年 |
+| `month` | 月 |
+| `date` | 日 |
+| `hour` | 时 |
+| `minute` | 分 |
+| `second` | 秒 |
 
 ---
 
@@ -489,9 +695,9 @@ type SnCascaderValue = string[]
 
 日期时间选择器选中值（`v-model`）：时间戳数字或时间格式字符串。
 
-```typescript
-type SnDatetimePickerValue = string | number
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| `string \| number` | 时间格式字符串或时间戳数字 |
 
 ---
 
@@ -512,9 +718,9 @@ type SnDatetimePickerValue = string | number
 
 ---
 
-# SnFile
+# SnFile <Badge type="warning" text="内部使用" />
 
-上传媒体文件信息。
+上传媒体文件信息，由 `sn-upload-media` 的 `file-chose` 事件与内部选择逻辑返回。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -582,7 +788,7 @@ type SnDatetimePickerValue = string | number
 
 # SnFormItemVerifyResult <Badge type="warning" text="内部使用" />
 
-单项校验结果。
+单项校验结果，经 `sn-form` 的 `fail` 事件与 `valid.fail` 回调返回，业务侧只读。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -600,6 +806,17 @@ type SnDatetimePickerValue = string | number
 | :--- | :--- | :--- | :--- |
 | success | () => void | 否 | 全部通过回调 |
 | fail | (failResults: [SnFormItemVerifyResult](#snformitemverifyresult)[]) => void | 否 | 失败回调，入参为失败结果数组 |
+
+---
+
+# SnLocaleInfo
+
+语言条目，`SUPPORTED_LOCALES` 数组的元素类型，可直接渲染为语言选择器。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| code | String | 是 | 语言代码（如 `zh-Hans`、`en`） |
+| name | String | 是 | 该语言的本地化名称（如 `简体中文`、`English`） |
 
 ---
 
@@ -623,41 +840,6 @@ type SnDatetimePickerValue = string | number
 
 ---
 
-# SnLogItem
-
-`sn-log` 组件日志项。
-
-| 名称 | 类型 | 必填 | 描述 |
-| :--- | :--- | :--- | :--- |
-| id | String | 是 | 日志唯一 id |
-| time | Number | 是 | 时间戳 |
-| level | [SnLogLevel](#snloglevel) | 是 | 日志级别 |
-| tag | String | 是 | 标签 |
-| message | String | 是 | 日志内容 |
-| detail | String | 是 | 附加详情 |
-
----
-
-# SnLogLevel
-
-日志级别。
-
-| 可选值 |
-| :--- |
-| `debug` \| `info` \| `success` \| `warning` \| `error` |
-
----
-
-# SnLogTimeFormat
-
-日志时间显示格式。
-
-| 可选值 |
-| :--- |
-| `full` \| `short` \| `relative` \| `hidden` |
-
----
-
 # SnMedia <Badge type="warning" text="内部使用" />
 
 上传媒体条目。
@@ -678,9 +860,11 @@ type SnDatetimePickerValue = string | number
 
 消息条表现程度等级。
 
-| 可选值 |
-| :--- |
-| `first` \| `second` \| `third` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `first` | 一级（表现最重） |
+| `second` | 二级 |
+| `third` | 三级（表现最轻） |
 
 ---
 
@@ -712,9 +896,14 @@ type SnDatetimePickerValue = string | number
 
 消息条队列位置。
 
-| 可选值 |
-| :--- |
-| `top-left` \| `top` \| `top-right` \| `bottom-left` \| `bottom` \| `bottom-right` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `top-left` | 左上 |
+| `top` | 顶部 |
+| `top-right` | 右上 |
+| `bottom-left` | 左下 |
+| `bottom` | 底部 |
+| `bottom-right` | 右下 |
 
 ---
 
@@ -722,9 +911,13 @@ type SnDatetimePickerValue = string | number
 
 消息条类型。
 
-| 可选值 |
-| :--- |
-| `primary` \| `success` \| `error` \| `info` \| `warning` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `primary` | 主色 |
+| `success` | 成功 |
+| `error` | 错误 |
+| `info` | 信息 |
+| `warning` | 警告 |
 
 ---
 
@@ -732,9 +925,11 @@ type SnDatetimePickerValue = string | number
 
 通知表现程度等级。
 
-| 可选值 |
-| :--- |
-| `first` \| `second` \| `third` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `first` | 一级（表现最重） |
+| `second` | 二级 |
+| `third` | 三级（表现最轻） |
 
 ---
 
@@ -771,9 +966,10 @@ type SnDatetimePickerValue = string | number
 
 通知队列位置。
 
-| 可选值 |
-| :--- |
-| `top` \| `bottom` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
 ---
 
@@ -781,9 +977,13 @@ type SnDatetimePickerValue = string | number
 
 通知类型。
 
-| 可选值 |
-| :--- |
-| `primary` \| `success` \| `error` \| `info` \| `warning` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `primary` | 主色 |
+| `success` | 成功 |
+| `error` | 错误 |
+| `info` | 信息 |
+| `warning` | 警告 |
 
 ---
 
@@ -818,6 +1018,49 @@ type SnDatetimePickerValue = string | number
 
 ---
 
+# RadioGroupConfig <Badge type="warning" text="内部使用" />
+
+`sn-radio-group` 向其子组件（`sn-radio`、`sn-radio-tag`）注入的配置对象，用于统一子项的外观与样式。业务侧只读，请通过 `sn-radio-group` 的属性控制。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| radioSize | String \| Number | 是 | 单选按钮尺寸 |
+| radioBorderWidth | String \| Number | 是 | 单选按钮边框宽度 |
+| radioTextSize | String \| Number | 是 | 单选按钮文字字号 |
+| radioBgColor | String | 是 | 单选按钮背景颜色 |
+| disabledRadioBgColor | String | 是 | 禁用态单选按钮背景颜色 |
+| radioActiveBgColor | String | 是 | 选中态单选按钮背景颜色 |
+| disabledRadioActiveBgColor | String | 是 | 禁用态选中态单选按钮背景颜色 |
+| radioTextColor | String | 是 | 单选按钮文字颜色 |
+| disabledRadioTextColor | String | 是 | 禁用态单选按钮文字颜色 |
+| radioBorderColor | String | 是 | 单选按钮边框颜色 |
+| disabledRadioBorderColor | String | 是 | 禁用态单选按钮边框颜色 |
+| radioActiveBorderColor | String | 是 | 选中态单选按钮边框颜色 |
+| disabledRadioActiveBorderColor | String | 是 | 禁用态选中态单选按钮边框颜色 |
+| tagType | String | 是 | 标签模式功能色（`primary` \| `info` \| `success` \| `error` \| `warning`） |
+| tagLevel | String | 是 | 标签模式表现程度等级（`first` \| `second` \| `third` \| `least`） |
+| tagBorderRadius | String \| Number | 是 | 标签圆角 |
+| tagPadding | String | 是 | 标签内边距 |
+| tagTextSize | String \| Number | 是 | 标签文字字号 |
+| tagBgColor | String | 是 | 标签背景颜色 |
+| disabledTagBgColor | String | 是 | 禁用态标签背景颜色 |
+| tagActiveBgColor | String | 是 | 选中态标签背景颜色 |
+| disabledTagActiveBgColor | String | 是 | 禁用态选中态标签背景颜色 |
+| tagTextColor | String | 是 | 标签文字颜色 |
+| disabledTagTextColor | String | 是 | 禁用态标签文字颜色 |
+| tagActiveTextColor | String | 是 | 选中态标签文字颜色 |
+| disabledTagActiveTextColor | String | 是 | 禁用态选中态标签文字颜色 |
+| radioContainStyle | UTSJSONObject \| String | 是 | 单选按钮容器自定义样式 |
+| radioStyle | UTSJSONObject \| String | 是 | 单选按钮自定义样式 |
+| tagStyle | UTSJSONObject \| String | 是 | 标签自定义样式 |
+| textStyle | UTSJSONObject \| String | 是 | 文字自定义样式 |
+| radioContainClass | String | 是 | 单选按钮容器外部样式类 |
+| radioClass | String | 是 | 单选按钮外部样式类 |
+| tagClass | String | 是 | 标签外部样式类 |
+| textClass | String | 是 | 文字外部样式类 |
+
+---
+
 # SnRefresherParams
 
 下拉刷新区域文案与样式配置。
@@ -834,7 +1077,7 @@ type SnDatetimePickerValue = string | number
 
 ---
 
-# SnRegionDetail
+# SnRegionDetail <Badge type="warning" text="内部使用" />
 
 `sn-region-picker` 的 `change` 事件返回详情。
 
@@ -849,9 +1092,11 @@ type SnDatetimePickerValue = string | number
 
 行政区划层级。
 
-| 可选值 |
-| :--- |
-| `province` \| `city` \| `county` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `province` | 省 |
+| `city` | 市 |
+| `county` | 区县 |
 
 ---
 
@@ -871,9 +1116,9 @@ type SnDatetimePickerValue = string | number
 
 `sn-region-picker` 选中值（`v-model`）：各级区划代码数组。
 
-```typescript
-type SnRegionValue = string[]
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| `string[]` | 各级区划代码数组 |
 
 ---
 
@@ -910,9 +1155,25 @@ type SnRegionValue = string[]
 
 签名笔触类型。
 
-| 可选值 |
-| :--- |
-| `default` \| `pen` \| `gel` \| `pencil` \| `marker` \| `brush` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `default` | 默认 |
+| `pen` | 钢笔 |
+| `gel` | 中性笔 |
+| `pencil` | 铅笔 |
+| `marker` | 马克笔 |
+| `brush` | 毛笔 |
+| `crayon` | 蜡笔 |
+| `fur` | 毛皮 |
+| `ink` | 墨水 |
+| `longfur` | 长绒毛 |
+| `ribbon` | 丝带 |
+| `shaded` | 阴影 |
+| `sketchy` | 速写 |
+| `spray` | 喷漆 |
+| `squares` | 方格 |
+| `circle` | 圆泡 |
+| `web` | 蛛网 |
 
 ---
 
@@ -920,11 +1181,36 @@ type SnRegionValue = string[]
 
 步骤条步骤状态。
 
-| 可选值 |
-| :--- |
-| `wait` \| `finish` \| `process` \| `error` |
+| 可选值 | 备注 |
+| :--- | :--- |
+| `wait` | 等待 |
+| `finish` | 已完成 |
+| `process` | 进行中 |
+| `error` | 错误 |
 
-状态含义依次为：等待 / 已完成 / 进行中 / 错误。
+---
+
+# SnTableConfig <Badge type="warning" text="内部使用" />
+
+`sn-table` 向其子组件（`sn-tr`、`sn-td`、`sn-th`）注入的表格样式配置。业务侧只读，请通过 `sn-table` 的属性控制。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| bordered | Boolean | 是 | 是否显示单元格边框 |
+| underline | Boolean | 是 | 是否显示单元格下划线 |
+| borderColor | String | 是 | 边框与下划线颜色 |
+| scrollable | Boolean | 是 | 是否允许横向滚动 |
+
+---
+
+# SnTableCellReport <Badge type="warning" text="内部使用" />
+
+表格单元格向行组件回传的尺寸上报信息，用于计算固定列的偏移量。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| kind | String | 是 | 固定类型，可选值 `left` \| `right` \| `all` |
+| width | Number | 是 | 单元格实测宽度（px） |
 
 ---
 
@@ -961,7 +1247,7 @@ type SnRegionValue = string[]
 
 ---
 
-# SnTime
+# SnTime <Badge type="warning" text="内部使用" />
 
 `sn-timer`、`sn-countdown` 等组件的 `change` 事件返回的时间结构。
 
@@ -977,7 +1263,7 @@ type SnRegionValue = string[]
 
 # SnToastParams
 
-`sn-toast` 组件 `show` 方法入参，字段与 [`SnShowToastConfig`](/api/types/api#snshowtoastconfig) 基本一致（无回调字段），另含 `overlay`（是否显示遮罩）。
+`sn-toast` 组件 `show` 方法入参，字段与 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 基本一致（无回调字段），另含 `overlay`（是否显示遮罩）。
 
 ---
 
@@ -985,9 +1271,9 @@ type SnRegionValue = string[]
 
 树形数据集合，即 `sn-tree` 的 `data` 属性类型。
 
-```typescript
-type SnTreeData = SnTreeItem[]
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| [SnTreeItem](#sntreeitem)[] | 树节点列表 |
 
 ---
 
@@ -1012,11 +1298,58 @@ type SnTreeData = SnTreeItem[]
 
 `sn-tree` 的 `load-data` 属性接收 `SnTreeLoadData` 函数：懒加载节点展开时调用，加载成功经 `resolve(children)` 返回子节点，失败调用 `reject()`。
 
-```typescript
-type SnTreeLoadResolve = (children: SnTreeData) => void
-type SnTreeLoadReject = () => void
-type SnTreeLoadData = (item: SnTreeItem, resolve: SnTreeLoadResolve, reject: SnTreeLoadReject) => void
-```
+| 类型 | 签名 |
+| :--- | :--- |
+| SnTreeLoadResolve | (children: [SnTreeData](#sntreedata)) => void |
+| SnTreeLoadReject | () => void |
+| SnTreeLoadData | (item: [SnTreeItem](#sntreeitem), resolve: [SnTreeLoadResolve](#sntreeloadresolve), reject: [SnTreeLoadReject](#sntreeloadreject)) => void |
+
+---
+
+# SnTypeGroup <Badge type="warning" text="内部使用" />
+
+`sn-list-view` / `sn-waterflow` 内部按 `type` 对列表项分组后的结果，用于在同一列表中以不同布局渲染不同 `type` 的条目。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| type | Number | 是 | 分组类型值（取自列表项的 `type` 字段，缺省为 `0`） |
+| entries | [SnTypeGroupEntry](#sntypegroupentry)[] | 是 | 该分组下的条目列表 |
+
+---
+
+# SnTypeGroupEntry <Badge type="warning" text="内部使用" />
+
+`sn-list-view` / `sn-waterflow` 内部打平后的列表条目，承载原始数据及其索引与分组类型。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| item | any | 是 | 原始列表项数据 |
+| index | Number | 是 | 该条目在原始 `list` 中的下标 |
+| type | Number | 是 | 该条目的分组类型值 |
+
+---
+
+# StepsConfig <Badge type="warning" text="内部使用" />
+
+`sn-steps` 向其子组件（`sn-step`）注入的配置对象，用于统一各步骤的外观与样式。业务侧只读，请通过 `sn-steps` 的属性控制。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| vertical | Boolean | 是 | 是否纵向排列 |
+| type | String | 是 | 步骤条类型 |
+| selectable | Boolean | 是 | 步骤是否可点击切换 |
+| activeColor | String | 是 | 激活态颜色 |
+| circleSize | String \| Number | 是 | 步骤圆圈尺寸 |
+| textSize | String \| Number | 是 | 标题文字字号 |
+| contentSize | String \| Number | 是 | 内容文字字号 |
+| stepStyle | UTSJSONObject \| String | 是 | 步骤项自定义样式 |
+| stepClass | String | 是 | 步骤项外部样式类 |
+| titleStyle | UTSJSONObject \| String | 是 | 标题自定义样式 |
+| titleClass | String | 是 | 标题外部样式类 |
+| contentStyle | UTSJSONObject \| String | 是 | 内容自定义样式 |
+| contentClass | String | 是 | 内容外部样式类 |
+| lineStyle | UTSJSONObject \| String | 是 | 连接线自定义样式 |
+| lineClass | String | 是 | 连接线外部样式类 |
 
 ---
 
@@ -1026,4 +1359,4 @@ type SnTreeLoadData = (item: SnTreeItem, resolve: SnTreeLoadResolve, reject: SnT
 - 颜色库类型（`LColorOptions`、`LGenerateOptions`）见 [Color 颜色库类型](/libs/color/types)。
 - `PermListener`（权限监听）见 [sn-perm-listener](/components/sn-perm-listener)。
 - `UniError` 错误类型见 [错误处理机制](/api/error/error#unierror)。
-- 少数仅框架内部使用的配置类型（如分组组件的 group config）不在公开文档范围。
+- 分组组件的 group config（`CheckboxGroupConfig`、`RadioGroupConfig`、`CollapseConfig`、`StepsConfig`）及其他框架内部自用类型（`SnTableConfig`、`SnTableCellReport`、`SnTypeGroup`、`SnTypeGroupEntry`、`SnCalendarBoundaries`、`SnCalendarSelectionResult` 等）已在上文完整收录，均标记为「内部使用」。

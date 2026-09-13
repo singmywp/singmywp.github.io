@@ -1,7 +1,5 @@
 # TextareaField  标签文本域
 
-> [查看 sn-textarea-field 的 2.0 版本差异](/differences/components/sn-textarea-field)
-
 ## 基础用法
 
 - 自带标签与多行文本域的字段组件，相当于"标签 + textarea + 错误提示"的一体化封装。

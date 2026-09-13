@@ -1,7 +1,5 @@
 # Popover  定位弹出层
 
-> [查看 sn-popover 的 2.0 版本差异](/differences/components/sn-popover)
-
 ## 基础用法
 
 - 在指定屏幕坐标处弹出的轻量弹出层（v2 新增组件），常用于长按菜单、点击气泡等场景

@@ -21,7 +21,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| value | 二维码内容数据 | String | `https://sinleui.pages.dev` | - |
+| value | 二维码内容数据 | String | https://sinleui.pages.dev | - |
 | size | 画板尺寸（宽高一致），最小 96px | String \| Number | `200` | - |
 | padding | 留白边距（模块数） | Number | `2` | - |
 | errorCorrectionLevel | 纠错等级 | [[QrEcLevel]] | `medium` | `low` \| `medium` \| `quartile` \| `high` |
@@ -53,54 +53,26 @@
 
 :::type-fields QrEcLevel
 
-```typescript
-type QrEcLevel = 'low' | 'medium' | 'quartile' | 'high'
-```
-
 二维码纠错等级。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `low` | 低（约 7% 纠错） |
+| `medium` | 中（约 15% 纠错） |
+| `quartile` | 四分位（约 25% 纠错） |
+| `high` | 高（约 30% 纠错） |
 
 :::
 :::type-fields QrModuleShape
 
-```typescript
-type QrModuleShape = 'square' | 'rounded' | 'circle' | 'diamond'
-```
-
 二维码模块形状。
 
-:::
-
-## 类型
-
-```typescript
-type QrEcLevel = 'low' | 'medium' | 'quartile' | 'high'
-type QrModuleShape = 'square' | 'rounded' | 'circle' | 'diamond'
-```
-
-| 类型 | 字段 | 类型 | 描述 |
-| --- | --- | --- | --- |
-| [[QrEncodeOptions]] | ecc | [[QrEcLevel]] | 纠错等级 |
-| | version | number | 二维码版本 |
-| | mask | number | 掩码图样 |
-| | border | number | 留白边距（模块数） |
-| [[QrCodeData]] | size | number | 含留白的最终矩阵尺寸 |
-| | moduleCount | number | 不含留白的原始模块数 |
-| | version | number | 实际使用的版本 |
-| | matrix | boolean[][] | 模块矩阵 |
-| | typeTable | number[][] | 各模块类型表（对应 QrPointType 枚举） |
-| | points | QrCellPoint[] | 有效模块点列表（含坐标与类型） |
-| QrCellPoint | x | number | 横向坐标 |
-| | y | number | 纵向坐标 |
-| | type | number | 模块类型（QrPointType 枚举值） |
-
-:::type-fields QrEncodeOptions
-
-二维码编码配置（`sn-qrcode` 的 `options` 属性）：`text`（编码内容）、`ecLevel`（[QrEcLevel](/api/types/component#qreclevel)，默认 `medium`）、`margin`（留白模块数，默认 2）、`moduleShape`（[QrModuleShape](/api/types/component#qrmoduleshape)，默认 `square`）。
-
-:::
-:::type-fields QrCodeData
-
-二维码绘制数据：`size`（模块边长 px）、`moduleCount`（模块数）、`points`（绘制点集）。
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `rounded` | 圆角方形 |
+| `circle` | 圆形 |
+| `diamond` | 菱形 |
 
 :::
 

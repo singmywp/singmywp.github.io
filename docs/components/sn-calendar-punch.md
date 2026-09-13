@@ -1,7 +1,5 @@
 # CalendarPunch  签到日历
 
-> [查看 sn-calendar-punch 的 2.0 版本差异](/differences/components/sn-calendar-punch)
-
 ## 基础用法
 
 - 本组件为 `sn-calendar` 的打卡形态：基于 `sn-calendar-view` 封装（`type` 固定为 `single`）的签到打卡日历。
@@ -84,11 +82,13 @@
 
 :::type-fields SnCalendarValue
 
-```typescript
-type SnCalendarValue = number | null | number[]
-```
+选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number \| null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
 
-选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number | null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
+| 类型 | 说明 |
+| :--- | :--- |
+| `number \| null` | `single` 模式：时间戳或空 |
+| `number[]` | `multiple` 模式：时间戳数组 |
+| `[]` \| `[start, end]` | `range` 模式：空或起止时间戳（单点范围写成 `[same, same]`） |
 
 :::
 
@@ -101,7 +101,18 @@ type SnCalendarValue = number | null | number[]
 
 :::type-fields SnCalendarPunchDay
 
-打卡日历（sn-calendar-punch）单日信息：`timestamp`、`year`、`month`、`date`、`fullDate`（`YYYY-MM-DD` 字符串）、`signed`（当日已打卡）、`supplementable`（当日可补签）、`today`。
+打卡日历（sn-calendar-punch）单日信息。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| timestamp | Number | 是 | 当天零点毫秒时间戳 |
+| year | Number | 是 | 年 |
+| month | Number | 是 | 月（1~12） |
+| date | Number | 是 | 日 |
+| fullDate | String | 是 | 完整日期字符串（`YYYY-MM-DD`） |
+| signed | Boolean | 是 | 是否已打卡 |
+| supplementable | Boolean | 是 | 是否可补签（`canSupplement` 开启、未打卡且不晚于今天） |
+| today | Boolean | 是 | 是否今天 |
 
 :::
 :::type-fields SnCalendarPanelChangeDetail
@@ -117,19 +128,6 @@ type SnCalendarValue = number | null | number[]
 | scrollToDate | (value: Number) | - | 选中指定日期（毫秒时间戳）并跳转到其所在月份 |
 
 ## 类型
-
-### SnCalendarPunchDay
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| timestamp | Number | 当天零点毫秒时间戳 |
-| year | Number | 年 |
-| month | Number | 月（1~12） |
-| date | Number | 日 |
-| fullDate | String | 完整日期字符串（`YYYY-MM-DD`） |
-| signed | Boolean | 是否已打卡 |
-| supplementable | Boolean | 是否可补签（`canSupplement` 开启、未打卡且不晚于今天） |
-| today | Boolean | 是否今天 |
 
 `SnCalendarPanelChangeDetail` 与 `format` 相关的 `SnCalendarDay` 等类型见 `sn-calendar-view` 文档的「类型」一节。
 

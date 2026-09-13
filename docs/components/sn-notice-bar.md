@@ -43,7 +43,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| texts | 通知文本数组 | Array\\<String\\> | `[]` | - |
+| texts | 通知文本数组 | `Array<String>` | `[]` | - |
 | icon | 通知图标名称，传空字符串不显示图标 | String | `volume-up-line` | - |
 | speed | 滚动速度（px/s），支持数字或带 px 的字符串，仅 scroll 模式生效 | String \| Number | `50` | - |
 | mode | 显示模式，`vertical` 为 `true` 时强制为 `swiper` | String | `scroll` | `scroll` \| `swiper` |

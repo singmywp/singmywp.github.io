@@ -1,7 +1,5 @@
 # PostCard  动态卡片
 
-> [查看 sn-post-card 的 2.0 版本差异](/differences/components/sn-post-card)
-
 ## 基础用法
 
 - 用于展示社交动态/帖子卡片，包含头部（头像、昵称、时间、扩展操作区）、正文、底部操作栏与评论区。
@@ -122,20 +120,23 @@ const comments: SnPostCardComment[] = [
 
 :::type-fields SnAvatarMode
 
-```typescript
-type SnAvatarMode = 'image' | 'text' | 'icon'
-```
-
 头像显示模式：图片 / 文本 / 图标。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `image` | 图片 |
+| `text` | 文本 |
+| `icon` | 图标 |
 
 :::
 :::type-fields SnAvatarShape
 
-```typescript
-type SnAvatarShape = 'square' | 'circle'
-```
-
 头像形状：方形 / 圆形。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `circle` | 圆形 |
 
 :::
 
@@ -254,61 +255,60 @@ type SnAvatarShape = 'square' | 'circle'
 
 ## 类型
 
-### SnPostCardAction
+:::type-fields SnPostCardAction
 
-| 字段 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| id | String | 操作项标识，可用于点击回调中区分操作 |
-| icon | String | 操作图标名称，不传则只显示文本 |
-| text | String | 操作文本（如点赞数），不传则只显示图标 |
-| disabled | Boolean | 是否禁用（降低透明度且不可点击） |
-| isActive | Boolean | 是否激活，激活时图标与文本使用 active 系列颜色 |
-| iconColor | String | 图标颜色 |
-| textColor | String | 文本颜色 |
-| activeIconColor | String | 激活状态图标颜色 |
-| activeTextColor | String | 激活状态文本颜色 |
+操作项。
 
-### SnPostCardComment
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| id | String | 是 | 操作项标识，可用于点击回调中区分操作 |
+| icon | String | 否 | 操作图标名称，不传则只显示文本 |
+| text | String | 否 | 操作文本（如点赞数），不传则只显示图标 |
+| disabled | Boolean | 否 | 是否禁用（降低透明度且不可点击） |
+| isActive | Boolean | 否 | 是否激活，激活时图标与文本使用 active 系列颜色 |
+| iconColor | String | 否 | 图标颜色 |
+| textColor | String | 否 | 文本颜色 |
+| activeIconColor | String | 否 | 激活状态图标颜色 |
+| activeTextColor | String | 否 | 激活状态文本颜色 |
 
-| 字段 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| id | String | 评论标识 |
-| user | String | 评论用户名，点击可触发 `comment-user-click` 事件 |
-| content | String | 评论内容 |
-| replyTo | String | 被回复用户名，传入后渲染「xxx 回复 xxx」结构，被回复用户名同样可点击 |
+---
 
-### SnAvatarConfig
+:::
 
-| 字段 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| mode | [[SnAvatarMode]] | 头像模式：`'image'` \| `'text'` \| `'icon'`，默认 `'image'` |
-| src | String | 图片地址（mode 为 `'image'` 时使用） |
-| text | String | 文本内容（mode 为 `'text'` 时使用） |
-| icon | String | 图标名称（mode 为 `'icon'` 时使用） |
-| size | String \| Number | 头像大小，默认 `'40px'` |
-| shape | [[SnAvatarShape]] | 形状：`'square'` \| `'circle'`，默认 `'square'` |
-| bgColor | String | 背景颜色，默认 `'$info'` |
-| textColor | String | 文本颜色 |
-| iconColor | String | 图标颜色 |
-| borderRadius | String \| Number | 圆角大小 |
-| enablePreview | Boolean | 是否允许点击预览头像图片，默认 `false` |
+:::type-fields SnPostCardComment
+
+评论项。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| id | String | 是 | 评论标识 |
+| user | String | 是 | 评论用户名，点击可触发 `comment-user-click` 事件 |
+| content | String | 是 | 评论内容 |
+| replyTo | String | 否 | 被回复用户名，传入后渲染「xxx 回复 xxx」结构，被回复用户名同样可点击 |
+
+---
+
+:::
 
 :::type-fields SnAvatarMode
 
-```typescript
-type SnAvatarMode = 'image' | 'text' | 'icon'
-```
-
 头像显示模式：图片 / 文本 / 图标。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `image` | 图片 |
+| `text` | 文本 |
+| `icon` | 图标 |
 
 :::
 :::type-fields SnAvatarShape
 
-```typescript
-type SnAvatarShape = 'square' | 'circle'
-```
-
 头像形状：方形 / 圆形。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `circle` | 圆形 |
 
 :::
 

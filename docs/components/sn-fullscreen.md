@@ -1,7 +1,5 @@
 # Fullscreen  原位展开全屏
 
-> [查看 sn-fullscreen 的 2.0 版本差异](/differences/components/sn-fullscreen)
-
 ## 基础用法
 - 让一块内容“原位”拉伸占满整个视口（如卡片、模拟播放器），收起时动画回到原位置
 - 展开期间原位置由等高占位节点撑住，页面布局不塌陷；内容随之重新布局填满全屏

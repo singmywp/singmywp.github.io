@@ -93,20 +93,26 @@
 
 ## 校验规则
 
-每项校验规则是一个 `SnFormItemRule` 对象（可从 `@/uni_modules/sinle-ui` 导入）：
+:::type-fields SnFormItemRule
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| type | String | 内置格式校验类型，为空时只做必填/长度等通用校验，可选值见下 |
-| required | Boolean | 是否必填，`null`、空字符串、空数组视为空值 |
-| message | String | 校验失败时的提示信息 |
-| pattern | RegExp | 正则校验，仅对字符串值生效 |
-| min | Number | 最小限制：字符串按长度比较，数字按数值比较 |
-| max | Number | 最大限制：字符串按长度比较，数字按数值比较 |
-| len | Number | 字符串长度必须等于该值（设置后对字符串的 min/max 不生效） |
-| enum | any[] | `type` 为 `enum` 时的可选值列表 |
-| transform | (value: any) => any | 校验前对值进行转换（如把字符串转数字），后续校验使用转换后的值 |
-| valid | (value: any) => String | 自定义校验函数，返回非空字符串表示校验失败，内容即提示信息 |
+`sn-form` 的校验规则对象（可从 `@/uni_modules/sinle-ui` 导入）。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| type | String | 否 | 内置格式校验类型，为空时只做必填/长度等通用校验，可选值见下 |
+| required | Boolean | 否 | 是否必填，`null`、空字符串、空数组视为空值 |
+| message | String | 否 | 校验失败时的提示信息 |
+| pattern | RegExp | 否 | 正则校验，仅对字符串值生效 |
+| min | Number | 否 | 最小限制：字符串按长度比较，数字按数值比较 |
+| max | Number | 否 | 最大限制：字符串按长度比较，数字按数值比较 |
+| len | Number | 否 | 字符串长度必须等于该值（设置后对字符串的 min/max 不生效） |
+| enum | any[] | 否 | `type` 为 `enum` 时的可选值列表 |
+| transform | (value: any) => any | 否 | 校验前对值进行转换（如把字符串转数字），后续校验使用转换后的值 |
+| valid | (value: any) => String | 否 | 自定义校验函数，返回非空字符串表示校验失败，内容即提示信息 |
+
+---
+
+:::
 
 `type` 可选值：`string`、`number`、`boolean`、`object`、`array`、`integer`、`float`、`enum`、`url`、`email`、`idcard`、`phone`、`landline`、`qqnumber`、`abc`、`chinese`、`carnumber`、`ipv4`、`ipv6`。格式类校验对空值不生效，空值校验交给 `required`。
 

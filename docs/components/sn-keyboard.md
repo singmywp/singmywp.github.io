@@ -1,7 +1,5 @@
 # Keyboard  自定义键盘
 
-> [查看 sn-keyboard 的 2.0 版本差异](/differences/components/sn-keyboard)
-
 ## 基础用法
 
 - 基于 `sn-drawer` 底部弹层封装的安全键盘，由组件接管输入，适合替代系统键盘的场景（配合 `uni.hideKeyboard()` 使用）。

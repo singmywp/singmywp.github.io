@@ -1,7 +1,5 @@
 # Cell  单元格
 
-> [查看 sn-cell 的 2.0 版本差异](/differences/components/sn-cell)
-
 ## 基础用法
 
 - 单元格组件，用于列表项展示：左侧标题与描述信息，右侧值与箭头图标。

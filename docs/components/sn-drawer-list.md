@@ -1,7 +1,5 @@
 # DrawerList  抽屉长列表
 
-> [查看 sn-drawer-list 的 2.0 版本差异](/differences/components/sn-drawer-list)
-
 ## 基础用法
 
 - 抽屉长列表组件，它与 Drawer 组件的底层实现机制完全不同，主要是为了解决 Drawer 内嵌长列表嵌套滚动与手势事件冲突的问题。它内置 `sn-list-view` 长列表，适合在 Drawer 中展示大量数据的场景（如播放列表、消息列表、评论区）。
@@ -73,7 +71,7 @@ function onLoadmore(): void {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| list | 列表数据数组 | Array\\<any\\> | `[]` | - |
+| list | 列表数据数组 | `Array<any>` | `[]` | - |
 | renderMode | 渲染模式，`v-if` 关闭后销毁内容，`v-show` 保留内容 | String | `v-if` | `v-if` \| `v-show` |
 | showLine | 是否显示面板上的滑动指示条 | Boolean | `true` | `true` \| `false` |
 | slideClose | 是否启用滑动关闭手势 | Boolean | `true` | `true` \| `false` |
@@ -113,7 +111,7 @@ function onLoadmore(): void {
 | enableBackToTop | 点击顶部状态栏回到顶部（仅 iOS） | Boolean | `false` | `true` \| `false` |
 | scrollAnchoring | 是否开启滚动锚定（仅 Web） | Boolean | `false` | `true` \| `false` |
 | nestedScrollChild | 嵌套滚动的子容器 id | String | `''` | - |
-| listPadding | 列表内边距 | Array\\<Number\\> | `[]` | - |
+| listPadding | 列表内边距 | `Array<Number>` | `[]` | - |
 | refresherEnabled | 是否开启下拉刷新 | Boolean | `false` | `true` \| `false` |
 | refresherThreshold | 下拉刷新触发阈值（px） | Number | `45` | - |
 | refresherMaxDragDistance | 下拉刷新最大拖拽距离（px），`0` 表示不限制 | Number | `0` | - |
@@ -176,5 +174,7 @@ function onLoadmore(): void {
 | 名称 | 说明 |
 | --- | --- |
 | default | 列表项内容的作用域插槽，暴露 `item`（当前项数据）与 `index`（当前项索引） |
+| prefix | 列表上方的内容区，位于 sn-list-view 之前，不随列表滚动 |
+| suffix | 列表下方的内容区，位于 sn-list-view 之后，不随列表滚动 |
 
 <DemoPhone name="sn-drawer-list" />

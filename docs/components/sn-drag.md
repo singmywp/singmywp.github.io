@@ -1,7 +1,5 @@
 # Drag  拖拽排序
 
-> [查看 sn-drag 的 2.0 版本差异](/differences/components/sn-drag)
-
 ## 基础用法
 
 - 拖拽排序组件，通过 `v-model` 绑定数组数据，长按子项（默认 350ms）后即可拖动调整顺序，其余子项自动让位

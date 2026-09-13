@@ -72,35 +72,57 @@ function onError(err: SnScanProviderErrorImpl): void {
 
 `@scanned` 事件返回 `SnScanResult` 对象，相关类型均由本插件导出：
 
-```typescript
-type SnScanType = 'qrcode' | 'barcode' | 'all'
+:::type-fields SnScanType
 
-type SnScanMode = 'camera' | 'image'
+扫码类型。
 
-type SnScanDataPosition = {
-	centerX: number
-	centerY: number
-}
+| 可选值 | 备注 |
+| :--- | :--- |
+| `qrcode` | 二维码 |
+| `barcode` | 一维码 |
+| `all` | 两者均可识别 |
 
-type SnScanData = {
-	value: string
-	position: SnScanDataPosition
-}
+:::
 
-type SnScanResult = {
-	data: SnScanData[]
-	scanMode: SnScanMode
-	sourceWidth?: number
-	sourceHeight?: number
-}
-```
+:::type-fields SnScanMode
 
-| 字段 | 说明 |
-| --- | --- |
-| data | 识别结果数组，每项含码值 value 与识别点坐标 position（centerX / centerY） |  
-| scanMode | 结果来源：'camera' 相机扫码 / 'image' 图片识别 |  
-| sourceWidth | 本次识别原图宽度（已按旋转方向修正），可选 |  
-| sourceHeight | 本次识别原图高度（已按旋转方向修正），可选 |  
+扫码来源模式。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `camera` | 相机扫码 |
+| `image` | 相册图片识别 |
+
+:::
+
+:::type-fields SnScanDataPosition
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| centerX | number | 是 | 识别点在源图中的横向坐标 |
+| centerY | number | 是 | 识别点在源图中的纵向坐标 |
+
+:::
+
+:::type-fields SnScanData
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| value | string | 是 | 识别出的文本数据 |
+| position | SnScanDataPosition | 是 | 识别点位置 |
+
+:::
+
+:::type-fields SnScanResult
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| data | SnScanData[] | 是 | 识别结果数组 |
+| scanMode | SnScanMode | 是 | 结果来源，`camera` 相机扫码 / `image` 图片识别 |
+| sourceWidth | number | 否 | 本次识别原图宽度（已按旋转方向修正），可选 |
+| sourceHeight | number | 否 | 本次识别原图高度（已按旋转方向修正），可选 |
+
+:::
 
 ```typescript
 import { SnScanResult } from '@/uni_modules/sn-e-scan-provider'

@@ -46,7 +46,7 @@
 
 ## 手势事件
 
-`sn-view` 支持按下（`down`）、单击（`click`）、双击（`dbclick`）、长按（`longpress`）以及 `touchstart`、`touchmove`、`touchend`、`touchcancel` 触摸事件。
+`sn-view` 支持按下（`down`）、单击（`click`）、双击（`dbclick`）、长按（`longpress`）、双指旋转（`rotate`）、双指缩放（`scale`）以及 `touchstart`、`touchmove`、`touchend`、`touchcancel` 触摸事件。
 
 - 指针类事件回调参数为 [SnPointerEvent](/api/types/api#snpointerevent)，包含 `x`、`y` 与原始事件。
 - 触摸类事件回调参数为 [SnTouchEvent](/api/types/api#sntouchevent)，其中的每个 `SnTouch` 额外携带 `diffX`、`diffY`（与上次的位移）和 `direction`（`up` / `down` / `left` / `right` / `none`），可直接用于滑动判断。
@@ -93,6 +93,8 @@
 | touchmove | (event: [[SnTouchEvent@api]]) => Void | 手指移动事件 |
 | touchend | (event: [[SnTouchEvent@api]]) => Void | 手指抬起事件 |
 | touchcancel | (event: [[SnTouchEvent@api]]) => Void | 触摸打断事件 |
+| rotate | (event: [[SnRotateEvent@api]]) => Void | 双指旋转事件，degree 为相对上一次旋转事件的角度增量（deg），顺时针为正 |
+| scale | (event: [[SnScaleEvent@api]]) => Void | 双指缩放手势事件，zoom 为相对上一次缩放事件的倍数 |
 
 :::type-fields SnPointerEvent
 
@@ -104,12 +106,26 @@
 | event | UniPointerEvent | 否 | 原事件，可用以阻止默认行为、阻止冒泡 |
 
 :::
+:::type-fields SnRotateEvent
+
+| 字段 | 类型 | 必备 | 描述 |
+| :--- | :--- | :--- | :--- |
+| degree | Number | 是 | 相对上一次旋转事件的角度增量（deg），顺时针为正 |
+
+:::
+:::type-fields SnScaleEvent
+
+| 字段 | 类型 | 必备 | 描述 |
+| :--- | :--- | :--- | :--- |
+| zoom | Number | 是 | 缩放倍数（相对上一次缩放事件） |
+
+:::
 :::type-fields SnTouchEvent
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
 | type | String | 是 | 事件类型：`touchstart` \| `touchend` \| `touchmove` \| `touchcancel` \| `longpress` \| `showpress` |
-| touches | Array\<[[SnTouch@api]]\> | 是 | 多指触摸信息 |
+| touches | Array<[[SnTouch@api]]> | 是 | 多指触摸信息 |
 | event | UniEvent | 否 | 原事件，可用以阻止默认行为、阻止冒泡 |
 
 :::type-fields SnTouch

@@ -1,7 +1,5 @@
 # Table  表格
 
-> [查看 sn-table 的 2.0 版本差异](/differences/components/sn-table)
-
 ## 基础用法
 
 - 表格由三部分配合组成：`sn-table` 为表格容器，`sn-tr` 为行，`sn-td` 为单元格；行必须包裹在 sn-table 内，单元格必须包裹在 sn-tr 内。

@@ -1,10 +1,10 @@
-# Signature  签名
+﻿# Signature  签名
 
 > [查看 sn-signature 的 2.0 版本差异](/differences/components/sn-signature)
 
 ## 基础用法
 - 基于 canvas 的手写签名板，底部操作栏提供横/竖屏切换、撤销、重做、清空、设置与导出
-- 内置 17 种笔触（钢笔、毛笔、蜡笔、喷漆等），可在设置面板中切换笔触、画布背景、线条颜色与粗细、网格背景
+- 内置 17 种笔触（钢笔、毛笔、蜡笔、喷漆等），设置面板采用 Tabs + Swiper 分类：「笔触」（笔触类型、线条颜色与粗细）与「画布」（画布背景、网格背景），左右滑动或点选标签切换
 - 通过 ref 调用 `undo`、`redo`、`clear`、`exportImage`、`setLandscape` 方法可编程控制签名板
 
 ```vue
@@ -60,7 +60,7 @@
 | gridDensity | 网格密度，即网格间距（px） | Number | `20` | - |
 | maxHistory | 最大撤销历史记录数 | Number | `20` | - |
 | showActionBar | 是否显示底部操作栏（横竖屏、撤销、重做、清空、设置、导出） | Boolean | `true` | `true` \| `false` |
-| drawerPosition | 设置面板弹出位置 | String | `right` | `top` \| `right` \| `bottom` \| `left` |
+| drawerPosition | 设置面板滑出的方向 | String | `right` | `left` \| `right`（`top`/`bottom` 视为 `right`） |
 | drawerWidth | 设置面板宽度 | String \| Number | `300px` | - |
 | aniTime | 设置面板动画时长，支持 `$` 动态时长语法 | String \| Number | `''` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
@@ -73,11 +73,27 @@
 
 :::type-fields SnSignatureBrush
 
-```typescript
-type SnSignatureBrush = 'default' | 'pen' | 'gel' | 'pencil' | 'marker' | 'brush'
-```
-
 签名笔触类型。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `default` | 默认 |
+| `pen` | 钢笔 |
+| `gel` | 中性笔 |
+| `pencil` | 铅笔 |
+| `marker` | 马克笔 |
+| `brush` | 毛笔 |
+| `crayon` | 蜡笔 |
+| `fur` | 毛皮 |
+| `ink` | 墨水 |
+| `longfur` | 长绒毛 |
+| `ribbon` | 丝带 |
+| `shaded` | 阴影 |
+| `sketchy` | 速写 |
+| `spray` | 喷漆 |
+| `squares` | 方格 |
+| `circle` | 圆泡 |
+| `web` | 蛛网 |
 
 ---
 
@@ -94,13 +110,19 @@ type SnSignatureBrush = 'default' | 'pen' | 'gel' | 'pencil' | 'marker' | 'brush
 | clear | () => Void | 清空签名板时触发 |
 | orientationchange | (landscape: boolean) => Void | 横竖屏切换时触发，参数为是否横屏 |
 
-事件回调参数 `SignatureData` 结构：
+:::type-fields SignatureData
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| dataUrl | String | base64 图片数据（`change` 事件中为空字符串） |
-| width | Number | 图片宽度 |
-| height | Number | 图片高度 |
+`change`、`exported` 事件回调参数。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| dataUrl | String | 是 | base64 图片数据（`change` 事件中为空字符串） |
+| width | Number | 是 | 图片宽度 |
+| height | Number | 是 | 图片高度 |
+
+---
+
+:::
 
 ## 方法
 

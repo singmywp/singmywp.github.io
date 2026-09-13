@@ -1,7 +1,5 @@
 # Album  相册
 
-> [查看 sn-album 的 2.0 版本差异](/differences/components/sn-album)
-
 ## 基础用法
 
 - 用于展示一组图片（九宫格/相册），常用于动态、详情页的图片列表。

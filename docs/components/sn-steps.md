@@ -1,7 +1,5 @@
 # Steps 步骤条
 
-> [查看 sn-steps 的 2.0 版本差异](/differences/components/sn-steps)
-
 ## 基础用法
 - 步骤条，用于展示流程进度，由 sn-steps（容器）与 sn-step（步骤项）组合使用
 - 支持横向 / 竖向（vertical）、圆点（default）/ 点状（dot）两种形态

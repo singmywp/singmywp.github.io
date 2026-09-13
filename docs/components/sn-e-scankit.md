@@ -101,57 +101,94 @@ scan({ scanTypes: ['QRCODE'] }, (res: ScanResult) => {
 
 # ScanType
 
-```typescript
-export type ScanType =
-	| 'CODE_128'
-	| 'CODE_39'
-	| 'CODE_93'
-	| 'CODABAR'
-	| 'EAN_13'
-	| 'EAN_8'
-	| 'ITF_14'
-	| 'UPC_A'
-	| 'UPC_E'
-	| 'QRCODE'
-	| 'PDF_417'
-	| 'AZTEC'
-	| 'DATAMATRIX'
-	| 'MULTI_FUNCTIONAL'
+:::type-fields ScanType
 
-export type ScanTypes = ScanType[]
+扫码制式枚举。
 
-export type ScanTitleType = 0 | 1
+| 可选值 | 备注 |
+| :--- | :--- |
+| `CODE_128` | Code 128 |
+| `CODE_39` | Code 39 |
+| `CODE_93` | Code 93 |
+| `CODABAR` | Codabar |
+| `EAN_13` | EAN-13 |
+| `EAN_8` | EAN-8 |
+| `ITF_14` | ITF-14 |
+| `UPC_A` | UPC-A |
+| `UPC_E` | UPC-E |
+| `QRCODE` | 二维码 |
+| `PDF_417` | PDF417 |
+| `AZTEC` | Aztec |
+| `DATAMATRIX` | DataMatrix |
+| `MULTI_FUNCTIONAL` | 多功能（多码制同时识别） |
 
-export type ScanConfigs = {
-	scanTypes?: ScanTypes | null
-	titleType?: ScanTitleType | null
-	permTip?: string | null
-}
+:::
 
-export type ScanResultFormat =
-	| 'articleNumber'
-	| 'contactDetail'
-	| 'driverInfo'
-	| 'emailContent'
-	| 'eventInfo'
-	| 'isbnNumber'
-	| 'coordinate'
-	| 'text'
-	| 'sms'
-	| 'telephone'
-	| 'url'
-	| 'wifiConnectInfo'
+:::type-fields ScanTypes
 
-export type ScanResult = {
-	format: ScanResultFormat
-	data: string
-}
-```
+| 类型 | 说明 |
+| :--- | :--- |
+| `ScanType[]` | 扫码制式列表，传入 `scan` 配置的 `scanTypes` 字段 |
+
+:::
+
+:::type-fields ScanTitleType
+
+扫码界面标题类型。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `0` | 标题为「扫描二维码/条码」 |
+| `1` | 标题为「扫描二维码」 |
+
+:::
+
+:::type-fields ScanConfigs
+
+`scan` 配置对象。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| scanTypes | ScanTypes \| null | 否 | 需要识别的码制式列表 |
+| titleType | ScanTitleType \| null | 否 | 扫码界面标题类型 |
+| permTip | string \| null | 否 | 权限申请弹窗提示语 |
+
+:::
+
+:::type-fields ScanResultFormat
+
+扫码结果 `format` 的取值，即华为 Scan Kit 的结果格式枚举。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `articleNumber` | 商品编号 |
+| `contactDetail` | 联系人信息 |
+| `driverInfo` | 驾驶证信息 |
+| `emailContent` | 邮件内容 |
+| `eventInfo` | 事件信息 |
+| `isbnNumber` | ISBN 图书编号 |
+| `coordinate` | 坐标 |
+| `text` | 纯文本 |
+| `sms` | 短信 |
+| `telephone` | 电话号码 |
+| `url` | 网址 |
+| `wifiConnectInfo` | WIFI 连接信息 |
+
+:::
+
+:::type-fields ScanResult
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| format | ScanResultFormat | 是 | 码值类型 |
+| data | string | 是 | 码值字符串 |
+
+:::
 
 ## 环境要求
 
 - HBuilderX 5.21+，uni-app x 蒸汽模式项目。
-- 插件依赖 `com.huawei.hms:scanplus:2.12.0.301` 与华为 maven 仓 `https://developer.huawei.com/repo/`，依赖变更需重新打包自定义基座后生效。
+- 插件依赖 `com.huawei.hms:scanplus:2.12.0.301` 与华为 maven 仓 https://developer.huawei.com/repo/ ，依赖变更需重新打包自定义基座后生效。
 - Scan Kit 不强制要求 `agconnect-services.json`；仅当应用在 AppGallery Connect 开通了相关服务并已放置该文件时，才需额外配置 AGC 插件。
 - 请确保应用未关闭硬件加速（`hardwareAccelerated` 为 `true`），否则个别机型扫码界面可能黑屏。
 

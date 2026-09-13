@@ -41,7 +41,7 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | v-model | 当前选中的选项索引 | Number | `0` | - |
-| data | 侧边栏选项数据数组 | Array\\<[[SnDataItem@api]]\\> | `[]` | - |
+| data | 侧边栏选项数据数组 | Array<[[SnDataItem@api]]> | `[]` | - |
 | width | 侧边栏宽度 | String | `'100px'` | - |
 | itemWidth | 选项宽度 | String | `'100px'` | - |
 | itemPadding | 选项内边距（支持 1~4 值简写） | String | `'15px 0'` | - |

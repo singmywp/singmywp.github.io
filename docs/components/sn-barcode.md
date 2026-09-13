@@ -46,36 +46,44 @@
 
 :::type-fields SnBarcodeFormat
 
-```typescript
-type SnBarcodeFormat = 'code128' | 'code39' | 'code93' | 'codabar' | 'ean8' | 'ean13' | 'upca' | 'upce' | 'itf'
-```
-
 条码格式。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `code128` | Code 128 |
+| `code39` | Code 39 |
+| `code93` | Code 93 |
+| `codabar` | Codabar |
+| `ean8` | EAN-8 |
+| `ean13` | EAN-13 |
+| `upca` | UPC-A |
+| `upce` | UPC-E |
+| `itf` | ITF（交错 2/5） |
 
 :::
 
 ## 类型
 
-```typescript
-type SnBarcodeFormat = 'code128' | 'code39' | 'code93' | 'codabar' | 'ean8' | 'ean13' | 'upca' | 'upce' | 'itf'
-```
-
-| 类型 | 字段 | 类型 | 描述 |
-| --- | --- | --- | --- |
-| [[SnBarcodeBarElement]] | width | number | 该元素的模块宽度 |
-| | bar | boolean | 是否为条纹（`false` 为间隙） |
-| [[SnBarcodeData]] | elements | [[SnBarcodeBarElement]][] | 条纹元素序列 |
-| | totalModules | number | 总模块数 |
-| | value | string | 实际编码的文本（可能被截断） |
-
 :::type-fields SnBarcodeBarElement
 
-条码单元：`width`（模块宽度）、`bar`（是否为条）。
+条码单元。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| width | number | 是 | 该元素的模块宽度 |
+| bar | boolean | 是 | 是否为条纹（`false` 为间隙） |
 
 :::
+
 :::type-fields SnBarcodeData
 
-条码绘制数据：`elements`（[SnBarcodeBarElement](/api/types/component#snbarcodebarelement)[]）、`totalModules`（总模块数）、`value`（编码内容）。
+条码绘制数据。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| elements | [[SnBarcodeBarElement]][] | 是 | 条纹元素序列 |
+| totalModules | number | 是 | 总模块数 |
+| value | string | 是 | 实际编码的文本（可能被截断） |
 
 :::
 

@@ -1,7 +1,5 @@
 # HighlightText  高亮文本
 
-> [查看 sn-highlight-text 的 2.0 版本差异](/differences/components/sn-highlight-text)
-
 ## 基础用法
 
 - 高亮文本组件：将文本中匹配关键词的片段以主题主色高亮显示，常用于搜索结果、关键词标注等场景。

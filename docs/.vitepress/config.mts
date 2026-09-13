@@ -172,9 +172,9 @@ export default defineConfig({
             { "text": "useTheme", "link": "/api/hooks/use-theme" },
             { "text": "useStyle", "link": "/api/hooks/use-style" },
             { "text": "useFactors", "link": "/api/hooks/use-factors" },
-            { "text": "useGrayMode", "link": "/api/hooks/use-gray-mode" },
             { "text": "useHover", "link": "/api/hooks/use-hover" },
             { "text": "useResolve", "link": "/api/hooks/use-resolve" },
+            { "text": "useI18n", "link": "/api/hooks/use-i18n" },
             { "text": "useExternalStyle", "link": "/api/hooks/use-external-style" },
             { "text": "useBacktop", "link": "/api/hooks/use-backtop" }
           ]
@@ -587,6 +587,10 @@ export default defineConfig({
             {
               "text": "Gap 占位间隔",
               "link": "/components/sn-gap"
+            },
+            {
+              "text": "KeyboardTop 键盘上方区域",
+              "link": "/components/sn-keyboard-top"
             },
             {
               "text": "Collapse 折叠面板",

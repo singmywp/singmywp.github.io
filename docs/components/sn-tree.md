@@ -1,7 +1,5 @@
 # Tree  树形选择
 
-> [查看 sn-tree 的 2.0 版本差异](/differences/components/sn-tree)
-
 ## 基础用法
 
 - 树形结构数据的选择与浏览组件，v-model 绑定选中节点 id 数组（String[]）。
@@ -70,22 +68,22 @@
 
 :::type-fields SnTreeData
 
-```typescript
-type SnTreeData = SnTreeItem[]
-```
-
 树形数据集合，即 `sn-tree` 的 `data` 属性类型。
+
+| 类型 | 说明 |
+| :--- | :--- |
+| [[SnTreeItem]][] | 树节点列表 |
 
 :::
 :::type-fields SnTreeLoadData
 
 懒加载回调类型：
 
-```typescript
-type SnTreeLoadResolve = (children: SnTreeData) => void
-type SnTreeLoadReject = () => void
-type SnTreeLoadData = (item: SnTreeItem, resolve: SnTreeLoadResolve, reject: SnTreeLoadReject) => void
-```
+| 类型 | 签名 |
+| :--- | :--- |
+| SnTreeLoadResolve | (children: [[SnTreeData]]) => void |
+| SnTreeLoadReject | () => void |
+| SnTreeLoadData | (item: [[SnTreeItem]], resolve: SnTreeLoadResolve, reject: SnTreeLoadReject) => void |
 
 `sn-tree` 的 `load-data` 属性接收 `SnTreeLoadData` 函数：懒加载节点展开时调用，加载成功经 `resolve(children)` 返回子节点，失败调用 `reject()`。
 
@@ -150,19 +148,6 @@ type SnTreeLoadData = (item: SnTreeItem, resolve: SnTreeLoadResolve, reject: SnT
 | suffix | 节点文字后插入自定义内容 | item: [[SnTreeItem]] |
 
 ## 类型
-
-### SnTreeItem
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| id | String | 节点唯一标识（必填） |
-| text | String | 节点显示文字（必填） |
-| icon | String | 覆盖收起态展开开关图标 |
-| activeIcon | String | 覆盖展开态展开开关图标 |
-| rotate | Number | 覆盖展开时图标旋转角度 |
-| disabled | Boolean | 是否禁用该节点（半透明、不可选中、不可展开） |
-| lazy | Boolean | 是否为异步加载节点（子级由 loadData 提供） |
-| children | [[SnTreeItem]][] | 子节点 |
 
 ### SnTreeData
 

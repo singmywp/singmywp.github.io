@@ -21,7 +21,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 按钮当前位置坐标，形如 `[x, y]` | Array\\<Number\\> | `[0, 0]` | - |
+| v-model | 按钮当前位置坐标，形如 `[x, y]` | `Array<Number>` | `[0, 0]` | - |
 | position | 预设位置（`init` 为 true 时初始化定位至此） | String | `bottom` | `top-start` \| `top` \| `top-end` \| `right` \| `bottom-end` \| `bottom` \| `bottom-start` \| `left` |
 | init | 是否在初始化时定位到 `position` 预设位置 | Boolean | `true` | `true` \| `false` |
 | absorb | 松手后是否自动吸附至左右两侧 | Boolean | `true` | `true` \| `false` |
@@ -42,7 +42,7 @@
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | click | (event: UniPointerEvent) => Void | 点击按钮时触发（禁用时不触发） |
-| change | (position: Array\\<Number\\>) => Void | 初始化定位或拖动结束时触发，携带当前位置坐标 |
+| change | `(position: Array<Number>) => Void` | 初始化定位或拖动结束时触发，携带当前位置坐标 |
 
 ## 插槽
 

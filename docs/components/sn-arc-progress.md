@@ -1,7 +1,5 @@
 # ArcProgress  环形进度
 
-> [查看 sn-arc-progress 的 2.0 版本差异](/differences/components/sn-arc-progress)
-
 ## 基础用法
 
 - 用于展示环形（圆弧）进度，基于 canvas 绘制，支持自定义起止角度、轨道与进度条粗细颜色。

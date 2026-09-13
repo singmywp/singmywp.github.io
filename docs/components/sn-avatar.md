@@ -46,7 +46,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| data | 头像组数据，数组项字段见下方 [[SnAvatarGroupItem]] | Array\\<[[SnAvatarGroupItem]]\\> | `[]` | - |
+| data | 头像组数据，数组项字段见下方 [[SnAvatarGroupItem]] | Array<[[SnAvatarGroupItem]]> | `[]` | - |
 | size | 头像大小，支持 `$` 前缀按间距乘数缩放 | String \| Number | `40px` | - |
 | spacing | 头像之间的间距（仅 `mode="spread"` 时生效），支持 `$` 前缀按外间距乘数缩放 | String \| Number | `5px` | - |
 | max | 显示的最大头像数量，超过该数量的以 "+N" 形式显示，`-1` 表示不限制 | Number | `-1` | - |
@@ -69,27 +69,16 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
-| src | String | 否 | 图片路径 |
-| text | String | 否 | 文本内容 |
-| icon | String | 否 | 图标名称 |
-| bgColor | String | 否 | 背景颜色 |
-| textColor | String | 否 | 文本颜色 |
-| iconColor | String | 否 | 图标颜色 |
+| src | String | 否 | 头像图片地址 |
+| text | String | 否 | 头像文本 |
+| icon | String | 否 | 头像图标名 |
+| bgColor | String | 否 | 该头像背景颜色，优先级高于 `bgColor` 属性 |
+| textColor | String | 否 | 该头像文本颜色，优先级高于 `textColor` 属性 |
+| iconColor | String | 否 | 该头像图标颜色，优先级高于 `iconColor` 属性 |
 
 ---
 
 :::
-
-SnAvatarGroupItem 数据项字段（均为可选）：
-
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| src | String | 头像图片地址 |
-| text | String | 头像文本 |
-| icon | String | 头像图标名 |
-| bgColor | String | 该头像背景颜色，优先级高于 `bgColor` 属性 |
-| textColor | String | 该头像文本颜色，优先级高于 `textColor` 属性 |
-| iconColor | String | 该头像图标颜色，优先级高于 `iconColor` 属性 |
 
 ## 事件
 

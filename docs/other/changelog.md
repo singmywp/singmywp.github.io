@@ -1,3 +1,120 @@
+## 2.0.0（2026-09-06）
+- 【提示】本次变更较大，可利用 AI 完成版本迁移（差异详情：https://sinleui.pages.dev/differences）
+- 【重要】插件推荐运行版本为 HBuilder X Alpha 5.25 及以上（蒸汽模式在此版本之前存在比较严重的问题）
+- 【重要】新增 框架全面重构为 uni-app x 蒸汽模式（vapor），VDOM 模式由于性能原因不再支持。
+- 新增 多风格（Style）系统：内置 default / ink / chinese / new-year / morandi-green / orange 六套风格，支持自由修改增删内置风格，或者为应用添加自定义风格，并支持一键切换。
+- 新增 五乘数体系（`fontsizeFactor` / `radiusFactor` / `marginFactor` / `paddingFactor` / `aniTimeFactor`）与三基础动画时长 `baseAniTimeShort` / `Normal` / `Long`，修改自动持久化并实时驱动页面
+- 新增 国际化支持。插件默认支持简体中文 `zh-Hans`、英语 `en`、法语 `fr`、俄语 `ru`、日语 `ja`、繁体中文 `zh-Hant`、韩语 `ko`、西班牙语 `es`、德语 `de`、意大利语 `it`、葡萄牙语 `pt` 共计 11 种语言。
+- 新增 `SnColorBase.shadow` 阴影色字段，随主题自动切换
+- 新增 全局弹窗 `showLoading` / `hideLoading`；`showToast` 新增 `title` 兼容写法与 `passThrough` 点击穿透，`showModal` / `showActionsheet` 新增 `openAnimation` / `closeAnimation` 自定义开合动画
+- 新增 `snu` 金额工具 `roundAmount` / `numToUpperAmount`（字符串级舍入，规避浮点陷阱）与全新 Resolve、Perm 方法分组
+- 新增 `$snui.logging` 日志开关与 `log` / `info` / `debug` / `warn` / `error` 统一日志接口，组件内部不再直接 `console` 来报日志。
+- 新增 Utils 工具库 `hideToast` 隐藏轻提示
+- 新增 Utils 工具库 `clamp` 夹具函数，对所给值限制范围
+- 新增 `$snui.colors` 颜色 `light`，与 `dark` 相对应。亮色模式下，`light` 即 `#fff`，`dark` 即 `#000`；暗黑模式下，两者颜色互换，`light` 即 `#000`，`dark` 即 `#fff`
+- 新增 `syncStatusBarColor` / `createCalendarDayPaint` / `createCalendarDayContent` 全局函数与 `SN_DEFAULT_STYLE_ID` 常量
+- 新增 `sn-agreement` 协议勾选：支持链接文本与勾选状态双向绑定
+- 新增 `sn-album` 相册：网格宫格展示图片组并支持点击预览
+- 新增 `sn-amount` 金额展示：字符串级精确舍入、千分位分隔与中文大写金额
+- 新增 `sn-arc-progress` 环形进度：基于 canvas 绘制，支持自定义起止角度
+- 新增 `sn-arc-slider` 圆弧滑块：圆弧形态滑动选择器，含 hue 颜色模式
+- 新增 `sn-calendar` 日历选择器：底部弹出，支持单选 / 区间 / 多选三种模式
+- 新增 `sn-calendar-view` 月历视图：可滑动的月历面板，供日历系列组件复用
+- 新增 `sn-calendar-punch` 打卡日历：签到打卡记录日历
+- 新增 `sn-calendar-week` 周日历：一次展示一周并支持滑动切周
+- 新增 `sn-cascader` 级联选择：支持静态 data 与异步 loadData 双数据源
+- 新增 `sn-cell` 列表项：通用单元格组件，框架内部列表布局统一复用
+- 新增 `sn-clipper` 图片裁剪：可视裁剪框拖拽缩放，导出区域与预览一致
+- 新增 `sn-code-input` 验证码输入：支持掩码、光标与粘贴识别
+- 新增 `sn-color-picker` 颜色选择器：支持 alpha 透明度与预设色
+- 新增 `sn-color-picker-view` 颜色视图：颜色选择的滑动面板视图
+- 新增 `sn-drag` 拖拽排序：长按拖拽交换排序
+- 新增 `sn-drag-item` 拖拽项：配合 `sn-drag` 使用的可拖拽子项
+- 新增 `sn-drawer-list` 抽屉长列表：底部抽屉形态的长列表容器
+- 新增 `sn-ellipsis` 文本省略：超长文本省略并支持展开 / 收起
+- 新增 `sn-footer` 页脚：Logo + 导航链接 + 版权三段式布局
+- 新增 `sn-fullscreen` 全屏：原位展开全屏容器
+- 新增 `sn-form-field` 表单项容器：标签、内容、必填标与校验注册的基座
+- 新增 `sn-input-field` 标签输入框：表单项 + 输入框组合，内置错误提示
+- 新增 `sn-textarea-field` 标签文本域：表单项 + 文本域组合，含字数统计
+- 新增 `sn-highlight-text` 高亮文本：关键词高亮显示
+- 新增 `sn-keyboard` 安全键盘：数字 / 整数 / 密码 / 身份证 / 车牌五种类型
+- 新增 `sn-mention` 提及输入：@ 提及选择输入框
+- 新增 `sn-message` 消息条：全局消息队列，六方向弹出与分组计数
+- 新增 `sn-notification` 通知：带标题内容与类型图标，支持进度条与拖动关闭
+- 新增 `sn-pagination` 分页器：简洁 / 完整两种模式，支持快速跳转
+- 新增 `sn-popover` 气泡卡片：锚点定位的轻量气泡弹层
+- 新增 `sn-post-card` 帖子卡片：动态 / 帖子信息展示卡片
+- 新增 `sn-region-picker` 省市区选择：内置中国区划数据，省 / 市 / 县模式
+- 新增 `sn-scroll-view` 滚动容器：与长列表共用刷新 / 加载更多 / 回到顶部机制
+- 新增 `sn-slide-captcha` 滑块验证：拖拽滑块完成验证
+- 新增 `sn-slider-double` 双向滑块：区间范围选择
+- 新增 `sn-sorter` 排序：字段排序选择器
+- 新增 `sn-steps` 步骤条：横 / 竖排布，圆点 / 点状两种形态
+- 新增 `sn-step` 步骤项：配合 `sn-steps` 的步骤节点
+- 新增 `sn-table` 表格：支持固定表头与固定列
+- 新增 `sn-tr` 表格行：配合 `sn-table` 的行节点
+- 新增 `sn-td` 表格单元格：配合 `sn-table` 的单元格节点
+- 新增 `sn-tree` 树：多模式选择与懒加载
+- 新增 `sn-watermark` 水印：页面或局部水印覆盖，不影响其他组件，无副作用。
+- 新增 `sn-keyboard-top` 键盘上方区域：未弹出键盘时按默认方式定位（与普通 view 一致），弹出键盘时切换为 fixed 定位并跟随键盘高度贴在键盘上方（Android / Web）
+- 新增 `Demo` 手势库实例，结合可视化元素演示手势库应用
+- 新增 `sn-e-toast` 插件：替换 `snu.showToast` 基于 `dialogPage ` 实现的不可透穿手势的 Toast 轻提示，原生弹层实现同官方 `uni.showToast` 基本一致的体验。同时相对于官方的 UI 新增了动画和丰富的样式支持。
+- 优化 `$` 动态变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
+- 优化 动画统一由 UniElement DOM animate / transition + `--ani-time-*` 变量实现，支持 `$` 简写并随 `aniTimeFactor` 全局调速
+- 优化 点击态统一为 `useHover` + `hover-style` 机制，替代旧 `hover-class`，配套 `hover-start-time` / `hover-stay-time` / `hover-trans-time`
+- 优化 内部列表项 / 子项布局统一复用 `sn-cell`，子元素样式经 `itemStyle` / `itemHoverStyle` / `itemTextStyle` / `itemIconStyle` / `itemClass` / `itemBorder` 传递链透传
+- 优化 长列表组件（`sn-list-view` / `sn-waterflow`）改为数据驱动 + 作用域插槽渲染，条目按数据项 type 分组复用回收，避免了直接传入 `list-item` / `flow-item` 组件被渲染为普通view 而引发的内存泄露问题
+- 优化 重新设计了 `sn-input` 和 `sn-textarea` 的默认样式。如需原来的样式可以通过丰富的属性来实现。
+- 优化 跟手组件触摸交互改为 DOM 直操作，APP 端拖动更顺滑
+- 优化 `sn-select`、`sn-menu` 支持触底上移，即如果触发点位于页面底部，将自动将弹出层上移，避免触底。
+- 优化 各组件尺寸类统一支持联合类型 `String | Number`
+- 优化 `sn-datetime-picker` 的性能问题。
+- 优化 禁用态统一使用主题禁用色，Web 端条件编译设置 `cursor: not-allowed`
+- 优化 `sn-select` 滚动模式下打开将自动定位到当前选中项。
+- 优化 sn-waterflow Web 端启用虚拟滚动，长列表滚动更流畅
+- 优化 sn-picker-view 在 APP端使用拍平，极大提升了载入大量数据时的性能，卡顿大幅减轻
+- 优化 sn-upload-media 及 sn-upload-media-unicloud 在非 Web 端平台改用系统提供的选择器，无需再向系统申请媒体权限
+- 优化 sn-scan 从相册中选择图片时改用系统提供的选择器，无需再向系统申请媒体权限，且不会产生大量缓存文件而导致占用空间膨胀
+- 优化 Demo 新特性速览跳转到工具库 Demo 时出现的卡顿问题
+- 优化 `sn-e-markdown`  Android 改为原生渲染，消除 WebView 卡顿
+- 优化 按钮 / 输入框 / 开关加载态指示器延迟 100ms 显示，避免闪烁
+- 优化 `sn-rate` 只读态改为双层裁剪渲染，提升性能
+- 【重要】更改【破坏性变更】重构原有 API 架构，具体见文档。
+- 更改【破坏性变更】 全部组件样式扩展统一为 `customStyle` + `{语义}Style` / `Class` 透传体系，适配蒸汽模式样式隔离 2.0
+- 更改 【破坏性变更】 `SnError` ：字段变更为 `scope` / `funName` / `errCode` / `err`，旧 `moduleName` / `apiname` / `errSubject` / `errMsg` 全部失效
+- 更改 【破坏性变更】`$snui.setColorSet` 更名 `setColorBase`，颜色键校验更严格
+- 更改 组件 v-model 规范化：旧 `vModel` / `modelValue` 统一为 `v-model`（`sn-checkbox` / `sn-radio` / `sn-switch` / `sn-rate` / `sn-slider` / `sn-progress` 等）
+- 更改 【破坏性变更】弹出层组件 `open` / `close` 事件改为六段动画生命周期事件 `beforeenter` / `enter` / `afterenter` / `beforeleave` / `leave` / `afterleave`，`clickMask` 统一更名 `clickoverlay`
+- 更改 【破坏性变更】扩展插件收编为内置组件：`sn-e-gesture` → `sn-gesture`、`sn-e-qrcode` → `sn-qrcode`、`sn-e-barcode` → `sn-barcode`
+- 更改 【破坏性变更】 `sn-waterfall` 更名重写为 `sn-waterflow`，并进行了重构。在APP 端封装官方内置组件 `waterflow`，在 `Web` 端采用自实现的虚拟列表。
+- 更改 【破坏性变更】`sn-markdown` 迁移为独立插件 `sn-e-markdown`
+- 更改 【破坏性变更】 `sn-longlist` 重构为 `sn-list-view`，`refresher-triggered` 改为 v-model 双向绑定
+- 更改 【破坏性变更】 `sn-form-item` 拆分为 `sn-form-field` / `sn-input-field` / `sn-textarea-field`，`submited` 事件更名 `submit`
+- 更改 【破坏性变更】`sn-menu` 菜单类组件的子组件从 `sn-menu-item` 改为 `sn-cell`  ，移除插槽并新增 `select` 事件。
+- 更改 重新设计 `sn-signature` 组件布局，适配横屏模式。
+- 更改 尺寸 / 时间类 props 统一放宽为 `String | Number` 并接入 `$` 乘数语法，颜色类 props 使用 `String(色值)` 支持 `$` 主题色
+- 更改 【破坏性变更】字号板（`font.baseSize` + size 等级）、圆角等级板、动画等级板，改为乘数体系
+- 更改 【破坏性变更】各组件 `customXxxStyle`（UTSJSONObject）更名去 `custom` 前缀为 `{语义}Style` 并成对新增 `{语义}Class`，`customStyle` 类型放宽为 `UTSJSONObject | String`
+- 更改 【破坏性变更】`$snui.configs` 六大子配置体系，改为 `$snui` 扁平属性直接读写
+- 修复 Android 端跟手组件拖动卡顿问题，触摸交互改 DOM 直写保证帧率
+- 修复 `sn-notice` 组件在横屏或宽屏场景下文字完全隐藏后需要等待较长时间才会再次显示的问题
+- 修复 `sn-notice` 组件过长文本会被截断的问题
+- 修复 弹出层类组件未置于 `sn-page` 根节点时 `--sn-*` 颜色与 `--ani-time-*` 动画时长变量失效的问题
+- 修复 非法 type / level 导致异常的问题，当前自动回退默认主题
+- 修复 sn-timer / sn-countdown 等组件类型过度收窄导致的传参报错
+- 修复 Date 日期库部分情况下报空指针异常的问题
+- 修复 Utils 工具库 isDate 在高版本 uni-app x 上报空指针异常的问题
+- 修复 sn-scan 图片扫描成功后预览图与识别点错位的问题
+- 修复 sn-scan 手指在扫描线上无法触发缩放事件的问题（即缩放具有明显的卡顿感的问题）
+- 移除 【破坏性变更】Store 状态管理库（`$snui.store` 及 `StoreLib` 全部废弃），蒸汽模式可直接使用 `pinia` 。
+- 移除 【破坏性变更】`configs.font.mainFamily` 内置字体配置与 `configs.app.grayMode` 哀悼置灰模式
+- 移除 【破坏性变更】`snu` 方法：`makePhoneCall`、`vibrate`、`addPx`、`share`、`chooseMedia`、`previewImage`、`showToasty`。上述方法官方基本已有实现或已不实用。
+- 移除 废弃类型：`SnShareConfig`、`SnChooseMediaOptions`、`SnPreviewImageConfig`、`SnPreviewImageLongPressActions`、`SnToastyConfig`
+- 移除  【破坏性变更】 栅格布局组件 `sn-col` / `sn-row` 与过渡组件 `sn-transition`。上述组件已不实用。
+- 移除 【破坏性变更】SVG 组件 `sn-e-svg`。官方内置 `image` 已支持 `svg` 格式。
+- 移除 `sn-list-item`、`sn-list-chat` 、 `sn-menu-item` 静态列表子组件，改由 `sn-cell` 实现
+- 移除 【破坏性变更】 `sn-perm-listener` 组件标签形态，权限提示能力迁移为 `snu.setPermTips` / `registerPermListener` 等全局 API。
 ## 1.1.6（2024-11-24）
 - 修复 导入插件时插件内部页面未完全注册的问题
 - 修复 导出插件时错误地导入 `sn-e-toast` 插件的问题
@@ -6,7 +123,7 @@
 - **重要** 移除 框架内置字体 **MiSans** ，插件体积减少 **60%**，如需继续使用此字体可自行下载并导入到项目中
 - **重要** 移除 `sn-e-toast` 插件，其所有 API 已迁移至 `sn-native`，如果原来已下载此插件，请手动删除
 - 新增 `sn-native` 插件作为原生能力扩展库，原 `sn-e-toast` 及 `sinle-ui` 部分 API 迁移至 `sn-native`
-- 新增错误规范（遵循 uni 错误规范，统一为 `UniError` 错误对象），SinleUI 框架的 API 及组件报错将逐渐规范化。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
+- 新增 `SnError` 错误规范，SinleUI 框架的 API 及组件报错将逐渐规范化，返回 `SnError` 类型的错误信息。错误码与错误信息对应表[详见](https://sinleui.pages.dev/api/error/standard)。
 - 调整 Utils 工具库 原 `showToast` 更名为 `showToasty`，其参数 `config` 类型更名为 `SnToastyConfig`
 - 移除 Utils 工具库 `share` 分享及其参数相应类型，请使用官方 `uni.shareWithSystem` 代替
 - 新增 Utils 工具库 `showToast` 全局轻提示。与 `sn-toast` 不同的是，它可以在任意位置调用，无需放置组件；强制防穿透。与 `showToasty` 不同的是，它的样式配置更加丰富。

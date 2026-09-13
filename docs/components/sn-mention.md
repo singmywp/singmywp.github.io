@@ -1,7 +1,5 @@
 # Mention  提及输入框
 
-> [查看 sn-mention 的 2.0 版本差异](/differences/components/sn-mention)
-
 ## 基础用法
 
 - 在 `sn-input` 基础上扩展的 @ 提及输入框，继承其全部属性与事件。

@@ -91,20 +91,23 @@ const avatarConfig = {
 
 :::type-fields SnAvatarMode
 
-```typescript
-type SnAvatarMode = 'image' | 'text' | 'icon'
-```
-
 头像显示模式：图片 / 文本 / 图标。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `image` | 图片 |
+| `text` | 文本 |
+| `icon` | 图标 |
 
 :::
 :::type-fields SnAvatarShape
 
-```typescript
-type SnAvatarShape = 'square' | 'circle'
-```
-
 头像形状：方形 / 圆形。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `square` | 方形 |
+| `circle` | 圆形 |
 
 :::
 

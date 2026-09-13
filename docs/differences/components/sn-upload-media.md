@@ -4,7 +4,7 @@
 **差异明细**：
 - 类型变化：`customStyle` / `customItemStyle` 旧 UTSJSONObject → 新 UTSJSONObject | String
 - 类型变化：`width` / `height` / `iconSize` 旧 String → 新 String | Number
-- 默认值变化：`itemBgColor` 旧 `` `$line` `` → 新 ``（留空时回退 `$line`）；`itemBorderRadius` 旧 `` `$small` `` → 新 ``（留空按 `8 × radiusFactor` 计算）
+- 默认值变化：`itemBgColor` 旧 `` `$line` `` → 新 ``（留空时回退 `$line`）；`itemBorderRadius` 旧 `` `$small` `` → 新 ``（留空按 `8 × radiusFactor` 计算）；`timeout` 旧 `10000` → 新 `30000`（上传超时后自动中止请求并进入上传失败状态）
 - 行为变化：Web 端 `mode=all` 改用文件选择器（chooseMediaWeb）实现；选择失败、上传失败统一返回 `UniError`
 - uniCloud 版：仍无 `url` / `timeout` / `formData` 属性，`directory` 默认 `uploadImages/` 不变
 - 事件、方法、插槽：无变化（6 个事件、`upload` 方法、default 插槽均保留）

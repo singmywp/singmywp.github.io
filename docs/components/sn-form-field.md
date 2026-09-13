@@ -1,7 +1,5 @@
 # FormField  表单项
 
-> [查看 sn-form-field 的 2.0 版本差异](/differences/components/sn-form-field)
-
 ## 基础用法
 
 - 通用表单项容器基座：标签（左/上）+ 内容插槽 + 底部错误提示的布局外壳，是 `sn-input-field`、`sn-textarea-field` 等字段组件的容器基础。

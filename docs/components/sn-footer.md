@@ -1,7 +1,5 @@
 # Footer  页脚
 
-> [查看 sn-footer 的 2.0 版本差异](/differences/components/sn-footer)
-
 ## 基础用法
 
 - 页脚组件，常用于页面底部展示品牌 Logo、导航链接与版权信息，三部分均可选、按需组合
@@ -20,7 +18,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| links | 导航链接列表，字段见下方 [[SnFooterLink]] | Array\\<[[SnFooterLink]]\\> | `[]` | - |
+| links | 导航链接列表，字段见下方 [[SnFooterLink]] | Array<[[SnFooterLink]]> | `[]` | - |
 | logo | 品牌 Logo 配置，字段见下方 [[SnFooterLogo]] | [[SnFooterLogo]] | `null` | - |
 | text | 页脚文字（一般为版权信息） | String | `''` | - |
 | color | Logo 标题颜色 | String | `''`（空值时为 `$title`） | - |
@@ -34,31 +32,28 @@
 
 :::type-fields SnFooterLink
 
-`sn-footer` 链接项：`name`（名称）、`url`（跳转地址）、`openType`（打开方式）。
+`sn-footer` 链接项。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| name | String | 否 | 链接文字 |
+| url | String | 否 | 跳转地址，空值时不跳转 |
+| openType | String | 否 | 跳转方式：`navigate`（默认）\| `navigateBack` \| `switchTab` \| `redirectTo` \| `reLaunch` \| `none`（不跳转） |
 
 :::
+
 :::type-fields SnFooterLogo
 
-`sn-footer` Logo 配置：`icon`（图标名）、`title`（标题文本）、`url`（跳转地址）、`openType`（打开方式）。
+`sn-footer` Logo 配置。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| icon | String | 否 | Logo 图标名或图片路径 |
+| title | String | 否 | Logo 标题文字 |
+| url | String | 否 | 点击 Logo 时的跳转地址 |
+| openType | String | 否 | 点击 Logo 时的跳转方式，可选值同 [[SnFooterLink]] |
 
 :::
-
-SnFooterLink 字段（均为可选）：
-
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| name | String | 链接文字 |
-| url | String | 跳转地址，空值时不跳转 |
-| openType | String | 跳转方式：`navigate`（默认）\| `navigateBack` \| `switchTab` \| `redirectTo` \| `reLaunch` \| `none`（不跳转） |
-
-SnFooterLogo 字段（均为可选）：
-
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| icon | String | Logo 图标名或图片路径 |
-| title | String | Logo 标题文字 |
-| url | String | 点击 Logo 时的跳转地址 |
-| openType | String | 点击 Logo 时的跳转方式，可选值同 [[SnFooterLink]] |
 
 ## 事件
 

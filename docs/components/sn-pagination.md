@@ -1,7 +1,5 @@
 # Pagination  分页器
 
-> [查看 sn-pagination 的 2.0 版本差异](/differences/components/sn-pagination)
-
 ## 基础用法
 
 - 分页器，用于列表内容的分页导航。

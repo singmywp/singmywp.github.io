@@ -1,7 +1,5 @@
 # Message  消息条
 
-> [查看 sn-message 的 2.0 版本差异](/differences/components/sn-message)
-
 ## 基础用法
 
 - 全局消息条组件，在页面顶部 / 底部弹出轻量消息提示，支持多条消息依次排列成队列，自动消失。
@@ -138,32 +136,40 @@ function onMessageClose(): void {
 
 :::type-fields SnMessageType
 
-```typescript
-type SnMessageType = 'primary' | 'success' | 'error' | 'info' | 'warning'
-type SnNotificationType = 'primary' | 'success' | 'error' | 'info' | 'warning'
-```
-
 消息 / 通知类型。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `primary` | 主色 |
+| `success` | 成功 |
+| `error` | 错误 |
+| `info` | 信息 |
+| `warning` | 警告 |
 
 :::
 :::type-fields SnMessageLevel
 
-```typescript
-type SnMessageLevel = 'first' | 'second' | 'third'
-type SnNotificationLevel = 'first' | 'second' | 'third'
-```
-
 消息 / 通知等级（表现程度）。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `first` | 一级（表现最重） |
+| `second` | 二级 |
+| `third` | 三级（表现最轻） |
 
 :::
 :::type-fields SnMessagePosition
 
-```typescript
-type SnMessagePosition = 'top-left' | 'top' | 'top-right' | 'bottom-left' | 'bottom' | 'bottom-right'
-type SnNotificationPosition = 'top' | 'bottom'
-```
-
 消息条 / 通知队列位置。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `top-left` | 左上 |
+| `top` | 顶部 |
+| `top-right` | 右上 |
+| `bottom-left` | 左下 |
+| `bottom` | 底部 |
+| `bottom-right` | 右下 |
 
 :::
 

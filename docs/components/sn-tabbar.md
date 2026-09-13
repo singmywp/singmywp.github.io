@@ -39,16 +39,20 @@ const data = [...] as SnTabbarItem[]
 
 `data` 为 SnTabbarItem[]，字段如下：
 
-| 字段 | 说明 | 类型 |
-| --- | --- | --- |
-| text | 文本内容 | String |
-| icon | 图标名 | String |
-| activeIcon | 选中状态的图标名，缺省时沿用 icon | String |
-| activeText | 选中状态的文本，缺省时沿用 text | String |
-| image | 图片地址，设置后替代图标显示 | String |
-| activeImage | 选中状态的图片地址，缺省时沿用 image | String |
-| interceptor | 切换拦截函数，返回 false 阻止本次切换 | (() => Boolean) |
-| badge | 角标配置（value/max/size/offset/mode/text/showZero/textColor/bgColor） | [[SnBadgeParams]] |
+:::type-fields SnTabbarItem
+
+`sn-tabbar` 标签栏项数据。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| text | String | 否 | 文本内容 |
+| icon | String | 否 | 图标名 |
+| activeIcon | String | 否 | 选中状态的图标名，缺省时沿用 `icon` |
+| activeText | String | 否 | 选中状态的文本，缺省时沿用 `text` |
+| image | String | 否 | 图片地址，设置后替代图标显示 |
+| activeImage | String | 否 | 选中状态的图片地址，缺省时沿用 `image` |
+| interceptor | (() => Boolean) | 否 | 切换拦截函数，返回 `false` 阻止本次切换 |
+| badge | [[SnBadgeParams]] | 否 | 角标配置 |
 
 :::type-fields SnBadgeParams
 
@@ -68,12 +72,16 @@ const data = [...] as SnTabbarItem[]
 
 :::
 
+---
+
+:::
+
 ## 属性
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | v-model:height | 底部导航栏实际高度（fixed 模式含安全区高度），供外部占位 | String | `''` | - |
-| data | 底部导航栏数据，每一项与插槽一 一匹配，最多 10 项 | Array\\<[[SnTabbarItem]]\\> | `[]` | - |
+| data | 底部导航栏数据，每一项与插槽一 一匹配，最多 10 项 | Array<[[SnTabbarItem]]> | `[]` | - |
 | index | 首次加载时显示的页面索引（从 1 开始） | Number | `1` | - |
 | fixed | 是否固定底部 | Boolean | `true` | `true` \| `false` |
 | showPages | 是否显示子页面插槽内容 | Boolean | `true` | `true` \| `false` |
@@ -102,43 +110,6 @@ const data = [...] as SnTabbarItem[]
 | hoverStopPropagation | 按压事件是否阻止冒泡 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义导航栏样式 | UTSJSONObject \| String | `''` | - |
 | customContainStyle | 自定义容器样式（包含子页面与底部导航栏） | UTSJSONObject \| String | `''` | - |
-
-:::type-fields SnTabbarItem
-
-`sn-tabbar` 标签栏项数据。
-
-| 名称 | 类型 | 必填 | 描述 |
-| :--- | :--- | :--- | :--- |
-| text | String | 否 | 文本 |
-| icon | String | 否 | 图标名 |
-| image | String | 否 | 图片路径（优先于 icon） |
-| activeIcon | String | 否 | 选中态图标名 |
-| activeText | String | 否 | 选中态文本 |
-| activeImage | String | 否 | 选中态图片路径 |
-| interceptor | () => boolean | 否 | 切换拦截器，返回 `false` 阻止切换 |
-| badge | [[SnBadgeParams]] \| null | 否 | 徽标配置 |
-
-:::type-fields SnBadgeParams
-
-内置 `sn-badge` 的组件可通过 `badgeConfig` 属性配置徽标参数。
-
-| 名称 | 类型 | 必填 | 描述 |
-| :--- | :--- | :--- | :--- |
-| value | Number | 否 | 显示的值（仅 number 模式） |
-| max | Number | 否 | 最大值，超过显示 `max+` |
-| size | String | 否 | 大小 |
-| offset | String | 否 | 偏移量（transform） |
-| mode | `'number'` \| `'text'` \| `'dot'` | 否 | 模式 |
-| text | String | 否 | 文本内容（仅 text 模式） |
-| showZero | Boolean | 否 | 是否显示 0 |
-| textColor | String | 否 | 文字颜色 |
-| bgColor | String | 否 | 背景颜色 |
-
-:::
-
----
-
-:::
 
 ## 事件
 

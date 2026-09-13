@@ -1,7 +1,5 @@
 # Cascader  级联选择器
 
-> [查看 sn-cascader 的 2.0 版本差异](/differences/components/sn-cascader)
-
 ## 基础用法
 
 - 从底部弹出的多级联动选择器，基于 `sn-drawer` 封装，`children` 支持任意层级。
@@ -98,11 +96,11 @@
 
 :::type-fields SnCascaderValue
 
-```typescript
-type SnCascaderValue = string[]
-```
-
 级联选中值：各级选项 `value` 组成的数组（`v-model`）。
+
+| 类型 | 说明 |
+| :--- | :--- |
+| `string[]` | 各级选中值数组 |
 
 :::
 :::type-fields SnCascaderOption
@@ -124,11 +122,11 @@ type SnCascaderValue = string[]
 
 懒加载回调类型：
 
-```typescript
-type SnCascaderResolve = (options: SnCascaderOption[]) => void
-type SnCascaderReject = () => void
-type SnCascaderLoadData = (parent: SnCascaderOption | null, level: number, resolve: SnCascaderResolve, reject: SnCascaderReject) => void
-```
+| 类型 | 签名 |
+| :--- | :--- |
+| SnCascaderResolve | (options: [[SnCascaderOption]][]) => void |
+| SnCascaderReject | () => void |
+| SnCascaderLoadData | (parent: [[SnCascaderOption]] \| null, level: number, resolve: SnCascaderResolve, reject: SnCascaderReject) => void |
 
 `sn-cascader` 的 `load-data` 属性接收 `SnCascaderLoadData` 函数：`parent` 为 `null` 表示加载第一级，`level` 为当前层级；成功经 `resolve(options)` 返回选项列表，失败调用 `reject()`。
 
@@ -174,33 +172,5 @@ type SnCascaderLoadData = (parent: SnCascaderOption | null, level: number, resol
 | open | - | - | 打开级联选择器（重置路径并按 v-model 回溯定位） |
 | close | - | - | 关闭级联选择器 |
 
-## 类型
-
-### SnCascaderOption
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| value | String | 选项唯一值（必填） |
-| label | String | 选项显示文字（必填） |
-| icon | String | 选项前置图标名 |
-| disabled | Boolean | 是否禁用该选项 |
-| leaf | Boolean | 是否为叶子节点（为 true 时选中后直接关闭） |
-| children | [[SnCascaderOption]][] | 子级选项 |
-
-### SnCascaderValue
-
-`String[]`：选中路径上各级选项的 `value` 数组。
-
-### SnCascaderDetail
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| values | String[] | 选中路径各级 value |
-| labels | String[] | 选中路径各级 label |
-| options | [[SnCascaderOption]][] | 选中路径各级选项对象 |
-
-### SnCascaderLoadData
-
-`(parent: SnCascaderOption | null, level: Number, resolve: SnCascaderResolve, reject: SnCascaderReject) => Void`：异步加载函数。`parent` 为 null 表示加载根级，`resolve(options)` 返回该层选项，`reject()` 表示加载失败。
-
 <DemoPhone name="sn-cascader" />
+

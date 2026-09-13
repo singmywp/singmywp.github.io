@@ -146,17 +146,4 @@
 | --- | --- | --- |
 | change | (value: Number[]) => Void | 滚动选择导致选中值变化时触发（实时触发，不等确认） |
 
-### SnDataItem
-
-`data` 中每一项的类型：
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| id | String | 选项标识 |
-| text | String | 选项显示文字 |
-| icon | String | 选项图标 |
-| value | String | 选项值 |
-| color | String | 选项颜色 |
-| disabled | Boolean | 是否禁用该选项（滚动到该选项会回弹） |
-
 <DemoPhone name="sn-picker" />

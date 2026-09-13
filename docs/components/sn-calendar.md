@@ -1,7 +1,5 @@
 # Calendar  日历选择器
 
-> [查看 sn-calendar 的 2.0 版本差异](/differences/components/sn-calendar)
-
 ## 基础用法
 
 - 从底部弹出的日历选择器，内部为可滑动月历 `sn-calendar-view`（本组件为它的弹层形态），支持 `single` 单选、`range` 范围、`multiple` 多选三种模式。
@@ -102,25 +100,37 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 
 :::type-fields SnCalendarValue
 
-```typescript
-type SnCalendarValue = number | null | number[]
-```
+选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number \| null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
 
-选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number | null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
+| 类型 | 说明 |
+| :--- | :--- |
+| `number \| null` | `single` 模式：时间戳或空 |
+| `number[]` | `multiple` 模式：时间戳数组 |
+| `[]` \| `[start, end]` | `range` 模式：空或起止时间戳（单点范围写成 `[same, same]`） |
 
 :::
 :::type-fields SnCalendarDayFormatter
 
-```typescript
-type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | null
-```
-
 日期格格式化器：返回 `null` 表示使用默认内容。
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| day | [[SnCalendarDay]] | 日期格信息 |
+| 返回值 | [[SnCalendarDayContent]] \| null | 格式化后的内容，`null` 表示使用默认内容 |
 
 :::
 :::type-fields SnCalendarLocaleText
 
-日历文案配置：`title`（标题）、`confirmText`（确认按钮）、`confirmDisabledText`（确认禁用文案）、`rangePrompt`（范围选择提示）、`weekdays`（星期标题数组）、`yearMonthFormat`（年月格式）。
+日历文案配置。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| title | String | 否 | 弹层标题，默认 `日期选择` |
+| confirmText | String | 否 | 确定按钮文字，默认 `确定` |
+| confirmDisabledText | String | 否 | 确定按钮禁用态文字，默认 `请选择日期`（当前版本未在界面使用） |
+| rangePrompt | String | 否 | 超出 `maxRange` 提示文字，默认 `选择天数不能超过 {maxRange} 天` |
+| weekdays | String[] | 否 | 星期标题（从周日开始排列），默认 `['日', '一', '二', '三', '四', '五', '六']` |
+| yearMonthFormat | String | 否 | 年月标题格式，默认 `YYYY-MM` |
 
 :::
 
@@ -308,18 +318,6 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 ### SnCalendarValue
 
 `Number | null | Number[]`：按 `type` 约定——`single` 为当天零点时间戳或 `null`；`range` 为 `[]` 或 `[开始, 结束]`（只选一天时两端相同）；`multiple` 为时间戳数组。赋入超出 `minDate` / `maxDate` 范围的值会被自动规范化（裁剪到范围内）。
-
-### SnCalendarLocaleText
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| title | String | 弹层标题，默认 `日期选择` |
-| confirmText | String | 确定按钮文字，默认 `确定` |
-| confirmDisabledText | String | 确定按钮禁用态文字，默认 `请选择日期`（当前版本未在界面使用） |
-| rangePrompt | String | 超出 `maxRange` 提示文字，默认 `选择天数不能超过 {maxRange} 天` |
-| weekdays | String[] | 星期标题（从周日开始排列），默认 `['日', '一', '二', '三', '四', '五', '六']` |
-| yearMonthFormat | String | 年月标题格式，默认 `YYYY-MM` |
-
 `format` 相关的 `SnCalendarDay` / `SnCalendarDayContent` / `SnCalendarDayPaint` 等类型见 `sn-calendar-view` 文档的「类型」一节。
 
 <DemoPhone name="sn-calendar" />

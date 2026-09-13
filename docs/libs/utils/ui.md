@@ -238,7 +238,7 @@ let bro = snu.findBrother(instance, ['sn-icon'])
 
 ### **显示轻提示**
 
-根据配置信息显示全局轻提示，可在任意位置调用，无需放置组件（底层由 `sn-e-toast` 原生插件支撑，弹出与消失均带渐隐 + 缩放动画）。如需自由定制内容与样式的轻提示，请使用 [`sn-toast` 组件](/components/sn-toast)。`config` 为 [`SnShowToastConfig`](/api/types/api#snshowtoastconfig) 配置对象。
+根据配置信息显示全局轻提示，可在任意位置调用，无需放置组件（底层由 `sn-e-toast` 原生插件支撑，弹出与消失均带渐隐 + 缩放动画）。如需自由定制内容与样式的轻提示，请使用 [sn-toast 组件](/components/sn-toast)。`config` 为 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 配置对象。
 
 ### 兼容性
 
@@ -396,14 +396,16 @@ snu.hideToast()
 
 :::type-fields SnModalAnimationFn
 
-```typescript
-type SnModalAnimationFn = (mask: UniElement | null, content: UniElement | null, duration: number) => void
-```
-
 自定义弹窗开合动画函数，接收遮罩元素、内容元素与动画时长。
 
----
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| mask | UniElement \| null | 遮罩元素 |
+| content | UniElement \| null | 内容元素 |
+| duration | number | 动画时长（ms） |
+| 返回值 | void | - |
 
+---
 
 来自 `@/uni_modules/sinle-api`，经 `sinle-ui` 重导出。
 
@@ -455,7 +457,7 @@ snu.showModal({
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
-| actions | Array\<[SnDataItem](#sndataitem)\> | 是 | 操作项列表 |
+| actions | Array<[SnDataItem](#sndataitem)> | 是 | 操作项列表 |
 | title | String | 否 | 标题文本 |
 | titleColor | String | 否 | 标题颜色 |
 | titleSize | String | 否 | 标题字号 |

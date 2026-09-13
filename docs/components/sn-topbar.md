@@ -60,9 +60,9 @@
 | fixed | 是否固定在页面顶部，固定时自动生成等高占位 | Boolean | `true` | `true` \| `false` |
 | statusBar | 是否为系统状态栏预留高度 | Boolean | `true` | `true` \| `false` |
 | titleAlign | 标题对齐方式 | String | `'left'` | `left` \| `center` \| `right` |
-| features | 右侧功能按钮数据，每项可配置 icon（图标）或 text（文字） | Array\\<[[SnDataItem@api]]\\> | `[]` | - |
+| features | 右侧功能按钮数据，每项可配置 icon（图标）或 text（文字） | Array<[[SnDataItem@api]]> | `[]` | - |
 | menuButton | 是否显示"更多"菜单按钮（menuData 非空时自动显示） | Boolean | `false` | `true` \| `false` |
-| menuData | 下拉菜单数据，点击菜单按钮弹出内置菜单 | Array\\<[[SnDataItem@api]]\\> | `[]` | - |
+| menuData | 下拉菜单数据，点击菜单按钮弹出内置菜单 | Array<[[SnDataItem@api]]> | `[]` | - |
 | bgColor | 背景颜色，为空时使用当前主题页面背景色 | String | `''` | - |
 | height | 导航栏高度（Number 单位 px），为空时取全局配置 $snui.topbarHeight（APP 端最大 48px） | String \| Number | `''` | - |
 | zIndex | 固定定位时的层级 | Number | `100` | - |

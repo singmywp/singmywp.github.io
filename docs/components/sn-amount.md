@@ -1,7 +1,5 @@
 # Amount  金额
 
-> [查看 sn-amount 的 2.0 版本差异](/differences/components/sn-amount)
-
 ## 基础用法
 
 - 用于格式化展示金额，将数值拆分为货币符号、整数、小数三部分渲染，可分别控制字号与颜色。

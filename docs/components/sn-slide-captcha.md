@@ -1,7 +1,5 @@
 # SlideCaptcha  滑块验证
 
-> [查看 sn-slide-captcha 的 2.0 版本差异](/differences/components/sn-slide-captcha)
-
 ## 基础用法
 
 - 滑块验证码组件，支持两种模式：`slide` 滑块模式（拖动滑块到轨道上的目标区域）与 `puzzle` 拼图模式（拖动滑块使拼图块对准图片缺口）

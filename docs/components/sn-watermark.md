@@ -1,7 +1,5 @@
 # Watermark  水印
 
-> [查看 sn-watermark 的 2.0 版本差异](/differences/components/sn-watermark)
-
 ## 基础用法
 - 在页面或卡片内容上方平铺一层倾斜重复的水印文本，水印层不拦截点击事件（`pointer-events: none`），内部按钮、开关等可正常操作
 - `content` 支持换行实现多行水印；字号、行距、列距、旋转角度、透明度均可调

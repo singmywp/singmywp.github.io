@@ -1,7 +1,5 @@
 # SliderDouble  双向滑动选择
 
-> [查看 sn-slider-double 的 2.0 版本差异](/differences/components/sn-slider-double)
-
 ## 基础用法
 
 - 双向（区间）滑动选择器，轨道上有两个滑块，`v-model` 绑定一个长度为 2 的数值数组表示区间 `[较小值, 较大值]`。
@@ -24,7 +22,7 @@ const range = ref<number[]>([20, 40])
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 绑定区间值（两项分别为区间两端，自动按序排列并夹取到 `[min, max]`） | Array\<Number\> | `[0, 0]` | - |
+| v-model | 绑定区间值（两项分别为区间两端，自动按序排列并夹取到 `[min, max]`） | `Array<Number>` | `[0, 0]` | - |
 | vertical | 是否为竖向滑动选择器 | Boolean | `false` | `true` \| `false` |
 | min | 最小值 | Number | `0` | - |
 | max | 最大值 | Number | `100` | - |
@@ -55,4 +53,4 @@ const range = ref<number[]>([20, 40])
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
-| change | (value: Array\<Number\>) => Void | 拖动松手后触发，携带排序后的最终区间值（拖动过程中不触发，外部赋值不触发） |
+| change | `(value: Array<Number>) => Void` | 拖动松手后触发，携带排序后的最终区间值（拖动过程中不触发，外部赋值不触发） |

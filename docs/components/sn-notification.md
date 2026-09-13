@@ -1,7 +1,5 @@
 # Notification  通知
 
-> [查看 sn-notification 的 2.0 版本差异](/differences/components/sn-notification)
-
 ## 基础用法
 
 - 全局通知组件，从页面顶部 / 底部弹出带标题与内容的通知卡片，适合订单状态、系统消息等重要提醒。
@@ -159,32 +157,36 @@ function onCopy(id: string): void {
 
 :::type-fields SnNotificationType
 
-```typescript
-type SnMessageType = 'primary' | 'success' | 'error' | 'info' | 'warning'
-type SnNotificationType = 'primary' | 'success' | 'error' | 'info' | 'warning'
-```
-
 消息 / 通知类型。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `primary` | 主色 |
+| `success` | 成功 |
+| `error` | 错误 |
+| `info` | 信息 |
+| `warning` | 警告 |
 
 :::
 :::type-fields SnNotificationLevel
 
-```typescript
-type SnMessageLevel = 'first' | 'second' | 'third'
-type SnNotificationLevel = 'first' | 'second' | 'third'
-```
-
 消息 / 通知等级（表现程度）。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `first` | 一级（表现最重） |
+| `second` | 二级 |
+| `third` | 三级（表现最轻） |
 
 :::
 :::type-fields SnNotificationPosition
 
-```typescript
-type SnMessagePosition = 'top-left' | 'top' | 'top-right' | 'bottom-left' | 'bottom' | 'bottom-right'
-type SnNotificationPosition = 'top' | 'bottom'
-```
-
 消息条 / 通知队列位置。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
 :::
 

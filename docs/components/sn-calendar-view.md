@@ -1,7 +1,5 @@
 # CalendarView  月历视图
 
-> [查看 sn-calendar-view 的 2.0 版本差异](/differences/components/sn-calendar-view)
-
 ## 基础用法
 
 - 本组件为 `sn-calendar` 的视图形态：内联在页面中的可滑动月历（无弹层），`sn-calendar`（弹层日历）与 `sn-calendar-punch`（签到日历）均基于它封装，也可单独使用。
@@ -170,25 +168,37 @@
 
 :::type-fields SnCalendarValue
 
-```typescript
-type SnCalendarValue = number | null | number[]
-```
+选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number \| null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
 
-选中值（`v-model`），随 `type` 变化：`single` 为时间戳 `number | null`；`range` 为 `[]` 或 `[start, end]`（单点范围写成 `[same, same]`）；`multiple` 为时间戳数组 `number[]`。
+| 类型 | 说明 |
+| :--- | :--- |
+| `number \| null` | `single` 模式：时间戳或空 |
+| `number[]` | `multiple` 模式：时间戳数组 |
+| `[]` \| `[start, end]` | `range` 模式：空或起止时间戳（单点范围写成 `[same, same]`） |
 
 :::
 :::type-fields SnCalendarDayFormatter
 
-```typescript
-type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | null
-```
-
 日期格格式化器：返回 `null` 表示使用默认内容。
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| day | [[SnCalendarDay]] | 日期格信息 |
+| 返回值 | [[SnCalendarDayContent]] \| null | 格式化后的内容，`null` 表示使用默认内容 |
 
 :::
 :::type-fields SnCalendarLocaleText
 
-日历文案配置：`title`（标题）、`confirmText`（确认按钮）、`confirmDisabledText`（确认禁用文案）、`rangePrompt`（范围选择提示）、`weekdays`（星期标题数组）、`yearMonthFormat`（年月格式）。
+日历文案配置。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| title | String | 否 | 弹层标题文案（视图内未使用，供弹层形态使用），默认 `日期选择` |
+| confirmText | String | 否 | 确定按钮文案（供弹层形态使用），默认 `确定` |
+| confirmDisabledText | String | 否 | 确定按钮禁用态文案，默认 `请选择日期` |
+| rangePrompt | String | 否 | 超出 `maxRange` 提示文字，默认 `选择天数不能超过 {maxRange} 天` |
+| weekdays | String[] | 否 | 星期标题（从周日开始排列），默认 `['日', '一', '二', '三', '四', '五', '六']` |
+| yearMonthFormat | String | 否 | 年月标题格式，默认 `YYYY-MM` |
 
 :::
 
@@ -202,7 +212,13 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 :::type-fields SnCalendarPanelChangeDetail
 
-`panel-change` 事件返回的面板切换详情：`timestamp`（面板首日时间戳）、`year`、`month`。
+`panel-change` 事件返回的面板切换详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| timestamp | Number | 是 | 当前面板月份第一天零点毫秒时间戳 |
+| year | Number | 是 | 年 |
+| month | Number | 是 | 月（1~12） |
 
 :::
 
@@ -226,33 +242,40 @@ type SnCalendarDayFormatter = (day: SnCalendarDay) => SnCalendarDayContent | nul
 
 面板标题显示模式：`'month'`（按月显示）| `'year-month'`（按年月显示）。
 
-### SnCalendarDay
+:::type-fields SnCalendarDay
 
-单日数据，`format` 格式化函数的入参：
+单日数据，`format` 格式化函数的入参。
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| timestamp | Number | 当天零点毫秒时间戳 |
-| year | Number | 年 |
-| month | Number | 月（1~12） |
-| date | Number | 日（1~31） |
-| weekday | Number | 星期（0~6，0 为周日） |
-| text | String | 日期文字（默认为「日」数字） |
-| prefix | String | 上标文字（默认空） |
-| suffix | String | 下标文字（默认空） |
-| today | Boolean | 是否今天 |
-| disabled | Boolean | 是否禁用（超出 `minDate` / `maxDate`） |
-| currentMonth | Boolean | 是否属于当前面板月份 |
-| state | [[SnCalendarDayState]] | 选中状态 |
-| paint | [[SnCalendarDayPaint]] \| null | 绘制覆盖 |
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| timestamp | Number | 是 | 当天零点毫秒时间戳 |
+| year | Number | 是 | 年 |
+| month | Number | 是 | 月（1~12） |
+| date | Number | 是 | 日（1~31） |
+| weekday | Number | 是 | 星期（0~6，0 为周日） |
+| text | String | 是 | 日期文字（默认为「日」数字） |
+| prefix | String | 是 | 上标文字（默认空） |
+| suffix | String | 是 | 下标文字（默认空） |
+| today | Boolean | 是 | 是否今天 |
+| disabled | Boolean | 是 | 是否禁用（超出 `minDate` / `maxDate`） |
+| currentMonth | Boolean | 是 | 是否属于当前面板月份 |
+| state | [[SnCalendarDayState]] | 是 | 选中状态 |
+| paint | [[SnCalendarDayPaint]] \| null | 是 | 绘制覆盖 |
+
+:::
 
 :::type-fields SnCalendarDayState
 
-```typescript
-type SnCalendarDayState = 'normal' | 'selected' | 'range-start' | 'range-middle' | 'range-end' | 'range-start-end'
-```
-
 日期格状态：普通 / 选中 / 范围起点 / 范围中间 / 范围终点 / 起终点同日。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `normal` | 普通 |
+| `selected` | 选中 |
+| `range-start` | 范围起点 |
+| `range-middle` | 范围中间 |
+| `range-end` | 范围终点 |
+| `range-start-end` | 起终点同日 |
 
 :::
 :::type-fields SnCalendarDayPaint
@@ -277,91 +300,46 @@ type SnCalendarDayState = 'normal' | 'selected' | 'range-start' | 'range-middle'
 
 :::type-fields SnCalendarDayDotPosition
 
-```typescript
-type SnCalendarDayDotPosition = 'left' | 'right' | 'top' | 'bottom'
-```
-
 圆点标记位置。
 
-:::
+| 可选值 | 备注 |
+| :--- | :--- |
+| `left` | 左侧 |
+| `right` | 右侧 |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
 :::
 
-### SnCalendarDayState
-
-| 值 | 描述 |
-| --- | --- |
-| normal | 普通日期 |
-| selected | 选中（single / multiple） |
-| range-start | 范围起点 |
-| range-middle | 范围中间 |
-| range-end | 范围终点 |
-| range-start-end | 起点与终点为同一天 |
+:::
 
 ### SnCalendarDayFormatter
 
 `(day: SnCalendarDay) => SnCalendarDayContent | null`：单日内容格式化函数。返回 `null` 保持默认渲染；返回的 `prefix` / `text` / `suffix` / `paint` 仅覆盖对应字段。推荐使用工厂函数 `createCalendarDayContent` / `createCalendarDayPaint` 构造返回值（均已从插件出口 `@/uni_modules/sinle-ui/index.uts` 导出）。
 
-### SnCalendarDayContent
+:::type-fields SnCalendarDayContent
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| prefix | String \| null | 上标文字 |
-| text | String \| null | 日期文字 |
-| suffix | String \| null | 下标文字 |
-| paint | [[SnCalendarDayPaint]] \| null | 绘制覆盖 |
-
-### SnCalendarDayPaint
-
-单日绘制样式，字段均可选（`null` 表示沿用组件默认）：
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| backgroundColor | String | 否 | 背景颜色 
-| borderColor | String | 否 | 边框颜色 
-| borderWidth | Number | 否 | 边框宽度 
-| fontSize | String \| Number | 否 | 日期字号 
-| prefixColor | String | 否 | 前缀文字颜色 
-| textColor | String | 否 | 日期文字颜色 
-| suffixColor | String | 否 | 后缀文字颜色 
-| prefixFontSize | Number | 否 | 前缀字号 
-| suffixFontSize | Number | 否 | 后缀字号 
-| fontWeight | String | 否 | 字重 
-| showDot | Boolean | 否 | 是否显示圆点 
-| dotColor | String | 否 | 圆点颜色 
-| dotPosition | SnCalendarDayDotPosition | 否 | 圆点位置 
-
-:::type-fields SnCalendarDayDotPosition
-
-```typescript
-type SnCalendarDayDotPosition = 'left' | 'right' | 'top' | 'bottom'
-```
-
-圆点标记位置。
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| prefix | String \| null | 否 | 上标文字 |
+| text | String \| null | 否 | 日期文字 |
+| suffix | String \| null | 否 | 下标文字 |
+| paint | [[SnCalendarDayPaint]] \| null | 否 | 绘制覆盖 |
 
 :::
 
-### SnCalendarDayDotPosition
+:::type-fields SnCalendarDayDotPosition
 
-圆点位置：`'left'` | `'right'` | `'top'` | `'bottom'`。
+圆点标记位置。
 
-### SnCalendarLocaleText
+| 可选值 | 备注 |
+| :--- | :--- |
+| `left` | 左侧 |
+| `right` | 右侧 |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| title | String | 弹层标题文案（视图内未使用，供弹层形态使用），默认 `日期选择` |
-| confirmText | String | 确定按钮文案（供弹层形态使用），默认 `确定` |
-| confirmDisabledText | String | 确定按钮禁用态文案，默认 `请选择日期` |
-| rangePrompt | String | 超出 `maxRange` 提示文字，默认 `选择天数不能超过 {maxRange} 天` |
-| weekdays | String[] | 星期标题（从周日开始排列），默认 `['日', '一', '二', '三', '四', '五', '六']` |
-| yearMonthFormat | String | 年月标题格式，默认 `YYYY-MM` |
-
-### SnCalendarPanelChangeDetail
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| timestamp | Number | 当前面板月份第一天零点毫秒时间戳 |
-| year | Number | 年 |
-| month | Number | 月（1~12） |
+:::
 
 <DemoPhone name="sn-calendar-view" />
+

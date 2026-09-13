@@ -1,7 +1,5 @@
 # InputField  标签输入框
 
-> [查看 sn-input-field 的 2.0 版本差异](/differences/components/sn-input-field)
-
 ## 基础用法
 
 - 自带标签与输入区的字段组件，相当于"标签 + 输入框 + 错误提示"的一体化封装，移动端表单输入标配。

@@ -38,15 +38,7 @@ v2 起由 UI 组件形态改为 **API 插件形态**，不再使用 `<sn-perm-li
 
 | 名称 | 类型 | 必备 | 默认值 | 描述 |
 | ---- | ---- | ---- | ------ | ---- |
-| tips | Map\\<string, [[SnPermTipConfig@api]]\\> | 是 | - | 权限名到说明内容的映射 |
-
-:::type-fields SnPermTipConfig
-
-[`setPermTips`](/libs/utils/permission) 中单个权限提示配置：`html` / `title` / `content` / `icon`。
-
-:::
-
-### 返回值
+| tips | Map<string, [[SnPermTipConfig@api]]> | 是 | - | 权限名到说明内容的映射 |
 
 无
 
@@ -69,14 +61,20 @@ snu.setPermTips(new Map<string, SnPermTipConfig>([
 
 # SnPermTipConfig
 
-`SnPermTipConfig` 为 `snu.setPermTips()` 中每条权限说明的配置对象（**同时设置 `html` 与 `title` / `content` / `icon` 时 HTML 优先**）：
+:::type-fields SnPermTipConfig
 
-| 字段 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| html | String | HTML 富文本内容（Android 原生 TextView 渲染） |
-| title | String | 简化模式：标题文本 |
-| content | String | 简化模式：内容文本 |
-| icon | String | 简化模式：图标 svg path d 值（24×24 viewBox） |
+`SnPermTipConfig` 为 `snu.setPermTips()` 中每条权限说明的配置对象（**同时设置 `html` 与 `title` / `content` / `icon` 时 HTML 优先**）。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| html | String | 否 | HTML 富文本内容（Android 原生 TextView 渲染） |
+| title | String | 否 | 简化模式：标题文本 |
+| content | String | 否 | 简化模式：内容文本 |
+| icon | String | 否 | 简化模式：图标 svg path d 值（24×24 viewBox） |
+
+---
+
+:::
 
 > HTML 支持的标签：`<b>` `<i>` `<u>` `<p>` `<div>` `<h1>`~`<h6>` `<ul>` `<ol>` `<li>` `<br>` `<font color="..." size="...">` `<big>` `<small>` `<sub>` `<sup>` `<tt>` `<s>` 等。
 
@@ -100,19 +98,12 @@ snu.setPermTips(new Map<string, SnPermTipConfig>([
 | ---- | ---- | ---- | ------ | ---- |
 | style | [[SnPermTipsStyleConfig@api]] | 是 | - | 弹层样式配置对象 |
 
-:::type-fields SnPermTipsStyleConfig
-
 [`setPermTipsStyle`](/libs/utils/permission) 配置：`position`（`'top' | 'bottom'`）、`bgColor`、`radius`、`padding`、`margin`、`titleColor/titleSize`、`contentColor/contentSize`、`iconColor/iconSize`、`spacing`、`maxWidth`、`aniTime`。
-
----
-
 
 - 颜色库类型 `LColorOptions` / `LGenerateOptions` 见 [Color 颜色库类型](/libs/color/types)。
 - 日期库类型 `DayutsConfig` / `DayutsUnit` / `DayutsFormats` / `DayutsRelativeTime` / `DayutsLocale` / `DayutsObject` 见 [Date 日期库类型](/libs/date/types)。
 - `PermListener` 见 [sn-perm-listener](/components/sn-perm-listener)。
 - `UniError` 错误类型见 [错误处理机制](/api/error/error#unierror)。
-
-:::
 
 ### 返回值
 
@@ -135,24 +126,30 @@ snu.setPermTipsStyle({
 
 # SnPermTipsStyleConfig
 
-`SnPermTipsStyleConfig` 为 `snu.setPermTipsStyle()` 的样式配置对象：
+:::type-fields SnPermTipsStyleConfig
 
-| 字段 | 类型 | 默认值 | 描述 |
-| ---- | ---- | ------ | ---- |
-| position | String | `'top'` | 弹层贴靠位置：`'top'` 顶部 \| `'bottom'` 底部 |
-| bgColor | String | 主题前景色（`$front`） | 弹层背景色 |
-| radius | String \| Number | `$12` | 背景圆角（px） |
-| padding | String \| Number | `'$16px $20px'` | 内边距，CSS 风格空格分隔：`上` / `上下 左右` / `上 右 下 左`，支持 `px` 或纯数字 |
-| margin | String \| Number | `'$12px'` | 弹层距屏幕边缘边距，格式同上；`position` 为 `'top'` 时第一个值生效于弹层与状态栏之间 |
-| titleColor | String | 主题标题色（`$title`） | 标题颜色 |
-| titleSize | String \| Number | `$16` | 标题字号（px） |
-| contentColor | String | 主题正文色（`$text`） | 内容颜色 |
-| contentSize | String \| Number | `$14` | 内容字号（px） |
-| iconColor | String | 主题标题色（`$title`） | 图标着色 |
-| iconSize | String \| Number | `$22` | 图标尺寸（px） |
-| spacing | String \| Number | `$10` | 行与行、图标与文本的间距（px） |
-| maxWidth | String \| Number | `0` | 弹层最大宽度（px），`0` 表示不限制（弹层固定为屏幕宽度的 85%）；设置后取两者较小值 |
-| aniTime | String \| Number | `$250` | 打开 / 消失动画时长（ms） |
+`SnPermTipsStyleConfig` 为 `snu.setPermTipsStyle()` 的样式配置对象。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| position | String | 否 | 弹层贴靠位置：`'top'` 顶部 \| `'bottom'` 底部，默认 `'top'` |
+| bgColor | String | 否 | 弹层背景色，默认主题前景色（`$front`） |
+| radius | String \| Number | 否 | 背景圆角（px），默认 `$12` |
+| padding | String \| Number | 否 | 内边距，CSS 风格空格分隔：`上` / `上下 左右` / `上 右 下 左`，支持 `px` 或纯数字，默认 `'$16px $20px'` |
+| margin | String \| Number | 否 | 弹层距屏幕边缘边距，格式同上；`position` 为 `'top'` 时第一个值生效于弹层与状态栏之间，默认 `'$12px'` |
+| titleColor | String | 否 | 标题颜色，默认主题标题色（`$title`） |
+| titleSize | String \| Number | 否 | 标题字号（px），默认 `$16` |
+| contentColor | String | 否 | 内容颜色，默认主题正文色（`$text`） |
+| contentSize | String \| Number | 否 | 内容字号（px），默认 `$14` |
+| iconColor | String | 否 | 图标着色，默认主题标题色（`$title`） |
+| iconSize | String \| Number | 否 | 图标尺寸（px），默认 `$22` |
+| spacing | String \| Number | 否 | 行与行、图标与文本的间距（px），默认 `$10` |
+| maxWidth | String \| Number | 否 | 弹层最大宽度（px），`0` 表示不限制（弹层固定为屏幕宽度的 85%）；设置后取两者较小值，默认 `0` |
+| aniTime | String \| Number | 否 | 打开 / 消失动画时长（ms），默认 `$250` |
+
+---
+
+:::
 
 ---
 
@@ -258,12 +255,18 @@ snu.hidePermTips()
 
 # PermListener
 
-`PermListener` 为权限申请监听回调对象，三个回调均可选：
+:::type-fields PermListener
 
-| 名称 | 类型 | 描述 |
-| ---- | ---- | ---- |
-| onRequest | (permissions: Array\\<string\\>) => Void | 业务代码发起权限申请时触发，`permissions` 为申请权限数组 |
-| onConfirm | (permissions: Array\\<string\\>) => Void | 系统授权弹窗弹出时触发（说明弹层同步展示） |
-| onComplete | (permissions: UTSJSONObject) => Void | 权限申请完成时触发，值为权限名到 `'grant'` / `'denied'` 的映射（说明弹层同步隐藏） |
+`PermListener` 为权限申请监听回调对象，三个回调均可选。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| onRequest | `(permissions: Array<string>) => Void` | 否 | 业务代码发起权限申请时触发，`permissions` 为申请权限数组 |
+| onConfirm | `(permissions: Array<string>) => Void` | 否 | 系统授权弹窗弹出时触发（说明弹层同步展示） |
+| onComplete | (permissions: UTSJSONObject) => Void | 否 | 权限申请完成时触发，值为权限名到 `'grant'` / `'denied'` 的映射（说明弹层同步隐藏） |
+
+---
+
+:::
 
 <DemoPhone type="custom" name="api/perm-listener" />

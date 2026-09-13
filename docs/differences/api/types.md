@@ -61,6 +61,5 @@
 - 通用数据项 `SnDataItem`、`SnTime`（计时/倒计时事件返回）
 - 权限提示：`SnPermTipConfig`、`SnPermTipsStyleConfig`
 - 消息与通知：`SnMessageType/Level/Position/Params`、`SnNotificationType/Level/Position/Params`
-- 日志：`SnLogLevel`、`SnLogTimeFormat`、`SnLogItem`
 - 核心类型：`SnStyle`（完整风格对象）、`SnColorBases`、`SnThemeMode`、`SnFunctionalColor`、`SnResolveType`、`UseHoverOptions`、`SN_DEFAULT_STYLE_ID`
 - 组件专属类型大量扩充（`SnAvatarConfig`、`SnTreeData`、`SnCalendar*`、`SnRegion*`、`SnFormItemRule`、`SnFooterLink`、`SnBarcodeFormat`、`QrEncodeOptions`、`SnSignatureBrush` 等），均随组件文档说明

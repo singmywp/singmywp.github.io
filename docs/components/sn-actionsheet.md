@@ -67,7 +67,7 @@ const actions = ref<SnDataItem[]>([
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | title | 操作菜单标题，为空则不显示标题与分隔线 | String | `''` | - |
-| actions | 操作项数组，每项支持 `text`（文字）、`color`（文字颜色，支持 `$` 简写）、`disabled`（是否禁用）等字段 | Array\<[[SnDataItem@api]]\> | `[]` | - |
+| actions | 操作项数组，每项支持 `text`（文字）、`color`（文字颜色，支持 `$` 简写）、`disabled`（是否禁用）等字段 | Array<[[SnDataItem@api]]> | `[]` | - |
 | showCancel | 是否显示底部取消按钮 | Boolean | `true` | `true` \| `false` |
 | titleColor | 标题颜色，支持 `$` 简写 | String | `$title` | - |
 | titleSize | 标题字号，支持 `$` 简写 | String \| Number | `$13` | - |

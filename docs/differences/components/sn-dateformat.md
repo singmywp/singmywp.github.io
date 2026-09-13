@@ -12,7 +12,7 @@
   - `textSize`：类型 String → String | Number，默认值 `-` → `''`（不传时默认 14px × 字体乘数）
   - `textColor`：默认值 `-` → `''`（不传时默认主题文字色）
   - `customStyle`：类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
-  - `threshold`：类型 Array\\<Number[]\\> → Number[]（写法修正，语义不变）
+  - `threshold`：类型 `Array<Number[]>` → Number[]（写法修正，语义不变）
 - 行为变化：
   - 默认以实时模式运行，相对时间每秒自动刷新；可通过 `mode="fixed"` 关闭（旧版无模式概念）
   - 相对时间文案按 `locale` 输出，`en` 下显示 "just now" / "N minutes ago" 等英文文案

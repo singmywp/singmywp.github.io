@@ -69,7 +69,7 @@ const checked = ref<number[]>([])
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 绑定值，当前选中项的索引数组 | Array\<Number\> | `[]` | - |
+| v-model | 绑定值，当前选中项的索引数组 | `Array<Number>` | `[]` | - |
 | vertical | 是否纵向排列 | Boolean | `false` | `true` \| `false` |
 | boxSize | 勾选方框边长 | String \| Number | `'19px'` | - |
 | boxBorderRadius | 勾选方框圆角 | String \| Number | `'5px'` | - |

@@ -10,9 +10,11 @@
 
 ```vue
 <template>
-	<sn-upload-media url="https://example.com/upload"></sn-upload-media>
+	<sn-upload-media url="https://example.com/upload" :timeout="30000"></sn-upload-media>
 </template>
 ```
+
+> 说明：`timeout` 默认 `30000`（30s）。上传请求在超时时间内未完成（含未配置有效服务器地址导致的连接挂起）会被中止，状态置为「上传失败」并触发 `upload-error` 事件。
 
 **更多演示请下载 demo 查看**
 
@@ -25,9 +27,9 @@
 | mode | 媒体模式 | String | `image` | `image` \| `video` \| `all` |
 | chooseCount | 一次可选择的文件数量（视频每次仅 1 个） | Number | `20` | - |
 | maxCount | 最多可上传的文件数量，小于等于 0 不限制 | Number | `-1` | - |
-| timeout | 上传超时时间（单位：ms） | Number | `10000` | - |
+| timeout | 上传超时时间（单位：ms），超时后中止请求并触发 `upload-error`，状态置为上传失败 | Number | `30000` | - |
 | formData | 附加到上传请求的表单数据 | UTSJSONObject | `{}` | - |
-| sourceType | 可选择媒体的来源 | Array\\<String\\> | `["album", "camera"]` | `album` \| `camera` |
+| sourceType | 可选择媒体的来源 | `Array<String>` | `["album", "camera"]` | `album` \| `camera` |
 | width | 媒体文件子项宽度 | String \| Number | `70px` | - |
 | height | 媒体文件子项高度 | String \| Number | `70px` | - |
 | itemBgColor | 占位项背景颜色，留空回退 `$line` | String | `` | `$primary` 等主题色 |

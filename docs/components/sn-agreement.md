@@ -1,7 +1,5 @@
 # Agreement  协议
 
-> [查看 sn-agreement 的 2.0 版本差异](/differences/components/sn-agreement)
-
 ## 基础用法
 
 - 用户协议勾选组件，通过 `v-model` 双向绑定勾选状态，勾选框为自绘的受控样式

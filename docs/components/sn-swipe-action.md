@@ -73,7 +73,7 @@
 | disabled | 是否禁用滑动操作 | Boolean | `false` | `true` \| `false` |
 | threshold | 默认打开阈值：松手时滑过操作区宽度的该比例即吸附打开（openThreshold 为空时生效） | Number | `0.4` | - |
 | openThreshold | 自定义打开阈值，支持百分比（如 `20%`）、像素（如 `60px`）或数字（按 px 处理）；为空时使用 threshold | String \| Number | `''` | - |
-| beforeClose | 关闭前的确认回调，返回 Promise，resolve `true` 才会收起操作区；参数 direction 为当前露出的操作区方向 | (direction: string) => Promise\<boolean\> \| null | `null` | - |
+| beforeClose | 关闭前的确认回调，返回 Promise，resolve `true` 才会收起操作区；参数 direction 为当前露出的操作区方向 | (direction: string) => Promise&lt;boolean&gt; \| null | `null` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
 

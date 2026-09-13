@@ -79,7 +79,7 @@ const tabs = [
 | --- | --- | --- | --- | --- |
 | v-model | 当前激活的标签页索引 | Number | `0` | - |
 | scrollable | 标签是否可滚动 | Boolean | `false` | `true` \| `false` |
-| data | 标签页数据数组 | Array\\<[[SnTabParams]]\\> | `[]` | - |
+| data | 标签页数据数组 | Array<[[SnTabParams]]> | `[]` | - |
 | mode | 指示线动画模式 | String | `'swipe'` | `swipe` \| `push` |
 | width | 标签宽度 | String | `'100%'` | - |
 | height | 标签高度 | String | `'40px'` | - |

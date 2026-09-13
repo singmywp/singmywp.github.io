@@ -1,7 +1,5 @@
 # ArcSlider  环形滑块
 
-> [查看 sn-arc-slider 的 2.0 版本差异](/differences/components/sn-arc-slider)
-
 ## 基础用法
 
 - 圆弧形态的滑动选择器，沿圆弧拖动圆点（dot）调整数值，`v-model` 双向绑定当前值。

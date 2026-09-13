@@ -1,7 +1,5 @@
 # CodeInput  验证码输入框
 
-> [查看 sn-code-input 的 2.0 版本差异](/differences/components/sn-code-input)
-
 ## 基础用法
 
 - 验证码/短信码/支付密码输入框，由若干独立单元格组成，输入一位自动跳下一格，支持整段粘贴自动分配。
