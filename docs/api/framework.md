@@ -134,7 +134,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 ## 钩子
 
-框架向组件与开发者暴露 4 个核心 hooks（`useTheme` / `useStyle` / `useFactors` / `useHover`），详见[钩子](/api/hooks/index)。组件的主题、风格、乘数、点击态、解析等能力均经由 hooks 获取，保证响应式（状态变化自动触发重渲染）。对外导出的 hooks 有 `useTheme` / `useStyle` / `useFactors` / `useGrayMode` / `useHover` / `useResolve`；另有内部复用 hooks：`useExternalStyle`（外部样式转字符串）、`useBacktop`（滚动容器与返回顶部联动）。
+框架向组件与开发者暴露 4 个核心 hooks（useTheme / useStyle / useFactors / useHover），详见[钩子](/api/hooks/index)。组件的主题、风格、乘数、点击态、解析等能力均经由 hooks 获取，保证响应式（状态变化自动触发重渲染）。对外导出的 hooks 有 `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve`；另有内部复用 hooks：`useExternalStyle`（外部样式转字符串）、`useBacktop`（滚动容器与返回顶部联动）。
 
 ---
 
@@ -154,3 +154,58 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 - **日志**：框架内部统一使用 `core/private/logger.uts`（转发自 `sinle-logger` 插件）输出 `[Snui]` 前缀日志，受 `$snui.logging` 控制开关。组件禁止直接使用 `console`。
 - **错误**：`UniError` 为框架统一错误类型（遵循 uni 错误规范），全局 API 失败时通过 `fail` 回调返回，详见[错误与日志](/api/error/error)。
+---
+
+
+## 国际化（i18n）
+
+SinleUI 内置一套**独立于宿主项目**的国际化系统：框架内所有组件内置文本（确定/取消/加载中/上传/刷新/签名/扫码等）默认均通过翻译函数渲染，**不含任何硬编码文字**，并随组件语言自动切换。
+
+> [!IMPORTANT] 独立性
+>
+> 插件 i18n 与宿主项目自身的 i18n（如项目按 [uni-app x 国际化文档](https://doc.dcloud.net.cn/uni-app-x/i18n.html) 搭建的 vue-i18n）**互相独立、互不影响**。插件不依赖项目是否接入 vue-i18n，因此 sinle-* 插件可安全地用于任何已适配或未适配 i18n 的项目。
+
+### 支持的语言
+
+共 11 种：
+
+- 简体中文 `zh-Hans`
+- 英语 `en`
+- 法语 `fr`
+- 俄语 `ru`
+- 日语 `ja`
+- 繁体中文 `zh-Hant`
+- 韩语 `ko`
+- 西班牙语 `es`
+- 德语 `de`
+- 意大利语 `it`
+- 葡萄牙语 `pt`
+
+### 默认语言策略
+
+初始化时按「存储值 > 系统语言（自动匹配近似标签）> 简体中文」取默认值；切换后自动持久化（storage key：`sinleui_current_locale`），重启恢复。
+
+### 使用方式
+
+```typescript
+import { $snui, t, locale, useI18n, SUPPORTED_LOCALES } from '@/uni_modules/sinle-ui'
+
+// 切换组件语言（全局生效，自动持久化）
+$snui.locale = 'en'
+
+// 组件内翻译（响应式，语言变化自动重渲染）
+const label = t('common.confirm')
+const range = t('calendar.rangePrompt', { maxRange: '7' } as UTSJSONObject) // 参数插值
+
+// hooks 形式（模板中使用 t / locale）
+const { t, locale } = useI18n()
+
+// 支持的语言列表（含本地化名称，可直接渲染为语言选择器）
+SUPPORTED_LOCALES // [{ code: 'zh-Hans', name: '简体中文' }, ...]
+```
+
+### 消息文件
+
+- 插件消息：`uni_modules/sinle-ui/core/i18n/locale/*.uts`（每语言一个文件，键形如 `common.confirm`、`loadmore.more`）。
+- 组件 props 默认值均已改为空串 + `t()` 兜底：用户传入自定义文本时优先显示用户值，否则回落到当前语言。
+- 日历、日期格式化等组件（weekdays / 月份 / 相对时间）同样接入插件 i18n。

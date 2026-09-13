@@ -22,6 +22,12 @@ import {
 	useStyle,
 	useFactors,
 	useHover,
+	useResolve,
+	useI18n,
+	t,
+	locale,
+
+	SUPPORTED_LOCALES,
 	SN_DEFAULT_STYLE_ID,
 	createCalendarDayPaint,
 	createCalendarDayContent
@@ -36,11 +42,11 @@ import {
 | :--- | :--- | :--- |
 | 框架对象 | `$snui` | `Snui` 单例实例，框架全局配置与主题、风格控制入口 |
 | 工具库 | `snu` | 工具方法聚合门面（静态类，包含随机、缓动、校验等 10 组方法），[详见](/libs/utils/index) |
-| 钩子 | `useTheme` / `useStyle` / `useFactors` / `useHover` | 在组件中获取主题、风格、乘数、点击态能力的 hooks |
+| 钩子 | `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useI18n` | 在组件中获取主题、风格、乘数、点击态、解析、国际化能力的 hooks |
 | 颜色库 | `ColorLib` / `TinyColor` | 颜色解析、转换与色板生成，[详见](/libs/color/index) |
 | 日期库 | `DateLib` / `Dayuts` / `dayuts` / `isDayuts` / `dayutsIntl` | 日期解析、格式化与国际化，[详见](/libs/date/index) |
-| 全局函数 | `syncStatusBarColor` / `createCalendarDayPaint` / `createCalendarDayContent` | 状态栏颜色同步、日历天定制工具 |
-| 常量 | [[SN_DEFAULT_STYLE_ID@api]] | 默认风格 id，值为 `'default'` |
+| 全局函数 | `syncStatusBarColor` / `createCalendarDayPaint` / `createCalendarDayContent` / `t` | 状态栏颜色同步、日历天定制工具、国际化翻译 |
+| 常量 | [[SN_DEFAULT_STYLE_ID@api]] / `SUPPORTED_LOCALES` / `locale` | 默认风格 id、支持的语言列表、当前组件语言 |
 | 错误 | [[UniError@error]] | 统一错误类型（uni-app x 运行时内置），[详见](/api/error/error) |
 | 类型 | 见[核心类型](/api/types/index) | [[SnColorBase@api]]、[[SnStyle@api]]、手势事件、弹窗配置等全部类型 |
 
@@ -167,18 +173,21 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | currentStyleId | String | 否 | 当前风格 id，赋值为不存在的 id 时仅输出警告并保持原值 |
 | theme | String | 否 | 当前主题模式，可选值 `light` \| `dark`，设置时会自动关闭 `autoTheme` |
 | autoTheme | Boolean | 否 | 是否跟随系统外观自动切换主题（默认开启） |
+| grayMode | Boolean | 否 | 哀悼置灰（灰度模式）开关，开启后全局呈现黑白效果 |
+| grayLevel | Number | 否 | 哀悼置灰程度（0-100，默认 100 全灰），仅当 grayMode 开启时生效 |
 | topbarHeight | String | 否 | `sn-topbar` 导航栏高度（不含状态栏），默认 `88px` |
 | lightBgColor | String | 否 | 亮色模式页面默认背景色 |
 | darkBgColor | String | 否 | 暗色模式页面默认背景色 |
 | logging | Boolean | 否 | 是否开启框架日志输出（默认开启） |
+| locale | String | 否 | 当前组件语言（BCP 47 标签，如 `'zh-Hans'` / `'en'`），赋值即切换并持久化，不支持的语言仅输出警告并保持原值 |
 | marginFactor | Number | 否 | 外间距乘数 |
 | paddingFactor | Number | 否 | 内间距乘数 |
 | radiusFactor | Number | 否 | 圆角乘数 |
 | fontsizeFactor | Number | 否 | 字号乘数 |
 | aniTimeFactor | Number | 否 | 动画时长乘数，`0` 关闭动画、`1` 标准速度、`2` 慢速 |
-| aniTimeShort | Number | 是 | 短动画时长（ms），值 = `baseAniTimeShort × aniTimeFactor` |
-| aniTimeNormal | Number | 是 | 标准动画时长（ms），值 = `baseAniTimeNormal × aniTimeFactor` |
-| aniTimeLong | Number | 是 | 长动画时长（ms），值 = `baseAniTimeLong × aniTimeFactor` |
+| aniTimeShort | Number | 否 | 短动画时长（ms），读取 = `rounded(baseAniTimeShort × aniTimeFactor)`；赋值按当前乘数反算写入基础时长并持久化（乘数为 0 时直接写入） |
+| aniTimeNormal | Number | 否 | 标准动画时长（ms），读取 = `rounded(baseAniTimeNormal × aniTimeFactor)`；赋值按当前乘数反算写入基础时长并持久化（乘数为 0 时直接写入） |
+| aniTimeLong | Number | 否 | 长动画时长（ms），读取 = `rounded(baseAniTimeLong × aniTimeFactor)`；赋值按当前乘数反算写入基础时长并持久化（乘数为 0 时直接写入） |
 | baseAniTimeShort | Number | 否 | 基础短动画时长（ms），默认 `150` |
 | baseAniTimeNormal | Number | 否 | 基础标准动画时长（ms），默认 `250` |
 | baseAniTimeLong | Number | 否 | 基础长动画时长（ms），默认 `400` |
@@ -189,6 +198,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | ---- | ---- | ------ | ---- |
 | setColor | (theme: string, key: string, value: string) | - | 设置指定主题（`light` \| `dark`）中指定颜色键的值。颜色键必须是 [[SnColorBase@api]] 中存在的字段，否则输出警告。设置后自动持久化 |
 | setColorBase | (theme: string, colorBase: [[SnColorBase@api]]) | - | 整体替换指定主题的颜色集，一键修改项目配色 |
+
 | syncSystemTheme | () | - | 若 `autoTheme` 为开启，则应用系统当前外观主题 |
 
 ### 示例
@@ -255,11 +265,14 @@ $snui.setColorBase('dark', myDarkColorBase)
 
 :::type-fields SnCalendarDayDotPosition
 
-```typescript
-type SnCalendarDayDotPosition = 'left' | 'right' | 'top' | 'bottom'
-```
-
 圆点标记位置。
+
+| 可选值 | 备注 |
+| :--- | :--- |
+| `left` | 左侧 |
+| `right` | 右侧 |
+| `top` | 顶部 |
+| `bottom` | 底部 |
 
 :::
 

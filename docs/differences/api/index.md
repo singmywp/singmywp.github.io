@@ -29,7 +29,7 @@ SinleUI 2.0 对框架 API 做了**结构性重构**：旧版以 `$snui` 挂载 `
 | - | `topbarHeight` / `lightBgColor` / `darkBgColor`（可写） | 新增，旧 PageConfig 扁平化 |
 | - | `logging`（可写） | 新增，框架日志开关 |
 | - | `marginFactor` / `paddingFactor` / `radiusFactor` / `fontsizeFactor` / `aniTimeFactor`（可写） | 新增，五尺寸/动画乘数体系 |
-| - | `aniTimeShort` / `aniTimeNormal` / `aniTimeLong`（只读） | 新增，基础时长 × 加速乘数的计算结果 |
+| - | `aniTimeShort` / `aniTimeNormal` / `aniTimeLong`（可写） | 新增，基础时长 × 加速乘数的计算结果；赋值按当前乘数反算写入基础时长并持久化 |
 | - | `baseAniTimeShort` / `baseAniTimeNormal` / `baseAniTimeLong`（可写） | 新增，三个基础动画时长（150/250/400ms） |
 | `setColorSet(theme, colorSet)` | `setColorBase(theme, colorBase)` | **更名**，功能一致（整体替换某主题颜色集） |
 | - | `syncSystemTheme()` | 新增，autoTheme 开启时应用系统主题，一般不需要开发者调用，框架内部会自动管理 |
