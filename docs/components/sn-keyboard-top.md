@@ -107,19 +107,28 @@
 
 ## 插槽作用域
 
-默认插槽会实时下发键盘高度，方便在区域内部自行展示或做随高度变化的布局。
+默认插槽会实时下发键盘高度与聚焦状态，方便在区域内部自行展示、布局与接管输入框焦点：
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| keyboardHeight | Number | 当前键盘高度（px） |
+| show | Boolean | 本实例当前是否显示中 |
+| focus | Boolean | 本实例当前是否应聚焦输入框（实例被其他实例覆盖时自动变为 `false`，用于自动失焦） |
+| requestFocus | () => Void | 主动请求聚焦本实例的输入框（走 `false` → `nextTick` → `true`，保证原生能识别到 focus 变化） |
+
+推荐把区域内输入框这样绑定，多实例切换时焦点会自动交接（旧实例失焦、新实例聚焦），避免出现“新面板输入框点不动、无占位文本”：
 
 ```vue
 <template>
-	<sn-keyboard-top>
-		<template #default="{ keyboardHeight, show }">
-			<view class="bar">
-				<sn-text font-size="$12">键盘高度：{{ keyboardHeight }}px</sn-text>
-			</view>
+	<sn-keyboard-top ref="panelRef">
+		<template v-slot:default="slotProps">
+			<sn-input v-model="text" :focus="slotProps.focus" :hold-keyboard="true" placeholder="说点什么…" />
 		</template>
 	</sn-keyboard-top>
 </template>
 ```
+
+也可以调用组件实例方法主动聚焦：`panelRef.value?.$callMethod('requestFocus')`。
 
 ## 使用注意
 
@@ -136,27 +145,30 @@
 	<sn-page>
 		<!-- 页面内的只读触发器 -->
 		<view class="trigger" @click="openPanel">
-			<sn-input v-model="text" :readonly="true" placeholder="说点什么…" />
+			<sn-input v-model="text" :readonly="true" :adjust-position="false" placeholder="说点什么…" />
 		</view>
 
-		<sn-keyboard-top>
-			<sn-input v-model="text" :focus="panelFocus" :hold-keyboard="true" placeholder="说点什么…" />
+		<sn-keyboard-top ref="panelRef">
+			<template v-slot:default="slotProps">
+				<sn-input v-model="text" :focus="slotProps.focus" :hold-keyboard="true" placeholder="说点什么…" />
+			</template>
 		</sn-keyboard-top>
 	</sn-page>
 </template>
 
 <script setup lang="uts">
+	import type { ComponentPublicInstance } from 'vue'
+
 	const text = ref<string>('')
-	const panelFocus = ref<boolean>(false)
+	const panelRef = ref<ComponentPublicInstance | null>(null)
 
 	function openPanel(): void {
-		panelFocus.value = false
-		nextTick((): void => {
-			panelFocus.value = true
-		})
+		panelRef.value?.$callMethod('requestFocus')
 	}
 </script>
 ```
+
+注意触发器的 `adjust-position` 要设为 `false`：触发器本身不承载输入，若保持默认 `true`，键盘弹出时原生会滚动页面上推该输入框，出现“打开键盘页面滚动、收起又滚回”的现象。
 
 ### 其它注意
 
@@ -192,6 +204,6 @@
 
 | 名称 | 作用域参数 | 说明 |
 | --- | --- | --- |
-| default | `keyboardHeight: number`（当前键盘高度 px）、`show: boolean`（是否显示中） | 区域内容 |
+| default | `keyboardHeight`（键盘高度 px）、`show`（是否显示中）、`focus`（是否应聚焦输入框）、`requestFocus`（主动请求聚焦） | 区域内容 |
 
 <DemoPhone name="sn-keyboard-top" />
