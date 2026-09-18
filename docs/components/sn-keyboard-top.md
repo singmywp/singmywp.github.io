@@ -127,7 +127,7 @@
 - 区域内的 `sn-input` / `sn-textarea` 建议设置 `:adjust-position="false"`，由组件自身负责吸附，避免原生页面二次上推导致位置抖动。
 - 插槽内使用 `textarea` 时建议设置 `fixed`（`sn-textarea` 的 `fixed` 属性）以获得更好的原生表现。
 - Android / iOS / 微信小程序依赖 `uni.onKeyboardHeightChange`（HBuilderX 4.71+，鸿蒙 5.08+）；Web 端该 API 不支持，组件自动使用 `visualViewport` 降级测量，桌面浏览器无软键盘时区域不会显示。
-- 组件为 `fixed` 定位不占文档流，页面最后一块内容可能被面板遮住；页面末尾可预留一段空白（如给 `sn-page` 设 `custom-style="padding-bottom:96px;"`）以便滚动查看。
+- 组件为 `fixed` 定位不占文档流，页面最后一块内容可能被面板遮住；**预留空白必须放在滚动内容末尾**（如末尾加一个 `height:60px` 的占位 `view`），不要写成 `sn-page` 的 `custom-style="padding-bottom:..."`——`sn-page` 根节点包着 `scroll-view`，padding 落在滚动容器之外会形成一条永远存在的固定空白带。
 
 ## 属性
 
