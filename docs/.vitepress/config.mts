@@ -617,6 +617,10 @@ export default defineConfig({
               "link": "/components/sn-float-board"
             },
             {
+              "text": "Keyboard Top 键盘上方区域",
+              "link": "/components/sn-keyboard-top"
+            },
+            {
               "text": "Float Button 浮动按钮",
               "link": "/components/sn-float-button"
             },
