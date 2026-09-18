@@ -111,10 +111,10 @@
 | --- | --- | --- |
 | keyboardHeight | Number | 当前键盘高度（px） |
 | show | Boolean | 本实例当前是否显示中 |
-| focus | Boolean | 是否应聚焦区域内输入框（由 `requestFocus` 驱动，区域显示时组件会自动请求一次） |
+| focus | Boolean | 是否应聚焦区域内输入框（由 `requestFocus` 驱动，初始为 `false`，避免组件显示时重复请求聚焦造成键盘闪动） |
 | requestFocus | () => Void | 主动请求聚焦区域内输入框（走 `false` → `nextTick` → `true`，保证原生能识别到 focus 变化） |
 
-区域内输入框建议这样绑定，焦点由组件统一驱动，避免出现“输入框点不动、无占位文本”：
+区域内输入框建议这样绑定，焦点由 `requestFocus` 统一驱动，避免出现“输入框点不动、无占位文本”：
 
 ```vue
 <template>
@@ -126,7 +126,9 @@
 </template>
 ```
 
-也可以调用组件实例方法主动聚焦：`panelRef.value?.$callMethod('requestFocus')`。
+显示/切换面板时调用组件实例方法请求聚焦：`panelRef.value?.$callMethod('requestFocus')`。
+
+> 注意不要在组件“显示中”时反复调用 `requestFocus`：`focus` 会先变 `false` 让原生输入框失焦、下一帧再变 `true` 重新聚焦，期间键盘会收起再弹出（肉眼可见闪动）。同一面板显示期间只需调用一次。
 
 ## 使用注意
 
