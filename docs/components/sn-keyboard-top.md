@@ -123,9 +123,47 @@
 
 ## 使用注意
 
-- **点击面板空白处不收起键盘（推荐）**：uni-app x App-Android 平台下，点击输入框以外的屏幕会自动收起软键盘（见 [input 文档](https://doc.dcloud.net.cn/uni-app-x/component/input.html)）。因此面板内的输入框应设置 `:hold-keyboard="true"` —— 此时面板整块区域的点击都不会收起键盘（输入框失焦但键盘保留），只有点击页面其他位置或按系统返回键才收起，与微信评论栏等主流交互一致。
+### 推荐架构：页面内只读触发器 + 区域内的真实输入框
+
+页面内的输入框设为 `readonly` 作为**触发器**（点击它不自己聚焦，而是让区域内的输入框获得焦点），两处用同一个 `v-model` 同步值。这样键盘始终属于区域内那一个输入框，能同时满足：
+
+- 点击**区域内的空白处**不收起键盘（区域内输入框开启 `hold-keyboard`）；
+- 点击**页面其他位置**正常收起键盘；
+- 切到二级面板（如回复框）时焦点自然转移，不会出现区域内输入框“点不动、无占位文本”的情况。
+
+```vue
+<template>
+	<sn-page>
+		<!-- 页面内的只读触发器 -->
+		<view class="trigger" @click="openPanel">
+			<sn-input v-model="text" :readonly="true" placeholder="说点什么…" />
+		</view>
+
+		<sn-keyboard-top>
+			<sn-input v-model="text" :focus="panelFocus" :hold-keyboard="true" placeholder="说点什么…" />
+		</sn-keyboard-top>
+	</sn-page>
+</template>
+
+<script setup lang="uts">
+	const text = ref<string>('')
+	const panelFocus = ref<boolean>(false)
+
+	function openPanel(): void {
+		panelFocus.value = false
+		nextTick((): void => {
+			panelFocus.value = true
+		})
+	}
+</script>
+```
+
+### 其它注意
+
+- 区域内的输入框建议设置 `:hold-keyboard="true"`：uni-app x App-Android 平台下点击输入框以外的屏幕会自动收起软键盘；开启后点击区域内空白处键盘保留（**注意**：未采用上面的只读触发器方案时，`hold-keyboard` 也会让点击页面其他位置同样无法收起键盘，此时需自行调用 `uni.hideKeyboard()`）。
 - 区域内的 `sn-input` / `sn-textarea` 建议设置 `:adjust-position="false"`，由组件自身负责吸附，避免原生页面二次上推导致位置抖动。
 - 插槽内使用 `textarea` 时建议设置 `fixed`（`sn-textarea` 的 `fixed` 属性）以获得更好的原生表现。
+- 需要“紧贴键盘”时 `offset` 保持默认 `0`；键盘自带完成栏/候选栏时可用 `offset` 让位。
 - Android / iOS / 微信小程序依赖 `uni.onKeyboardHeightChange`（HBuilderX 4.71+，鸿蒙 5.08+）；Web 端该 API 不支持，组件自动使用 `visualViewport` 降级测量，桌面浏览器无软键盘时区域不会显示。
 - 组件为 `fixed` 定位不占文档流，页面最后一块内容可能被面板遮住；**预留空白必须放在滚动内容末尾**（如末尾加一个 `height:60px` 的占位 `view`），不要写成 `sn-page` 的 `custom-style="padding-bottom:..."`——`sn-page` 根节点包着 `scroll-view`，padding 落在滚动容器之外会形成一条永远存在的固定空白带。
 
