@@ -81,24 +81,22 @@
 </template>
 ```
 
-## 多实例覆盖
+## 多个实例
 
-同一页面存在多个 `sn-keyboard-top` 时（例如一级评论栏 + 二级回复框），组件会自动仲裁出**唯一**显示实例：
-
-- `priority` 数值大者显示；`priority` 相同时**后挂载者**显示（后打开的回复框自动覆盖评论栏，回复框卸载后自动回退到评论栏）；
-- 设 `priority="-1"` 可让某个实例退出显示队列（例如只想预览、不参与覆盖）；
-- 未被选中的实例立即隐藏（无过渡动画），不参与交互，也不会遮挡页面。
+**建议同一时间只显示一个实例**。组件**不做多实例仲裁**——同一页面若同时显示多个 `sn-keyboard-top`，它们会重叠吸附在键盘上方（可用 `zIndex` 与 `offset` 自行错开，但不推荐）。需要多个面板切换时，用 `show` 控制只保留一个：
 
 ```vue
 <template>
 	<sn-page>
-		<!-- 一级评论栏 -->
-		<sn-keyboard-top>
+		<sn-button @click="showPanel('comment')">评论栏</sn-button>
+		<sn-button @click="showPanel('reply')">回复框</sn-button>
+
+		<!-- 三个实例常驻，用 show 控制同一时间只显示一个 -->
+		<sn-keyboard-top :show="panel == 'comment'">
 			<view class="comment-bar">…</view>
 		</sn-keyboard-top>
 
-		<!-- 二级回复框：priority 更高，挂载后立即接管显示 -->
-		<sn-keyboard-top v-if="replyVisible" :priority="10">
+		<sn-keyboard-top :show="panel == 'reply'">
 			<view class="reply-bar">…</view>
 		</sn-keyboard-top>
 	</sn-page>
@@ -113,10 +111,10 @@
 | --- | --- | --- |
 | keyboardHeight | Number | 当前键盘高度（px） |
 | show | Boolean | 本实例当前是否显示中 |
-| focus | Boolean | 本实例当前是否应聚焦输入框（实例被其他实例覆盖时自动变为 `false`，用于自动失焦） |
-| requestFocus | () => Void | 主动请求聚焦本实例的输入框（走 `false` → `nextTick` → `true`，保证原生能识别到 focus 变化） |
+| focus | Boolean | 是否应聚焦区域内输入框（由 `requestFocus` 驱动，区域显示时组件会自动请求一次） |
+| requestFocus | () => Void | 主动请求聚焦区域内输入框（走 `false` → `nextTick` → `true`，保证原生能识别到 focus 变化） |
 
-推荐把区域内输入框这样绑定，多实例切换时焦点会自动交接（旧实例失焦、新实例聚焦），避免出现“新面板输入框点不动、无占位文本”：
+区域内输入框建议这样绑定，焦点由组件统一驱动，避免出现“输入框点不动、无占位文本”：
 
 ```vue
 <template>
@@ -186,7 +184,6 @@
 | aniTime | 显隐过渡动画时长（支持 `$` 简写），为空时使用框架标准动画时长 | String \| Number | `''` | - |
 | zIndex | 键盘上方区域的 `z-index` 层级 | Number | `990` | - |
 | offset | 距离键盘顶部的额外偏移（支持 `$` 简写，用于避开键盘自带的完成栏等） | String \| Number | `0` | - |
-| priority | 多实例显示优先级，数值大者显示，相同值后挂载者优先，`-1` 表示不参与显示 | Number | `0` | - |
 | width | 键盘上方区域宽度（支持 `$` 简写），为空时铺满屏幕宽度 | String \| Number | `''` | - |
 | show | 是否允许显示，设为 `false` 时即使键盘打开也不显示 | Boolean | `true` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
@@ -198,7 +195,7 @@
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
-| change | (visible: boolean) => Void | 键盘上方区域显示状态变化时触发（键盘弹出收起、被其他实例覆盖、`show` 变化时触发） |
+| change | (visible: boolean) => Void | 键盘上方区域显示状态变化时触发（键盘弹出收起、`show` 变化时触发） |
 
 ## 插槽
 
