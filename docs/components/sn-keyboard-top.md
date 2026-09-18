@@ -123,10 +123,11 @@
 
 ## 使用注意
 
+- **点击面板空白处不收起键盘（推荐）**：uni-app x App-Android 平台下，点击输入框以外的屏幕会自动收起软键盘（见 [input 文档](https://doc.dcloud.net.cn/uni-app-x/component/input.html)）。因此面板内的输入框应设置 `:hold-keyboard="true"` —— 此时面板整块区域的点击都不会收起键盘（输入框失焦但键盘保留），只有点击页面其他位置或按系统返回键才收起，与微信评论栏等主流交互一致。
 - 区域内的 `sn-input` / `sn-textarea` 建议设置 `:adjust-position="false"`，由组件自身负责吸附，避免原生页面二次上推导致位置抖动。
 - 插槽内使用 `textarea` 时建议设置 `fixed`（`sn-textarea` 的 `fixed` 属性）以获得更好的原生表现。
-- 点击发送按钮后若希望键盘保持展开，给输入框设置 `:hold-keyboard="true"`。
 - Android / iOS / 微信小程序依赖 `uni.onKeyboardHeightChange`（HBuilderX 4.71+，鸿蒙 5.08+）；Web 端该 API 不支持，组件自动使用 `visualViewport` 降级测量，桌面浏览器无软键盘时区域不会显示。
+- 组件为 `fixed` 定位不占文档流，页面最后一块内容可能被面板遮住；页面末尾可预留一段空白（如给 `sn-page` 设 `custom-style="padding-bottom:96px;"`）以便滚动查看。
 
 ## 属性
 
