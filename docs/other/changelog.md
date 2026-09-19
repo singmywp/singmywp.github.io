@@ -1,5 +1,5 @@
 ## 2.0.0（2026-09-06）
-- 【提示】本次变更较大，可利用 AI 完成版本迁移（差异详情：https://sinleui.pages.dev/differences）
+- 【提示】本次变更较大，可利用 AI 完成版本迁移，差异详情：https://sinleui.pages.dev/differences
 - 【重要】插件推荐运行版本为 HBuilder X Alpha 5.25 及以上（蒸汽模式在此版本之前存在比较严重的问题）
 - 【重要】新增 框架全面重构为 uni-app x 蒸汽模式（vapor），VDOM 模式由于性能原因不再支持。
 - 新增 多风格（Style）系统：内置 default / ink / chinese / new-year / morandi-green / orange 六套风格，支持自由修改增删内置风格，或者为应用添加自定义风格，并支持一键切换。
@@ -57,7 +57,6 @@
 - 新增 `sn-td` 表格单元格：配合 `sn-table` 的单元格节点
 - 新增 `sn-tree` 树：多模式选择与懒加载
 - 新增 `sn-watermark` 水印：页面或局部水印覆盖，不影响其他组件，无副作用。
-- 新增 `sn-keyboard-top` 键盘上方区域：未弹出键盘时按默认方式定位（与普通 view 一致），弹出键盘时切换为 fixed 定位并跟随键盘高度贴在键盘上方（Android / Web）
 - 新增 `Demo` 手势库实例，结合可视化元素演示手势库应用
 - 新增 `sn-e-toast` 插件：替换 `snu.showToast` 基于 `dialogPage ` 实现的不可透穿手势的 Toast 轻提示，原生弹层实现同官方 `uni.showToast` 基本一致的体验。同时相对于官方的 UI 新增了动画和丰富的样式支持。
 - 优化 `$` 动态变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
@@ -152,6 +151,9 @@
 - 重写 `sn-notice-bar`，解决了一些性能和显示问题
 - 优化 `sn-actionsheet` 在宽屏设备上的显示效果
 - 优化 `sn-tabbar` 最大插槽数增加至 `10`
+- 新增 `sn-switch-button` 切换按钮：可切换选中状态的按钮，内部基于 `sn-button` 扩展，选中态与未选中态各自独立配色
+- Demo 页面模版「QQ空间」更名为「动态空间」，其中的关注按钮改为 `sn-switch-button` 实现关注 / 已关注切换
+- Demo 扩展插件入口「Scan 一键扫码」更名为「Scankit 华为扫码」
 - 修复 `sn-e-scankit` 多页面调用 `scan` 方法回调函数混淆的问题
 - 优化 Demo 布局改为 Tabbar 式
 ## 1.1.4（2024-10-05）

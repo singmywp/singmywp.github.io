@@ -22,7 +22,7 @@
 
 ---
 
-## scan()  一键扫码
+## scan()  华为扫码
 
 ### **弹出华为标准全屏扫码界面并返回识别结果**
 
@@ -50,11 +50,12 @@
 ### 示例
 
 ```typescript
+import { snu } from '@/uni_modules/sinle-ui'
 import { scan } from '@/uni_modules/sn-e-scankit'
 import type { ScanResult } from '@/uni_modules/sn-e-scankit'
 
 scan({}, (res: ScanResult) => {
-	uni.showModal({
+	snu.showModal({
 		title: '扫码结果',
 		content: `格式：${res.format}\n内容：${res.data}`
 	})

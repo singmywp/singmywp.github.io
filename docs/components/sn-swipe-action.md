@@ -6,6 +6,9 @@
 
 - 用于列表项的滑动操作：左滑露出右侧操作区（`right` 插槽），右滑露出左侧操作区（`left` 插槽）
 - 操作区宽度由插槽内容自动决定，可放置任意自定义内容
+- 左右操作区与主体内容自动等高：高度以**主体内容**为准，操作区不参与高度计算，插槽内容使用 `align-self: stretch` 即可铺满整行高度，无需手动设置高度
+- 使用注意：请勿给 `left` / `right` 插槽的根节点设置 `height: 100%`，也无需为操作区指定高度，`align-self: stretch` 即可铺满
+- 使用注意：插槽根节点请勿对 `height` / `width` 等布局属性开启过渡动画（`transition-property: all` 同样包含布局属性），布局变化时会触发异常的尺寸动画；如需过渡动画仅限 `background-color` 等非布局属性
 - 同一页面多个滑动操作自动联动：打开一个自动收起其他，点击内容区收起全部
 - Web 端支持鼠标按住拖动
 
@@ -21,6 +24,21 @@
 		</template>
 	</sn-swipe-action>
 </template>
+
+<style>
+.content {
+	padding: 14px;
+	background-color: var(--sn-front);
+}
+
+.action-button {
+	width: 60px;
+	align-self: stretch;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+</style>
 ```
 
 **更多演示请下载 demo 查看**

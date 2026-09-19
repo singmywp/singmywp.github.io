@@ -314,6 +314,10 @@ export default defineConfig({
               "link": "/components/sn-switch"
             },
             {
+              "text": "SwitchButton 切换按钮",
+              "link": "/components/sn-switch-button"
+            },
+            {
               "text": "Slider 滑动选择",
               "link": "/components/sn-slider"
             },
@@ -716,7 +720,7 @@ export default defineConfig({
               "link": "/components/sn-e-scan-provider"
             },
             {
-              "text": "Scankit 华为扫码",
+              "text": "Scankit 华为扫码（一键扫码）",
               "link": "/components/sn-e-scankit"
             },
           ])
