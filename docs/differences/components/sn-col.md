@@ -1,7 +1,5 @@
 # sn-col
 
-> 旧版组件：sn-col.md
-
 **旧版状态**：v1 提供栅格布局列容器 `sn-col`（配合 `sn-row` 使用），属性为 `gutter`（列间距）、`span`（占用栅格数，共 12 栅格）、`offset`（偏移栅格数）、`justify`、`align`、`wrap` 与 `customStyle`，宽度按 `100/12*span` 百分比计算。
 
 **删除结论**：v2 **已移除** `sn-col` 组件（连同配对的 `sn-row`）。

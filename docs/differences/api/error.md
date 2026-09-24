@@ -1,9 +1,5 @@
 # 错误与日志体系差异
 
-> 旧版参考：旧 `api/error/snerror.md`、`api/error/standard.md`
->
-> 新版参考：`E:\temp\docs\api\error.md`
-
 ## 错误类型迁移至 UniError（破坏性变更）
 
 旧版错误类型为 `SnError`（自定义类），2.0 起移除，统一遵循 [uni 错误规范](https://doc.dcloud.net.cn/uni-app-x/err-spec.html) 使用运行时内置 `UniError` 对象。

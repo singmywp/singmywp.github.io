@@ -86,10 +86,10 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 | v-model | 绑定值，形态随 `type` 变化（见上方基础用法说明） | [[SnCalendarValue]] | `null` | - |
 | v-model:visible | 弹层显示状态（双向绑定） | Boolean | `false` | `true` \| `false` |
 | type | 选择模式 | String | `single` | `single` \| `range` \| `multiple` |
-| minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | `null` | - |
-| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | `null` | - |
+| minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | - | - |
+| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | - | - |
 | maxRange | 限制范围选择的天数（含首尾）或多选的个数，0 表示不限制 | Number | `0` | - |
-| rangePrompt | 超出 `maxRange` 时的提示文字，`{maxRange}` 会被替换为实际值，空时取 `localeText.rangePrompt` | String | `''` | - |
+| rangePrompt | 超出 `maxRange` 时的提示文字，`{maxRange}` 会被替换为实际值，取 `localeText.rangePrompt` | String | - | - |
 | firstDayOfWeek | 每周第一天（0 为周日） | Number | `0` | `0~6` |
 | switchMode | 面板标题显示模式：`month` 显示「N月」，`year-month` 按 `yearMonthFormat` 显示年月 | String | `year-month` | `month` \| `year-month` |
 | format | 单日内容格式化函数，可自定义文字与绘制样式，返回 `null` 保持默认 | [[SnCalendarDayFormatter]] | `null` | - |
@@ -138,10 +138,10 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| title | 弹层标题，空时取 `localeText.title` | String | `''` | - |
+| title | 弹层标题，取 `localeText.title` | String | - | - |
 | showClose | 是否显示右上角关闭按钮 | Boolean | `true` | `true` \| `false` |
 | showConfirm | 是否显示底部「取消 / 确定」按钮；为 `false` 时选择结果即时写入 v-model | Boolean | `true` | `true` \| `false` |
-| confirmText | 确定按钮文字，空时取 `localeText.confirmText` | String | `''` | - |
+| confirmText | 确定按钮文字，取 `localeText.confirmText` | String | - | - |
 | confirmDisabledText | 预留属性：确定按钮禁用态文字（当前版本未在界面使用） | String | `''` | - |
 | forceEnableConfirm | 值未完成选择（`single` 未选 / `multiple` 为空 / `range` 不足两点）时是否仍允许点击确定 | Boolean | `false` | `true` \| `false` |
 
@@ -153,7 +153,7 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 | maskClose | 点击遮罩是否关闭（关闭时会丢弃草稿并触发 `cancel`） | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.4` | `0~1` |
 | preventBack | 显示时是否阻止页面返回 | Boolean | `false` | `true` \| `false` |
-| aniTime | 显隐动画时长（ms），支持 `$` 简写，空时取框架动画长时长 | String \| Number | `''` | - |
+| aniTime | 显隐动画时长（ms），支持 `$` 简写 | String \| Number | `$long` | - |
 | zIndex | 弹出层层级 | Number | `999` | - |
 
 ### 月历视图
@@ -163,7 +163,7 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 | rowHeight | 单行日期高度 | String \| Number | `$48` | - |
 | showMark | 预留属性（当前版本绘制中无可见效果） | Boolean | `true` | `true` \| `false` |
 | showWatermark | 是否显示月份水印数字 | Boolean | `true` | `true` \| `false` |
-| watermarkColor | 水印颜色，支持 `$` 简写，空时取主题线条文字色 | String | `''` | - |
+| watermarkColor | 水印颜色，支持 `$` 简写 | String | `$lineText` | - |
 | watermarkFontSize | 水印字号 | String \| Number | `$96` | - |
 | titlePicker | 点击标题是否展开年月选择面板 | Boolean | `false` | `true` \| `false` |
 | switchLongpress | 长按左右切换按钮是否连续切换（年月面板中的年步进器长按同样生效） | Boolean | `true` | `true` \| `false` |
@@ -172,16 +172,16 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| dayTextColor | 日期文字颜色，空时取主题文字色 | String | `''` | - |
-| adjacentDayTextColor | 非当前月日期文字颜色，空时取主题线条文字色 | String | `''` | - |
-| disabledDayTextColor | 禁用日期文字颜色，空时取主题禁用文字色 | String | `''` | - |
-| selectedDayTextColor | 选中日期文字颜色，空时取主题主色文字色 | String | `''` | - |
-| selectedDayBgColor | 选中日期背景色，空时取主题主色 | String | `''` | - |
-| rangeDayTextColor | 范围中间日期文字颜色，空时取主题浅主色文字色 | String | `''` | - |
-| rangeDayBgColor | 范围中间日期背景色，空时取主题浅主色 | String | `''` | - |
-| prefixTextColor | 日期上标文字颜色，空时随日期文字颜色 | String | `''` | - |
-| suffixTextColor | 日期下标文字颜色，空时随日期文字颜色 | String | `''` | - |
-| todayBorderColor | 今天日期描边颜色，空时取主题主色 | String | `''` | - |
+| dayTextColor | 日期文字颜色 | String | `$text` | - |
+| adjacentDayTextColor | 非当前月日期文字颜色 | String | `$lineText` | - |
+| disabledDayTextColor | 禁用日期文字颜色 | String | `$disabledText` | - |
+| selectedDayTextColor | 选中日期文字颜色 | String | `$primaryText` | - |
+| selectedDayBgColor | 选中日期背景色 | String | `$primary` | - |
+| rangeDayTextColor | 范围中间日期文字颜色 | String | `$primaryLightText` | - |
+| rangeDayBgColor | 范围中间日期背景色 | String | `$primaryLight` | - |
+| prefixTextColor | 日期上标文字颜色，随日期文字颜色 | String | - | - |
+| suffixTextColor | 日期下标文字颜色，随日期文字颜色 | String | - | - |
+| todayBorderColor | 今天日期描边颜色 | String | `$primary` | - |
 | dayFontSize | 日期字号 | String \| Number | `$14` | - |
 | prefixFontSize | 上标字号 | String \| Number | `$8` | - |
 | suffixFontSize | 下标字号 | String \| Number | `$8` | - |
@@ -233,8 +233,8 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 | pickerPanelClass | 外部样式类 | String | `''` | - |
 | pickerHeaderStyle | 自定义面板头部样式 | UTSJSONObject \| String | `''` | - |
 | pickerHeaderClass | 外部样式类 | String | `''` | - |
-| pickerYearStepperWrapStyle | 自定义年步进器容器样式 / 外部样式类，空时取 pickerTitleStyle / pickerTitleClass | UTSJSONObject \| String | `''` | - |
-| pickerYearStepperWrapClass | 自定义年步进器容器样式 / 外部样式类，空时取 pickerTitleStyle / pickerTitleClass | String | `''` | - |
+| pickerYearStepperWrapStyle | 自定义年步进器容器样式 / 外部样式类，取 pickerTitleStyle / pickerTitleClass | UTSJSONObject \| String | - | - |
+| pickerYearStepperWrapClass | 自定义年步进器容器样式 / 外部样式类，取 pickerTitleStyle / pickerTitleClass | String | - | - |
 | pickerYearStepperStyle | 自定义年步进器样式 | UTSJSONObject \| String | `''` | - |
 | pickerYearStepperSize | 年步进器尺寸 | String \| Number | `$32` | - |
 | pickerYearStepperSpacing | 年步进器内间距 | String \| Number | `$8` | - |
@@ -254,12 +254,12 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 | pickerYearStepperBorderWidth | 边框宽度 | String \| Number | `2` | - |
 | pickerYearStepperTextFont | 年步进器文字字体 | String | `''` | - |
 | pickerYearStepperCursorColor | 输入光标颜色，支持 $ 简写 | String | `''` | - |
-| pickerMonthsStyle | 自定义月份宫格容器样式 / 外部样式类，空时取 pickerBodyStyle / pickerBodyClass | UTSJSONObject \| String | `''` | - |
-| pickerMonthsClass | 自定义月份宫格容器样式 / 外部样式类，空时取 pickerBodyStyle / pickerBodyClass | String | `''` | - |
-| pickerMonthStyle | 自定义单个月份项样式 / 外部样式类，空时取 pickerRowStyle / pickerRowClass | UTSJSONObject \| String | `''` | - |
-| pickerMonthClass | 自定义单个月份项样式 / 外部样式类，空时取 pickerRowStyle / pickerRowClass | String | `''` | - |
-| pickerMonthTextStyle | 自定义月份文字样式 / 外部样式类，空时取 pickerLabelStyle / pickerLabelClass | UTSJSONObject \| String | `''` | - |
-| pickerMonthTextClass | 自定义月份文字样式 / 外部样式类，空时取 pickerLabelStyle / pickerLabelClass | String | `''` | - |
+| pickerMonthsStyle | 自定义月份宫格容器样式 / 外部样式类，取 pickerBodyStyle / pickerBodyClass | UTSJSONObject \| String | - | - |
+| pickerMonthsClass | 自定义月份宫格容器样式 / 外部样式类，取 pickerBodyStyle / pickerBodyClass | String | - | - |
+| pickerMonthStyle | 自定义单个月份项样式 / 外部样式类，取 pickerRowStyle / pickerRowClass | UTSJSONObject \| String | - | - |
+| pickerMonthClass | 自定义单个月份项样式 / 外部样式类，取 pickerRowStyle / pickerRowClass | String | - | - |
+| pickerMonthTextStyle | 自定义月份文字样式 / 外部样式类，取 pickerLabelStyle / pickerLabelClass | UTSJSONObject \| String | - | - |
+| pickerMonthTextClass | 自定义月份文字样式 / 外部样式类，取 pickerLabelStyle / pickerLabelClass | String | - | - |
 | pickerTitleStyle | 年步进器容器兜底样式 / 外部样式类（pickerYearStepperWrapStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |
 | pickerTitleClass | 年步进器容器兜底样式 / 外部样式类（pickerYearStepperWrapStyle / Class 为空时生效） | String | `''` | - |
 | pickerBodyStyle | 月份宫格兜底样式 / 外部样式类（pickerMonthsStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |

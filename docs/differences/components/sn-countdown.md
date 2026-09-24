@@ -1,5 +1,5 @@
 # sn-countdown
-> 旧版组件：sn-countdown.md
+
 **旧版状态**：v1.1.6 已有倒计时组件，支持 time / format / autoplay / millisecond 与 start / pause / stop / reset 方法。
 **差异明细**：
 

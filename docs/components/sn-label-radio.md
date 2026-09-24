@@ -24,19 +24,19 @@
 | v-model | 选中的选项索引 | Number | `0` | - |
 | data | 选项数据数组 | [[SnDataItem@api]][] | `[]` | - |
 | disabled | 是否禁用所有选项 | Boolean | `false` | `true` \| `false` |
-| itemBgColor | 选项背景颜色 | String | `''`（默认 `$front`） | - |
-| activeItemBgColor | 选项按压时的背景颜色 | String | `''`（默认 `$info`） | - |
-| disabledItemBgColor | 禁用选项的背景颜色 | String | `''`（默认 `$disabled`） | - |
-| disabledTextColor | 禁用选项的文本颜色 | String | `''`（默认 `$disabledText`） | - |
-| disabledIconColor | 禁用且选中选项的图标颜色 | String | `''`（默认 `$disabledText`） | - |
+| itemBgColor | 选项背景颜色 | String | `$front` | - |
+| activeItemBgColor | 选项按压时的背景颜色 | String | `$info` | - |
+| disabledItemBgColor | 禁用选项的背景颜色 | String | `$disabled` | - |
+| disabledTextColor | 禁用选项的文本颜色 | String | `$disabledText` | - |
+| disabledIconColor | 禁用且选中选项的图标颜色 | String | `$disabledText` | - |
 | itemPadding | 选项内边距 | String | `12px 20px` | - |
-| textColor | 选项文本颜色 | String | `''`（默认 `$text`） | - |
-| activeTextColor | 选中时选项文本颜色 | String | `''`（默认 `$primary`） | - |
-| textSize | 选项文本大小 | String \| Number | `''`（默认 `14` × fontsizeFactor） | - |
+| textColor | 选项文本颜色 | String | `$text` | - |
+| activeTextColor | 选中时选项文本颜色 | String | `$primary` | - |
+| textSize | 选项文本大小 | String \| Number | `$14` | - |
 | icon | 选中项显示的图标名称，为空时不显示图标 | String | `check-line` | - |
 | iconPosition | 图标位置 | String | `left` | `left` \| `right` |
-| iconColor | 选中项图标颜色 | String | `''`（默认 `$primary`） | - |
-| iconSize | 图标大小 | String \| Number | `''`（默认 `16` × fontsizeFactor） | - |
+| iconColor | 选中项图标颜色 | String | `$primary` | - |
+| iconSize | 图标大小 | String \| Number | `$16` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | itemStyle | 自定义每个选项的样式 | UTSJSONObject \| String | `''` | - |
 | itemClass | 自定义每个选项的样式类 | String | `''` | - |

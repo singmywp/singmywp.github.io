@@ -1,7 +1,5 @@
 # sn-e-blurview
 
-> 旧版组件：sn-e-blurview.md
-
 **旧版状态**：v1 已有高斯模糊组件，仅支持 `radius` 属性与 default 插槽，Android 端统一使用原生 `blurview` 实现。
 
 **差异明细**：

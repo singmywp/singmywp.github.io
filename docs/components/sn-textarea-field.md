@@ -93,16 +93,16 @@
 | v-model | 绑定值 | String | `''` | - |
 | direction | 布局方向，horizontal 标签在左、vertical 标签在上 | String | `vertical` | `horizontal` \| `vertical` |
 | label | 标签文字 | String | `''` | - |
-| labelSize | 标签字体大小 | String \| Number | `''`（默认 14px × 字体乘数） | - |
-| labelColor | 标签颜色 | String | `''`（默认主题 title 色） | - |
-| labelWidth | 横向布局时标签宽度 | String \| Number | `''`（默认 80px × 间距乘数） | - |
+| labelSize | 标签字体大小 | String \| Number | `$14` | - |
+| labelColor | 标签颜色 | String | `$title` | - |
+| labelWidth | 横向布局时标签宽度 | String \| Number | `$80` | - |
 | labelAlign | 标签文字水平对齐 | String | `left` | `left` \| `right` \| `center` |
 | labelJustify | 标签在容器内的竖向对齐 | String | `top` | `top` \| `center` \| `bottom` |
 | required | 是否必填，标签后追加红色 `*` 标记 | Boolean | `false` | `true` \| `false` |
 | error | 错误提示文字（存在 error 插槽时不显示） | String | `''` | - |
-| errorSize | 错误文字大小 | String \| Number | `''`（默认 12px × 字体乘数） | - |
-| errorColor | 错误文字颜色 | String | `''`（默认主题 error 色） | - |
-| columnGap | 标签与内容的间距 | String \| Number | `''`（默认 12px × 间距乘数） | - |
+| errorSize | 错误文字大小 | String \| Number | `$12` | - |
+| errorColor | 错误文字颜色 | String | `$error` | - |
+| columnGap | 标签与内容的间距 | String \| Number | `$12` | - |
 | name | 表单的控件名称，作为键值对的一部分与表单一同提交 | String | `''` | - |
 | field | 表单字段名，非空且位于 sn-form 内时注册参与整表校验 | String | `''` | - |
 | rule | 校验规则，配合 field 使用 | [[SnFormItemRule]] | `{}` | - |
@@ -133,22 +133,22 @@
 | loadingStyle | 加载指示器样式 | UTSJSONObject \| String | `''` | - |
 | showBorder | 是否显示边框 | Boolean | `true` | `true` \| `false` |
 | showActiveBorder | 聚焦时是否切换为激活边框颜色 | Boolean | `false` | `true` \| `false` |
-| borderColor | 边框颜色 | String | `''`（默认透明） | - |
-| activeBorderColor | 聚焦激活时的边框颜色 | String | `''`（默认主题 primary 色） | - |
-| bgColor | 背景颜色 | String | `''`（默认主题 front 色） | - |
-| activeBgColor | 聚焦时的背景颜色 | String | `''`（默认主题 front 色） | - |
-| disabledBgColor | 禁用时的背景颜色 | String | `''`（默认主题 disabled 色） | - |
-| textColor | 输入文字颜色 | String | `''`（默认主题 text 色） | - |
-| disabledTextColor | 禁用时的文字颜色 | String | `''`（默认主题 disabledText 色） | - |
-| borderRadius | 圆角大小 | String \| Number | `''`（默认 8px × 圆角乘数） | - |
+| borderColor | 边框颜色 | String | `var(--sn-transparent)` | - |
+| activeBorderColor | 聚焦激活时的边框颜色 | String | `$primary` | - |
+| bgColor | 背景颜色 | String | `$front` | - |
+| activeBgColor | 聚焦时的背景颜色 | String | `$front` | - |
+| disabledBgColor | 禁用时的背景颜色 | String | `$disabled` | - |
+| textColor | 输入文字颜色 | String | `$text` | - |
+| disabledTextColor | 禁用时的文字颜色 | String | `$disabledText` | - |
+| borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | borderWidth | 边框宽度 | String \| Number | `2` | - |
 | padding | 内边距 | String | `8px 13px` | - |
-| textSize | 输入文字大小 | String \| Number | `''`（默认 14px × 字体乘数） | - |
+| textSize | 输入文字大小 | String \| Number | `$14` | - |
 | textFont | 输入文字字体 | String | `''` | - |
 | align | 输入文字对齐方式 | String | `left` | `left` \| `center` \| `right` |
-| counterSize | 字数统计文字大小 | String \| Number | `''`（默认 12px × 字体乘数） | - |
-| counterColor | 字数统计文字颜色 | String | `''`（默认主题 text 色） | - |
-| counterBgColor | 字数统计背景颜色 | String | `''`（默认主题 info 色） | - |
+| counterSize | 字数统计文字大小 | String \| Number | `$12` | - |
+| counterColor | 字数统计文字颜色 | String | `$text` | - |
+| counterBgColor | 字数统计背景颜色 | String | `$info` | - |
 | labelStyle | 标签节点自定义样式 | UTSJSONObject \| String | `''` | - |
 | labelClass | 标签节点外部类 | String | `''` | - |
 | errorStyle | 错误节点自定义样式 | UTSJSONObject \| String | `''` | - |

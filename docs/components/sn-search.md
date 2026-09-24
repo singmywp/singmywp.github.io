@@ -88,10 +88,10 @@ function onScan(): void {
 | showCancel | 是否显示取消按钮（聚焦时平滑展开） | Boolean | `false` | `true` \| `false` |
 | fixCancel | 取消按钮是否常驻显示（不随聚焦收起） | Boolean | `false` | `true` \| `false` |
 | cancelText | 取消按钮文本 | String | `取消` | - |
-| cancelTextSize | 取消按钮文本大小 | String \| Number | `''`（默认 14px × 字体乘数） | - |
-| cancelTextColor | 取消按钮文本颜色 | String | `''`（默认主题 primaryDark 色） | - |
-| bgColor | 输入框背景颜色 | String | `''`（默认主题 info 色） | - |
-| activeBgColor | 聚焦时的背景颜色 | String | `''`（默认主题 info 色） | - |
+| cancelTextSize | 取消按钮文本大小 | String \| Number | `$14` | - |
+| cancelTextColor | 取消按钮文本颜色 | String | `$primaryDark` | - |
+| bgColor | 输入框背景颜色 | String | `$info` | - |
+| activeBgColor | 聚焦时的背景颜色 | String | `$info` | - |
 | activeBorderColor | 聚焦时的边框颜色 | String | `'$line'` | - |
 | borderRadius | 输入框圆角大小 | String \| Number | `''` | - |
 | borderColor | 输入框边框颜色 | String | `'$line'` | - |

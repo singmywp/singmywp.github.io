@@ -58,12 +58,12 @@
 | v-model:refresher-triggered | 绑定当前刷新状态，`true` 表示刷新已触发 | Boolean | `false` | `true` \| `false` |
 | status | 显示状态 | String | `refresh` | `refresh` \| `refreshing` |
 | icon | 未刷新状态下的图标名称 | String | `refresh-line` | - |
-| refreshText | 未刷新状态下的文本提示，为空时显示 `松开刷新` | String | `''` | - |
-| refreshingText | 刷新中状态下的文本提示，为空时显示 `刷新中` | String | `''` | - |
-| textSize | 文本字体大小（支持 `$` 简写），为空时为 13px × 字体乘数 | String \| Number | `''` | - |
-| iconSize | 图标大小（支持 `$` 简写），为空时为 14px × 字体乘数 | String \| Number | `''` | - |
-| iconColor | 图标颜色（支持 `$` 简写），为空时为主题线条文本色 | String | `''` | - |
-| textColor | 文本颜色（支持 `$` 简写），为空时为主题线条文本色 | String | `''` | - |
+| refreshText | 未刷新状态下的文本提示 | String | `松开刷新` | - |
+| refreshingText | 刷新中状态下的文本提示 | String | `刷新中` | - |
+| textSize | 文本字体大小（支持 `$` 简写） | String \| Number | `$13` | - |
+| iconSize | 图标大小（支持 `$` 简写） | String \| Number | `$14` | - |
+| iconColor | 图标颜色（支持 `$` 简写） | String | `$lineText` | - |
+| textColor | 文本颜色（支持 `$` 简写） | String | `$lineText` | - |
 | hoverStopPropagation | 是否阻止点击态事件冒泡 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |

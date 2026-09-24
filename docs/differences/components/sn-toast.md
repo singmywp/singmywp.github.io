@@ -1,7 +1,5 @@
 # sn-toast
 
-> 旧版组件：sn-toast.md
-
 **旧版状态**：旧版已提供轻提示组件（16 个属性、show/configShow/close 方法，无事件与插槽）。
 
 **差异明细**：

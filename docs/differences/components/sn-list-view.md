@@ -1,5 +1,5 @@
 # sn-list-view
-> 旧版组件：sn-list.md 与 sn-longlist.md（v2 由二者合并/重构为数据驱动的 sn-list-view）
+
 **旧版状态**：v1.1.6 拆分为两个组件——`sn-list`（静态展示列表，子组件 `sn-list-item`/`sn-list-chat`，内置标题/头像/图标模板）与 `sn-longlist`（长列表容器，基于 `list-view` 回收复用，插槽内手动放置 `list-item`）；v2 合并重构为单一数据驱动组件。
 **差异明细**：
 

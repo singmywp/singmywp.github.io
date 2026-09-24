@@ -84,8 +84,8 @@
 | v-model | 绑定的日期值（字符串按 format 解析，数字为毫秒时间戳） | SnDatetimePickerValue | `当前时间` | - |
 | mode | 选择器模式（详见模式组合） | String \| Number | `7` | - |
 | format | 日期格式化字符串（解析与输出均按此格式） | String | `YYYY-MM-DD HH:mm:ss` | - |
-| start | 可选开始日期（无效或未设置时为 10 年前） | SnDatetimePickerValue | `null` | - |
-| end | 可选结束日期（无效或未设置时为 10 年后） | SnDatetimePickerValue | `null` | - |
+| start | 可选开始日期（无效或未设置时为 10 年前） | SnDatetimePickerValue | - | - |
+| end | 可选结束日期（无效或未设置时为 10 年后） | SnDatetimePickerValue | - | - |
 | customFilter | 自定义过滤项函数（详见过滤项） | Function | `null` | - |
 | renderLabel | 自定义列标签函数（详见自定义列标签） | Function | `null` | - |
 | showUnit | 是否显示单位（年/月/日/时/分/秒） | Boolean | `true` | `true \| false` |
@@ -190,8 +190,8 @@
 | v-model | 绑定的日期值（字符串按 format 解析，数字为毫秒时间戳） | SnDatetimePickerValue | `当前时间` | - |
 | mode | 选择器模式（同 sn-datetime-picker） | String \| Number | `7` | - |
 | format | 日期格式化字符串 | String | `YYYY-MM-DD HH:mm:ss` | - |
-| start | 可选开始日期（无效或未设置时为 10 年前） | SnDatetimePickerValue | `null` | - |
-| end | 可选结束日期（无效或未设置时为 10 年后） | SnDatetimePickerValue | `null` | - |
+| start | 可选开始日期（无效或未设置时为 10 年前） | SnDatetimePickerValue | - | - |
+| end | 可选结束日期（无效或未设置时为 10 年后） | SnDatetimePickerValue | - | - |
 | customFilter | 自定义过滤项函数 | Function | `null` | - |
 | renderLabel | 自定义列标签函数 | Function | `null` | - |
 | showUnit | 是否显示单位 | Boolean | `true` | `true \| false` |

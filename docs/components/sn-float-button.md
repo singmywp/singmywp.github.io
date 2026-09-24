@@ -26,15 +26,15 @@
 | init | 是否在初始化时定位到 `position` 预设位置 | Boolean | `true` | `true` \| `false` |
 | absorb | 松手后是否自动吸附至左右两侧 | Boolean | `true` | `true` \| `false` |
 | disabled | 是否禁用（禁用后不可拖动、不响应点击） | Boolean | `false` | `true` \| `false` |
-| bgColor | 背景颜色，支持 `$` 简写 | String | `''`（实际取 `$front`） | - |
+| bgColor | 背景颜色，支持 `$` 简写 | String | `$front` | - |
 | size | 按钮尺寸（宽高相同） | String \| Number | `60px` | - |
 | icon | 内置图标名称 | String | `''` | - |
-| iconColor | 图标颜色，支持 `$` 简写，禁用时为禁用色 | String | `''`（实际取 `$text`） | - |
-| iconSize | 图标字体大小 | String \| Number | `''`（实际为 `30 × fontsizeFactor px`） | - |
+| iconColor | 图标颜色，支持 `$` 简写，禁用时为禁用色 | String | `$text` | - |
+| iconSize | 图标字体大小 | String \| Number | `$30` | - |
 | margin | 处于预设位置或吸附时与屏幕边缘的边距 | Number | `20` | - |
-| borderRadius | 圆角大小 | String \| Number | `''`（实际为 `12000 × radiusFactor px`，即圆形） | - |
+| borderRadius | 圆角大小 | String \| Number | `$12000` | - |
 | boxShadow | 阴影 | String | `0 0 15px -10px` | - |
-| aniTime | 拖动松手 / 吸附时的过渡动画时长 | String \| Number | `''`（实际取 `$snui.aniTimeLong`） | - |
+| aniTime | 拖动松手 / 吸附时的过渡动画时长 | String \| Number | `$long` | - |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
 
 ## 事件

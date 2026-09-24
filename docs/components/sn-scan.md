@@ -22,14 +22,14 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | title | 扫码页面标题 | String | `扫一扫` | - |
-| titleSize | 标题字体大小，留空按 `18 × fontsizeFactor` 计算 | String \| Number | - | - |
+| titleSize | 标题字体大小 | String \| Number | `$18` | - |
 | titleColor | 标题颜色 | String | `#fff` | - |
-| tip | 扫码提示文字；留空时按 `scanType` 自动显示（二维码 / 条码 / 二维码或条码） | String | - | - |
-| tipColor | 提示文字颜色，留空跟随 `titleColor` | String | - | - |
-| tipSize | 提示文字字体大小，留空按 `14 × fontsizeFactor` 计算 | String \| Number | - | - |
+| tip | 扫码提示文字；按 `scanType` 自动显示（二维码 / 条码 / 二维码或条码） | String | - | - |
+| tipColor | 提示文字颜色，跟随 `titleColor` | String | - | - |
+| tipSize | 提示文字字体大小 | String \| Number | `$14` | - |
 | torchText | 手电筒提示文字 | String | `轻触点亮或关闭` | - |
 | torchTextColor | 手电筒提示文字颜色 | String | `#fff` | - |
-| torchTextSize | 手电筒提示文字字体大小，留空按 `12 × fontsizeFactor` 计算 | String \| Number | - | - |
+| torchTextSize | 手电筒提示文字字体大小 | String \| Number | `$12` | - |
 | dotSize | 识别点大小 | String \| Number | `35px` | - |
 | scanType | 扫码类型 | SnScanType | `all` | `qrcode` \| `barcode` \| `all` |
 | lineAniTime | 扫描线动画时长（单位：ms） | String \| Number | `5000ms` | - |

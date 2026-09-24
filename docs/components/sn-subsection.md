@@ -46,15 +46,15 @@ const list = ['已付款', '已发货', '已收货', '已评价']
 | disabled | 是否禁用分段选择器 | Boolean | `false` | `true` \| `false` |
 | padding | 分段器内边距 | String \| Number | `'3px'` | - |
 | blockPadding | 每个分段项的内边距 | String \| Number | `'10px'` | - |
-| borderRadius | 分段器圆角 | String \| Number | `''`（默认 12px × radiusFactor） | - |
-| textSize | 分段文本大小 | String \| Number | `''`（默认 14px × fontsizeFactor） | - |
-| bgColor | 分段器背景颜色 | String | `''`（默认主题 `info` 色） | - |
-| disabledBgColor | 禁用时分段器背景颜色 | String | `''`（亮色主题 `disabled` 色、暗黑主题 `disabledDark` 色） | - |
-| blockBgColor | 滑块背景颜色 | String | `''`（默认主题 `front` 色） | - |
-| disabledBlockBgColor | 禁用时滑块背景颜色 | String | `''`（亮色主题 `disabledDark` 色、暗黑主题 `disabled` 色） | - |
-| textColor | 未选中分段文本颜色 | String | `''`（默认主题 `text` 色） | - |
-| activeTextColor | 选中分段文本颜色 | String | `''`（默认主题 `primaryDark` 色） | - |
-| disabledTextColor | 禁用时文本颜色 | String | `''`（默认主题 `disabledText` 色） | - |
+| borderRadius | 分段器圆角 | String \| Number | `$12` | - |
+| textSize | 分段文本大小 | String \| Number | `$14` | - |
+| bgColor | 分段器背景颜色 | String | `$info` | - |
+| disabledBgColor | 禁用时分段器背景颜色，亮色主题为 `$disabled`、暗黑主题为 `$disabledDark` | String | - | - |
+| blockBgColor | 滑块背景颜色 | String | `$front` | - |
+| disabledBlockBgColor | 禁用时滑块背景颜色，亮色主题为 `$disabledDark`、暗黑主题为 `$disabled` | String | - | - |
+| textColor | 未选中分段文本颜色 | String | `$text` | - |
+| activeTextColor | 选中分段文本颜色 | String | `$primaryDark` | - |
+| disabledTextColor | 禁用时文本颜色 | String | `$disabledText` | - |
 | customStyle | 自定义分段器根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 分段器根节点的外部样式类 | String | `''` | - |
 | itemClass | 分段项的外部样式类 | String | `''` | - |

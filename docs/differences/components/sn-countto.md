@@ -1,5 +1,5 @@
 # sn-countto
-> 旧版组件：sn-countto.md
+
 **旧版状态**：v1.1.6 已有数字滚动组件，支持 startVal / endVal / duration / decimals / separate / easing / autoplay 与 play / pause / stop / reset 方法。
 **差异明细**：
 

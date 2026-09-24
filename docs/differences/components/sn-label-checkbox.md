@@ -1,5 +1,5 @@
 # sn-label-checkbox
-> 旧版组件：sn-label-checkbox.md
+
 **旧版状态**：旧版为数据驱动的标签多选组件，提供 v-model（索引数组）、data、disabled、禁用色/选中色/图标位置等属性及 change 事件。
 **差异明细**：
 - 更名：`customItemStyle` → `itemStyle`（类型由 UTSJSONObject 调整为 UTSJSONObject | String，默认 `''`）

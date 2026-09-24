@@ -1,7 +1,5 @@
 # sn-radio
 
-> 旧版组件：sn-radio.md
-
 **旧版状态**：v1.1.6 已提供 `sn-radio-group` / `sn-radio` / `sn-radio-tag` 三组件，索引单选，组级配置集中下发。
 
 **差异明细**：

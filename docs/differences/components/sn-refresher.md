@@ -1,5 +1,5 @@
 # sn-refresher
-> 旧版组件：sn-refresher.md
+
 **旧版状态**：v1.1.6 已有下拉刷新条组件，支持 `refresh` / `refreshing` 两种状态与图标、文本、颜色、字号自定义。
 **差异明细**：
 

@@ -43,11 +43,11 @@
 | show | 是否显示加载页 | Boolean | `false` | `true` \| `false` |
 | text | 加载页显示的文本内容 | String | `加载中` | - |
 | imgSrc | 加载页显示的图片路径，非空时以图片替代加载指示器 | String | - | - |
-| bgColor | 加载页背景颜色，默认主题信息色 | String | - | - |
+| bgColor | 加载页背景颜色 | String | `$info` | - |
 | textColor | 加载页文本颜色 | String | `$primary` | - |
-| textSize | 加载页文本大小，默认 `$20` | String \| Number | - | - |
-| iconColor | 加载页图标颜色（如果显示图标），默认跟随 textColor | String | `$primary` | - |
-| iconSize | 加载页图标大小（如果显示图标），默认 `$38` | String \| Number | - | - |
+| textSize | 加载页文本大小 | String \| Number | `$20` | - |
+| iconColor | 加载页图标颜色（如果显示图标），跟随 `textColor` | String | - | - |
+| iconSize | 加载页图标大小（如果显示图标） | String \| Number | `$38` | - |
 | mode | 加载指示器模式 | String | `native` | `native` \| `icon` |
 | aniTime | 加载页显隐动画时长，支持 `$` 简写随动画乘数缩放，`0` 为瞬时 | String \| Number | - | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |

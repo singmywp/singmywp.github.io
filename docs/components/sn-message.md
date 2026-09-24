@@ -76,14 +76,14 @@ function onMessageClose(): void {
 | position | 消息队列整体位置 | String | `top` | `top-left` \| `top` \| `top-right` \| `bottom-left` \| `bottom` \| `bottom-right` |
 | duration | 自动关闭时长（ms），`0` 表示不自动关闭 | Number | `3000` | - |
 | showIcon | 是否显示类型图标 | Boolean | `true` | `true` \| `false` |
-| icon | 自定义图标名称，为空时按 `type` 使用默认图标 | String | `''` | - |
+| icon | 自定义图标名称，按 `type` 使用默认图标 | String | - | - |
 | closable | 是否显示右侧关闭按钮 | Boolean | `false` | `true` \| `false` |
 | grouping | 是否开启消息合并，相同内容自动合并计数 | Boolean | `false` | `true` \| `false` |
-| bgColor | 消息条背景颜色，支持 `$` 简写，为空时按 `type` 与 `level` 取主题色 | String | `''` | - |
-| textColor | 消息文字颜色，支持 `$` 简写，为空时按 `type` 与 `level` 取主题色 | String | `''` | - |
-| iconColor | 图标颜色，支持 `$` 简写，为空时跟随文字颜色 | String | `''` | - |
-| textSize | 消息文字大小，支持 `$` 简写，为空时随字体乘数缩放（约 14px） | String \| Number | `''` | - |
-| borderRadius | 消息条圆角大小，支持 `$` 简写，为空时随圆角乘数缩放（约 8px） | String \| Number | `''` | - |
+| bgColor | 消息条背景颜色，支持 `$` 简写，按 `type` 与 `level` 取主题色 | String | - | - |
+| textColor | 消息文字颜色，支持 `$` 简写，按 `type` 与 `level` 取主题色 | String | - | - |
+| iconColor | 图标颜色，支持 `$` 简写，跟随文字颜色 | String | - | - |
+| textSize | 消息文字大小，支持 `$` 简写 | String \| Number | `$14` | - |
+| borderRadius | 消息条圆角大小，支持 `$` 简写 | String \| Number | `$8` | - |
 | customStyle | 自定义消息条样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 消息条外部类 | String | `''` | - |
 | textStyle | 自定义消息文字样式 | UTSJSONObject \| String | `''` | - |

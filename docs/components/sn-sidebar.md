@@ -45,16 +45,16 @@
 | width | 侧边栏宽度 | String | `'100px'` | - |
 | itemWidth | 选项宽度 | String | `'100px'` | - |
 | itemPadding | 选项内边距（支持 1~4 值简写） | String | `'15px 0'` | - |
-| itemTextColor | 选项文字颜色，为空时取主题 `$text` | String | `''` | - |
-| itemTextSize | 选项文字大小，为空时 16 × fontsizeFactor | String \| Number | `''` | - |
-| activeItemTextColor | 选中选项文字颜色，为空时取主题 `$primary` | String | `''` | - |
-| itemBgColor | 选项背景颜色，为空时透明 | String | `''` | - |
+| itemTextColor | 选项文字颜色 | String | `$text` | - |
+| itemTextSize | 选项文字大小 | String \| Number | `$16` | - |
+| activeItemTextColor | 选中选项文字颜色 | String | `$primary` | - |
+| itemBgColor | 选项背景颜色 | String | `var(--sn-transparent)` | - |
 | itemBorderRadius | 选项圆角大小 | String \| Number | `'0'` | - |
-| activeItemBgColor | 选中选项背景颜色，为空时取主题 `$front` | String | `''` | - |
+| activeItemBgColor | 选中选项背景颜色 | String | `$front` | - |
 | disabled | 是否禁用所有选项 | Boolean | `false` | `true` \| `false` |
 | anchor | 是否使用锚点定位，选中时内容区滚动到对应 id | Boolean | `false` | `true` \| `false` |
 | showLine | 是否显示选中线 | Boolean | `true` | `true` \| `false` |
-| lineColor | 选中线颜色，为空时取主题 `$primary` | String | `''` | - |
+| lineColor | 选中线颜色 | String | `$primary` | - |
 | customStyle | 自定义容器样式 | UTSJSONObject \| String | `''` | - |
 | itemStyle | 自定义选项样式 | UTSJSONObject \| String | `''` | - |
 | itemClass | 选项外部样式类 | String | `''` | - |

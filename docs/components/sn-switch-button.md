@@ -72,13 +72,13 @@ const value = ref<boolean>(false)
 | activeType | 选中态功能色类型 | String | `primary` | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | activeLevel | 选中态等级 | String | `first` | `first` \| `second` \| `third` \| `least` |
 | text | 未选中态文本内容 | String | `''` | - |
-| activeText | 选中态文本内容，为空时沿用 `text` | String | `''` | - |
+| activeText | 选中态文本内容，沿用 `text` | String | - | - |
 | bgColor | 未选中态背景颜色，传入后覆盖等级配色 | String | `''` | - |
 | activeBgColor | 选中态背景颜色，传入后覆盖等级配色 | String | `''` | - |
 | textColor | 未选中态文字与图标颜色 | String | `''` | - |
 | activeTextColor | 选中态文字与图标颜色 | String | `''` | - |
-| borderColor | 未选中态边框颜色，为空时取该态功能色原色 | String | `''` | - |
-| activeBorderColor | 选中态边框颜色，为空时取该态功能色原色 | String | `''` | - |
+| borderColor | 未选中态边框颜色，取该态功能色原色 | String | - | - |
+| activeBorderColor | 选中态边框颜色，取该态功能色原色 | String | - | - |
 | size | 按钮尺寸，影响内边距、字号与圆角 | String | `normal` | `small` \| `normal` \| `large` |
 | shape | 按钮形状，`circle` 时为纯图标圆形按钮 | String | `rect` | `rect` \| `circle` |
 | icon | 图标名称（sn-icon 图标名） | String | `''` | - |

@@ -54,8 +54,8 @@
 | margin | 骨架屏外边距，支持 `$` 简写随外间距乘数缩放 | String | - | - |
 | mode | 动画模式：`glow` 高光带从左到右循环扫过，`pulse` 整块透明度呼吸闪烁 | String | `glow` | `glow` \| `pulse` |
 | aniTime | 动画时长，支持 `$` 简写随动画乘数缩放，`0` 关闭动画 | String \| Number | `$1500` | - |
-| bgColor | 骨架屏背景色，默认主题禁用色 | String | - | - |
-| glowColor | 高光带颜色（仅 glow 模式生效），默认暗色主题 `rgba(255,255,255,0.05)`、亮色主题 `rgba(0,0,0,0.03)` | String | - | - |
+| bgColor | 骨架屏背景色 | String | `$disabled` | - |
+| glowColor | 高光带颜色（仅 glow 模式生效），暗色主题为 `rgba(255,255,255,0.05)`、亮色主题为 `rgba(0,0,0,0.03)` | String | - | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
 
 ## 插槽

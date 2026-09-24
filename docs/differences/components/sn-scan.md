@@ -1,5 +1,5 @@
 # sn-scan
-> 旧版组件：sn-scan.md
+
 **旧版状态**：v1 即为框架内置扫码界面组件（依赖 sn-e-scan-provider 扩展插件），v2 重构界面与手势交互，新增双击还原缩放与相册图片识别等能力。
 **差异明细**：
 - 更名：`scanType` 可选值 `qrCode` / `barCode` → `qrcode` / `barcode`

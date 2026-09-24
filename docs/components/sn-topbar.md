@@ -63,8 +63,8 @@
 | features | 右侧功能按钮数据，每项可配置 icon（图标）或 text（文字） | Array<[[SnDataItem@api]]> | `[]` | - |
 | menuButton | 是否显示"更多"菜单按钮（menuData 非空时自动显示） | Boolean | `false` | `true` \| `false` |
 | menuData | 下拉菜单数据，点击菜单按钮弹出内置菜单 | Array<[[SnDataItem@api]]> | `[]` | - |
-| bgColor | 背景颜色，为空时使用当前主题页面背景色 | String | `''` | - |
-| height | 导航栏高度（Number 单位 px），为空时取全局配置 $snui.topbarHeight（APP 端最大 48px） | String \| Number | `''` | - |
+| bgColor | 背景颜色 | String | `$page` | - |
+| height | 导航栏高度（Number 单位 px），取全局配置 `$snui.topbarHeight`（APP 端最大 48px） | String \| Number | - | - |
 | zIndex | 固定定位时的层级 | Number | `100` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |

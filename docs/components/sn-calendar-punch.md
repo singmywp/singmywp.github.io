@@ -50,8 +50,8 @@
 | unsignedDotColor | 可补签圆点颜色，支持 $ 简写 | String | `$warning` | - |
 | todayText | 今天日期显示的文字，空时显示原始日期 | String | `今天` | - |
 | todayTextColor | 今天文字颜色，支持 $ 简写 | String | `$warning` | - |
-| minDate | 最小可选日期（毫秒时间戳），默认 6 个月前的当月 1 号 | Number | `null` | - |
-| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | `null` | - |
+| minDate | 最小可选日期（毫秒时间戳），默认 6 个月前的当月 1 号 | Number | - | - |
+| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | - | - |
 | firstDayOfWeek | 每周第一天（0 为周日） | Number | `1` | `0~6` |
 | readonly | 是否只读（禁用切换与选择） | Boolean | `false` | `true \| false` |
 | titlePicker | 点击标题是否展开年月选择面板 | Boolean | `false` | `true \| false` |
@@ -64,9 +64,9 @@
 | dayGap | 日期气泡与单元格边缘的间距 | String \| Number | `$2` | - |
 | selectedDayBgColor | 选中日期背景色，支持 $ 简写 | String | `$line` | - |
 | selectedDayTextColor | 选中日期文字颜色，支持 $ 简写 | String | `$text` | - |
-| dayTextColor | 日期文字颜色，空时取主题文字色 | String | `''` | - |
-| adjacentDayTextColor | 非当前月日期文字颜色，空时取主题线条文字色 | String | `''` | - |
-| disabledDayTextColor | 禁用日期文字颜色，空时取主题禁用文字色 | String | `''` | - |
+| dayTextColor | 日期文字颜色 | String | `$text` | - |
+| adjacentDayTextColor | 非当前月日期文字颜色 | String | `$lineText` | - |
+| disabledDayTextColor | 禁用日期文字颜色 | String | `$disabledText` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |
 | headerStyle | 自定义头部样式 | UTSJSONObject \| String | `''` | - |

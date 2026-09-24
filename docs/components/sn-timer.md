@@ -51,8 +51,8 @@
 | format | 时间格式，占位符见上方"时间格式" | String | `HH:mm:ss` | - |
 | autoplay | 初始化后自动开始计时 | Boolean | `true` | `true` \| `false` |
 | millisecond | 开启毫秒级刷新（显示毫秒占位符时务必开启） | Boolean | `false` | `true` \| `false` |
-| textSize | 文本字体大小，支持 `$` 动态尺寸 | String \| Number | `''`（默认 14px × 字体乘数） | - |
-| textColor | 文本颜色，支持 `$` 主题色简写 | String | `''`（默认主题文字色） | - |
+| textSize | 文本字体大小，支持 `$` 动态尺寸 | String \| Number | `$14` | - |
+| textColor | 文本颜色，支持 `$` 主题色简写 | String | `$text` | - |
 | selectable | 文本是否可选中复制 | Boolean | `false` | `true` \| `false` |
 | bold | 文本是否加粗 | Boolean | `false` | `true` \| `false` |
 | textClass | 文本节点外部样式类 | String | `''` | - |

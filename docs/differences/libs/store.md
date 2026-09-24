@@ -1,9 +1,5 @@
 # Store 状态管理库差异
 
-> 旧版参考：旧 `libs/core/store/index.uts`（`StoreLib`，经 `$snui.store` 使用）
->
-> 新版参考：`uni_modules/sinle-ui/core/store/`（`store` / `frameStore` / `StoreLib` 独立导出），文档见 [Store 状态管理库](/libs/store/index)
-
 ## 结论
 
 旧版的 Store 状态管理库在 SinleUI 2.0 中以 **新实现回归**（此前曾随 2.0 重构整体移除）。核心 API（`get / set / delete`、持久化、过期机制）保持兼容，同时修复了旧版的安全风险与若干 bug，并拓展了订阅、批量查询等能力。框架自身的状态持久化（主题 / 风格 / 灰模等）也已重构为基于新 store 库管理。

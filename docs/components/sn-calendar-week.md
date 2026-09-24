@@ -67,8 +67,8 @@
 | showSwitch | 是否显示左右切换按钮 | Boolean | `true` | `true \| false` |
 | switchIconSize | 切换按钮图标大小 | String \| Number | `$18` | - |
 | switchIconColor | 切换按钮图标颜色，支持 $ 简写 | String | `$textLight` | - |
-| selectedBgColor | 选中日期背景色，支持 $ 简写，空时取主题主色 | String | `''` | - |
-| selectedTextColor | 选中日期文字颜色，支持 $ 简写，空时取主题主色文字色 | String | `''` | - |
+| selectedBgColor | 选中日期背景色，支持 $ 简写 | String | `$primary` | - |
+| selectedTextColor | 选中日期文字颜色，支持 $ 简写 | String | `$primaryText` | - |
 | format | 单日格式化函数，返回 showDot / dotColor 时绘制圆点，返回 text 覆盖日期文字 | SnCalendarDayFormatter | `null` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |

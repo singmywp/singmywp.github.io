@@ -49,8 +49,8 @@ function open(): void {
 | bgColor | 面板背景颜色，支持 `$` 简写 | String | `$front` | - |
 | lineColor | 滑动指示条颜色，支持 `$` 简写 | String | `$lineText` | - |
 | padding | 面板内边距 | String | `25px 15px 10px 15px` | - |
-| borderRadius | 面板圆角大小，支持 `$` 简写，为空时随圆角乘数自动计算 | String \| Number | `''` | - |
-| aniTime | 显示 / 关闭动画时长（ms），支持 `$` 简写，为空时取框架动画长时长 | String \| Number | `''` | - |
+| borderRadius | 面板圆角大小，支持 `$` 简写 | String \| Number | `$20` | - |
+| aniTime | 显示 / 关闭动画时长（ms），支持 `$` 简写 | String \| Number | `$long` | - |
 | preventBack | 显示时是否阻止页面返回事件 | Boolean | `false` | `true` \| `false` |
 | maskClose | 是否启用点击遮罩关闭 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.3` | - |

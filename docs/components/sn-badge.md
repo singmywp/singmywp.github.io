@@ -43,8 +43,8 @@
 | max | 数字模式下徽标的最大数字值，超过显示 `max+`；`-1` 表示不限制 | Number | `-1` | - |
 | text | 文本模式下徽标的文本内容 | String | - | - |
 | type | 徽标功能色，背景与文字色自动配套 | BadgeType | `error` | `primary` \| `info` \| `success` \| `warning` \| `error` |
-| bgColor | 徽标背景颜色，支持 `$` 功能色简写；为空时取 `type` 对应色 | String | - | - |
-| textColor | 徽标文字颜色，支持 `$` 功能色简写；为空时取 `type` 对应文字色 | String | - | - |
+| bgColor | 徽标背景颜色，支持 `$` 功能色简写；取 `type` 对应色 | String | - | - |
+| textColor | 徽标文字颜色，支持 `$` 功能色简写；取 `type` 对应文字色 | String | - | - |
 | size | 数字/文本模式下控制字号，浮点模式下控制圆点直径；支持 `$` 简写 | String \| Number | - | - |
 | showZero | 数字模式下数字为 `0` 时是否显示 | Boolean | `false` | `true` \| `false` |
 | show | 是否显示徽标 | Boolean | `true` | `true` \| `false` |

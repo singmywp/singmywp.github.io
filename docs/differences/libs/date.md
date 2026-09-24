@@ -1,9 +1,5 @@
 # 日期库（Date）差异
 
-> 旧版参考：旧 `libs/date/`（`$snui.libs.date`）
->
-> 新版参考：`E:\temp\docs\libs\date\`（`DateLib` / `Dayuts` / `dayuts` / `isDayuts` / `dayutsIntl`）
-
 ## 使用方式变化
 
 | 项目 | 旧版 | 新版 |

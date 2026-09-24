@@ -34,10 +34,10 @@
 | mode | 加载模式 | String | `native` | `native` \| `icon` |
 | text | 加载文本内容，为空时不显示 | String | - | - |
 | icon | icon 模式下的图标名称 | String | `loader-4-line` | - |
-| iconColor | 加载图标颜色，默认主题主色 | String | - | - |
-| iconSize | 加载图标大小，默认 `$24` | String \| Number | - | - |
-| textColor | 文本颜色，默认主题深主色 | String | - | - |
-| textSize | 文本字体大小，默认 `$16` | String \| Number | - | - |
+| iconColor | 加载图标颜色 | String | `$primary` | - |
+| iconSize | 加载图标大小 | String \| Number | `$24` | - |
+| textColor | 文本颜色 | String | `$primaryDark` | - |
+| textSize | 文本字体大小 | String \| Number | `$16` | - |
 | vertical | 图标与文本是否垂直排列 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
 | customClass | 自定义根节点外部样式类 | String | - | - |

@@ -53,8 +53,8 @@ const value = ref<number>(3)
 | inactiveColor | 未选中图标的颜色 | String | `$infoDark` | 任意色值或 `$` 主题色简写 |
 | activeColor | 选中图标的颜色 | String | `$warning` | 任意色值或 `$` 主题色简写 |
 | icon | 默认（未选中）图标名称 | String | `star-fill` | `remixicon 图标名` |
-| iconSize | 图标大小，留空时为 `20` 乘字体乘数 | String \| Number | `''` | - |
-| activeIcon | 选中图标的名称，留空时与 `icon` 相同 | String | `''` | `remixicon 图标名` |
+| iconSize | 图标大小 | String \| Number | `$20` | - |
+| activeIcon | 选中图标的名称，与 `icon` 相同 | String | - | `remixicon 图标名` |
 | halfIcon | 半星图标的名称（`allow-half` 时使用） | String | `star-half-fill` | `remixicon 图标名` |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
 

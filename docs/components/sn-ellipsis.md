@@ -59,12 +59,12 @@ const longText = '支持 48dB 混合主动降噪，通透模式智能过滤环�
 | dots | 省略符号 | String | `…` | - |
 | position | 省略位置 | String | `end` | `end` \| `start` \| `middle` |
 | expandText | 展开按钮文字，设置后内容被截断时显示展开按钮 | String | `''` | - |
-| collapseText | 收起按钮文字，空时取 `expandText`，再空时为"收起" | String | `''` | - |
+| collapseText | 收起按钮文字，依次跟随 `expandText`、`收起` | String | - | - |
 | showCollapse | 展开后是否显示收起按钮 | Boolean | `true` | `true` \| `false` |
-| fontSize | 文本字号，空时为 14px × 字体乘数 | String \| Number | `''` | - |
-| lineHeight | 行高：Number 小于 100 时按字号倍数、大于等于 100 时按 px 处理；String 支持 `$14`（乘字体乘数）、`22px`、`1.6`（字号倍数）；空时为字号的 1.6 倍 | String \| Number | `''` | - |
-| color | 文本颜色，空时取主题文本色 | String | `''` | - |
-| actionColor | 操作按钮颜色，空时取主题主色；禁用时为禁用文本色 | String | `''` | - |
+| fontSize | 文本字号 | String \| Number | `$14` | - |
+| lineHeight | 行高：Number 小于 100 时按字号倍数、大于等于 100 时按 px 处理；String 支持 `$14`（乘字体乘数）、`22px`、`1.6`（字号倍数）；字号的 1.6 倍 | String \| Number | - | - |
+| color | 文本颜色 | String | `$text` | - |
+| actionColor | 操作按钮颜色；禁用时为禁用文本色 | String | `$primary` | - |
 | selectable | 文本是否可选中（蒸汽模式） | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用操作按钮 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |

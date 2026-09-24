@@ -38,14 +38,14 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | status | 加载状态 | String | `loadmore` | `loadmore` \| `loading` \| `nomore` |
-| loadmoreText | loadmore 状态显示的文本，默认 `加载更多` | String | - | - |
-| nomoreText | nomore 状态显示的文本，默认 `没有更多了` | String | - | - |
-| loadingText | loading 状态显示的文本，默认 `加载中` | String | - | - |
-| textSize | 文本字体大小，默认 13px × 字体乘数 | String \| Number | - | - |
-| iconSize | 加载指示器大小，默认与文本字号一致 | String \| Number | - | - |
-| iconColor | 加载指示器颜色，默认主题主色 | String | - | - |
-| textColor | 文本颜色，默认主题线条文本色 | String | - | - |
-| lineColor | 两侧线条颜色，默认主题线条色 | String | - | - |
+| loadmoreText | loadmore 状态显示的文本 | String | `加载更多` | - |
+| nomoreText | nomore 状态显示的文本 | String | `没有更多了` | - |
+| loadingText | loading 状态显示的文本 | String | `加载中` | - |
+| textSize | 文本字体大小 | String \| Number | `$13` | - |
+| iconSize | 加载指示器大小，与文本字号一致 | String \| Number | - | - |
+| iconColor | 加载指示器颜色 | String | `$primary` | - |
+| textColor | 文本颜色 | String | `$lineText` | - |
+| lineColor | 两侧线条颜色 | String | `$line` | - |
 | lineHeight | 两侧线条粗细 | String \| Number | `0.5px` | - |
 | disabled | 是否禁用，禁用时 loadmore 状态点击不触发事件 | Boolean | `false` | `true` \| `false` |
 | dashed | 两侧线条是否为虚线 | Boolean | `false` | `true` \| `false` |

@@ -1,7 +1,5 @@
 # sn-overlay
 
-> 旧版组件：sn-overlay.md
-
 **旧版状态**：旧版已提供全屏遮罩层组件（6 个属性、3 个事件、open/close 方法、default 插槽）。
 
 **差异明细**：

@@ -47,8 +47,8 @@
 | separate | 分割位数（整数部分每隔几位插入一次 `,`，`0` 为不分割） | Number | `0` | - |
 | autoplay | 初始化后自动播放 | Boolean | `true` | `true` \| `false` |
 | easing | 以 easeOutSine 缓动动画代替默认的 linear 动画，使动画在结束前减速 | Boolean | `false` | `true` \| `false` |
-| textSize | 数字文本字体大小，支持 `$` 动态尺寸 | String \| Number | `''`（默认 14px × 字体乘数） | - |
-| textColor | 数字文本颜色，支持 `$` 主题色简写 | String | `''`（默认主题文字色） | - |
+| textSize | 数字文本字体大小，支持 `$` 动态尺寸 | String \| Number | `$14` | - |
+| textColor | 数字文本颜色，支持 `$` 主题色简写 | String | `$text` | - |
 | selectable | 文本是否可选中复制 | Boolean | `false` | `true` \| `false` |
 | bold | 文本是否加粗 | Boolean | `false` | `true` \| `false` |
 | textClass | 文本节点外部样式类 | String | `''` | - |

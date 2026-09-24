@@ -78,10 +78,10 @@
 | --- | --- | --- | --- | --- |
 | v-model | 绑定值，形态随 type 变化（见基础用法说明） | SnCalendarValue | `null` | - |
 | type | 选择模式 | String | `single` | `single \| range \| multiple` |
-| minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | `null` | - |
-| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | `null` | - |
+| minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | - | - |
+| maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | - | - |
 | maxRange | 限制范围选择的天数（含首尾）或多选的个数，0 表示不限制 | Number | `0` | - |
-| rangePrompt | 超出 maxRange 时的提示文字，{maxRange} 会被替换为实际值，空时取 localeText.rangePrompt | String | `''` | - |
+| rangePrompt | 超出 maxRange 时的提示文字，{maxRange} 会被替换为实际值，取 localeText.rangePrompt | String | - | - |
 | firstDayOfWeek | 每周第一天（0 为周日） | Number | `0` | `0~6` |
 | switchMode | 面板标题显示模式：month 显示「N月」，year-month 按 yearMonthFormat 显示年月 | String | `year-month` | `month \| year-month` |
 | format | 单日内容格式化函数，可自定义文字与绘制样式，返回 null 保持默认 | SnCalendarDayFormatter | `null` | - |
@@ -90,23 +90,23 @@
 | height | 视图整体高度 | String \| Number | `$420` | - |
 | showMark | 预留属性（当前版本绘制中无可见效果） | Boolean | `true` | `true \| false` |
 | showWatermark | 是否显示月份水印数字 | Boolean | `true` | `true \| false` |
-| watermarkColor | 水印颜色，支持 $ 简写，空时取主题线条文字色 | String | `$lineText` | - |
+| watermarkColor | 水印颜色，支持 $ 简写 | String | `$lineText` | - |
 | watermarkFontSize | 水印字号 | String \| Number | `$96` | - |
 | titlePicker | 点击标题是否展开年月选择面板 | Boolean | `false` | `true \| false` |
 | switchLongpress | 长按左右切换按钮是否连续切换（年月面板中的年步进器长按同样生效） | Boolean | `true` | `true \| false` |
 | readonly | 是否只读（禁用面板切换与选择） | Boolean | `false` | `true \| false` |
 | fullFillDates | 是否绘制前后月份的补位日期 | Boolean | `false` | `true \| false` |
 | allowCancel | 再次点击已选日期是否取消选择 | Boolean | `false` | `true \| false` |
-| dayTextColor | 日期文字颜色，空时取主题文字色 | String | `''` | - |
-| adjacentDayTextColor | 非当前月日期文字颜色，空时取主题线条文字色 | String | `''` | - |
-| disabledDayTextColor | 禁用日期文字颜色，空时取主题禁用文字色 | String | `''` | - |
-| selectedDayTextColor | 选中日期文字颜色，空时取主题主色文字色 | String | `''` | - |
-| selectedDayBgColor | 选中日期背景色，空时取主题主色 | String | `''` | - |
-| rangeDayTextColor | 范围中间日期文字颜色，空时取主题浅主色文字色 | String | `''` | - |
-| rangeDayBgColor | 范围中间日期背景色，空时取主题浅主色 | String | `''` | - |
-| prefixTextColor | 日期上标文字颜色，空时随日期文字颜色 | String | `''` | - |
-| suffixTextColor | 日期下标文字颜色，空时随日期文字颜色 | String | `''` | - |
-| todayBorderColor | 今天日期描边颜色，空时取主题主色 | String | `''` | - |
+| dayTextColor | 日期文字颜色 | String | `$text` | - |
+| adjacentDayTextColor | 非当前月日期文字颜色 | String | `$lineText` | - |
+| disabledDayTextColor | 禁用日期文字颜色 | String | `$disabledText` | - |
+| selectedDayTextColor | 选中日期文字颜色 | String | `$primaryText` | - |
+| selectedDayBgColor | 选中日期背景色 | String | `$primary` | - |
+| rangeDayTextColor | 范围中间日期文字颜色 | String | `$primaryLightText` | - |
+| rangeDayBgColor | 范围中间日期背景色 | String | `$primaryLight` | - |
+| prefixTextColor | 日期上标文字颜色，随日期文字颜色 | String | - | - |
+| suffixTextColor | 日期下标文字颜色，随日期文字颜色 | String | - | - |
+| todayBorderColor | 今天日期描边颜色 | String | `$primary` | - |
 | dayFontSize | 日期字号 | String \| Number | `$14` | - |
 | prefixFontSize | 上标字号 | String \| Number | `$8` | - |
 | suffixFontSize | 下标字号 | String \| Number | `$8` | - |

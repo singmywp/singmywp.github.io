@@ -183,10 +183,10 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| aniTime | 显隐过渡动画时长（支持 `$` 简写），为空时使用框架标准动画时长 | String \| Number | `''` | - |
+| aniTime | 显隐过渡动画时长（支持 `$` 简写） | String \| Number | `$normal` | - |
 | zIndex | 键盘上方区域的 `z-index` 层级 | Number | `990` | - |
 | offset | 距离键盘顶部的额外偏移（支持 `$` 简写，用于避开键盘自带的完成栏等） | String \| Number | `0` | - |
-| width | 键盘上方区域宽度（支持 `$` 简写），为空时铺满屏幕宽度 | String \| Number | `''` | - |
+| width | 键盘上方区域宽度（支持 `$` 简写） | String \| Number | `100%` | - |
 | show | 是否允许显示，设为 `false` 时即使键盘打开也不显示 | Boolean | `true` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |

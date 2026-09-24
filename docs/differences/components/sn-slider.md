@@ -1,7 +1,5 @@
 # sn-slider
 
-> 旧版组件：sn-slider
-
 **旧版状态**：旧版提供 sn-slider 单滑块（多 DOM 布局实现），v2 保留并重构（拖动时直接操作 DOM 更新位置，跟手更流畅），双向滑块拆分为独立的 sn-slider-double 文档。
 
 **差异明细**：

@@ -1,7 +1,5 @@
 # sn-list
 
-> 旧版组件：sn-list.md
-
 **旧版状态**：v1 提供静态列表容器 `sn-list`，属性为 `showBorder`（列表项分割线）、`bgColor` 与 `customStyle`；子组件仅可为 `sn-list-item` 或 `sn-list-chat`，容器通过 `provide('showBorder')` + `defineExpose({ register })` 与子项协作，在 `onMounted` / `onUpdated` 中遍历子实例调用 `setOrder` 生成最后一项的边界处理。
 
 **删除结论**：v2 **已移除** `sn-list` 组件（连同 `sn-list-item` / `sn-list-chat`）。

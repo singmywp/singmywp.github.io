@@ -1,9 +1,5 @@
 # 配置体系差异
 
-> 旧版参考：旧 `api/config/index.md`、`api/config/init.md`（Configs 配置体系）
->
-> 新版参考：`E:\temp\docs\api\index.md`（`$snui`）、`E:\temp\docs\api\framework.md`（风格/乘数/动画体系）
-
 ## 总览
 
 旧版将全局配置收敛在 `$snui.configs` 下的六个子配置对象中（`app / page / font / radius / aniTime / zIndex`），其中字号、圆角、动画采用"基本值 + 固定等级板"的静态结构。

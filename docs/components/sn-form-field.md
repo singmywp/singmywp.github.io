@@ -88,24 +88,24 @@
 | field | 表单字段名，非空且位于 sn-form 内时注册参与整表校验 | String | `''` | - |
 | rule | 校验规则，配合 field 使用 | [[SnFormItemRule]] | `{}` | - |
 | label | 标签文字 | String | `''` | - |
-| labelSize | 标签字体大小 | String \| Number | `''`（默认 14px × 字体乘数） | - |
-| labelColor | 标签颜色 | String | `''`（默认主题 title 色） | - |
-| labelWidth | 横向布局时标签宽度 | String \| Number | `''`（默认 80px × 间距乘数） | - |
+| labelSize | 标签字体大小 | String \| Number | `$14` | - |
+| labelColor | 标签颜色 | String | `$title` | - |
+| labelWidth | 横向布局时标签宽度 | String \| Number | `$80` | - |
 | labelAlign | 标签文字水平对齐 | String | `left` | `left` \| `right` \| `center` |
 | labelJustify | 标签在容器内的竖向对齐 | String | `center` | `top` \| `center` \| `bottom` |
 | required | 是否必填，标签后追加红色 `*` 标记 | Boolean | `false` | `true` \| `false` |
 | error | 错误提示文字（存在 error 插槽时不显示） | String | `''` | - |
-| errorSize | 错误文字大小 | String \| Number | `''`（默认 12px × 字体乘数） | - |
-| errorColor | 错误文字颜色 | String | `''`（默认主题 error 色） | - |
-| columnGap | 标签与内容的间距 | String \| Number | `''`（默认 12px × 间距乘数） | - |
-| contentAlign | 内容区水平对齐；为空时横向布局默认 right、纵向布局默认 left | String | `''` | `left` \| `center` \| `right` |
+| errorSize | 错误文字大小 | String \| Number | `$12` | - |
+| errorColor | 错误文字颜色 | String | `$error` | - |
+| columnGap | 标签与内容的间距 | String \| Number | `$12` | - |
+| contentAlign | 内容区水平对齐；横向布局默认 right、纵向布局默认 left | String | - | `left` \| `center` \| `right` |
 | showBorder | 是否显示底部下划线 | Boolean | `false` | `true` \| `false` |
-| borderColor | 下划线颜色 | String | `''`（默认主题 line 色） | - |
+| borderColor | 下划线颜色 | String | `$line` | - |
 | borderWidth | 下划线高度 | String \| Number | `1` | - |
 | borderStyle | 下划线节点自定义样式 | UTSJSONObject \| String | `''` | - |
 | borderClass | 下划线节点外部类 | String | `''` | - |
-| bgColor | 背景颜色 | String | `''`（默认主题 front 色） | - |
-| borderRadius | 圆角大小 | String \| Number | `''`（默认 8px × 圆角乘数） | - |
+| bgColor | 背景颜色 | String | `$front` | - |
+| borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | padding | 内边距 | String | `10px 13px` | - |
 | labelStyle | 标签节点自定义样式 | UTSJSONObject \| String | `''` | - |
 | labelClass | 标签节点外部类 | String | `''` | - |

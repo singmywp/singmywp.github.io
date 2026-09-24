@@ -1,9 +1,5 @@
 # API 新旧版本差异
 
-> 旧版参考：`E:\Projects\singmywp.github.io\docs\api\index.md`（SinleUI 1.x，最高版本 1.1.6）
->
-> 新版参考：`E:\temp\docs\api\index.md`（SinleUI 2.0 beta）
-
 ## 总览
 
 SinleUI 2.0 对框架 API 做了**结构性重构**：旧版以 `$snui` 挂载 `configs / utils / store / libs` 四大子对象；新版改为**扁平化属性 + 独立命名导出**。核心变化：

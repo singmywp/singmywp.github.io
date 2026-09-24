@@ -1,7 +1,5 @@
 # sn-waterfall
 
-> 旧版组件：sn-waterfall.md
-
 **旧版状态**：v1 提供瀑布流容器 `sn-waterfall`，属性为 `col`（列数，默认 2）、`spacing`（子项间距）与 `customStyle`；子组件为 `sn-waterfall-item`。容器通过 `useResize` 监听尺寸、测量子项高度后分配列位置，需固定容器高度方可正常滚动。
 
 **删除结论**：v2 **已移除** `sn-waterfall` 组件，更名重构为 **`sn-waterflow`**。

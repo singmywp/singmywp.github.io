@@ -1,7 +1,5 @@
 # sn-tabs
 
-> 旧版组件：sn-tabs.md
-
 **旧版状态**：1.1.6 已提供，同样是 v-model 索引 + data 列表的标签页，支持 scrollable 与 swipe/push 两种指示线动画。
 
 **差异明细**：

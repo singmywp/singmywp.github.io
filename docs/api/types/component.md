@@ -651,6 +651,26 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 ---
 
+# SnCascaderReject
+
+`sn-cascader` 的 `load-data` 回调参数之一：懒加载失败时调用，通知组件结束加载态（由 [SnCascaderLoadData](#sncascaderloaddata) 的 `reject` 参数使用）。
+
+| 类型 | 签名 |
+| :--- | :--- |
+| Function | () => void |
+
+---
+
+# SnCascaderResolve
+
+`sn-cascader` 的 `load-data` 回调参数之一：懒加载成功时调用，传入该层级的选项列表（由 [SnCascaderLoadData](#sncascaderloaddata) 的 `resolve` 参数使用）。
+
+| 类型 | 签名 |
+| :--- | :--- |
+| Function | (options: [SnCascaderOption](#sncascaderoption)[]) => void |
+
+---
+
 # SnCascaderValue
 
 级联选中值：各级选项 `value` 组成的数组（`v-model`）。
@@ -1306,6 +1326,26 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 ---
 
+# SnTreeLoadReject
+
+`sn-tree` 的 `load-data` 回调参数之一：懒加载失败时调用，通知组件结束加载态（由 [SnTreeLoadData](#sntreeloaddata) 的 `reject` 参数使用）。
+
+| 类型 | 签名 |
+| :--- | :--- |
+| Function | () => void |
+
+---
+
+# SnTreeLoadResolve
+
+`sn-tree` 的 `load-data` 回调参数之一：懒加载成功时调用，传入子节点数据（由 [SnTreeLoadData](#sntreeloaddata) 的 `resolve` 参数使用）。
+
+| 类型 | 签名 |
+| :--- | :--- |
+| Function | (children: [SnTreeData](#sntreedata)) => void |
+
+---
+
 # SnTypeGroup <Badge type="warning" text="内部使用" />
 
 `sn-list-view` / `sn-waterflow` 内部按 `type` 对列表项分组后的结果，用于在同一列表中以不同布局渲染不同 `type` 的条目。
@@ -1357,6 +1397,6 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 - 日期时间库类型（`DayutsConfig`、`DayutsUnit`、`DayutsFormats`、`DayutsRelativeTime`、`DayutsLocale`、`DayutsObject`）见 [Date 日期库类型](/libs/date/types)。
 - 颜色库类型（`LColorOptions`、`LGenerateOptions`）见 [Color 颜色库类型](/libs/color/types)。
-- `PermListener`（权限监听）见 [sn-perm-listener](/components/sn-perm-listener)。
+- `PermListener`（权限监听）见 [权限类](/libs/utils/permission#permlistener)。
 - `UniError` 错误类型见 [错误处理机制](/api/error/error#unierror)。
 - 分组组件的 group config（`CheckboxGroupConfig`、`RadioGroupConfig`、`CollapseConfig`、`StepsConfig`）及其他框架内部自用类型（`SnTableConfig`、`SnTableCellReport`、`SnTypeGroup`、`SnTypeGroupEntry`、`SnCalendarBoundaries`、`SnCalendarSelectionResult` 等）已在上文完整收录，均标记为「内部使用」。

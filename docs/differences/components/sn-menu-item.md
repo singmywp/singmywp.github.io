@@ -1,7 +1,5 @@
 # sn-menu-item
 
-> 旧版组件：sn-menu-item.md
-
 **旧版状态**：v1 提供菜单项 `sn-menu-item`（配合 `sn-menu` 使用），支持 `text` / `icon` / `iconPosition` / `textAlign`、`disabled` 禁用态、`listMode` 列表模式（在 `list-view` 内渲染为 `<list-item>`），以及 `header` / `body` / `footer` 插槽与 `textColor` / `iconColor` / `textSize` 等样式属性，按压态通过 `isHover` 响应式变量控制。
 
 **删除结论**：v2 **已移除** `sn-menu-item` 组件，菜单类组件的子项统一改用 `sn-cell`。

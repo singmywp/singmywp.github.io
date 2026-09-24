@@ -51,11 +51,11 @@ const value = ref<number>(0)
 | inputWidth | 输入框宽度 | String \| Number | `50px` | - |
 | textSize | 文本大小 | String \| Number | `$14` | - |
 | textColor | 按钮符号与输入框文本颜色 | String | `$text` | 任意色值或 `$` 主题色简写 |
-| inputTextColor | 输入框文本颜色，留空时取 `textColor` | String | `''` | 任意色值或 `$` 主题色简写 |
+| inputTextColor | 输入框文本颜色，取 `textColor` | String | - | 任意色值或 `$` 主题色简写 |
 | disabledTextColor | 禁用状态文本颜色 | String | `$disabledText` | 任意色值或 `$` 主题色简写 |
 | inputBgColor | 输入框背景颜色 | String | `$info` | 任意色值或 `$` 主题色简写 |
 | inputActiveBgColor | 输入框聚焦激活背景颜色 | String | `$info` | 任意色值或 `$` 主题色简写 |
-| disabledBgColor | 禁用状态输入框背景颜色，留空时取禁用色 | String | `''` | 任意色值或 `$` 主题色简写 |
+| disabledBgColor | 禁用状态输入框背景颜色 | String | `$disabled` | 任意色值或 `$` 主题色简写 |
 | buttonBgColor | 按钮背景颜色，留空时为描边样式按钮 | String | `''` | 任意色值或 `$` 主题色简写 |
 | borderRadius | 按钮、输入框圆角 | String \| Number | `$8` | - |
 | min | 最小值 | Number | `0` | - |

@@ -63,7 +63,7 @@ const items: SnDataItem[] = [
 | target | 锚点元素选择器（如 `#menu-btn`），菜单将定位到该元素旁 | String | `''` | - |
 | align | 菜单相对锚点的对齐方式 | String | `left` | `left` \| `center` \| `right` |
 | items | 菜单项数组，每项支持 `text`、`icon`、`value`、`color`、`disabled` 字段 | Array<[[SnDataItem@api]]> | `[]` | - |
-| width | 菜单宽度（px），为空时为 `160px` | String \| Number | `''` | - |
+| width | 菜单宽度（px） | String \| Number | `160px` | - |
 | zIndex | 弹出层层级 | Number | `999` | - |
 | showArrow | 是否显示指向锚点的三角箭头 | Boolean | `true` | `true` \| `false` |
 | overlay | 是否显示遮罩 | Boolean | `true` | `true` \| `false` |

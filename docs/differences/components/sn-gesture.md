@@ -1,5 +1,5 @@
 # sn-gesture
-> 旧版组件：sn-e-gesture.md
+
 **旧版状态**：v1 为独立扩展插件 sn-e-gesture（仅 Android 原生手势，事件返回 UTSJSONObject），v2 更名收编为框架内置组件并改为 AlloyFinger 实现，跨平台可用。
 **差异明细**：
 - 更名：组件 `sn-e-gesture` → `sn-gesture`（由扩展组件收编为基础组件）

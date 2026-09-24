@@ -48,8 +48,8 @@ const checked = ref<number[]>([])
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | text | 标签内部文本内容 | String | `''` | - |
-| type | 标签主题类型，覆盖组配置 `tag-type` | String | `''`（默认取组配置，兜底 `primary`） | `primary` \| `info` \| `success` \| `error` \| `warning` |
-| level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level` | String | `''`（默认取组配置，兜底 `second`） | `first` \| `second` \| `third` \| `least` |
+| type | 标签主题类型，覆盖组配置 `tag-type`；默认取组配置，兜底 `primary` | String | - | `primary` \| `info` \| `success` \| `error` \| `warning` |
+| level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level`；默认取组配置，兜底 `second` | String | - | `first` \| `second` \| `third` \| `least` |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义标签样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
@@ -74,34 +74,34 @@ const checked = ref<number[]>([])
 | boxSize | 勾选方框边长 | String \| Number | `'19px'` | - |
 | boxBorderRadius | 勾选方框圆角 | String \| Number | `'5px'` | - |
 | boxBorderWidth | 勾选方框边框宽度 | String \| Number | `'2px'` | - |
-| boxTextSize | 方框选项文本大小 | String \| Number | `''`（默认 13px × fontsizeFactor） | - |
-| boxTextColor | 方框选项文本颜色 | String | `''`（默认主题 `text` 色） | - |
-| disabledBoxTextColor | 禁用状态下方框选项文本颜色 | String | `''`（默认主题 `disabledText` 色） | - |
+| boxTextSize | 方框选项文本大小 | String \| Number | `$13` | - |
+| boxTextColor | 方框选项文本颜色 | String | `$text` | - |
+| disabledBoxTextColor | 禁用状态下方框选项文本颜色 | String | `$disabledText` | - |
 | boxIcon | 勾选方框内图标名称 | String | `'check-fill'` | - |
-| boxIconSize | 勾选方框内图标大小 | String \| Number | `''`（默认 13px × fontsizeFactor） | - |
+| boxIconSize | 勾选方框内图标大小 | String \| Number | `$13` | - |
 | boxIconColor | 勾选方框内图标颜色 | String | `'#fff'` | - |
 | disabledBoxIconColor | 禁用状态下方框内图标颜色 | String | `'#fff'` | - |
-| boxBorderColor | 勾选方框边框颜色 | String | `''`（默认主题 `line` 色） | - |
-| disabledBoxBorderColor | 禁用且未选中时方框边框颜色 | String | `''`（默认主题 `disabled` 色） | - |
-| boxActiveBorderColor | 选中时方框边框颜色 | String | `''`（默认主题 `primary` 色） | - |
-| disabledBoxActiveBorderColor | 禁用且选中时方框边框颜色 | String | `''`（默认主题 `disabledText` 色） | - |
-| boxBgColor | 勾选方框背景颜色 | String | `''`（默认透明） | - |
-| disabledBoxBgColor | 禁用且未选中时方框背景颜色 | String | `''`（默认主题 `disabled` 色） | - |
-| boxActiveBgColor | 选中时方框背景颜色 | String | `''`（默认主题 `primary` 色） | - |
-| disabledBoxActiveBgColor | 禁用且选中时方框背景颜色 | String | `''`（默认主题 `disabledText` 色） | - |
+| boxBorderColor | 勾选方框边框颜色 | String | `$line` | - |
+| disabledBoxBorderColor | 禁用且未选中时方框边框颜色 | String | `$disabled` | - |
+| boxActiveBorderColor | 选中时方框边框颜色 | String | `$primary` | - |
+| disabledBoxActiveBorderColor | 禁用且选中时方框边框颜色 | String | `$disabledText` | - |
+| boxBgColor | 勾选方框背景颜色 | String | `var(--sn-transparent)` | - |
+| disabledBoxBgColor | 禁用且未选中时方框背景颜色 | String | `$disabled` | - |
+| boxActiveBgColor | 选中时方框背景颜色 | String | `$primary` | - |
+| disabledBoxActiveBgColor | 禁用且选中时方框背景颜色 | String | `$disabledText` | - |
 | tagType | 标签选项主题类型 | String | `'primary'` | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | tagLevel | 标签选项等级 | String | `'second'` | `first` \| `second` \| `third` \| `least` |
 | tagBorderRadius | 标签选项圆角 | String \| Number | `'10px'` | - |
 | tagPadding | 标签选项内边距 | String | `'6px 10px'` | - |
-| tagTextSize | 标签选项文本大小 | String \| Number | `''`（默认 12px × fontsizeFactor） | - |
-| tagBgColor | 标签选项未选中时背景颜色 | String | `''`（默认主题 `info` 色） | - |
-| disabledTagBgColor | 禁用且未选中时标签背景颜色 | String | `''`（默认主题 `disabled` 色） | - |
-| tagActiveBgColor | 标签选项选中时背景颜色 | String | `''`（默认由 `tag-type` + `tag-level` 决定） | - |
-| disabledTagActiveBgColor | 禁用且选中时标签背景颜色 | String | `''`（默认主题 `disabledDark` 色） | - |
-| tagTextColor | 标签选项未选中时文本颜色 | String | `''`（默认主题 `text` 色） | - |
-| disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `''`（默认主题 `disabledText` 色） | - |
-| tagActiveTextColor | 标签选项选中时文本颜色 | String | `''`（默认由 `tag-type` + `tag-level` 决定） | - |
-| disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `''`（默认主题 `disabledDarkText` 色） | - |
+| tagTextSize | 标签选项文本大小 | String \| Number | `$12` | - |
+| tagBgColor | 标签选项未选中时背景颜色 | String | `$info` | - |
+| disabledTagBgColor | 禁用且未选中时标签背景颜色 | String | `$disabled` | - |
+| tagActiveBgColor | 标签选项选中时背景颜色；默认由 `tag-type` + `tag-level` 决定 | String | - | - |
+| disabledTagActiveBgColor | 禁用且选中时标签背景颜色 | String | `$disabledDark` | - |
+| tagTextColor | 标签选项未选中时文本颜色 | String | `$text` | - |
+| disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `$disabledText` | - |
+| tagActiveTextColor | 标签选项选中时文本颜色；默认由 `tag-type` + `tag-level` 决定 | String | - | - |
+| disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `$disabledDarkText` | - |
 | boxContainStyle | 自定义方框选项整行容器样式 | UTSJSONObject \| String | `''` | - |
 | boxStyle | 自定义勾选方框样式 | UTSJSONObject \| String | `''` | - |
 | boxIconStyle | 自定义方框内图标样式 | UTSJSONObject \| String | `''` | - |

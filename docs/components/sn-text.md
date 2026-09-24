@@ -38,8 +38,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | type | 文本类型，决定字号与颜色 | TextType | `text` | `title` \| `text` \| `text-light` \| `primary` \| `info` \| `success` \| `warning` \| `error` |
 | text | 文本内容 | String | - | - |
-| fontSize | 字体大小，支持 `$` 简写；为空时由 `type` 决定（title 16、其余 14，均乘以字体大小乘数） | String \| Number | - | - |
-| color | 文本颜色，支持 `$` 功能色简写；为空时由 `type` 决定 | String | - | - |
+| fontSize | 字体大小，支持 `$` 简写；由 `type` 决定（title 为 `$16`、其余 `$14`） | String \| Number | - | - |
+| color | 文本颜色，支持 `$` 功能色简写；由 `type` 决定 | String | - | - |
 | bold | 是否加粗 | Boolean | `false` | `true` \| `false` |
 | lines | 最大显示行数，超出隐藏；`0` 表示不限制 | Number | `0` | - |
 | selectable | 是否可选择（长按复制） | Boolean | `false` | `true` \| `false` |

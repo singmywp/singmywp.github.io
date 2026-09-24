@@ -32,9 +32,9 @@
 | height | 提示框高度，`$` 前缀按字体大小乘数缩放 | String \| Number | `''` | - |
 | borderRadius | 提示框圆角大小，`$` 前缀按圆角乘数缩放 | String \| Number | `12px` | - |
 | padding | 提示框内边距，支持 `$` 前缀按间距乘数缩放 | String | `10px 10px` | - |
-| bgColor | 提示框背景颜色，支持 `$` 简写主题色，空值时使用主题信息色 `$info` | String | `''` | - |
-| boxShadow | 提示框阴影，空值时为 `0px 2px 10px 0px $infoDark`（主题信息深色） | String | `''` | - |
-| aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，`0` 关闭动画，空值时使用框架普通动画时长 | String \| Number | `''` | `$long` \| `$normal` \| `$short` \| 数值 |
+| bgColor | 提示框背景颜色，支持 `$` 简写主题色 | String | `$info` | - |
+| boxShadow | 提示框阴影 | String | `0px 2px 10px 0px $infoDark` | - |
+| aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，`0` 关闭动画 | String \| Number | `$normal` | `$long` \| `$normal` \| `$short` \| 数值 |
 | customStyle | 自定义组件根节点样式 | UTSJSONObject \| String | `''` | - |
 | tooltipStyle | 提示框自定义样式 | UTSJSONObject \| String | `''` | - |
 | tooltipClass | 提示框外部样式类 | String | `''` | - |

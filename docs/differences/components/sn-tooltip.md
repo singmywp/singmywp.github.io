@@ -1,7 +1,5 @@
 # sn-tooltip
 
-> 旧版组件：sn-tooltip.md
-
 **旧版状态**：旧版已提供提示框组件（10 个属性、trigger/default 插槽，无事件与方法）。
 
 **差异明细**：

@@ -8,7 +8,22 @@
 - 弹出层类组件，**必须直接放在 `sn-page` 根节点下使用**，否则主题颜色与动画时长等 CSS 变量无法作用到组件内部。
 - 通过 `ref` 调用 `open` / `close` / `cancel` 方法控制显隐；`actions` 数组配置操作项，每项支持 `text`（文字）、`color`（文字颜色，支持 `$` 简写）、`disabled`（禁用）等字段。
 - 默认带一个红色加粗的取消按钮，`show-cancel` 可关闭；`title` 为空时不显示标题与分隔线。
-- 与 API `snu.showActionsheet` 的区别：组件需放置在页面中用 `ref` 调用，且受页面层级限制；API 为整页弹层，可覆盖导航栏 / tabbar 并拦截返回键。
+
+::: tip 建议直接使用 API
+推荐使用 [`snu.showActionsheet`](/libs/utils/ui#snu-showactionsheet)：
+
+```typescript
+snu.showActionsheet({
+	title: '请选择',
+	actions: [{ text: '拍照' }, { text: '相册' }],
+	success: (tapIndex) => {}
+})
+```
+
+API 无需在页面放置组件、无需绑定 `ref`，`import { snu } from '@/uni_modules/sinle-ui'` 后即可在任意位置调用，常用配置字段与组件 props 一致，点击结果通过 `success` 回调返回；且 API 为整页弹层，可覆盖导航栏 / tabbar 并拦截返回键，不受页面层级限制。
+
+组件与 API 的差异仅在调用方式：组件本身不提供插槽，需先放置到页面再通过 `ref` 调用。绝大多数场景使用 API 更为方便易用。
+:::
 
 ```vue
 <template>

@@ -216,7 +216,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 # SnRequestSystemPermissionOptions
 
-[`snu.requestSystemPermission`](/libs/utils/platform#snu-requestsystempermission) 的配置。
+[`snu.requestSystemPermission`](/libs/utils/permission#snu-requestsystempermission) 的配置。
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -478,5 +478,5 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 - 颜色库类型 `LColorOptions` / `LGenerateOptions` 见 [Color 颜色库类型](/libs/color/types)。
 - 日期库类型 `DayutsConfig` / `DayutsUnit` / `DayutsFormats` / `DayutsRelativeTime` / `DayutsLocale` / `DayutsObject` 见 [Date 日期库类型](/libs/date/types)。
-- `PermListener` 见 [sn-perm-listener](/components/sn-perm-listener)。
+- `PermListener`（权限监听回调对象）见 [权限类](/libs/utils/permission#permlistener)。
 - `UniError` 错误类型见 [错误处理机制](/api/error/error#unierror)。

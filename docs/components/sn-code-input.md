@@ -75,13 +75,13 @@ function doClear(): void {
 | borderRadius | 单元格圆角大小 | String \| Number | `12px` | - |
 | borderWidth | 单元格边框宽度 | String \| Number | `2` | - |
 | textSize | 字符字体大小 | String \| Number | `$22` | - |
-| textColor | 字符颜色 | String | `''`（默认主题 text 色） | - |
+| textColor | 字符颜色 | String | `$text` | - |
 | caretSize | 光标大小 | String \| Number | `$14` | - |
-| caretColor | 光标颜色 | String | `''`（默认主题 primary 色） | - |
-| borderColor | 未填充单元格边框颜色 | String | `''`（默认主题 line 色） | - |
-| activeColor | 已填充与激活单元格的边框颜色 | String | `''`（默认主题 primary 色） | - |
-| bgColor | 单元格背景颜色 | String | `''`（默认主题 front 色） | - |
-| activeBgColor | 激活单元格背景颜色 | String | `''`（默认主题 primaryLight 色） | - |
+| caretColor | 光标颜色 | String | `$primary` | - |
+| borderColor | 未填充单元格边框颜色 | String | `$line` | - |
+| activeColor | 已填充与激活单元格的边框颜色 | String | `$primary` | - |
+| bgColor | 单元格背景颜色 | String | `$front` | - |
+| activeBgColor | 激活单元格背景颜色 | String | `$primaryLight` | - |
 | focus | 是否自动聚焦 | Boolean | `false` | `true` \| `false` |
 | adjustPosition | 键盘弹起时是否自动上推页面 | Boolean | `true` | `true` \| `false` |
 | disabled | 是否禁用 | Boolean | `false` | `true` \| `false` |

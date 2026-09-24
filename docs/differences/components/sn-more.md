@@ -1,5 +1,5 @@
 # sn-more
-> 旧版组件：sn-more.md
+
 **旧版状态**：旧版已有查看更多组件，支持自定义提示文本、图标、颜色、动画时长、禁用，事件为 fold/unfold，插槽为 default。
 **差异明细**：
 - 新增属性：`contentStyle`、`contentClass`（内容区）、`wrapStyle`、`wrapClass`（内容包裹层）、`foldTextStyle`、`foldTextClass`（提示文本）等外部样式/外部类

@@ -1,5 +1,5 @@
 # sn-notice-bar
-> 旧版组件：sn-notice-bar.md
+
 **旧版状态**：旧版已有通知栏组件，支持 scroll/swiper 两种模式、可关闭，颜色与字号通过独立 props（bgColor/textColor/iconColor 等）配置。
 **差异明细**：
 - 新增属性：`padding`（上下内边距，决定通知栏高度）、`textStyle`、`textClass`、`iconStyle`、`iconClass`、`closeStyle`、`closeClass`（外部样式/外部类，替代原独立颜色与字号 props）

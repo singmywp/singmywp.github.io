@@ -9,7 +9,24 @@
 - 通过 ref 绑定组件后调用方法使用：`show` 按组件 props 配置显示；`configShow` 传入参数临时覆盖 props 配置（缺省字段回退 props）；`close` 手动关闭
 - 默认不拦截手势，提示期间仍可操作页面；开启 `overlay` 后显示透明遮罩防穿透
 - `loading` 为 true 时显示加载图标且不自动关闭，需手动调用 `close`
-- 与 API `snu.showToast` 的区别：组件需先放置到页面并用 ref 调用，但默认不拦截手势；API 只需 import 即可在任意页面使用
+
+::: tip 建议直接使用 API
+推荐使用 [`snu.showToast`](/libs/utils/ui#snu-showtoast)：
+
+```typescript
+snu.showToast({ text: '保存成功', icon: 'success' })
+
+snu.showToast({
+	text: '加载中...',
+	loading: true,
+	duration: 3000
+})
+```
+
+API 无需在页面放置组件、无需绑定 `ref`，`import { snu } from '@/uni_modules/sinle-ui'` 后即可在任意位置调用（`snu.hideToast()` 关闭），常用配置字段与组件 props 一致（组件的 `overlay` 对应 API 的 `passThrough`，默认均为不拦截手势）。
+
+组件与 API 的差异仅在调用方式：组件本身不提供插槽，需先放置到页面再通过 `ref` 调用。绝大多数场景使用 API 更为方便易用。
+:::
 
 ```vue
 <template>
@@ -27,17 +44,17 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | text | 提示文本内容 | String | `''` | - |
-| bgColor | 轻提示背景颜色，支持 `$` 简写主题色，空值时使用主题轻提示色 `$toast` | String | `''` | - |
+| bgColor | 轻提示背景颜色，支持 `$` 简写主题色 | String | `$toast` | - |
 | overlay | 是否显示透明遮罩（防穿透），开启后提示期间拦截底部页面点击 | Boolean | `false` | `true` \| `false` |
 | position | 轻提示位置 | String | `center` | `top` \| `center` \| `bottom` |
 | duration | 轻提示显示时长（ms），`loading` 为 true 时不自动关闭 | Number | `2000` | - |
-| textSize | 提示文本字体大小，空值时为 `$14` | String \| Number | `''` | - |
-| textColor | 提示文本颜色，支持 `$` 简写主题色，空值时为 `#fff` | String | `''` | - |
-| borderRadius | 轻提示圆角大小，空值时为 `$12` | String \| Number | `''` | - |
+| textSize | 提示文本字体大小 | String \| Number | `$14` | - |
+| textColor | 提示文本颜色，支持 `$` 简写主题色 | String | `#fff` | - |
+| borderRadius | 轻提示圆角大小 | String \| Number | `$12` | - |
 | padding | 轻提示内边距，支持 `$` 前缀按间距乘数缩放 | String | `12px 15px` | - |
 | icon | 提示图标名称（sn-icon 图标名） | String | `''` | - |
-| iconSize | 图标大小，空值时为 `$20` | String \| Number | `''` | - |
-| iconColor | 图标颜色，支持 `$` 简写主题色，空值时为 `#fff` | String | `''` | - |
+| iconSize | 图标大小 | String \| Number | `$20` | - |
+| iconColor | 图标颜色，支持 `$` 简写主题色 | String | `#fff` | - |
 | textAlign | 文本对齐方式 | String | `center` | `left` \| `center` \| `right` |
 | loading | 是否显示加载中图标（旋转 loading 圈） | Boolean | `false` | `true` \| `false` |
 | textLines | 文本最大行数，超长自动换行，`0` 不限制 | Number | `0` | - |

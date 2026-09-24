@@ -1,7 +1,5 @@
 # sn-image
 
-> 旧版组件：sn-image.md
-
 **旧版状态**：旧版提供图片加载占位、预览、懒加载与动画，占位仅支持图标，样式定制只有 `customImageStyle`/`customLoadingStyle` 两个 UTSJSONObject 属性。
 
 **差异明细**：

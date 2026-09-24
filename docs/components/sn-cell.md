@@ -59,12 +59,12 @@ function onCellClick(name: string | number): void {
 | stop | 点击时是否阻止事件冒泡 | Boolean | `true` | `true` \| `false` |
 | name | 点击事件携带的标识符 | String \| Number | `''` | - |
 | bgColor | 背景颜色 | String | `var(--sn-front)` | - |
-| padding | 内边距，空时使用组件默认内边距（随间距乘数缩放） | String | `''` | - |
+| padding | 内边距，使用组件默认内边距（随间距乘数缩放） | String | - | - |
 | hoverStyle | 按压时应用的样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
 | hoverStopPropagation | 按压态是否阻止向父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按压态启动延时（ms） | Number | `0` | - |
 | hoverStayTime | 松手后按压态保持时长（ms） | Number | `0` | - |
-| hoverTransTime | 按压态过渡动画时长，支持 `$` 简写，空时取动画短时长 | String \| Number | `''` | - |
+| hoverTransTime | 按压态过渡动画时长，支持 `$` 简写 | String \| Number | `$short` | - |
 | iconStyle | 自定义左侧图标样式 | UTSJSONObject \| String | `''` | - |
 | iconClass | 左侧图标外部类 | String | `''` | - |
 | titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |

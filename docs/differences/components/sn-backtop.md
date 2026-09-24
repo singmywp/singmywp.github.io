@@ -1,5 +1,5 @@
 # sn-backtop
-> 旧版组件：sn-backtop.md
+
 **旧版状态**：v1.1.6 已有回到顶部按钮，支持图标/形状/主题/等级/尺寸/位置/禁用等属性，自动绑定同级或父级 `sn-scroll`/`sn-longlist`/`sn-page`（不可用作 `sn-longlist` 子节点）。
 **差异明细**：
 

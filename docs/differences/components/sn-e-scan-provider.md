@@ -1,7 +1,5 @@
 # sn-e-scan-provider
 
-> 旧版组件：sn-e-scan-provider.md
-
 **旧版状态**：v1 为基于 MLKit 的扫码核心组件，提供 scanType / enableDing / enableZoom / initZoomScale / cameraPermTip 属性与 scanned 事件、5 个方法，仅支持 Android。
 
 **差异明细**：

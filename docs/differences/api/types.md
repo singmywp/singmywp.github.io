@@ -1,9 +1,5 @@
 # 类型体系差异
 
-> 旧版参考：旧 `api/types/api.md`、`api/types/components.md`、`api/types/index.md`
->
-> 新版参考：`E:\temp\docs\api\types.md`
-
 ## 导入方式变化
 
 | 旧版 | 新版 |

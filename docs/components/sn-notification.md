@@ -82,16 +82,16 @@ function onCopy(id: string): void {
 | duration | 自动关闭时长（ms），`0` 表示不自动关闭 | Number | `4500` | - |
 | showProgress | 是否显示卡片底部剩余时间进度条 | Boolean | `false` | `true` \| `false` |
 | showIcon | 是否显示类型图标 | Boolean | `true` | `true` \| `false` |
-| icon | 自定义图标名称，为空时按 `type` 使用默认图标 | String | `''` | - |
+| icon | 自定义图标名称，按 `type` 使用默认图标 | String | - | - |
 | closable | 是否显示右侧关闭按钮 | Boolean | `false` | `true` \| `false` |
 | grouping | 是否开启通知合并，相同标题 + 内容自动合并计数 | Boolean | `false` | `true` \| `false` |
 | bgColor | 通知卡片背景颜色，支持 `$` 简写 | String | `$front` | - |
 | titleColor | 标题颜色，支持 `$` 简写 | String | `$title` | - |
 | contentColor | 内容颜色，支持 `$` 简写 | String | `$text` | - |
-| iconColor | 图标颜色，支持 `$` 简写，为空时按 `type` 与 `level` 取主题色 | String | `''` | - |
-| titleSize | 标题字号，支持 `$` 简写，为空时随字体乘数缩放（约 15px） | String \| Number | `''` | - |
-| contentSize | 内容字号，支持 `$` 简写，为空时随字体乘数缩放（约 13px） | String \| Number | `''` | - |
-| borderRadius | 卡片圆角大小，支持 `$` 简写，为空时随圆角乘数缩放（约 12px） | String \| Number | `''` | - |
+| iconColor | 图标颜色，支持 `$` 简写，按 `type` 与 `level` 取主题色 | String | - | - |
+| titleSize | 标题字号，支持 `$` 简写 | String \| Number | `$15` | - |
+| contentSize | 内容字号，支持 `$` 简写 | String \| Number | `$13` | - |
+| borderRadius | 卡片圆角大小，支持 `$` 简写 | String \| Number | `$12` | - |
 | draggable | 是否开启手势拖动关闭 | Boolean | `false` | `true` \| `false` |
 | dragThreshold | 横向拖动关闭阈值，超过则飞出关闭，支持数字（px）与百分比字符串（相对卡片宽度） | String \| Number | `80` | - |
 | customStyle | 自定义通知卡片样式 | UTSJSONObject \| String | `''` | - |

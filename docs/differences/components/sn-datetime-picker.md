@@ -1,7 +1,5 @@
 # sn-datetime-picker
 
-> 旧版组件：sn-datetime-picker.md + sn-datetime-picker-view.md（合并为一篇）
-
 **旧版状态**：v1.1.6 已有 sn-datetime-picker 与 sn-datetime-picker-view，v2 保留功能并大幅扩展样式透传与交互细节。
 
 **差异明细**（sn-datetime-picker 部分）：

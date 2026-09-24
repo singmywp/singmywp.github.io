@@ -1,5 +1,5 @@
 # sn-timer
-> 旧版组件：sn-timer.md
+
 **旧版状态**：v1.1.6 已有计时器组件，支持 format / autoplay / millisecond 与 start / pause / reset 方法、change 事件及默认插槽。
 **差异明细**：
 

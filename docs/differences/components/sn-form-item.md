@@ -1,7 +1,5 @@
 # sn-form-item
 
-> 旧版组件：sn-form-item.md
-
 **旧版状态**：v1 提供表单项 `sn-form-item`（配合 `sn-form` 使用），支持 `type`（`embed` 嵌入式 / `float` 浮动式）、`label` / `labelColor` / `labelSize` / `labelWidth`、`field`（字段名）、`rule`（[SnFormItemRule](/api/types/component#snformitemrule) 校验规则）、`required` 必填标，以及 `error` 插槽；内部通过 `useVerify` 与 `sn-form` 协作完成整表校验。
 
 **删除结论**：v2 **已移除** `sn-form-item` 组件，拆分为 **`sn-form-field`** / **`sn-input-field`** / **`sn-textarea-field`** 三个组件。

@@ -42,7 +42,7 @@
 | hoverStopPropagation | 是否阻止点击态的父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按下后点击态出现的延迟时间（ms） | Number | `0` | - |
 | hoverStayTime | 松手后点击态保留的时间（ms） | Number | `0` | - |
-| hoverTransTime | 点击态过渡动画时长，支持 `$` 前缀按动画乘数缩放，空值时使用框架短动画时长 | String \| Number | `''` | - |
+| hoverTransTime | 点击态过渡动画时长，支持 `$` 前缀按动画乘数缩放 | String \| Number | `$short` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
 

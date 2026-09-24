@@ -1,7 +1,5 @@
 # sn-picker
 
-> 旧版组件：sn-picker.md + sn-picker-view.md（合并为一篇）
-
 **旧版状态**：v1.1.6 已有 sn-picker 与 sn-picker-view 两个组件，v2 合并写入同一篇文档，功能大幅扩展（外部样式透传、遮罩控制、抽屉动画事件等）。
 
 **差异明细**（sn-picker 部分）：

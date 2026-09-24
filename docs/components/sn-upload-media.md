@@ -32,8 +32,8 @@
 | sourceType | 可选择媒体的来源 | `Array<String>` | `["album", "camera"]` | `album` \| `camera` |
 | width | 媒体文件子项宽度 | String \| Number | `70px` | - |
 | height | 媒体文件子项高度 | String \| Number | `70px` | - |
-| itemBgColor | 占位项背景颜色，留空回退 `$line` | String | `` | `$primary` 等主题色 |
-| itemBorderRadius | 媒体文件子项圆角，留空按 `8 × radiusFactor` 计算 | String \| Number | - | - |
+| itemBgColor | 占位项背景颜色 | String | `$line` | `$primary` 等主题色 |
+| itemBorderRadius | 媒体文件子项圆角 | String \| Number | `$8` | - |
 | iconSize | 占位项中央图标大小 | String \| Number | `40px` | - |
 | disabled | 是否禁用选择、预览与删除 | Boolean | `false` | `true` \| `false` |
 | chooseErrorTip | 选择媒体失败时的提示信息 | String | `选择媒体文件失败` | - |

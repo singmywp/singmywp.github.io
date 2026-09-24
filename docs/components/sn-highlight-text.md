@@ -42,8 +42,8 @@ const content = ref<string>('SinleUI 提供统一的组件样式、主题能力�
 | autoEscape | 是否自动转义关键词中的正则特殊字符（按字面量匹配） | Boolean | `true` | `true` \| `false` |
 | caseSensitive | 是否区分大小写 | Boolean | `false` | `true` \| `false` |
 | type | 预设文字样式类型，决定默认字号与颜色 | String | `text` | `title` \| `text` \| `text-light` \| `primary` \| `info` \| `success` \| `warning` \| `error` |
-| fontSize | 文本字号，空时按 `type` 取默认字号（title 为 16、其余为 14）并乘字体乘数 | String \| Number | `''` | - |
-| color | 文本颜色，空时按 `type` 取对应主题色 | String | `''` | - |
+| fontSize | 文本字号，按 `type` 取默认字号（title 为 16、其余为 14）并乘字体乘数 | String \| Number | - | - |
+| color | 文本颜色，按 `type` 取对应主题色 | String | - | - |
 | bold | 是否加粗（font-weight: 600） | Boolean | `false` | `true` \| `false` |
 | lines | 最大显示行数，`0` 不限制 | Number | `0` | - |
 | selectable | 文本是否可选中（蒸汽模式） | Boolean | `false` | `true` \| `false` |

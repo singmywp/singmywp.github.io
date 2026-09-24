@@ -75,7 +75,7 @@
 | hoverStopPropagation | 是否阻止点击态扩散到父节点 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按下后进入点击态的延迟时间（ms） | Number | `50` | - |
 | hoverStayTime | 手指松开后点击态保留时间（ms） | Number | `0` | - |
-| hoverTransTime | 进入/退出点击态的过渡时长，为空时取 `aniTime` | String \| Number | - | - |
+| hoverTransTime | 进入/退出点击态的过渡时长，取 `aniTime` | String \| Number | - | - |
 | loadingStyle | 加载指示器的自定义样式 | UTSJSONObject \| String | - | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
 | loadingClass | 加载指示器的外部样式类 | String | - | - |

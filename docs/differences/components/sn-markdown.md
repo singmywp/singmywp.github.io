@@ -1,7 +1,5 @@
 # sn-markdown
 
-> 旧版组件：sn-markdown.md（v2 迁移为独立插件 `sn-e-markdown`）
-
 **旧版状态**：v1 为主插件内置的 `sn-markdown` 组件，基于 WebView + markdown-it 渲染，属性众多（`width` / `height` / `content` / `theme` / `linkify` / `typographer` / `html` / `xhtmlOut` / `breaks` / `quotes` / `langPrefix` / `sup` / `sub` / `container` / `emoji` / `customStyle`），页面放置大量组件时存在性能问题。
 
 **删除结论**：v2 **已移除主插件内置的 `sn-markdown` 组件**，迁移为独立 UTS 插件组件 **`sn-e-markdown`**。

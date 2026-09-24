@@ -21,7 +21,7 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | src | 图片路径（网络路径、本地路径皆可） | String | `''` | - |
-| width | 图片宽度，未设置时平分父容器剩余宽度，支持 `$` 前缀按间距乘数缩放 | String \| Number | `''` | - |
+| width | 图片宽度，平分父容器剩余宽度，支持 `$` 前缀按间距乘数缩放 | String \| Number | - | - |
 | height | 图片高度，仅在同时设置 `width` 时生效，支持 `$` 前缀按间距乘数缩放 | String \| Number | `''` | - |
 | mode | 图片裁剪、缩放方式，`aspectFit` 且未设置 `height` 时自动按图片比例计算高度 | String | `aspectFit` | `scaleToFill` \| `aspectFit` \| `aspectFill` \| `widthFix` \| `heightFix` \| `top` \| `bottom` \| `center` \| `left` \| `right` \| `top left` \| `top right` \| `bottom left` \| `bottom right` |
 | borderRadius | 图片圆角大小，支持 `$` 前缀按圆角乘数缩放 | String \| Number | `$12` | - |

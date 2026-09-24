@@ -44,9 +44,9 @@ const value = ref<boolean>(false)
 | height | 开关高度 | String \| Number | `'25px'` | - |
 | text | 轨道内文本内容 | String | `''` | - |
 | icon | 轨道内图标名称 | String | `''` | - |
-| iconSize | 轨道内图标大小 | String \| Number | `''`（默认 12px × fontsizeFactor） | - |
+| iconSize | 轨道内图标大小 | String \| Number | `$12` | - |
 | padding | 小球与轨道内边缘的间隙 | String \| Number | `'5px'` | - |
-| borderRadius | 轨道圆角 | String \| Number | `''`（默认取高度一半，呈胶囊形） | - |
+| borderRadius | 轨道圆角，取高度一半呈胶囊形 | String \| Number | - | - |
 | bgColor | 关闭状态轨道背景颜色 | String | `'$line'` | - |
 | activeBgColor | 开启状态轨道背景颜色 | String | `'$primary'` | - |
 | disabledBgColor | 禁用且关闭时轨道背景颜色 | String | `'$disabled'` | - |
@@ -55,9 +55,9 @@ const value = ref<boolean>(false)
 | activeBlockColor | 开启状态小球颜色 | String | `'#fff'` | - |
 | disabledBlockColor | 禁用且关闭时小球颜色 | String | `'#fff'` | - |
 | disabledActiveBlockColor | 禁用且开启时小球颜色 | String | `'#fff'` | - |
-| blockBorderRadius | 小球圆角 | String \| Number | `''`（默认取小球尺寸一半，呈圆形） | - |
+| blockBorderRadius | 小球圆角，取小球尺寸一半呈圆形 | String \| Number | - | - |
 | textColor | 轨道内文本颜色 | String | `'#fff'` | - |
-| textSize | 轨道内文本大小 | String \| Number | `''`（默认 12px × fontsizeFactor） | - |
+| textSize | 轨道内文本大小 | String \| Number | `$12` | - |
 | loading | 是否处于加载状态（小球内显示加载动画，期间不可点击） | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载动画的外部样式类 | String | `''` | - |
 | loadingStyle | 自定义加载动画样式 | UTSJSONObject \| String | `''` | - |

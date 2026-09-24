@@ -66,7 +66,7 @@ const value = ref<string>('')
 | focus | 获取焦点 | Boolean | `false` | `true` \| `false` |
 | autoFocus | 自动获取焦点，与 `focus` 相比只在首次生效 | Boolean | `false` | `true` \| `false` |
 | cursor | 指定聚焦时的光标位置，`-1` 表示不指定 | String \| Number | `-1` | - |
-| cursorColor | 光标颜色 | String | `''`（默认主题 primary 色） | - |
+| cursorColor | 光标颜色 | String | `$primary` | - |
 | cursorSpacing | 光标与键盘的距离（px） | String \| Number | `0` | - |
 | selectionStart | 光标起始位置，自动聚焦时有效，需与 `selectionEnd` 搭配 | String \| Number | `-1` | - |
 | selectionEnd | 光标结束位置，自动聚焦时有效，需与 `selectionStart` 搭配 | String \| Number | `-1` | - |
@@ -85,21 +85,21 @@ const value = ref<string>('')
 | showActiveBorder | 聚焦时是否切换为激活边框颜色 | Boolean | `true` | `true` \| `false` |
 | borderColor | 边框颜色 | String | `'$line'` | - |
 | activeBorderColor | 聚焦时的边框颜色 | String | `'$line'` | - |
-| bgColor | 背景颜色 | String | `''`（默认主题 info 色） | - |
-| activeBgColor | 聚焦时的背景颜色 | String | `''`（默认主题 info 色） | - |
-| disabledBgColor | 禁用时的背景颜色 | String | `''`（默认主题 disabled 色） | - |
-| textColor | 文本颜色 | String | `''`（默认主题 text 色） | - |
-| disabledTextColor | 禁用时的文本颜色 | String | `''`（默认主题 disabledText 色） | - |
-| iconColor | 前后置图标颜色 | String | `''`（默认主题 text 色） | - |
-| borderRadius | 圆角大小 | String \| Number | `''`（默认 8px × 圆角乘数） | - |
+| bgColor | 背景颜色 | String | `$info` | - |
+| activeBgColor | 聚焦时的背景颜色 | String | `$info` | - |
+| disabledBgColor | 禁用时的背景颜色 | String | `$disabled` | - |
+| textColor | 文本颜色 | String | `$text` | - |
+| disabledTextColor | 禁用时的文本颜色 | String | `$disabledText` | - |
+| iconColor | 前后置图标颜色 | String | `$text` | - |
+| borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | borderWidth | 边框宽度 | String \| Number | `1px` | - |
 | padding | 内边距 | String | `8px 13px` | - |
-| textSize | 文本字体大小 | String \| Number | `''`（默认 14px × 字体乘数） | - |
+| textSize | 文本字体大小 | String \| Number | `$14` | - |
 | textFont | 文本字体 | String | `''` | - |
 | align | 文本对齐方式 | String | `left` | `left` \| `center` \| `right` |
 | prefixIcon | 前置图标名称，存在 prefix 插槽时不显示 | String | `''` | - |
 | suffixIcon | 后置图标名称，存在 suffix 插槽时不显示 | String | `''` | - |
-| iconSize | 图标大小 | String \| Number | `''`（默认 16px × 字体乘数） | - |
+| iconSize | 图标大小 | String \| Number | `$16` | - |
 | inputStyle | 自定义输入框本体样式 | UTSJSONObject \| String | `''` | - |
 | inputClass | 输入框本体的外部类 | String | `''` | - |
 | prefixIconStyle | 自定义前置图标样式 | UTSJSONObject \| String | `''` | - |

@@ -1,5 +1,5 @@
 # sn-dateformat
-> 旧版组件：sn-dateformat.md
+
 **旧版状态**：v1.1.6 已有日期格式化组件，支持 date / format / threshold / locale 与文本样式属性。
 **差异明细**：
 

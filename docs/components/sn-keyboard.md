@@ -78,9 +78,9 @@ const value = ref<string>('')
 | maskClose | 点击遮罩是否关闭 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.3` | - |
 | preventBack | 是否阻止返回键关闭 | Boolean | `true` | `true` \| `false` |
-| aniTime | 弹层动画时长，支持 `$` 简写，空时取动画长时长 | String \| Number | `''` | - |
+| aniTime | 弹层动画时长，支持 `$` 简写 | String \| Number | `$long` | - |
 | drawerCustomStyle | 自定义内部抽屉弹层样式 | UTSJSONObject \| String | `''` | - |
-| drawerHeight | 弹层高度，空时按键盘类型自动设置（number/idcard/int 为 44%，password 为 52%，car 汉字模式为 60% 等） | String \| Number | `''` | - |
+| drawerHeight | 弹层高度，按键盘类型自动设置（number/idcard/int 为 44%，password 为 52%，car 汉字模式为 60% 等） | String \| Number | - | - |
 | padding | 弹层内边距 | String | `8px 6px 30px 6px` | - |
 | confirmType | 完成键的功能色 | String | `primary` | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | confirmLevel | 完成键的颜色等级 | String | `first` | `first` \| `second` \| `third` \| `least` |

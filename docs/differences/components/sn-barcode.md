@@ -1,5 +1,5 @@
 # sn-barcode
-> 旧版组件：sn-e-barcode.md
+
 **旧版状态**：v1 为独立扩展插件 sn-e-barcode（Android 用 Zxing、Web 用 bwip-js 原生生成，格式全量透传 Zxing），v2 更名收编为框架内置组件并改为纯 Canvas 自绘，格式收敛为 9 种一维码。
 **差异明细**：
 - 更名：组件 `sn-e-barcode` → `sn-barcode`（由扩展组件收编为基础组件）

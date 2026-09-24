@@ -23,9 +23,9 @@ let isUrl = snu.isURL('https://example.com')
 | `Basic` | `basic.uts` | 提供节流、防抖与数值范围约束等基础控制能力，服务于高频交互与数值收窄场景 | [Basic](/libs/utils/basic) |
 | `Easing` | `easing.uts` | 提供缓动函数集合，供动画与过渡的插值计算使用 | [Easing](/libs/utils/easing) |
 | `ObjectUtils` | `object.uts` | 提供对象与数组的通用处理能力，覆盖数值格式化、拷贝、类型判断与元素 dataset 读写 | [ObjectUtils](/libs/utils/object) |
-| `System` | `platform.uts` | 封装系统级能力（链接、提示、剪贴板、权限、主题等），屏蔽各平台差异 | [System](/libs/utils/platform) |
+| `System` | `platform.uts` | 封装系统级能力（链接、提示、剪贴板、主题等），屏蔽各平台差异 | [System](/libs/utils/platform) |
 | `Sort` | `sort.uts` | 提供常用排序算法的实现，供列表数据排序使用 | [Sort](/libs/utils/sort) |
 | `Text` | `text.uts` | 提供文本处理能力，覆盖命名风格转换、金额处理、敏感信息脱敏与数字分段 | [Text](/libs/utils/text) |
 | `Ui` | `ui.uts` | 提供界面开发辅助能力，覆盖单位换算、几何计算、节点查找与全局弹窗调用 | [Ui](/libs/utils/ui) |
-| `Perm` | `perm.uts` | 负责权限申请提示气泡的内容配置、样式配置与状态监听 | [Perm](/libs/utils/permission) |
+| `Perm` | `perm.uts` | 负责系统权限的检查、申请、设置页跳转，以及权限提示气泡的内容配置、样式配置和申请监听 | [Perm](/libs/utils/permission) |
 | `Verify` | `verify.uts` | 提供常见数据格式的合法性校验能力，覆盖日期、网络、号码、证件等类型 | [Verify](/libs/utils/verify) |

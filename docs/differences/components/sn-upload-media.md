@@ -1,5 +1,5 @@
 # sn-upload-media
-> 旧版组件：sn-upload-media.md
+
 **旧版状态**：v1 已内置基础版（sn-upload-media）与 uniCloud 版（sn-upload-media-unicloud），v2 功能与属性基本一致，主要差异在属性类型放宽与默认值调整。
 **差异明细**：
 - 类型变化：`customStyle` / `customItemStyle` 旧 UTSJSONObject → 新 UTSJSONObject | String

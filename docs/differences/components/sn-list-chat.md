@@ -1,7 +1,5 @@
 # sn-list-chat
 
-> 旧版组件：sn-list-chat.md
-
 **旧版状态**：v1 提供聊天列表项 `sn-list-chat`，在 `sn-list-item` 基础上针对会话场景调整排版（头像 + 标题 + 摘要 + 时间/未读数），支持 `avatarConfig`、`showAvatar`、`title`、`note` 等属性与 `header` 插槽，需配合 `sn-list` 父容器使用。
 
 **删除结论**：v2 **已移除** `sn-list-chat` 组件，能力由 `sn-cell` 组合插槽承接。

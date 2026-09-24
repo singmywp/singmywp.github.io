@@ -39,13 +39,13 @@
 | --- | --- | --- | --- | --- |
 | mode | 缺省页模式 | String | `data` | 见上方多模式表 |
 | text | 缺省页提示文本 | String | `''` | - |
-| textSize | 提示文本字体大小，支持 `$` 前缀按字体乘数缩放，空值时为 14px × 字体乘数 | String \| Number | `''` | - |
-| textColor | 提示文本颜色 | String | `''`（空值时为 `$lineText`） | - |
+| textSize | 提示文本字体大小，支持 `$` 前缀按字体乘数缩放 | String \| Number | `$14` | - |
+| textColor | 提示文本颜色 | String | `$lineText` | - |
 | themeColor | 缺省插图主题色 | String | `$primary` | - |
 | hairColor | 缺省插图人物头发颜色 | String | `#483029` | - |
 | clothesColor | 缺省插图人物上衣颜色 | String | `#EDA20C` | - |
-| trousersColor | 缺省插图人物裤子颜色，空值时同 `themeColor` | String | `''` | - |
-| shoesColor | 缺省插图人物鞋子颜色，空值时同 `themeColor` | String | `''` | - |
+| trousersColor | 缺省插图人物裤子颜色，同 `themeColor` | String | - | - |
+| shoesColor | 缺省插图人物鞋子颜色，同 `themeColor` | String | - | - |
 | itemColor | 缺省插图物品颜色 | String | `#483029` | - |
 | skinColor | 缺省插图人物皮肤颜色 | String | `#ffcda5` | - |
 | elementColor | 缺省插图元素颜色 | String | `#ffffff` | - |

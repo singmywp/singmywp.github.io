@@ -1,7 +1,5 @@
 # sn-waterfall-item
 
-> 旧版组件：sn-waterfall-item.md
-
 **旧版状态**：v1 提供瀑布流条目 `sn-waterfall-item`（配合 `sn-waterfall` 使用），属性为 `index`（子项索引，不可重复）、`height`（子项高度，为空则自动计算）、`imgSrc`（图片路径）、`bgColor`、`padding`、`borderRadius`、`imgBorderRadius` 与 `customStyle` / `customImageStyle`；内部以 `mode="widthFix"` 的 `<image>` + `@load` 回调测量高度。
 
 **删除结论**：v2 **已移除** `sn-waterfall-item` 组件，能力由 `sn-waterflow` 的作用域插槽承接。

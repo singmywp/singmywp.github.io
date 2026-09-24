@@ -32,8 +32,8 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | :--- | :--- | :--- | :--- | :--- |
 | mode | 占位间隔模式 | GapMode | `custom` | `custom` \| `statusbar` \| `safearea` |
-| height | 占位间隔高度（仅 `mode` 为 `custom` 时生效），支持 `$` 简写；为空时取 20×内间距乘数 | String \| Number | - | - |
-| bgColor | 占位间隔背景颜色，支持 `$` 功能色简写；为空时透明 | String | - | - |
+| height | 占位间隔高度（仅 `mode` 为 `custom` 时生效），支持 `$` 简写 | String \| Number | `$20` | - |
+| bgColor | 占位间隔背景颜色，支持 `$` 功能色简写 | String | `var(--sn-transparent)` | - |
 | borderRadius | 占位间隔圆角大小，支持 `$` 简写 | String \| Number | - | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
 

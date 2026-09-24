@@ -1,7 +1,5 @@
 # sn-actionsheet
 
-> 旧版组件：sn-actionsheet.md
-
 **旧版状态**：v1.1.6 已有 Actionsheet 操作菜单，底部弹出、`actions` 配置操作项，通过 `ref` 调用 `open`/`close`/`cancel` 方法，该交互骨架在 v2 中保留。
 
 **差异明细**：

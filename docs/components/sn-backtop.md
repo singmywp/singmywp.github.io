@@ -50,11 +50,11 @@
 | type | 主题样式类型 | String | `primary` | `info` \| `primary` \| `success` \| `error` \| `warning` |
 | level | 等级，与 `type` 共同推导背景色和图标色 | String | `first` | `first` \| `second` \| `third` \| `least` |
 | bgColor | 自定义背景颜色，设置后覆盖 `type` 和 `level` 的主题色 | String | `''` | - |
-| iconColor | 图标颜色，为空时按 `type` / `level` 配色矩阵推导 | String | `''` | - |
-| iconSize | 图标大小（支持 `$` 简写），为空时为 20px × 字体乘数 | String \| Number | `''` | - |
+| iconColor | 图标颜色，按 `type` / `level` 配色矩阵推导 | String | - | - |
+| iconSize | 图标大小（支持 `$` 简写） | String \| Number | `$20` | - |
 | size | 按钮尺寸（支持 `$` 简写），圆形按钮圆角为尺寸的一半 | String \| Number | `50px` | - |
 | zIndex | 按钮 `z-index` 层级 | Number | `991` | - |
-| aniTime | 显示/隐藏过渡动画时长（支持 `$` 简写），为空时使用框架标准动画时长 | String \| Number | `''` | - |
+| aniTime | 显示/隐藏过渡动画时长（支持 `$` 简写） | String \| Number | `$normal` | - |
 | top | 滚动距离超过该值（单位 px）时显示按钮 | Number | `400` | - |
 | right | 按钮距右边界距离（单位 px） | Number | `30` | - |
 | bottom | 按钮距下边界距离（单位 px） | Number | `100` | - |

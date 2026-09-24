@@ -27,12 +27,12 @@
 | icon | 图标模式下头像内部图标名 | String | `''` | - |
 | size | 头像尺寸（外框边长），支持 `$` 前缀按间距乘数缩放 | String \| Number | `40px` | - |
 | textSize | 文本模式下内部文本大小，支持 `$` 前缀按字体乘数缩放 | String \| Number | `25px` | - |
-| textColor | 文本模式下文本颜色，空值时亮色模式为 `$infoDark`、暗黑模式为 `$dark` | String | `''` | - |
+| textColor | 文本模式下文本颜色，亮色模式为 `$infoDark`、暗黑模式为 `$dark` | String | - | - |
 | iconSize | 图标模式下内部图标大小，支持 `$` 前缀按字体乘数缩放 | String \| Number | `25px` | - |
-| iconColor | 图标模式下图标颜色，空值时同 `textColor` 规则 | String | `''` | - |
+| iconColor | 图标模式下图标颜色，同 `textColor` 规则 | String | - | - |
 | bgColor | 头像背景颜色 | String | `$info` | - |
 | shape | 头像形状，`circle` 时圆角强制为尺寸的一半 | String | `square` | `square` \| `circle` |
-| borderRadius | 头像圆角大小（仅 `shape="square"` 时生效），空值时为 4px × 圆角乘数 | String \| Number | `''` | - |
+| borderRadius | 头像圆角大小（仅 `shape="square"` 时生效） | String \| Number | `$4` | - |
 | lazyLoad | 图片懒加载（只针对 page 与 scroll-view 下的 image 有效） | Boolean | `false` | `true` \| `false` |
 | enablePreview | 图片模式下启用点击预览大图 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
@@ -51,11 +51,11 @@
 | spacing | 头像之间的间距（仅 `mode="spread"` 时生效），支持 `$` 前缀按外间距乘数缩放 | String \| Number | `5px` | - |
 | max | 显示的最大头像数量，超过该数量的以 "+N" 形式显示，`-1` 表示不限制 | Number | `-1` | - |
 | mode | 头像组布局模式，`heap` 为堆叠（重叠量为头像尺寸的 40%），`spread` 为分散 | String | `heap` | `heap` \| `spread` |
-| borderRadius | 头像圆角大小（仅 `shape="square"` 时生效），空值时为 4px × 圆角乘数 | String \| Number | `''` | - |
+| borderRadius | 头像圆角大小（仅 `shape="square"` 时生效） | String \| Number | `$4` | - |
 | textSize | 头像中文本的大小 | String \| Number | `20px` | - |
 | iconSize | 头像中图标的大小 | String \| Number | `20px` | - |
-| textColor | 头像中文本的颜色，空值时亮色模式为 `$infoDark`、暗黑模式为 `$dark` | String | `''` | - |
-| iconColor | 头像中图标的颜色，空值时同 `textColor` 规则 | String | `''` | - |
+| textColor | 头像中文本的颜色，亮色模式为 `$infoDark`、暗黑模式为 `$dark` | String | - | - |
+| iconColor | 头像中图标的颜色，同 `textColor` 规则 | String | - | - |
 | bgColor | 头像的背景颜色 | String | `$info` | - |
 | randomBgColor | 是否随机生成头像背景颜色（从五种功能色 Light 系色板随机取色，文字颜色自动配套） | Boolean | `false` | `true` \| `false` |
 | shape | 头像的形状 | String | `circle` | `circle` \| `square` |

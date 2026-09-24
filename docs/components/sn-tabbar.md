@@ -88,20 +88,20 @@ const data = [...] as SnTabbarItem[]
 | imageSize | 子项图片大小（`$` 简写乘字体乘数） | String \| Number | `''` | - |
 | padding | 导航栏内边距（`$` 简写乘内边距乘数） | String \| Number | `'$10'` | - |
 | margin | 导航栏外边距 | String \| Number | `'0px'` | - |
-| bgColor | 导航栏背景颜色，为空时取主题 `$front` | String | `''` | - |
-| itemBorderRadius | 子项圆角大小，不传时组件根据导航栏圆角自动计算最合适值 | String \| Number | `''` | - |
+| bgColor | 导航栏背景颜色 | String | `$front` | - |
+| itemBorderRadius | 子项圆角大小，组件根据导航栏圆角自动计算最合适值 | String \| Number | - | - |
 | itemPadding | 子项内边距 | String \| Number | `'0px'` | - |
 | itemSpacing | 各子项之间的间距 | String \| Number | `'0px'` | - |
-| itemBgColor | 子项背景颜色，为空时为透明 | String | `''` | - |
-| itemActiveBgColor | 选中子项的背景颜色，为空时为透明 | String | `''` | - |
-| border | 导航栏边框，不传时显示 1px 顶部分隔线（`--sn-line`） | String | `''` | - |
+| itemBgColor | 子项背景颜色 | String | `var(--sn-transparent)` | - |
+| itemActiveBgColor | 选中子项的背景颜色 | String | `var(--sn-transparent)` | - |
+| border | 导航栏边框 | String | `1px solid var(--sn-line)` | - |
 | borderRadius | 导航栏圆角大小 | String \| Number | `'0'` | - |
-| textColor | 子项文本颜色，为空时取主题 `$text` | String | `''` | - |
-| textSize | 子项文本大小，为空时取 `$11` | String \| Number | `''` | - |
-| activeTextColor | 选中子项文本颜色，为空时取主题 `$primary` | String | `''` | - |
-| iconColor | 子项图标颜色，为空时取主题 `$text` | String | `''` | - |
-| iconSize | 子项图标大小，为空时取 `$22` | String \| Number | `''` | - |
-| activeIconColor | 选中子项图标颜色，为空时取主题 `$primary` | String | `''` | - |
+| textColor | 子项文本颜色 | String | `$text` | - |
+| textSize | 子项文本大小 | String \| Number | `$11` | - |
+| activeTextColor | 选中子项文本颜色 | String | `$primary` | - |
+| iconColor | 子项图标颜色 | String | `$text` | - |
+| iconSize | 子项图标大小 | String \| Number | `$22` | - |
+| activeIconColor | 选中子项图标颜色 | String | `$primary` | - |
 | disabled | 是否禁用整个导航栏 | Boolean | `false` | `true` \| `false` |
 | hoverStyle | 子项按压态样式 | UTSJSONObject \| String | `'background: var(--sn-info);'` | - |
 | hoverStartTime | 按压生效延迟（单位 ms） | Number | `50` | - |
@@ -129,5 +129,41 @@ const data = [...] as SnTabbarItem[]
 | 名称 | 说明 |
 | --- | --- |
 | tab1 ~ tab10 | 第 n 个子页面，须与 data 项一 一对应 |
+
+## sn-tabbar-item 属性 <Badge type="warning" text="内部使用" />
+
+`sn-tabbar` 的子项组件，由 `data` 自动渲染，无需手动引入；下列属性均由 `sn-tabbar` 按组配置逐项下发。
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| --- | --- | --- | --- | --- |
+| data | 该项的数据对象 | [SnTabbarItem](/api/types/component#sntabbaritem) | `null` | - |
+| index | 该项在 `data` 中的索引 | Number | `0` | - |
+| active | 是否为当前选中项 | Boolean | `false` | `true` \| `false` |
+| disabled | 是否禁用该项（禁用后不触发 click） | Boolean | `false` | `true` \| `false` |
+| isFirst | 是否为第一项（首尾圆角与间距处理用） | Boolean | `false` | `true` \| `false` |
+| isLast | 是否为最后一项（首尾圆角与间距处理用） | Boolean | `false` | `true` \| `false` |
+| itemPadding | 子项内边距（支持 `$` 简写） | String | `0px` | - |
+| itemBorderRadius | 子项圆角（支持 `$` 简写） | String | `0px` | - |
+| itemBgColor | 子项背景颜色 | String | `''` | - |
+| itemActiveBgColor | 选中子项背景颜色 | String | `''` | - |
+| textColor | 子项文本颜色 | String | `''` | - |
+| activeTextColor | 选中子项文本颜色 | String | `''` | - |
+| textSize | 子项文本大小（支持 `$` 简写） | String | `''` | - |
+| iconColor | 子项图标颜色 | String | `''` | - |
+| activeIconColor | 选中子项图标颜色 | String | `''` | - |
+| iconSize | 子项图标大小（支持 `$` 简写） | String | `''` | - |
+| imageSize | 子项图片大小（`data` 项设置 `image` 时生效，支持 `$` 简写） | String | `35px` | - |
+| itemSpacingHalf | 子项间距的一半（首尾对齐用，支持 `$` 简写） | String | `0px` | - |
+| hoverStyle | 子项按压态样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
+| hoverStartTime | 按压生效延迟（单位 ms） | Number | `50` | - |
+| hoverStayTime | 按压保持时长（单位 ms） | Number | `0` | - |
+| hoverTransTime | 按压过渡时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `''` | - |
+| hoverStopPropagation | 按压事件是否阻止冒泡 | Boolean | `false` | `true` \| `false` |
+
+## sn-tabbar-item 事件 <Badge type="warning" text="内部使用" />
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| click | (index: number) => Void | 点击子项时触发，`index` 为该项在 `data` 中的索引（禁用项不触发） |
 
 <DemoPhone name="sn-tabbar" />

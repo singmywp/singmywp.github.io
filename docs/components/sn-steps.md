@@ -69,10 +69,10 @@
 | type | 展示形态 | String | `'default'` | `default` \| `dot` |
 | status | 当前步骤（激活步骤）的状态 | String | `'process'` | `wait` \| `finish` \| `process` \| `error` |
 | selectable | 是否允许点击步骤切换 | Boolean | `true` | `true` \| `false` |
-| activeColor | 激活色，为空时取主题 `$primary` | String | `''` | - |
+| activeColor | 激活色 | String | `$primary` | - |
 | circleSize | 圆形节点大小 | String \| Number | `'$22'` | - |
-| textSize | 标题文字大小，为空时 14 × fontsizeFactor | String \| Number | `''` | - |
-| contentSize | 内容文字大小，为空时 12 × fontsizeFactor | String \| Number | `''` | - |
+| textSize | 标题文字大小 | String \| Number | `$14` | - |
+| contentSize | 内容文字大小 | String \| Number | `$12` | - |
 | stepStyle | 自定义步骤项样式 | UTSJSONObject \| String | `''` | - |
 | stepClass | 步骤项外部样式类 | String | `''` | - |
 | titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |
@@ -102,8 +102,8 @@
 | --- | --- | --- | --- | --- |
 | title | 步骤标题 | String | `''` | - |
 | content | 步骤内容 | String | `''` | - |
-| icon | 自定义图标名，不传时 finish 显示 check-line、error 显示 close-line | String | `''` | - |
-| status | 单独覆盖该步骤的状态，为空时由索引与容器 status 自动推导 | String | `''` | `wait` \| `finish` \| `process` \| `error` |
+| icon | 自定义图标名，finish 显示 check-line、error 显示 close-line | String | - | - |
+| status | 单独覆盖该步骤的状态，由索引与容器 status 自动推导 | String | - | `wait` \| `finish` \| `process` \| `error` |
 | stepClass | 步骤项外部样式类（与容器的 stepClass 合并） | String | `''` | - |
 | titleClass | 标题外部样式类（与容器的 titleClass 合并） | String | `''` | - |
 | contentClass | 内容外部样式类（与容器的 contentClass 合并） | String | `''` | - |

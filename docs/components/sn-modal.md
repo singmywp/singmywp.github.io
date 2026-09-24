@@ -8,7 +8,22 @@
 - 弹出层类组件，必须放在 `sn-page` 中使用（作为 `sn-page` 的子节点或页面根节点），组件依赖 `sn-page` 注入的 CSS 变量
 - 内容区内置 scroll-view，超过窗口高度 80% 时自动限高滚动
 - 通过 ref 绑定组件后调用 `open` / `close` 方法控制显隐；`confirm` / `cancel` 事件在点击对应按钮时触发，按钮点击后自动关闭模态框
-- 与 API `snu.showModal` 的区别：组件需先放置到页面并用 ref 调用，但支持三个插槽自由定制内容，适用于特殊场景；一般场景用 API 即可
+
+::: tip 建议直接使用 API
+推荐使用 [`snu.showModal`](/libs/utils/ui#snu-showmodal)：
+
+```typescript
+snu.showModal({
+	title: '提示',
+	content: '确定执行此操作吗？',
+	success: (confirm, cancel) => {}
+})
+```
+
+API 无需在页面放置组件、无需绑定 `ref`，`import { snu } from '@/uni_modules/sinle-ui'` 后即可在任意位置调用，常用配置字段与组件 props 一致，回调结果通过 `success` 返回。
+
+组件与 API 的**唯一差异**是组件支持 `header` / `content` / `actions` 三个插槽，可自由替换标题、内容与操作区；不需要插槽定制时，绝大多数场景使用 API 更为方便易用。
+:::
 
 ```vue
 <template>
@@ -55,28 +70,28 @@
 | --- | --- | --- | --- | --- |
 | title | 模态框标题 | String | `''` | - |
 | titleAlign | 标题对齐方式 | String | `center` | `left` \| `center` \| `right` |
-| titleSize | 标题字体大小，空值时为 `$17` | String \| Number | `''` | - |
+| titleSize | 标题字体大小 | String \| Number | `$17` | - |
 | titleFont | 标题字体 | String | `''` | - |
-| titleColor | 标题颜色，支持 `$` 简写主题色，空值时使用主题标题色 | String | `''` | - |
-| bgColor | 模态框背景颜色，支持 `$` 简写主题色，空值时使用主题前景色 `$front` | String | `''` | - |
-| borderRadius | 模态框圆角大小，空值时为 `$12` | String \| Number | `''` | - |
+| titleColor | 标题颜色，支持 `$` 简写主题色 | String | `$title` | - |
+| bgColor | 模态框背景颜色，支持 `$` 简写主题色 | String | `$front` | - |
+| borderRadius | 模态框圆角大小 | String \| Number | `$12` | - |
 | content | 模态框内容 | String | `''` | - |
 | contentAlign | 内容对齐方式 | String | `center` | `left` \| `center` \| `right` |
-| contentSize | 内容字体大小，空值时为 `$15` | String \| Number | `''` | - |
-| contentColor | 内容颜色，支持 `$` 简写主题色，空值时使用主题正文色 | String | `''` | - |
+| contentSize | 内容字体大小 | String \| Number | `$15` | - |
+| contentColor | 内容颜色，支持 `$` 简写主题色 | String | `$text` | - |
 | contentFont | 内容字体 | String | `''` | - |
 | buttonType | 按钮类型，`embed` 为底部嵌入式文字按钮，`float` 为浮动式 sn-button 并排展示 | String | `embed` | `embed` \| `float` |
-| buttonBorder | 嵌入式按钮分隔边框样式，颜色支持 `$` 简写主题色，空值时为 `0.5px solid $line` | String | `''` | - |
+| buttonBorder | 嵌入式按钮分隔边框样式，颜色支持 `$` 简写主题色 | String | `0.5px solid $line` | - |
 | confirmText | 确定按钮文本 | String | `确定` | - |
-| confirmTextColor | 确定按钮文本颜色，支持 `$` 简写主题色，空值时使用主题 `$primaryDark` 色 | String | `''` | - |
-| confirmTextSize | 确定按钮文本大小，空值时为 `$16` | String \| Number | `''` | - |
+| confirmTextColor | 确定按钮文本颜色，支持 `$` 简写主题色 | String | `$primaryDark` | - |
+| confirmTextSize | 确定按钮文本大小 | String \| Number | `$16` | - |
 | showCancel | 是否显示取消按钮 | Boolean | `true` | `true` \| `false` |
 | showConfirm | 是否显示确定按钮 | Boolean | `true` | `true` \| `false` |
 | cancelText | 取消按钮文本 | String | `取消` | - |
-| cancelTextColor | 取消按钮文本颜色，支持 `$` 简写主题色，空值时使用主题正文色 | String | `''` | - |
-| cancelTextSize | 取消按钮文本大小，空值时为 `$16` | String \| Number | `''` | - |
+| cancelTextColor | 取消按钮文本颜色，支持 `$` 简写主题色 | String | `$text` | - |
+| cancelTextSize | 取消按钮文本大小 | String \| Number | `$16` | - |
 | position | 弹出位置，弹出动画随位置变化 | String | `center` | `center` \| `top` \| `bottom` \| `left` \| `right` |
-| aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，空值时使用框架长动画时长 | String \| Number | `''` | `$long` \| `$normal` \| `$short` \| 数值 |
+| aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放 | String \| Number | `$long` | `$long` \| `$normal` \| `$short` \| 数值 |
 | maskClose | 点击遮罩是否关闭模态框 | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用操作按钮，禁用后点击无效且颜色变为禁用色 | Boolean | `false` | `true` \| `false` |
 | preventBack | 是否阻止返回键关闭模态框 | Boolean | `false` | `true` \| `false` |

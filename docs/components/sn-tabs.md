@@ -83,17 +83,17 @@ const tabs = [
 | mode | 指示线动画模式 | String | `'swipe'` | `swipe` \| `push` |
 | width | 标签宽度 | String | `'100%'` | - |
 | height | 标签高度 | String | `'40px'` | - |
-| bgColor | 标签背景颜色，为空时取主题 `$front` | String | `''` | - |
-| textColor | 标签文本颜色，为空时取主题 `$title` | String | `''` | - |
-| textSize | 标签文本大小，为空时 14 × fontsizeFactor | String \| Number | `''` | - |
-| borderRadius | 标签圆角，为空时 12 × radiusFactor | String \| Number | `''` | - |
-| disabledTextColor | 禁用标签文本颜色，为空时取主题 `$disabledText` | String | `''` | - |
-| activeTextColor | 选中标签文本颜色，为空时取主题 `$primary` | String | `''` | - |
+| bgColor | 标签背景颜色 | String | `$front` | - |
+| textColor | 标签文本颜色 | String | `$title` | - |
+| textSize | 标签文本大小 | String \| Number | `$14` | - |
+| borderRadius | 标签圆角 | String \| Number | `$12` | - |
+| disabledTextColor | 禁用标签文本颜色 | String | `$disabledText` | - |
+| activeTextColor | 选中标签文本颜色 | String | `$primary` | - |
 | itemPadding | 标签内边距（可滚动时作为左右内边距） | String | `'12px'` | - |
-| lineColor | 指示线颜色，为空时取主题 `$primary` | String | `''` | - |
-| lineWidth | 指示线宽度，为空时取标签宽度的 60% | String | `''` | - |
+| lineColor | 指示线颜色 | String | `$primary` | - |
+| lineWidth | 指示线宽度，取标签宽度的 60% | String | - | - |
 | lineHeight | 指示线高度 | String | `'2px'` | - |
-| aniTime | 标签及指示线动画时长（单位 ms，`$` 简写乘动画乘数），为空时取 `$snui.aniTimeNormal` | String \| Number | `''` | - |
+| aniTime | 标签及指示线动画时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `$normal` | - |
 | itemStyle | 选中标签样式 | UTSJSONObject \| String | `''` | - |
 | itemClass | 选中标签外部样式类 | String | `''` | - |
 | textStyle | 标签文本样式 | UTSJSONObject \| String | `''` | - |

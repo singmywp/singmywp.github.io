@@ -1,9 +1,5 @@
 # 颜色库（Color）差异
 
-> 旧版参考：旧 `libs/color/`（`$snui.libs.color`，基于 `lime-color`）
->
-> 新版参考：`E:\temp\docs\libs\color\`（`ColorLib` / `TinyColor` 独立导出）
-
 ## 使用方式变化
 
 | 项目 | 旧版 | 新版 |

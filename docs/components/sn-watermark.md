@@ -37,7 +37,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| content | 水印文本内容，支持 `\n` 换行；为空时显示 `SinleUI` | String | `''` | - |
+| content | 水印文本内容，支持 `\n` 换行 | String | `SinleUI` | - |
 | color | 水印文字颜色 | String | `rgba(0, 0, 0)` | - |
 | fontSize | 水印字号，数字单位为 px，支持 `$` 动态尺寸语法 | String \| Number | `$24` | - |
 | letterSpacing | 水印文字字间距，数字单位为 px | String \| Number | `2` | - |

@@ -54,8 +54,8 @@ function onLinkClick(e: SnMarkdownLinkEvent): void {
 | --- | --- | --- | --- | --- |
 | text | Markdown 源文本 | String | `''` | - |
 | baseFontSize | 基础字号（px），标题 / 代码等按比例缩放 | String \| Number | `15` | - |
-| textColor | 正文颜色，支持 `$主题色` 简写，留空使用主题文字色 | String | `''` | - |
-| linkColor | 链接颜色，支持 `$主题色` 简写，留空使用主题主色 | String | `''` | - |
+| textColor | 正文颜色，支持 `$主题色` 简写 | String | `$text` | - |
+| linkColor | 链接颜色，支持 `$主题色` 简写 | String | `$primary` | - |
 | lineHeight | 行高倍数 | String \| Number | `1.6` | - |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |

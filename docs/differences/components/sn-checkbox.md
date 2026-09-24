@@ -1,7 +1,5 @@
 # sn-checkbox
 
-> 旧版组件：sn-checkbox.md
-
 **旧版状态**：v1.1.6 已提供 `sn-checkbox-group` / `sn-checkbox` / `sn-checkbox-tag` 三组件，索引数组多选，组级配置集中下发。
 
 **差异明细**：

@@ -26,8 +26,8 @@
 | href | 链接跳转地址，为空时点击触发 `error` 事件 | String | `''` | - |
 | prefixIcon | 链接前缀图标名称 | String | `''` | - |
 | suffixIcon | 链接后缀图标名称 | String | `''` | - |
-| color | 链接文本与图标颜色，空时取主题 `primaryDark` | String | `''` | - |
-| size | 链接文本大小，空时为 14px × 字体乘数 | String \| Number | `''` | - |
+| color | 链接文本与图标颜色 | String | `$primaryDark` | - |
+| size | 链接文本大小 | String \| Number | `$14` | - |
 | underline | 是否显示下划线 | Boolean | `false` | `true` \| `false` |
 | hoverBgColor | 按压时背景颜色，设置后显示圆角背景点击态 | String | `''` | - |
 | hoverTextColor | 按压时文字与图标颜色 | String | `''` | - |

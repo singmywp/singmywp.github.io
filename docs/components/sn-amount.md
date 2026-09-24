@@ -63,7 +63,7 @@
 | separator-digits | 千分位分隔位数 | Number | `3` | - |
 | to-upper | 是否显示中文大写金额 | Boolean | `false` | `true` \| `false` |
 | type | 语义配色类型（与 sn-text 一致），可被 `color` 覆盖 | String | `text` | `title` \| `text` \| `text-light` \| `primary` \| `info` \| `success` \| `warning` \| `error` |
-| font-size | 统一字号，支持 `$` 前缀动态尺寸；为空时默认 14px × fontsizeFactor（title 为 16px × fontsizeFactor） | String \| Number | `''` | - |
+| font-size | 统一字号，支持 `$` 前缀动态尺寸；由 `type` 决定（title 为 `$16`、其余 `$14`） | String \| Number | - | - |
 | currency-font-size | 货币符号字号，优先于 font-size | String \| Number | `''` | - |
 | int-font-size | 整数部分字号，优先于 font-size | String \| Number | `''` | - |
 | decimal-font-size | 小数部分（含小数点）字号，优先于 font-size | String \| Number | `''` | - |

@@ -1,7 +1,5 @@
 # sn-list-item
 
-> 旧版组件：sn-list-item.md
-
 **旧版状态**：v1 提供列表项 `sn-list-item`，支持 `title` / `note` 双行文本、`avatarConfig` 头像配置、`icon` / `iconSize` / `iconColor` 图标、`showAvatar` / `showIcon` 开关、`disabled` 禁用态、`ellipsis` 行数、`arrow` 右箭头，以及 `titleColor` / `noteColor` / `disabledTextColor` 等颜色属性与 `header` 插槽；需要配合 `sn-list` 父容器使用。
 
 **删除结论**：v2 **已移除** `sn-list-item` 组件，能力由 `sn-cell` 承接。

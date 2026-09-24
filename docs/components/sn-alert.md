@@ -21,15 +21,15 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | text | 警告信息文本内容（未提供默认插槽内容时显示） | String | `''` | - |
-| icon | 左侧图标名，空值时按 `type` 自动选择默认图标 | String | `''` | - |
+| icon | 左侧图标名，按 `type` 自动选择默认图标 | String | - | - |
 | type | 警告信息主题样式类型 | String | `info` | `info` \| `primary` \| `success` \| `error` \| `warning` |
 | effect | 显示效果，`light` 为浅色，`dark` 为深色 | String | `light` | `light` \| `dark` |
-| bgColor | 背景颜色，空值时按 `type` 与 `effect` 取主题色（light 取 `{type}Light`，dark 取 `{type}`） | String | `''` | - |
-| textColor | 文本颜色，空值时按 `type` 与 `effect` 取主题配对色（`info` 类型取 `$text`） | String | `''` | - |
-| textSize | 文本大小，支持 `$` 前缀按字体乘数缩放，空值时为 14px × 字体乘数 | String \| Number | `''` | - |
-| iconColor | 图标颜色，空值时同 `textColor` | String | `''` | - |
-| iconSize | 图标大小，支持 `$` 前缀按字体乘数缩放，空值时为 16px × 字体乘数 | String \| Number | `''` | - |
-| borderRadius | 圆角大小，支持 `$` 前缀按圆角乘数缩放，空值时为 8px × 圆角乘数 | String \| Number | `''` | - |
+| bgColor | 背景颜色，按 `type` 与 `effect` 取主题色（light 取 `{type}Light`，dark 取 `{type}`） | String | - | - |
+| textColor | 文本颜色，按 `type` 与 `effect` 取主题配对色（`info` 类型取 `$text`） | String | - | - |
+| textSize | 文本大小，支持 `$` 前缀按字体乘数缩放 | String \| Number | `$14` | - |
+| iconColor | 图标颜色，同 `textColor` | String | - | - |
+| iconSize | 图标大小，支持 `$` 前缀按字体乘数缩放 | String \| Number | `$16` | - |
+| borderRadius | 圆角大小，支持 `$` 前缀按圆角乘数缩放 | String \| Number | `$8` | - |
 | showIcon | 是否显示图标 | Boolean | `true` | `true` \| `false` |
 | center | 文字是否居中显示 | Boolean | `false` | `true` \| `false` |
 | closable | 是否显示关闭按钮，点击后组件隐藏并触发 `close` 事件 | Boolean | `false` | `true` \| `false` |

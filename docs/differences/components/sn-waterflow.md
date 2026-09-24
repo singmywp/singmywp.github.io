@@ -1,5 +1,5 @@
 # sn-waterflow
-> 旧版组件：sn-waterfall.md（v2 更名 waterfall → waterflow 并整体重构）
+
 **旧版状态**：v1.1.6 的 `sn-waterfall` 为插槽拼装式瀑布流（子组件 `sn-waterfall-item`，支持列数与间距配置），官方文档明确标注"不完善、不支持虚拟列表、不建议正式使用、正在重构中"；v2 更名为 `sn-waterflow` 并基于官方 `waterflow` 组件与 Web 端自研虚拟滚动完全重写。
 **差异明细**：
 

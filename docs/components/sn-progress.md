@@ -38,13 +38,13 @@
 | v-model | 绑定进度值，范围 0 ~ 100（超出自动夹紧） | Number | `0` | - |
 | showValueText | 是否显示进度值文本 | Boolean | `false` | `true` \| `false` |
 | valueTextPosition | 进度值文本位置 | String | `outside` | `inside` \| `outside` |
-| valueTextSize | 进度值文本字体大小，默认外部 14px × 字体乘数、内部取进度条高度 × 0.6（最小 9px） | String \| Number | - | - |
+| valueTextSize | 进度值文本字体大小，外部为 14px × 字体乘数、内部取进度条高度 × 0.6（最小 9px） | String \| Number | - | - |
 | valueTextWidth | 外部进度值文本宽度 | String \| Number | `40px` | - |
 | height | 进度条高度 | String \| Number | `6px` | - |
 | bgColor | 轨道（未激活部分）颜色 | String | `$line` | - |
 | activeColor | 激活部分颜色 | String | `$primary` | - |
-| textColor | 进度值文本颜色，默认内部 `#fff`、外部主题文本色 | String | - | - |
-| borderRadius | 进度条圆角大小，默认取高度一半（胶囊形） | String \| Number | - | - |
+| textColor | 进度值文本颜色，内部为 `#fff`、外部为主题文本色 | String | - | - |
+| borderRadius | 进度条圆角大小，取高度一半（胶囊形） | String \| Number | - | - |
 | aniTime | 进度变化动画时长，支持 `$` 简写随动画乘数缩放 | String \| Number | - | - |
 | loading | 加载中状态：激活条固定为 40% 轨道宽并循环平移 | Boolean | `false` | `true` \| `false` |
 | activeMode | 进度更新动画方式：`forwards` 从当前位置继续补间，`backwards` 每次更新从 0 重新播放 | String | `forwards` | `forwards` \| `backwards` |

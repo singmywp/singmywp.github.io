@@ -36,9 +36,9 @@
 | locateDotRadius | 定位点圆角系数（0-0.5） | Number | `0.28` | - |
 | infoDotGap | 信息点间隙（0-0.6） | Number | `0` | - |
 | infoDotColor | 信息点颜色 | String | `#111111` | - |
-| locateDotColor | 定位点颜色，留空回退 `infoDotColor` | String | - | - |
-| alignDotColor | 校准点颜色，留空依次回退 `locateDotColor`、`infoDotColor` | String | - | - |
-| timingDotColor | 时序点颜色，留空回退 `infoDotColor` | String | - | - |
+| locateDotColor | 定位点颜色，跟随 `infoDotColor` | String | - | - |
+| alignDotColor | 校准点颜色，依次跟随 `locateDotColor`、`infoDotColor` | String | - | - |
+| timingDotColor | 时序点颜色，跟随 `infoDotColor` | String | - | - |
 | backgroundColor | 背景颜色 | String | `#ffffff` | - |
 | showBackground | 是否绘制背景层 | Boolean | `true` | `true` \| `false` |
 | logoSrc | 中央 Logo 图片路径，留空不显示 | String | - | - |

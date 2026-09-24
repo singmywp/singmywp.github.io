@@ -1,7 +1,5 @@
 # sn-collapse
 
-> 旧版组件：sn-collapse.md
-
 **旧版状态**：旧版已存在 sn-collapse-group + sn-collapse-item 组合的折叠面板，v2 沿用组合结构，样式定制能力全面增强。
 
 **差异明细**：

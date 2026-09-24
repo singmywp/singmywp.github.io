@@ -51,13 +51,13 @@
 | --- | --- | --- | --- | --- |
 | mode | 结果页类型，决定默认图标与图标颜色 | String | `info` | `info` \| `primary` \| `success` \| `warning` \| `error` |
 | title | 标题文本 | String | - | - |
-| titleSize | 标题字体大小，默认 18px × 字体乘数 | String \| Number | - | - |
-| titleColor | 标题颜色，默认主题文本色 | String | - | - |
+| titleSize | 标题字体大小 | String \| Number | `$18` | - |
+| titleColor | 标题颜色 | String | `$text` | - |
 | text | 文本内容 | String | - | - |
-| textSize | 文本字体大小，默认 14px × 字体乘数 | String \| Number | - | - |
-| textColor | 文本颜色，默认主题浅文本色 | String | - | - |
-| iconSize | 图标大小，默认 56px × 字体乘数 | String \| Number | - | - |
-| iconColor | 图标颜色，默认随 mode 使用对应功能色 | String | - | - |
+| textSize | 文本字体大小 | String \| Number | `$14` | - |
+| textColor | 文本颜色 | String | `$textLight` | - |
+| iconSize | 图标大小 | String \| Number | `$56` | - |
+| iconColor | 图标颜色，随 mode 使用对应功能色 | String | - | - |
 | titleStyle | 自定义标题节点内联样式 | UTSJSONObject \| String | - | - |
 | titleClass | 自定义标题节点外部样式类 | String | - | - |
 | textStyle | 自定义文本节点内联样式 | UTSJSONObject \| String | - | - |

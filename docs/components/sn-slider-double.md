@@ -31,8 +31,8 @@ const range = ref<number[]>([20, 40])
 | activeColor | 激活部分（两滑块之间）颜色 | String | `$primary` | 任意色值或 `$` 主题色简写 |
 | inactiveColor | 轨道未激活部分颜色 | String | `$infoActive` | 任意色值或 `$` 主题色简写 |
 | thickness | 轨道粗细 | String \| Number | `20px` | - |
-| borderRadius | 轨道圆角，留空时自动取轨道粗细的一半（全圆角） | String \| Number | `''` | - |
-| thumbBorderRadius | 滑块圆角，留空时自动取滑块尺寸的一半（全圆角） | String \| Number | `''` | - |
+| borderRadius | 轨道圆角，自动取轨道粗细的一半（全圆角） | String \| Number | - | - |
+| thumbBorderRadius | 滑块圆角，自动取滑块尺寸的一半（全圆角） | String \| Number | - | - |
 | thumbBorder | 滑块边框（CSS border 值，如 `2px solid #ffffff`） | String | `''` | - |
 | thumbSize | 滑块尺寸 | String \| Number | `10px` | - |
 | showValueText | 是否在右侧/下方显示当前区间文本（格式如 `20 - 40`） | Boolean | `false` | `true` \| `false` |

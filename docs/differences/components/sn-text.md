@@ -1,5 +1,5 @@
 # sn-text
-> 旧版组件：sn-text.md
+
 **旧版状态**：文本组件，通过 `mode` 提供 date / price / phone 等多种文本模式，属性较多（font、size、align、overflow、lineHeight 等）。
 **差异明细**：
 

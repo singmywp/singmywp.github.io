@@ -55,11 +55,11 @@
 | closable | 是否可关闭，显示关闭按钮，点击移除标签 | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用，背景与文本切换禁用配色 | Boolean | `false` | `true` \| `false` |
 | bgColor | 标签背景颜色，支持 `$` 功能色简写，优先于主题默认色 | String | - | - |
-| disabledBgColor | 禁用状态下的背景颜色，为空时取主题禁用色 | String | - | - |
+| disabledBgColor | 禁用状态下的背景颜色 | String | `$disabled` | - |
 | textColor | 标签文本颜色，支持 `$` 功能色简写，优先于主题默认色 | String | - | - |
-| disabledTextColor | 禁用状态下的文本颜色，为空时取主题禁用文字色 | String | - | - |
-| iconColor | 关闭图标和加载图标颜色，为空时跟随文本颜色 | String | - | - |
-| disabledIconColor | 禁用状态下的图标颜色，为空时取主题禁用文字色 | String | - | - |
+| disabledTextColor | 禁用状态下的文本颜色 | String | `$disabledText` | - |
+| iconColor | 关闭图标和加载图标颜色，跟随文本颜色 | String | - | - |
+| disabledIconColor | 禁用状态下的图标颜色 | String | `$disabledText` | - |
 | borderRadius | 标签圆角大小，支持 `$` 简写 | String \| Number | - | - |
 | textSize | 标签文本大小，支持 `$` 简写 | String \| Number | - | - |
 | iconSize | 关闭图标和加载图标大小，支持 `$` 简写 | String \| Number | - | - |

@@ -46,7 +46,7 @@
 | showPresets | 是否显示预设颜色区域 | Boolean | `true` | `true \| false` |
 | format | 初始输入格式 | String | `hex` | `hex \| rgba \| hsb \| hsl` |
 | presetTitle | 预设颜色区域标题 | String | `内置颜色` | - |
-| presetColors | 自定义预设颜色，二维数组（每行一组）；为空时使用内置色板 | `Array<Array<String>>` | `[]` | - |
+| presetColors | 自定义预设颜色，二维数组（每行一组）；使用内置色板 | `Array<Array<String>>` | - | - |
 | panelHeight | 取色面板高度 | String \| Number | `260px` | - |
 | showCancel | 是否显示取消按钮 | Boolean | `true` | `true \| false` |
 | showConfirm | 是否显示确定按钮 | Boolean | `true` | `true \| false` |
@@ -141,7 +141,7 @@
 | showPresets | 是否显示预设颜色区域 | Boolean | `true` | `true \| false` |
 | format | 初始输入格式 | String | `hex` | `hex \| rgba \| hsb \| hsl` |
 | presetTitle | 预设颜色区域标题 | String | `内置颜色` | - |
-| presetColors | 自定义预设颜色，二维数组（每行一组）；为空时使用内置色板 | `Array<Array<String>>` | `[]` | - |
+| presetColors | 自定义预设颜色，二维数组（每行一组）；使用内置色板 | `Array<Array<String>>` | - | - |
 | panelHeight | 取色面板高度 | String \| Number | `300px` | - |
 | sliderHeight | 滑块轨道高度 | String \| Number | `$24` | - |
 | sliderSpacing | 滑块、输入行、预设区域之间的间距 | String \| Number | `$12` | - |

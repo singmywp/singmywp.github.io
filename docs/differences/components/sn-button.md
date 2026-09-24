@@ -1,7 +1,5 @@
 # sn-button
 
-> 旧版组件：sn-button.md
-
 **旧版状态**：旧版为基础按钮，提供 `type`/`level` 主题、镂空虚线（dashed 一体）、圆形按钮（round）、长按钮（long）及零散的颜色/文本样式 props。
 
 **差异明细**：

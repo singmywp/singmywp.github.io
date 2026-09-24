@@ -1,7 +1,5 @@
 # sn-row
 
-> 旧版组件：sn-row.md
-
 **旧版状态**：v1 提供栅格布局行容器 `sn-row`（配合 `sn-col` 使用），属性为 `justify`（主轴对齐，额外支持 `left` / `right` / `around` / `between` 简写）、`align`（交叉轴对齐）、`wrap`（是否换行）与 `customStyle`。
 
 **删除结论**：v2 **已移除** `sn-row` 组件（连同配对的 `sn-col`）。

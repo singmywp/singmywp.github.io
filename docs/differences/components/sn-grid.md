@@ -1,7 +1,5 @@
 # sn-grid
 
-> 旧版组件：sn-grid.md
-
 **旧版状态**：旧版已存在 sn-grid-group + sn-grid-item 组合的宫格布局，v2 沿用组合结构，属性基本一致。
 
 **差异明细**：

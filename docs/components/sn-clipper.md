@@ -78,7 +78,7 @@
 | outputScale | 输出倍率，导出图片尺寸 = 裁剪框尺寸 × 该倍率（再乘设备像素比） | Number | `1` | - |
 | quality | 导出图片质量（0-1），当前导出固定为 PNG 格式 | Number | `1` | - |
 | initialRatioId | 初始选中的比例项 id | String | `ratio-1-1` | - |
-| ratioList | 比例预设列表，为空数组时使用默认列表（自由、1:1、3:4、4:3、9:16、16:9） | SnClipperRatioItem[] | `自由、1:1、3:4、4:3、9:16、16:9 六项` | - |
+| ratioList | 比例预设列表 | SnClipperRatioItem[] | `自由、1:1、3:4、4:3、9:16、16:9 六项` | - |
 | borderColor | 裁剪框边框与四角颜色 | String | `#FFFFFF` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |

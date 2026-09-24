@@ -33,7 +33,7 @@
 | valueSpacing | 编码文本与条码间距 | String \| Number | `8` | - |
 | barColor | 条纹（前景）颜色，支持 `$` 主题色与 `var(--sn-*)` | String | `#111111` | - |
 | backgroundColor | 背景颜色，支持 `$` 主题色与 `var(--sn-*)` | String | `transparent` | - |
-| valueColor | 编码文本颜色，留空跟随 `barColor` | String | - | - |
+| valueColor | 编码文本颜色，跟随 `barColor` | String | - | - |
 | barShape | 条纹形状 | String | `flat` | `flat` \| `rounded` |
 | barRadius | 条纹圆角（仅 `barShape=rounded` 生效） | String \| Number | `6` | - |
 | moduleMinWidth | 最小模块宽（px），保证密集码型可辨认 | String \| Number | `1` | - |

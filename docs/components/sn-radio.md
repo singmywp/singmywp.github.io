@@ -48,8 +48,8 @@ const current = ref<number>(0)
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | text | 标签内部文本内容 | String | `''` | - |
-| type | 标签主题类型，覆盖组配置 `tag-type` | String | `''`（默认取组配置，兜底 `primary`） | `primary` \| `info` \| `success` \| `error` \| `warning` |
-| level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level` | String | `''`（默认取组配置，兜底 `second`） | `first` \| `second` \| `third` \| `least` |
+| type | 标签主题类型，覆盖组配置 `tag-type` | String | - | `primary` \| `info` \| `success` \| `error` \| `warning` |
+| level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level` | String | - | `first` \| `second` \| `third` \| `least` |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
 | customStyle | 自定义标签样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
@@ -73,30 +73,30 @@ const current = ref<number>(0)
 | vertical | 是否纵向排列 | Boolean | `false` | `true` \| `false` |
 | radioSize | 圆球直径 | String \| Number | `'20px'` | - |
 | radioBorderWidth | 圆球边缘与内部圆点之间的间隙宽度（圆点直径 = 圆球直径 - 2 × 该值） | String \| Number | `'2px'` | - |
-| radioTextSize | 选项文本大小 | String \| Number | `''`（默认 13px × fontsizeFactor） | - |
-| radioBgColor | 未选中时圆球内部圆点颜色 | String | `''`（默认主题 `front` 色） | - |
-| disabledRadioBgColor | 禁用且未选中时圆点颜色 | String | `''`（默认主题 `front` 色） | - |
-| radioActiveBgColor | 选中时圆点颜色 | String | `''`（默认主题 `front` 色） | - |
-| disabledRadioActiveBgColor | 禁用且选中时圆点颜色 | String | `''`（默认主题 `front` 色） | - |
-| radioTextColor | 选项文本颜色 | String | `''`（默认主题 `text` 色） | - |
-| disabledRadioTextColor | 禁用状态下选项文本颜色 | String | `''`（默认主题 `disabledText` 色） | - |
-| radioBorderColor | 未选中时圆球颜色 | String | `''`（默认主题 `line` 色） | - |
-| disabledRadioBorderColor | 禁用且未选中时圆球颜色 | String | `''`（默认主题 `disabled` 色） | - |
-| radioActiveBorderColor | 选中时圆球颜色 | String | `''`（默认主题 `primary` 色） | - |
-| disabledRadioActiveBorderColor | 禁用且选中时圆球颜色 | String | `''`（默认主题 `disabledDark` 色） | - |
+| radioTextSize | 选项文本大小 | String \| Number | `$13` | - |
+| radioBgColor | 未选中时圆球内部圆点颜色 | String | `$front` | - |
+| disabledRadioBgColor | 禁用且未选中时圆点颜色 | String | `$front` | - |
+| radioActiveBgColor | 选中时圆点颜色 | String | `$front` | - |
+| disabledRadioActiveBgColor | 禁用且选中时圆点颜色 | String | `$front` | - |
+| radioTextColor | 选项文本颜色 | String | `$text` | - |
+| disabledRadioTextColor | 禁用状态下选项文本颜色 | String | `$disabledText` | - |
+| radioBorderColor | 未选中时圆球颜色 | String | `$line` | - |
+| disabledRadioBorderColor | 禁用且未选中时圆球颜色 | String | `$disabled` | - |
+| radioActiveBorderColor | 选中时圆球颜色 | String | `$primary` | - |
+| disabledRadioActiveBorderColor | 禁用且选中时圆球颜色 | String | `$disabledDark` | - |
 | tagType | 标签选项主题类型 | String | `'primary'` | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | tagLevel | 标签选项等级 | String | `'second'` | `first` \| `second` \| `third` \| `least` |
 | tagBorderRadius | 标签选项圆角 | String \| Number | `'10px'` | - |
 | tagPadding | 标签选项内边距 | String | `'6px 10px'` | - |
-| tagTextSize | 标签选项文本大小 | String \| Number | `''`（默认 12px × fontsizeFactor） | - |
-| tagBgColor | 标签选项未选中时背景颜色 | String | `''`（默认主题 `info` 色） | - |
-| disabledTagBgColor | 禁用且未选中时标签背景颜色 | String | `''`（默认主题 `disabled` 色） | - |
-| tagActiveBgColor | 标签选项选中时背景颜色 | String | `''`（默认由 `tag-type` + `tag-level` 决定） | - |
-| disabledTagActiveBgColor | 禁用且选中时标签背景颜色 | String | `''`（默认主题 `disabledDark` 色） | - |
-| tagTextColor | 标签选项未选中时文本颜色 | String | `''`（默认主题 `text` 色） | - |
-| disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `''`（默认主题 `disabledText` 色） | - |
-| tagActiveTextColor | 标签选项选中时文本颜色 | String | `''`（默认由 `tag-type` + `tag-level` 决定） | - |
-| disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `''`（默认主题 `disabledDarkText` 色） | - |
+| tagTextSize | 标签选项文本大小 | String \| Number | `$12` | - |
+| tagBgColor | 标签选项未选中时背景颜色 | String | `$info` | - |
+| disabledTagBgColor | 禁用且未选中时标签背景颜色 | String | `$disabled` | - |
+| tagActiveBgColor | 标签选项选中时背景颜色 | String | - | - |
+| disabledTagActiveBgColor | 禁用且选中时标签背景颜色 | String | `$disabledDark` | - |
+| tagTextColor | 标签选项未选中时文本颜色 | String | `$text` | - |
+| disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `$disabledText` | - |
+| tagActiveTextColor | 标签选项选中时文本颜色 | String | - | - |
+| disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `$disabledDarkText` | - |
 | radioContainStyle | 自定义圆球选项整行容器样式 | UTSJSONObject \| String | `''` | - |
 | radioStyle | 自定义圆球样式 | UTSJSONObject \| String | `''` | - |
 | tagStyle | 自定义标签选项样式 | UTSJSONObject \| String | `''` | - |

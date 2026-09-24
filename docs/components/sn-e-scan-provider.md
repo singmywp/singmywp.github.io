@@ -41,7 +41,7 @@ function onError(err: SnScanProviderErrorImpl): void {
 | --- | --- | --- | --- | --- |
 | scanType | 扫码类型 | SnScanType | `'all'` | `'qrcode'` \| `'barcode'` \| `'all'` |
 | enableDing | 是否开启扫码成功提示音 | Boolean | `true` | `true` \| `false` |
-| dingFileSrc | 自定义提示音音频路径，留空使用内置提示音 | String | `''` | - |
+| dingFileSrc | 自定义提示音音频路径，使用内置提示音 | String | - | - |
 | enableZoom | 是否允许手势缩放（捏合缩放、双击对焦并复位缩放） | Boolean | `true` | `true` \| `false` |
 | initZoomScale | 初始缩放比例（线性缩放，0 ~ 1） | Number | `0` | - |
 | autoStart | 组件初始化后是否自动启动相机并请求权限 | Boolean | `true` | `true` \| `false` |

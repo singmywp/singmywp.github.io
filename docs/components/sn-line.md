@@ -37,8 +37,8 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | direction | 分割线方向 | String | `horizontal` | `horizontal` \| `vertical` |
-| color | 分割线颜色，空时取主题线条色 | String | `''` | - |
-| length | 分割线长度（px），水平时为宽度、垂直时为高度；空或非数值时水平占满宽度、垂直使用默认高度 | String \| Number | `''` | - |
+| color | 分割线颜色 | String | `$line` | - |
+| length | 分割线长度（px），水平时为宽度、垂直时为高度；非数值时水平占满宽度、垂直使用默认高度 | String \| Number | - | - |
 | thickness | 分割线粗细（px） | String \| Number | `1` | - |
 | margin | 分割线外边距（px），水平时作用于上下、垂直时作用于左右 | String \| Number | `0` | - |
 | dashed | 是否显示为虚线 | Boolean | `false` | `true` \| `false` |

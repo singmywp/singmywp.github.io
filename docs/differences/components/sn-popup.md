@@ -1,7 +1,5 @@
 # sn-popup
 
-> 旧版组件：sn-popup.md
-
 **旧版状态**：旧版已提供基础弹出层组件（7 个属性、3 个事件、open/close 方法、default 插槽）。
 
 **差异明细**：

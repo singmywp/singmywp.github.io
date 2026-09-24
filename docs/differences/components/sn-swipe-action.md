@@ -1,5 +1,5 @@
 # sn-swipe-action
-> 旧版组件：sn-swipe-action.md
+
 **旧版状态**：旧版提供基础的左右滑动操作，具备 disabled / threshold / beforeClose 属性、open/close 事件与方法、default/left/right 插槽。
 **差异明细**：
 - 新增属性：`openThreshold`（String | Number，默认 `''`）：自定义松手吸附打开阈值，支持百分比（`20%`）、像素（`60px`）或数字（按 px 处理），为空时按旧的 `threshold` 比例计算

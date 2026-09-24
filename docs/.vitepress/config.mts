@@ -696,10 +696,6 @@ export default defineConfig({
             {
               "text": "Gesture 手势",
               "link": "/components/sn-gesture"
-            },
-            {
-              "text": "Perm Listener 权限申请监听",
-              "link": "/components/sn-perm-listener"
             }
           ])
         },
@@ -953,9 +949,33 @@ export default defineConfig({
               ]
             },
             {
-              "text": "Permission 权限提示类",
+              "text": "Perm 权限类",
               "collapsed": true,
               "items": [
+                {
+                  "text": "是否具备指定权限",
+                  "link": "/libs/utils/permission#snu-checksystempermissiongranted"
+                },
+                {
+                  "text": "获取未授权的系统权限",
+                  "link": "/libs/utils/permission#snu-getsystempermissiondenied"
+                },
+                {
+                  "text": "请求系统权限",
+                  "link": "/libs/utils/permission#snu-requestsystempermission"
+                },
+                {
+                  "text": "跳转到系统权限设置页面",
+                  "link": "/libs/utils/permission#snu-gotosystempermissionactivity"
+                },
+                {
+                  "text": "请求媒体权限",
+                  "link": "/libs/utils/permission#snu-requestmediapermission"
+                },
+                {
+                  "text": "检查媒体权限",
+                  "link": "/libs/utils/permission#snu-checkmediapermission"
+                },
                 {
                   "text": "设置权限用途提示",
                   "link": "/libs/utils/permission#snu-setpermtips"
@@ -1005,30 +1025,6 @@ export default defineConfig({
                 {
                   "text": "从剪切板读取",
                   "link": "/libs/utils/platform#snu-getclipboarddata"
-                },
-                {
-                  "text": "是否具备指定权限",
-                  "link": "/libs/utils/platform#snu-checksystempermissiongranted"
-                },
-                {
-                  "text": "获取未授权的系统权限",
-                  "link": "/libs/utils/platform#snu-getsystempermissiondenied"
-                },
-                {
-                  "text": "请求系统权限",
-                  "link": "/libs/utils/platform#snu-requestsystempermission"
-                },
-                {
-                  "text": "跳转到系统权限设置页面",
-                  "link": "/libs/utils/platform#snu-gotosystempermissionactivity"
-                },
-                {
-                  "text": "请求媒体权限",
-                  "link": "/libs/utils/platform#snu-requestmediapermission"
-                },
-                {
-                  "text": "检查媒体权限",
-                  "link": "/libs/utils/platform#snu-checkmediapermission"
                 }
               ]
             },

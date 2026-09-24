@@ -1,7 +1,5 @@
 # sn-form
 
-> 旧版组件：sn-form.md
-
 **旧版状态**：旧版由 `sn-form` + `sn-form-item` 两个组件构成，`sn-form` 统一配置表单项样式（type/labelColor/labelSize/labelWidth/showError/showBorder）并通过 `submited` 事件与 `submit` 方法处理提交。
 
 **差异明细**：

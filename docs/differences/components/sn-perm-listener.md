@@ -1,7 +1,5 @@
 # sn-perm-listener
 
-> 旧版组件：sn-perm-listener.md（v1 为 UI 组件，v2 改为 API 插件 + sinle-ui 的 snu 权限 API）
-
 **旧版状态**：v1 为 UI 组件 `<sn-perm-listener :data="permData">`，通过 `data` 属性（`Map<String, UTSJSONObject>`，每项 title / content / icon）配置权限说明，通过 `padding` / `position` / `maskOpacity` / `bgColor` / `iconSize` / `iconColor` / `contentSize` / `contentColor` / `titleSize` / `titleColor` / `customStyle` 等组件属性控制弹层样式，在系统授权弹窗出现时同步弹出说明弹窗。
 
 **删除结论**：v2 **已移除 `sn-perm-listener` 组件标签形态**（组件目录已不存在），权限提示能力迁移为 **插件 API + sinle-ui 的 `snu` 权限 API**。

@@ -1,7 +1,5 @@
 # sn-longlist
 
-> 旧版组件：sn-longlist.md
-
 **旧版状态**：v1 提供长列表容器 `sn-longlist`，在 `list-view` 上封装下拉刷新（`sn-refresher`）、加载更多（`sn-loadmore`）与回到顶部（`sn-backtop`）三件套，子组件为原生 `<list-item>`；属性涵盖 `refresher*` 系列、`loadmore` / `loadmoreStatus` / `loadmoreConfig`、`backtop`、`scrollTop` 等，并暴露 `scrollTo` 与 `registerBacktop` 方法。
 
 **删除结论**：v2 **已移除** `sn-longlist` 组件，重构为 **`sn-list-view`**。

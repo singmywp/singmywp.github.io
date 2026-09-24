@@ -1,7 +1,5 @@
 # sn-modal
 
-> 旧版组件：sn-modal.md
-
 **旧版状态**：旧版已提供完整 UI 模态框（29 个属性、header/content/actions 插槽、5 个事件、open/close 方法）。
 
 **差异明细**：

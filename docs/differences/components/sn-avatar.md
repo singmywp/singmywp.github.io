@@ -1,7 +1,5 @@
 # sn-avatar
 
-> 旧版组件：sn-avatar.md 与 sn-avatar-group.md
-
 **旧版状态**：旧版 sn-avatar 已支持三种模式与形状切换；旧版 sn-avatar-group 支持堆叠/分散、数量上限与随机背景色。
 
 **差异明细**：

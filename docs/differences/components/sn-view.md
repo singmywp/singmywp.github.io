@@ -1,5 +1,5 @@
 # sn-view
-> 旧版组件：sn-view.md
+
 **旧版状态**：基础视图容器，支持 loading / disabled 与少量外观属性，扩展了含 rotate / scale 在内的多种手势事件。
 **差异明细**：
 

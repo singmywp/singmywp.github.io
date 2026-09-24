@@ -4,7 +4,7 @@
 
 ## 基础用法
 
-- 页面根组件，占据整个页面并内置纵向滚动的内容区，无需手动管理滚动容器
+- 页面根组件，占据整个页面并内置纵向滚动的内容区（不显示滚动条），无需手动管理滚动容器
 - 在 `onLoad` 时自动将页面背景色写入原生页面（同时设置 `navigationStyle` 为 `custom`），避免页面加载初期白屏闪烁
 - 在根节点注入全部主题颜色 CSS 变量（如 `--sn-primary`、`--sn-front`、`--sn-transparent` 等）与动画时长变量（`--ani-time-short`、`--ani-time-normal`、`--ani-time-long`），页面内所有子组件通过 `var()` 引用这些变量
 - 弹出层类组件（如 sn-popup、sn-modal、sn-toast、sn-menu 等）应直接放在 `sn-page` 根节点下，否则无法取到注入的 CSS 变量，颜色与动画时长会失效
@@ -41,7 +41,7 @@
 
 ## 内容区不滚动
 
-默认内容区放在内置 scroll-view 中纵向滚动。若页面内部自带独立滚动容器（如 sn-waterflow、sn-list-view 的全屏子页面），设置 `fillContent` 让内容区填满剩余高度，由内部容器自行滚动。
+默认内容区放在内置 scroll-view 中纵向滚动，该滚动区已关闭 `show-scrollbar`（不显示滚动条），内容仍可正常滑动与滚轮滚动。若页面内部自带独立滚动容器（如 sn-waterflow、sn-list-view 的全屏子页面），设置 `fillContent` 让内容区填满剩余高度，由内部容器自行滚动。
 
 ```vue
 <template>
@@ -55,7 +55,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| bgColor | 页面背景颜色，为空时自动使用当前主题的页面背景色，并同步原生页面背景与内置导航栏背景；变化时自动更新页面背景 | String | `''` | - |
+| bgColor | 页面背景颜色，并同步原生页面背景与内置导航栏背景；变化时自动更新页面背景 | String | `$page` | - |
 | title | 页面标题，非空时自动渲染内置导航栏 | String | `''` | - |
 | showBack | 是否显示内置导航栏的返回按钮（仅 title 非空时生效） | Boolean | `false` | `true` \| `false` |
 | fillContent | 是否让内容区填满剩余高度而不使用内置滚动，用于内部自带滚动容器的全屏子页面 | Boolean | `false` | `true` \| `false` |

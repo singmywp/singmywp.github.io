@@ -21,10 +21,10 @@
 | links | 导航链接列表，字段见下方 [[SnFooterLink]] | Array<[[SnFooterLink]]> | `[]` | - |
 | logo | 品牌 Logo 配置，字段见下方 [[SnFooterLogo]] | [[SnFooterLogo]] | `null` | - |
 | text | 页脚文字（一般为版权信息） | String | `''` | - |
-| color | Logo 标题颜色 | String | `''`（空值时为 `$title`） | - |
-| linkColor | 链接文字颜色 | String | `''`（空值时为 `$primary`） | - |
-| lineColor | 链接分隔线颜色 | String | `''`（空值时为 `$line`） | - |
-| textColor | 页脚文字颜色 | String | `''`（空值时为 `$textLight`） | - |
+| color | Logo 标题颜色 | String | `$title` | - |
+| linkColor | 链接文字颜色 | String | `$primary` | - |
+| lineColor | 链接分隔线颜色 | String | `$line` | - |
+| textColor | 页脚文字颜色 | String | `$textLight` | - |
 | customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
 | linkClass | 链接文字样式类 | String | `''` | - |

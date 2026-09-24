@@ -29,11 +29,11 @@
 | minHeight | 当 `position` 为 `top` \| `bottom` 且折叠时浮动面板的高度 | String | `50px` | - |
 | slideHeight | 纵向滑动阈值，松手时滑动距离达到阈值则折叠或展开 | String | `100px` | - |
 | slideWidth | 横向滑动阈值，松手时滑动距离达到阈值则折叠或展开 | String | `100px` | - |
-| bgColor | 浮动面板背景颜色，留空时使用主题 `infoActive` 色值 | String | `''` | - |
-| lineColor | 指示条颜色，留空时使用主题 `lineText` 色值 | String | `''` | - |
+| bgColor | 浮动面板背景颜色 | String | `$infoActive` | - |
+| lineColor | 指示条颜色 | String | `$lineText` | - |
 | padding | 面板内容区内边距（传给内部 sn-view） | String | `25px 15px 10px 15px` | - |
-| borderRadius | 面板圆角大小，留空时为随圆角乘数计算的默认圆角（四个直角侧自动贴合屏幕边缘） | String \| Number | `''` | - |
-| aniTime | 展开/折叠动画时长，支持 `$` 动态时长语法，留空时使用 `$snui.aniTimeLong` | String \| Number | `''` | - |
+| borderRadius | 面板圆角大小，为随圆角乘数计算的默认圆角（四个直角侧自动贴合屏幕边缘） | String \| Number | - | - |
+| aniTime | 展开/折叠动画时长，支持 `$` 动态时长语法 | String \| Number | `$long` | - |
 | disabled | 是否禁用滑动手势 | Boolean | `false` | `true` \| `false` |
 | zIndex | 面板层级 | Number | `999` | - |
 | customStyle | 自定义浮动面板样式 | UTSJSONObject \| String | `''` | - |

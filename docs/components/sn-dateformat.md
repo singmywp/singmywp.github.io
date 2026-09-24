@@ -70,8 +70,8 @@
 | threshold | 相对时间阈值（单位 ms），第一个值为"刚刚/马上"阈值，第二个值为格式化阈值 | Number[] | `[60000, 86400000]` | - |
 | mode | 显示模式：`realtime` 每秒实时刷新相对时间，`fixed` 仅在值变化时计算 | String | `realtime` | `fixed` \| `realtime` |
 | locale | 本地化语言 | String | `zh-cn` | `zh-cn` \| `en` |
-| textColor | 文本颜色，支持 `$` 主题色简写 | String | `''`（默认主题文字色） | - |
-| textSize | 文本字体大小，支持 `$` 动态尺寸 | String \| Number | `''`（默认 14px × 字体乘数） | - |
+| textColor | 文本颜色，支持 `$` 主题色简写 | String | `$text` | - |
+| textSize | 文本字体大小，支持 `$` 动态尺寸 | String \| Number | `$14` | - |
 | textFont | 文本字体 | String | `''` | - |
 | customClass | 根节点（即文本节点）外部样式类 | String | `''` | - |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |

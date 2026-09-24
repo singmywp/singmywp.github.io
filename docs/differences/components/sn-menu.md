@@ -1,7 +1,5 @@
 # sn-menu
 
-> 旧版组件：sn-menu-item.md
-
 **旧版状态**：v1.1.6 无独立的菜单容器组件，仅有 `sn-menu-item` 菜单项子组件——以子组件方式逐项书写菜单项（或开启 `listMode` 嵌入 `list-view`），v2 将其重构为锚点定位、`items` 数组驱动的 `sn-menu` 组件，**旧 `sn-menu-item` 组件已移除**。
 
 **差异明细**：

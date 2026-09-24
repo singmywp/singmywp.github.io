@@ -1,7 +1,5 @@
 # sn-e-scankit
 
-> 旧版组件：sn-e-scankit.md 与 sn-e-scankit-code.md（v2 将扫码 API 与 sn-e-scankit-code 码图组件合并为一篇文档）
-
 **旧版状态**：v1 提供扫码 API `scan`（华为 Scan Kit Default View Mode）与码图组件 `sn-e-scankit-code`，两篇独立文档，仅支持 Android。
 
 **差异明细**：

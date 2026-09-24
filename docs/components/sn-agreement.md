@@ -36,10 +36,10 @@
 | text | 协议文本内容 | String | `''` | - |
 | links | 需要渲染为链接的文本，在 text 中匹配并分段；支持单个链接文本或链接文本数组 | String \| String[] | `''` | - |
 | disabled | 禁用组件，仅禁用勾选切换，链接仍可点击 | Boolean | `false` | `true` \| `false` |
-| fontSize | 文本字体大小，支持 `$` 前缀按字体大小乘数缩放 | String \| Number | `''`（默认 13px × 字体大小乘数） | - |
-| color | 文本颜色，支持 `$` 前缀简写 | String | `''`（默认主题文本色，禁用时为禁用文本色） | - |
-| linkColor | 链接文本颜色，支持 `$` 前缀简写 | String | `''`（默认主题主色） | - |
-| boxSize | 勾选框边长，支持 `$` 前缀按间距乘数缩放 | String \| Number | `''`（默认 19px） | - |
+| fontSize | 文本字体大小，支持 `$` 前缀按字体大小乘数缩放 | String \| Number | `$13` | - |
+| color | 文本颜色，支持 `$` 前缀简写，禁用时为 `$disabledText` | String | `$text` | - |
+| linkColor | 链接文本颜色，支持 `$` 前缀简写 | String | `$primary` | - |
+| boxSize | 勾选框边长，支持 `$` 前缀按间距乘数缩放 | String \| Number | `$19` | - |
 | customStyle | 组件根节点自定义样式 | UTSJSONObject \| String | `''` | - |
 | customClass | 组件根节点自定义样式类名 | String | `''` | - |
 | boxStyle | 勾选框自定义样式 | UTSJSONObject \| String | `''` | - |

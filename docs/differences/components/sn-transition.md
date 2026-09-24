@@ -1,7 +1,5 @@
 # sn-transition
 
-> 旧版组件：sn-transition.md
-
 **旧版状态**：v1 提供过渡动画容器 `sn-transition`，通过 `show` 控制显隐、`placed` 控制隐藏时是否占位，内置 `fade` / `zoom` / `fadeZoom` / `fadeUp` / `fadeRight` / `fadeDown` / `fadeLeft` / `slideUp` / `slideRight` / `slideDown` / `slideLeft` 共 11 种 `mode`，并配套 `aniTime`、`timingFunction` 属性与 `beforeEnter` / `enter` / `afterEnter` / `beforeLeave` / `leave` / `afterLeave` / `transitionend` 事件。
 
 **删除结论**：v2 **已移除** `sn-transition` 组件。
