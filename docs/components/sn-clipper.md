@@ -32,6 +32,8 @@
 
 通过 `ratio-list` 自定义比例按钮，`ratio` 为 `0` 表示自由比例；`initial-ratio-id` 指定初始选中项。
 
+> 说明：比例预设为横向排列，超出宽度时可横向滑动；Web / PC 端除滚动条外还支持按住鼠标左右拖动该区域滚动。
+
 ```vue
 <template>
 	<sn-clipper image-url="/static/images/photo.png" initial-ratio-id="id-card"

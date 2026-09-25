@@ -62,6 +62,19 @@ const value = ref<boolean>(false)
 </script>
 ```
 
+## 镂空（plain）
+
+`plain` 为 `true` 时背景固定为透明，只保留边框与文字：文字与边框取当前态（未选中取 `type`、选中取 `active-type`）的功能色**原色**，不会取"功能色背景上的文字色"，因此在透明背景上始终可见；`active-level` 不再影响镂空态的文字色。
+
+```vue
+<template>
+	<sn-switch-button v-model="value" plain text="镂空" border-color="$line" text-color="$textLight"
+		active-type="primary" active-level="first"></sn-switch-button>
+</template>
+```
+
+可用 `border-color` / `active-border-color` 分别覆盖两态边框色（上例未选中为浅灰描边、选中为蓝色描边，状态切换一目了然）；`dashed` 可将边框改为虚线。
+
 ## 属性
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
