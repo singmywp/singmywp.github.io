@@ -12,6 +12,8 @@
 - 与 `sn-float-board` 的区别：`sn-drawer` 需调用方法显示，`sn-float-board` 始终显示。
 - 与 `sn-drawer-list` 的区别： `sn-drawer-list`  内嵌 `sn-list-view` 使用需传入列表数据，适用于内嵌长列表场景。不要在 `sn-drawer` 内嵌长列表，会出现严重的嵌套滚动问题。
 
+HarmonyOS 端抽屉透明度在入退场期间由动画直接控制，避免与遮罩不同步。
+
 ```vue
 <template>
 	<sn-page>

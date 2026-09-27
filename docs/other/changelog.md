@@ -1,5 +1,10 @@
+## 2.0.1（2026-09-27）
+- 适配 HarmonyOS 系统，大部分组件、API 运行良好，少部分组件尚未完全适配或存在一些异常，下版本将持续推进适配
+- 修复 Demo 主页“组件分类”下的组件列表弹层偶发点击无效的问题
+- 修复 对旧版本已废除插件 `sn-e-scan-provider`、`sinle-error` 的错误依赖导致无法编译的问题
+- 优化 重构 `sn-popup` 组件底层实现，增强基于此弹层组件的一系列组件 `sn-drawer`、`sn-picker`、`sn-select`、`sn-select`、`sn-popover` 等 的动画稳定性、流畅性
 ## 2.0.0（2026-09-19）
-- 【提示】本次变更较大，可利用 AI 完成版本迁移，差异详情：https://sinleui.pages.dev/differences
+- 【提示】本次变更较大，可利用 AI 完成版本迁移（差异详情：https://sinleui.pages.dev/differences）
 - 【重要】插件推荐运行版本为 HBuilder X Alpha 5.25 及以上（蒸汽模式在此版本之前存在比较严重的问题）
 - 【重要】新增 框架全面重构为 uni-app x 蒸汽模式（vapor），VDOM 模式由于性能原因不再支持。
 - 新增 多风格（Style）系统：内置 default / ink / chinese / new-year / morandi-green / orange 六套风格，支持自由修改增删内置风格，或者为应用添加自定义风格，并支持一键切换。
@@ -59,8 +64,8 @@
 - 新增 `sn-watermark` 水印：页面或局部水印覆盖，不影响其他组件，无副作用。
 - 新增 `Demo` 手势库实例，结合可视化元素演示手势库应用
 - 新增 `sn-e-toast` 插件：替换 `snu.showToast` 基于 `dialogPage ` 实现的不可透穿手势的 Toast 轻提示，原生弹层实现同官方 `uni.showToast` 基本一致的体验。同时相对于官方的 UI 新增了动画和丰富的样式支持。
-- 优化 `$` 动态变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
-- 优化 动画统一由 UniElement DOM animate / transition + `--ani-time-*` 变量实现，支持 `$` 简写并随 `aniTimeFactor` 全局调速
+- 优化 “$” 动态变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
+- 优化 动画统一由 UniElement DOM animate / transition + `--ani-time-*` 变量实现，支持 “$” 简写并随 `aniTimeFactor` 全局调速
 - 优化 点击态统一为 `useHover` + `hover-style` 机制，替代旧 `hover-class`，配套 `hover-start-time` / `hover-stay-time` / `hover-trans-time`
 - 优化 内部列表项 / 子项布局统一复用 `sn-cell`，子元素样式经 `itemStyle` / `itemHoverStyle` / `itemTextStyle` / `itemIconStyle` / `itemClass` / `itemBorder` 传递链透传
 - 优化 长列表组件（`sn-list-view` / `sn-waterflow`）改为数据驱动 + 作用域插槽渲染，条目按数据项 type 分组复用回收，避免了直接传入 `list-item` / `flow-item` 组件被渲染为普通view 而引发的内存泄露问题
@@ -92,7 +97,7 @@
 - 更改 【破坏性变更】 `sn-form-item` 拆分为 `sn-form-field` / `sn-input-field` / `sn-textarea-field`，`submited` 事件更名 `submit`
 - 更改 【破坏性变更】`sn-menu` 菜单类组件的子组件从 `sn-menu-item` 改为 `sn-cell`  ，移除插槽并新增 `select` 事件。
 - 更改 重新设计 `sn-signature` 组件布局，适配横屏模式。
-- 更改 尺寸 / 时间类 props 统一放宽为 `String | Number` 并接入 `$` 乘数语法，颜色类 props 使用 `String(色值)` 支持 `$` 主题色
+- 更改 尺寸 / 时间类 props 统一放宽为 `String | Number` 并接入 “$” 乘数语法，颜色类 props 使用 `String(色值)` 支持 “$” 主题色
 - 更改 【破坏性变更】字号板（`font.baseSize` + size 等级）、圆角等级板、动画等级板，改为乘数体系
 - 更改 【破坏性变更】各组件 `customXxxStyle`（UTSJSONObject）更名去 `custom` 前缀为 `{语义}Style` 并成对新增 `{语义}Class`，`customStyle` 类型放宽为 `UTSJSONObject | String`
 - 更改 【破坏性变更】`$snui.configs` 六大子配置体系，改为 `$snui` 扁平属性直接读写
@@ -151,9 +156,6 @@
 - 重写 `sn-notice-bar`，解决了一些性能和显示问题
 - 优化 `sn-actionsheet` 在宽屏设备上的显示效果
 - 优化 `sn-tabbar` 最大插槽数增加至 `10`
-- 新增 `sn-switch-button` 切换按钮：可切换选中状态的按钮，内部基于 `sn-button` 扩展，选中态与未选中态各自独立配色
-- Demo 页面模版「QQ空间」更名为「动态空间」，其中的关注按钮改为 `sn-switch-button` 实现关注 / 已关注切换
-- Demo 扩展插件入口「Scan 一键扫码」更名为「Scankit 华为扫码」
 - 修复 `sn-e-scankit` 多页面调用 `scan` 方法回调函数混淆的问题
 - 优化 Demo 布局改为 Tabbar 式
 ## 1.1.4（2024-10-05）

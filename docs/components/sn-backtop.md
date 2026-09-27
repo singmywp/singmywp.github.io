@@ -7,6 +7,7 @@
 - 用于长页面或长列表：滚动超过阈值（`top`，单位 px）后，右下角浮现回到顶部按钮，点击后平滑滚动回顶部。
 - 自动绑定滚动容器：直接放在 `sn-page`、`sn-scroll-view`、`sn-list-view`、`sn-waterflow` 的同级或父级下即可，无需额外配置；也可通过 `target` 显式指定绑定目标。
 - 绑定 `sn-page`（页面级滚动）时按钮采用 `fixed` 定位，绑定容器内滚动时采用 `absolute` 定位。
+- App 端回顶直接设置滚动容器的 `scrollTop` / `scrollLeft`，HarmonyOS 下同样适用。
 
 ```vue
 <template>

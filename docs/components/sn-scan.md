@@ -5,8 +5,9 @@
 ## 基础用法
 
 - 基于 `sn-e-scan-provider` 扩展插件重构的一体化扫码组件，内置扫码界面（导航栏、扫描线动效、提示文字、手电筒、相册入口、识别点），支持二维码 / 条码识别
-- 当前仅在 **App-Android** 端渲染与生效，其余平台渲染为空视图
-- 应将本组件放置在独立页面中，`template` 下只放这一个组件，并设置其 `flex: 1`
+- 当前在 **App 全平台**（Android / iOS / HarmonyOS）端渲染与生效，其余平台渲染为空视图
+- **平台差异**：iOS 端由底层 `sn-scan-provider`（zcscan）拉起整页扫码界面，手电筒、手势缩放、初始缩放、识别间隔不生效（相机扫码由其整页界面接管）；HarmonyOS 端由 Scan Kit 自定义界面扫码实现，能力与 Android 端一致
+- 组件内的浮层（标题栏、提示文字、扫描线、手电筒、识别点）均相对组件自身区域定位，因此既可将本组件放在独立页面中（`template` 下只放这一个组件并设置 `flex: 1`），也可嵌入页面局部区域（如半屏扫码）使用
 - 支持双击还原缩放、双指捏合缩放、相册图片识别、只扫一次与连续扫描等能力
 
 ```vue
@@ -38,12 +39,15 @@
 | scanOnlyOnce | 是否只扫描一次（与 `continuous` 不可同为 `true`） | Boolean | `false` | `true` \| `false` |
 | continuous | 是否连续扫描（与 `scanOnlyOnce` 不可同为 `true`） | Boolean | `false` | `true` \| `false` |
 | continuousSleep | 连续扫描间隔时间（单位：ms） | Number | `2000` | - |
-| showTorch | 是否显示手电筒按钮 | Boolean | `true` | `true` \| `false` |
+| showTorch | 是否显示手电筒按钮，iOS 端不生效 | Boolean | `true` | `true` \| `false` |
 | showAlbum | 是否显示相册按钮 | Boolean | `true` | `true` \| `false` |
 | showBackButton | 是否显示返回按钮 | Boolean | `true` | `true` \| `false` |
+| showTitle | 是否显示标题（隐藏时导航栏两侧的占位按钮同步隐藏） | Boolean | `true` | `true` \| `false` |
+| showTip | 是否显示提示文字 | Boolean | `true` | `true` \| `false` |
 | showAni | 是否显示扫描线动效 | Boolean | `true` | `true` \| `false` |
-| enableZoom | 是否允许手势缩放 | Boolean | `true` | `true` \| `false` |
-| initZoomScale | 初始缩放比例 | Number | `0` | - |
+| enableZoom | 是否允许手势缩放，iOS 端不生效 | Boolean | `true` | `true` \| `false` |
+| initZoomScale | 初始缩放比例，iOS 端不生效 | Number | `0` | - |
+| recognizeInterval | 识别间隔（单位：ms，取值 0 ~ 5000，为 `0` 时每帧识别），iOS 端不生效 | Number | `0` | - |
 | cameraPermTip | 相机权限请求提示文案 | String | `相机权限默认文案` | - |
 | albumPermTip | 相册权限请求提示文案 | String | `相册权限默认文案` | - |
 | customDotStyle | 自定义识别点样式 | UTSJSONObject \| String | - | - |

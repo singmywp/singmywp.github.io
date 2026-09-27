@@ -233,10 +233,6 @@ export default defineConfig({
               "link": "/components/sn-image"
             },
             {
-              "text": "Line 分割线",
-              "link": "/components/sn-line"
-            },
-            {
               "text": "Link 链接",
               "link": "/components/sn-link"
             },
@@ -247,18 +243,6 @@ export default defineConfig({
             {
               "text": "View 视图容器",
               "link": "/components/sn-view"
-            },
-            {
-              "text": "Cell 单元格",
-              "link": "/components/sn-cell"
-            },
-            {
-              "text": "HighlightText 高亮文本",
-              "link": "/components/sn-highlight-text"
-            },
-            {
-              "text": "Ellipsis 文本省略",
-              "link": "/components/sn-ellipsis"
             }
           ])
         },
@@ -266,56 +250,8 @@ export default defineConfig({
           "text": "表单组件",
           items: sortItems([
             {
-              "text": "Checkbox 复选",
-              "link": "/components/sn-checkbox"
-            },
-            {
-              "text": "Radio 单选",
-              "link": "/components/sn-radio"
-            },
-            {
-              "text": "Label Checkbox 标签多选",
-              "link": "/components/sn-label-checkbox"
-            },
-            {
-              "text": "Label Radio 标签单选",
-              "link": "/components/sn-label-radio"
-            },
-            {
-              "text": "Input 输入框",
-              "link": "/components/sn-input"
-            },
-            {
-              "text": "InputField 标签输入框",
-              "link": "/components/sn-input-field"
-            },
-            {
-              "text": "Textarea 文本域",
-              "link": "/components/sn-textarea"
-            },
-            {
-              "text": "TextareaField 标签文本域",
-              "link": "/components/sn-textarea-field"
-            },
-            {
-              "text": "Mention 提及输入框",
-              "link": "/components/sn-mention"
-            },
-            {
-              "text": "CodeInput 验证码输入框",
-              "link": "/components/sn-code-input"
-            },
-            {
-              "text": "Stepper 步进器",
-              "link": "/components/sn-stepper"
-            },
-            {
-              "text": "Switch 开关",
-              "link": "/components/sn-switch"
-            },
-            {
-              "text": "SwitchButton 切换按钮",
-              "link": "/components/sn-switch-button"
+              "text": "Rate 评分",
+              "link": "/components/sn-rate"
             },
             {
               "text": "Slider 滑动选择",
@@ -330,337 +266,93 @@ export default defineConfig({
               "link": "/components/sn-arc-slider"
             },
             {
-              "text": "Rate 评分",
-              "link": "/components/sn-rate"
+              "text": "Switch 开关",
+              "link": "/components/sn-switch"
             },
             {
-              "text": "Select 选择框",
-              "link": "/components/sn-select"
+              "text": "SwitchButton 切换按钮",
+              "link": "/components/sn-switch-button"
             },
             {
-              "text": "Picker 选择器",
-              "link": "/components/sn-picker"
+              "text": "Stepper 步进器",
+              "link": "/components/sn-stepper"
             },
             {
-              "text": "Cascader 级联选择器",
-              "link": "/components/sn-cascader"
+              "text": "Input 输入框",
+              "link": "/components/sn-input"
             },
             {
-              "text": "RegionPicker 地区选择器",
-              "link": "/components/sn-region-picker"
+              "text": "Mention 提及输入框",
+              "link": "/components/sn-mention"
             },
             {
-              "text": "ColorPicker 颜色选择器",
-              "link": "/components/sn-color-picker"
+              "text": "InputField 标签输入框",
+              "link": "/components/sn-input-field"
             },
             {
-              "text": "Tree 树形选择",
-              "link": "/components/sn-tree"
-            },
-            {
-              "text": "DatetimePicker 日期时间选择器",
-              "link": "/components/sn-datetime-picker"
-            },
-            {
-              "text": "Form 表单",
-              "link": "/components/sn-form"
-            },
-            {
-              "text": "FormField 表单项",
-              "link": "/components/sn-form-field"
-            },
-            {
-              "text": "Agreement 协议",
-              "link": "/components/sn-agreement"
+              "text": "CodeInput 验证码输入框",
+              "link": "/components/sn-code-input"
             },
             {
               "text": "SlideCaptcha 滑块验证",
               "link": "/components/sn-slide-captcha"
             },
             {
+              "text": "Textarea 文本域",
+              "link": "/components/sn-textarea"
+            },
+            {
+              "text": "TextareaField 标签文本域",
+              "link": "/components/sn-textarea-field"
+            },
+            {
+              "text": "FormField 表单项",
+              "link": "/components/sn-form-field"
+            },
+            {
               "text": "Keyboard 自定义键盘",
               "link": "/components/sn-keyboard"
             },
             {
-              "text": "UploadMedia 媒体上传",
-              "link": "/components/sn-upload-media"
-            }
-          ])
-        },
-        {
-          "text": "展示组件",
-          items: sortItems([
-            {
-              "text": "Alert 警告信息",
-              "link": "/components/sn-alert"
+              "text": "Radio 单选",
+              "link": "/components/sn-radio"
             },
             {
-              "text": "Badge 徽标",
-              "link": "/components/sn-badge"
+              "text": "Agreement 协议",
+              "link": "/components/sn-agreement"
             },
             {
-              "text": "Tag 标签",
-              "link": "/components/sn-tag"
+              "text": "Checkbox 复选",
+              "link": "/components/sn-checkbox"
             },
             {
-              "text": "Card 卡片",
-              "link": "/components/sn-card"
+              "text": "Tree 树形选择",
+              "link": "/components/sn-tree"
             },
             {
-              "text": "Avatar 头像",
-              "link": "/components/sn-avatar"
+              "text": "LabelRadio 标签单选",
+              "link": "/components/sn-label-radio"
             },
             {
-              "text": "Avatar Group 头像组",
-              "link": "/components/sn-avatar-group"
+              "text": "LabelCheckbox 标签多选",
+              "link": "/components/sn-label-checkbox"
             },
             {
-              "text": "Album 相册",
-              "link": "/components/sn-album"
+              "text": "Select 选择框",
+              "link": "/components/sn-select"
             },
             {
-              "text": "Amount 金额",
-              "link": "/components/sn-amount"
+              "text": "Cascader 级联选择器",
+              "link": "/components/sn-cascader"
             },
             {
-              "text": "Countdown 倒计时",
-              "link": "/components/sn-countdown"
+              "text": "Picker 选择器",
+              "link": "/components/sn-picker"
             },
             {
-              "text": "Countto 数字滚动",
-              "link": "/components/sn-countto"
+              "text": "DatetimePicker 日期时间选择器",
+              "link": "/components/sn-datetime-picker"
             },
-            {
-              "text": "Dateformat 日期格式化",
-              "link": "/components/sn-dateformat"
-            },
-            {
-              "text": "Timer 计时器",
-              "link": "/components/sn-timer"
-            },
-            {
-              "text": "Loading 加载",
-              "link": "/components/sn-loading"
-            },
-            {
-              "text": "LoadingPage 加载页",
-              "link": "/components/sn-loading-page"
-            },
-            {
-              "text": "Skeleton 骨架屏",
-              "link": "/components/sn-skeleton"
-            },
-            {
-              "text": "NoticeBar 通知栏",
-              "link": "/components/sn-notice-bar"
-            },
-            {
-              "text": "PostCard 动态卡片",
-              "link": "/components/sn-post-card"
-            },
-            {
-              "text": "Watermark 水印",
-              "link": "/components/sn-watermark"
-            },
-            {
-              "text": "Progress 进度条",
-              "link": "/components/sn-progress"
-            },
-            {
-              "text": "ArcProgress 环形进度",
-              "link": "/components/sn-arc-progress"
-            },
-            {
-              "text": "Barcode 一维码",
-              "link": "/components/sn-barcode"
-            },
-            {
-              "text": "Qrcode 二维码",
-              "link": "/components/sn-qrcode"
-            },
-            {
-              "text": "More 查看更多",
-              "link": "/components/sn-more"
-            },
-            {
-              "text": "Table 表格",
-              "link": "/components/sn-table"
-            }
-          ])
-        },
-        {
-          "text": "反馈组件",
-          items: sortItems([
-            {
-              "text": "Actionsheet 操作菜单",
-              "link": "/components/sn-actionsheet"
-            },
-            {
-              "text": "Modal 模态框",
-              "link": "/components/sn-modal"
-            },
-            {
-              "text": "Toast 轻提示",
-              "link": "/components/sn-toast"
-            },
-            {
-              "text": "Drawer 抽屉",
-              "link": "/components/sn-drawer"
-            },
-            {
-              "text": "DrawerList 抽屉长列表",
-              "link": "/components/sn-drawer-list"
-            },
-            {
-              "text": "Message 消息条",
-              "link": "/components/sn-message"
-            },
-            {
-              "text": "Notification 通知",
-              "link": "/components/sn-notification"
-            },
-            {
-              "text": "Popup 弹出层",
-              "link": "/components/sn-popup"
-            },
-            {
-              "text": "Popover 定位弹出层",
-              "link": "/components/sn-popover"
-            },
-            {
-              "text": "Overlay 遮罩层",
-              "link": "/components/sn-overlay"
-            },
-            {
-              "text": "Tooltip 提示框",
-              "link": "/components/sn-tooltip"
-            },
-            {
-              "text": "Empty 缺省页",
-              "link": "/components/sn-empty"
-            },
-            {
-              "text": "Result 结果页",
-              "link": "/components/sn-result"
-            },
-            {
-              "text": "Loadmore 加载更多",
-              "link": "/components/sn-loadmore"
-            },
-            {
-              "text": "Refresher 下拉刷新",
-              "link": "/components/sn-refresher"
-            }
-          ])
-        },
-        {
-          "text": "布局组件",
-          items: sortItems([
-            {
-              "text": "Page 页面",
-              "link": "/components/sn-page"
-            },
-            {
-              "text": "Backtop 回到顶部",
-              "link": "/components/sn-backtop"
-            },
-            {
-              "text": "Topbar 导航栏",
-              "link": "/components/sn-topbar"
-            },
-            {
-              "text": "Tabbar 底部导航栏",
-              "link": "/components/sn-tabbar"
-            },
-            {
-              "text": "Tabs 标签页",
-              "link": "/components/sn-tabs"
-            },
-            {
-              "text": "Sidebar 侧边栏",
-              "link": "/components/sn-sidebar"
-            },
-            {
-              "text": "Menu 菜单",
-              "link": "/components/sn-menu"
-            },
-            {
-              "text": "Grid 宫格",
-              "link": "/components/sn-grid"
-            },
-            {
-              "text": "Gap 占位间隔",
-              "link": "/components/sn-gap"
-            },
-            {
-              "text": "KeyboardTop 键盘上方区域",
-              "link": "/components/sn-keyboard-top"
-            },
-            {
-              "text": "Collapse 折叠面板",
-              "link": "/components/sn-collapse"
-            },
-            {
-              "text": "Steps 步骤条",
-              "link": "/components/sn-steps"
-            },
-            {
-              "text": "Subsection 分段器",
-              "link": "/components/sn-subsection"
-            },
-            {
-              "text": "Search 搜索框",
-              "link": "/components/sn-search"
-            },
-            {
-              "text": "Swipe Action 滑动操作",
-              "link": "/components/sn-swipe-action"
-            },
-            {
-              "text": "Float Board 浮动面板",
-              "link": "/components/sn-float-board"
-            },
-            {
-              "text": "Keyboard Top 键盘上方区域",
-              "link": "/components/sn-keyboard-top"
-            },
-            {
-              "text": "Float Button 浮动按钮",
-              "link": "/components/sn-float-button"
-            },
-            {
-              "text": "Footer 页脚",
-              "link": "/components/sn-footer"
-            },
-            {
-              "text": "Drag 拖拽排序",
-              "link": "/components/sn-drag"
-            },
-            {
-              "text": "Sorter 排序",
-              "link": "/components/sn-sorter"
-            },
-            {
-              "text": "ListView 长列表",
-              "link": "/components/sn-list-view"
-            },
-            {
-              "text": "ScrollView 滚动视图",
-              "link": "/components/sn-scroll-view"
-            },
-            {
-              "text": "Waterflow 瀑布流",
-              "link": "/components/sn-waterflow"
-            },
-            {
-              "text": "Pagination 分页器",
-              "link": "/components/sn-pagination"
-            }
-          ])
-        },
-        {
-          "text": "功能组件",
-          items: sortItems([
             {
               "text": "Calendar 日历选择器",
               "link": "/components/sn-calendar"
@@ -674,28 +366,321 @@ export default defineConfig({
               "link": "/components/sn-calendar-week"
             },
             {
-              "text": "CalendarPunch 签到日历",
-              "link": "/components/sn-calendar-punch"
+              "text": "RegionPicker 地区选择器",
+              "link": "/components/sn-region-picker"
             },
             {
-              "text": "Scan 扫码",
-              "link": "/components/sn-scan"
+              "text": "ColorPicker 颜色选择器",
+              "link": "/components/sn-color-picker"
             },
             {
-              "text": "Signature 签名",
-              "link": "/components/sn-signature"
+              "text": "Form 表单",
+              "link": "/components/sn-form"
             },
             {
-              "text": "Clipper 图片裁剪",
-              "link": "/components/sn-clipper"
+              "text": "UploadMedia 媒体上传",
+              "link": "/components/sn-upload-media"
+            }
+          ])
+        },
+        {
+          "text": "展示组件",
+          items: sortItems([
+            {
+              "text": "Cell 单元格",
+              "link": "/components/sn-cell"
+            },
+            {
+              "text": "Album 相册",
+              "link": "/components/sn-album"
+            },
+            {
+              "text": "Line 分割线",
+              "link": "/components/sn-line"
+            },
+            {
+              "text": "ArcProgress 环形进度",
+              "link": "/components/sn-arc-progress"
+            },
+            {
+              "text": "Badge 徽标",
+              "link": "/components/sn-badge"
+            },
+            {
+              "text": "Avatar 头像",
+              "link": "/components/sn-avatar"
+            },
+            {
+              "text": "AvatarGroup 头像组",
+              "link": "/components/sn-avatar-group"
+            },
+            {
+              "text": "Card 卡片",
+              "link": "/components/sn-card"
+            },
+            {
+              "text": "PostCard 动态卡片",
+              "link": "/components/sn-post-card"
+            },
+            {
+              "text": "Skeleton 骨架屏",
+              "link": "/components/sn-skeleton"
+            },
+            {
+              "text": "Tag 标签",
+              "link": "/components/sn-tag"
+            },
+            {
+              "text": "More 查看更多",
+              "link": "/components/sn-more"
+            },
+            {
+              "text": "Loading 加载",
+              "link": "/components/sn-loading"
+            },
+            {
+              "text": "Progress 进度条",
+              "link": "/components/sn-progress"
+            },
+            {
+              "text": "Dateformat 日期格式化",
+              "link": "/components/sn-dateformat"
+            },
+            {
+              "text": "Empty 缺省页",
+              "link": "/components/sn-empty"
+            },
+            {
+              "text": "HighlightText 高亮文本",
+              "link": "/components/sn-highlight-text"
+            },
+            {
+              "text": "Ellipsis 文本省略",
+              "link": "/components/sn-ellipsis"
+            },
+            {
+              "text": "Watermark 水印",
+              "link": "/components/sn-watermark"
+            },
+            {
+              "text": "Alert 警告信息",
+              "link": "/components/sn-alert"
+            },
+            {
+              "text": "Amount 金额",
+              "link": "/components/sn-amount"
+            },
+            {
+              "text": "NoticeBar 通知栏",
+              "link": "/components/sn-notice-bar"
+            },
+            {
+              "text": "Table 表格",
+              "link": "/components/sn-table"
+            }
+          ])
+        },
+        {
+          "text": "反馈组件",
+          items: sortItems([
+            {
+              "text": "Result 结果页",
+              "link": "/components/sn-result"
+            },
+            {
+              "text": "Popup 弹出层",
+              "link": "/components/sn-popup"
+            },
+            {
+              "text": "Modal 模态框",
+              "link": "/components/sn-modal"
+            },
+            {
+              "text": "Overlay 遮罩层",
+              "link": "/components/sn-overlay"
+            },
+            {
+              "text": "Toast 轻提示",
+              "link": "/components/sn-toast"
+            },
+            {
+              "text": "Message 消息条",
+              "link": "/components/sn-message"
+            },
+            {
+              "text": "Notification 通知",
+              "link": "/components/sn-notification"
+            },
+            {
+              "text": "Tooltip 提示框",
+              "link": "/components/sn-tooltip"
+            },
+            {
+              "text": "LoadingPage 加载页",
+              "link": "/components/sn-loading-page"
+            },
+            {
+              "text": "Drawer 抽屉",
+              "link": "/components/sn-drawer"
+            },
+            {
+              "text": "DrawerList 抽屉长列表",
+              "link": "/components/sn-drawer-list"
+            },
+            {
+              "text": "Actionsheet 操作菜单",
+              "link": "/components/sn-actionsheet"
+            },
+            {
+              "text": "Popover 定位弹出层",
+              "link": "/components/sn-popover"
+            }
+          ])
+        },
+        {
+          "text": "布局组件",
+          items: sortItems([
+            {
+              "text": "Page 页面",
+              "link": "/components/sn-page"
+            },
+            {
+              "text": "ScrollView 滚动视图",
+              "link": "/components/sn-scroll-view"
+            },
+            {
+              "text": "ListView 长列表",
+              "link": "/components/sn-list-view"
+            },
+            {
+              "text": "Refresher 下拉刷新",
+              "link": "/components/sn-refresher"
+            },
+            {
+              "text": "Backtop 回到顶部",
+              "link": "/components/sn-backtop"
+            },
+            {
+              "text": "Grid 宫格",
+              "link": "/components/sn-grid"
+            },
+            {
+              "text": "Drag 拖拽排序",
+              "link": "/components/sn-drag"
+            },
+            {
+              "text": "Gap 占位间隔",
+              "link": "/components/sn-gap"
+            },
+            {
+              "text": "KeyboardTop 键盘上方区域",
+              "link": "/components/sn-keyboard-top"
+            },
+            {
+              "text": "FloatBoard 浮动面板",
+              "link": "/components/sn-float-board"
+            },
+            {
+              "text": "FloatButton 浮动按钮",
+              "link": "/components/sn-float-button"
+            },
+            {
+              "text": "SwipeAction 滑动操作",
+              "link": "/components/sn-swipe-action"
+            },
+            {
+              "text": "Loadmore 加载更多",
+              "link": "/components/sn-loadmore"
+            },
+            {
+              "text": "Pagination 分页器",
+              "link": "/components/sn-pagination"
+            },
+            {
+              "text": "Waterflow 瀑布流",
+              "link": "/components/sn-waterflow"
+            },
+            {
+              "text": "Footer 页脚",
+              "link": "/components/sn-footer"
+            }
+          ])
+        },
+        {
+          "text": "导航组件",
+          items: sortItems([
+            {
+              "text": "Topbar 导航栏",
+              "link": "/components/sn-topbar"
+            },
+            {
+              "text": "Tabbar 底部导航栏",
+              "link": "/components/sn-tabbar"
+            },
+            {
+              "text": "Sidebar 侧边栏",
+              "link": "/components/sn-sidebar"
+            },
+            {
+              "text": "Tabs 标签页",
+              "link": "/components/sn-tabs"
+            },
+            {
+              "text": "Subsection 分段器",
+              "link": "/components/sn-subsection"
+            },
+            {
+              "text": "Steps 步骤条",
+              "link": "/components/sn-steps"
+            },
+            {
+              "text": "Menu 菜单",
+              "link": "/components/sn-menu"
+            },
+            {
+              "text": "Search 搜索框",
+              "link": "/components/sn-search"
+            }
+          ])
+        },
+        {
+          "text": "功能组件",
+          items: sortItems([
+            {
+              "text": "Collapse 折叠面板",
+              "link": "/components/sn-collapse"
+            },
+            {
+              "text": "Sorter 排序",
+              "link": "/components/sn-sorter"
+            },
+            {
+              "text": "Timer 计时器",
+              "link": "/components/sn-timer"
+            },
+            {
+              "text": "Countdown 倒计时",
+              "link": "/components/sn-countdown"
+            },
+            {
+              "text": "Countto 数字滚动",
+              "link": "/components/sn-countto"
             },
             {
               "text": "Fullscreen 原位展开全屏",
               "link": "/components/sn-fullscreen"
             },
             {
-              "text": "Gesture 手势",
-              "link": "/components/sn-gesture"
+              "text": "Clipper 图片裁剪",
+              "link": "/components/sn-clipper"
+            },
+            {
+              "text": "Signature 签名",
+              "link": "/components/sn-signature"
+            },
+            {
+              "text": "CalendarPunch 签到日历",
+              "link": "/components/sn-calendar-punch"
             }
           ])
         },
@@ -704,8 +689,28 @@ export default defineConfig({
           "link": "/components/ext-com",
           items: sortItems([
             {
+              "text": "Barcode 一维码",
+              "link": "/components/sn-barcode"
+            },
+            {
+              "text": "Qrcode 二维码",
+              "link": "/components/sn-qrcode"
+            },
+            {
+              "text": "Scan 扫码",
+              "link": "/components/sn-scan"
+            },
+            {
+              "text": "Scankit 华为扫码（一键扫码）",
+              "link": "/components/sn-e-scankit"
+            },
+            {
               "text": "Blurview 高斯模糊",
               "link": "/components/sn-e-blurview"
+            },
+            {
+              "text": "Gesture 手势",
+              "link": "/components/sn-gesture"
             },
             {
               "text": "Markdown 富文本",
@@ -714,11 +719,7 @@ export default defineConfig({
             {
               "text": "Scan Provider 扫码核心",
               "link": "/components/sn-e-scan-provider"
-            },
-            {
-              "text": "Scankit 华为扫码（一键扫码）",
-              "link": "/components/sn-e-scankit"
-            },
+            }
           ])
         }
       ],

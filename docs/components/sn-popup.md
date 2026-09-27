@@ -6,8 +6,11 @@
 
 - 通用弹出层容器：只负责遮罩、显隐与动画，UI 完全由插槽内容自定义（需要自带 UI 模板的弹层可用 Drawer、Modal 等组件）
 - 弹出层类组件，必须放在 `sn-page` 中使用（作为 `sn-page` 的子节点或页面根节点），组件依赖 `sn-page` 注入的 CSS 变量
-- 内置 5 个弹出方向动画，支持 `v-if` / `v-show` 两种渲染模式与自定义动画函数
+- 全端统一使用独立的固定定位遮罩与内容节点；内置 5 个弹出方向动画：遮罩淡入淡出，内容随方向位移/缩放过渡，支持 `v-if` / `v-show` 两种渲染模式
+- 首次打开后保留节点，通过 `visibility` 和 CSS 过渡控制显隐；默认动画不逐次重建节点
 - 通过 ref 绑定组件后调用 `open` / `close` 方法控制显隐
+- 默认动画入场时调用 `close`、退场时调用 `open` 会取消对向定时器并立即反向过渡；自定义动画退场中请求重开会在退场收尾后执行
+- 自定义打开动画启动前遮罩透明、内容节点可见；自定义关闭动画执行期间弹层保持挂载，动画结束后才隐藏并释放层级
 
 ```vue
 <template>
@@ -24,9 +27,15 @@
 
 **更多演示请下载 demo 查看**
 
+弹层内使用 `scroll-view` 展示可变数量的内容时，按内容自然高度排布并设置最大高度；不要为短列表设置 `flex: 1`，否则会撑出无法点击遮罩的空白滚动区域。
+
 ## 自定义动画
 
-`openAnimation` / `closeAnimation` 传入函数后完全接管默认动画，函数签名为 `(overlay: UniElement | null, content: UniElement | null, duration: number) => void`：`overlay` 为遮罩节点，`content` 为内容节点，`duration` 为本次动画时长（ms）。关闭动画用法相同。
+`openAnimation` / `closeAnimation` 传入函数后分别接管对应方向的默认动画，函数签名为 `(overlay: UniElement | null, content: UniElement | null, duration: number) => void`：`overlay` 为遮罩节点，`content` 为内容节点，`duration` 为本次动画时长（ms）。各端打开动画启动时遮罩透明、内容节点可见，具体动画起点由自定义函数设置；自定义动画可调用节点的 `animate` 方法。关闭动画完成后组件才会隐藏节点。
+
+各端遮罩与内容分别使用同级固定定位节点，内容层始终高于遮罩层。居中弹层默认按内容实际宽高定位，动画函数可直接使用 `scale`、`rotate` 或 `translate`；在 `customStyle` 中明确传入 `position` 定位时，由开发者提供所需的 `top` / `left` / `right` / `bottom`。
+
+各端内置入退场动画通过内容节点的位移/缩放与透明度过渡、遮罩淡入淡出实现；五种位置均按内容实际尺寸定位，顶部/底部仅占内容宽度，左右侧仅占内容高度，空白区域点击由遮罩处理。首次挂载时等待内容尺寸就绪；再次打开时若隐藏节点暂时无法测量，则沿用上次有效尺寸定位，切换弹出位置时清除旧位置偏移。关闭动画完成前两者保持挂载，默认动画关闭后仅隐藏节点。自定义动画在定位稳定后才显示；`v-if` 模式关闭后销毁动画节点，`v-show` 模式重开时更换节点，以清除上次 `fill: forwards` 的动画效果。自定义动画如需对内容淡入淡出，应直接在回调中操作 `content` 的透明度。
 
 ```vue
 <template>
@@ -38,24 +47,24 @@
 </template>
 
 <script lang="uts" setup>
-	const bounceOpenAnim = (overlay: UniElement | null, content: UniElement | null, duration: number): void => {
-		if (overlay != null) {
-			overlay.animate(
-				[{ opacity: '0' } as UniAnimationKeyframe, { opacity: '1' } as UniAnimationKeyframe],
-				{ duration: duration, easing: 'ease-out', fill: 'forwards' }
-			)
-		}
-		if (content != null) {
-			content.animate(
-				[
-					{ transform: 'scale(0.6)' } as UniAnimationKeyframe,
-					{ transform: 'scale(1.08)' } as UniAnimationKeyframe,
-					{ transform: 'scale(1)' } as UniAnimationKeyframe
-				],
-				{ duration: duration, easing: 'ease-out', fill: 'forwards' }
-			)
-		}
+const bounceOpenAnim = (overlay: UniElement | null, content: UniElement | null, duration: number): void => {
+	if (overlay != null) {
+		overlay.animate(
+			[{ opacity: '0' } as UniAnimationKeyframe, { opacity: '1' } as UniAnimationKeyframe],
+			{ duration: duration, easing: 'ease-out', fill: 'forwards' }
+		)
 	}
+	if (content != null) {
+		content.animate(
+			[
+				{ transform: 'scale(0.6)' } as UniAnimationKeyframe,
+				{ transform: 'scale(1.08)' } as UniAnimationKeyframe,
+				{ transform: 'scale(1)' } as UniAnimationKeyframe
+			],
+			{ duration: duration, easing: 'ease-out', fill: 'forwards' }
+		)
+	}
+}
 </script>
 ```
 
@@ -70,8 +79,8 @@
 | maskClose | 点击遮罩是否关闭弹出层 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.4` | - |
 | zIndex | 弹出层层级 | Number | `999` | - |
-| overlayStyle | 自定义遮罩层（根节点）样式，后置覆盖默认遮罩样式 | UTSJSONObject \| String | `''` | - |
-| customClass | 遮罩层（根节点）外部样式类 | String | `''` | - |
+| overlayStyle | 自定义遮罩层样式，后置覆盖默认遮罩样式 | UTSJSONObject \| String | `''` | - |
+| customClass | 遮罩层外部样式类 | String | `''` | - |
 | customStyle | 自定义内容容器样式 | UTSJSONObject \| String | `''` | - |
 | openAnimation | 自定义打开动画函数，传入后接管默认打开动画 | Function \| null | `null` | - |
 | closeAnimation | 自定义关闭动画函数，传入后接管默认关闭动画 | Function \| null | `null` | - |
@@ -92,8 +101,8 @@
 
 | 名称 | 参数 | 返回值 | 描述 |
 | --- | --- | --- | --- |
-| open | - | - | 打开弹出层；动画进行中重复调用会挂起，待动画结束后自动执行 |
-| close | - | - | 关闭弹出层；动画进行中重复调用会挂起，待动画结束后自动执行 |
+| open | - | - | 打开弹出层；默认动画退场中立即反向入场，自定义动画退场中在收尾后重开 |
+| close | - | - | 关闭弹出层；入场动画进行中调用会立即反向退场 |
 
 ## 插槽
 

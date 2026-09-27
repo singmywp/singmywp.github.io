@@ -109,7 +109,7 @@ function onLoadmore(): void {
 | androidOverscroll | Android 下是否支持滚动越界 | Boolean | `false` | `true` \| `false` |
 | androidScrollbarDraggable | 滚动条是否可拖拽（仅 Android） | Boolean | `false` | `true` \| `false` |
 | enableBackToTop | 点击顶部状态栏回到顶部（仅 iOS） | Boolean | `false` | `true` \| `false` |
-| scrollAnchoring | 是否开启滚动锚定（仅 Web） | Boolean | `false` | `true` \| `false` |
+| scrollAnchoring | 是否开启滚动锚定（App 端生效） | Boolean | `false` | `true` \| `false` |
 | nestedScrollChild | 嵌套滚动的子容器 id | String | `''` | - |
 | listPadding | 列表内边距 | `Array<Number>` | `[]` | - |
 | refresherEnabled | 是否开启下拉刷新 | Boolean | `false` | `true` \| `false` |

@@ -11,6 +11,8 @@
 - 通过 `v-model:show` 控制显示与隐藏；点击菜单项触发 `select` 事件（携带索引与选项数据）并自动关闭。
 - `overlay` 可关闭遮罩，`close-on-click-overlay` 可设置点击遮罩不关闭，`overlay-opacity`、`overlay-style`、`overlay-class` 自定义遮罩。
 
+HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出。
+
 ```vue
 <template>
 	<sn-page>

@@ -2,7 +2,11 @@
 
 `snu` 的权限分组（`Perm`，对应 `core/utils/perm.uts`），负责系统权限的检查、申请与设置页跳转，以及权限提示弹层的内容配置、样式配置与申请监听。
 
-- 权限检查 / 申请类方法（`checkSystemPermissionGranted` / `getSystemPermissionDenied` / `requestSystemPermission` / `gotoSystemPermissionActivity` / `requestMediaPermission` / `checkMediaPermission`）在 Web 与 Android 端均可调用。
+- 权限检查 / 申请类方法（`checkSystemPermissionGranted` / `getSystemPermissionDenied` / `requestSystemPermission` / `gotoSystemPermissionActivity` / `requestMediaPermission` / `checkMediaPermission`）在 Web、Android、iOS 与 HarmonyOS 端均可调用。
+
+- 平台差异：Android 走系统原生权限；HarmonyOS 经 `UTSHarmony.requestSystemPermission` 申请、`abilityAccessCtrl` 校验，权限名自动由 `android.permission.*` 映射为 `ohos.permission.*`；iOS 无官方统一申请接口，相机 / 麦克风 / 相册分别经 `AVCaptureDevice` / `PHPhotoLibrary` 申请，其余权限按当前授权状态返回（无对应权限的权限名按已授权处理并记录日志）；跳转系统权限设置页三端统一走 `uni.openAppAuthorizeSetting`。
+
+- iOS 需由宿主 App 在 `Info.plist` 声明所使用的权限用途描述（如 `NSCameraUsageDescription`）；HarmonyOS 需在 `module.json5` 的 `requestPermissions` 中声明所需的 `ohos.permission.*`，未声明时申请会失败。
 - 权限提示与申请监听类方法（`setPermTips` / `setPermTipsStyle` / `registerPermListener` / `unregisterPermListener` / `hidePermTips`）由 `sn-perm-listener` 插件支撑：Android 端为原生弹层 + 系统权限弹窗监听；Web 端为空实现（调用不报错、无效果）。
 - 提示内容支持**简化模式**（`title` / `content` / `icon`，`icon` 为 24×24 viewBox 的 svg path d 值）与 **HTML 富文本模式**（`html`，Android 原生 TextView 渲染）；同时设置 `html` 与 `title` / `content` / `icon` 时 HTML 优先。
 - 提示弹层样式高度可配置（背景色、圆角、边距、标题 / 内容 / 图标颜色与字号、间距、最大宽度、动画时长），展示中更新样式会实时刷新。
@@ -22,9 +26,9 @@
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -54,9 +58,9 @@ let ok = snu.checkSystemPermissionGranted(['android.permission.CAMERA'])
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -86,9 +90,9 @@ let denied = snu.getSystemPermissionDenied(['android.permission.CAMERA'])
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -133,9 +137,9 @@ snu.requestSystemPermission({
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -165,9 +169,9 @@ snu.gotoSystemPermissionActivity(['android.permission.CAMERA'])
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -206,9 +210,9 @@ snu.requestMediaPermission({
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| √   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| √   | √       | √   | √         |
 
 ### 属性
 
@@ -238,9 +242,9 @@ let ok = snu.checkMediaPermission(['camera', 'album'])
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| ×   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| ×   | √       | ×   | ×         |
 
 ### 属性
 
@@ -292,9 +296,9 @@ snu.setPermTips(new Map<string, SnPermTipConfig>([
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| ×   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| ×   | √       | ×   | ×         |
 
 ### 属性
 
@@ -352,9 +356,9 @@ snu.setPermTipsStyle({
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| ×   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| ×   | √       | ×   | ×         |
 
 ### 属性
 
@@ -388,9 +392,9 @@ snu.registerPermListener({
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| ×   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| ×   | √       | ×   | ×         |
 
 ### 属性
 
@@ -422,9 +426,9 @@ onUnload(() => {
 
 ### 兼容性
 
-| Web | Android |
-| --- | ------- |
-| ×   | √       |
+| Web | Android | iOS | HarmonyOS |
+| --- | ------- | --- | --------- |
+| ×   | √       | ×   | ×         |
 
 ### 属性
 

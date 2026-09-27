@@ -3,13 +3,13 @@
         <img class="demo-phone-image" src="/assets/images/iphone.png" />
         <div class="demo-phone-contain">
             <iframe class="demo-phone-iframe" :src="srcC" width="100%" height="100%" frameborder="0" name="demoPhone"
-                scrolling="yes"></iframe>
+                scrolling="yes" @load="onFrameLoad"></iframe>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, nextTick, onMounted } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { useData } from 'vitepress';
 
 const data = ref(useData())
@@ -41,15 +41,21 @@ const srcC = computed((): string => {
     }
 })
 
+function applyTheme(isDark: boolean): void {
+    if (typeof window === 'undefined') return
+    const frame = (window.frames as any)['demoPhone']
+    if (!frame) return
+    const setTheme = frame.__snuiSetTheme
+    if (typeof setTheme === 'function') setTheme(isDark ? 'dark' : 'light')
+}
+
+function onFrameLoad(): void {
+    applyTheme(data.value.isDark)
+}
+
 onMounted(() => {
     watch((): boolean => data.value.isDark, (v: boolean) => {
-        nextTick(() => {
-            if (typeof window !== 'undefined') {
-                let frame = window.frames['demoPhone']
-                let $snui = frame.$snui
-                if (typeof $snui !== 'undefined') $snui.configs.app.theme = v ? 'dark' : 'light'
-            }
-        })
+        applyTheme(v)
     }, { immediate: true })
 })
 </script>
