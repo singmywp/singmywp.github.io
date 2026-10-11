@@ -2,12 +2,14 @@
 
 ## 基础用法
 
-- 本组件为 `sn-calendar` 的视图形态：内联在页面中的可滑动月历（无弹层），`sn-calendar`（弹层日历）与 `sn-calendar-punch`（签到日历）均基于它封装，也可单独使用。
-- 点击左右箭头按钮或横向滑动切换月份，长按箭头可连续切换；`titlePicker` 开启后点击标题展开年月选择面板（年步进器 + 12 月宫格）。
-- 日期格基于 Canvas 绘制，当前月中央叠加月份数字水印。
-- 支持 `single` 单选、`range` 范围、`multiple` 多选三种模式：`single` 的 v-model 为当天零点时间戳或 `null`；`range` 只会是 `[]` 或 `[开始, 结束]`（只选一天时两端为同一天）；`multiple` 为时间戳数组。
-- `minDate` 默认当天、`maxDate` 默认当天起 6 个月，超出范围的日期禁用；赋入超界的值会被自动规范化。`maxRange` 限制范围天数（含首尾）或多选个数，超出时以 toast 提示且本次选择不生效。
-- Web 端额外支持鼠标点击与拖动选择；主题（颜色）变化时自动重绘。
+内联在页面中的可滑动月历视图（无弹层），支持单选、范围与多选三种模式；`sn-calendar`（弹层日历）与 `sn-calendar-punch`（签到日历）均基于它封装，也可单独使用。
+
+- 支持箭头点击、横向滑动与长按连续切换月份，并提供年月选择面板快速跳转
+- 日期格内容与绘制样式可自定义，支持前后月补位日期与月份数字水印
+
+::: info 平台差异
+Web 端额外支持鼠标点击与拖动选择。
+:::
 
 ```vue
 <template>
@@ -46,7 +48,7 @@
 </script>
 ```
 
-`scrollToDate` 会选中目标日期并跳转到其所在月份；`title-picker` 开启后也可点击标题展开年月面板跳转。
+`scrollToDate` 会选中目标日期并跳转到其所在月份；`title-picker` 开启后也可点击标题展开年月面板跳转，面板由年步进器与 12 个月份宫格组成。超出 `maxRange` 时会以 toast 提示，且本次选择不生效。
 
 ### 自定义单日内容与圆点
 
@@ -72,11 +74,15 @@
 
 `full-fill-dates` 开启后绘制前后月份的补位日期。
 
+## 实现原理
+
+日期格基于 Canvas 绘制，当前月中央叠加月份数字水印；主题（颜色）变化时自动重绘。
+
 ## 属性
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 绑定值，形态随 type 变化（见基础用法说明） | SnCalendarValue | `null` | - |
+| v-model | 绑定值，形态随 type 变化（见下方类型说明） | SnCalendarValue | `null` | - |
 | type | 选择模式 | String | `single` | `single \| range \| multiple` |
 | minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | - | - |
 | maxDate | 最大可选日期（毫秒时间戳），默认当天起 6 个月 | Number | - | - |
@@ -236,7 +242,7 @@
 
 ### SnCalendarValue
 
-`Number | null | Number[]`：按 `type` 约定——`single` 为当天零点时间戳或 `null`；`range` 为 `[]` 或 `[开始, 结束]`（只选一天时两端相同）；`multiple` 为时间戳数组。
+`Number | null | Number[]`：按 `type` 约定——`single` 为当天零点时间戳或 `null`；`range` 为 `[]` 或 `[开始, 结束]`（只选一天时两端相同）；`multiple` 为时间戳数组。赋入超出 `minDate` / `maxDate` 范围的值会被自动裁剪到范围内。
 
 ### SnCalendarSwitchMode
 

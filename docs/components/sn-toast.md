@@ -4,14 +4,19 @@
 
 ## 基础用法
 
-- 轻提示（吐司），默认居中显示、2 秒后自动消失，可配置图标、加载状态、显示位置等
-- 弹出层类组件，必须放在 `sn-page` 中使用（作为 `sn-page` 的子节点或页面根节点），组件依赖 `sn-page` 注入的 CSS 变量
-- 通过 ref 绑定组件后调用方法使用：`show` 按组件 props 配置显示；`configShow` 传入参数临时覆盖 props 配置（缺省字段回退 props）；`close` 手动关闭
-- 默认不拦截手势，提示期间仍可操作页面；开启 `overlay` 后显示透明遮罩防穿透
-- `loading` 为 true 时显示加载图标且不自动关闭，需手动调用 `close`
+轻提示（吐司），默认居中显示、2 秒后自动消失，可配置图标、加载状态与显示位置。
+
+- 通过组件方法显示与关闭：可按组件配置显示，也可传入参数临时覆盖配置
+- 默认不拦截手势，提示期间仍可操作页面；开启遮罩后可防穿透
+- 加载状态下不自动关闭，需手动关闭
+
+::: danger 必须放在 sn-page 下
+本组件为弹出层，需直接放在 `sn-page` 根节点下使用，否则主题颜色与动画时长等 CSS 变量无法作用到组件内部。
+:::
 
 ::: tip 建议直接使用 API
-推荐使用 [`snu.showToast`](/libs/utils/ui#snu-showtoast)：
+推荐使用 [snu.showToast](/libs/utils/ui#snu-showtoast)：无需在页面放置组件或绑定 `ref`，任意位置可直接调用（`snu.hideToast()` 关闭），配置字段与组件 props 一致（组件的 `overlay` 对应 API 的 `passThrough`，默认均为不拦截手势）。组件本身不提供插槽，需先放置到页面再通过 `ref` 调用。
+:::
 
 ```typescript
 snu.showToast({ text: '保存成功', icon: 'success' })
@@ -23,10 +28,6 @@ snu.showToast({
 })
 ```
 
-API 无需在页面放置组件、无需绑定 `ref`，`import { snu } from '@/uni_modules/sinle-ui'` 后即可在任意位置调用（`snu.hideToast()` 关闭），常用配置字段与组件 props 一致（组件的 `overlay` 对应 API 的 `passThrough`，默认均为不拦截手势）。
-
-组件与 API 的差异仅在调用方式：组件本身不提供插槽，需先放置到页面再通过 `ref` 调用。绝大多数场景使用 API 更为方便易用。
-:::
 
 ```vue
 <template>

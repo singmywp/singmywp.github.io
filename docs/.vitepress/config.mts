@@ -18,6 +18,7 @@ export default defineConfig({
   cleanUrls: true,
   markdown: {
     math: true,
+    languageAlias: { uts: "ts" },
     config: (md) => {
       typeFieldsPlugin(md)
     },
@@ -174,6 +175,7 @@ export default defineConfig({
             { "text": "useFactors", "link": "/api/hooks/use-factors" },
             { "text": "useHover", "link": "/api/hooks/use-hover" },
             { "text": "useResolve", "link": "/api/hooks/use-resolve" },
+            { "text": "useTabbarHeights", "link": "/api/hooks/use-tabbar-heights" },
             { "text": "useI18n", "link": "/api/hooks/use-i18n" },
             { "text": "useExternalStyle", "link": "/api/hooks/use-external-style" },
             { "text": "useBacktop", "link": "/api/hooks/use-backtop" }
@@ -216,6 +218,10 @@ export default defineConfig({
         {
           "text": "组件",
           "link": "/components/index"
+        },
+        {
+          "text": "拍平元素",
+          "link": "/components/flatten"
         },
         {
           "text": "基础组件",

@@ -2,12 +2,15 @@
 
 ## 基础用法
 
-- 弹出式颜色选择器，基于 sn-drawer 底部抽屉封装，内部嵌入 sn-color-picker-view。
-- 仅点击“确定”后才将颜色值写入 `v-model`，点击“取消”或关闭时丢弃修改。
-- 支持面板二维取色、色相 / 透明度滑块、HEX / RGBA / HSB / HSL 四种格式输入与预设颜色。
-- 面板拖动到边界时保持当前色相，亮度降为 0 时色相滑块不会跳回红色端点。
-- 拖动面板时仅更新饱和度与亮度；手指越过面板进入色相条仍保持原色相，色相条右端保持在 360° 位置。
-- 通过 ref 调用 `open()` 方法打开。
+弹出式颜色选择器，用于在底部抽屉中完成颜色选取与确认。
+
+- 支持面板二维取色、色相 / 透明度滑块，以及 HEX / RGBA / HSB / HSL 四种格式输入
+- 内置预设颜色区，预设区与扩展区均可用插槽整体替换
+- 打开状态下，外部修改绑定值会实时同步到取色面板
+
+::: info 确定后写入
+仅点击“确定”才将颜色值写入 `v-model`，点击“取消”或关闭时丢弃本次修改
+:::
 
 ```vue
 <template>
@@ -31,6 +34,20 @@
 ```
 
 **更多演示请下载 demo 查看**
+
+## 实现原理
+
+弹出式部分基于 `sn-drawer` 底部抽屉封装，内部嵌入 `sn-color-picker-view`。
+
+遮罩与面板在首次打开时挂载，与其他 Picker 保持一致，关闭后保留节点；不再预挂载固定定位面板，以规避首次显示时的层级异常。此挂载策略不影响独立使用的 `sn-color-picker-view`。
+
+格式下拉菜单属于嵌套弹层：打开时使用高于颜色选择器的动态层级，遮罩拦截底层触摸滚动；点击格式选项切换输入格式，点击菜单外区域仅关闭格式菜单，不关闭颜色选择器。
+
+拖动取色时面板仅更新饱和度与亮度；拖动到边界时保持当前色相，亮度降为 0 时色相滑块不会跳回红色端点；手指越过面板进入色相条仍保持原色相，色相条右端保持在 360° 位置。
+
+## 注意事项
+
+标题默认居中显示；取消 / 确定按钮在未传入文案时自动使用当前语言的默认文案。
 
 ## 属性
 
@@ -114,6 +131,43 @@
 | open | - | - | 打开颜色选择器，以当前 v-model 值作为初始颜色 |
 | close | - | - | 关闭颜色选择器，不写入颜色值 |
 
+## 插槽
+
+| 名称 | 说明 | 作用域 |
+| --- | --- | --- |
+| preset | 替换「内置颜色」预设区域内容；未传入时渲染预设颜色网格（预设标题与色块），`showPresets` 为 `false` 时不显示该区域 | color：当前颜色值 |
+| extra | 预设颜色区域下方的扩展区域，可放置自定义内容（如自定义色板）；未传入时不渲染 | color：当前颜色值 |
+
+`extra` 插槽可作为“自定义色板”使用：点击色点直接修改 `v-model`（打开状态下会同步到取色面板）：
+
+```vue
+<template>
+	<sn-color-picker ref="picker" v-model="color" title="选择颜色">
+		<template #extra="slotProps">
+			<view class="my-palette">
+				<view v-for="(c, i) in palette" :key="i" class="my-palette-dot" :style="dotStyle(c, slotProps.color)"
+					@click="onPick(c)"></view>
+			</view>
+		</template>
+	</sn-color-picker>
+</template>
+
+<script lang="uts" setup>
+	const picker = ref<SnColorPickerComponentPublicInstance | null>(null)
+	const color = ref<string>('#F5222D')
+	const palette = ref<string[]>(['#1F1F1F', '#EF4444', '#3B82F6'])
+
+	function onPick(c: string) {
+		color.value = c
+	}
+
+	function dotStyle(c: string, current: any): string {
+		const ring = current == c ? 'var(--sn-primary)' : 'var(--sn-line)'
+		return `width:28px;height:28px;border-radius:14px;margin-right:8px;background-color:${c};border:2px solid ${ring};`
+	}
+</script>
+```
+
 ---
 
 以下属性属于 **sn-color-picker-view**（颜色选择容器），可直接嵌入页面单独使用，不依赖弹出层：
@@ -189,5 +243,12 @@
 | 名称 | 参数 | 返回值 | 描述 |
 | --- | --- | --- | --- |
 | refresh | - | - | 重新测量取色面板与滑块位置并同步显示（一般无需手动调用） |
+
+## sn-color-picker-view 插槽
+
+| 名称 | 说明 | 作用域 |
+| --- | --- | --- |
+| preset | 替换「内置颜色」预设区域内容；未传入时渲染预设颜色网格（预设标题与色块），`showPresets` 为 `false` 时不显示该区域 | color：当前颜色值 |
+| extra | 预设颜色区域下方的扩展区域，可放置自定义内容（如自定义色板）；未传入时不渲染 | color：当前颜色值 |
 
 <DemoPhone name="sn-color-picker" />

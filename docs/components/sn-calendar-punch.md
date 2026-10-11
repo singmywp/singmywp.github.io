@@ -2,11 +2,11 @@
 
 ## 基础用法
 
-- 本组件为 `sn-calendar` 的打卡形态：基于 `sn-calendar-view` 封装（`type` 固定为 `single`）的签到打卡日历。
-- 通过 `signedDates` 传入已打卡日期（`YYYY-MM-DD` 字符串数组）：已打卡日期显示 `signedDotColor`（默认主色）圆点；未打卡且可补签的日期显示 `unsignedDotColor`（默认警告色）圆点；今天以 `todayText` 文字高亮显示。
-- `canSupplement` 设为 `false` 关闭补签：未打卡日期不再显示警告色圆点。
-- 点击日期触发 `select` 事件，返回 `SnCalendarPunchDay`（含是否已打卡、是否可补签、完整日期字符串等）；组件本身不执行签到，业务侧在 `select` 回调中处理打卡 / 补签逻辑。
-- `minDate` 默认为 6 个月前的当月 1 号；`firstDayOfWeek` 默认 `1`（周一），星期标题为「周日 ~ 周六」，月份标题格式为「YYYY年MM月」。
+签到打卡日历，是日历组件的打卡形态。
+
+- 已打卡、可补签与今天分别以圆点或文字高亮区分
+- 可关闭补签；周起始日与标题格式可配置
+- 组件不执行签到，业务在日期选择回调中处理打卡 / 补签
 
 ```vue
 <template>

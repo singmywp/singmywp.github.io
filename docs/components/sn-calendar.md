@@ -2,13 +2,15 @@
 
 ## 基础用法
 
-- 从底部弹出的日历选择器，内部为可滑动月历 `sn-calendar-view`（本组件为它的弹层形态），支持 `single` 单选、`range` 范围、`multiple` 多选三种模式。
-- 默认为「确认事务」模式（`showConfirm` 为 `true`）：每次打开以 v-model 重建内部草稿，选择过程只触发 `select`，点击「确定」才把草稿写入 v-model 并触发 `change`、`confirm`；点击「取消」、右上角关闭按钮或（`maskClose` 开启时的）遮罩会丢弃草稿并触发 `cancel`。
-- `showConfirm` 设为 `false` 时为即时提交：每次选择直接写入 v-model 并触发 `change`。
-- 支持通过 `v-model:visible` 双向控制显隐，或通过 `ref` 调用 `open` / `close` 方法。
-- 弹出层类组件，需直接放在 `sn-page` 根节点下使用。
+从底部弹出的日历选择器，支持单选、范围与多选三种选择模式。
 
-v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`；`range` 只会是 `[]` 或 `[开始, 结束]`（只选一天时两端为同一天）；`multiple` 为时间戳数组（选几个返回几个）。
+- 提供「确认事务」草稿模式与即时提交两种提交时机，未确认的选择可整体取消
+- 支持双向控制显隐，也可通过组件实例方法打开与关闭
+- 支持自定义单日内容与内置文案，头部、底部区域可用插槽替换
+
+::: danger 必须放在 sn-page 下
+本组件为弹出层组件，需直接放在 `sn-page` 根节点下使用，否则页面注入的主题颜色变量与动画时长变量无法作用到弹层。
+:::
 
 ```vue
 <template>
@@ -77,13 +79,17 @@ v-model 数据形态：`single` 为当天零点时间戳（Number）或 `null`�
 </script>
 ```
 
+## 实现原理
+
+本组件是 `sn-calendar-view` 月历视图的弹层形态，内部月历由它承载；每次打开弹层时以 v-model 当前值重建内部草稿。
+
 ## 属性
 
 ### 选择行为
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 绑定值，形态随 `type` 变化（见上方基础用法说明） | [[SnCalendarValue]] | `null` | - |
+| v-model | 绑定值，形态随 `type` 变化（见下方类型说明） | [[SnCalendarValue]] | `null` | - |
 | v-model:visible | 弹层显示状态（双向绑定） | Boolean | `false` | `true` \| `false` |
 | type | 选择模式 | String | `single` | `single` \| `range` \| `multiple` |
 | minDate | 最小可选日期（毫秒时间戳），默认当天 | Number | - | - |

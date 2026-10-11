@@ -3,9 +3,12 @@
 > [查看 sn-sidebar 的 2.0 版本差异](/differences/components/sn-sidebar)
 
 ## 基础用法
-- 侧边导航栏，适用于商城选购等场景
-- 左侧为选项列表（v-model 控制选中索引），右侧为内容区（default 插槽）
-- 支持锚点定位（anchor）与选中线（showLine）
+
+侧边导航栏，适用于商城选购等场景。
+
+- 左侧为选项列表，选中索引支持双向绑定
+- 右侧为内容区，可通过默认插槽自定义
+- 支持锚点定位与选中线
 
 ```vue
 <template>

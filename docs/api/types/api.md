@@ -402,7 +402,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | :--- | :--- | :--- |
 | id | String | 风格唯一 id，如 `'default'` |
 | colorBases | [SnColorBases](#sncolorbases) | 亮/暗两套颜色集 |
-| topbarHeight | String | 导航栏高度（不含状态栏） |
+| topbarHeight | String | 导航栏高度（不含状态栏），默认 `48px` |
 | lightBgColor | String | 亮色模式页面默认背景色 |
 | darkBgColor | String | 暗色模式页面默认背景色 |
 | marginFactor | Number | 外间距乘数 |

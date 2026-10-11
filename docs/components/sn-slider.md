@@ -4,11 +4,15 @@
 
 ## 基础用法
 
-- 通过拖动滑块在一个数值区间内选择数值，`v-model` 双向绑定当前值。
-- 支持横向 / 竖向（`vertical`）、自定义范围与步长（`min` / `max` / `step`）、显示当前值文本。
-- 拖动时通过直接操作 DOM 更新滑块与进度位置，拖动跟手流畅；点击轨道任意位置可快速定位到该处。
-- 绑定值会自动夹取到 `[min, max]` 区间并按 `step` 取整。
-- 需要选择一个数值区间（双向滑块）时，请使用 `sn-slider-double`。
+滑动选择器，通过拖动滑块在一个数值区间内选择数值。
+
+- 支持横向与竖向、自定义范围与步长、显示当前值文本
+- 绑定值会自动夹取到范围区间并按步长取整
+- 点击轨道任意位置可快速定位到该处
+
+::: info 区间选择
+需要选择一个数值区间（双向滑块）时，请使用 `sn-slider-double`。
+:::
 
 ```vue
 <template>
@@ -21,6 +25,8 @@ const value = ref<number>(30)
 ```
 
 **更多演示请下载 demo 查看**
+
+激活条保留真实圆角，滑块大于轨道粗细时允许滑块溢出显示。按下 thumb 时会显示一个浅灰半透明外圈，直径取 thumb 与轨道粗细中的较大值再加 `6px`（保证 thumb 嵌入轨道时外圈比轨道略大、清晰可见），外圈圆角在 thumb 圆角基础上同步外扩（thumb 为全圆角时外圈即为同心圆），松手后淡出；拖动过程中不重复测量轨道，激活条的宽度/高度与 thumb 的位置均通过 DOM 直写更新，thumb 与外圈的 transform 均强制使用 `0ms`。外圈的显隐过渡遵循 `--ani-time-*` 与 `aniTimeFactor`，设置 `show-glow` 为 `false` 可关闭该光晕。
 
 ## 竖向滑动
 
@@ -61,6 +67,7 @@ const value = ref<number>(30)
 | thumbBorderRadius | 滑块圆角，自动取滑块尺寸的一半（全圆角） | String \| Number | - | - |
 | thumbBorder | 滑块边框（CSS border 值，如 `2px solid #ffffff`） | String | `''` | - |
 | thumbSize | 滑块尺寸 | String \| Number | `10px` | - |
+| showGlow | 是否显示按下 thumb 时的拖拽光晕 | Boolean | `true` | `true` \| `false` |
 | showValueText | 是否在右侧/下方显示当前值文本 | Boolean | `false` | `true` \| `false` |
 | valueTextWidth | 当前值文本宽度 | String \| Number | `30px` | - |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |

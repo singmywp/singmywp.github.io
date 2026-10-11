@@ -683,7 +683,7 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 # SnDataItem
 
-通用数据项类型，`sn-picker-view`、`sn-select`、`sn-topbar` 等数据组件的 `data` 属性需要传入一个 `SnDataItem[]`，全局操作菜单（`snu.showActionsheet`）的 `actions` 同样使用它。
+通用数据项类型，通用列表类组件与全局操作菜单使用。
 
 | 名称 | 类型 | 必填 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -692,6 +692,29 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | icon | String | 否 | 数据显示图标 |
 | value | String | 否 | 关联值 |
 | color | String | 否 | 文本颜色 |
+| disabled | Boolean | 否 | 是否禁用子项 |
+
+---
+
+# SnSelectItem
+
+`sn-select` 专用选项类型，支持左右图标和选项级文字样式。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| id | String | 否 | 数据的唯一标识 |
+| text | String | 否 | 数据显示文本 |
+| icon | String | 否 | 兼容字段，作为左侧图标 |
+| leftIcon | String | 否 | 左侧图标名 |
+| rightIcon | String | 否 | 右侧图标名 |
+| value | String | 否 | 关联值 |
+| color | String | 否 | 兼容字段，作为文本颜色 |
+| textColor | String | 否 | 文本颜色 |
+| textSize | String \| Number | 否 | 文本字号 |
+| leftIconColor | String | 否 | 左侧图标颜色 |
+| rightIconColor | String | 否 | 右侧图标颜色 |
+| leftIconSize | String \| Number | 否 | 左侧图标尺寸 |
+| rightIconSize | String \| Number | 否 | 右侧图标尺寸 |
 | disabled | Boolean | 否 | 是否禁用子项 |
 
 ---

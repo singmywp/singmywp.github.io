@@ -17,7 +17,7 @@
 | `configs.app.theme` | 主题模式 | `$snui.theme` | 直接属性，写法变化 |
 | `configs.app.autoTheme` | 跟随系统 | `$snui.autoTheme` | 直接属性，默认开启 |
 | `configs.app.grayMode` | 哀悼置灰模式（1.1.4 新增） | `$snui.grayMode`（+ `$snui.grayLevel`） | 改为 `$snui` 直接属性；旧版写 `$snui.configs.app.grayMode`，新版写 `$snui.grayMode`；另新增 `$snui.grayLevel`（0-100）控制灰度程度，默认 `100` 全灰 |
-| `configs.page.topbarHeight` | 导航栏高度，默认 `80px` | `$snui.topbarHeight` | 默认值改为 **`88px`** |
+| `configs.page.topbarHeight` | 导航栏高度，默认 `80px` | `$snui.topbarHeight` | 默认值改为 **`48px`**（Web 端导航栏实际渲染高度再 +8px） |
 | `configs.page.lightBgColor` | 亮色页面背景，默认 `#f9f9f9` | `$snui.lightBgColor` | 默认值改为 `#EEF2FF` |
 | `configs.page.darkBgColor` | 暗色页面背景，默认 `#262628` | `$snui.darkBgColor` | 默认值改为 `#0F172A` |
 | `configs.font.baseSize` + `size(level)` | 基础字号 `14px` + 11 级字号板 | `$snui.fontsizeFactor` | **字号板移除**，改为全局字号乘数 |

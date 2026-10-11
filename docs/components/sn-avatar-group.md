@@ -3,8 +3,12 @@
 > [查看 sn-avatar-group 的 2.0 版本差异](/differences/components/index)
 
 ## 基础用法
-- 支持多个头像组合成头像组，提供丰富的自定义样式
-- 支持铺排和堆叠两种模式
+
+将多个头像组合成头像组，用于展示参与者。
+
+- 支持铺排与堆叠两种模式
+- 支持自定义样式
+
 ```vue
 <template>
 <sn-avatar-group :data="avatars"></sn-avatar-group>

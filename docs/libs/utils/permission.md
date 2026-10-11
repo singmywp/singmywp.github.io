@@ -7,6 +7,7 @@
 - 平台差异：Android 走系统原生权限；HarmonyOS 经 `UTSHarmony.requestSystemPermission` 申请、`abilityAccessCtrl` 校验，权限名自动由 `android.permission.*` 映射为 `ohos.permission.*`；iOS 无官方统一申请接口，相机 / 麦克风 / 相册分别经 `AVCaptureDevice` / `PHPhotoLibrary` 申请，其余权限按当前授权状态返回（无对应权限的权限名按已授权处理并记录日志）；跳转系统权限设置页三端统一走 `uni.openAppAuthorizeSetting`。
 
 - iOS 需由宿主 App 在 `Info.plist` 声明所使用的权限用途描述（如 `NSCameraUsageDescription`）；HarmonyOS 需在 `module.json5` 的 `requestPermissions` 中声明所需的 `ohos.permission.*`，未声明时申请会失败。
+- iOS 的权限用途说明弹层 API 为兼容空实现，不会显示 Android 原生说明弹层；请在系统权限申请前自行展示业务说明，并确保宿主 App 的 `Info.plist` 已声明用途描述。
 - 权限提示与申请监听类方法（`setPermTips` / `setPermTipsStyle` / `registerPermListener` / `unregisterPermListener` / `hidePermTips`）由 `sn-perm-listener` 插件支撑：Android 端为原生弹层 + 系统权限弹窗监听；Web 端为空实现（调用不报错、无效果）。
 - 提示内容支持**简化模式**（`title` / `content` / `icon`，`icon` 为 24×24 viewBox 的 svg path d 值）与 **HTML 富文本模式**（`html`，Android 原生 TextView 渲染）；同时设置 `html` 与 `title` / `content` / `icon` 时 HTML 优先。
 - 提示弹层样式高度可配置（背景色、圆角、边距、标题 / 内容 / 图标颜色与字号、间距、最大宽度、动画时长），展示中更新样式会实时刷新。
@@ -244,7 +245,7 @@ let ok = snu.checkMediaPermission(['camera', 'album'])
 
 | Web | Android | iOS | HarmonyOS |
 | --- | ------- | --- | --------- |
-| ×   | √       | ×   | ×         |
+| ×   | √       | √   | ×         |
 
 ### 属性
 
@@ -298,7 +299,7 @@ snu.setPermTips(new Map<string, SnPermTipConfig>([
 
 | Web | Android | iOS | HarmonyOS |
 | --- | ------- | --- | --------- |
-| ×   | √       | ×   | ×         |
+| ×   | √       | √   | ×         |
 
 ### 属性
 

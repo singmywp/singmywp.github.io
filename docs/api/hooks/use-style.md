@@ -23,7 +23,7 @@ import { useStyle } from '@/uni_modules/sinle-ui'
 | :--- | :--- | :--- |
 | id | String | 风格唯一 id，如 `'default'` |
 | colorBases | [[SnColorBases@api]] | 亮/暗两套颜色集 |
-| topbarHeight | String | 导航栏高度（不含状态栏） |
+| topbarHeight | String | 导航栏高度（不含状态栏），默认 `48px` |
 | lightBgColor | String | 亮色模式页面默认背景色 |
 | darkBgColor | String | 暗色模式页面默认背景色 |
 | marginFactor | Number | 外间距乘数 |
@@ -62,7 +62,7 @@ import { useStyle } from '@/uni_modules/sinle-ui'
 <template>
 	<sn-page title="设置" :show-back="true">
 		<view class="setting-row" flatten>
-			<sn-text font-size="$14" color="$text" flatten>风格</sn-text>
+			<sn-text font-size="$14" color="$text">风格</sn-text>
 			<sn-select v-model="styleIdx" :data="styleOptions" width="132px" selected-mode="check"
 				@change="onStyleChange" />
 		</view>

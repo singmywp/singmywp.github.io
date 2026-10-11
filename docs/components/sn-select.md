@@ -4,14 +4,19 @@
 
 ## 基础用法
 
-HarmonyOS 端弹出菜单阴影使用较轻的默认值，仍可通过弹层样式自定义。
+用于简单单选的数据选择器，点击选择框后在锚点附近弹出选项列表，点选即完成选择。
 
-HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出。
+- 数据项支持左右双图标、文字样式与禁用
+- 选中态支持背景高亮与前置对钩两种模式，展开时自动滚动定位到当前选中项
+- 下方空间不足时自动翻转到上方；在弹层内使用时沿用弹出层层级，遮罩拦截底层触摸滚动
 
-- 用于简单的单选数据选择：点击选择框后，在锚点下方弹出选项列表（下方空间不足时自动翻转到上方），点选即完成选择。
-- v-model 绑定选中项索引；数据源为 `SnDataItem[]`，支持 `icon` 图标与 `disabled` 禁用项。
-- 弹出层展开时自动滚动定位到当前选中项；选项列表由 `sn-cell` 渲染，选中态支持 `bg`（背景高亮）与 `check`（前置对钩）两种模式。
-- 颜色与尺寸均支持 `$` 简写语法；使用时需放在 `sn-page` 根节点下（内含弹出层）。
+::: danger 必须放在 sn-page 下
+组件内含弹出层，使用时需放在 `sn-page` 根节点下。
+:::
+
+::: info 平台差异
+HarmonyOS 端弹出菜单阴影使用较轻的默认值，仍可通过弹层样式自定义；菜单透明度由入退场动画控制，遮罩独立淡入淡出。
+:::
 
 ```vue
 <template>
@@ -26,7 +31,7 @@ HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出�
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
 | v-model | 当前选中项的索引 | Number | `0` | - |
-| data | 选项数据源 | [[SnDataItem@api]][] | `[]` | - |
+| data | 选项数据源 | [[SnSelectItem@component]][] | `[]` | - |
 | width | 选择框宽度（弹出层宽度与其一致） | String \| Number | `100px` | - |
 | bgColor | 选择框背景颜色 | String | `$front` | - |
 | popBgColor | 弹出层背景颜色 | String | `$front` | - |
@@ -37,6 +42,12 @@ HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出�
 | checkIconSize | 选中项对钩图标大小（selectedMode 为 check 时生效） | String \| Number | `$14` | - |
 | textSize | 选择框文本大小 | String \| Number | `$14` | - |
 | textColor | 选择框文本颜色（下拉箭头同色） | String | `$text` | - |
+| leftIcon | 选择框左侧默认图标 | String | `''` | - |
+| rightIcon | 选项右侧默认图标 | String | `''` | - |
+| leftIconColor | 左侧图标默认颜色 | String | `$text` | - |
+| rightIconColor | 右侧图标默认颜色 | String | `$text` | - |
+| leftIconSize | 左侧图标默认尺寸 | String \| Number | `$18` | - |
+| rightIconSize | 右侧图标默认尺寸 | String \| Number | `$16` | - |
 | borderRadius | 选择框与弹出层圆角大小 | String \| Number | `$8` | - |
 | maxHeight | 弹出层选项列表最大高度 | String \| Number | `500px` | - |
 | maskOpacity | 弹出层蒙层透明度 | Number | `0` | `0~1` |
@@ -58,17 +69,25 @@ HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出�
 | popStyle | 自定义弹出层容器样式 | UTSJSONObject \| String | - | - |
 | popClass | 自定义弹出层容器外部样式类 | String | - | - |
 
-:::type-fields SnDataItem
+:::type-fields SnSelectItem
 
-通用数据项类型，全局弹窗操作菜单与多数列表类组件共用（组件侧详见[组件类型](/api/types/component#sndataitem)）。
+`sn-select` 专用选项类型，支持左右图标和选项级文字样式。
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
 | id | String | 否 | 项 id |
 | text | String | 否 | 显示文本 |
-| icon | String | 否 | 图标名 |
+| icon | String | 否 | 兼容字段，作为左侧图标 |
+| leftIcon | String | 否 | 左侧图标名 |
+| rightIcon | String | 否 | 右侧图标名 |
 | value | String | 否 | 关联值 |
 | color | String | 否 | 文本颜色 |
+| textColor | String | 否 | 文本颜色 |
+| textSize | String \| Number | 否 | 文本字号 |
+| leftIconColor | String | 否 | 左侧图标颜色 |
+| rightIconColor | String | 否 | 右侧图标颜色 |
+| leftIconSize | String \| Number | 否 | 左侧图标尺寸 |
+| rightIconSize | String \| Number | 否 | 右侧图标尺寸 |
 | disabled | Boolean | 否 | 是否禁用 |
 
 ---

@@ -1,3 +1,27 @@
+## 2.0.2（2026-10-11）
+- 【重要】插件源码统一改用 `<script lang="ts">`，加快编译速度，推荐使用 HBuilderX Alpha 5.31 及以上版本
+- 新增 毛玻璃导航栏：`sn-topbar`、`sn-tabbar`、`sn-page` 新增 `blur` / `blurRadius` / `blurOpacity`，`sn-page` 新增 `topbarBgColor`
+- 新增 Tabbar 高度占位联动：`sn-tabbar` 新增 `tabbarKey`，配合新 Hook `useTabbarHeights` 让子页面读取固定导航栏实际高度，在滚动内容末尾放置占位（内容可经毛玻璃导航栏背后呈现）
+- 新增 `sn-select` 新增专用选项类型 `SnSelectItem`（支持选项左右图标与选项级文字样式），`data` 由 `SnDataItem[]` 改为 `SnSelectItem[]`（兼容旧字段）；新增 `leftIcon` / `rightIcon` / `leftIconColor` / `rightIconColor` / `leftIconSize` / `rightIconSize` 属性
+- 新增 `sn-color-picker`、`sn-color-picker-view` 新增 `preset` 与 `extra` 插槽，可替换「内置颜色」预设区或在其下方追加自定义内容
+- 新增 `sn-slider`、`sn-slider-double` 新增 `showGlow` 属性，可关闭按下滑块时的拖拽光晕
+- 新增 `sn-tabbar` 新增 `customClass` 属性与 `changeToIndex` 方法；`sn-tabbar-item` 新增 `padding` 属性（`itemPadding` 保留兼容）
+- 新增 `$snui.topbarHeightResolved` 只读属性，返回当前平台实际渲染的导航栏高度（Web 端为 `topbarHeight` + 8px）
+- 新增 Demo 新增「颜色库」「日期库」「状态存储」API 页面，原「工具库」页面拆分为 23 个分组页面，并新增「乘数设计」页与「弹层登录」模板页
+- 优化 导航栏高度体系调整：`$snui.topbarHeight` 默认值由 88px 调整为 48px（六套内置风格同步）；`sn-topbar` 固定模式不再自动生成等高占位，高度语义改为导航栏内容区高度（`statusBar` 开启时向上覆盖状态栏并按实际高度占位），`zIndex` 默认值调整为 998
+- 优化 弹层层级：`sn-popup` 打开时按栈内已有弹层自动抬升层级，`sn-select`、`sn-drawer` 移除固定层级，多个弹出层同时使用时不再互相遮挡
+- 优化 点击命中区域：`sn-input` 的前后缀图标、清除按钮、密码切换与 `sn-notice-bar` 关闭按钮改为独立可点击容器，避免点击无效
+- 优化 `sn-color-picker` 打开期间外部 `v-model` 变化会同步进草稿值；底部按钮改用 `sn-button` 自带文本渲染
+- 优化 `sn-text` 的文本选择与最大行数在非 App 平台统一生效
+- 优化 禁用态统一：`sn-drag`、`sn-fullscreen`、`sn-swipe-action`、`sn-mention`、`sn-pagination`、`sn-upload-media`、`sn-upload-media-unicloud` 等补 Web 端 `cursor: not-allowed`
+- 优化 `sn-popover` 移除打开后的二次定位修正，弹出不再跳动
+- 修复 `sn-popup` 固定根容器改为常驻，`renderMode` 只控制遮罩与内容的挂载方式，修复首次打开时容器尺寸未就绪导致的偶发不显示
+- 修复 `sn-upload-media` 上传超时、失败与组件卸载时先落地条目状态再中止任务，修复文件一直停留在「上传中」
+- 修复 `sn-album` 图片占位层改用条件渲染，并在数据重置时清空已加载标记，修复占位层残留
+- 修复 `sn-timer` 重置与卸载统一走 `pause()`，修复定时器未清理
+- 修复 `sn-toast` 图标被长文本压缩变形
+- 修复 `sn-clipper`、`sn-arc-progress`、`sn-arc-slider` 等组件内部对象属性访问方式统一，避免部分平台取值异常
+- 修复 i18n `t()` 的占位符替换在全平台统一实现
 ## 2.0.1（2026-09-27）
 - 适配 HarmonyOS 系统，大部分组件、API 运行良好，少部分组件尚未完全适配或存在一些异常，下版本将持续推进适配
 - 修复 Demo 主页“组件分类”下的组件列表弹层偶发点击无效的问题

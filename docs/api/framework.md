@@ -6,12 +6,12 @@
 
 ## 概述
 
-SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 UI 框架，以 `uni_modules` 形式分发，目标平台为 Android（Kotlin）与 Web（JavaScript），未来计划适配鸿蒙、iOS 与小程序。
+SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 UI 框架，以 `uni_modules` 形式分发，目标平台为 Android（Kotlin）、iOS（Swift）、HarmonyOS 与 Web（JavaScript）。
 
 框架坚持以下设计原则：
 
 - **简洁轻量**：核心无运行时依赖，按需打包
-- **跨平台一致**：通过条件编译与平台目录（`utssdk/app-android` 等）隔离平台差异
+- **跨平台一致**：通过条件编译与平台目录（`utssdk/app-android`、`utssdk/app-ios` 等）隔离平台差异
 - **主题化驱动**：风格（Style）与主题（Theme）双层体系，全局一处修改、处处生效
 - **组合式 API**：向组件与开发者提供 `hooks` 复用框架能力
 - **性能颜值平衡**：追求更优秀的 UI 设计，一切设计都在考虑性能的情况下尽可能优化 UI 设计。
@@ -63,7 +63,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
   | :------------- | :---------------------------- | :-------------------------- |
   | id             | String                        | 风格唯一 id，如 `'default'` |
   | colorBases     | [SnColorBases](#sncolorbases) | 亮/暗两套颜色集             |
-  | topbarHeight   | String                        | 导航栏高度（不含状态栏）    |
+  | topbarHeight   | String                        | 导航栏高度（不含状态栏），默认 `48px` |
   | lightBgColor   | String                        | 亮色模式页面默认背景色      |
   | darkBgColor    | String                        | 暗色模式页面默认背景色      |
   | marginFactor   | Number                        | 外间距乘数                  |
@@ -116,6 +116,36 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 还提供了三个常用动画时长，以保持应用全局动画的一致性： `$snui.aniTimeShort(150ms)` / `$snui.aniTimeNormal(250ms)` / `$snui.aniTimeLong(400ms)`。这些常用动画时长会自动适配 `aniTimeFactor` 机制，无需您自行处理。并提供 `uts` 和 `css` 两种使用方法，`CSS` 变量由 `sn-page` 以 `--ani-time-short/normal/long` CSS 变量注入页面。
 
+### 乘数的三种用法
+
+五个乘数都可通过 `$snui` 直接读取或修改，修改后会持久化到当前风格：
+
+```uts
+$snui.paddingFactor = 1.2
+const padding = 12 * $snui.paddingFactor
+const radius = 8 * $snui.radiusFactor
+```
+
+组件需要解析带 `$` 前缀的尺寸时，使用 `useResolve`。不带 `$` 的值保持原始尺寸，带 `$` 的值按对应乘数计算：
+
+```uts
+const resolver = useResolve()
+const padding = resolver.resolveSize('$12', 'padding')
+const radius = resolver.resolveSizeNum('$8', 'radius')
+```
+
+使用 HBuilderX Alpha 5.31 或更高版本时，`sn-page` 还会注入五个数值 CSS 变量：`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`。它们适合直接用于 `calc()`，例如：
+
+```scss
+.card {
+  padding: calc(var(--paddingFactor) * 12px);
+  border-radius: calc(var(--radiusFactor) * 8px);
+  font-size: calc(var(--fontsizeFactor) * 14px);
+}
+```
+
+CSS 变量的作用域是 `sn-page` 根节点及其后代。乘数变化时，`sn-page` 会差量更新变量；脱离 `sn-page` 的独立组件或弹出页面不会自动获得这些变量。
+
 #### **`$` 动态尺寸语法**
 
 尺寸类 props 统一交给 [useResolve](/api/hooks/use-resolve) 钩子的 `resolveSize` / `resolveSizeNum` 处理——`16px`（无 `$`）返回原始值；`:16`（number）返回原始值；`"$16px"`（带 `$`）提取数值乘以对应乘数。解析类型由 `SnResolveType` 指定（`font` / `radius` / `margin` / `padding` / `aniTime`）。
@@ -128,7 +158,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 2. **聚合门面**（`core/utils/index.uts`）：`snu` 静态类，每个方法一行转发。
 3. **插件出口**（`index.uts`）：`export { snu }`。
 
-用户侧统一使用 `snu.xxx`；组件内部为减小体积直接导入分组类。平台相关方法（系统、权限等）经 `sinle-api` 插件按平台目录（`utssdk/app-android`）分别实现，无需条件编译。
+用户侧统一使用 `snu.xxx`；组件内部为减小体积直接导入分组类。平台相关方法（系统、权限等）经 `sinle-api` 插件按平台目录（`utssdk/app-android`、`utssdk/app-ios`、`utssdk/app-harmony`）分别实现，无需条件编译。
 
 ---
 

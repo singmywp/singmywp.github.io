@@ -4,11 +4,21 @@
 
 ## 基础用法
 
-- 基于华为统一扫码服务（Scan Kit）封装的扩展插件，当前仅支持 Android 平台。Scan Kit 对复杂扫码场景（反光、暗光、污损、小码、大角度等）做了特定识别优化，扫码成功率较高。
-- 包含两部分能力：
-  - **扫码 API `scan`**：调用 Scan Kit 的 Default View Mode，弹出华为标准全屏扫码界面（支持相机扫码与导入图片扫码），扫完通过回调返回码值；
-  - **码图生成组件 `sn-e-scankit-code`**：基于 `ScanUtil.buildBitmap` 将字符串转换为一维码 / 二维码（EAN-8、EAN-13、UPC-A、UPC-E、Codabar、Code 39、Code 93、Code 128、ITF14、QR、DataMatrix、PDF417、Aztec），支持自定义前后景色、容错级别与 QR 中部 Logo。
+基于华为统一扫码服务（Scan Kit）封装的扩展插件，当前仅支持 Android 平台。
+
+- 针对反光、暗光、污损、小码、大角度等复杂场景做了识别优化，扫码成功率较高
+- 提供全屏扫码能力，支持相机扫码与导入图片扫码
+- 附带码图生成组件，可将字符串转换为一维码 / 二维码
+
+::: info 权限申请
 - 相机与相册权限由插件内部申请：未授权时先弹出 `permTip` 说明弹窗，确认后请求系统权限，拒绝后跳转系统权限设置页。
+:::
+
+::: details 扫码 API 与码图生成组件
+- **扫码 API `scan`**：调用 Scan Kit 的 Default View Mode，弹出华为标准全屏扫码界面（支持相机扫码与导入图片扫码），扫完通过回调返回码值；
+- **码图生成组件 `sn-e-scankit-code`**：基于 `ScanUtil.buildBitmap` 将字符串转换为一维码 / 二维码（EAN-8、EAN-13、UPC-A、UPC-E、Codabar、Code 39、Code 93、Code 128、ITF14、QR、DataMatrix、PDF417、Aztec），支持自定义前后景色、容错级别与 QR 中部 Logo。
+:::
+
 
 ## 兼容性
 

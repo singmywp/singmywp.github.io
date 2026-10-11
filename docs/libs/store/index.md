@@ -17,6 +17,8 @@ import { store, frameStore, StoreLib } from '@/uni_modules/sinle-ui'
 | `store` | `app_store` | 应用全局状态，推荐在业务中使用 |
 | `frameStore` | `sinle_ui_store` | 框架内部状态（主题、风格、灰模等），不建议业务直接使用 |
 
+固定 Tabbar 的高度登记也保存在 `frameStore`：每个 `sn-page` 使用独立的 `tabbarHeights:<实例 uid>` 键，存储纯数值与归属记录，不持久化；页面或登记组件卸载时清理。业务通过 [useTabbarHeights](/api/hooks/use-tabbar-heights) 获得当前页面的高度字典，不直接修改内部记录。不同页面的同名 Tabbar key 互不影响。
+
 ## 快速上手
 
 ```typescript

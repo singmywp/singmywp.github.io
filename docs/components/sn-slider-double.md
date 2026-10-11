@@ -2,9 +2,11 @@
 
 ## 基础用法
 
-- 双向（区间）滑动选择器，轨道上有两个滑块，`v-model` 绑定一个长度为 2 的数值数组表示区间 `[较小值, 较大值]`。
-- 拖动需按住滑块，拖动结束时若两值交叉会自动交换排序，保证数组前项小于等于后项。
-- 其余表现（竖向、范围步长、显示值文本、自定义样式等）与 `sn-slider` 一致。
+双向（区间）滑动选择器，轨道上有两个滑块，绑定长度为 2 的数值数组表示区间 `[较小值, 较大值]`。
+
+- 拖动需按住滑块，拖动结束时若两值交叉会自动交换排序，保证数组前项小于等于后项
+- 支持竖向、范围与步长、显示值文本与自定义样式
+- 其余表现与 `sn-slider` 一致
 
 ```vue
 <template>
@@ -17,6 +19,8 @@ const range = ref<number[]>([20, 40])
 ```
 
 **更多演示请下载 demo 查看**
+
+激活条保留真实圆角，滑块大于轨道粗细时允许滑块溢出显示。按下任一 thumb 时才显示与其圆角同心外扩的浅灰半透明外圈，直径取 thumb 与轨道粗细中的较大值再加 `6px`（保证 thumb 嵌入轨道时外圈比轨道略大、清晰可见），松手后淡出；拖动过程中不重复测量轨道，激活条的尺寸/位置与两个滑块的位置均通过 DOM 直写更新，thumb 与外圈的 transform 均强制使用 `0ms`；外圈显隐过渡遵循 `--ani-time-*` 与 `aniTimeFactor`，设置 `show-glow` 为 `false` 可关闭该光晕。
 
 ## 属性
 
@@ -35,6 +39,7 @@ const range = ref<number[]>([20, 40])
 | thumbBorderRadius | 滑块圆角，自动取滑块尺寸的一半（全圆角） | String \| Number | - | - |
 | thumbBorder | 滑块边框（CSS border 值，如 `2px solid #ffffff`） | String | `''` | - |
 | thumbSize | 滑块尺寸 | String \| Number | `10px` | - |
+| showGlow | 是否显示按下 thumb 时的拖拽光晕 | Boolean | `true` | `true` \| `false` |
 | showValueText | 是否在右侧/下方显示当前区间文本（格式如 `20 - 40`） | Boolean | `false` | `true` \| `false` |
 | valueTextWidth | 区间文本宽度 | String \| Number | `30px` | - |
 | customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |

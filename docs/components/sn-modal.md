@@ -4,13 +4,18 @@
 
 ## 基础用法
 
-- 自带完整 UI 模板的模态对话框：标题 + 内容 + 确定/取消按钮
-- 弹出层类组件，必须放在 `sn-page` 中使用（作为 `sn-page` 的子节点或页面根节点），组件依赖 `sn-page` 注入的 CSS 变量
-- 内容区内置 scroll-view，超过窗口高度 80% 时自动限高滚动
-- 通过 ref 绑定组件后调用 `open` / `close` 方法控制显隐；`confirm` / `cancel` 事件在点击对应按钮时触发，按钮点击后自动关闭模态框
+自带完整 UI 模板的模态对话框：标题 + 内容 + 确定 / 取消按钮。
+
+- 内容区内置滚动，超过窗口高度 80% 时自动限高滚动
+- 通过组件方法控制显隐，按钮点击后自动关闭并派发对应事件
+
+::: danger 必须放在 sn-page 下
+本组件为弹出层，需直接放在 `sn-page` 根节点下使用，否则主题颜色与动画时长等 CSS 变量无法作用到组件内部。
+:::
 
 ::: tip 建议直接使用 API
-推荐使用 [`snu.showModal`](/libs/utils/ui#snu-showmodal)：
+推荐使用 [snu.showModal](/libs/utils/ui#snu-showmodal)：无需在页面放置组件或绑定 `ref`，配置字段与组件 props 一致，结果经 `success` 返回。组件与 API 的唯一差异是组件支持 `header` / `content` / `actions` 三个插槽，不需要插槽定制时推荐使用 API。
+:::
 
 ```typescript
 snu.showModal({
@@ -20,10 +25,6 @@ snu.showModal({
 })
 ```
 
-API 无需在页面放置组件、无需绑定 `ref`，`import { snu } from '@/uni_modules/sinle-ui'` 后即可在任意位置调用，常用配置字段与组件 props 一致，回调结果通过 `success` 返回。
-
-组件与 API 的**唯一差异**是组件支持 `header` / `content` / `actions` 三个插槽，可自由替换标题、内容与操作区；不需要插槽定制时，绝大多数场景使用 API 更为方便易用。
-:::
 
 ```vue
 <template>

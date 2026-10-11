@@ -3,9 +3,19 @@
 > [查看 sn-float-board 的 2.0 版本差异](/differences/components/sn-float-board)
 
 ## 基础用法
-- 固定吸附在屏幕四边之一的面板，始终显示，用户可通过手势拖拽在折叠与展开状态之间切换，松手后根据滑动距离自动归位
-- 请注意区分 `sn-drawer` 和 `sn-float-board`：`sn-drawer` 是弹出层，需要调用方法才能显示；而 `sn-float-board` 则始终显示（可以把 `sn-drawer` 理解为关闭的浮动面板，`sn-float-board` 则是半开的浮动面板）
-- 组件为 `fixed` 定位，不占据文档流空间，请在页面底部预留面板折叠后的空隙（如 `sn-gap`）
+
+固定吸附在屏幕四边之一的浮动面板，始终显示。
+
+- 通过手势拖拽在折叠与展开状态之间切换，松手后按滑动距离自动归位
+- 组件为固定定位，不占据文档流空间
+
+::: info 与 sn-drawer 的区别
+`sn-drawer` 是弹出层，需要调用方法才能显示；`sn-float-board` 始终显示。可理解为：`sn-drawer` 是关闭的浮动面板，`sn-float-board` 是半开的浮动面板。
+:::
+
+::: info 预留空隙
+组件不占据文档流空间，请在页面底部为面板折叠后的空隙预留位置（如使用 `sn-gap`）。
+:::
 
 ```vue
 <template>

@@ -52,7 +52,7 @@ const { locale } = useI18n()
 ```vue
 <template>
 	<sn-page :title="pageTitle" :show-back="true">
-		<sn-text font-size="$14" color="$text" flatten>{{ currentLocale }}</sn-text>
+		<sn-text font-size="$14" color="$text">{{ currentLocale }}</sn-text>
 	</sn-page>
 </template>
 

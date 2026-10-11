@@ -4,9 +4,10 @@
 
 ## 基础用法
 
-- SinleUI 手势库组件，基于 AlloyFinger 实现，跨平台可用（Web / Android 均支持）
-- 内置点击、双击、长按、手指落下 / 移动 / 抬起 / 打断、双指缩放、滑动（fling）等手势识别
-- 事件回调均返回框架定义的具名类型（`SnPointerEvent` / `SnTouchEvent` / `SnScaleEvent` / `SnFlingEvent`），非 `UTSJSONObject`
+SinleUI 手势库组件，基于 AlloyFinger 实现，Web 与 Android 均可用。
+
+- 内置点击、双击、长按、手指按下 / 移动 / 抬起 / 打断、双指缩放与滑动等手势识别
+- 事件回调返回框架定义的具名类型，而非 `UTSJSONObject`
 
 ```vue
 <template>

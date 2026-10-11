@@ -27,16 +27,16 @@ import { useFactors } from '@/uni_modules/sinle-ui'
 	<sn-page title="设置" :show-back="true">
 		<view class="slider-block" flatten>
 			<view class="slider-label-row" flatten>
-				<sn-text font-size="$13" color="$text" flatten>字体大小</sn-text>
-				<sn-text bold font-size="$13" color="$primary" flatten>{{ fontsizeFactorText }}×</sn-text>
+				<sn-text font-size="$13" color="$text">字体大小</sn-text>
+				<sn-text bold font-size="$13" color="$primary">{{ fontsizeFactorText }}×</sn-text>
 			</view>
 			<sn-slider :model-value="fontsizeFactorInt" :min="6" :max="16" :step="1"
 				active-color="$primary" inactive-color="$line" @change="onFontsizeChange" />
 		</view>
 		<view class="slider-block" flatten>
 			<view class="slider-label-row" flatten>
-				<sn-text font-size="$13" color="$text" flatten>圆角</sn-text>
-				<sn-text bold font-size="$13" color="$primary" flatten>{{ radiusFactorText }}×</sn-text>
+				<sn-text font-size="$13" color="$text">圆角</sn-text>
+				<sn-text bold font-size="$13" color="$primary">{{ radiusFactorText }}×</sn-text>
 			</view>
 			<sn-slider :model-value="radiusFactorInt" :min="0" :max="20" :step="1"
 				active-color="$primary" inactive-color="$line" @change="onRadiusChange" />

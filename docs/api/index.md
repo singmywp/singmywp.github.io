@@ -23,6 +23,7 @@ import {
 	useFactors,
 	useHover,
 	useResolve,
+	useTabbarHeights,
 	useI18n,
 	t,
 	locale,
@@ -42,7 +43,7 @@ import {
 | :--- | :--- | :--- |
 | 框架对象 | `$snui` | `Snui` 单例实例，框架全局配置与主题、风格控制入口 |
 | 工具库 | `snu` | 工具方法聚合门面（静态类，包含随机、缓动、校验等 10 组方法），[详见](/libs/utils/index) |
-| 钩子 | `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useI18n` | 在组件中获取主题、风格、乘数、点击态、解析、国际化能力的 hooks |
+| 钩子 | `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useI18n` / `useTabbarHeights` | 获取主题、风格、乘数、点击态、解析、国际化和页面作用域 Tabbar 高度 |
 | 颜色库 | `ColorLib` / `TinyColor` | 颜色解析、转换与色板生成，[详见](/libs/color/index) |
 | 日期库 | `DateLib` / `Dayuts` / `dayuts` / `isDayuts` / `dayutsIntl` | 日期解析、格式化与国际化，[详见](/libs/date/index) |
 | 全局函数 | `syncStatusBarColor` / `createCalendarDayPaint` / `createCalendarDayContent` / `t` | 状态栏颜色同步、日历天定制工具、国际化翻译 |
@@ -130,7 +131,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | :--- | :--- | :--- |
 | id | String | 风格唯一 id，如 `'default'` |
 | colorBases | [[SnColorBases@api]] | 亮/暗两套颜色集 |
-| topbarHeight | String | 导航栏高度（不含状态栏） |
+| topbarHeight | String | 导航栏高度（不含状态栏），默认 `48px` |
 | lightBgColor | String | 亮色模式页面默认背景色 |
 | darkBgColor | String | 暗色模式页面默认背景色 |
 | marginFactor | Number | 外间距乘数 |
@@ -175,7 +176,8 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | autoTheme | Boolean | 否 | 是否跟随系统外观自动切换主题（默认开启） |
 | grayMode | Boolean | 否 | 哀悼置灰（灰度模式）开关，开启后全局呈现黑白效果 |
 | grayLevel | Number | 否 | 哀悼置灰程度（0-100，默认 100 全灰），仅当 grayMode 开启时生效 |
-| topbarHeight | String | 否 | `sn-topbar` 导航栏高度（不含状态栏），默认 `88px` |
+| topbarHeight | String | 否 | `sn-topbar` 导航栏高度（不含状态栏），默认 `48px` |
+| topbarHeightResolved | String | 是 | `sn-topbar` 在当前平台实际渲染的导航栏高度（不含状态栏）：非 Web 端等于 `topbarHeight`，Web 端为 `topbarHeight + 8px` |
 | lightBgColor | String | 否 | 亮色模式页面默认背景色 |
 | darkBgColor | String | 否 | 暗色模式页面默认背景色 |
 | logging | Boolean | 否 | 是否开启框架日志输出（默认开启） |

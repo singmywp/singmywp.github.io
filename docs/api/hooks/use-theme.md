@@ -28,11 +28,11 @@ import { useTheme } from '@/uni_modules/sinle-ui'
 <template>
 	<sn-page title="设置" :show-back="true">
 		<view class="setting-row" flatten>
-			<sn-text font-size="$14" color="$text" flatten>跟随系统</sn-text>
+			<sn-text font-size="$14" color="$text">跟随系统</sn-text>
 			<sn-switch :model-value="isAuto" active-bg-color="$primary" @change="onAutoChange" />
 		</view>
 		<view class="setting-row" flatten>
-			<sn-text font-size="$14" color="$text" flatten>暗黑模式</sn-text>
+			<sn-text font-size="$14" color="$text">暗黑模式</sn-text>
 			<sn-switch :model-value="isDark" active-bg-color="$primary" @change="onDarkChange" />
 		</view>
 	</sn-page>
