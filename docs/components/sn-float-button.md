@@ -36,7 +36,7 @@
 | borderRadius | 圆角大小 | String \| Number | `$12000` | - |
 | boxShadow | 阴影 | String | `0 0 15px -10px` | - |
 | aniTime | 拖动松手 / 吸附时的过渡动画时长 | String \| Number | `$long` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

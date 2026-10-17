@@ -54,7 +54,7 @@ function onError(err: SnScanProviderErrorImpl): void {
 | initZoomScale | 初始缩放比例（线性缩放，0 ~ 1） | Number | `0` | - |
 | autoStart | 组件初始化后是否自动启动相机并请求权限 | Boolean | `true` | `true` \| `false` |
 | cameraPermTip | 相机权限请求说明文案 | String | `　本应用正在请求您的相机权限，仅用于条码、二维码识别，且不会将任何数据上传至云端。如不提供此权限，则无法正常使用扫码功能。` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 ## 事件

@@ -16,14 +16,14 @@ const { locale } = useI18n()
 
 | 返回 | 类型 | 说明 |
 | :--- | :--- | :--- |
-| t | (key: string, params?: UTSJSONObject) => string | 框架内部翻译函数，仅供框架组件翻译内置文案使用，**开发者不得调用** |
+| t | (key: string, params?: Record\<string, string \| number\>) => string | 框架内部翻译函数，仅供框架组件翻译内置文案使用，**开发者不得调用** |
 | locale | `ComputedRef<string>` | 当前组件语言（BCP 47 标签），响应式 |
 
 ## 说明
 
 - `useI18n` 面向框架内部：框架组件用它翻译内置文案（如星期、月份、按钮文案等），开发者无需也不应调用 `t`。
 - 开发者读取的 `locale` 是响应式的，语言切换后自动更新。
-- 切换语言请使用 `$snui.locale`（赋值即切换并持久化），详见[框架国际化](/api/framework#国际化-i18n)。
+- 切换语言请使用 `$snui.locale`（赋值即切换并持久化），详见[框架国际化](/get-started/framework#国际化-i18n)。
 
 ## 支持的语言
 

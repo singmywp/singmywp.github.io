@@ -118,33 +118,33 @@ Web 端额外支持鼠标点击与拖动选择。
 | suffixFontSize | 下标字号 | String \| Number | `$8` | - |
 | dayRadius | 日期气泡圆角 | String \| Number | `$6` | - |
 | dayGap | 日期气泡与单元格边缘的间距 | String \| Number | `$2` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |
-| headerStyle | 自定义头部样式 | UTSJSONObject \| String | `''` | - |
+| headerStyle | 自定义头部样式 | SnStyleValue | `''` | - |
 | headerClass | 外部样式类 | String | `''` | - |
-| switchStyle | 自定义月份切换按钮样式 | UTSJSONObject \| String | `''` | - |
+| switchStyle | 自定义月份切换按钮样式 | SnStyleValue | `''` | - |
 | switchClass | 外部样式类 | String | `''` | - |
-| weekdaysStyle | 自定义星期标题行样式 | UTSJSONObject \| String | `''` | - |
+| weekdaysStyle | 自定义星期标题行样式 | SnStyleValue | `''` | - |
 | weekdaysClass | 外部样式类 | String | `''` | - |
-| weekdayStyle | 自定义单个星期标题样式 | UTSJSONObject \| String | `''` | - |
+| weekdayStyle | 自定义单个星期标题样式 | SnStyleValue | `''` | - |
 | weekdayClass | 外部样式类 | String | `''` | - |
-| monthsStyle | 自定义月份滑动区样式 | UTSJSONObject \| String | `''` | - |
+| monthsStyle | 自定义月份滑动区样式 | SnStyleValue | `''` | - |
 | monthsClass | 外部样式类 | String | `''` | - |
-| monthStyle | 自定义单月容器样式 | UTSJSONObject \| String | `''` | - |
+| monthStyle | 自定义单月容器样式 | SnStyleValue | `''` | - |
 | monthClass | 外部样式类 | String | `''` | - |
-| monthTitleStyle | 自定义月份标题文字样式 | UTSJSONObject \| String | `''` | - |
+| monthTitleStyle | 自定义月份标题文字样式 | SnStyleValue | `''` | - |
 | monthTitleClass | 外部样式类 | String | `''` | - |
-| watermarkStyle | 自定义月份水印样式 | UTSJSONObject \| String | `''` | - |
+| watermarkStyle | 自定义月份水印样式 | SnStyleValue | `''` | - |
 | watermarkClass | 外部样式类 | String | `''` | - |
-| pickerLayerStyle | 自定义年月面板遮罩层样式 | UTSJSONObject \| String | `''` | - |
+| pickerLayerStyle | 自定义年月面板遮罩层样式 | SnStyleValue | `''` | - |
 | pickerLayerClass | 外部样式类 | String | `''` | - |
-| pickerPanelStyle | 自定义年月面板容器样式 | UTSJSONObject \| String | `''` | - |
+| pickerPanelStyle | 自定义年月面板容器样式 | SnStyleValue | `''` | - |
 | pickerPanelClass | 外部样式类 | String | `''` | - |
-| pickerHeaderStyle | 自定义年月面板头部样式 | UTSJSONObject \| String | `''` | - |
+| pickerHeaderStyle | 自定义年月面板头部样式 | SnStyleValue | `''` | - |
 | pickerHeaderClass | 外部样式类 | String | `''` | - |
-| pickerYearStepperWrapStyle | 自定义年步进器容器样式 | UTSJSONObject \| String | `''` | - |
+| pickerYearStepperWrapStyle | 自定义年步进器容器样式 | SnStyleValue | `''` | - |
 | pickerYearStepperWrapClass | 外部样式类 | String | `''` | - |
-| pickerYearStepperStyle | 自定义年步进器样式 | UTSJSONObject \| String | `''` | - |
+| pickerYearStepperStyle | 自定义年步进器样式 | SnStyleValue | `''` | - |
 | pickerYearStepperSize | 年步进器尺寸 | String \| Number | `$32` | - |
 | pickerYearStepperSpacing | 年步进器内间距 | String \| Number | `$8` | - |
 | pickerYearStepperInputWidth | 年份输入框宽度 | String \| Number | `$92` | - |
@@ -163,13 +163,13 @@ Web 端额外支持鼠标点击与拖动选择。
 | pickerYearStepperBorderWidth | 边框宽度 | String \| Number | `2` | - |
 | pickerYearStepperTextFont | 年步进器文字字体 | String | `''` | - |
 | pickerYearStepperCursorColor | 输入光标颜色，支持 $ 简写 | String | `''` | - |
-| pickerMonthsStyle | 自定义月份宫格容器样式 | UTSJSONObject \| String | `''` | - |
+| pickerMonthsStyle | 自定义月份宫格容器样式 | SnStyleValue | `''` | - |
 | pickerMonthsClass | 外部样式类 | String | `''` | - |
-| pickerMonthStyle | 自定义单个月份项样式 | UTSJSONObject \| String | `''` | - |
+| pickerMonthStyle | 自定义单个月份项样式 | SnStyleValue | `''` | - |
 | pickerMonthClass | 外部样式类 | String | `''` | - |
-| pickerMonthTextStyle | 自定义月份文字样式 | UTSJSONObject \| String | `''` | - |
+| pickerMonthTextStyle | 自定义月份文字样式 | SnStyleValue | `''` | - |
 | pickerMonthTextClass | 外部样式类 | String | `''` | - |
-| promptStyle | 自定义超限提示文字样式 | UTSJSONObject \| String | `''` | - |
+| promptStyle | 自定义超限提示文字样式 | SnStyleValue | `''` | - |
 | promptClass | 外部样式类 | String | `''` | - |
 
 :::type-fields SnCalendarValue

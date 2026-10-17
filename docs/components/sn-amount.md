@@ -79,14 +79,14 @@
 | bold | 是否加粗（字重 600） | Boolean | `false` | `true` \| `false` |
 | lines | 最大行数，`0` 表示不限制，超出部分省略 | Number | `0` | - |
 | selectable | 是否可长按选中复制 | Boolean | `false` | `true` \| `false` |
-| currency-style | 货币符号外部样式 | UTSJSONObject \| String | `''` | - |
+| currency-style | 货币符号外部样式 | SnStyleValue | `''` | - |
 | currency-class | 货币符号外部样式类 | String | `''` | - |
-| int-style | 整数部分外部样式 | UTSJSONObject \| String | `''` | - |
+| int-style | 整数部分外部样式 | SnStyleValue | `''` | - |
 | int-class | 整数部分外部样式类 | String | `''` | - |
-| decimal-style | 小数部分外部样式 | UTSJSONObject \| String | `''` | - |
+| decimal-style | 小数部分外部样式 | SnStyleValue | `''` | - |
 | decimal-class | 小数部分外部样式类 | String | `''` | - |
 | text-class | 大写金额文本外部样式类（to-upper 为 true 时作用） | String | `''` | - |
-| custom-style | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| custom-style | 自定义根节点样式 | SnStyleValue | `''` | - |
 | custom-class | 根节点外部样式类 | String | `''` | - |
 
 <DemoPhone name="sn-amount" />

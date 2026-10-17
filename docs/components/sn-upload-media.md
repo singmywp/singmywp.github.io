@@ -34,7 +34,7 @@
 | chooseCount | 一次可选择的文件数量（视频每次仅 1 个） | Number | `20` | - |
 | maxCount | 最多可上传的文件数量，小于等于 0 不限制 | Number | `-1` | - |
 | timeout | 上传超时时间（单位：ms），超时后中止请求并触发 `upload-error`，状态置为上传失败；H5 HTTPS 页面拦截 HTTP 上传请求时也按此计时 | Number | `30000` | - |
-| formData | 附加到上传请求的表单数据 | UTSJSONObject | `{}` | - |
+| formData | 附加到上传请求的表单数据 | SnFormData | `{}` | - |
 | sourceType | 可选择媒体的来源 | `Array<String>` | `["album", "camera"]` | `album` \| `camera` |
 | width | 媒体文件子项宽度 | String \| Number | `70px` | - |
 | height | 媒体文件子项高度 | String \| Number | `70px` | - |
@@ -51,8 +51,8 @@
 | clearable | 是否显示删除按钮 | Boolean | `true` | `true` \| `false` |
 | compressed | 是否压缩视频，仅视频模式生效 | Boolean | `true` | `true` \| `false` |
 | maxDuration | 录像最大时长（单位：s），仅视频模式生效 | Number | `60` | - |
-| customStyle | 自定义整个上传区域样式 | UTSJSONObject \| String | - | - |
-| customItemStyle | 自定义媒体文件子项样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义整个上传区域样式 | SnStyleValue | - | - |
+| customItemStyle | 自定义媒体文件子项样式 | SnStyleValue | - | - |
 
 ## sn-upload-media-unicloud 属性
 

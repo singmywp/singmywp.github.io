@@ -31,7 +31,7 @@ Logo 图标支持图标名或图片路径：`http` 开头、以 `/`、`./`、`..
 | linkColor | 链接文字颜色 | String | `$primary` | - |
 | lineColor | 链接分隔线颜色 | String | `$line` | - |
 | textColor | 页脚文字颜色 | String | `$textLight` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
 | linkClass | 链接文字样式类 | String | `''` | - |
 | textClass | 页脚文字样式类 | String | `''` | - |

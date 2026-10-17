@@ -114,6 +114,19 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 ---
 
+# SnFormData
+
+表单数据对象。键为表单项的 `field`，值为该表单项绑定的值，作为 `sn-form` 的 `v-model` 被深度监听。
+
+```typescript
+const formData = ref<SnFormData>({
+	name: '',
+	age: 18
+})
+```
+
+---
+
 # SnFunctionalColor
 
 五种功能色枚举，用于 `type` 类属性。
@@ -281,13 +294,13 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | preventBack | Boolean | 否 | 阻止返回键关闭 |
 | disabled | Boolean | 否 | 禁用操作菜单 |
 | maskClose | Boolean | 否 | 点击遮罩关闭 |
-| wrapStyle | UTSJSONObject | 否 | 队列容器样式 |
+| wrapStyle | SnStyleValue | 否 | 队列容器样式 |
 | wrapClass | String | 否 | 队列容器外部样式类 |
-| panelStyle | UTSJSONObject | 否 | 面板样式 |
+| panelStyle | SnStyleValue | 否 | 面板样式 |
 | panelClass | String | 否 | 面板外部样式类 |
-| itemStyle | UTSJSONObject | 否 | 操作项样式（复用 sn-cell 样式链，透传 cell customStyle） |
+| itemStyle | SnStyleValue | 否 | 操作项样式（复用 sn-cell 样式链，透传 cell customStyle） |
 | itemBorder | Boolean | 否 | 操作项是否显示分隔线（透传 cell border） |
-| itemHoverStyle | UTSJSONObject | 否 | 操作项点击态样式（透传 cell hoverStyle） |
+| itemHoverStyle | SnStyleValue | 否 | 操作项点击态样式（透传 cell hoverStyle） |
 | openAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义打开动画 |
 | closeAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义关闭动画 |
 | success | (tapIndex: number) => void | 否 | 成功回调，返回点击的操作项索引 |
@@ -315,7 +328,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | borderRadius | String | 否 | 圆角 |
 | padding | String | 否 | 内边距 |
 | preventBack | Boolean | 否 | 阻止返回 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | () => void | 否 | 成功回调 |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |
@@ -358,7 +371,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | preventBack | Boolean | 否 | 阻止返回键关闭 |
 | openAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义打开动画 |
 | closeAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义关闭动画 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | (confirm: boolean, cancel: boolean) => void | 否 | 成功回调，可区分点击确定/取消/遮罩关闭 |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |
@@ -387,7 +400,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | loading | Boolean | 否 | 是否显示加载图标（优先生效于 icon） |
 | textLines | Number | 否 | 文本最大行数，超出省略；默认 `0` 不限制 |
 | passThrough | Boolean | 否 | 是否穿透点击，默认 `true` |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | () => void | 否 | 成功回调（同步触发） |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |
@@ -413,6 +426,29 @@ const SN_DEFAULT_STYLE_ID = 'default'
 | aniTimeShort | Number | 基础短动画时长（ms） |
 | aniTimeNormal | Number | 基础标准动画时长（ms） |
 | aniTimeLong | Number | 基础长动画时长（ms） |
+
+---
+
+# SnStyleValue
+
+外部样式值，自定义样式 props（`customStyle`、`{语义}Style`、`hoverStyle` 等）的统一类型：既可以是样式字符串（如 `'color: red;'`），也可以是样式对象（键为小驼峰样式名、值为带单位的样式字符串，如 `{ padding: '8px' }`）。
+
+```typescript
+<sn-cell custom-style="padding: 8px;" />
+<sn-cell :custom-style="{ padding: '8px' }" />
+```
+
+---
+
+# SnSysToastOptions
+
+`snu.showSysToast` 的配置，系统级原生 Toast 参数。
+
+| 字段 | 类型 | 必备 | 描述 |
+| :--- | :--- | :--- | :--- |
+| title | String | 否 | 提示文本 |
+| type | String | 否 | 显示时长，可选值 `short` / `long`（默认 `short`） |
+| position | String | 否 | 显示位置，可选值 `top` / `center` / `bottom`（默认 `center`） |
 
 ---
 

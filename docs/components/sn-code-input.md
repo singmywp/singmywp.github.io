@@ -91,13 +91,13 @@ function doClear(): void {
 | focus | 是否自动聚焦 | Boolean | `false` | `true` \| `false` |
 | adjustPosition | 键盘弹起时是否自动上推页面 | Boolean | `true` | `true` \| `false` |
 | disabled | 是否禁用 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
-| itemStyle | 自定义单元格样式 | UTSJSONObject \| String | `''` | - |
+| itemStyle | 自定义单元格样式 | SnStyleValue | `''` | - |
 | itemClass | 单元格外部类 | String | `''` | - |
-| textStyle | 自定义字符样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义字符样式 | SnStyleValue | `''` | - |
 | textClass | 字符外部类 | String | `''` | - |
-| caretStyle | 自定义光标样式 | UTSJSONObject \| String | `''` | - |
+| caretStyle | 自定义光标样式 | SnStyleValue | `''` | - |
 | caretClass | 光标外部类 | String | `''` | - |
 
 ## 事件

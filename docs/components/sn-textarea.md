@@ -82,7 +82,7 @@ const text = ref<string>('')
 | readonly | 是否只读，只读时颜色不变 | Boolean | `false` | `true` \| `false` |
 | loading | 是否加载中，右上角显示加载指示器（延迟 100ms 显示避免闪烁） | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载指示器外部类 | String | `''` | - |
-| loadingStyle | 加载指示器样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 加载指示器样式 | SnStyleValue | `''` | - |
 | showBorder | 是否显示边框 | Boolean | `true` | `true` \| `false` |
 | activeBorder | 聚焦时是否切换为激活边框颜色 | Boolean | `true` | `true` \| `false` |
 | borderColor | 边框颜色 | String | `'$line'` | - |
@@ -101,11 +101,11 @@ const text = ref<string>('')
 | counterSize | 计数器字体大小 | String \| Number | `$12` | - |
 | counterColor | 计数器文本颜色 | String | `$text` | - |
 | counterBgColor | 计数器背景颜色 | String | `$info` | - |
-| inputStyle | 自定义文本域本体样式 | UTSJSONObject \| String | `''` | - |
+| inputStyle | 自定义文本域本体样式 | SnStyleValue | `''` | - |
 | inputClass | 文本域本体的外部类 | String | `''` | - |
 | counterClass | 计数器外部类 | String | `''` | - |
-| counterStyle | 自定义计数器样式 | UTSJSONObject \| String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| counterStyle | 自定义计数器样式 | SnStyleValue | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

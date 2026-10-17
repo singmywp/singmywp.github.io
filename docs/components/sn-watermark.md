@@ -50,14 +50,14 @@
 | rotate | 水印旋转角度（deg），范围 -90 ~ 90，超范围自动截断 | Number | `-30` | `-90 ~ 90` |
 | opacity | 水印整体透明度（0-1） | Number | `0.2` | `0 ~ 1` |
 | minHeight | 容器最小高度，数字单位为 px，为空时不设置 | String \| Number | `''` | - |
-| contentStyle | 自定义内容区样式 | UTSJSONObject \| String | `''` | - |
-| layerStyle | 自定义水印层样式 | UTSJSONObject \| String | `''` | - |
-| textStyle | 自定义水印文字样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 自定义内容区样式 | SnStyleValue | `''` | - |
+| layerStyle | 自定义水印层样式 | SnStyleValue | `''` | - |
+| textStyle | 自定义水印文字样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 | contentClass | 内容区外部样式类 | String | `''` | - |
 | layerClass | 水印层外部样式类 | String | `''` | - |
 | textClass | 水印文字外部样式类 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 插槽
 

@@ -100,10 +100,10 @@ function onScan(): void {
 | cursorColor | 光标颜色 | String | `''` | - |
 | prefixIcon | 前置图标名称，存在 prefix 插槽时不显示 | String | `search-2-line` | - |
 | suffixIcon | 后置图标名称，存在 suffix 插槽时不显示 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
-| inputStyle | 自定义内部输入框样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
+| inputStyle | 自定义内部输入框样式 | SnStyleValue | `''` | - |
 | inputClass | 内部输入框的外部类 | String | `''` | - |
-| cancelStyle | 自定义取消按钮样式 | UTSJSONObject \| String | `''` | - |
+| cancelStyle | 自定义取消按钮样式 | SnStyleValue | `''` | - |
 | cancelClass | 取消按钮的外部类 | String | `''` | - |
 
 ## 事件

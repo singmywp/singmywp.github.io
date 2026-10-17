@@ -46,7 +46,7 @@ snu.openLink('https://example.com')
 
 | 名称   | 类型          | 必备 | 默认值 | 描述 |
 | ------ | ------------- | ---- | ------ | ---- |
-| params | UTSJSONObject | 是 | - | 系统 Toast 参数（如文本内容等） |
+| params | SnSysToastOptions | 是 | - | 系统 Toast 参数（标题文本、显示时长与位置） |
 
 ### 返回值
 
@@ -57,7 +57,7 @@ snu.openLink('https://example.com')
 ### 示例
 
 ```typescript
-snu.showSysToast({ text: '保存成功' } as UTSJSONObject)
+snu.showSysToast({ title: '保存成功' })
 ```
 
 ---

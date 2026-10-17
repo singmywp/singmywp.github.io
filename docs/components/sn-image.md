@@ -36,9 +36,9 @@
 | lazyLoad | 图片懒加载，只针对 page 与 scroll-view 下的 image 有效，同内置 `image` 组件 | Boolean | `false` | `true` \| `false` |
 | fadeShow | 图片显示动画效果，同内置 `image` 组件 | Boolean | `true` | `true` \| `false` |
 | enablePreview | 点击后调用内置的 uni.previewImage 进行图片预览（图片加载失败时不触发） | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义图片容器样式 | UTSJSONObject \| String | `''` | - |
-| imageStyle | 自定义内部图片（内置 image）样式 | UTSJSONObject \| String | `''` | - |
-| loadingStyle | 自定义加载占位块样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义图片容器样式 | SnStyleValue | `''` | - |
+| imageStyle | 自定义内部图片（内置 image）样式 | SnStyleValue | `''` | - |
+| loadingStyle | 自定义加载占位块样式 | SnStyleValue | `''` | - |
 | customClass | 自定义图片容器样式类 | String | `''` | - |
 | imageClass | 自定义内部图片样式类 | String | `''` | - |
 | loadingClass | 自定义加载占位块样式类 | String | `''` | - |

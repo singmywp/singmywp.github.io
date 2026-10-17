@@ -197,9 +197,9 @@
 | offset | 距离键盘顶部的额外偏移（支持 `$` 简写，用于避开键盘自带的完成栏等） | String \| Number | `0` | - |
 | width | 键盘上方区域宽度（支持 `$` 简写） | String \| Number | `100%` | - |
 | show | 是否允许显示，设为 `false` 时即使键盘打开也不显示 | Boolean | `true` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |
-| externalStyle | 额外内联样式 | UTSJSONObject \| String | `''` | - |
+| externalStyle | 额外内联样式 | SnStyleValue | `''` | - |
 | externalClass | 额外外部样式类 | String | `''` | - |
 
 ## 事件

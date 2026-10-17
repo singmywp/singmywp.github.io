@@ -75,8 +75,8 @@
 | textSize | 文本字体大小，支持 `$` 动态尺寸 | String \| Number | `$14` | - |
 | textFont | 文本字体 | String | `''` | - |
 | customClass | 根节点（即文本节点）外部样式类 | String | `''` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | textClass | 文本外部样式类 | String | `''` | - |
-| textStyle | 文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 文本自定义样式 | SnStyleValue | `''` | - |
 
 <DemoPhone name="sn-dateformat" />

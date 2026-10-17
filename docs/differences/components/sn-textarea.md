@@ -26,7 +26,7 @@
   - `borderColor` / `activeBorderColor`：默认空 → `$line`
   - `bgColor` / `activeBgColor` / `textColor` / `disabledBgColor` / `disabledTextColor` / `counterColor` / `counterBgColor`：默认具体 `$` 色 → `''`（未设置时使用对应主题色兜底）
   - 各颜色属性：支持 `  -  简写
-  - 各样式属性：UTSJSONObject → UTSJSONObject \| String
+  - 各样式属性：UTSJSONObject → SnStyleValue
 - 行为变化
   - 计数器改为右下角胶囊样式，内容为 `已输入字数/最大字数`
   - 高度计算改为 `height + 上下内边距`，`autoHeight` 时高度由内容撑开

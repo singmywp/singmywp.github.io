@@ -43,10 +43,10 @@ HarmonyOS 端提示框默认阴影较轻，显式传入 `boxShadow` 时仍以传
 | bgColor | 提示框背景颜色，支持 `$` 简写主题色 | String | `$info` | - |
 | boxShadow | 提示框阴影 | String | `0px 2px 10px 0px $infoDark` | - |
 | aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，`0` 关闭动画 | String \| Number | `$normal` | `$long` \| `$normal` \| `$short` \| 数值 |
-| customStyle | 自定义组件根节点样式 | UTSJSONObject \| String | `''` | - |
-| tooltipStyle | 提示框自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义组件根节点样式 | SnStyleValue | `''` | - |
+| tooltipStyle | 提示框自定义样式 | SnStyleValue | `''` | - |
 | tooltipClass | 提示框外部样式类 | String | `''` | - |
-| triggerStyle | 触发器自定义样式 | UTSJSONObject \| String | `''` | - |
+| triggerStyle | 触发器自定义样式 | SnStyleValue | `''` | - |
 | triggerClass | 触发器外部样式类 | String | `''` | - |
 
 ## 插槽

@@ -99,7 +99,7 @@ snu.showModal({
 | maskOpacity | 遮罩透明度 | Number | `0.4` | - |
 | openAnimation | 自定义打开动画函数，传入后接管默认打开动画 | Function \| null | `null` | - |
 | closeAnimation | 自定义关闭动画函数，传入后接管默认关闭动画 | Function \| null | `null` | - |
-| customStyle | 自定义模态框主体样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义模态框主体样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

@@ -16,7 +16,7 @@
   - `textSize` / `iconSize` 默认值：`$2+1` → 空串（内部回退为 13px / 14px × 字体乘数）；类型 String → String | Number
   - `iconColor` / `textColor` 默认值：`$lineText` → 空串（内部回退主题线条文本色，显示不变）；类型 String → String
   - `icon` 默认值：`refresh-line` 不变（空串时内部回退 `refresh-line`）
-  - `customStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - 旧版 `refresh` 事件在"status 切换为 refresh 时触发"；v2 改为 `refresh` 状态下点击刷新条时触发（即开始刷新时触发），并携带 `triggered: boolean` 参数，同时双向绑定 `refresher-triggered`
   - 刷新中状态改用 `sn-loading` 组件作为加载动画指示器

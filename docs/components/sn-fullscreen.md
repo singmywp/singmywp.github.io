@@ -55,9 +55,9 @@
 | zIndex | 全屏时内容层的层级 | Number | `999` | - |
 | disabled | 是否禁用（禁用后点击与方法均不生效） | Boolean | `false` | `true` \| `false` |
 | layerClass | 内容层外部样式类 | String | `''` | - |
-| layerStyle | 自定义内容层样式（通常用它设置内容的初始宽高） | UTSJSONObject \| String | `''` | - |
+| layerStyle | 自定义内容层样式（通常用它设置内容的初始宽高） | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

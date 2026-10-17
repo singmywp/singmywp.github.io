@@ -16,7 +16,7 @@
   - `thickness`：String → String | Number
   - `thumbSize`：String → String | Number
   - `valueTextWidth`：String → String | Number
-  - `customStyle` 及各样式透传属性：UTSJSONObject → UTSJSONObject | String（支持直接传样式字符串）
+  - `customStyle` 及各样式透传属性：UTSJSONObject → SnStyleValue（支持直接传样式字符串）
 - 默认值变化：
   - `borderRadius`：`$circle` → `''`（留空时自动取轨道粗细的一半，即全圆角）
   - `thumbBorderRadius`：`$circle` → `''`（留空时自动取滑块尺寸的一半，即全圆角）

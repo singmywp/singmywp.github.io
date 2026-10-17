@@ -43,11 +43,11 @@
 | inactiveColor | 非激活方向箭头的颜色 | String | `` `$textLight` `` | - |
 | arrowSize | 箭头尺寸 | String \| Number | `$20` | - |
 | disabled | 是否禁用 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
-| labelStyle | 自定义标签样式 | UTSJSONObject \| String | `''` | - |
+| labelStyle | 自定义标签样式 | SnStyleValue | `''` | - |
 | labelClass | 自定义标签样式类 | String | `''` | - |
-| arrowStyle | 自定义箭头区域样式 | UTSJSONObject \| String | `''` | - |
+| arrowStyle | 自定义箭头区域样式 | SnStyleValue | `''` | - |
 | arrowClass | 自定义箭头区域样式类 | String | `''` | - |
 
 ## 事件

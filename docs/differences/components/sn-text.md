@@ -8,6 +8,6 @@
 - 类型或默认值变化：
   - `type` 默认值 `info` → `text`，可选值改为 `title` | `text` | `text-light` | `primary` | `info` | `success` | `warning` | `error`（新增 `title`、`text-light`，移除纯色系中与正文重复的默认语义）；
   - `lines` 默认值 `-1` → `0`（`0` 表示不限制）；
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String。
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue。
 - 行为变化：新增默认插槽且优先于 `text` 属性；`fontSize`、`color` 支持 `$` 简写与乘数；多行截断在蒸汽模式下通过 `max-lines` 实现；加粗固定为 `font-weight: 600`。
 - 新增事件、方法、插槽：新增 default 插槽；无事件、无方法。

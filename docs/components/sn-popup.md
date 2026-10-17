@@ -109,9 +109,9 @@ Android 在 `afterenter-next-frame` 和 `afterleave-next-frame` 额外通过 `si
 | maskClose | 点击遮罩是否关闭弹出层 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.4` | - |
 | zIndex | 弹出层基础层级；打开时按栈内已有弹层自动抬升，内容层级为实际遮罩层级加 1 | Number | `999` | - |
-| overlayStyle | 自定义遮罩层样式，后置覆盖默认遮罩样式 | UTSJSONObject \| String | `''` | - |
+| overlayStyle | 自定义遮罩层样式，后置覆盖默认遮罩样式 | SnStyleValue | `''` | - |
 | customClass | 遮罩层外部样式类 | String | `''` | - |
-| customStyle | 自定义内容容器样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义内容容器样式 | SnStyleValue | `''` | - |
 | openAnimation | 自定义打开动画函数，传入后接管默认打开动画 | Function \| null | `null` | - |
 | closeAnimation | 自定义关闭动画函数，传入后接管默认关闭动画 | Function \| null | `null` | - |
 

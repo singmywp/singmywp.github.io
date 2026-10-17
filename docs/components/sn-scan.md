@@ -55,11 +55,11 @@
 | recognizeInterval | 识别间隔（单位：ms，取值 0 ~ 5000，为 `0` 时每帧识别），iOS 端不生效 | Number | `0` | - |
 | cameraPermTip | 相机权限请求提示文案 | String | `相机权限默认文案` | - |
 | albumPermTip | 相册权限请求提示文案 | String | `相册权限默认文案` | - |
-| customDotStyle | 自定义识别点样式 | UTSJSONObject \| String | - | - |
-| customDotIconStyle | 自定义识别点图标样式 | UTSJSONObject \| String | - | - |
-| customTitleStyle | 自定义标题样式 | UTSJSONObject \| String | - | - |
-| customTipStyle | 自定义提示文字样式 | UTSJSONObject \| String | - | - |
-| customStyle | 自定义组件根节点样式 | UTSJSONObject \| String | - | - |
+| customDotStyle | 自定义识别点样式 | SnStyleValue | - | - |
+| customDotIconStyle | 自定义识别点图标样式 | SnStyleValue | - | - |
+| customTitleStyle | 自定义标题样式 | SnStyleValue | - | - |
+| customTipStyle | 自定义提示文字样式 | SnStyleValue | - | - |
+| customStyle | 自定义组件根节点样式 | SnStyleValue | - | - |
 | customClass | 自定义组件根节点类名 | String | - | - |
 
 ## 事件

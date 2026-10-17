@@ -16,7 +16,7 @@
   - `height` / `valueTextWidth` 类型：String → String | Number；`valueTextSize` 类型：String → String | Number，且内部位置默认取进度条高度 × 0.6（最小 9px）
   - `textColor` 默认值：`-` → 内部默认 `#fff`（inside）/ 主题文本色（outside）
   - `bgColor` / `activeColor` / `textColor` 类型：String → String
-  - `customStyle` / `activeStyle` / `textStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` / `activeStyle` / `textStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - 进度变化动画改为 DOM 直写宽度 + transition 实现
   - 文本外部样式类 `textClass` 仅 outside 位置生效，`textStyle` inside / outside 均生效

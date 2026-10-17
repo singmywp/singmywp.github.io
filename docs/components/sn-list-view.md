@@ -102,7 +102,7 @@
 | enableBackToTop | 点击状态栏回到顶部（iOS 端生效） | Boolean | `false` | `true` \| `false` |
 | enablePassive | 是否开启 passive 滚动监听（仅 Web 端） | Boolean | Web 端 `true`，其他端 `false` | `true` \| `false` |
 | padding | 预留参数（当前版本未启用） | Number[] | `[]` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |
 
 :::type-fields SnRefresherParams

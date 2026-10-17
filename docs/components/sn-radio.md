@@ -42,10 +42,10 @@ const current = ref<number>(0)
 | --- | --- | --- | --- | --- |
 | text | 圆球右侧的文本内容 | String | `''` | - |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
-| containStyle | 自定义选项整行容器样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
-| customStyle | 自定义圆球样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
+| containStyle | 自定义选项整行容器样式（仅当前选项生效） | SnStyleValue | `''` | - |
+| customStyle | 自定义圆球样式（仅当前选项生效） | SnStyleValue | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
-| textStyle | 自定义文本样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义文本样式（仅当前选项生效） | SnStyleValue | `''` | - |
 
 ## sn-radio-tag 属性
 
@@ -55,7 +55,7 @@ const current = ref<number>(0)
 | type | 标签主题类型，覆盖组配置 `tag-type` | String | - | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level` | String | - | `first` \| `second` \| `third` \| `least` |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义标签样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义标签样式（仅当前选项生效） | SnStyleValue | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
 
 标签选项未选中时默认 `info` 色背景配 `text` 色文字；选中后配色由 `type` 与 `level` 共同决定：
@@ -101,15 +101,15 @@ const current = ref<number>(0)
 | disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `$disabledText` | - |
 | tagActiveTextColor | 标签选项选中时文本颜色 | String | - | - |
 | disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `$disabledDarkText` | - |
-| radioContainStyle | 自定义圆球选项整行容器样式 | UTSJSONObject \| String | `''` | - |
-| radioStyle | 自定义圆球样式 | UTSJSONObject \| String | `''` | - |
-| tagStyle | 自定义标签选项样式 | UTSJSONObject \| String | `''` | - |
-| textStyle | 自定义选项文本样式 | UTSJSONObject \| String | `''` | - |
+| radioContainStyle | 自定义圆球选项整行容器样式 | SnStyleValue | `''` | - |
+| radioStyle | 自定义圆球样式 | SnStyleValue | `''` | - |
+| tagStyle | 自定义标签选项样式 | SnStyleValue | `''` | - |
+| textStyle | 自定义选项文本样式 | SnStyleValue | `''` | - |
 | radioContainClass | 圆球选项整行容器的外部样式类 | String | `''` | - |
 | radioClass | 圆球的外部样式类 | String | `''` | - |
 | tagClass | 标签选项根节点的外部样式类 | String | `''` | - |
 | textClass | 选项文本的外部样式类 | String | `''` | - |
-| customStyle | 自定义单选组根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义单选组根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

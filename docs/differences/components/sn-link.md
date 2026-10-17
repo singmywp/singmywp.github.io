@@ -13,7 +13,7 @@
   - `customTextStyle` → `textStyle`
   - `customIconStyle` → `iconStyle`
 - 类型或默认值变化：
-  - `customStyle`：`UTSJSONObject`（默认 `{margin: '0 5px'}`）→ `UTSJSONObject | String`（默认 `''`，外边距改为组件内置的固定间距）
+  - `customStyle`：`UTSJSONObject`（默认 `{margin: '0 5px'}`）→ `SnStyleValue`（默认 `''`，外边距改为组件内置的固定间距）
   - `color`：默认 `` `$primaryDark` `` → `''`（空时取主题 `primaryDark`，类型改用 `String`）
   - `size`：默认 `` `$3` `` → `''`（空时为 14px × 字体乘数；类型 `String` → `String | Number`）
   - `hoverBgColor` / `hoverTextColor`：类型为 `String`

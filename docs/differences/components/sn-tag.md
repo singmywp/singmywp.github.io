@@ -10,7 +10,7 @@
   - `disabledBgColor` 默认值 `$disabled` → 空（取主题禁用色）；
   - `textSize` 默认值 `$2` → 空（默认 12×字体乘数）；
   - `iconSize` 默认值 `$3` → 空（默认 13×字体乘数）；
-  - `customStyle` 等 style 类属性类型 UTSJSONObject → UTSJSONObject | String。
+  - `customStyle` 等 style 类属性类型 UTSJSONObject → SnStyleValue。
 - 行为变化：`iconColor` 为空时默认跟随文本颜色（旧版为独立默认色）；`loading` 时隐藏关闭按钮；`level="least"` 使用线条色边框；点击关闭按钮后标签从文档流中移除并触发 `close`；非法的 `type` / `level` 值自动回退为 `info` / `first`。
 - 新增事件：`close`（旧版文档未列出事件）。
 - 新增方法、插槽：无（保留 default 插槽）。

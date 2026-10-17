@@ -18,7 +18,7 @@
   - sn-avatar `borderRadius` 默认值 `$xsmall` → `''`（空值时按 `4px × radiusFactor` 计算，效果一致）；sn-avatar-group 同
   - `textColor` / `iconColor` / `bgColor` 支持 ` 简写引用主题色变量
   - `size`/`textSize`/`iconSize`/`borderRadius` 等尺寸属性由 String → String | Number，均支持 `$` 前缀动态缩放
-  - `customStyle`/`textStyle`/`iconStyle`/`avatarStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`/`textStyle`/`iconStyle`/`avatarStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
 - 行为变化：
   - v2 `dbclick` 事件明确为 300ms 内连续点击两次的检测（`click` 每次点击均触发）
   - `enable-preview` 开启后预览失败时会 toast 提示"图片预览失败"

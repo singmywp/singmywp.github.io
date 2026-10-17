@@ -58,12 +58,12 @@
 | anchor | 是否使用锚点定位，选中时内容区滚动到对应 id | Boolean | `false` | `true` \| `false` |
 | showLine | 是否显示选中线 | Boolean | `true` | `true` \| `false` |
 | lineColor | 选中线颜色 | String | `$primary` | - |
-| customStyle | 自定义容器样式 | UTSJSONObject \| String | `''` | - |
-| itemStyle | 自定义选项样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义容器样式 | SnStyleValue | `''` | - |
+| itemStyle | 自定义选项样式 | SnStyleValue | `''` | - |
 | itemClass | 选项外部样式类 | String | `''` | - |
-| barStyle | 自定义侧边栏（左侧列表）样式 | UTSJSONObject \| String | `''` | - |
+| barStyle | 自定义侧边栏（左侧列表）样式 | SnStyleValue | `''` | - |
 | barClass | 侧边栏外部样式类 | String | `''` | - |
-| contentStyle | 自定义内容区样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 自定义内容区样式 | SnStyleValue | `''` | - |
 | contentClass | 内容区外部样式类 | String | `''` | - |
 
 :::type-fields SnDataItem

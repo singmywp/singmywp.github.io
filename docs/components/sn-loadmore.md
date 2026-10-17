@@ -57,8 +57,8 @@
 | disabled | 是否禁用，禁用时 loadmore 状态点击不触发事件 | Boolean | `false` | `true` \| `false` |
 | dashed | 两侧线条是否为虚线 | Boolean | `false` | `true` \| `false` |
 | loadingClass | 自定义 loading 指示器节点外部样式类 | String | - | - |
-| loadingStyle | 自定义 loading 指示器节点内联样式 | UTSJSONObject \| String | `border-color: <主题线条文本色>` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| loadingStyle | 自定义 loading 指示器节点内联样式 | SnStyleValue | `border-color: <主题线条文本色>` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 
 ## 事件
 

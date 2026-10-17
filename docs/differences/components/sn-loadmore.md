@@ -13,6 +13,6 @@
   - `lineHeight` 类型：String → String | Number
   - `loadmoreText` / `nomoreText` / `loadingText` 默认值：固定文案 → 空串（内部回退同文案，显示不变）
   - `iconColor` / `textColor` / `lineColor` 类型：String → String
-  - `customStyle` / `loadingStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` / `loadingStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：loading 状态改用官方内置 loading 组件作为指示器；根节点增加主题过渡动画
 - 新增事件、方法、插槽：无（`loadmore` 事件保留）

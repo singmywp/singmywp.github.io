@@ -8,6 +8,6 @@
 - 类型或默认值变化：
   - `size` 默认值 `-` → `$16`（支持 `$` 乘数简写）；
   - `color` 默认值 `-` → `var(--sn-text)`；
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String。
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue。
 - 行为变化：`name` 不再支持逗号分隔同时显示多个图标，仅渲染单个图标；图标数据内置为 Remix Icon 全量字体并在组件挂载时自动加载，无需手动引入。
 - 新增事件、方法、插槽：新增属性 `iconClass`（根节点外部样式类）；无事件、无方法、无插槽。

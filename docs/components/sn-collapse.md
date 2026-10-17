@@ -79,13 +79,13 @@
 | noteColor | 子项说明文本颜色（同时是展开箭头颜色） | String | `$lineText` | - |
 | borderRadius | 面板圆角大小，支持 `$` 简写 | String \| Number | `8px × radiusFactor` | - |
 | showBorder | 是否显示子项之间的分割线（末尾子项不显示） | Boolean | `true` | `true` \| `false` |
-| titleStyle | 子项标题样式，作用于所有子项 | UTSJSONObject \| String | `''` | - |
-| noteStyle | 子项说明文本样式，作用于所有子项 | UTSJSONObject \| String | `''` | - |
-| holderStyle | 子项内容区容器样式，作用于所有子项 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 子项标题样式，作用于所有子项 | SnStyleValue | `''` | - |
+| noteStyle | 子项说明文本样式，作用于所有子项 | SnStyleValue | `''` | - |
+| holderStyle | 子项内容区容器样式，作用于所有子项 | SnStyleValue | `''` | - |
 | titleClass | 子项标题外部样式类，透传至所有子项 | String | `''` | - |
 | noteClass | 子项说明文本外部样式类，透传至所有子项 | String | `''` | - |
 | holderClass | 子项内容区外部样式类，透传至所有子项 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 **sn-collapse-item**
 
@@ -99,7 +99,7 @@
 | titleClass | 当前子项标题外部样式类，与 group 级 `titleClass` 合并 | String | `''` | - |
 | noteClass | 当前子项说明文本外部样式类，与 group 级 `noteClass` 合并 | String | `''` | - |
 | holderClass | 当前子项内容区外部样式类（external-class：`holder-class`），与 group 级 `holderClass` 合并 | String | `''` | - |
-| customStyle | 自定义子项根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义子项根节点样式 | SnStyleValue | `''` | - |
 
 子项未单独传入的标题/说明颜色与字号，继承 group 上设置的对应值。
 

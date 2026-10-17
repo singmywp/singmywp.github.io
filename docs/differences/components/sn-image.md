@@ -12,7 +12,7 @@
   - `borderRadius` 默认值 `$small` → `$12`
   - 颜色类属性（`loadingBgColor` / `loadingIconColor`）支持 ` 简写
   - `width`/`height`/`borderRadius`/`loadingSize` 由 String → String | Number，均支持 `$` 前缀动态缩放
-  - `customStyle`/`imageStyle`/`loadingStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`/`imageStyle`/`loadingStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
 - 行为变化：
   - 加载占位支持三种形式：默认占位图标（`loadingIcon`）、占位图片（`loadingImage`）、`loading` 插槽自定义内容
   - 自动按比例计算高度仅在 `mode="aspectFit"` 且未设置 `height` 时生效；单独设置 `height` 不生效（需同时设置 `width`），开发时输出警告日志

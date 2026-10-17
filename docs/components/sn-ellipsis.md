@@ -67,11 +67,11 @@ const longText = '支持 48dB 混合主动降噪，通透模式智能过滤环�
 | actionColor | 操作按钮颜色；禁用时为禁用文本色 | String | `$primary` | - |
 | selectable | 文本是否可选中（蒸汽模式） | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用操作按钮 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
-| textStyle | 自定义文本样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义文本样式 | SnStyleValue | `''` | - |
 | textClass | 文本外部类 | String | `''` | - |
-| actionStyle | 自定义操作按钮样式 | UTSJSONObject \| String | `''` | - |
+| actionStyle | 自定义操作按钮样式 | SnStyleValue | `''` | - |
 | actionClass | 操作按钮外部类 | String | `''` | - |
 
 ## 事件

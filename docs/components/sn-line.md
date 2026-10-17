@@ -44,6 +44,6 @@
 | dashed | 是否显示为虚线 | Boolean | `false` | `true` \| `false` |
 | dot | 是否以圆点"•"代替文本（仅水平方向有效） | Boolean | `false` | `true` \| `false` |
 | text | 分割线中间显示的文本（仅水平方向有效） | String | `''` | - |
-| customStyle | 自定义分割线样式（仅无文本模式生效） | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义分割线样式（仅无文本模式生效） | SnStyleValue | `''` | - |
 
 <DemoPhone name="sn-line" />

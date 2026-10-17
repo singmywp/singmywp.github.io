@@ -66,7 +66,7 @@ function onLinkClick(e: SnMarkdownLinkEvent): void {
 | textColor | 正文颜色，支持 `$主题色` 简写 | String | `$text` | - |
 | linkColor | 链接颜色，支持 `$主题色` 简写 | String | `$primary` | - |
 | lineHeight | 行高倍数 | String \| Number | `1.6` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 ## 事件

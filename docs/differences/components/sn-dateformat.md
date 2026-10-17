@@ -7,11 +7,11 @@
   - `mode`（String，默认 `realtime`，可选 `fixed` | `realtime`：`realtime` 实时模式每秒刷新相对时间，`fixed` 固定模式仅在值变化时计算）
   - `customClass`（String，默认 `''`，根节点外部样式类）
   - `textClass`（String，默认 `''`，文本外部样式类）
-  - `textStyle`（UTSJSONObject | String，默认 `''`，文本自定义样式）
+  - `textStyle`（SnStyleValue，默认 `''`，文本自定义样式）
 - 类型或默认值变化：
   - `textSize`：类型 String → String | Number，默认值 `-` → `''`（不传时默认 14px × 字体乘数）
   - `textColor`：默认值 `-` → `''`（不传时默认主题文字色）
-  - `customStyle`：类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
+  - `customStyle`：类型 UTSJSONObject → SnStyleValue，默认值 `{}` → `''`
   - `threshold`：类型 `Array<Number[]>` → Number[]（写法修正，语义不变）
 - 行为变化：
   - 默认以实时模式运行，相对时间每秒自动刷新；可通过 `mode="fixed"` 关闭（旧版无模式概念）

@@ -57,14 +57,14 @@ const list = ['已付款', '已发货', '已收货', '已评价']
 | textColor | 未选中分段文本颜色 | String | `$text` | - |
 | activeTextColor | 选中分段文本颜色 | String | `$primaryDark` | - |
 | disabledTextColor | 禁用时文本颜色 | String | `$disabledText` | - |
-| customStyle | 自定义分段器根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义分段器根节点样式 | SnStyleValue | `''` | - |
 | customClass | 分段器根节点的外部样式类 | String | `''` | - |
 | itemClass | 分段项的外部样式类 | String | `''` | - |
-| itemStyle | 自定义分段项样式 | UTSJSONObject \| String | `''` | - |
+| itemStyle | 自定义分段项样式 | SnStyleValue | `''` | - |
 | blockClass | 滑块的外部样式类 | String | `''` | - |
-| blockStyle | 自定义滑块样式 | UTSJSONObject \| String | `''` | - |
+| blockStyle | 自定义滑块样式 | SnStyleValue | `''` | - |
 | textClass | 分段文本的外部样式类 | String | `''` | - |
-| textStyle | 自定义分段文本样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义分段文本样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

@@ -60,9 +60,9 @@
 	import type { SnFormItemRule, SnFormItemVerifyResult, SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnTextareaFieldComponentPublicInstance | null>(null)
-	const formData = ref<UTSJSONObject>({
+	const formData = ref<SnFormData>({
 		remark: ''
-	} as UTSJSONObject)
+	})
 	const failResults = ref<SnFormItemVerifyResult[]>([])
 
 	function getFieldError(field: string): string {
@@ -137,7 +137,7 @@
 | readonly | 是否只读，只读时颜色不变 | Boolean | `false` | `true` \| `false` |
 | loading | 是否加载中，右上角显示加载指示器（延迟 100ms 显示避免闪烁） | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载指示器外部类 | String | `''` | - |
-| loadingStyle | 加载指示器样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 加载指示器样式 | SnStyleValue | `''` | - |
 | showBorder | 是否显示边框 | Boolean | `true` | `true` \| `false` |
 | showActiveBorder | 聚焦时是否切换为激活边框颜色 | Boolean | `false` | `true` \| `false` |
 | borderColor | 边框颜色 | String | `var(--sn-transparent)` | - |
@@ -156,15 +156,15 @@
 | counterSize | 字数统计文字大小 | String \| Number | `$12` | - |
 | counterColor | 字数统计文字颜色 | String | `$text` | - |
 | counterBgColor | 字数统计背景颜色 | String | `$info` | - |
-| labelStyle | 标签节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| labelStyle | 标签节点自定义样式 | SnStyleValue | `''` | - |
 | labelClass | 标签节点外部类 | String | `''` | - |
-| errorStyle | 错误节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| errorStyle | 错误节点自定义样式 | SnStyleValue | `''` | - |
 | errorClass | 错误节点外部类 | String | `''` | - |
-| inputStyle | 自定义文本域本体样式 | UTSJSONObject \| String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| inputStyle | 自定义文本域本体样式 | SnStyleValue | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
 | counterClass | 字数统计节点外部类 | String | `''` | - |
-| counterStyle | 字数统计节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| counterStyle | 字数统计节点自定义样式 | SnStyleValue | `''` | - |
 
 :::type-fields SnFormItemRule
 

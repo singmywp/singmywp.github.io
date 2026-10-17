@@ -66,7 +66,7 @@
 | underline | 是否显示行下边框（`bordered` 为 true 时以内边框为准） | Boolean | `false` | `true` \| `false` |
 | height | 表格高度；设置后启用固定表头与纵向滚动模式 | String \| Number | `''` | - |
 | borderColor | 边框颜色，支持 `$` 简写 | String | `$line` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点自定义样式类 | String | `''` | - |
 
 ## 事件
@@ -90,7 +90,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| customStyle | 行自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 行自定义样式 | SnStyleValue | `''` | - |
 | customClass | 行自定义样式类 | String | `''` | - |
 
 sn-tr 的默认插槽用于放置 sn-td；位于 `#head` 插槽中的第一级行会自动添加表头背景色。
@@ -101,7 +101,7 @@ sn-tr 的默认插槽用于放置 sn-td；位于 `#head` 插槽中的第一级�
 | --- | --- | --- | --- | --- |
 | width | 单元格宽度：Number 按 px；纯数字字符串（如 `"2"`）按比例分配剩余宽度；带单位字符串（如 `"90px"`）为固定宽度；百分比字符串按百分比；自动均分剩余宽度 | String \| Number | - | - |
 | fixed | 是否固定列：`true` 或 `"left"` 固定在左侧，`"right"` 固定在右侧；仅设置 `height`（可滚动模式）时生效 | Boolean \| String | `false` | `true` \| `false` \| `left` \| `right` |
-| customStyle | 单元格自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 单元格自定义样式 | SnStyleValue | `''` | - |
 | customClass | 单元格自定义样式类 | String | `''` | - |
 
 sn-td 的默认插槽用于放置单元格内容。

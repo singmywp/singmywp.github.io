@@ -14,7 +14,7 @@
   - `titleSize`：`$3` → `$14`；`cancelTextSize` / `confirmTextSize`：`$3` → `$14`
   - `showClose`：`false` → `true`
   - `itemHeight`、`itemBorderRadius`、`itemTextColor`、`itemTextSize`、`activeItemTextColor`、`disabledItemTextColor`、`columnSpacing`：选择器层级新增透传（默认 `$50`/`$8`/`$13` 等）
-  - 各尺寸类属性：String → String | Number；颜色类支持 `  - 各尺寸类属性：String → String | Number； 简写；样式类：UTSJSONObject → UTSJSONObject | String
+  - 各尺寸类属性：String → String | Number；颜色类支持 `  - 各尺寸类属性：String → String | Number； 简写；样式类：UTSJSONObject → SnStyleValue
 - 新增属性：`maskOpacity`、`itemClass`、`columnClass` 及全套外部样式类（`headerStyle`/`headerClass`、`titleStyle`/`titleClass`、`closeButtonStyle`/`closeButtonClass`、`actionsStyle`/`actionsClass`、`cancelButtonStyle`/`cancelButtonClass`、`confirmButtonStyle`/`confirmButtonClass`）
 - 新增事件：`clickoverlay`、`beforeenter`、`enter`、`afterenter`、`beforeleave`、`leave`、`afterleave`
 - 行为变化：
@@ -29,7 +29,7 @@
   - `modelValue` → `v-model`，默认值为当前时间
   - `mode`：无默认 → 默认 `7`
   - `height`：无默认 → `250px`；`itemHeight` → `$50`；`itemBorderRadius` → `$8`；`itemTextSize` → `$13`；其余颜色/间距均有默认值
-  - 尺寸类：String → String | Number；颜色类支持 `  - 尺寸类：String → String | Number； 简写；样式类：UTSJSONObject → UTSJSONObject | String
+  - 尺寸类：String → String | Number；颜色类支持 `  - 尺寸类：String → String | Number； 简写；样式类：UTSJSONObject → SnStyleValue
 - 新增属性：`customClass`、`itemClass`、`columnClass`
 - 行为变化：
   - 改为基于 v2 `sn-picker-view` 实现（指示器样式、禁用项回弹、disabled 遮罩拦截）

@@ -100,7 +100,7 @@ const myStore = new StoreLib('my_own_storelib')
 
 ## 注意事项
 
-- **复杂对象类型**：Storage 序列化后读取到的复杂类型为 `UTSJSONObject`，若原值为自定义 `type` 对象，回读后需自行转换（如 `JSON.parse<T>(JSON.stringify(obj))`，可参考 [类型数据的存取说明](https://doc.dcloud.net.cn/uni-app-x/api/storage.html#gettypedata)）。
+- **复杂对象类型**：Storage 序列化后读取到的复杂类型为普通对象，若原值为自定义 `type` 对象，回读后需自行转换（如 `JSON.parse<T>(JSON.stringify(obj))`，可参考 [类型数据的存取说明](https://doc.dcloud.net.cn/uni-app-x/api/storage.html#gettypedata)）。
 - **空字符串持久化**：持久化读取依赖同步 storage API，空字符串按「未存储」处理；请勿将空字符串作为持久化值。
 - **过期时间以秒为单位**；`expire` 与 `lasting` 相互独立，可组合使用。
 ## 更多文档

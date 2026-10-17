@@ -35,7 +35,7 @@ let b = snu.formatNumber(1.5) // 1.5
 
 ### **深拷贝**
 
-深拷贝数据。递归拷贝数组、普通对象（`UTSJSONObject`）、`Set`、`Map`、`RegExp`、`Date` 及各种二进制/类型化数组等，并先用 `toRaw` 剥离响应式代理。字符串、数字、布尔等基本类型原样返回。
+深拷贝数据。递归拷贝数组、普通对象、`Set`、`Map`、`RegExp`、`Date` 及各种二进制/类型化数组等，并先用 `toRaw` 剥离响应式代理。字符串、数字、布尔等基本类型原样返回。
 
 ### 兼容性
 
@@ -58,7 +58,7 @@ let b = snu.formatNumber(1.5) // 1.5
 ### 示例
 
 ```typescript
-let obj = { a: 1, b: [1, 2, 3] } as UTSJSONObject
+let obj = { a: 1, b: [1, 2, 3] }
 let copy = snu.deepClone(obj)
 ```
 

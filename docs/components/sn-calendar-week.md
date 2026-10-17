@@ -73,19 +73,19 @@
 | selectedBgColor | 选中日期背景色，支持 $ 简写 | String | `$primary` | - |
 | selectedTextColor | 选中日期文字颜色，支持 $ 简写 | String | `$primaryText` | - |
 | format | 单日格式化函数，返回 showDot / dotColor 时绘制圆点，返回 text 覆盖日期文字 | SnCalendarDayFormatter | `null` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |
-| switchStyle | 自定义切换按钮样式 | UTSJSONObject \| String | `''` | - |
+| switchStyle | 自定义切换按钮样式 | SnStyleValue | `''` | - |
 | switchClass | 外部样式类 | String | `''` | - |
-| weeksStyle | 自定义周滑动区样式 | UTSJSONObject \| String | `''` | - |
+| weeksStyle | 自定义周滑动区样式 | SnStyleValue | `''` | - |
 | weeksClass | 外部样式类 | String | `''` | - |
-| weekStyle | 自定义单周容器样式 | UTSJSONObject \| String | `''` | - |
+| weekStyle | 自定义单周容器样式 | SnStyleValue | `''` | - |
 | weekClass | 外部样式类 | String | `''` | - |
-| dayStyle | 自定义日期格样式 | UTSJSONObject \| String | `''` | - |
+| dayStyle | 自定义日期格样式 | SnStyleValue | `''` | - |
 | dayClass | 外部样式类 | String | `''` | - |
-| dayTitleStyle | 自定义周标题文字样式 | UTSJSONObject \| String | `''` | - |
+| dayTitleStyle | 自定义周标题文字样式 | SnStyleValue | `''` | - |
 | dayTitleClass | 外部样式类 | String | `''` | - |
-| dayTextStyle | 自定义日期文字样式 | UTSJSONObject \| String | `''` | - |
+| dayTextStyle | 自定义日期文字样式 | SnStyleValue | `''` | - |
 | dayTextClass | 外部样式类 | String | `''` | - |
 
 :::type-fields SnCalendarDayFormatter

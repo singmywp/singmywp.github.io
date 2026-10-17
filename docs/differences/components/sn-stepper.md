@@ -12,7 +12,7 @@
   - `spacing`：String → String | Number
   - `inputWidth`：String → String | Number
   - `textSize`：String → String | Number
-  - `customStyle`：UTSJSONObject → UTSJSONObject | String（支持直接传样式字符串）
+  - `customStyle`：UTSJSONObject → SnStyleValue（支持直接传样式字符串）
 - 默认值变化：
   - `buttonBgColor`：`$info` → `''`（默认改为描边样式按钮，设置该属性后才为实底按钮）
   - `textSize`：`$2+1` → `$14`

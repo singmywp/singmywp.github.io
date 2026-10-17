@@ -46,11 +46,11 @@ const content = ref<string>('SinleUI 提供统一的组件样式、主题能力�
 | bold | 是否加粗（font-weight: 600） | Boolean | `false` | `true` \| `false` |
 | lines | 最大显示行数，`0` 不限制 | Number | `0` | - |
 | selectable | 文本是否可选中（蒸汽模式） | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
-| textStyle | 自定义普通文本片段样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义普通文本片段样式 | SnStyleValue | `''` | - |
 | textClass | 普通文本片段外部类 | String | `''` | - |
-| highlightStyle | 自定义高亮片段样式 | UTSJSONObject \| String | `''` | - |
+| highlightStyle | 自定义高亮片段样式 | SnStyleValue | `''` | - |
 | highlightClass | 高亮片段外部类 | String | `''` | - |
 
 ## 事件

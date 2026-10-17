@@ -204,27 +204,27 @@ const comments: SnPostCardComment[] = [
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | :--- | :--- | :--- | :--- | :--- |
-| customStyle | 根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类（external-class：custom-class） | String | `''` | - |
-| headerStyle | 头部区域样式 | UTSJSONObject \| String | `''` | - |
+| headerStyle | 头部区域样式 | SnStyleValue | `''` | - |
 | headerClass | 外部样式类 | String | `''` | - |
-| infoStyle | 昵称与时间容器样式 | UTSJSONObject \| String | `''` | - |
+| infoStyle | 昵称与时间容器样式 | SnStyleValue | `''` | - |
 | infoClass | 外部样式类 | String | `''` | - |
-| nicknameStyle | 昵称样式 | UTSJSONObject \| String | `''` | - |
+| nicknameStyle | 昵称样式 | SnStyleValue | `''` | - |
 | nicknameClass | 外部样式类 | String | `''` | - |
-| datetimeStyle | 时间样式 | UTSJSONObject \| String | `''` | - |
+| datetimeStyle | 时间样式 | SnStyleValue | `''` | - |
 | datetimeClass | 外部样式类 | String | `''` | - |
-| contentStyle | 正文区域样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 正文区域样式 | SnStyleValue | `''` | - |
 | contentClass | 外部样式类 | String | `''` | - |
-| actionStyle | 底部操作栏样式 | UTSJSONObject \| String | `''` | - |
+| actionStyle | 底部操作栏样式 | SnStyleValue | `''` | - |
 | actionClass | 外部样式类 | String | `''` | - |
-| actionBtnStyle | 操作按钮样式 | UTSJSONObject \| String | `''` | - |
+| actionBtnStyle | 操作按钮样式 | SnStyleValue | `''` | - |
 | actionBtnClass | 外部样式类 | String | `''` | - |
-| commentsStyle | 评论区容器样式 | UTSJSONObject \| String | `''` | - |
+| commentsStyle | 评论区容器样式 | SnStyleValue | `''` | - |
 | commentsClass | 外部样式类 | String | `''` | - |
-| commentStyle | 单条评论样式 | UTSJSONObject \| String | `''` | - |
+| commentStyle | 单条评论样式 | SnStyleValue | `''` | - |
 | commentClass | 外部样式类 | String | `''` | - |
-| moreStyle | 展开评论按钮样式 | UTSJSONObject \| String | `''` | - |
+| moreStyle | 展开评论按钮样式 | SnStyleValue | `''` | - |
 | moreClass | 外部样式类 | String | `''` | - |
 
 头部区域在 `nickname`、`datetime`（大于 0）、`avatarConfig` 含 src/text/icon、或 `header`/`avatar`/`info`/`header-action` 插槽任一存在时渲染；正文、操作栏、评论区分别在其数据或插槽存在时渲染。

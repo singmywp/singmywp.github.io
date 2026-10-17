@@ -274,7 +274,7 @@ let bro = snu.findBrother(instance, ['sn-icon'])
 | loading | Boolean | 否 | 是否显示加载图标（优先生效于 icon） |
 | textLines | Number | 否 | 文本最大行数，超出省略；默认 0 不限制 |
 | passThrough | Boolean | 否 | 是否穿透点击，默认 `true` |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | () => void | 否 | 成功回调（同步触发） |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |
@@ -389,7 +389,7 @@ snu.hideToast()
 | preventBack | Boolean | 否 | 阻止返回键关闭 |
 | openAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义打开动画 |
 | closeAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义关闭动画 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | (confirm: boolean, cancel: boolean) => void | 否 | 成功回调，可区分点击确定/取消/遮罩关闭 |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |
@@ -472,13 +472,13 @@ snu.showModal({
 | preventBack | Boolean | 否 | 阻止返回键关闭 |
 | disabled | Boolean | 否 | 禁用操作菜单 |
 | maskClose | Boolean | 否 | 点击遮罩关闭 |
-| wrapStyle | UTSJSONObject | 否 | 队列容器样式 |
+| wrapStyle | SnStyleValue | 否 | 队列容器样式 |
 | wrapClass | String | 否 | 队列容器外部样式类 |
-| panelStyle | UTSJSONObject | 否 | 面板样式 |
+| panelStyle | SnStyleValue | 否 | 面板样式 |
 | panelClass | String | 否 | 面板外部样式类 |
-| itemStyle | UTSJSONObject | 否 | 操作项样式（复用 sn-cell 样式链，透传 cell customStyle） |
+| itemStyle | SnStyleValue | 否 | 操作项样式（复用 sn-cell 样式链，透传 cell customStyle） |
 | itemBorder | Boolean | 否 | 操作项是否显示分隔线（透传 cell border） |
-| itemHoverStyle | UTSJSONObject | 否 | 操作项点击态样式（透传 cell hoverStyle） |
+| itemHoverStyle | SnStyleValue | 否 | 操作项点击态样式（透传 cell hoverStyle） |
 | openAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义打开动画 |
 | closeAnimation | [SnModalAnimationFn](#snmodalanimationfn) | 否 | 自定义关闭动画 |
 | success | (tapIndex: number) => void | 否 | 成功回调，返回点击的操作项索引 |
@@ -561,7 +561,7 @@ snu.showActionsheet({
 | borderRadius | String | 否 | 圆角 |
 | padding | String | 否 | 内边距 |
 | preventBack | Boolean | 否 | 阻止返回 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | () => void | 否 | 成功回调 |
 | fail | (error: UniError) => void | 否 | 失败回调 |
 | complete | (res: any \| null) => void | 否 | 完成回调 |

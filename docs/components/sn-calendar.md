@@ -198,50 +198,50 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |
-| headerStyle | 自定义头部区域样式 | UTSJSONObject \| String | `''` | - |
+| headerStyle | 自定义头部区域样式 | SnStyleValue | `''` | - |
 | headerClass | 外部样式类 | String | `''` | - |
-| titleStyle | 自定义标题文字样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 自定义标题文字样式 | SnStyleValue | `''` | - |
 | titleClass | 外部样式类 | String | `''` | - |
-| closeStyle | 自定义关闭按钮样式 | UTSJSONObject \| String | `''` | - |
+| closeStyle | 自定义关闭按钮样式 | SnStyleValue | `''` | - |
 | closeClass | 外部样式类 | String | `''` | - |
-| actionsStyle | 自定义底部按钮区样式 | UTSJSONObject \| String | `''` | - |
+| actionsStyle | 自定义底部按钮区样式 | SnStyleValue | `''` | - |
 | actionsClass | 外部样式类 | String | `''` | - |
-| confirmButtonStyle | 自定义确定按钮样式 | UTSJSONObject \| String | `''` | - |
+| confirmButtonStyle | 自定义确定按钮样式 | SnStyleValue | `''` | - |
 | confirmButtonClass | 外部样式类 | String | `''` | - |
-| viewStyle | 自定义内部月历视图根节点样式 | UTSJSONObject \| String | `''` | - |
+| viewStyle | 自定义内部月历视图根节点样式 | SnStyleValue | `''` | - |
 | viewClass | 外部样式类 | String | `''` | - |
-| viewHeaderStyle | 自定义月历视图头部样式 | UTSJSONObject \| String | `''` | - |
+| viewHeaderStyle | 自定义月历视图头部样式 | SnStyleValue | `''` | - |
 | viewHeaderClass | 外部样式类 | String | `''` | - |
-| switchStyle | 自定义月份切换按钮样式 | UTSJSONObject \| String | `''` | - |
+| switchStyle | 自定义月份切换按钮样式 | SnStyleValue | `''` | - |
 | switchClass | 外部样式类 | String | `''` | - |
-| weekdaysStyle | 自定义星期标题行样式 | UTSJSONObject \| String | `''` | - |
+| weekdaysStyle | 自定义星期标题行样式 | SnStyleValue | `''` | - |
 | weekdaysClass | 外部样式类 | String | `''` | - |
-| weekdayStyle | 自定义单个星期标题样式 | UTSJSONObject \| String | `''` | - |
+| weekdayStyle | 自定义单个星期标题样式 | SnStyleValue | `''` | - |
 | weekdayClass | 外部样式类 | String | `''` | - |
-| monthsStyle | 自定义月份滑动区样式 | UTSJSONObject \| String | `''` | - |
+| monthsStyle | 自定义月份滑动区样式 | SnStyleValue | `''` | - |
 | monthsClass | 外部样式类 | String | `''` | - |
-| monthStyle | 自定义单月容器样式 | UTSJSONObject \| String | `''` | - |
+| monthStyle | 自定义单月容器样式 | SnStyleValue | `''` | - |
 | monthClass | 外部样式类 | String | `''` | - |
-| monthTitleStyle | 自定义月份标题文字样式 | UTSJSONObject \| String | `''` | - |
+| monthTitleStyle | 自定义月份标题文字样式 | SnStyleValue | `''` | - |
 | monthTitleClass | 外部样式类 | String | `''` | - |
-| watermarkStyle | 自定义月份水印样式 | UTSJSONObject \| String | `''` | - |
+| watermarkStyle | 自定义月份水印样式 | SnStyleValue | `''` | - |
 | watermarkClass | 外部样式类 | String | `''` | - |
 
 ### 年月选择面板
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| pickerLayerStyle | 自定义面板遮罩层样式 | UTSJSONObject \| String | `''` | - |
+| pickerLayerStyle | 自定义面板遮罩层样式 | SnStyleValue | `''` | - |
 | pickerLayerClass | 外部样式类 | String | `''` | - |
-| pickerPanelStyle | 自定义面板容器样式 | UTSJSONObject \| String | `''` | - |
+| pickerPanelStyle | 自定义面板容器样式 | SnStyleValue | `''` | - |
 | pickerPanelClass | 外部样式类 | String | `''` | - |
-| pickerHeaderStyle | 自定义面板头部样式 | UTSJSONObject \| String | `''` | - |
+| pickerHeaderStyle | 自定义面板头部样式 | SnStyleValue | `''` | - |
 | pickerHeaderClass | 外部样式类 | String | `''` | - |
-| pickerYearStepperWrapStyle | 自定义年步进器容器样式 / 外部样式类，取 pickerTitleStyle / pickerTitleClass | UTSJSONObject \| String | - | - |
+| pickerYearStepperWrapStyle | 自定义年步进器容器样式 / 外部样式类，取 pickerTitleStyle / pickerTitleClass | SnStyleValue | - | - |
 | pickerYearStepperWrapClass | 自定义年步进器容器样式 / 外部样式类，取 pickerTitleStyle / pickerTitleClass | String | - | - |
-| pickerYearStepperStyle | 自定义年步进器样式 | UTSJSONObject \| String | `''` | - |
+| pickerYearStepperStyle | 自定义年步进器样式 | SnStyleValue | `''` | - |
 | pickerYearStepperSize | 年步进器尺寸 | String \| Number | `$32` | - |
 | pickerYearStepperSpacing | 年步进器内间距 | String \| Number | `$8` | - |
 | pickerYearStepperInputWidth | 年份输入框宽度 | String \| Number | `$92` | - |
@@ -260,21 +260,21 @@
 | pickerYearStepperBorderWidth | 边框宽度 | String \| Number | `2` | - |
 | pickerYearStepperTextFont | 年步进器文字字体 | String | `''` | - |
 | pickerYearStepperCursorColor | 输入光标颜色，支持 $ 简写 | String | `''` | - |
-| pickerMonthsStyle | 自定义月份宫格容器样式 / 外部样式类，取 pickerBodyStyle / pickerBodyClass | UTSJSONObject \| String | - | - |
+| pickerMonthsStyle | 自定义月份宫格容器样式 / 外部样式类，取 pickerBodyStyle / pickerBodyClass | SnStyleValue | - | - |
 | pickerMonthsClass | 自定义月份宫格容器样式 / 外部样式类，取 pickerBodyStyle / pickerBodyClass | String | - | - |
-| pickerMonthStyle | 自定义单个月份项样式 / 外部样式类，取 pickerRowStyle / pickerRowClass | UTSJSONObject \| String | - | - |
+| pickerMonthStyle | 自定义单个月份项样式 / 外部样式类，取 pickerRowStyle / pickerRowClass | SnStyleValue | - | - |
 | pickerMonthClass | 自定义单个月份项样式 / 外部样式类，取 pickerRowStyle / pickerRowClass | String | - | - |
-| pickerMonthTextStyle | 自定义月份文字样式 / 外部样式类，取 pickerLabelStyle / pickerLabelClass | UTSJSONObject \| String | - | - |
+| pickerMonthTextStyle | 自定义月份文字样式 / 外部样式类，取 pickerLabelStyle / pickerLabelClass | SnStyleValue | - | - |
 | pickerMonthTextClass | 自定义月份文字样式 / 外部样式类，取 pickerLabelStyle / pickerLabelClass | String | - | - |
-| pickerTitleStyle | 年步进器容器兜底样式 / 外部样式类（pickerYearStepperWrapStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |
+| pickerTitleStyle | 年步进器容器兜底样式 / 外部样式类（pickerYearStepperWrapStyle / Class 为空时生效） | SnStyleValue | `''` | - |
 | pickerTitleClass | 年步进器容器兜底样式 / 外部样式类（pickerYearStepperWrapStyle / Class 为空时生效） | String | `''` | - |
-| pickerBodyStyle | 月份宫格兜底样式 / 外部样式类（pickerMonthsStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |
+| pickerBodyStyle | 月份宫格兜底样式 / 外部样式类（pickerMonthsStyle / Class 为空时生效） | SnStyleValue | `''` | - |
 | pickerBodyClass | 月份宫格兜底样式 / 外部样式类（pickerMonthsStyle / Class 为空时生效） | String | `''` | - |
-| pickerRowStyle | 月份项兜底样式 / 外部样式类（pickerMonthStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |
+| pickerRowStyle | 月份项兜底样式 / 外部样式类（pickerMonthStyle / Class 为空时生效） | SnStyleValue | `''` | - |
 | pickerRowClass | 月份项兜底样式 / 外部样式类（pickerMonthStyle / Class 为空时生效） | String | `''` | - |
-| pickerLabelStyle | 月份文字兜底样式 / 外部样式类（pickerMonthTextStyle / Class 为空时生效） | UTSJSONObject \| String | `''` | - |
+| pickerLabelStyle | 月份文字兜底样式 / 外部样式类（pickerMonthTextStyle / Class 为空时生效） | SnStyleValue | `''` | - |
 | pickerLabelClass | 月份文字兜底样式 / 外部样式类（pickerMonthTextStyle / Class 为空时生效） | String | `''` | - |
-| promptStyle | 自定义超限提示文字样式 | UTSJSONObject \| String | `''` | - |
+| promptStyle | 自定义超限提示文字样式 | SnStyleValue | `''` | - |
 | promptClass | 外部样式类 | String | `''` | - |
 
 ## 事件

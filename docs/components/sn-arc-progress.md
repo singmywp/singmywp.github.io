@@ -61,7 +61,7 @@
 | max | 数值上限 | Number | `100` | - |
 | show-value-text | 是否在中心显示百分比文本 | Boolean | `true` | `true` \| `false` |
 | ani-time | 进度变化动画时长（ms），支持 `$` 前缀动态时长，传 `0` 关闭动画 | String \| Number | `$long` | - |
-| custom-style | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| custom-style | 自定义根节点样式 | SnStyleValue | `''` | - |
 | custom-class | 根节点外部样式类 | String | `''` | - |
 
 ## 事件

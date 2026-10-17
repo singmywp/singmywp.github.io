@@ -32,7 +32,7 @@
   - `activeBorderColor`：默认 `$primary` → `$line`
   - `activeBgColor`：默认 `$front` → `''`（聚焦背景默认 info 色）
   - 各颜色属性：支持 `  -  简写
-  - 各样式属性：UTSJSONObject → UTSJSONObject \| String
+  - 各样式属性：UTSJSONObject → SnStyleValue
 - 行为变化
   - `password` 为 true 时右侧自动显示明文/密文切换按钮（眼睛图标），点击切换显示
   - `loading` 加载指示器改为延迟 100ms 显示，避免短请求时闪烁

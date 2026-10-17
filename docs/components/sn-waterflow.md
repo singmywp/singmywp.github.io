@@ -136,7 +136,7 @@ App 端基于官方 `waterflow` 组件，条目以 `flow-item` 复用回收；We
 | androidRefresherColor | Android 端下拉刷新默认样式颜色 | String | `''` | - |
 | enableBackToTop | 点击状态栏回到顶部（iOS 端生效） | Boolean | `false` | `true` \| `false` |
 | enablePassive | Web 端原生滚动监听是否使用 passive 模式 | Boolean | Web 端 `true`，其他端 `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |
 
 :::type-fields SnRefresherParams

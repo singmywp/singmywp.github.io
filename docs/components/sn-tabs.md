@@ -96,13 +96,13 @@ const tabs = [
 | lineWidth | 指示线宽度，取标签宽度的 60% | String | - | - |
 | lineHeight | 指示线高度 | String | `'2px'` | - |
 | aniTime | 标签及指示线动画时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `$normal` | - |
-| itemStyle | 选中标签样式 | UTSJSONObject \| String | `''` | - |
+| itemStyle | 选中标签样式 | SnStyleValue | `''` | - |
 | itemClass | 选中标签外部样式类 | String | `''` | - |
-| textStyle | 标签文本样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 标签文本样式 | SnStyleValue | `''` | - |
 | textClass | 标签文本外部样式类 | String | `''` | - |
-| activeItemStyle | 非选中标签样式 | UTSJSONObject \| String | `''` | - |
+| activeItemStyle | 非选中标签样式 | SnStyleValue | `''` | - |
 | activeItemClass | 非选中标签外部样式类 | String | `''` | - |
-| customStyle | 自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义样式 | SnStyleValue | `''` | - |
 
 :::type-fields SnTabParams
 

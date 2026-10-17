@@ -74,7 +74,7 @@ const value = ref<number>(0)
 | borderWidth | 输入框边框宽度 | String \| Number | `2` | - |
 | textFont | 输入框文本字体 | String | `''` | - |
 | cursorColor | 输入框光标颜色 | String | `''` | 任意色值或 `$` 主题色简写 |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 
 尺寸类属性支持 `$` 前缀动态尺寸（乘对应乘数）。
 

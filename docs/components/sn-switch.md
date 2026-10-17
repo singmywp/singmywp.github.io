@@ -61,11 +61,11 @@ const value = ref<boolean>(false)
 | textSize | 轨道内文本大小 | String \| Number | `$12` | - |
 | loading | 是否处于加载状态（小球内显示加载动画，期间不可点击） | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载动画的外部样式类 | String | `''` | - |
-| loadingStyle | 自定义加载动画样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 自定义加载动画样式 | SnStyleValue | `''` | - |
 | disabled | 是否禁用开关 | Boolean | `false` | `true` \| `false` |
 | thumbClass | 小球的外部样式类 | String | `''` | - |
-| thumbStyle | 自定义小球样式 | UTSJSONObject \| String | `''` | - |
-| customStyle | 自定义开关根节点样式 | UTSJSONObject \| String | `''` | - |
+| thumbStyle | 自定义小球样式 | SnStyleValue | `''` | - |
+| customStyle | 自定义开关根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

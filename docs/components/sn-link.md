@@ -32,10 +32,10 @@
 | hoverBgColor | 按压时背景颜色，设置后显示圆角背景点击态 | String | `''` | - |
 | hoverTextColor | 按压时文字与图标颜色 | String | `''` | - |
 | local | 是否使用内置 Webview 打开链接 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义链接根节点样式 | UTSJSONObject \| String | `''` | - |
-| textStyle | 自定义链接文本样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义链接根节点样式 | SnStyleValue | `''` | - |
+| textStyle | 自定义链接文本样式 | SnStyleValue | `''` | - |
 | textClass | 链接文本外部类 | String | `''` | - |
-| iconStyle | 自定义图标样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 自定义图标样式 | SnStyleValue | `''` | - |
 | iconClass | 图标外部类 | String | `''` | - |
 
 ## 事件

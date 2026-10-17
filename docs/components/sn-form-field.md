@@ -103,18 +103,18 @@
 | showBorder | 是否显示底部下划线 | Boolean | `false` | `true` \| `false` |
 | borderColor | 下划线颜色 | String | `$line` | - |
 | borderWidth | 下划线高度 | String \| Number | `1` | - |
-| borderStyle | 下划线节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| borderStyle | 下划线节点自定义样式 | SnStyleValue | `''` | - |
 | borderClass | 下划线节点外部类 | String | `''` | - |
 | bgColor | 背景颜色 | String | `$front` | - |
 | borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | padding | 内边距 | String | `10px 13px` | - |
-| labelStyle | 标签节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| labelStyle | 标签节点自定义样式 | SnStyleValue | `''` | - |
 | labelClass | 标签节点外部类 | String | `''` | - |
-| errorStyle | 错误节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| errorStyle | 错误节点自定义样式 | SnStyleValue | `''` | - |
 | errorClass | 错误节点外部类 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
-| containStyle | 内容区自定义样式 | UTSJSONObject \| String | `''` | - |
+| containStyle | 内容区自定义样式 | SnStyleValue | `''` | - |
 
 :::type-fields SnFormItemRule
 

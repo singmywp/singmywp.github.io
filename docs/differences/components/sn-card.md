@@ -13,7 +13,7 @@
   - `customFooterStyle` → `footerStyle`
   - `customActionStyle` → `actionStyle`
 - 类型或默认值变化：
-  - `customStyle`：`UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`：`UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
   - `titleSize`：类型 `String` → `String | Number`，默认值 `$4` → `$16`
   - `titleFont`：默认值 `misans-semibold` → `''`（空为不额外设置字体，标题恒为加粗）
   - `padding`：类型 `String` → `String | Number`，默认值 `10px` → `$15`

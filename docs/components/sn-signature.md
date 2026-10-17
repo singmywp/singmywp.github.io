@@ -72,12 +72,12 @@ App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元�
 | drawerPosition | 设置面板滑出的方向 | String | `right` | `left` \| `right`（`top`/`bottom` 视为 `right`） |
 | drawerWidth | 设置面板宽度 | String \| Number | `300px` | - |
 | aniTime | 设置面板动画时长，支持 `$` 动态时长语法 | String \| Number | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 | canvasWrapClass | 画布容器外部样式类 | String | `''` | - |
-| canvasWrapStyle | 自定义画布容器样式 | UTSJSONObject \| String | `''` | - |
+| canvasWrapStyle | 自定义画布容器样式 | SnStyleValue | `''` | - |
 | barClass | 操作栏外部样式类 | String | `''` | - |
-| barStyle | 自定义操作栏样式 | UTSJSONObject \| String | `''` | - |
+| barStyle | 自定义操作栏样式 | SnStyleValue | `''` | - |
 | toolClass | 操作栏工具按钮外部样式类 | String | `''` | - |
 
 :::type-fields SnSignatureBrush

@@ -72,13 +72,13 @@
 | padding | 内边距，支持 `$` 简写 | String \| Number | `0` | - |
 | boxShadow | 阴影，一般不要设置，uni-app x 的阴影在 App 端时有异常 | String | - | - |
 | aniTime | 动画时长，`$` 开头时乘以动画时长乘数 | String \| Number | `$250` | - |
-| hoverStyle | 按下时应用的样式，为空时不启用点击态 | UTSJSONObject \| String | - | - |
+| hoverStyle | 按下时应用的样式，为空时不启用点击态 | SnStyleValue | - | - |
 | hoverStopPropagation | 是否阻止点击态扩散到父节点 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按下后进入点击态的延迟时间（ms） | Number | `50` | - |
 | hoverStayTime | 手指松开后点击态保留时间（ms） | Number | `0` | - |
 | hoverTransTime | 进入/退出点击态的过渡时长，取 `aniTime` | String \| Number | - | - |
-| loadingStyle | 加载指示器的自定义样式 | UTSJSONObject \| String | - | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| loadingStyle | 加载指示器的自定义样式 | SnStyleValue | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | loadingClass | 加载指示器的外部样式类 | String | - | - |
 | customClass | 根节点的外部样式类 | String | - | - |
 

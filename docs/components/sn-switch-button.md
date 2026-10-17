@@ -103,17 +103,17 @@ const value = ref<boolean>(false)
 | dashed | 是否虚线边框（一般配合 `plain` 使用） | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用，禁用后不可切换 | Boolean | `false` | `true` \| `false` |
 | loading | 是否加载状态，显示加载遮罩并阻止切换 | Boolean | `false` | `true` \| `false` |
-| loadingStyle | 加载指示器自定义样式 | UTSJSONObject \| String | `''` | - |
-| hoverStyle | 按下时的点击态样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 加载指示器自定义样式 | SnStyleValue | `''` | - |
+| hoverStyle | 按下时的点击态样式 | SnStyleValue | `''` | - |
 | hoverStopPropagation | 是否阻止点击态的父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按下后点击态出现的延迟时间（ms） | Number | `0` | - |
 | hoverStayTime | 松手后点击态保留的时间（ms） | Number | `0` | - |
 | hoverTransTime | 点击态过渡动画时长，支持 `$` 前缀 | String \| Number | `''` | - |
 | textClass | 文本外部样式类 | String | `''` | - |
-| textStyle | 文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 文本自定义样式 | SnStyleValue | `''` | - |
 | iconClass | 图标外部样式类 | String | `''` | - |
-| iconStyle | 图标自定义样式 | UTSJSONObject \| String | `''` | - |
-| customStyle | 自定义根节点（按钮本体）样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 图标自定义样式 | SnStyleValue | `''` | - |
+| customStyle | 自定义根节点（按钮本体）样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 ## 事件

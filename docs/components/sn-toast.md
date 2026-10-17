@@ -59,7 +59,7 @@ snu.showToast({
 | textAlign | 文本对齐方式 | String | `center` | `left` \| `center` \| `right` |
 | loading | 是否显示加载中图标（旋转 loading 圈） | Boolean | `false` | `true` \| `false` |
 | textLines | 文本最大行数，超长自动换行，`0` 不限制 | Number | `0` | - |
-| customStyle | 自定义轻提示内容块样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义轻提示内容块样式 | SnStyleValue | `''` | - |
 
 ## 方法
 

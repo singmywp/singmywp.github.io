@@ -15,7 +15,7 @@
 - 类型或默认值变化
   - 尺寸类属性（`radioTextSize`、`tagBorderRadius`、`tagTextSize`，以及新增的 `radioSize`、`radioBorderWidth`）类型 String → String | Number，支持 `$` 前缀动态尺寸；`radioTextSize` 默认值 `$3` → 空（默认 13px × fontsizeFactor）
   - 颜色类属性统一支持 `$` 简写引用主题色变量
-  - 样式类属性 UTSJSONObject → UTSJSONObject | String
+  - 样式类属性 UTSJSONObject → SnStyleValue
 - 行为变化
   - 旧属性 `vModel` 改为标准 `v-model`（类型不变，仍为选中索引）
   - 组配置经依赖注入统一下发到子项，子项自身属性优先于组配置（可单独覆盖）；外部样式类经 external-class 机制传递（蒸汽模式样式隔离 2.0）

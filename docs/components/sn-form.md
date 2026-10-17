@@ -29,11 +29,11 @@
 	import type { SnFormItemRule, SnFormItemVerifyResult, SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnFormComponentPublicInstance | null>(null)
-	const formData = ref<UTSJSONObject>({
+	const formData = ref<SnFormData>({
 		name: '',
 		phone: '',
 		gender: 0
-	} as UTSJSONObject)
+	})
 	const failResults = ref<SnFormItemVerifyResult[]>([])
 
 	function getFieldError(field: string): string {
@@ -170,9 +170,9 @@ const adultRule = ref<SnFormItemRule>({
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | --- | --- | --- | --- | --- |
-| v-model | 表单数据对象，键为表单项的 `field`，值为对应控件绑定的值；深度监听，变化时触发 change 事件 | UTSJSONObject | `{}` | - |
+| v-model | 表单数据对象，键为表单项的 `field`，值为对应控件绑定的值；深度监听，变化时触发 change 事件 | SnFormData | `{}` | - |
 | triggerChange | 是否在表单数据变化时自动执行校验 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 
@@ -181,7 +181,7 @@ const adultRule = ref<SnFormItemRule>({
 | submit | () => Void | 调用 submit 方法且校验通过后触发 |
 | pass | () => Void | 校验通过时触发 |
 | fail | (failResults: SnFormItemVerifyResult[]) => Void | 校验失败时触发，携带全部失败项的结果数组 |
-| change | (value: UTSJSONObject) => Void | 表单数据变化时触发 |
+| change | (value: SnFormData) => Void | 表单数据变化时触发 |
 
 ## 方法
 

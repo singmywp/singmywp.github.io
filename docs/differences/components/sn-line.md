@@ -17,7 +17,7 @@
   - `customTextStyle`
 - 类型或默认值变化：
   - `margin`：`String`，默认 `10px 0` → `String | Number`，默认 `0`（水平作用于上下、垂直作用于左右，数值按 px 处理并乘间距乘数）
-  - `customStyle`：`UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`：`UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
   - `color`：默认由 `` `$line` `` 改为空字符串（空时取主题线条色）
 - 行为变化：
   - `dot` 语义变化：由旧版"点状分割线"改为在分割线中间显示圆点"•"代替文本；

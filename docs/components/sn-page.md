@@ -10,8 +10,8 @@
 - 在根节点注入全部主题颜色、乘数与动画时长 CSS 变量，页面内子组件直接引用
 - 为后代组件提供独立的 Tabbar 高度登记作用域，卸载时清理
 
-::: info 弹出层放置
-- 弹出层类组件（如 sn-popup、sn-modal、sn-toast、sn-menu 等）应直接放在 `sn-page` 根节点下，否则无法取到注入的 CSS 变量，颜色与动画时长会失效
+::: danger 必须放在 sn-page 下
+- 页面内所有组件（含 sn-popup、sn-modal、sn-toast 等弹出层类组件）都必须放在 `sn-page` 下，务必让 `sn-page` 成为页面根节点，否则注入的 `--sn-*`、`--ani-time-*` CSS 变量无法作用到这些节点，颜色与动画时长会错乱
 :::
 
 ::: details 注入的 CSS 变量
@@ -81,7 +81,7 @@
 | blurOpacity | 未设置 bgColor 与 topbarBgColor 时的内置导航栏模糊背景透明度，取值 0~1 | Number | `0.78` | - |
 | topbarBgColor | 内置导航栏背景颜色；为空时跟随页面背景颜色 | String | `''` | - |
 | fillContent | 是否让内容区填满剩余高度而不使用内置滚动，用于内部自带滚动容器的全屏子页面 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 方法
 

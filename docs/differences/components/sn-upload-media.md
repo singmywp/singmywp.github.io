@@ -2,7 +2,7 @@
 
 **旧版状态**：v1 已内置基础版（sn-upload-media）与 uniCloud 版（sn-upload-media-unicloud），v2 功能与属性基本一致，主要差异在属性类型放宽与默认值调整。
 **差异明细**：
-- 类型变化：`customStyle` / `customItemStyle` 旧 UTSJSONObject → 新 UTSJSONObject | String
+- 类型变化：`customStyle` / `customItemStyle` 旧 UTSJSONObject → 新 SnStyleValue
 - 类型变化：`width` / `height` / `iconSize` 旧 String → 新 String | Number
 - 默认值变化：`itemBgColor` 旧 `` `$line` `` → 新 ``（留空时回退 `$line`）；`itemBorderRadius` 旧 `` `$small` `` → 新 ``（留空按 `8 × radiusFactor` 计算）；`timeout` 旧 `10000` → 新 `30000`（上传超时后自动中止请求并进入上传失败状态）
 - 行为变化：Web 端 `mode=all` 改用文件选择器（chooseMediaWeb）实现；选择失败、上传失败统一返回 `UniError`

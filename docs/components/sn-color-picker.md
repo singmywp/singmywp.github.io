@@ -71,46 +71,46 @@
 | showConfirm | 是否显示确定按钮 | Boolean | `true` | `true \| false` |
 | cancelText | 取消按钮文字 | String | `取消` | - |
 | confirmText | 确定按钮文字 | String | `确定` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
-| headerStyle | 标题栏自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
+| headerStyle | 标题栏自定义样式 | SnStyleValue | `''` | - |
 | headerClass | 样式类 | String | `''` | - |
-| titleStyle | 标题文字自定义样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 标题文字自定义样式 | SnStyleValue | `''` | - |
 | titleClass | 样式类 | String | `''` | - |
-| closeButtonStyle | 关闭按钮自定义样式 | UTSJSONObject \| String | `''` | - |
+| closeButtonStyle | 关闭按钮自定义样式 | SnStyleValue | `''` | - |
 | closeButtonClass | 样式类 | String | `''` | - |
-| actionsStyle | 底部按钮区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| actionsStyle | 底部按钮区域自定义样式 | SnStyleValue | `''` | - |
 | actionsClass | 样式类 | String | `''` | - |
-| cancelButtonStyle | 取消按钮自定义样式 | UTSJSONObject \| String | `''` | - |
+| cancelButtonStyle | 取消按钮自定义样式 | SnStyleValue | `''` | - |
 | cancelButtonClass | 样式类 | String | `''` | - |
-| confirmButtonStyle | 确定按钮自定义样式 | UTSJSONObject \| String | `''` | - |
+| confirmButtonStyle | 确定按钮自定义样式 | SnStyleValue | `''` | - |
 | confirmButtonClass | 样式类 | String | `''` | - |
-| viewStyle | 透传至内部 sn-color-picker-view 根节点的自定义样式 | UTSJSONObject \| String | `''` | - |
+| viewStyle | 透传至内部 sn-color-picker-view 根节点的自定义样式 | SnStyleValue | `''` | - |
 | viewClass | 样式类 | String | `''` | - |
-| panelStyle | 透传至内部 sn-color-picker-view，取色面板自定义样式 | UTSJSONObject \| String | `''` | - |
+| panelStyle | 透传至内部 sn-color-picker-view，取色面板自定义样式 | SnStyleValue | `''` | - |
 | panelClass | 样式类 | String | `''` | - |
 | thumbClass | 透传至内部 sn-color-picker-view，取色面板指示圆点样式类 | String | `''` | - |
-| slidersStyle | 透传至内部 sn-color-picker-view，滑块容器自定义样式 | UTSJSONObject \| String | `''` | - |
+| slidersStyle | 透传至内部 sn-color-picker-view，滑块容器自定义样式 | SnStyleValue | `''` | - |
 | slidersClass | 样式类 | String | `''` | - |
-| hueStyle | 透传至内部 sn-color-picker-view，色相滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| hueStyle | 透传至内部 sn-color-picker-view，色相滑块自定义样式 | SnStyleValue | `''` | - |
 | hueClass | 样式类 | String | `''` | - |
-| alphaStyle | 透传至内部 sn-color-picker-view，透明度滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| alphaStyle | 透传至内部 sn-color-picker-view，透明度滑块自定义样式 | SnStyleValue | `''` | - |
 | alphaClass | 样式类 | String | `''` | - |
 | sliderThumbClass | 透传至内部 sn-color-picker-view，滑块指示圆点样式类 | String | `''` | - |
-| inputRowStyle | 透传至内部 sn-color-picker-view，格式与数值输入行自定义样式 | UTSJSONObject \| String | `''` | - |
+| inputRowStyle | 透传至内部 sn-color-picker-view，格式与数值输入行自定义样式 | SnStyleValue | `''` | - |
 | inputRowClass | 样式类 | String | `''` | - |
-| fieldsStyle | 透传至内部 sn-color-picker-view，数值输入区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| fieldsStyle | 透传至内部 sn-color-picker-view，数值输入区域自定义样式 | SnStyleValue | `''` | - |
 | fieldsClass | 样式类 | String | `''` | - |
-| selectStyle | 透传至内部 sn-color-picker-view，格式下拉选择自定义样式 | UTSJSONObject \| String | `''` | - |
+| selectStyle | 透传至内部 sn-color-picker-view，格式下拉选择自定义样式 | SnStyleValue | `''` | - |
 | selectClass | 样式类 | String | `''` | - |
-| inputStyle | 透传至内部 sn-color-picker-view，数值输入框自定义样式 | UTSJSONObject \| String | `''` | - |
+| inputStyle | 透传至内部 sn-color-picker-view，数值输入框自定义样式 | SnStyleValue | `''` | - |
 | inputClass | 样式类 | String | `''` | - |
-| presetsStyle | 透传至内部 sn-color-picker-view，预设颜色区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetsStyle | 透传至内部 sn-color-picker-view，预设颜色区域自定义样式 | SnStyleValue | `''` | - |
 | presetsClass | 样式类 | String | `''` | - |
-| presetTitleStyle | 透传至内部 sn-color-picker-view，预设颜色标题自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetTitleStyle | 透传至内部 sn-color-picker-view，预设颜色标题自定义样式 | SnStyleValue | `''` | - |
 | presetTitleClass | 样式类 | String | `''` | - |
-| presetGridStyle | 透传至内部 sn-color-picker-view，预设颜色网格自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetGridStyle | 透传至内部 sn-color-picker-view，预设颜色网格自定义样式 | SnStyleValue | `''` | - |
 | presetGridClass | 样式类 | String | `''` | - |
-| presetItemStyle | 透传至内部 sn-color-picker-view，预设颜色块自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetItemStyle | 透传至内部 sn-color-picker-view，预设颜色块自定义样式 | SnStyleValue | `''` | - |
 | presetItemClass | 样式类 | String | `''` | - |
 
 ## 事件
@@ -203,33 +203,33 @@
 | sliderSpacing | 滑块、输入行、预设区域之间的间距 | String \| Number | `$12` | - |
 | borderRadius | 取色面板与滑块的圆角大小 | String \| Number | `$10` | - |
 | thumbSize | 取色面板指示圆点大小 | String \| Number | `$30` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点自定义样式类 | String | `''` | - |
-| panelStyle | 取色面板自定义样式 | UTSJSONObject \| String | `''` | - |
+| panelStyle | 取色面板自定义样式 | SnStyleValue | `''` | - |
 | panelClass | 样式类 | String | `''` | - |
 | thumbClass | 取色面板指示圆点样式类 | String | `''` | - |
-| slidersStyle | 滑块容器自定义样式 | UTSJSONObject \| String | `''` | - |
+| slidersStyle | 滑块容器自定义样式 | SnStyleValue | `''` | - |
 | slidersClass | 样式类 | String | `''` | - |
-| hueStyle | 色相滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| hueStyle | 色相滑块自定义样式 | SnStyleValue | `''` | - |
 | hueClass | 样式类 | String | `''` | - |
-| alphaStyle | 透明度滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| alphaStyle | 透明度滑块自定义样式 | SnStyleValue | `''` | - |
 | alphaClass | 样式类 | String | `''` | - |
 | sliderThumbClass | 滑块指示圆点样式类 | String | `''` | - |
-| inputRowStyle | 格式与数值输入行自定义样式 | UTSJSONObject \| String | `''` | - |
+| inputRowStyle | 格式与数值输入行自定义样式 | SnStyleValue | `''` | - |
 | inputRowClass | 样式类 | String | `''` | - |
-| fieldsStyle | 数值输入区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| fieldsStyle | 数值输入区域自定义样式 | SnStyleValue | `''` | - |
 | fieldsClass | 样式类 | String | `''` | - |
-| selectStyle | 格式下拉选择自定义样式 | UTSJSONObject \| String | `''` | - |
+| selectStyle | 格式下拉选择自定义样式 | SnStyleValue | `''` | - |
 | selectClass | 样式类 | String | `''` | - |
-| inputStyle | 数值输入框自定义样式 | UTSJSONObject \| String | `''` | - |
+| inputStyle | 数值输入框自定义样式 | SnStyleValue | `''` | - |
 | inputClass | 样式类 | String | `''` | - |
-| presetsStyle | 预设颜色区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetsStyle | 预设颜色区域自定义样式 | SnStyleValue | `''` | - |
 | presetsClass | 样式类 | String | `''` | - |
-| presetTitleStyle | 预设颜色标题自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetTitleStyle | 预设颜色标题自定义样式 | SnStyleValue | `''` | - |
 | presetTitleClass | 样式类 | String | `''` | - |
-| presetGridStyle | 预设颜色网格自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetGridStyle | 预设颜色网格自定义样式 | SnStyleValue | `''` | - |
 | presetGridClass | 样式类 | String | `''` | - |
-| presetItemStyle | 预设颜色块自定义样式 | UTSJSONObject \| String | `''` | - |
+| presetItemStyle | 预设颜色块自定义样式 | SnStyleValue | `''` | - |
 | presetItemClass | 样式类 | String | `''` | - |
 
 ## sn-color-picker-view 事件

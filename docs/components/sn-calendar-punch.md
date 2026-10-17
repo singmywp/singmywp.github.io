@@ -67,17 +67,17 @@
 | dayTextColor | 日期文字颜色 | String | `$text` | - |
 | adjacentDayTextColor | 非当前月日期文字颜色 | String | `$lineText` | - |
 | disabledDayTextColor | 禁用日期文字颜色 | String | `$disabledText` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 外部样式类 | String | `''` | - |
-| headerStyle | 自定义头部样式 | UTSJSONObject \| String | `''` | - |
+| headerStyle | 自定义头部样式 | SnStyleValue | `''` | - |
 | headerClass | 外部样式类 | String | `''` | - |
-| switchStyle | 自定义月份切换按钮样式 | UTSJSONObject \| String | `''` | - |
+| switchStyle | 自定义月份切换按钮样式 | SnStyleValue | `''` | - |
 | switchClass | 外部样式类 | String | `''` | - |
-| weekdaysStyle | 自定义星期标题行样式 | UTSJSONObject \| String | `''` | - |
+| weekdaysStyle | 自定义星期标题行样式 | SnStyleValue | `''` | - |
 | weekdaysClass | 外部样式类 | String | `''` | - |
-| weekdayStyle | 自定义单个星期标题样式 | UTSJSONObject \| String | `''` | - |
+| weekdayStyle | 自定义单个星期标题样式 | SnStyleValue | `''` | - |
 | weekdayClass | 外部样式类 | String | `''` | - |
-| monthTitleStyle | 自定义月份标题文字样式 | UTSJSONObject \| String | `''` | - |
+| monthTitleStyle | 自定义月份标题文字样式 | SnStyleValue | `''` | - |
 | monthTitleClass | 外部样式类 | String | `''` | - |
 
 :::type-fields SnCalendarValue

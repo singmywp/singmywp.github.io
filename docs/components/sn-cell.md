@@ -60,18 +60,18 @@ function onCellClick(name: string | number): void {
 | name | 点击事件携带的标识符 | String \| Number | `''` | - |
 | bgColor | 背景颜色 | String | `var(--sn-front)` | - |
 | padding | 内边距，使用组件默认内边距（随间距乘数缩放） | String | - | - |
-| hoverStyle | 按压时应用的样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
+| hoverStyle | 按压时应用的样式 | SnStyleValue | `background: var(--sn-info);` | - |
 | hoverStopPropagation | 按压态是否阻止向父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按压态启动延时（ms） | Number | `0` | - |
 | hoverStayTime | 松手后按压态保持时长（ms） | Number | `0` | - |
 | hoverTransTime | 按压态过渡动画时长，支持 `$` 简写 | String \| Number | `$short` | - |
-| iconStyle | 自定义左侧图标样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 自定义左侧图标样式 | SnStyleValue | `''` | - |
 | iconClass | 左侧图标外部类 | String | `''` | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | `''` | - |
 | titleClass | 标题外部类 | String | `''` | - |
-| rightIconStyle | 自定义右侧图标样式 | UTSJSONObject \| String | `''` | - |
+| rightIconStyle | 自定义右侧图标样式 | SnStyleValue | `''` | - |
 | rightIconClass | 右侧图标外部类 | String | `''` | - |
-| customStyle | 自定义单元格根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义单元格根节点样式 | SnStyleValue | `''` | - |
 | customClass | 单元格根节点外部类 | String | `''` | - |
 
 ## 事件

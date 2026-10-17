@@ -52,8 +52,8 @@
 | skinColor | 缺省插图人物皮肤颜色 | String | `#ffcda5` | - |
 | elementColor | 缺省插图元素颜色 | String | `#ffffff` | - |
 | imageSize | 缺省插图尺寸，支持 `$` 前缀按间距乘数缩放 | String \| Number | `200px` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
-| textStyle | 提示文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
+| textStyle | 提示文本自定义样式 | SnStyleValue | `''` | - |
 | textClass | 提示文本外部样式类 | String | `''` | - |
 
 ## 插槽

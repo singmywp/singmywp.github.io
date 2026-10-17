@@ -50,11 +50,11 @@
 | aniTime | 进度变化动画时长，支持 `$` 简写随动画乘数缩放 | String \| Number | - | - |
 | loading | 加载中状态：激活条固定为 40% 轨道宽并循环平移 | Boolean | `false` | `true` \| `false` |
 | activeMode | 进度更新动画方式：`forwards` 从当前位置继续补间，`backwards` 每次更新从 0 重新播放 | String | `forwards` | `forwards` \| `backwards` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
-| containStyle | 自定义外层容器节点内联样式 | UTSJSONObject \| String | - | - |
-| activeStyle | 自定义激活条节点内联样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
+| containStyle | 自定义外层容器节点内联样式 | SnStyleValue | - | - |
+| activeStyle | 自定义激活条节点内联样式 | SnStyleValue | - | - |
 | activeClass | 自定义激活条节点外部样式类 | String | - | - |
-| textStyle | 自定义进度值文本内联样式（inside / outside 均生效） | UTSJSONObject \| String | - | - |
+| textStyle | 自定义进度值文本内联样式（inside / outside 均生效） | SnStyleValue | - | - |
 | textClass | 自定义进度值文本外部样式类（仅 outside 位置生效） | String | - | - |
 
 ## 事件

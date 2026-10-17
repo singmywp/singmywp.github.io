@@ -9,7 +9,7 @@
   - `bgColor` 默认值 `$error` → 空（由 `type` 决定，默认 `error`）；
   - `textColor` 默认值 `#fff` → 空（自动取 `type` 对应文字色）；
   - `size` 默认值 `$1` → 空（默认字号 12×字体乘数、圆点 8×字体乘数）；
-  - `customStyle` 等 style 类属性类型 UTSJSONObject → UTSJSONObject | String。
+  - `customStyle` 等 style 类属性类型 UTSJSONObject → SnStyleValue。
 - 行为变化：default 插槽由必选变为可选，支持独立使用（徽标直接显示在文档流中）；数字为 0 且不显示时内容直出不产生包裹层（性能优化）；显隐切换带过渡动画（需 `always-wrap`）。
 - 新增事件、方法：无。
 - 新增插槽：`value`（完全自定义徽标内容，优先级最高）；default 说明由"必选"改为可选。

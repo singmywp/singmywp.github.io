@@ -69,9 +69,9 @@
 | deleteBarHeight | 底部删除区高度 | String \| Number | `56px` | - |
 | deleteText | 删除区默认文本 | String | `拖到此处删除` | - |
 | deleteActiveText | 子项拖入删除区后的文本 | String | `松手删除` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | deleteClass | 自定义删除区样式类 | String | `''` | - |
-| deleteStyle | 自定义删除区样式 | UTSJSONObject \| String | `''` | - |
+| deleteStyle | 自定义删除区样式 | SnStyleValue | `''` | - |
 
 ## sn-drag-item 属性
 
@@ -79,10 +79,10 @@
 | --- | --- | --- | --- | --- |
 | index | 子项在数据中的索引 | Number | `-（必填）` | - |
 | disabled | 是否禁用该子项的拖拽 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义子项内容区样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义子项内容区样式 | SnStyleValue | `''` | - |
 | contentClass | 自定义子项内容区样式类 | String | `''` | - |
 | handleClass | 自定义手柄样式类 | String | `''` | - |
-| handleStyle | 自定义手柄样式 | UTSJSONObject \| String | `''` | - |
+| handleStyle | 自定义手柄样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

@@ -70,7 +70,7 @@ function onClick(index: number): void {
 | placeholderColor | 占位区背景颜色 | String | `$info` | - |
 | placeholderIconColor | 占位图标颜色 | String | `$infoDark` | - |
 | placeholderIconSize | 占位图标大小，支持 `$` 简写 | String \| Number | `24px` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类（external-class：`custom-class`） | String | `''` | - |
 
 ## 事件

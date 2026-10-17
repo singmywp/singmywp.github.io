@@ -21,7 +21,7 @@ import { useTheme, useStyle, useFactors, useHover, useResolve, useI18n, useTabba
 | [useResolve](/api/hooks/use-resolve) | `$` 前缀动态尺寸解析与颜色简写解析 | 插件出口导出 |
 | [useI18n](/api/hooks/use-i18n) | 组件语言响应式读取与翻译函数 | 插件出口导出 |
 | [useTabbarHeights](/api/hooks/use-tabbar-heights) | 读取当前 sn-page 内按 key 登记的 Tabbar 实际高度 | 插件出口导出 |
-| [useExternalStyle](/api/hooks/use-external-style) | 外部样式（UTSJSONObject / String）转样式字符串 | 组件内部使用，可复用 |
+| [useExternalStyle](/api/hooks/use-external-style) | 外部样式（SnStyleValue）转样式字符串 | 组件内部使用，可复用 |
 | [useBacktop](/api/hooks/use-backtop) | 滚动容器与 sn-backtop 回顶联动机制 | 组件内部使用，可复用 |
 
 其中 `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useI18n` / `useTabbarHeights` 从插件入口 `@/uni_modules/sinle-ui` 导出，可直接在业务代码中使用；`useExternalStyle` 与 `useBacktop` 主要供框架内部组件复用，自定义组件开发时同样可以引入使用（从对应源文件路径导入）。

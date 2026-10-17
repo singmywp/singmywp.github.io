@@ -66,9 +66,9 @@
 | bottom | 按钮距下边界距离（单位 px） | Number | `100` | - |
 | disabled | 是否禁用，禁用时按钮变灰且不可点击 | Boolean | `false` | `true` \| `false` |
 | target | 绑定目标：父作用域中滚动容器组件的 ref 名，或滚动容器元素 id/选择器；为空自动查找 | String | `''` | - |
-| customStyle | 自定义按钮样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义按钮样式 | SnStyleValue | `''` | - |
 | customClass | 自定义按钮外部样式类 | String | `''` | - |
-| externalStyle | 额外内联样式 | UTSJSONObject \| String | `''` | - |
+| externalStyle | 额外内联样式 | SnStyleValue | `''` | - |
 | externalClass | 额外外部样式类 | String | `''` | - |
 
 ## 事件

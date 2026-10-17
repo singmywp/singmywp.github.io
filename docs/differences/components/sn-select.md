@@ -15,7 +15,7 @@
   - `aniTime`：String 默认 `$long` → String | Number 默认 `$200`
   - `textSize`：`$3` → `$14`
   - `borderRadius`：`$normal` → `$8`
-  - 各样式类属性：UTSJSONObject → UTSJSONObject | String
+  - 各样式类属性：UTSJSONObject → SnStyleValue
 - 新增属性：`selectedMode`（bg/check 两种选中态模式）、`checkIconColor`、`checkIconSize`、`maskOpacity`、`itemStyle`、`itemClass`、`itemBorder`、`itemHoverStyle`、`itemTextStyle`、`itemIconStyle`、`hoverStyle`、`hoverStartTime`、`hoverStayTime`、`hoverTransTime`、`textClass`、`popClass`
 - 行为变化：
   - 弹出层从旧版居中弹出改为定位在选择框正下方（下方空间不足时自动翻转到上方），并带缩放淡入动画

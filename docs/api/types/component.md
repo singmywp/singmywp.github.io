@@ -62,11 +62,11 @@ import { SnDataItem, SnCalendarValue, SnTreeData } from '@/uni_modules/sinle-ui'
 | disabledTagTextColor | String | 是 | 禁用态标签文字颜色 |
 | tagActiveTextColor | String | 是 | 选中态标签文字颜色 |
 | disabledTagActiveTextColor | String | 是 | 禁用态选中态标签文字颜色 |
-| boxContainStyle | UTSJSONObject \| String | 是 | 勾选框容器自定义样式 |
-| boxStyle | UTSJSONObject \| String | 是 | 勾选框自定义样式 |
-| boxIconStyle | UTSJSONObject \| String | 是 | 勾选框图标自定义样式 |
-| tagStyle | UTSJSONObject \| String | 是 | 标签自定义样式 |
-| textStyle | UTSJSONObject \| String | 是 | 文字自定义样式 |
+| boxContainStyle | SnStyleValue | 是 | 勾选框容器自定义样式 |
+| boxStyle | SnStyleValue | 是 | 勾选框自定义样式 |
+| boxIconStyle | SnStyleValue | 是 | 勾选框图标自定义样式 |
+| tagStyle | SnStyleValue | 是 | 标签自定义样式 |
+| textStyle | SnStyleValue | 是 | 文字自定义样式 |
 | boxContainClass | String | 是 | 勾选框容器外部样式类 |
 | boxClass | String | 是 | 勾选框外部样式类 |
 | boxIconClass | String | 是 | 勾选框图标外部样式类 |
@@ -105,9 +105,9 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | noteColor | String | 是 | 备注颜色 |
 | activeTitleColor | String | 是 | 展开态标题颜色 |
 | borderRadius | String | 是 | 圆角 |
-| titleStyle | UTSJSONObject | 是 | 标题自定义样式 |
-| holderStyle | UTSJSONObject | 是 | 内容容器自定义样式 |
-| noteStyle | UTSJSONObject | 是 | 备注自定义样式 |
+| titleStyle | SnStyleValue | 是 | 标题自定义样式 |
+| holderStyle | SnStyleValue | 是 | 内容容器自定义样式 |
+| noteStyle | SnStyleValue | 是 | 备注自定义样式 |
 | titleClass | String | 是 | 标题外部样式类 |
 | noteClass | String | 是 | 备注外部样式类 |
 | holderClass | String | 是 | 内容容器外部样式类 |
@@ -931,7 +931,7 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | iconColor | String | 否 | 图标颜色 |
 | textSize | String | 否 | 文字字号 |
 | borderRadius | String | 否 | 圆角 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 
 ---
 
@@ -1001,7 +1001,7 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | borderRadius | String | 否 | 圆角 |
 | draggable | Boolean | 否 | 是否可拖拽 |
 | dragThreshold | String \| Number | 否 | 拖拽关闭位移阈值 |
-| customStyle | UTSJSONObject | 否 | 自定义样式 |
+| customStyle | SnStyleValue | 否 | 自定义样式 |
 
 ---
 
@@ -1093,10 +1093,10 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | disabledTagTextColor | String | 是 | 禁用态标签文字颜色 |
 | tagActiveTextColor | String | 是 | 选中态标签文字颜色 |
 | disabledTagActiveTextColor | String | 是 | 禁用态选中态标签文字颜色 |
-| radioContainStyle | UTSJSONObject \| String | 是 | 单选按钮容器自定义样式 |
-| radioStyle | UTSJSONObject \| String | 是 | 单选按钮自定义样式 |
-| tagStyle | UTSJSONObject \| String | 是 | 标签自定义样式 |
-| textStyle | UTSJSONObject \| String | 是 | 文字自定义样式 |
+| radioContainStyle | SnStyleValue | 是 | 单选按钮容器自定义样式 |
+| radioStyle | SnStyleValue | 是 | 单选按钮自定义样式 |
+| tagStyle | SnStyleValue | 是 | 标签自定义样式 |
+| textStyle | SnStyleValue | 是 | 文字自定义样式 |
 | radioContainClass | String | 是 | 单选按钮容器外部样式类 |
 | radioClass | String | 是 | 单选按钮外部样式类 |
 | tagClass | String | 是 | 标签外部样式类 |
@@ -1189,8 +1189,8 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | tip | String | 否 | 提示文本 |
 | tipSize | String \| Number | 否 | 提示字号 |
 | tipColor | String | 否 | 提示颜色 |
-| customTitleStyle | UTSJSONObject \| String | 否 | 标题自定义样式 |
-| customTipStyle | UTSJSONObject \| String | 否 | 提示自定义样式 |
+| customTitleStyle | SnStyleValue | 否 | 标题自定义样式 |
+| customTipStyle | SnStyleValue | 否 | 提示自定义样式 |
 
 ---
 
@@ -1405,13 +1405,13 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | circleSize | String \| Number | 是 | 步骤圆圈尺寸 |
 | textSize | String \| Number | 是 | 标题文字字号 |
 | contentSize | String \| Number | 是 | 内容文字字号 |
-| stepStyle | UTSJSONObject \| String | 是 | 步骤项自定义样式 |
+| stepStyle | SnStyleValue | 是 | 步骤项自定义样式 |
 | stepClass | String | 是 | 步骤项外部样式类 |
-| titleStyle | UTSJSONObject \| String | 是 | 标题自定义样式 |
+| titleStyle | SnStyleValue | 是 | 标题自定义样式 |
 | titleClass | String | 是 | 标题外部样式类 |
-| contentStyle | UTSJSONObject \| String | 是 | 内容自定义样式 |
+| contentStyle | SnStyleValue | 是 | 内容自定义样式 |
 | contentClass | String | 是 | 内容外部样式类 |
-| lineStyle | UTSJSONObject \| String | 是 | 连接线自定义样式 |
+| lineStyle | SnStyleValue | 是 | 连接线自定义样式 |
 | lineClass | String | 是 | 连接线外部样式类 |
 
 ---

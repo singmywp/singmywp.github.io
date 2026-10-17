@@ -14,7 +14,7 @@
   - `iconSize` 默认值 `17px` → `''`（空值时按 `16px × fontsizeFactor` 计算）
   - `textSize`/`iconSize`/`borderRadius` 由 String → String | Number，均支持 `$` 前缀动态缩放
   - `bgColor`/`textColor`/`iconColor` 支持 `  - `bgColor`/`textColor`/`iconColor`  简写
-  - `customStyle`/`textStyle`/`iconStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`/`textStyle`/`iconStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
 - 行为变化：
   - 新增可关闭能力：`closable` 显示关闭按钮，点击后组件自行隐藏并触发 `close` 事件
   - `icon` 空值时按 `type` 自动选择默认图标（primary → information-fill、success → checkbox-circle-line、warning → error-warning-line、error → close-circle-line、info → information-line）

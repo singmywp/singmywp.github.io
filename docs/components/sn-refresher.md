@@ -66,14 +66,14 @@
 | iconColor | 图标颜色（支持 `$` 简写） | String | `$lineText` | - |
 | textColor | 文本颜色（支持 `$` 简写） | String | `$lineText` | - |
 | hoverStopPropagation | 是否阻止点击态事件冒泡 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点外部样式类 | String | `''` | - |
 | iconClass | 自定义图标节点外部样式类 | String | `''` | - |
-| iconStyle | 自定义图标节点内联样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 自定义图标节点内联样式 | SnStyleValue | `''` | - |
 | textClass | 自定义文本节点外部样式类 | String | `''` | - |
-| textStyle | 自定义文本节点内联样式（默认带 6px 左边距） | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义文本节点内联样式（默认带 6px 左边距） | SnStyleValue | `''` | - |
 | loadingClass | 自定义刷新中加载动画节点外部样式类 | String | `''` | - |
-| loadingStyle | 自定义刷新中加载动画节点内联样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 自定义刷新中加载动画节点内联样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

@@ -12,7 +12,7 @@
   - `borderRadius`：String → String \| Number；默认值 `$circle` → `''`（实际渲染 `12000 × radiusFactor px`，仍为圆形）
   - `bgColor`：支持 `  - `bgColor` 简写；默认值由 `$front` 改为 `''`（为空时内部兜底取 `$front`）
   - `iconColor`：支持 `  - `iconColor` 简写；默认值由 `$text` 改为 `''`（为空时内部兜底取 `$text`）
-  - `customStyle`：UTSJSONObject → UTSJSONObject \| String；默认值 `{}` → `''`
+  - `customStyle`：UTSJSONObject → SnStyleValue；默认值 `{}` → `''`
 - 行为变化：
   - Web 端新增鼠标拖动支持（mousedown/mousemove/mouseup），此前仅支持触摸拖动
   - 新增窗口尺寸变化自适应：APP 端通过 UniResizeObserver、Web 端通过 resize 监听重新校正位置

@@ -40,11 +40,11 @@
 | textColor | 文本颜色 | String | `$primaryDark` | - |
 | textSize | 文本字体大小 | String \| Number | `$16` | - |
 | vertical | 图标与文本是否垂直排列 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点外部样式类 | String | - | - |
-| loadingStyle | 自定义加载指示器节点内联样式 | UTSJSONObject \| String | - | - |
+| loadingStyle | 自定义加载指示器节点内联样式 | SnStyleValue | - | - |
 | loadingClass | 自定义加载指示器节点外部样式类 | String | - | - |
-| textStyle | 自定义文本节点内联样式 | UTSJSONObject \| String | - | - |
+| textStyle | 自定义文本节点内联样式 | SnStyleValue | - | - |
 | textClass | 自定义文本节点外部样式类 | String | - | - |
 
 ## 插槽

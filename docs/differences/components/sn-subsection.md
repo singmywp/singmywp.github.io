@@ -16,7 +16,7 @@
   - `bgColor` 暗黑模式默认值 `$front` → `$info`（亮暗主题统一为 `info` 色）
   - `blockBgColor` 暗黑模式默认值 `$info` → `$front`（亮暗主题统一为 `front` 色）
   - 颜色类属性统一支持 `$` 简写引用主题色变量
-  - 样式类属性 UTSJSONObject → UTSJSONObject | String
+  - 样式类属性 UTSJSONObject → SnStyleValue
 - 行为变化
   - 旧属性 `vModel` 改为标准 `v-model`（Number 索引不变）
   - 滑块尺寸根据容器实际尺寸动态计算：APP 端经 UniResizeObserver 监听容器尺寸变化、Web 端监听窗口 resize，自动重新测量

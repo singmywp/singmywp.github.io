@@ -21,7 +21,7 @@ import type {
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| date | any \| null | 日期值，支持 `string`/`Date`/`Number`/数组/`UTSJSONObject`/`Dayuts`；`null` 表示当前时间 |
+| date | any \| null | 日期值，支持 `string`/`Date`/`Number`/数组/普通对象/`Dayuts`；`null` 表示当前时间 |
 | format | string \| null | 解析格式（仅 Web 端生效） |
 | locale | string \| null | 实例语言名 |
 

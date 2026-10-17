@@ -24,7 +24,7 @@ import { dayuts, Dayuts, isDayuts } from '@/uni_modules/sinle-ui'
 | :--- | :--- | :--- | :--- |
 | clone | - | Dayuts | 创建与克隆。返回当前实例的深拷贝，共享相同的时间戳与语言 |
 | isValid | - | Boolean | 有效性判断。是否为有效日期，解析失败（如无法识别的字符串）时无效 |
-| isSame | input: any, units: DayutsUnit = `'millisecond'` | Boolean | 有效性判断。按指定时间单位判断是否与目标时间处于同一区间，未传单位时按毫秒精确比较；目标值支持 `string` / `Number` / `Date` / `Dayuts` / `UTSJSONObject` |
+| isSame | input: any, units: DayutsUnit = `'millisecond'` | Boolean | 有效性判断。按指定时间单位判断是否与目标时间处于同一区间，未传单位时按毫秒精确比较；目标值支持 `string` / `Number` / `Date` / `Dayuts` / 普通对象 |
 | isAfter | input: any, units: DayutsUnit = `'millisecond'` | Boolean | 有效性判断。当前实例是否晚于目标时间 |
 | isBefore | input: any, units: DayutsUnit = `'millisecond'` | Boolean | 有效性判断。当前实例是否早于目标时间 |
 | isSameOrBefore | input: any, units: DayutsUnit = `'millisecond'` | Boolean | 有效性判断。是否相同于或早于目标时间（`isSame \|\| isBefore`） |
@@ -96,7 +96,7 @@ dayuts('2024-01-01').dayOfYear()            // 1
 
 ### **创建 Dayuts 实例**
 
-工厂函数，根据传入的日期值创建一个新的 `Dayuts` 实例。支持字符串、时间戳、日期数组、原生 `Date`、`UTSJSONObject`、`Dayuts` 及空值（当前时间）等多种入参。若传入的是 `Dayuts` 实例，则返回其克隆。
+工厂函数，根据传入的日期值创建一个新的 `Dayuts` 实例。支持字符串、时间戳、日期数组、原生 `Date`、普通对象、`Dayuts` 及空值（当前时间）等多种入参。若传入的是 `Dayuts` 实例，则返回其克隆。
 
 原生端（APP-ANDROID / APP-IOS）`fact.format` 参数不生效；Web 端 `format` 参数参与字符串解析。
 
@@ -104,7 +104,7 @@ dayuts('2024-01-01').dayOfYear()            // 1
 
 | 名称 | 类型 | 必备 | 默认值 | 描述 |
 | ---- | ---- | ---- | ------ | ---- |
-| date | any \| null | 否 | `null` | 日期值。支持 `string`、`Date`、`Number`（毫秒时间戳）、日期数组、`UTSJSONObject`、`Dayuts`；为 `null` 时取当前时间 |
+| date | any \| null | 否 | `null` | 日期值。支持 `string`、`Date`、`Number`（毫秒时间戳）、日期数组、普通对象、`Dayuts`；为 `null` 时取当前时间 |
 | format | string \| null | 否 | `null` | 解析格式（仅 Web 端生效） |
 | locale | string \| null | 否 | `null` | 指定实例语言，未指定时使用全局默认语言 |
 

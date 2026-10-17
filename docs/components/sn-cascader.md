@@ -76,33 +76,33 @@
 | maskClose | 是否可以通过点击蒙层关闭 | Boolean | `true` | `true \| false` |
 | maskOpacity | 蒙层透明度 | Number | `0.4` | `0~1` |
 | preventBack | 是否阻止返回键/返回手势关闭 | Boolean | `false` | `true \| false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点外部样式类 | String | - | - |
-| headerStyle | 自定义标题栏样式 | UTSJSONObject \| String | - | - |
+| headerStyle | 自定义标题栏样式 | SnStyleValue | - | - |
 | headerClass | 外部样式类 | String | - | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | - | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | - | - |
 | titleClass | 外部样式类 | String | - | - |
-| closeStyle | 自定义关闭按钮样式 | UTSJSONObject \| String | - | - |
+| closeStyle | 自定义关闭按钮样式 | SnStyleValue | - | - |
 | closeClass | 外部样式类 | String | - | - |
-| navStyle | 自定义导航条容器样式 | UTSJSONObject \| String | - | - |
+| navStyle | 自定义导航条容器样式 | SnStyleValue | - | - |
 | navClass | 外部样式类 | String | - | - |
-| navItemStyle | 自定义导航项样式 | UTSJSONObject \| String | - | - |
+| navItemStyle | 自定义导航项样式 | SnStyleValue | - | - |
 | navItemClass | 外部样式类 | String | - | - |
-| navTextStyle | 自定义导航项文字样式 | UTSJSONObject \| String | - | - |
+| navTextStyle | 自定义导航项文字样式 | SnStyleValue | - | - |
 | navTextClass | 外部样式类 | String | - | - |
-| activeNavTextStyle | 自定义当前层级导航项文字样式 | UTSJSONObject \| String | - | - |
+| activeNavTextStyle | 自定义当前层级导航项文字样式 | SnStyleValue | - | - |
 | activeNavTextClass | 外部样式类 | String | - | - |
-| listStyle | 自定义选项列表样式 | UTSJSONObject \| String | - | - |
+| listStyle | 自定义选项列表样式 | SnStyleValue | - | - |
 | listClass | 外部样式类 | String | - | - |
-| optionStyle | 自定义选项样式 | UTSJSONObject \| String | - | - |
+| optionStyle | 自定义选项样式 | SnStyleValue | - | - |
 | optionClass | 外部样式类 | String | - | - |
-| optionTextStyle | 自定义选项文字样式 | UTSJSONObject \| String | - | - |
+| optionTextStyle | 自定义选项文字样式 | SnStyleValue | - | - |
 | optionTextClass | 外部样式类 | String | - | - |
-| activeOptionTextStyle | 自定义选中选项文字样式 | UTSJSONObject \| String | - | - |
+| activeOptionTextStyle | 自定义选中选项文字样式 | SnStyleValue | - | - |
 | activeOptionTextClass | 外部样式类 | String | - | - |
-| optionIconStyle | 自定义选项图标样式 | UTSJSONObject \| String | - | - |
+| optionIconStyle | 自定义选项图标样式 | SnStyleValue | - | - |
 | optionIconClass | 外部样式类 | String | - | - |
-| activeOptionIconStyle | 自定义选中选项对钩图标样式 | UTSJSONObject \| String | - | - |
+| activeOptionIconStyle | 自定义选中选项对钩图标样式 | SnStyleValue | - | - |
 | activeOptionIconClass | 外部样式类 | String | - | - |
 
 :::type-fields SnCascaderValue

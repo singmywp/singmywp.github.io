@@ -14,4 +14,4 @@
 - 新增：`linkclick` 链接点击事件（回调参数 `SnMarkdownLinkEvent { href }`；Android 端点击链接同时以系统浏览器打开）。
 - 新增：Android 端原生渲染（Markwon 原生 TextView），旧版仅 Web/WebView 可用。
 - 新增：内置多语言代码高亮、GFM 任务列表、表格（含对齐）、脚注、数学公式、对齐容器等扩展语法（旧版仅 sup / sub / container / emoji 插件与 highlight.js）。
-- 更名：`customStyle` 类型兼容 `UTSJSONObject | String`；新增 `customClass` 外部样式类。
+- 更名：`customStyle` 类型兼容 `SnStyleValue`；新增 `customClass` 外部样式类。

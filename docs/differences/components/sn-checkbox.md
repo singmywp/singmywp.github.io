@@ -16,7 +16,7 @@
   - 尺寸类属性（`boxSize`、`boxBorderRadius`、`boxBorderWidth`、`boxTextSize`、`boxIconSize`、`tagBorderRadius`、`tagTextSize`）类型 String → String | Number，支持 `$` 前缀动态尺寸；`boxSize` 默认值 `$3+6` → `19px`，`boxTextSize`、`boxIconSize` 默认值 `$3` → 空（默认 13px × fontsizeFactor）
   - `tagPadding` 默认值 `5px 8px` → `6px 10px`
   - 颜色类属性统一支持 `$` 简写引用主题色变量
-  - 样式类属性 UTSJSONObject → UTSJSONObject | String
+  - 样式类属性 UTSJSONObject → SnStyleValue
   - `sn-checkbox` 的 `customStyle` 作用目标调整为勾选方框，整行容器样式由 `containStyle` 负责
 - 行为变化
   - 旧属性 `vModel` 改为标准 `v-model`（类型不变，仍为选中索引数组）

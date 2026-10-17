@@ -97,7 +97,7 @@ function onLoadmore(): void {
 | maskClose | 是否启用点击遮罩关闭 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.3` | - |
 | zIndex | 弹出层层级 | Number | `999` | - |
-| customStyle | 自定义面板样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义面板样式 | SnStyleValue | `''` | - |
 | v-model:refresher-triggered | 下拉刷新状态绑定值 | Boolean | `false` | `true` \| `false` |
 | v-model:loadmore-status | 加载更多状态绑定值 | String | `loadmore` | `loadmore` \| `loading` \| `nomore` |
 
@@ -137,7 +137,7 @@ function onLoadmore(): void {
 | loadmore | 是否开启加载更多 | Boolean | `false` | `true` \| `false` |
 | loadmoreConfig | 加载更多样式配置 | [[SnLoadmoreParams]] | `{}` | - |
 | refresherConfig | 下拉刷新样式配置 | [[SnRefresherParams]] | `{}` | - |
-| listStyle | 自定义列表样式 | UTSJSONObject \| String | `''` | - |
+| listStyle | 自定义列表样式 | SnStyleValue | `''` | - |
 | listClass | 列表外部类 | String | `''` | - |
 
 :::type-fields SnLoadmoreParams

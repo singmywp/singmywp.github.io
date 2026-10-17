@@ -42,8 +42,8 @@
 | iconPosition | 图标位置 | String | `left` | `left` \| `right` |
 | iconColor | 选中项图标颜色 | String | `$primary` | - |
 | iconSize | 图标大小 | String \| Number | `$16` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
-| itemStyle | 自定义每个选项的样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
+| itemStyle | 自定义每个选项的样式 | SnStyleValue | `''` | - |
 | itemClass | 自定义每个选项的样式类 | String | `''` | - |
 
 :::type-fields SnDataItem

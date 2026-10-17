@@ -14,7 +14,7 @@
   - `textSize` 默认值 `$0`→`''`（空时解析为 `$11`）
   - `iconSize` 默认值 `$4`→`''`（空时解析为 `$22`）
   - 尺寸类属性（imageSize/padding/margin/itemBorderRadius/itemPadding/itemSpacing/borderRadius/textSize/iconSize）类型 String→String \| Number
-  - `customStyle` / `customContainStyle` 类型 UTSJSONObject→UTSJSONObject \| String，默认值 `{}`→`''`
+  - `customStyle` / `customContainStyle` 类型 UTSJSONObject→SnStyleValue，默认值 `{}`→`''`
   - 颜色类属性（bgColor/itemBgColor/itemActiveBgColor/textColor/activeTextColor/iconColor/activeIconColor）默认值 `$front`/`$transparent`/`$text`/`$primary`→`''`（空时自动取主题色）
 - 行为变化：导航栏主体统一为单层容器，固定与内嵌模式共用；移除自动底部安全区 padding、额外背景层与 VDOM 原生模糊层，模糊直接作用于主体；data 驱动、tab1~tab10 插槽、interceptor 拦截与 badge 角标能力均保留
 - 事件：`change`、`heightchange` 保留，签名一致

@@ -57,13 +57,13 @@
 | bg-color | 内容区背景颜色（同时决定收起遮罩渐变色），支持 `$` 简写 | String | `''` | - |
 | disabled | 是否禁用展开/收起操作，文本与图标显示禁用色 | Boolean | `false` | `true` \| `false` |
 | ani-time | 高度过渡动画时长（ms），支持 `$` 前缀动态时长，传 `0` 关闭动画 | String \| Number | `$300` | - |
-| content-style | 内容区（含遮罩）外部样式 | UTSJSONObject \| String | `''` | - |
+| content-style | 内容区（含遮罩）外部样式 | SnStyleValue | `''` | - |
 | content-class | 内容区外部样式类 | String | `''` | - |
-| wrap-style | 内容包裹层外部样式 | UTSJSONObject \| String | `''` | - |
+| wrap-style | 内容包裹层外部样式 | SnStyleValue | `''` | - |
 | wrap-class | 内容包裹层外部样式类 | String | `''` | - |
-| fold-text-style | 展开/收起提示文本外部样式 | UTSJSONObject \| String | `''` | - |
+| fold-text-style | 展开/收起提示文本外部样式 | SnStyleValue | `''` | - |
 | fold-text-class | 展开/收起提示文本外部样式类 | String | `''` | - |
-| custom-style | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| custom-style | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

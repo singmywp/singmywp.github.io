@@ -13,7 +13,7 @@
   - `iconSize` 默认值 `-` → 空（默认 12px × fontsizeFactor）；`textSize` 默认值 `$2` → 空（默认 12px × fontsizeFactor）
   - `borderRadius` 默认值 `$circle` → 空（自动取高度一半，呈胶囊形）；`blockBorderRadius` 默认值 `$circle` → 空（自动取小球尺寸一半，呈圆形）
   - 颜色类属性统一支持 `$` 简写引用主题色变量
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue
 - 行为变化
   - 旧属性 `vModel` 改为标准 `v-model`（Boolean 类型不变）
   - loading 状态明确为小球内显示加载动画（延迟 100ms 出现避免闪烁），loading 与禁用状态下点击不切换

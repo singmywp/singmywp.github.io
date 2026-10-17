@@ -10,7 +10,7 @@
 - 类型或默认值变化：
   - `textSize`：类型 String → String | Number，默认值 `$2` → `''`（不传时默认 14px × 字体乘数）
   - `textColor`：默认值 `$text` → `''`（不传时默认主题文字色）
-  - `customStyle`：类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
+  - `customStyle`：类型 UTSJSONObject → SnStyleValue，默认值 `{}` → `''`
 - 行为变化：
   - 时间格式说明修正：不再参考 Day.js，实际支持的占位符为 `DD` / `HH` / `mm` / `ss`（缺省单位自动进位）及 `SSS` / `SS` / `S` 毫秒占位符
 - 事件、方法、插槽：无变化（事件 `change` / `finish`，方法 `start` / `pause` / `reset` / `stop`，插槽 `default` 均与旧版一致）

@@ -45,13 +45,13 @@
 | color | 文本颜色，支持 `$` 前缀简写，禁用时为 `$disabledText` | String | `$text` | - |
 | linkColor | 链接文本颜色，支持 `$` 前缀简写 | String | `$primary` | - |
 | boxSize | 勾选框边长，支持 `$` 前缀按间距乘数缩放 | String \| Number | `$19` | - |
-| customStyle | 组件根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 组件根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 组件根节点自定义样式类名 | String | `''` | - |
-| boxStyle | 勾选框自定义样式 | UTSJSONObject \| String | `''` | - |
+| boxStyle | 勾选框自定义样式 | SnStyleValue | `''` | - |
 | boxClass | 勾选框自定义样式类名 | String | `''` | - |
-| textStyle | 文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 文本自定义样式 | SnStyleValue | `''` | - |
 | textClass | 文本自定义样式类名 | String | `''` | - |
-| linkStyle | 链接文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| linkStyle | 链接文本自定义样式 | SnStyleValue | `''` | - |
 | linkClass | 链接文本自定义样式类名 | String | `''` | - |
 
 ## 事件

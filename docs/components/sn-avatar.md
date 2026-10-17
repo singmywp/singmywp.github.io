@@ -37,11 +37,11 @@
 | borderRadius | 头像圆角大小（仅 `shape="square"` 时生效） | String \| Number | `$4` | - |
 | lazyLoad | 图片懒加载（只针对 page 与 scroll-view 下的 image 有效） | Boolean | `false` | `true` \| `false` |
 | enablePreview | 图片模式下启用点击预览大图 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
-| textStyle | 内部文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 内部文本自定义样式 | SnStyleValue | `''` | - |
 | textClass | 内部文本外部样式类 | String | `''` | - |
-| iconStyle | 内部图标自定义样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 内部图标自定义样式 | SnStyleValue | `''` | - |
 | iconClass | 内部图标外部样式类 | String | `''` | - |
 
 ## sn-avatar-group 属性
@@ -61,8 +61,8 @@
 | bgColor | 头像的背景颜色 | String | `$info` | - |
 | randomBgColor | 是否随机生成头像背景颜色（从五种功能色 Light 系色板随机取色，文字颜色自动配套） | Boolean | `false` | `true` \| `false` |
 | shape | 头像的形状 | String | `circle` | `circle` \| `square` |
-| customStyle | 自定义头像组根节点样式 | UTSJSONObject \| String | `''` | - |
-| avatarStyle | 自定义组内每个头像的样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义头像组根节点样式 | SnStyleValue | `''` | - |
+| avatarStyle | 自定义组内每个头像的样式 | SnStyleValue | `''` | - |
 | avatarClass | 自定义组内每个头像的样式类 | String | `''` | - |
 
 :::type-fields SnAvatarGroupItem

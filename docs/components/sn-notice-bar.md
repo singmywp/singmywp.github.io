@@ -53,12 +53,12 @@
 | closable | 是否显示关闭按钮，点击后通知栏隐藏并触发 close 事件 | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用（scroll 模式不滚动，swiper 模式不自动轮播） | Boolean | `false` | `true` \| `false` |
 | padding | 上下内边距（px），与文本高度共同决定通知栏高度 | Number | `10` | - |
-| custom-style | 自定义通知栏根节点样式 | UTSJSONObject \| String | `''` | - |
-| text-style | 自定义通知文本样式 | UTSJSONObject \| String | `''` | - |
+| custom-style | 自定义通知栏根节点样式 | SnStyleValue | `''` | - |
+| text-style | 自定义通知文本样式 | SnStyleValue | `''` | - |
 | text-class | 通知文本外部样式类 | String | `''` | - |
-| icon-style | 自定义通知图标样式 | UTSJSONObject \| String | `''` | - |
+| icon-style | 自定义通知图标样式 | SnStyleValue | `''` | - |
 | icon-class | 通知图标外部样式类 | String | `''` | - |
-| close-style | 自定义关闭按钮样式 | UTSJSONObject \| String | `''` | - |
+| close-style | 自定义关闭按钮样式 | SnStyleValue | `''` | - |
 | close-class | 关闭按钮外部样式类 | String | `''` | - |
 
 ## 事件

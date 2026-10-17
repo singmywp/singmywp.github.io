@@ -90,15 +90,15 @@ function onMessageClose(): void {
 | iconColor | 图标颜色，支持 `$` 简写，跟随文字颜色 | String | - | - |
 | textSize | 消息文字大小，支持 `$` 简写 | String \| Number | `$14` | - |
 | borderRadius | 消息条圆角大小，支持 `$` 简写 | String \| Number | `$8` | - |
-| customStyle | 自定义消息条样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义消息条样式 | SnStyleValue | `''` | - |
 | customClass | 消息条外部类 | String | `''` | - |
-| textStyle | 自定义消息文字样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 自定义消息文字样式 | SnStyleValue | `''` | - |
 | textClass | 消息文字外部类 | String | `''` | - |
-| iconStyle | 自定义图标样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 自定义图标样式 | SnStyleValue | `''` | - |
 | iconClass | 图标外部类 | String | `''` | - |
-| closeStyle | 自定义关闭按钮样式 | UTSJSONObject \| String | `''` | - |
+| closeStyle | 自定义关闭按钮样式 | SnStyleValue | `''` | - |
 | closeClass | 关闭按钮外部类 | String | `''` | - |
-| badgeStyle | 自定义合并计数徽标样式 | UTSJSONObject \| String | `''` | - |
+| badgeStyle | 自定义合并计数徽标样式 | SnStyleValue | `''` | - |
 | badgeClass | 合并计数徽标外部类 | String | `''` | - |
 
 ## 事件
@@ -138,7 +138,7 @@ function onMessageClose(): void {
 | iconColor | 图标颜色 | String \| null |
 | textSize | 文字大小 | String \| null |
 | borderRadius | 圆角大小 | String \| null |
-| customStyle | 自定义消息条样式 | UTSJSONObject \| null |
+| customStyle | 自定义消息条样式 | SnStyleValue \| null |
 
 :::type-fields SnMessageType
 

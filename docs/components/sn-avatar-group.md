@@ -31,8 +31,8 @@
 | bgColor | 头像的背景颜色 | String | `$info` | - |
 | randomBgColor | 是否随机生成头像背景颜色 | Boolean | `false` | `true` \| `false` |
 | shape | 头像的形状，可选 `circle`（圆形）或 `square`（方形）。 | String | `circle` | `circle `\| `square` |
-| customStyle | 自定义头像组样式 | UTSJSONObject | `{}` | - |
-| customAvatarStyle | 自定义头像样式 | UTSJSONObject | `{}` | - |
+| customStyle | 自定义头像组样式 | SnStyleValue | `{}` | - |
+| customAvatarStyle | 自定义头像样式 | SnStyleValue | `{}` | - |
 
 :::type-fields SnAvatarGroupItem
 

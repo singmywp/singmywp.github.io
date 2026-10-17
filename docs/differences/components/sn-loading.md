@@ -11,7 +11,7 @@
   - `mode` 可选值：`icon` | `draw` → `icon` | `native`；默认值 `icon` → `native`
   - `iconSize` 默认值：`$5` → `$24`；`textSize` 默认值：`$3` → `$16`；两者类型 String → String | Number
   - `iconColor` / `textColor` 默认值改为空串（内部回退 `$primary` / `$primaryDark`，有效默认不变）；类型 String → String
-  - `customStyle` / `loadingStyle` / `textStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` / `loadingStyle` / `textStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - 原 draw 绘制模式更名为 `native`，改用官方内置 loading 组件实现（GPU 加速渲染，不受主线程繁忙影响，且 Web 端可用）
   - icon 模式的旋转动画改用 DOM 动画实现

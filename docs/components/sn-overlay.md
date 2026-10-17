@@ -37,7 +37,7 @@
 | opacity | 遮罩层透明度 | Number | `0.4` | - |
 | aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，`0` 时瞬时显隐 | String \| Number | `$long` | `$long` \| `$normal` \| `$short` \| 数值 |
 | bgColor | 遮罩背景颜色，支持 `$` 简写主题色 | String | `#000` | - |
-| customStyle | 自定义遮罩根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义遮罩根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

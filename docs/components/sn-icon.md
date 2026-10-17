@@ -30,7 +30,7 @@
 | name | 图标名称（Remix Icon 图标名，不需要前缀） | String | - | 参考 [Remix Icon](https://remixicon.com/) |
 | size | 图标大小，支持 `$` 简写 | String \| Number | `$16` | - |
 | color | 图标颜色，支持 `$` 功能色简写 | String | `var(--sn-text)` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | iconClass | 根节点的外部样式类 | String | - | - |
 
 <DemoPhone name="sn-icon" />

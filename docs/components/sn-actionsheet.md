@@ -95,15 +95,15 @@ const actions = ref<SnDataItem[]>([
 | preventBack | 是否阻止返回键关闭 | Boolean | `false` | `true` \| `false` |
 | disabled | 是否禁用，禁用后操作项与取消按钮均不可点击 | Boolean | `false` | `true` \| `false` |
 | maskClose | 点击遮罩时是否关闭 | Boolean | `true` | `true` \| `false` |
-| customStyle | 自定义面板样式，后应用，优先于 `panelStyle` | UTSJSONObject \| String | `''` | - |
-| wrapStyle | 自定义外层容器样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义面板样式，后应用，优先于 `panelStyle` | SnStyleValue | `''` | - |
+| wrapStyle | 自定义外层容器样式 | SnStyleValue | `''` | - |
 | wrapClass | 外层容器外部类 | String | `''` | - |
-| panelStyle | 自定义面板样式 | UTSJSONObject \| String | `''` | - |
+| panelStyle | 自定义面板样式 | SnStyleValue | `''` | - |
 | panelClass | 面板外部类 | String | `''` | - |
-| itemStyle | 自定义操作项样式（透传内部 sn-cell） | UTSJSONObject \| String | `''` | - |
+| itemStyle | 自定义操作项样式（透传内部 sn-cell） | SnStyleValue | `''` | - |
 | itemClass | 操作项外部类（透传内部 sn-cell） | String | `''` | - |
 | itemBorder | 是否显示操作项之间的分隔线 | Boolean | `true` | `true` \| `false` |
-| itemHoverStyle | 操作项按压时应用的样式 | UTSJSONObject \| String | `background-color: var(--sn-info)` | - |
+| itemHoverStyle | 操作项按压时应用的样式 | SnStyleValue | `background-color: var(--sn-info)` | - |
 
 :::type-fields SnDataItem
 

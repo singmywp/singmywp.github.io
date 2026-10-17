@@ -39,17 +39,17 @@ HarmonyOS 端文字和图标使用独立渲染节点；`loading` 时保留内容
 | disabled | 是否禁用，禁用后透明度降低且不可点击 | Boolean | `false` | `true` \| `false` |
 | loading | 是否加载状态，显示加载遮罩并阻止点击 | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载指示器外部样式类 | String | `''` | - |
-| loadingStyle | 加载指示器自定义样式 | UTSJSONObject \| String | `` `border-color: ${$snui.colors.primary}` `` | - |
+| loadingStyle | 加载指示器自定义样式 | SnStyleValue | `` `border-color: ${$snui.colors.primary}` `` | - |
 | iconClass | 图标外部样式类 | String | `''` | - |
-| iconStyle | 图标自定义样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 图标自定义样式 | SnStyleValue | `''` | - |
 | textClass | 文本外部样式类 | String | `''` | - |
-| textStyle | 文本自定义样式 | UTSJSONObject \| String | `''` | - |
-| hoverStyle | 按下时的点击态样式（如 `background`、`transform: scale(0.94)` 等） | UTSJSONObject \| String | `''` | - |
+| textStyle | 文本自定义样式 | SnStyleValue | `''` | - |
+| hoverStyle | 按下时的点击态样式（如 `background`、`transform: scale(0.94)` 等） | SnStyleValue | `''` | - |
 | hoverStopPropagation | 是否阻止点击态的父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按下后点击态出现的延迟时间（ms） | Number | `0` | - |
 | hoverStayTime | 松手后点击态保留的时间（ms） | Number | `0` | - |
 | hoverTransTime | 点击态过渡动画时长，支持 `$` 前缀按动画乘数缩放 | String \| Number | `$short` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 自定义根节点样式类 | String | `''` | - |
 
 ## 事件

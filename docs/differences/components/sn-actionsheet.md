@@ -10,7 +10,7 @@
   - `actions` 项类型 SnActionsheetItem → [SnDataItem](/api/types/api#sndataitem)
   - `titleSize` 默认值 `$2` → `$13`
   - `bgColor` 默认值 `$info` → `$front`
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue，默认值 `{}` → `''`
 - 更名：事件 `clickMask` → `clickoverlay`
 - 行为变化：
   - 事件体系重构：v1 仅 `clickMask`/`clickItem`/`cancel`/`open`/`close` 五个事件；v2 移除 `open`/`close` 事件，改为透传 sn-popup 的六段动画生命周期事件 `beforeenter`/`enter`/`afterenter`/`beforeleave`/`leave`/`afterleave`

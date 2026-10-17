@@ -46,7 +46,7 @@
 | aniTime | 展开/折叠动画时长，支持 `$` 动态时长语法 | String \| Number | `$long` | - |
 | disabled | 是否禁用滑动手势 | Boolean | `false` | `true` \| `false` |
 | zIndex | 面板层级 | Number | `999` | - |
-| customStyle | 自定义浮动面板样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义浮动面板样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

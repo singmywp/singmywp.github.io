@@ -12,7 +12,7 @@
 - `lineColor`：`$lineText` → `''`（留空时回退为主题 `lineText` 色值）
 - `borderRadius`：`$xlarge` → `''`（留空时使用随圆角乘数计算的默认圆角，四个直角侧自动贴合屏幕边缘）；类型由 String 扩展为 String | Number
 - `aniTime`：`$long` → `''`（留空时使用 `$snui.aniTimeLong`）；类型由 String 扩展为 String | Number
-- `customStyle`：UTSJSONObject（`{}`）→ UTSJSONObject | String（`''`）
+- `customStyle`：UTSJSONObject（`{}`）→ SnStyleValue（`''`）
 
 行为变化：
 - 面板改为 `fixed` 定位且不占据文档流空间，页面需自行预留面板折叠后的空隙

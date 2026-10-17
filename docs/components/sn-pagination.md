@@ -59,20 +59,20 @@
 | buttonLevel | 页码按钮与翻页按钮的等级 | String | `first` | `first` \| `second` \| `third` \| `least` |
 | size | 页码按钮宽高（正方形），同时决定跳转输入框高度 | String \| Number | `$35` | - |
 | gap | 按钮之间的间距 | String \| Number | `4` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点自定义样式类 | String | `''` | - |
 | pageClass | 页码按钮与翻页按钮的自定义样式类 | String | `''` | - |
-| pageStyle | 页码按钮与翻页按钮的自定义样式 | UTSJSONObject \| String | `''` | - |
+| pageStyle | 页码按钮与翻页按钮的自定义样式 | SnStyleValue | `''` | - |
 | activePageClass | 当前页码按钮的自定义样式类 | String | `''` | - |
-| activePageStyle | 当前页码按钮的自定义样式 | UTSJSONObject \| String | `''` | - |
+| activePageStyle | 当前页码按钮的自定义样式 | SnStyleValue | `''` | - |
 | buttonTextClass | 页码、省略号与翻页按钮文字的自定义样式类 | String | `''` | - |
-| buttonTextStyle | 页码、省略号与翻页按钮文字的自定义样式 | UTSJSONObject \| String | `line-height: 1;` | - |
+| buttonTextStyle | 页码、省略号与翻页按钮文字的自定义样式 | SnStyleValue | `line-height: 1;` | - |
 | simpleTextClass | 简单模式文字的自定义样式类 | String | `''` | - |
-| simpleTextStyle | 简单模式文字的自定义样式 | UTSJSONObject \| String | `''` | - |
+| simpleTextStyle | 简单模式文字的自定义样式 | SnStyleValue | `''` | - |
 | jumperClass | 跳转区域的自定义样式类 | String | `''` | - |
-| jumperStyle | 跳转区域的自定义样式 | UTSJSONObject \| String | `''` | - |
+| jumperStyle | 跳转区域的自定义样式 | SnStyleValue | `''` | - |
 | jumperInputClass | 跳转输入框的自定义样式类 | String | `''` | - |
-| jumperInputStyle | 跳转输入框的自定义样式 | UTSJSONObject \| String | `''` | - |
+| jumperInputStyle | 跳转输入框的自定义样式 | SnStyleValue | `''` | - |
 
 ## 插槽
 

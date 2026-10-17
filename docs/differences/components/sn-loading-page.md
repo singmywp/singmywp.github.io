@@ -15,7 +15,7 @@
   - `aniTime` 类型：String → String | Number；默认值 `$normal` → 空串（内部回退 `$normal`，行为不变）
   - `bgColor` 默认值：`$info` → 空串（内部回退 `$info`，行为不变）
   - `imgStyle` 默认值：`{width: '70px', height: '70px'}` → `'width: 70px; height: 70px;'`；`textStyle` 默认值：`{marginTop: '15px'}` → `'margin-top: 15px;'`
-  - `customStyle` / `imgStyle` / `textStyle` 类型：UTSJSONObject → UTSJSONObject | String；`imgSrc` 类型：String → String
+  - `customStyle` / `imgStyle` / `textStyle` 类型：UTSJSONObject → SnStyleValue；`imgSrc` 类型：String → String
 - 行为变化：
   - 实现改为基于 sn-overlay 的全屏不透明遮罩，显隐动画时长由 `aniTime` 统一控制（`0` 为瞬时）
   - 图片与文本节点支持外部样式类定制

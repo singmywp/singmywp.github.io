@@ -88,9 +88,9 @@
 | zIndex | 弹出层层级 | Number | `999` | - |
 | overlay | 是否显示暗色遮罩 | Boolean | `false` | `true` \| `false` |
 | overlayOpacity | 遮罩透明度（仅 `overlay` 为 true 时生效） | Number | `0.3` | - |
-| overlayStyle | 自定义遮罩层样式 | UTSJSONObject \| String | `''` | - |
+| overlayStyle | 自定义遮罩层样式 | SnStyleValue | `''` | - |
 | overlayClass | 遮罩层外部样式类 | String | `''` | - |
-| contentStyle | 弹出内容自定义样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 弹出内容自定义样式 | SnStyleValue | `''` | - |
 | contentClass | 弹出内容外部样式类 | String | `''` | - |
 | closeOnClickOverlay | 点击遮罩区域是否关闭弹出层 | Boolean | `true` | `true` \| `false` |
 | aniTime | 动画时长（ms），支持 `$` 前缀按动画乘数缩放，`0` 关闭动画 | String \| Number | `200` | `$long` \| `$normal` \| `$short` \| 数值 |

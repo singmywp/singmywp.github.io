@@ -75,15 +75,15 @@
 | circleSize | 圆形节点大小 | String \| Number | `'$22'` | - |
 | textSize | 标题文字大小 | String \| Number | `$14` | - |
 | contentSize | 内容文字大小 | String \| Number | `$12` | - |
-| stepStyle | 自定义步骤项样式 | UTSJSONObject \| String | `''` | - |
+| stepStyle | 自定义步骤项样式 | SnStyleValue | `''` | - |
 | stepClass | 步骤项外部样式类 | String | `''` | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | `''` | - |
 | titleClass | 标题外部样式类 | String | `''` | - |
-| contentStyle | 自定义内容样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 自定义内容样式 | SnStyleValue | `''` | - |
 | contentClass | 内容外部样式类 | String | `''` | - |
-| lineStyle | 自定义连接线样式 | UTSJSONObject \| String | `''` | - |
+| lineStyle | 自定义连接线样式 | SnStyleValue | `''` | - |
 | lineClass | 连接线外部样式类 | String | `''` | - |
-| customStyle | 自定义容器样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义容器样式 | SnStyleValue | `''` | - |
 | customClass | 容器外部样式类 | String | `''` | - |
 
 ## sn-steps 事件

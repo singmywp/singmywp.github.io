@@ -61,7 +61,7 @@ function open(): void {
 | maskClose | 是否启用点击遮罩关闭 | Boolean | `true` | `true` \| `false` |
 | maskOpacity | 遮罩透明度 | Number | `0.3` | - |
 | zIndex | 弹出层层级 | Number | `999` | - |
-| customStyle | 自定义面板样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义面板样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

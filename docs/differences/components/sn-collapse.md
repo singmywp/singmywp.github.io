@@ -16,13 +16,13 @@
   - `noteSize`：默认 `$2` → `13px × fontsizeFactor`
   - `noteColor`：默认 `$line` → `$lineText`
   - `borderRadius`：默认 `$normal` → `8px × radiusFactor`
-  - `customStyle` / `titleStyle` / `noteStyle` / `holderStyle`：类型 `UTSJSONObject` → `UTSJSONObject | String`，默认值 `{}` → `''`
+  - `customStyle` / `titleStyle` / `noteStyle` / `holderStyle`：类型 `UTSJSONObject` → `SnStyleValue`，默认值 `{}` → `''`
 - 行为变化：外部样式类经 externalClass 机制（`{语义}Class` props）传递；颜色与尺寸统一走 `resolveColor`/`resolveSize` 处理，支持 `$` 简写
 
 **sn-collapse-item**
 
 - 移除属性：`border`（分割线控制移至 group 的 `showBorder`）
 - 新增属性：`titleClass` / `noteClass` / `holderClass`（与 group 级同类属性合并生效）
-- 类型或默认值变化：`customStyle` 类型 `UTSJSONObject` → `UTSJSONObject | String`，默认值 `{}` → `''`
+- 类型或默认值变化：`customStyle` 类型 `UTSJSONObject` → `SnStyleValue`，默认值 `{}` → `''`
 - 行为变化：禁用态标题与箭头显示禁用色，Web 端追加 `cursor: not-allowed`；禁用子项不可点击展开
 - 新增事件、方法、插槽：无新增事件与插槽；文档新增披露 `defineExpose` 内部协调方法（group 的 `register`/`closeAll`、item 的 `close`/`setOrder`）

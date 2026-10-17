@@ -72,19 +72,19 @@
 | successText | 验证通过后的提示文本 | String | `'验证通过'` | - |
 | failText | 验证失败后的提示文本 | String | `'验证失败，请重试'` | - |
 | disabled | 禁用组件，无法拖动，整体降低透明度 | Boolean | `false` | `true` \| `false` |
-| customStyle | 组件根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 组件根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 组件根节点自定义样式类名 | String | `''` | - |
-| imageStyle | 拼图图片区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| imageStyle | 拼图图片区域自定义样式 | SnStyleValue | `''` | - |
 | imageClass | 拼图图片区域自定义样式类名 | String | `''` | - |
-| trackStyle | 轨道自定义样式 | UTSJSONObject \| String | `''` | - |
+| trackStyle | 轨道自定义样式 | SnStyleValue | `''` | - |
 | trackClass | 轨道自定义样式类名 | String | `''` | - |
-| thumbStyle | 滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| thumbStyle | 滑块自定义样式 | SnStyleValue | `''` | - |
 | thumbClass | 滑块自定义样式类名 | String | `''` | - |
-| fillStyle | 填充条自定义样式 | UTSJSONObject \| String | `''` | - |
+| fillStyle | 填充条自定义样式 | SnStyleValue | `''` | - |
 | fillClass | 填充条自定义样式类名 | String | `''` | - |
-| targetStyle | 目标区域自定义样式 | UTSJSONObject \| String | `''` | - |
+| targetStyle | 目标区域自定义样式 | SnStyleValue | `''` | - |
 | targetClass | 目标区域自定义样式类名 | String | `''` | - |
-| textStyle | 提示文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 提示文本自定义样式 | SnStyleValue | `''` | - |
 | textClass | 提示文本自定义样式类名 | String | `''` | - |
 
 ## 事件

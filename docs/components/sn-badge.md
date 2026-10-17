@@ -52,10 +52,10 @@
 | show | 是否显示徽标 | Boolean | `true` | `true` \| `false` |
 | offset | 徽标偏移量，格式同 css 属性 `transform` | String | - | - |
 | alwaysWrap | 是否始终保留外层容器包裹内容；默认隐藏徽标时内容直出（无多余节点），开启后显隐切换带过渡动画 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义徽标样式 | UTSJSONObject \| String | - | - |
-| textStyle | 徽标内数字/文本的自定义样式 | UTSJSONObject \| String | - | - |
-| dotStyle | 浮点模式下徽标圆点的自定义样式 | UTSJSONObject \| String | - | - |
-| containStyle | 包裹内容的外层容器自定义样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义徽标样式 | SnStyleValue | - | - |
+| textStyle | 徽标内数字/文本的自定义样式 | SnStyleValue | - | - |
+| dotStyle | 浮点模式下徽标圆点的自定义样式 | SnStyleValue | - | - |
+| containStyle | 包裹内容的外层容器自定义样式 | SnStyleValue | - | - |
 | badgeClass | 徽标的外部样式类 | String | - | - |
 | textClass | 徽标内数字/文本的外部样式类 | String | - | - |
 | containClass | 外层容器的外部样式类 | String | - | - |

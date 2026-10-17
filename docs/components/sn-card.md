@@ -61,15 +61,15 @@ const avatarConfig = {
 | borderRadius | 卡片圆角大小 | String \| Number | `$12` | - |
 | section | 是否显示标题左侧章节标符 | Boolean | `false` | `true` \| `false` |
 | sectionColor | 章节标符颜色 | String | `$primary` | - |
-| customStyle | 自定义卡片根节点样式 | UTSJSONObject \| String | `''` | - |
-| titleStyle | 自定义标题文本样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义卡片根节点样式 | SnStyleValue | `''` | - |
+| titleStyle | 自定义标题文本样式 | SnStyleValue | `''` | - |
 | titleClass | 标题文本外部类 | String | `''` | - |
 | headerClass | 标题栏外部类 | String | `''` | - |
-| headerStyle | 自定义标题栏样式 | UTSJSONObject \| String | `''` | - |
+| headerStyle | 自定义标题栏样式 | SnStyleValue | `''` | - |
 | footerClass | 尾部区域外部类 | String | `''` | - |
-| footerStyle | 自定义尾部区域样式 | UTSJSONObject \| String | `''` | - |
+| footerStyle | 自定义尾部区域样式 | SnStyleValue | `''` | - |
 | actionClass | 操作栏外部类 | String | `''` | - |
-| actionStyle | 自定义操作栏样式 | UTSJSONObject \| String | `''` | - |
+| actionStyle | 自定义操作栏样式 | SnStyleValue | `''` | - |
 
 :::type-fields SnAvatarConfig
 

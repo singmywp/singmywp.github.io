@@ -27,8 +27,8 @@
 - `penSize` → `lineWidth`
 - `penColor` → `lineColor`
 - `showAction` → `showActionBar`
-- `customCanvasStyle` → `canvasWrapStyle`（同时类型由 UTSJSONObject 扩展为 UTSJSONObject | String）
-- `customActionAreaStyle` → `barStyle`（同时类型由 UTSJSONObject 扩展为 UTSJSONObject | String）
+- `customCanvasStyle` → `canvasWrapStyle`（同时类型由 UTSJSONObject 扩展为 SnStyleValue）
+- `customActionAreaStyle` → `barStyle`（同时类型由 UTSJSONObject 扩展为 SnStyleValue）
 
 类型或默认值变化：
 - `height`：String（默认 `150px`）→ String | Number（默认 `280`）

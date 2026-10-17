@@ -57,7 +57,7 @@
 | aniTime | 动画时长，支持 `$` 简写随动画乘数缩放，`0` 关闭动画 | String \| Number | `$1500` | - |
 | bgColor | 骨架屏背景色 | String | `$disabled` | - |
 | glowColor | 高光带颜色（仅 glow 模式生效），暗色主题为 `rgba(255,255,255,0.05)`、亮色主题为 `rgba(0,0,0,0.03)` | String | - | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 
 ## 插槽
 

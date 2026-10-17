@@ -11,6 +11,6 @@
   - `textSize` 默认值 `$3` → `''`（空值时按 `14px × fontsizeFactor` 计算）
   - `textColor`/`themeColor` 等颜色属性支持 `  - `textColor`/`themeColor` 等颜色属性 简写
   - `textSize`/`imageSize` 由 String → String | Number，均支持 `$` 前缀动态缩放
-  - `customStyle`/`textStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `UTSJSONObject | String`（默认 `''`）
+  - `customStyle`/`textStyle` 类型由 `UTSJSONObject`（默认 `{}`）→ `SnStyleValue`（默认 `''`）
 - 行为变化：`trousersColor`/`shoesColor` 空值时回退为 `themeColor` 的最终解析值（含 `$` 简写解析结果）
 - 新增事件、方法、插槽：无

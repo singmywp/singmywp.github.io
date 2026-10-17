@@ -24,7 +24,7 @@
 | `sup` / `sub` / `container` / `emoji` | 已移除（扩展语法默认内置启用） |
 | — | 新增 `baseFontSize` / `lineHeight` |
 | — | 新增 `linkclick` 事件（Android 端同时以系统浏览器打开） |
-| `customStyle`（`UTSJSONObject`） | `customStyle`（兼容 `UTSJSONObject` 与 `String`）+ `customClass` |
+| `customStyle`（`UTSJSONObject`） | `customStyle`（`SnStyleValue`）+ `customClass` |
 
 - 新增内置能力：多语言代码高亮、GFM 任务列表、表格（含对齐）、脚注、数学公式、对齐容器等扩展语法（旧版仅 `sup` / `sub` / `container` / `emoji` 插件与 highlight.js）。
 

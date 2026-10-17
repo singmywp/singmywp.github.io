@@ -59,11 +59,11 @@
 | textColor | 文本颜色 | String | `$textLight` | - |
 | iconSize | 图标大小 | String \| Number | `$56` | - |
 | iconColor | 图标颜色，随 mode 使用对应功能色 | String | - | - |
-| titleStyle | 自定义标题节点内联样式 | UTSJSONObject \| String | - | - |
+| titleStyle | 自定义标题节点内联样式 | SnStyleValue | - | - |
 | titleClass | 自定义标题节点外部样式类 | String | - | - |
-| textStyle | 自定义文本节点内联样式 | UTSJSONObject \| String | - | - |
+| textStyle | 自定义文本节点内联样式 | SnStyleValue | - | - |
 | textClass | 自定义文本节点外部样式类 | String | - | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 
 ## 插槽
 

@@ -58,7 +58,7 @@ const value = ref<number>(3)
 | iconSize | 图标大小 | String \| Number | `$20` | - |
 | activeIcon | 选中图标的名称，与 `icon` 相同 | String | - | `remixicon 图标名` |
 | halfIcon | 半星图标的名称（`allow-half` 时使用） | String | `star-half-fill` | `remixicon 图标名` |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

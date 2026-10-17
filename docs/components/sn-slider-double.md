@@ -42,15 +42,15 @@ const range = ref<number[]>([20, 40])
 | showGlow | 是否显示按下 thumb 时的拖拽光晕 | Boolean | `true` | `true` \| `false` |
 | showValueText | 是否在右侧/下方显示当前区间文本（格式如 `20 - 40`） | Boolean | `false` | `true` \| `false` |
 | valueTextWidth | 区间文本宽度 | String \| Number | `30px` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | trackClass | 轨道的外部样式类 | String | `''` | - |
-| trackStyle | 轨道自定义样式 | UTSJSONObject \| String | `''` | - |
+| trackStyle | 轨道自定义样式 | SnStyleValue | `''` | - |
 | activeClass | 激活条的外部样式类 | String | `''` | - |
-| activeStyle | 激活条自定义样式 | UTSJSONObject \| String | `''` | - |
+| activeStyle | 激活条自定义样式 | SnStyleValue | `''` | - |
 | thumbClass | 滑块的外部样式类（两个滑块共用） | String | `''` | - |
-| thumbStyle | 滑块自定义样式（两个滑块共用） | UTSJSONObject \| String | `''` | - |
+| thumbStyle | 滑块自定义样式（两个滑块共用） | SnStyleValue | `''` | - |
 | valueTextClass | 值文本的外部样式类 | String | `''` | - |
-| valueTextStyle | 值文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| valueTextStyle | 值文本自定义样式 | SnStyleValue | `''` | - |
 
 绑定数组长度不为 2 时，组件会自动重置为 `[min, min]`。尺寸类属性支持 `$` 前缀动态尺寸（乘对应乘数）。
 

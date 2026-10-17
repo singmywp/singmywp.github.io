@@ -11,7 +11,7 @@ const { tabbarHeights } = useTabbarHeights()
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
-| tabbarHeights | ComputedRef\<UTSJSONObject\> | 当前 sn-page 的高度字典，以 tabbarKey 为键、实际高度（px 数值）为值；未登记时读取为 null 或 undefined，请使用 ?? 0；只读，不直接修改 |
+| tabbarHeights | ComputedRef\<Record\<string, number\>\> | 当前 sn-page 的高度字典，以 tabbarKey 为键、实际高度（px 数值）为值；未登记时读取为 null 或 undefined，请使用 ?? 0；只读，不直接修改 |
 | setHeight | (key: string, height: number) => void | 框架内部登记或更新当前组件拥有的高度记录，非有限值按 0 处理，四舍五入且不小于 0；同作用域重复 key 不覆盖其他组件记录 |
 | removeHeight | (key: string) => void | 框架内部移除当前组件拥有的记录，不删除其他组件拥有的同名记录 |
 

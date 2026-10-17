@@ -70,15 +70,15 @@ const value = ref<number>(30)
 | showGlow | 是否显示按下 thumb 时的拖拽光晕 | Boolean | `true` | `true` \| `false` |
 | showValueText | 是否在右侧/下方显示当前值文本 | Boolean | `false` | `true` \| `false` |
 | valueTextWidth | 当前值文本宽度 | String \| Number | `30px` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | trackClass | 轨道的外部样式类 | String | `''` | - |
-| trackStyle | 轨道自定义样式 | UTSJSONObject \| String | `''` | - |
+| trackStyle | 轨道自定义样式 | SnStyleValue | `''` | - |
 | activeClass | 激活条的外部样式类 | String | `''` | - |
-| activeStyle | 激活条自定义样式 | UTSJSONObject \| String | `''` | - |
+| activeStyle | 激活条自定义样式 | SnStyleValue | `''` | - |
 | thumbClass | 滑块的外部样式类 | String | `''` | - |
-| thumbStyle | 滑块自定义样式 | UTSJSONObject \| String | `''` | - |
+| thumbStyle | 滑块自定义样式 | SnStyleValue | `''` | - |
 | valueTextClass | 值文本的外部样式类 | String | `''` | - |
-| valueTextStyle | 值文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| valueTextStyle | 值文本自定义样式 | SnStyleValue | `''` | - |
 
 尺寸类属性支持 `$` 前缀动态尺寸（乘对应乘数），如 `thumb-size="$14"`。
 

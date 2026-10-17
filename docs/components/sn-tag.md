@@ -65,9 +65,9 @@
 | borderRadius | 标签圆角大小，支持 `$` 简写 | String \| Number | - | - |
 | textSize | 标签文本大小，支持 `$` 简写 | String \| Number | - | - |
 | iconSize | 关闭图标和加载图标大小，支持 `$` 简写 | String \| Number | - | - |
-| loadingStyle | 加载指示器的自定义样式 | UTSJSONObject \| String | - | - |
-| textStyle | 标签内文本的自定义样式 | UTSJSONObject \| String | - | - |
-| customStyle | 自定义标签根节点样式 | UTSJSONObject \| String | - | - |
+| loadingStyle | 加载指示器的自定义样式 | SnStyleValue | - | - |
+| textStyle | 标签内文本的自定义样式 | SnStyleValue | - | - |
+| customStyle | 自定义标签根节点样式 | SnStyleValue | - | - |
 | loadingClass | 加载指示器的外部样式类 | String | - | - |
 | textClass | 标签内文本的外部样式类 | String | - | - |
 

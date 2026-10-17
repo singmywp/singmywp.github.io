@@ -51,8 +51,8 @@
 | logoPadding | Logo 内边距，自动限制不超过尺寸的 1/3 | String \| Number | `8` | - |
 | logoRadius | Logo 圆角 | String \| Number | `14` | - |
 | logoBackgroundColor | Logo 背景颜色 | String | `#ffffff` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
-| backgroundStyle | 自定义背景层样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
+| backgroundStyle | 自定义背景层样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点类名 | String | - | - |
 | backgroundClass | 自定义背景层类名 | String | - | - |
 

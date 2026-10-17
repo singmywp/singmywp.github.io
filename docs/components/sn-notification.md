@@ -108,19 +108,19 @@ function onCopy(id: string): void {
 | borderRadius | 卡片圆角大小，支持 `$` 简写 | String \| Number | `$12` | - |
 | draggable | 是否开启手势拖动关闭 | Boolean | `false` | `true` \| `false` |
 | dragThreshold | 横向拖动关闭阈值，超过则飞出关闭，支持数字（px）与百分比字符串（相对卡片宽度） | String \| Number | `80` | - |
-| customStyle | 自定义通知卡片样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义通知卡片样式 | SnStyleValue | `''` | - |
 | customClass | 通知卡片外部类 | String | `''` | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | `''` | - |
 | titleClass | 标题外部类 | String | `''` | - |
-| contentStyle | 自定义内容样式 | UTSJSONObject \| String | `''` | - |
+| contentStyle | 自定义内容样式 | SnStyleValue | `''` | - |
 | contentClass | 内容外部类 | String | `''` | - |
-| iconStyle | 自定义图标样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 自定义图标样式 | SnStyleValue | `''` | - |
 | iconClass | 图标外部类 | String | `''` | - |
-| closeStyle | 自定义关闭按钮样式 | UTSJSONObject \| String | `''` | - |
+| closeStyle | 自定义关闭按钮样式 | SnStyleValue | `''` | - |
 | closeClass | 关闭按钮外部类 | String | `''` | - |
-| badgeStyle | 自定义合并计数徽标样式 | UTSJSONObject \| String | `''` | - |
+| badgeStyle | 自定义合并计数徽标样式 | SnStyleValue | `''` | - |
 | badgeClass | 合并计数徽标外部类 | String | `''` | - |
-| actionStyle | 自定义操作插槽容器样式 | UTSJSONObject \| String | `''` | - |
+| actionStyle | 自定义操作插槽容器样式 | SnStyleValue | `''` | - |
 | actionClass | 操作插槽容器外部类 | String | `''` | - |
 
 ## 事件
@@ -167,7 +167,7 @@ function onCopy(id: string): void {
 | borderRadius | 圆角大小 | String \| null |
 | draggable | 是否开启手势拖动关闭 | Boolean \| null |
 | dragThreshold | 拖动关闭阈值 | String \| Number \| null |
-| customStyle | 自定义通知卡片样式 | UTSJSONObject \| null |
+| customStyle | 自定义通知卡片样式 | SnStyleValue \| null |
 
 :::type-fields SnNotificationType
 

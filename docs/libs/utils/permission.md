@@ -379,7 +379,7 @@ snu.setPermTipsStyle({
 snu.registerPermListener({
 	onRequest: (permissions: Array<string>): void => {},
 	onConfirm: (permissions: Array<string>): void => {},
-	onComplete: (res: UTSJSONObject): void => {}
+	onComplete: (result): void => {}
 })
 ```
 

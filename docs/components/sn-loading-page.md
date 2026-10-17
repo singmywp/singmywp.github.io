@@ -52,10 +52,10 @@
 | iconSize | 加载页图标大小（如果显示图标） | String \| Number | `$38` | - |
 | mode | 加载指示器模式 | String | `native` | `native` \| `icon` |
 | aniTime | 加载页显隐动画时长，支持 `$` 简写随动画乘数缩放，`0` 为瞬时 | String \| Number | - | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
-| imgStyle | 自定义图片节点内联样式 | UTSJSONObject \| String | `width: 70px; height: 70px;` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
+| imgStyle | 自定义图片节点内联样式 | SnStyleValue | `width: 70px; height: 70px;` | - |
 | imgClass | 自定义图片节点外部样式类 | String | - | - |
-| textStyle | 自定义文本节点内联样式 | UTSJSONObject \| String | `margin-top: 15px;` | - |
+| textStyle | 自定义文本节点内联样式 | SnStyleValue | `margin-top: 15px;` | - |
 | textClass | 自定义文本节点外部样式类 | String | - | - |
 
 <DemoPhone name="sn-loading-page" />

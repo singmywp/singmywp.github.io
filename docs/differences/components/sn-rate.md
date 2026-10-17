@@ -10,7 +10,7 @@
 - 类型变化：
   - `spacing`：String → String | Number
   - `iconSize`：String → String | Number
-  - `customStyle`：UTSJSONObject → UTSJSONObject | String（支持直接传样式字符串）
+  - `customStyle`：UTSJSONObject → SnStyleValue（支持直接传样式字符串）
 - 默认值变化：
   - `iconSize`：`$4` → `''`（留空时为 `20` 乘字体乘数）
   - `customStyle`：`{}` → `''`

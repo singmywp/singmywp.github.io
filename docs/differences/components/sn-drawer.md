@@ -10,7 +10,7 @@
   - `aniTime` 类型 String → String | Number，默认值 `$long` → `''`（为空时取框架动画长时长，跟随 `aniTimeFactor` 乘数）
   - `borderRadius` 默认值 `$xlarge` → `''`（为空时随圆角乘数自动计算约 20px，且四个角按滑出方向只圆化开口对侧）
   - `bgColor`、`lineColor` 支持 `  - `bgColor`、`lineColor`  简写
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue，默认值 `{}` → `''`
 - 更名：事件 `clickMask` → `clickoverlay`
 - 移除事件：`open`、`close`（改用六段动画生命周期事件）
 - 新增事件：`beforeenter`、`enter`、`afterenter`、`beforeleave`、`leave`、`afterleave`

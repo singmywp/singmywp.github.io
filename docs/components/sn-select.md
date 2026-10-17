@@ -32,7 +32,7 @@ HarmonyOS 端弹出菜单阴影使用较轻的默认值，仍可通过弹层样�
 | --- | --- | --- | --- | --- |
 | v-model | 当前选中项的索引 | Number | `0` | - |
 | data | 选项数据源 | [[SnSelectItem@component]][] | `[]` | - |
-| width | 选择框宽度（弹出层宽度与其一致） | String \| Number | `100px` | - |
+| width | 选择框宽度（弹出层宽度与其一致），支持 `$` 前缀按间距乘数缩放 | String \| Number | `100px` | - |
 | bgColor | 选择框背景颜色 | String | `$front` | - |
 | popBgColor | 弹出层背景颜色 | String | `$front` | - |
 | selectedMode | 选中项展示模式：bg 为选中项背景高亮，check 为选中项前置对钩图标 | String | `bg` | `bg` \| `check` |
@@ -49,24 +49,24 @@ HarmonyOS 端弹出菜单阴影使用较轻的默认值，仍可通过弹层样�
 | leftIconSize | 左侧图标默认尺寸 | String \| Number | `$18` | - |
 | rightIconSize | 右侧图标默认尺寸 | String \| Number | `$16` | - |
 | borderRadius | 选择框与弹出层圆角大小 | String \| Number | `$8` | - |
-| maxHeight | 弹出层选项列表最大高度 | String \| Number | `500px` | - |
+| maxHeight | 弹出层选项列表最大高度，支持 `$` 前缀按间距乘数缩放 | String \| Number | `500px` | - |
 | maskOpacity | 弹出层蒙层透明度 | Number | `0` | `0~1` |
 | aniTime | 弹出层动画时长 | String \| Number | `$200` | - |
 | disabled | 是否禁用选择框（整体半透明且不可点击） | Boolean | `false` | `true` \| `false` |
 | itemBorder | 选项之间是否显示分隔线（最后一项不显示） | Boolean | `true` | `true` \| `false` |
-| itemStyle | 自定义选项（sn-cell）样式 | UTSJSONObject \| String | - | - |
+| itemStyle | 自定义选项（sn-cell）样式 | SnStyleValue | - | - |
 | itemClass | 自定义选项外部样式类 | String | - | - |
-| itemHoverStyle | 自定义选项按压态样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
-| itemTextStyle | 自定义选项文字样式 | UTSJSONObject \| String | - | - |
-| itemIconStyle | 自定义选项图标样式 | UTSJSONObject \| String | - | - |
-| hoverStyle | 选择框按压态样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
+| itemHoverStyle | 自定义选项按压态样式 | SnStyleValue | `background: var(--sn-info);` | - |
+| itemTextStyle | 自定义选项文字样式 | SnStyleValue | - | - |
+| itemIconStyle | 自定义选项图标样式 | SnStyleValue | - | - |
+| hoverStyle | 选择框按压态样式 | SnStyleValue | `background: var(--sn-info);` | - |
 | hoverStartTime | 按压态启动延时（ms） | Number | `50` | - |
 | hoverStayTime | 松手后按压态保持时长（ms） | Number | `0` | - |
 | hoverTransTime | 按压态过渡动画时长 | String \| Number | - （默认取 `$snui.aniTimeShort`） | - |
-| customStyle | 自定义选择框根节点样式 | UTSJSONObject \| String | - | - |
-| textStyle | 自定义选择框文本样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义选择框根节点样式 | SnStyleValue | - | - |
+| textStyle | 自定义选择框文本样式 | SnStyleValue | - | - |
 | textClass | 自定义选择框文本外部样式类 | String | - | - |
-| popStyle | 自定义弹出层容器样式 | UTSJSONObject \| String | - | - |
+| popStyle | 自定义弹出层容器样式 | SnStyleValue | - | - |
 | popClass | 自定义弹出层容器外部样式类 | String | - | - |
 
 :::type-fields SnSelectItem

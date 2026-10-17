@@ -75,12 +75,12 @@ const items: SnDataItem[] = [
 | showArrow | 是否显示指向锚点的三角箭头 | Boolean | `true` | `true` \| `false` |
 | overlay | 是否显示遮罩 | Boolean | `true` | `true` \| `false` |
 | overlayOpacity | 遮罩透明度，`overlay` 为 `false` 时不显示遮罩 | Number | `0.3` | - |
-| overlayStyle | 自定义遮罩样式 | UTSJSONObject \| String | `''` | - |
+| overlayStyle | 自定义遮罩样式 | SnStyleValue | `''` | - |
 | overlayClass | 遮罩外部类 | String | `''` | - |
-| menuStyle | 自定义菜单容器样式 | UTSJSONObject \| String | `''` | - |
+| menuStyle | 自定义菜单容器样式 | SnStyleValue | `''` | - |
 | menuClass | 菜单容器外部类 | String | `''` | - |
 | aniTime | 显示 / 关闭动画时长（ms），支持 `$` 简写 | String \| Number | `200` | - |
-| cellStyle | 自定义菜单项样式（透传内部 sn-cell） | UTSJSONObject \| String | `''` | - |
+| cellStyle | 自定义菜单项样式（透传内部 sn-cell） | SnStyleValue | `''` | - |
 | cellClass | 菜单项外部类（透传内部 sn-cell） | String | `''` | - |
 | cellBorder | 是否显示菜单项之间的分隔线 | Boolean | `true` | `true` \| `false` |
 | closeOnClickOverlay | 点击遮罩时是否关闭菜单 | Boolean | `true` | `true` \| `false` |

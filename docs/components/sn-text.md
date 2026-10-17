@@ -51,7 +51,7 @@
 | bold | 是否加粗 | Boolean | `false` | `true` \| `false` |
 | lines | 最大显示行数，超出隐藏；`0` 表示不限制 | Number | `0` | - |
 | selectable | 是否可选择（长按复制） | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | textClass | 文本节点的外部样式类 | String | - | - |
 
 ## 插槽

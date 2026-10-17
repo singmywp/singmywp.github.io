@@ -15,7 +15,7 @@
   - `iconSize` 默认值：未设置 → 空串（内部回退 20px × 字体乘数）；类型 String → String | Number
   - `iconColor` 默认值：未设置 → 空串（内部按 `type` / `level` 配色矩阵推导，禁用时使用禁用色）
   - `bgColor` / `iconColor` 类型：String → String
-  - `customStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - 自动绑定容器范围扩大：`sn-scroll`/`sn-longlist`/`sn-page` → `sn-scroll-view`/`sn-list-view`/`sn-waterflow`/`sn-page`，且优先经容器内部 provide/inject 机制同步滚动位置（绑定目标为 ref 名时经 `registerBacktop` 注册回调）
   - 定位方式自适应：绑定 `sn-page`（页面级滚动）时 `fixed` 定位，绑定容器内滚动时 `absolute` 定位

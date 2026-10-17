@@ -42,9 +42,9 @@
 | barShape | 条纹形状 | String | `flat` | `flat` \| `rounded` |
 | barRadius | 条纹圆角（仅 `barShape=rounded` 生效） | String \| Number | `6` | - |
 | moduleMinWidth | 最小模块宽（px），保证密集码型可辨认 | String \| Number | `1` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
-| codeStyle | 自定义条码画布样式 | UTSJSONObject \| String | - | - |
-| valueStyle | 自定义编码文本样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
+| codeStyle | 自定义条码画布样式 | SnStyleValue | - | - |
+| valueStyle | 自定义编码文本样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点类名 | String | - | - |
 | codeClass | 自定义条码画布类名 | String | - | - |
 | valueClass | 自定义编码文本类名 | String | - | - |

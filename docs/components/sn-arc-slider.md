@@ -89,7 +89,7 @@ function onColorChange(color: string): void {
 | isHue | 是否为色环模式（取值映射到 0° - 360° 色相，轨道绘制为完整色环） | Boolean | `false` | `true` \| `false` |
 | showValueText | 是否显示中间默认内容（当前值；hue 模式为颜色球与 hex 文本） | Boolean | `true` | `true` \| `false` |
 | disabled | 是否禁用，禁用后半透明且不响应拖动 | Boolean | `false` | `true` \| `false` |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 尺寸类属性支持 `$` 前缀动态尺寸（乘对应乘数）。

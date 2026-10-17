@@ -90,14 +90,14 @@ Demo 首页 `pages/index/index.uvue` 的顶部与底部导航栏均启用模糊�
 | blurOpacity | 未传 bgColor 时的模糊背景透明度，取值 0~1，不影响标题和按钮 | Number | `0.78` | - |
 | height | 导航栏内容区高度（不含状态栏，Number 单位 px），取全局配置 `$snui.topbarHeight`（Web 端 + 8px，其他端直接使用该值）；`statusBar` 开启时根容器总高度为该值加状态栏高度 | String \| Number | - | - |
 | zIndex | 固定定位时的层级 | Number | `998` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类，通过 custom-class 传入 | String | `''` | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | `''` | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | `''` | - |
 | titleClass | 标题外部样式类 | String | `''` | - |
-| buttonStyle | 自定义返回/功能/菜单按钮样式 | UTSJSONObject \| String | `''` | - |
-| hoverButtonStyle | 自定义按钮按压态样式 | UTSJSONObject \| String | `''` | - |
-| buttonTextStyle | 自定义按钮文字样式（features 中纯文字按钮） | UTSJSONObject \| String | `''` | - |
-| buttonIconStyle | 自定义按钮图标样式 | UTSJSONObject \| String | `''` | - |
+| buttonStyle | 自定义返回/功能/菜单按钮样式 | SnStyleValue | `''` | - |
+| hoverButtonStyle | 自定义按钮按压态样式 | SnStyleValue | `''` | - |
+| buttonTextStyle | 自定义按钮文字样式（features 中纯文字按钮） | SnStyleValue | `''` | - |
+| buttonIconStyle | 自定义按钮图标样式 | SnStyleValue | `''` | - |
 
 :::type-fields SnDataItem
 

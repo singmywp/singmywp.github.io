@@ -35,11 +35,11 @@
 | showIcon | 是否显示图标 | Boolean | `true` | `true` \| `false` |
 | center | 文字是否居中显示 | Boolean | `false` | `true` \| `false` |
 | closable | 是否显示关闭按钮，点击后组件隐藏并触发 `close` 事件 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | textClass | 文本外部样式类 | String | `''` | - |
-| textStyle | 文本自定义样式 | UTSJSONObject \| String | `''` | - |
+| textStyle | 文本自定义样式 | SnStyleValue | `''` | - |
 | iconClass | 图标外部样式类 | String | `''` | - |
-| iconStyle | 图标自定义样式 | UTSJSONObject \| String | `''` | - |
+| iconStyle | 图标自定义样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

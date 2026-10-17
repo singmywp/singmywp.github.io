@@ -10,6 +10,6 @@
   - `bgColor` 支持 `  - `bgColor`  简写；
   - `borderRadius` 类型 String → String | Number；
   - `margin`、`padding` 类型 String → String | Number；
-  - `customStyle` 类型 UTSJSONObject → UTSJSONObject | String。
+  - `customStyle` 类型 UTSJSONObject → SnStyleValue。
 - 行为变化：`loading` 由"不载入默认插槽的组件"改为内容保留、覆盖半透明遮罩并在其中显示加载指示器（容器尺寸不变）；`disabled` 同样显示遮罩并整体变淡；`aniTime` 等尺寸/时长属性支持 `$` 前缀乘数语法。
 - 新增事件、方法、插槽：无（保留原 default 插槽与全部指针/触摸事件）。

@@ -99,7 +99,7 @@ scan({ scanTypes: ['QRCODE'] }, (res: ScanResult) => {
 | frontColor | 码图前景色 | String | `'#000000'` | - |
 | qrErrorLevel | QR 码容错级别，仅对 QR 码生效 | String | `'M'` | `'L'` \| `'M'` \| `'Q'` \| `'H'` |
 | qrLogo | QR 码中部 Logo 图片路径（支持项目内路径 / 绝对路径 / `file://`），仅 QR 码生效 | String | `''` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 ## 方法

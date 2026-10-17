@@ -83,7 +83,7 @@ const value = ref<string>('')
 | readonly | 是否只读，只读时颜色不变 | Boolean | `false` | `true` \| `false` |
 | loading | 是否加载中，右侧显示加载指示器（延迟 100ms 显示避免闪烁） | Boolean | `false` | `true` \| `false` |
 | loadingClass | 加载指示器外部类 | String | `''` | - |
-| loadingStyle | 加载指示器样式 | UTSJSONObject \| String | `''` | - |
+| loadingStyle | 加载指示器样式 | SnStyleValue | `''` | - |
 | clearable | 是否显示清除按钮（有内容且非禁用/只读时显示，点击清空） | Boolean | `false` | `true` \| `false` |
 | showBorder | 是否显示边框 | Boolean | `true` | `true` \| `false` |
 | showActiveBorder | 聚焦时是否切换为激活边框颜色 | Boolean | `true` | `true` \| `false` |
@@ -104,13 +104,13 @@ const value = ref<string>('')
 | prefixIcon | 前置图标名称，存在 prefix 插槽时不显示 | String | `''` | - |
 | suffixIcon | 后置图标名称，存在 suffix 插槽时不显示 | String | `''` | - |
 | iconSize | 图标大小 | String \| Number | `$16` | - |
-| inputStyle | 自定义输入框本体样式 | UTSJSONObject \| String | `''` | - |
+| inputStyle | 自定义输入框本体样式 | SnStyleValue | `''` | - |
 | inputClass | 输入框本体的外部类 | String | `''` | - |
-| prefixIconStyle | 自定义前置图标样式 | UTSJSONObject \| String | `''` | - |
+| prefixIconStyle | 自定义前置图标样式 | SnStyleValue | `''` | - |
 | prefixIconClass | 前置图标的外部类 | String | `''` | - |
-| suffixIconStyle | 自定义后置图标样式 | UTSJSONObject \| String | `''` | - |
+| suffixIconStyle | 自定义后置图标样式 | SnStyleValue | `''` | - |
 | suffixIconClass | 后置图标的外部类 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
 
 ## 事件

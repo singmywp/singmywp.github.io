@@ -10,7 +10,7 @@
 - 类型或默认值变化：
   - `textSize`：类型 String → String | Number，默认值 `$2` → `''`（不传时默认 14px × 字体乘数）
   - `textColor`：默认值 `$text` → `''`（不传时默认主题文字色）
-  - `customStyle`：类型 UTSJSONObject → UTSJSONObject | String，默认值 `{}` → `''`
+  - `customStyle`：类型 UTSJSONObject → SnStyleValue，默认值 `{}` → `''`
 - 新增插槽：
   - `default`（旧文档未提供插槽，v2 可通过默认插槽接管内部文本渲染）
 - 事件、方法：无变化（事件 `finish`，方法 `play` / `pause` / `reset` / `stop` 均与旧版一致）

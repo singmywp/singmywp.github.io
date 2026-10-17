@@ -145,14 +145,14 @@ App 毛玻璃依赖蒸汽模式的 `backdrop-filter` 支持，不再提供 VDOM 
 | iconSize | 子项图标大小 | String \| Number | `$22` | - |
 | activeIconColor | 选中子项图标颜色 | String | `$primary` | - |
 | disabled | 是否禁用整个导航栏 | Boolean | `false` | `true` \| `false` |
-| hoverStyle | 子项按压态样式 | UTSJSONObject \| String | `'background: var(--sn-info);'` | - |
+| hoverStyle | 子项按压态样式 | SnStyleValue | `'background: var(--sn-info);'` | - |
 | hoverStartTime | 按压生效延迟（单位 ms） | Number | `50` | - |
 | hoverStayTime | 按压保持时长（单位 ms） | Number | `0` | - |
 | hoverTransTime | 按压过渡时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `''` | - |
 | hoverStopPropagation | 按压事件是否阻止冒泡 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义导航栏样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义导航栏样式 | SnStyleValue | `''` | - |
 | customClass | 导航栏主体外部样式类，通过 custom-class 传入 | String | `''` | - |
-| customContainStyle | 子页面容器样式；未提供子页面插槽时，兼容旧调用合并到主体，后置 customStyle 优先 | UTSJSONObject \| String | `''` | - |
+| customContainStyle | 子页面容器样式；未提供子页面插槽时，兼容旧调用合并到主体，后置 customStyle 优先 | SnStyleValue | `''` | - |
 
 ## 事件
 
@@ -198,7 +198,7 @@ App 毛玻璃依赖蒸汽模式的 `backdrop-filter` 支持，不再提供 VDOM 
 | iconSize | 子项图标大小（支持 `$` 简写） | String | `''` | - |
 | imageSize | 子项图片大小（`data` 项设置 `image` 时生效，支持 `$` 简写） | String | `35px` | - |
 | itemSpacingHalf | 子项间距的一半（首尾对齐用，支持 `$` 简写） | String | `0px` | - |
-| hoverStyle | 子项按压态样式 | UTSJSONObject \| String | `background: var(--sn-info);` | - |
+| hoverStyle | 子项按压态样式 | SnStyleValue | `background: var(--sn-info);` | - |
 | hoverStartTime | 按压生效延迟（单位 ms） | Number | `50` | - |
 | hoverStayTime | 按压保持时长（单位 ms） | Number | `0` | - |
 | hoverTransTime | 按压过渡时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `''` | - |

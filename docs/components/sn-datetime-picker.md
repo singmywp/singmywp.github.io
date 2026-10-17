@@ -132,22 +132,22 @@
 | itemTextSize | 选项文字大小 | String \| Number | `$13` | - |
 | activeItemTextColor | 激活选项文字颜色 | String | `$text` | - |
 | disabledItemTextColor | 禁用选项文字颜色 | String | `$disabledText` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
-| headerStyle | 自定义标题栏样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
+| headerStyle | 自定义标题栏样式 | SnStyleValue | - | - |
 | headerClass | 外部样式类 | String | - | - |
-| titleStyle | 自定义标题样式 | UTSJSONObject \| String | - | - |
+| titleStyle | 自定义标题样式 | SnStyleValue | - | - |
 | titleClass | 外部样式类 | String | - | - |
-| closeButtonStyle | 自定义关闭按钮样式 | UTSJSONObject \| String | - | - |
+| closeButtonStyle | 自定义关闭按钮样式 | SnStyleValue | - | - |
 | closeButtonClass | 外部样式类 | String | - | - |
-| actionsStyle | 自定义底部按钮栏样式 | UTSJSONObject \| String | - | - |
+| actionsStyle | 自定义底部按钮栏样式 | SnStyleValue | - | - |
 | actionsClass | 外部样式类 | String | - | - |
-| cancelButtonStyle | 自定义取消按钮样式 | UTSJSONObject \| String | - | - |
+| cancelButtonStyle | 自定义取消按钮样式 | SnStyleValue | - | - |
 | cancelButtonClass | 外部样式类 | String | - | - |
-| confirmButtonStyle | 自定义确定按钮样式 | UTSJSONObject \| String | - | - |
+| confirmButtonStyle | 自定义确定按钮样式 | SnStyleValue | - | - |
 | confirmButtonClass | 外部样式类 | String | - | - |
-| itemStyle | 自定义选项样式 | UTSJSONObject \| String | - | - |
+| itemStyle | 自定义选项样式 | SnStyleValue | - | - |
 | itemClass | 外部样式类 | String | - | - |
-| columnStyle | 自定义列样式 | UTSJSONObject \| String | - | - |
+| columnStyle | 自定义列样式 | SnStyleValue | - | - |
 | columnClass | 外部样式类 | String | - | - |
 
 :::type-fields SnDatetimePickerValue
@@ -223,11 +223,11 @@
 | activeItemTextColor | 激活选项文字颜色 | String | `$text` | - |
 | disabledItemTextColor | 禁用选项文字颜色 | String | `$disabledText` | - |
 | columnSpacing | 列间距 | String \| Number | `10px` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点外部样式类 | String | - | - |
-| itemStyle | 自定义选项样式 | UTSJSONObject \| String | - | - |
+| itemStyle | 自定义选项样式 | SnStyleValue | - | - |
 | itemClass | 外部样式类 | String | - | - |
-| columnStyle | 自定义列样式 | UTSJSONObject \| String | - | - |
+| columnStyle | 自定义列样式 | SnStyleValue | - | - |
 | columnClass | 外部样式类 | String | - | - |
 
 ### sn-datetime-picker-view 事件

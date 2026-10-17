@@ -9,7 +9,7 @@
 - 更名：`customTextStyle` → `textStyle`
 - 类型或默认值变化：
   - `type` 默认值 `info` → `primary`
-  - `customStyle` 类型 `UTSJSONObject` → `UTSJSONObject | String`，默认值 `{}` → `''`
+  - `customStyle` 类型 `UTSJSONObject` → `SnStyleValue`，默认值 `{}` → `''`
 - 行为变化：
   - 旧版 `dashed` 为"镂空且显示虚线边框"一体属性；v2 拆分为 `plain`（镂空透明背景 + 1px 边框）与 `dashed`（仅虚线边框样式）两个独立属性，虚线按钮需同时传 `plain` 与 `dashed`
   - 旧版圆形按钮由 `round` + `roundSize` 控制；v2 改为 `shape="circle"` 纯图标圆形按钮，尺寸由内边距与字号计算

@@ -37,6 +37,6 @@
 | height | 占位间隔高度（仅 `mode` 为 `custom` 时生效），支持 `$` 简写 | String \| Number | `$20` | - |
 | bgColor | 占位间隔背景颜色，支持 `$` 功能色简写 | String | `var(--sn-transparent)` | - |
 | borderRadius | 占位间隔圆角大小，支持 `$` 简写 | String \| Number | - | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 
 <DemoPhone name="sn-gap" />

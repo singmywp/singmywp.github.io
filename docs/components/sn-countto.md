@@ -54,7 +54,7 @@
 | selectable | 文本是否可选中复制 | Boolean | `false` | `true` \| `false` |
 | bold | 文本是否加粗 | Boolean | `false` | `true` \| `false` |
 | textClass | 文本节点外部样式类 | String | `''` | - |
-| customStyle | 根节点自定义样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 根节点自定义样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

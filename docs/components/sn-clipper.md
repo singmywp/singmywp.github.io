@@ -89,7 +89,7 @@
 | initialRatioId | 初始选中的比例项 id | String | `ratio-1-1` | - |
 | ratioList | 比例预设列表 | SnClipperRatioItem[] | `自由、1:1、3:4、4:3、9:16、16:9 六项` | - |
 | borderColor | 裁剪框边框与四角颜色 | String | `#FFFFFF` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部样式类 | String | `''` | - |
 
 :::type-fields SnClipperRatioItem
@@ -110,11 +110,11 @@
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
-| ready | (detail: UTSJSONObject) => Void | 图片加载成功时触发，`detail` 包含 `width`、`height`（图片原始尺寸）与 `ratio`（当前比例） |
-| change | (detail: UTSJSONObject) => Void | 裁剪状态变化时触发（拖动、缩放、旋转、镜像、切换比例等），`detail` 包含 `rotation`、`flipX`、`flipY`、`scale`、`translateX`、`translateY`、`cropLeft`、`cropTop`、`cropWidth`、`cropHeight`、`ratio` |
+| ready | (detail: SnClipperReadyDetail) => Void | 图片加载成功时触发，`detail` 包含 `width`、`height`（图片原始尺寸）与 `ratio`（当前比例） |
+| change | (detail: SnClipperChangeDetail) => Void | 裁剪状态变化时触发（拖动、缩放、旋转、镜像、切换比例等），`detail` 包含 `rotation`、`flipX`、`flipY`、`scale`、`translateX`、`translateY`、`cropLeft`、`cropTop`、`cropWidth`、`cropHeight`、`ratio` |
 | confirm | (detail: SnClipperConfirmDetail) => Void | 裁剪导出成功时触发 |
 | cancel | () => Void | 点击取消（×）按钮时触发 |
-| error | (error: UTSJSONObject) => Void | 图片加载失败或导出失败时触发，`error.message` 为错误信息 |
+| error | (error: SnClipperErrorDetail) => Void | 图片加载失败或导出失败时触发，`error.message` 为错误信息 |
 
 :::type-fields SnClipperConfirmDetail
 
@@ -135,6 +135,51 @@
 | cropTop | Number | 是 | 裁剪框在预览区中的纵向位置 |
 | cropWidth | Number | 是 | 裁剪框宽度 |
 | cropHeight | Number | 是 | 裁剪框高度 |
+
+---
+
+:::
+:::type-fields SnClipperReadyDetail
+
+`ready` 事件返回的图片加载详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| width | Number | 是 | 图片原始宽度（像素） |
+| height | Number | 是 | 图片原始高度（像素） |
+| ratio | Number | 是 | 当前裁剪比例 |
+
+---
+
+:::
+:::type-fields SnClipperChangeDetail
+
+`change` 事件返回的裁剪状态详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| rotation | Number | 是 | 旋转角度（0/90/180/270） |
+| flipX | Number | 是 | 水平镜像系数（1 正常，-1 镜像） |
+| flipY | Number | 是 | 垂直镜像系数（1 正常，-1 镜像） |
+| scale | Number | 是 | 缩放倍数 |
+| translateX | Number | 是 | 预览图横向偏移 |
+| translateY | Number | 是 | 预览图纵向偏移 |
+| cropLeft | Number | 是 | 裁剪框在预览区中的横向位置 |
+| cropTop | Number | 是 | 裁剪框在预览区中的纵向位置 |
+| cropWidth | Number | 是 | 裁剪框宽度 |
+| cropHeight | Number | 是 | 裁剪框高度 |
+| ratio | Number | 是 | 当前裁剪比例 |
+
+---
+
+:::
+:::type-fields SnClipperErrorDetail
+
+`error` 事件返回的失败详情。
+
+| 名称 | 类型 | 必填 | 描述 |
+| :--- | :--- | :--- | :--- |
+| message | String | 是 | 失败原因描述 |
 
 ---
 

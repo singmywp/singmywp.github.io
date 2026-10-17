@@ -62,7 +62,7 @@
 | col | 宫格布局列数 | Number | `4` | - |
 | gutter | 子项间距，支持 `px`/`rpx`/`%` 数值字符串 | String | `0px` | - |
 | align | 子项不满一行时的对齐方式 | String | `left` | `left` \| `start` \| `center` \| `right` \| `end` \| `around` \| `between` |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 
 `gutter` 非 0 时，group 会测量自身宽度，将子项宽度按列数等分（px），子项左右各加 gutter/2 外边距；`align` 的 `start`/`end`/`around`/`between` 分别映射为对应的 flex 对齐值。
 
@@ -71,7 +71,7 @@
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 | :--- | :--- | :--- | :--- | :--- |
 | bgColor | 子项背景颜色 | String | `透明` | - |
-| customStyle | 自定义子项根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义子项根节点样式 | SnStyleValue | `''` | - |
 
 ## 插槽
 

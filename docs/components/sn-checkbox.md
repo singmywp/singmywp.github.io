@@ -51,9 +51,9 @@ const checked = ref<number[]>([])
 | text | 方框右侧的文本内容 | String | `''` | - |
 | icon | 选中时方框内显示的图标名称，覆盖组配置 `box-icon` | String | `''` | - |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
-| containStyle | 自定义选项整行容器样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
+| containStyle | 自定义选项整行容器样式（仅当前选项生效） | SnStyleValue | `''` | - |
 | boxClass | 勾选方框的外部样式类 | String | `''` | - |
-| customStyle | 自定义勾选方框样式（仅当前选项生效，定制整行容器用 `containStyle`） | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义勾选方框样式（仅当前选项生效，定制整行容器用 `containStyle`） | SnStyleValue | `''` | - |
 | boxIconClass | 方框内图标的外部样式类 | String | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
 
@@ -65,7 +65,7 @@ const checked = ref<number[]>([])
 | type | 标签主题类型，覆盖组配置 `tag-type`；默认取组配置，兜底 `primary` | String | - | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | level | 标签等级（选中态配色深浅），覆盖组配置 `tag-level`；默认取组配置，兜底 `second` | String | - | `first` \| `second` \| `third` \| `least` |
 | disabled | 是否禁用该选项 | Boolean | `false` | `true` \| `false` |
-| customStyle | 自定义标签样式（仅当前选项生效） | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义标签样式（仅当前选项生效） | SnStyleValue | `''` | - |
 | textClass | 文本的外部样式类 | String | `''` | - |
 
 标签选项未选中时默认 `info` 色背景配 `text` 色文字；选中后配色由 `type` 与 `level` 共同决定：
@@ -116,17 +116,17 @@ const checked = ref<number[]>([])
 | disabledTagTextColor | 禁用且未选中时标签文本颜色 | String | `$disabledText` | - |
 | tagActiveTextColor | 标签选项选中时文本颜色；默认由 `tag-type` + `tag-level` 决定 | String | - | - |
 | disabledTagActiveTextColor | 禁用且选中时标签文本颜色 | String | `$disabledDarkText` | - |
-| boxContainStyle | 自定义方框选项整行容器样式 | UTSJSONObject \| String | `''` | - |
-| boxStyle | 自定义勾选方框样式 | UTSJSONObject \| String | `''` | - |
-| boxIconStyle | 自定义方框内图标样式 | UTSJSONObject \| String | `''` | - |
-| tagStyle | 自定义标签选项样式 | UTSJSONObject \| String | `''` | - |
-| textStyle | 自定义选项文本样式 | UTSJSONObject \| String | `''` | - |
+| boxContainStyle | 自定义方框选项整行容器样式 | SnStyleValue | `''` | - |
+| boxStyle | 自定义勾选方框样式 | SnStyleValue | `''` | - |
+| boxIconStyle | 自定义方框内图标样式 | SnStyleValue | `''` | - |
+| tagStyle | 自定义标签选项样式 | SnStyleValue | `''` | - |
+| textStyle | 自定义选项文本样式 | SnStyleValue | `''` | - |
 | boxContainClass | 方框选项整行容器的外部样式类 | String | `''` | - |
 | boxClass | 勾选方框的外部样式类 | String | `''` | - |
 | boxIconClass | 方框内图标的外部样式类 | String | `''` | - |
 | tagClass | 标签选项根节点的外部样式类 | String | `''` | - |
 | textClass | 选项文本的外部样式类 | String | `''` | - |
-| customStyle | 自定义复选组根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义复选组根节点样式 | SnStyleValue | `''` | - |
 
 ## 事件
 

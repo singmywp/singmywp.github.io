@@ -86,7 +86,7 @@ const value = ref<string>('')
 | maskOpacity | 遮罩透明度 | Number | `0.3` | - |
 | preventBack | 是否阻止返回键关闭 | Boolean | `true` | `true` \| `false` |
 | aniTime | 弹层动画时长，支持 `$` 简写 | String \| Number | `$long` | - |
-| drawerCustomStyle | 自定义内部抽屉弹层样式 | UTSJSONObject \| String | `''` | - |
+| drawerCustomStyle | 自定义内部抽屉弹层样式 | SnStyleValue | `''` | - |
 | drawerHeight | 弹层高度，按键盘类型自动设置（number/idcard/int 为 44%，password 为 52%，car 汉字模式为 60% 等） | String \| Number | - | - |
 | padding | 弹层内边距 | String | `8px 6px 30px 6px` | - |
 | confirmType | 完成键的功能色 | String | `primary` | `primary` \| `info` \| `success` \| `error` \| `warning` |
@@ -94,23 +94,23 @@ const value = ref<string>('')
 | confirmText | 完成键文本 | String | `完成` | - |
 | shuffle | 是否每次打开时随机打乱字符键顺序（功能键位置固定） | Boolean | `false` | `true` \| `false` |
 | keyGap | 按键间距，支持 `$` 简写 | String \| Number | `3` | - |
-| keyStyle | 自定义普通按键样式 | UTSJSONObject \| String | `''` | - |
+| keyStyle | 自定义普通按键样式 | SnStyleValue | `''` | - |
 | keyClass | 普通按键外部类 | String | `''` | - |
-| keyTextStyle | 自定义按键文字样式 | UTSJSONObject \| String | `''` | - |
+| keyTextStyle | 自定义按键文字样式 | SnStyleValue | `''` | - |
 | keyTextClass | 按键文字外部类 | String | `''` | - |
-| keyIconStyle | 自定义按键图标样式 | UTSJSONObject \| String | `''` | - |
+| keyIconStyle | 自定义按键图标样式 | SnStyleValue | `''` | - |
 | keyIconClass | 按键图标外部类 | String | `''` | - |
-| keyHoverStyle | 自定义按键按下态样式 | UTSJSONObject \| String | `''` | - |
-| confirmKeyStyle | 自定义完成键样式 | UTSJSONObject \| String | `''` | - |
+| keyHoverStyle | 自定义按键按下态样式 | SnStyleValue | `''` | - |
+| confirmKeyStyle | 自定义完成键样式 | SnStyleValue | `''` | - |
 | confirmKeyClass | 完成键外部类 | String | `''` | - |
-| confirmKeyTextStyle | 自定义完成键文字样式 | UTSJSONObject \| String | `''` | - |
+| confirmKeyTextStyle | 自定义完成键文字样式 | SnStyleValue | `''` | - |
 | confirmKeyTextClass | 完成键文字外部类 | String | `''` | - |
-| confirmKeyHoverStyle | 自定义完成键按下态样式 | UTSJSONObject \| String | `''` | - |
-| headerStyle | 自定义头部样式 | UTSJSONObject \| String | `''` | - |
+| confirmKeyHoverStyle | 自定义完成键按下态样式 | SnStyleValue | `''` | - |
+| headerStyle | 自定义头部样式 | SnStyleValue | `''` | - |
 | headerClass | 头部外部类 | String | `''` | - |
-| headerTextStyle | 自定义头部文字样式 | UTSJSONObject \| String | `''` | - |
+| headerTextStyle | 自定义头部文字样式 | SnStyleValue | `''` | - |
 | headerTextClass | 头部文字外部类 | String | `''` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | `''` | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | `''` | - |
 | customClass | 根节点外部类 | String | `''` | - |
 
 ## 事件

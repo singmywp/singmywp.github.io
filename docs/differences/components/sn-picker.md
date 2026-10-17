@@ -34,7 +34,7 @@
 - 类型变化：
   - `height`、`itemHeight`、`itemBorderRadius`、`itemTextSize`、`columnSpacing`：String → String | Number
   - `itemTextColor`、`activeItemTextColor`、`disabledItemTextColor`：String → String
-  - `customStyle`、`itemStyle`、`columnStyle`：UTSJSONObject → UTSJSONObject | String
+  - `customStyle`、`itemStyle`、`columnStyle`：UTSJSONObject → SnStyleValue
 - 默认值变化：`itemBorderRadius`：`$normal` → `$8`；`itemTextSize`：`$2` → `$13`
 - 行为变化：
   - 旧版宣称"App 端使用 Drawable 绘制"，v2 改为基于官方 picker-view 的指示器样式实现（指示器背景 rgba、无上下渐隐遮罩）

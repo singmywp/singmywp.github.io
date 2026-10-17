@@ -25,7 +25,7 @@
   - `cursorColor`：默认 `$primary` → `''`
   - `textSize`：String → String \| Number
   - 各颜色属性：支持 `  -  简写
-  - 各样式属性：UTSJSONObject → UTSJSONObject \| String
+  - 各样式属性：UTSJSONObject → SnStyleValue
 - 行为变化
   - 取消按钮改为聚焦时（或 `fixCancel` 常驻）平滑展开的动画形态，宽度与透明度随聚焦状态过渡；旧版为常驻显示
   - 点击取消按钮在触发 `cancel` 的同时会清空输入内容

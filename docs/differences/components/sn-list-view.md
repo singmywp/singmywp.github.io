@@ -30,7 +30,7 @@
   - `backtop` 默认值：`true` → `false`
   - `loadmore` 默认值：`true` → `false`
   - `associativeContainer` 默认值：未设置 → `''`
-  - `customStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - 加载更多由 `scrolltolower` 与底部状态条点击统一触发：先抛 `loadmore` 事件再置位 `loading`，父组件在事件中同步改写 `loadmore-status` 不会被 loading 状态拦截
   - 开启下拉刷新时强制使用自定义刷新条（内部 `refresher-default-style` 置 `none`），避免原生雪花样式与自定义样式叠加

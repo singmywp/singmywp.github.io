@@ -12,7 +12,7 @@
   - `titleSize` / `textSize` / `iconSize` 类型：String → String | Number；默认值由 `$5` / `$3` / `$8` 改为 18px / 14px / 56px × 字体乘数
   - `titleColor` / `textColor` / `iconColor` 默认值改为空串（内部回退：标题主题文本色、正文主题浅文本色、图标随 mode 的功能色），其中 `textColor` 有效默认由 `$disabledText` 变为主题浅文本色
   - `titleColor` / `textColor` / `iconColor` 类型：String → String
-  - `customStyle` 类型：UTSJSONObject → UTSJSONObject | String
+  - `customStyle` 类型：UTSJSONObject → SnStyleValue
 - 行为变化：
   - `primary` 模式图标与 `success` 相同（checkbox-circle-fill），颜色使用主题主色
   - 根节点增加主题过渡动画

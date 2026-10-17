@@ -51,19 +51,19 @@
 | icon | 展开开关图标名（收起态） | String | `arrow-right-s-line` | - |
 | activeIcon | 展开开关图标名（展开态） | String | `arrow-right-s-line` | - |
 | rotate | 展开时开关图标旋转角度（deg） | Number | `90` | - |
-| customStyle | 自定义根节点样式 | UTSJSONObject \| String | - | - |
+| customStyle | 自定义根节点样式 | SnStyleValue | - | - |
 | customClass | 自定义根节点外部样式类 | String | - | - |
-| itemStyle | 自定义节点行样式 | UTSJSONObject \| String | - | - |
+| itemStyle | 自定义节点行样式 | SnStyleValue | - | - |
 | itemClass | 外部样式类 | String | - | - |
-| lineStyle | 自定义选中指示竖线样式 | UTSJSONObject \| String | - | - |
+| lineStyle | 自定义选中指示竖线样式 | SnStyleValue | - | - |
 | lineClass | 外部样式类 | String | - | - |
-| arrowStyle | 自定义展开开关容器样式 | UTSJSONObject \| String | - | - |
+| arrowStyle | 自定义展开开关容器样式 | SnStyleValue | - | - |
 | arrowClass | 外部样式类 | String | - | - |
-| checkboxStyle | 自定义复选框样式 | UTSJSONObject \| String | - | - |
+| checkboxStyle | 自定义复选框样式 | SnStyleValue | - | - |
 | checkboxClass | 外部样式类 | String | - | - |
-| textStyle | 自定义节点文字样式 | UTSJSONObject \| String | - | - |
+| textStyle | 自定义节点文字样式 | SnStyleValue | - | - |
 | textClass | 外部样式类 | String | - | - |
-| selectedTextStyle | 自定义选中节点文字样式 | UTSJSONObject \| String | - | - |
+| selectedTextStyle | 自定义选中节点文字样式 | SnStyleValue | - | - |
 | selectedTextClass | 外部样式类 | String | - | - |
 
 :::type-fields SnTreeData
