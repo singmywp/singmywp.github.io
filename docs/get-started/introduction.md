@@ -32,7 +32,6 @@
 
 本项目内置字体说明
 
-- 阿里巴巴普惠体<Badge text="免费商用" type="tip" style="margin-left: 5px" />
 - Remix Icon <Badge text="免费商用" type="tip" style="margin-left: 5px" />
 
 ---

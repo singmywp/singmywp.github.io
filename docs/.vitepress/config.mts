@@ -104,6 +104,10 @@ export default defineConfig({
             {
               "text": "注意事项",
               "link": "/get-started/notes"
+            },
+            {
+              "text": "框架设计",
+              "link": "/get-started/framework"
             }
           ]
         }
@@ -161,11 +165,6 @@ export default defineConfig({
           "text": "API",
           "link": "/api/index"
         },
-        {
-          "text": "框架设计",
-          "link": "/api/framework"
-        },
-
         {
           "text": "钩子",
           "link": "/api/hooks/index",

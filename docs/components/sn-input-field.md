@@ -157,7 +157,7 @@
 | iconColor | 前后置图标颜色 | String | `$text` | - |
 | borderRadius | 圆角大小 | String \| Number | `0px` | - |
 | borderWidth | 边框宽度 | String \| Number | `2` | - |
-| padding | 内边距 | String | `10px 13px` | - |
+| padding | 内边距，支持 `$` 前缀按间距乘数缩放 | String | `10px 13px` | - |
 | textSize | 输入文字大小 | String \| Number | `$14` | - |
 | textFont | 输入文字字体 | String | `''` | - |
 | align | 输入文字对齐方式 | String | `left` | `left` \| `center` \| `right` |

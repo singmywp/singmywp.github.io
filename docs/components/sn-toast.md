@@ -55,7 +55,7 @@ snu.showToast({
 | padding | 轻提示内边距，支持 `$` 前缀按间距乘数缩放 | String | `12px 15px` | - |
 | icon | 提示图标名称（sn-icon 图标名） | String | `''` | - |
 | iconSize | 图标大小 | String \| Number | `$20` | - |
-| iconColor | 图标颜色，支持 `$` 简写主题色 | String | `#fff` | - |
+| iconColor | 图标颜色，支持 `$` 简写主题色（`loading` 圈的描边色同样取此颜色） | String | `#fff` | - |
 | textAlign | 文本对齐方式 | String | `center` | `left` \| `center` \| `right` |
 | loading | 是否显示加载中图标（旋转 loading 圈） | Boolean | `false` | `true` \| `false` |
 | textLines | 文本最大行数，超长自动换行，`0` 不限制 | Number | `0` | - |

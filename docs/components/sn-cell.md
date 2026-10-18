@@ -59,7 +59,7 @@ function onCellClick(name: string | number): void {
 | stop | 点击时是否阻止事件冒泡 | Boolean | `true` | `true` \| `false` |
 | name | 点击事件携带的标识符 | String \| Number | `''` | - |
 | bgColor | 背景颜色 | String | `var(--sn-front)` | - |
-| padding | 内边距，使用组件默认内边距（随间距乘数缩放） | String | - | - |
+| padding | 内边距，为空时使用随间距乘数缩放的默认值，支持 `$` 前缀按间距乘数缩放 | String | - | - |
 | hoverStyle | 按压时应用的样式 | SnStyleValue | `background: var(--sn-info);` | - |
 | hoverStopPropagation | 按压态是否阻止向父节点传播 | Boolean | `false` | `true` \| `false` |
 | hoverStartTime | 按压态启动延时（ms） | Number | `0` | - |

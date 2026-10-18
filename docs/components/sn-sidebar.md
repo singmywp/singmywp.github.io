@@ -45,9 +45,9 @@
 | --- | --- | --- | --- | --- |
 | v-model | 当前选中的选项索引 | Number | `0` | - |
 | data | 侧边栏选项数据数组 | Array<[[SnDataItem@api]]> | `[]` | - |
-| width | 侧边栏宽度 | String | `'100px'` | - |
-| itemWidth | 选项宽度 | String | `'100px'` | - |
-| itemPadding | 选项内边距（支持 1~4 值简写） | String | `'15px 0'` | - |
+| width | 侧边栏宽度，支持 `$` 前缀按间距乘数缩放 | String | `'100px'` | - |
+| itemWidth | 选项宽度，支持 `$` 前缀按间距乘数缩放 | String | `'100px'` | - |
+| itemPadding | 选项内边距（支持 1~4 值简写），支持 `$` 前缀按间距乘数缩放 | String | `'15px 0'` | - |
 | itemTextColor | 选项文字颜色 | String | `$text` | - |
 | itemTextSize | 选项文字大小 | String \| Number | `$16` | - |
 | activeItemTextColor | 选中选项文字颜色 | String | `$primary` | - |

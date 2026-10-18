@@ -36,8 +36,8 @@
 | timeout | 上传超时时间（单位：ms），超时后中止请求并触发 `upload-error`，状态置为上传失败；H5 HTTPS 页面拦截 HTTP 上传请求时也按此计时 | Number | `30000` | - |
 | formData | 附加到上传请求的表单数据 | SnFormData | `{}` | - |
 | sourceType | 可选择媒体的来源 | `Array<String>` | `["album", "camera"]` | `album` \| `camera` |
-| width | 媒体文件子项宽度 | String \| Number | `70px` | - |
-| height | 媒体文件子项高度 | String \| Number | `70px` | - |
+| width | 媒体文件子项宽度，支持 `$` 前缀按间距乘数缩放 | String \| Number | `70px` | - |
+| height | 媒体文件子项高度，支持 `$` 前缀按间距乘数缩放 | String \| Number | `70px` | - |
 | itemBgColor | 占位项背景颜色 | String | `$line` | `$primary` 等主题色 |
 | itemBorderRadius | 媒体文件子项圆角 | String \| Number | `$8` | - |
 | iconSize | 占位项中央图标大小 | String \| Number | `40px` | - |

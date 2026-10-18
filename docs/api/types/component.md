@@ -1306,7 +1306,7 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 # SnToastParams
 
-`sn-toast` 组件 `show` 方法入参，字段与 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 基本一致（无回调字段），另含 `overlay`（是否显示遮罩）。
+`sn-toast` 组件 `show` 方法入参，字段与 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 基本一致（无回调字段），另含 `overlay`（是否显示遮罩）。颜色字段支持 `$` 简写，尺寸字段支持 `$` 动态值与纯数字。
 
 ---
 

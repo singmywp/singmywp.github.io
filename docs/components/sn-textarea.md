@@ -58,7 +58,7 @@ const text = ref<string>('')
 | --- | --- | --- | --- | --- |
 | v-model | 绑定值 | String | `''` | - |
 | name | 表单的控件名称，作为键值对的一部分与表单一同提交 | String | `''` | - |
-| height | 文本域高度，`autoHeight` 开启时不生效 | String \| Number | `100px` | - |
+| height | 文本域高度，`autoHeight` 开启时不生效，支持 `$` 前缀按间距乘数缩放 | String \| Number | `100px` | - |
 | placeholder | 输入框为空时的占位符 | String | `''` | - |
 | placeholderStyle | 占位符内联样式 | String | `''` | - |
 | placeholderClass | 占位符外部类 | String | `''` | - |
@@ -94,7 +94,7 @@ const text = ref<string>('')
 | disabledTextColor | 禁用时的文本颜色 | String | `$disabledText` | - |
 | borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | borderWidth | 边框宽度 | String \| Number | `1px` | - |
-| padding | 内边距 | String | `8px 13px` | - |
+| padding | 内边距，支持 `$` 前缀按间距乘数缩放 | String | `8px 13px` | - |
 | textSize | 文本字体大小 | String \| Number | `$14` | - |
 | textFont | 文本字体 | String | `''` | - |
 | align | 文本对齐方式 | String | `left` | `left` \| `center` \| `right` |

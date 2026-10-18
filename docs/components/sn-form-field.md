@@ -107,7 +107,7 @@
 | borderClass | 下划线节点外部类 | String | `''` | - |
 | bgColor | 背景颜色 | String | `$front` | - |
 | borderRadius | 圆角大小 | String \| Number | `$8` | - |
-| padding | 内边距 | String | `10px 13px` | - |
+| padding | 内边距，支持 `$` 前缀按间距乘数缩放 | String | `10px 13px` | - |
 | labelStyle | 标签节点自定义样式 | SnStyleValue | `''` | - |
 | labelClass | 标签节点外部类 | String | `''` | - |
 | errorStyle | 错误节点自定义样式 | SnStyleValue | `''` | - |

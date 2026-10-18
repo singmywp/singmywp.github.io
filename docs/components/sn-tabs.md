@@ -83,18 +83,18 @@ const tabs = [
 | scrollable | 标签是否可滚动 | Boolean | `false` | `true` \| `false` |
 | data | 标签页数据数组 | Array<[[SnTabParams]]> | `[]` | - |
 | mode | 指示线动画模式 | String | `'swipe'` | `swipe` \| `push` |
-| width | 标签宽度 | String | `'100%'` | - |
-| height | 标签高度 | String | `'40px'` | - |
+| width | 标签宽度，支持 `$` 前缀按间距乘数缩放 | String | `'100%'` | - |
+| height | 标签高度，支持 `$` 前缀按间距乘数缩放 | String | `'40px'` | - |
 | bgColor | 标签背景颜色 | String | `$front` | - |
 | textColor | 标签文本颜色 | String | `$title` | - |
 | textSize | 标签文本大小 | String \| Number | `$14` | - |
 | borderRadius | 标签圆角 | String \| Number | `$12` | - |
 | disabledTextColor | 禁用标签文本颜色 | String | `$disabledText` | - |
 | activeTextColor | 选中标签文本颜色 | String | `$primary` | - |
-| itemPadding | 标签内边距（可滚动时作为左右内边距） | String | `'12px'` | - |
+| itemPadding | 标签内边距（可滚动时作为左右内边距），支持 `$` 前缀按间距乘数缩放 | String | `'12px'` | - |
 | lineColor | 指示线颜色 | String | `$primary` | - |
-| lineWidth | 指示线宽度，取标签宽度的 60% | String | - | - |
-| lineHeight | 指示线高度 | String | `'2px'` | - |
+| lineWidth | 指示线宽度，取标签宽度的 60%，支持 `$` 前缀按间距乘数缩放 | String | - | - |
+| lineHeight | 指示线高度，支持 `$` 前缀按间距乘数缩放 | String | `'2px'` | - |
 | aniTime | 标签及指示线动画时长（单位 ms，`$` 简写乘动画乘数） | String \| Number | `$normal` | - |
 | itemStyle | 选中标签样式 | SnStyleValue | `''` | - |
 | itemClass | 选中标签外部样式类 | String | `''` | - |

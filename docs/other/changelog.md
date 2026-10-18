@@ -1,3 +1,11 @@
+## 2.0.3（2026-10-18）
+- 新增 `SnStyleValue`（外部样式值：样式字符串或样式对象）、`SnFormData`（表单数据）等公共类型并由插件对外导出，样式类属性统一使用这些具名类型，替代原有的 `UTSJSONObject` 写法（`UTSJSONObject` 仅保留在 `utssdk/` 原生插件中，不影响既有传参方式）
+- 新增 `resolveColorValue` 颜色解析：$ 简写或 `var(--sn-*)` 均解析为当前主题下的**实际色值**，供原生弹层等脱离页面 CSS 变量作用域的场景使用
+- 新增 UI 形式 API（`showToast` / `showModal` / `showActionsheet` / `showLoading` / 权限提示样式）的颜色字段支持 $ 简写、尺寸字段支持 $ 动态值与纯数字，且尺寸字段放宽为 `String | Number`
+- 优化 尺寸类属性全量统一走 `resolveSize`：支持 $ 动态尺寸与裸数字（含 `sn-select` / `sn-drawer` / `sn-drawer-list` / `sn-keyboard` / `sn-float-board` / `sn-sidebar` / `sn-cell` / `sn-input` / `sn-input-field` / `sn-form-field` / `sn-textarea` / `sn-textarea-field` / `sn-tabbar-item` / `sn-tabs` / `sn-line` / `sn-menu` / `sn-view` / `sn-upload-media` / `sn-upload-media-unicloud`），修复 `width="$150"`、`width="150"` 等写法输出非法 CSS 导致宽度失效的问题
+- 修复 `resolveSize` 对无 $ 的纯数字字符串未补单位：`border-radius="10"` 现在正确解析为 `10px`，且不再误乘全局乘数
+- 修复 `sn-swipe-action` 组件销毁或长列表回收后写内联样式触发空引用崩溃
+- 优化 项目自有脚本由 `uts` 全面迁移为 `ts`（`main` / `i18n`、核心模块、组件内部工具、工具库与 Demo 页面，共 94 个文件），加快编译速度并统一类型体验；原 `.uts` 路径与导入后缀已同步调整，如你的工程中直接引用了这些内部模块，请改为 `.ts`
 ## 2.0.2（2026-10-11）
 - 【重要】插件源码统一改用 `<script lang="ts">`，加快编译速度，推荐使用 HBuilderX Alpha 5.31 及以上版本
 - 新增 毛玻璃导航栏：`sn-topbar`、`sn-tabbar`、`sn-page` 新增 `blur` / `blurRadius` / `blurOpacity`，`sn-page` 新增 `topbarBgColor`

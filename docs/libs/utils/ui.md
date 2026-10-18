@@ -238,7 +238,7 @@ let bro = snu.findBrother(instance, ['sn-icon'])
 
 ### **显示轻提示**
 
-根据配置信息显示全局轻提示，可在任意位置调用，无需放置组件（底层由 `sn-e-toast` 原生插件支撑，弹出与消失均带渐隐 + 缩放动画）。如需自由定制内容与样式的轻提示，请使用 [sn-toast 组件](/components/sn-toast)。`config` 为 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 配置对象。
+根据配置信息显示全局轻提示，可在任意位置调用，无需放置组件（底层由 `sn-e-toast` 原生插件支撑，弹出与消失均带渐隐 + 缩放动画）。如需自由定制内容与样式的轻提示，请使用 [sn-toast 组件](/components/sn-toast)。颜色字段支持 `$` 简写（解析为当前主题实色后交给原生弹层），尺寸字段支持 `$` 动态值（乘对应乘数）与纯数字。`config` 为 [SnShowToastConfig](/api/types/api#snshowtoastconfig) 配置对象。
 
 ### 兼容性
 
@@ -254,22 +254,22 @@ let bro = snu.findBrother(instance, ['sn-icon'])
 
 :::type-fields SnShowToastConfig
 
-[`snu.showToast`](/libs/utils/ui#snu-showtoast) 的配置。`text` 与 `title` 兼容（仅有 `title` 时当 `text` 用，两者并存忽略 `title`）。
+[`snu.showToast`](/libs/utils/ui#snu-showtoast) 的配置。`text` 与 `title` 兼容（仅有 `title` 时当 `text` 用，两者并存忽略 `title`）。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。
 
 | 字段 | 类型 | 必备 | 描述 |
 | :--- | :--- | :--- | :--- |
 | text | String | 否 | 提示文本 |
 | title | String | 否 | 兼容 `uni.showToast` 写法：仅有 `title` 时当作 `text` 使用；`text` 与 `title` 同时存在时忽略 `title` |
-| bgColor | String | 否 | 背景色（默认 `$snui.colors.toast`） |
+| bgColor | String | 否 | 背景色（默认 `$snui.colors.toast`，支持 `$` 简写主题色） |
 | position | String | 否 | `'top'` \| `'center'` \| `'bottom'`，默认 `center` |
 | duration | Number | 否 | 显示时长（ms），默认 2000 |
-| textSize | String | 否 | 提示文本字号，默认 `$14` |
-| textColor | String | 否 | 提示文本颜色，默认 `'#fff'` |
-| borderRadius | String | 否 | 轻提示圆角，默认 `$12` |
-| padding | String | 否 | 内边距，默认 `'$12px $15px'`（支持多段写法） |
+| textSize | String \| Number | 否 | 提示文本字号，默认 `$14` |
+| textColor | String | 否 | 提示文本颜色（支持 `$` 简写），默认 `'#fff'` |
+| borderRadius | String \| Number | 否 | 轻提示圆角，默认 `$12` |
+| padding | String \| Number | 否 | 内边距，默认 `'$12px $15px'`（支持多段写法） |
 | icon | String | 否 | 提示图标名（`success` / `error` / `info` / `warning` 等标准值） |
-| iconSize | String | 否 | 图标字号，默认 `$20` |
-| iconColor | String | 否 | 图标颜色，默认 `'#fff'` |
+| iconSize | String \| Number | 否 | 图标字号，默认 `$20` |
+| iconColor | String | 否 | 图标颜色（支持 `$` 简写），默认 `'#fff'` |
 | textAlign | String | 否 | 文本对齐方式 |
 | loading | Boolean | 否 | 是否显示加载图标（优先生效于 icon） |
 | textLines | Number | 否 | 文本最大行数，超出省略；默认 0 不限制 |
@@ -337,7 +337,7 @@ snu.hideToast()
 
 ### **显示 Modal 弹窗**
 
-打开一个 Modal 弹窗（经 dialogPage 弹出），并返回该弹窗的唯一 ID。`config` 为 `SnShowModalConfig` 配置对象。
+打开一个 Modal 弹窗（经 dialogPage 弹出），并返回该弹窗的唯一 ID。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowModalConfig` 配置对象。
 
 完整字段见 API 类型文档 `SnShowModalConfig`。
 
@@ -361,26 +361,26 @@ snu.hideToast()
 | :--- | :--- | :--- | :--- |
 | title | String | 否 | 标题文本 |
 | titleAlign | String | 否 | 标题对齐方式 |
-| titleSize | String | 否 | 标题字号 |
+| titleSize | String \| Number | 否 | 标题字号 |
 | titleFont | String | 否 | 标题字体 |
 | titleColor | String | 否 | 标题颜色 |
 | content | String | 否 | 内容文本 |
 | contentAlign | String | 否 | 内容对齐方式 |
-| contentSize | String | 否 | 内容字号 |
+| contentSize | String \| Number | 否 | 内容字号 |
 | contentColor | String | 否 | 内容颜色 |
 | contentFont | String | 否 | 内容字体 |
 | bgColor | String | 否 | 弹窗背景色 |
-| borderRadius | String | 否 | 弹窗圆角 |
+| borderRadius | String \| Number | 否 | 弹窗圆角 |
 | buttonType | String | 否 | `'embed'`（嵌入式）\| `'float'`（浮动式） |
 | buttonBorder | String | 否 | 按钮边框样式 |
 | confirmText | String | 否 | 确定按钮文字 |
 | confirmTextColor | String | 否 | 确定按钮文字颜色 |
-| confirmTextSize | String | 否 | 确定按钮文字字号 |
+| confirmTextSize | String \| Number | 否 | 确定按钮文字字号 |
 | showCancel | Boolean | 否 | 是否显示取消按钮 |
 | showConfirm | Boolean | 否 | 是否显示确定按钮 |
 | cancelText | String | 否 | 取消按钮文字 |
 | cancelTextColor | String | 否 | 取消按钮文字颜色 |
-| cancelTextSize | String | 否 | 取消按钮文字字号 |
+| cancelTextSize | String \| Number | 否 | 取消按钮文字字号 |
 | position | String | 否 | `'center'` \| `'top'` \| `'bottom'` \| `'left'` \| `'right'` |
 | aniTime | String \| Number | 否 | 动画时长 |
 | maskClose | Boolean | 否 | 点击遮罩关闭 |
@@ -435,7 +435,7 @@ snu.showModal({
 
 ### **显示操作菜单**
 
-打开一个操作菜单（ActionSheet）弹窗（经 dialogPage 弹出），并返回该菜单的唯一 ID。`config` 为 `SnShowActionsheetConfig` 配置对象。
+打开一个操作菜单（ActionSheet）弹窗（经 dialogPage 弹出），并返回该菜单的唯一 ID。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowActionsheetConfig` 配置对象。
 
 完整字段见 API 类型文档 `SnShowActionsheetConfig`。
 
@@ -460,14 +460,14 @@ snu.showModal({
 | actions | Array<[SnDataItem](#sndataitem)> | 是 | 操作项列表 |
 | title | String | 否 | 标题文本 |
 | titleColor | String | 否 | 标题颜色 |
-| titleSize | String | 否 | 标题字号 |
+| titleSize | String \| Number | 否 | 标题字号 |
 | showCancel | Boolean | 否 | 是否显示取消项 |
 | cancelText | String | 否 | 取消项文案 |
 | bgColor | String | 否 | 面板背景色 |
-| borderRadius | String | 否 | 面板圆角 |
+| borderRadius | String \| Number | 否 | 面板圆角 |
 | maskOpacity | Number | 否 | 遮罩透明度 |
-| itemTextSize | String | 否 | 操作项字号 |
-| itemPadding | String | 否 | 操作项内边距 |
+| itemTextSize | String \| Number | 否 | 操作项字号 |
+| itemPadding | String \| Number | 否 | 操作项内边距 |
 | aniTime | String \| Number | 否 | 动画时长 |
 | preventBack | Boolean | 否 | 阻止返回键关闭 |
 | disabled | Boolean | 否 | 禁用操作菜单 |
@@ -526,7 +526,7 @@ snu.showActionsheet({
 
 ### **显示 Loading**
 
-打开一个 Loading 加载弹窗（经 dialogPage 弹出），并返回该 Loading 的唯一 ID。配合 `hideLoading()` 关闭。`config` 为 `SnShowLoadingConfig` 配置对象。
+打开一个 Loading 加载弹窗（经 dialogPage 弹出），并返回该 Loading 的唯一 ID。配合 `hideLoading()` 关闭。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowLoadingConfig` 配置对象。
 
 完整字段见 API 类型文档 `SnShowLoadingConfig`。
 
@@ -552,14 +552,14 @@ snu.showActionsheet({
 | overlay | Boolean | 否 | 是否显示遮罩 |
 | maskOpacity | Number | 否 | 遮罩透明度 |
 | shadow | Boolean | 否 | 是否显示阴影 |
-| aniTime | String | 否 | 动画时长 |
+| aniTime | String \| Number | 否 | 动画时长 |
 | iconColor | String | 否 | 图标颜色 |
-| iconSize | String | 否 | 图标字号 |
+| iconSize | String \| Number | 否 | 图标字号 |
 | textColor | String | 否 | 文本颜色 |
-| textSize | String | 否 | 文本字号 |
+| textSize | String \| Number | 否 | 文本字号 |
 | bgColor | String | 否 | 背景色 |
-| borderRadius | String | 否 | 圆角 |
-| padding | String | 否 | 内边距 |
+| borderRadius | String \| Number | 否 | 圆角 |
+| padding | String \| Number | 否 | 内边距 |
 | preventBack | Boolean | 否 | 阻止返回 |
 | customStyle | SnStyleValue | 否 | 自定义样式 |
 | success | () => void | 否 | 成功回调 |

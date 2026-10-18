@@ -97,7 +97,7 @@ const value = ref<string>('')
 | iconColor | 前后置图标颜色 | String | `$text` | - |
 | borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | borderWidth | 边框宽度 | String \| Number | `1px` | - |
-| padding | 内边距 | String | `8px 13px` | - |
+| padding | 内边距，支持 `$` 前缀按间距乘数缩放 | String | `8px 13px` | - |
 | textSize | 文本字体大小 | String \| Number | `$14` | - |
 | textFont | 文本字体 | String | `''` | - |
 | align | 文本对齐方式 | String | `left` | `left` \| `center` \| `right` |

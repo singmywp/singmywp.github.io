@@ -86,11 +86,11 @@ function onLoadmore(): void {
 | renderMode | 渲染模式，`v-if` 关闭后销毁内容，`v-show` 保留内容 | String | `v-if` | `v-if` \| `v-show` |
 | showLine | 是否显示面板上的滑动指示条 | Boolean | `true` | `true` \| `false` |
 | slideClose | 是否启用滑动关闭手势 | Boolean | `true` | `true` \| `false` |
-| height | 面板高度，支持百分比 | String \| Number | `300px` | - |
-| slideHeight | 滑动关闭阈值，面板下滑距离达到阈值则关闭 | String \| Number | `100px` | - |
+| height | 面板高度，支持百分比，支持 `$` 前缀按间距乘数缩放 | String \| Number | `300px` | - |
+| slideHeight | 滑动关闭阈值，面板下滑距离达到阈值则关闭，支持 `$` 前缀按间距乘数缩放 | String \| Number | `100px` | - |
 | bgColor | 面板背景颜色，支持 `$` 简写 | String | `$front` | - |
 | lineColor | 滑动指示条颜色，支持 `$` 简写 | String | `$lineText` | - |
-| padding | 面板内边距 | String | `25px 15px 10px 15px` | - |
+| padding | 面板内边距，支持 `$` 前缀按间距乘数缩放 | String | `25px 15px 10px 15px` | - |
 | borderRadius | 面板圆角大小，支持 `$` 简写 | String \| Number | `$20` | - |
 | aniTime | 显示 / 关闭动画时长（ms），支持 `$` 简写 | String \| Number | `$long` | - |
 | preventBack | 显示时是否阻止页面返回事件 | Boolean | `false` | `true` \| `false` |

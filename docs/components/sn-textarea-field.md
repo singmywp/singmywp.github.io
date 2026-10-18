@@ -113,7 +113,7 @@
 | name | 表单的控件名称，作为键值对的一部分与表单一同提交 | String | `''` | - |
 | field | 表单字段名，非空且位于 sn-form 内时注册参与整表校验 | String | `''` | - |
 | rule | 校验规则，配合 field 使用 | [[SnFormItemRule]] | `{}` | - |
-| height | 文本域高度（开启 auto-height 后失效） | String \| Number | `100px` | - |
+| height | 文本域高度（开启 auto-height 后失效），支持 `$` 前缀按间距乘数缩放 | String \| Number | `100px` | - |
 | placeholder | 文本域为空时的占位符 | String | `''` | - |
 | placeholderStyle | 占位符内联样式 | String | `''` | - |
 | placeholderClass | 占位符外部类 | String | `''` | - |
@@ -149,7 +149,7 @@
 | disabledTextColor | 禁用时的文字颜色 | String | `$disabledText` | - |
 | borderRadius | 圆角大小 | String \| Number | `$8` | - |
 | borderWidth | 边框宽度 | String \| Number | `2` | - |
-| padding | 内边距 | String | `8px 13px` | - |
+| padding | 内边距，支持 `$` 前缀按间距乘数缩放 | String | `8px 13px` | - |
 | textSize | 输入文字大小 | String \| Number | `$14` | - |
 | textFont | 输入文字字体 | String | `''` | - |
 | align | 输入文字对齐方式 | String | `left` | `left` \| `center` \| `right` |

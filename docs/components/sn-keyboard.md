@@ -87,8 +87,8 @@ const value = ref<string>('')
 | preventBack | 是否阻止返回键关闭 | Boolean | `true` | `true` \| `false` |
 | aniTime | 弹层动画时长，支持 `$` 简写 | String \| Number | `$long` | - |
 | drawerCustomStyle | 自定义内部抽屉弹层样式 | SnStyleValue | `''` | - |
-| drawerHeight | 弹层高度，按键盘类型自动设置（number/idcard/int 为 44%，password 为 52%，car 汉字模式为 60% 等） | String \| Number | - | - |
-| padding | 弹层内边距 | String | `8px 6px 30px 6px` | - |
+| drawerHeight | 弹层高度，按键盘类型自动设置（number/idcard/int 为 44%，password 为 52%，car 汉字模式为 60% 等），支持 `$` 前缀按间距乘数缩放 | String \| Number | - | - |
+| padding | 弹层内边距，支持 `$` 前缀按间距乘数缩放 | String | `8px 6px 30px 6px` | - |
 | confirmType | 完成键的功能色 | String | `primary` | `primary` \| `info` \| `success` \| `error` \| `warning` |
 | confirmLevel | 完成键的颜色等级 | String | `first` | `first` \| `second` \| `third` \| `least` |
 | confirmText | 完成键文本 | String | `完成` | - |

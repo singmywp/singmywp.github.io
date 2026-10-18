@@ -4,6 +4,11 @@
 > 请仔细阅读此页内容，对于正确使用 SinleUI **非常重要**。
 
 
+::: danger 必须放在 sn-page 下
+- 页面内所有组件（含 sn-popup、sn-modal、sn-toast 等弹出层类组件）都必须放在 `sn-page` 下，务必让 `sn-page` 成为页面根节点，否则注入的 `--sn-*`、`--ani-time-*` CSS 变量无法作用到这些节点，颜色与动画时长会错乱
+:::
+
+
 1. 由于框架使用了第三方依赖，在 APP 端运行 SinleUI <span class="danger-text">**必须打包自定义基座**</span>后运行。
 
 2. SinleUI 推荐**使用 `px` 作为基本长度单位**。SinleUI 部分组件涉及布局计算，现阶段对于其他单位如 `rpx` 、`%` 的支持并不太好（下期会改进）。因此，除非设置 css 或组件行内样式 `style`，否则不推荐在 SinleUI 组件中使用 `px` 外的长度单位。

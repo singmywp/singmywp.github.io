@@ -33,12 +33,12 @@
 | --- | --- | --- | --- | --- |
 | position | 浮动面板吸附的位置，非法值回退为 `bottom` | String | `bottom` | `top` \| `right` \| `bottom` \| `left` |
 | showLine | 是否显示指示条 | Boolean | `true` | `true` \| `false` |
-| maxWidth | 当 `position` 为 `left` \| `right` 且展开时浮动面板的宽度 | String | `300px` | - |
-| minWidth | 当 `position` 为 `left` \| `right` 且折叠时浮动面板的宽度 | String | `50px` | - |
-| maxHeight | 当 `position` 为 `top` \| `bottom` 且展开时浮动面板的高度 | String | `500px` | - |
-| minHeight | 当 `position` 为 `top` \| `bottom` 且折叠时浮动面板的高度 | String | `50px` | - |
-| slideHeight | 纵向滑动阈值，松手时滑动距离达到阈值则折叠或展开 | String | `100px` | - |
-| slideWidth | 横向滑动阈值，松手时滑动距离达到阈值则折叠或展开 | String | `100px` | - |
+| maxWidth | 当 `position` 为 `left` \| `right` 且展开时浮动面板的宽度，支持 `$` 前缀按间距乘数缩放 | String | `300px` | - |
+| minWidth | 当 `position` 为 `left` \| `right` 且折叠时浮动面板的宽度，支持 `$` 前缀按间距乘数缩放 | String | `50px` | - |
+| maxHeight | 当 `position` 为 `top` \| `bottom` 且展开时浮动面板的高度，支持 `$` 前缀按间距乘数缩放 | String | `500px` | - |
+| minHeight | 当 `position` 为 `top` \| `bottom` 且折叠时浮动面板的高度，支持 `$` 前缀按间距乘数缩放 | String | `50px` | - |
+| slideHeight | 纵向滑动阈值，松手时滑动距离达到阈值则折叠或展开，支持 `$` 前缀按间距乘数缩放 | String | `100px` | - |
+| slideWidth | 横向滑动阈值，松手时滑动距离达到阈值则折叠或展开，支持 `$` 前缀按间距乘数缩放 | String | `100px` | - |
 | bgColor | 浮动面板背景颜色 | String | `$infoActive` | - |
 | lineColor | 指示条颜色 | String | `$lineText` | - |
 | padding | 面板内容区内边距（传给内部 sn-view） | String | `25px 15px 10px 15px` | - |
