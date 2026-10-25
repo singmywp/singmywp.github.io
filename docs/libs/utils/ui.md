@@ -339,6 +339,8 @@ snu.hideToast()
 
 打开一个 Modal 弹窗（经 dialogPage 弹出），并返回该弹窗的唯一 ID。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowModalConfig` 配置对象。
 
+弹窗页内部间距、按钮高度等固定设计值随 `paddingFactor`、`marginFactor` 缩放；弹窗页会自行注入颜色、动画时长与五个乘数 CSS 变量，`customStyle` 中可直接使用 `calc(var(--xxxFactor) * Npx)`。
+
 完整字段见 API 类型文档 `SnShowModalConfig`。
 
 ### 兼容性
@@ -437,6 +439,8 @@ snu.showModal({
 
 打开一个操作菜单（ActionSheet）弹窗（经 dialogPage 弹出），并返回该菜单的唯一 ID。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowActionsheetConfig` 配置对象。
 
+弹窗页内部间距、按钮高度等固定设计值随 `paddingFactor`、`marginFactor` 缩放；弹窗页会自行注入颜色、动画时长与五个乘数 CSS 变量，`customStyle` 中可直接使用 `calc(var(--xxxFactor) * Npx)`。
+
 完整字段见 API 类型文档 `SnShowActionsheetConfig`。
 
 ### 兼容性
@@ -527,6 +531,8 @@ snu.showActionsheet({
 ### **显示 Loading**
 
 打开一个 Loading 加载弹窗（经 dialogPage 弹出），并返回该 Loading 的唯一 ID。配合 `hideLoading()` 关闭。颜色字段支持 `$` 简写（解析为当前主题实色），尺寸字段支持 `$` 动态值与纯数字。`config` 为 `SnShowLoadingConfig` 配置对象。
+
+弹窗页会自行注入颜色、动画时长与五个乘数 CSS 变量，`customStyle` 中可直接使用 `calc(var(--xxxFactor) * Npx)`。
 
 完整字段见 API 类型文档 `SnShowLoadingConfig`。
 

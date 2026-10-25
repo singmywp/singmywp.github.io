@@ -7,7 +7,8 @@
 页面根组件，占据整个页面并内置纵向滚动的内容区（不显示滚动条），无需手动管理滚动容器。
 
 - 在页面加载时自动将背景色写入原生页面，避免加载初期白屏闪烁
-- 在根节点注入全部主题颜色、乘数与动画时长 CSS 变量，页面内子组件直接引用
+- 在根节点提供全部主题颜色 CSS 变量（内置默认风格随系统外观自动切换）
+- 在根节点注入乘数与动画时长 CSS 变量，页面内子组件直接引用
 - 为后代组件提供独立的 Tabbar 高度登记作用域，卸载时清理
 
 ::: danger 必须放在 sn-page 下
@@ -15,7 +16,7 @@
 :::
 
 ::: details 注入的 CSS 变量
-- 在根节点注入全部主题颜色 CSS 变量（如 `--sn-primary`、`--sn-front`、`--sn-transparent` 等）、五个乘数 CSS 变量（`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`）与动画时长变量（`--ani-time-short`、`--ani-time-normal`、`--ani-time-long`），页面内所有子组件通过 `var()` 引用这些变量
+- 在根节点提供全部主题颜色 CSS 变量（如 `--sn-primary`、`--sn-front`、`--sn-transparent` 等；内置默认风格由样式中的 `@media (prefers-color-scheme: light|dark)` 声明，自定义配色或非默认风格时由脚本写入内联变量）、五个乘数 CSS 变量（`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`）及其同值缩写（`--mf`、`--pf`、`--rf`、`--ff`、`--af`）与动画时长变量（`--ani-time-short`、`--ani-time-normal`、`--ani-time-long`），页面内所有子组件通过 `var()` 引用这些变量
 :::
 
 ```vue

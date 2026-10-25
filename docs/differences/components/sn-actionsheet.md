@@ -5,7 +5,7 @@
 **差异明细**：
 
 - 新增属性：`wrapStyle`、`wrapClass`、`panelStyle`、`panelClass`、`itemStyle`、`itemClass`、`itemBorder`、`itemHoverStyle`（v1 仅有 `customStyle` 一个样式扩展属性，v2 补齐了外层容器、面板、操作项多级样式透传与按压样式）
-- 移除属性：`itemTextSize`、`itemPadding`（操作项文字大小固定为随字体乘数缩放的 14px、内边距固定为 `14px 10px`）；`borderRadius`（圆角改为随圆角乘数自动计算，不可配置）
+- 移除属性：`itemTextSize`、`itemPadding`（操作项文字大小固定为随字体乘数缩放的 14px、内边距为随间距乘数缩放的 `14px 10px`）；`borderRadius`（圆角改为随圆角乘数自动计算，不可配置）
 - 类型或默认值变化：
   - `actions` 项类型 SnActionsheetItem → [SnDataItem](/api/types/api#sndataitem)
   - `titleSize` 默认值 `$2` → `$13`
