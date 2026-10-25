@@ -150,7 +150,7 @@ SinleUI 通过页面根组件 [sn-page](/components/sn-page) 向页面注入一�
 
 ### 在模板与组件属性中引用
 
-组件内置的 `$` 简写与 `var(--sn-*)` 等价：`color="$primary"` 会被框架自动转换为 `var(--sn-primary)`，因此**能用 `$` 简写的属性优先用 `$`，其余场合（`custom-style`、`style`、样式表）直接写 `var(--sn-*)`**。
+组件内置的 `$` 简写与 `var(--sn-*)` 等价：`color="$primary"` 会被框架自动转换为 `var(--sn-primary)`，因此**能用 `$` 简写的属性优先用 `$`，其余场合（`custom-style`、`style`、样式表）直接写 `var(--sn-*)`**。`$` 的完整规则（单位补全、`$short` / `$normal` / `$long` 命名值、各解析类型与乘数的对应关系）见 [框架设计 · `$` 动态尺寸语法](/get-started/framework#动态尺寸语法)。
 
 ```vue
 <template>

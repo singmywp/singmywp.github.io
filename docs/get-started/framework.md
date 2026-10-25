@@ -81,11 +81,11 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 主题指亮色（`light`）与暗色（`dark`）两种颜色模式。一套风格的 `colorBases` 包含两套 `SnColorBase` 颜色集。
 
-- **切换**：`$snui.theme = 'light' | 'dark'`；`autoTheme`（默认开启）跟随系统外观，内部监听 `uni.onOsThemeChange`（App）/ `window.matchMedia`（Web）自动切换。
+- **切换**：`$snui.theme = 'light' | 'dark'`；`autoTheme`（默认开启）跟随系统外观。两者都经 `uni.setAppTheme` 驱动框架应用主题，框架再回写 `currentTheme`（App 端 `uni.onAppThemeChange`、Web 端 `window.matchMedia`）。App 端建议在 `manifest.json` 配置 `app.defaultAppTheme: "auto"`，让冷启动首帧即与系统一致。
 - **状态栏同步**：切换与初始化时会调用 `syncStatusBarColor()` 同步原生状态栏文字/背景色。
 - **App 端原生主题**：通过 `uni.setAppTheme` 同步系统暗黑模式，保证 `window` 等系统 UI 与页面一致。
 
-`core/state.uts` 中导出的响应式状态构成了框架状态的根基：`currentStyleId`、`currentStyle`、`currentTheme`、`autoTheme`，以及由 `currentStyle × currentTheme` 计算出的 `colors`（当前颜色集）。
+`core/state.ts` 中导出的响应式状态构成了框架状态的根基：`currentStyleId`、`currentStyle`、`currentTheme`、`autoTheme`、`cssPalette`（颜色变量是否由媒体查询提供），以及由 `currentStyle × currentTheme` 计算出的 `colors`（当前颜色集）。
 
 ---
 
@@ -97,8 +97,11 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 > 注意：后缀带 `Dark` 的是比原色更深的颜色，并非暗黑主题专属；带 `Light` 的是更浅的颜色。暗黑主题与亮色主题各自拥有独立的 `SnColorBase` 对象。
 
-- **页面注入**：`sn-page` 在 `onLoad` 时把当前 `colors` 注入为 CSS 变量（`--sn-*` 命名），监听风格/主题变化做**差量更新**（仅更新变化的颜色变量）。页面内所有组件与弹出层（必须位于 `sn-page` 根节点下）通过 `var(--sn-xxx)` 引用即随主题自动切换。
+- **颜色变量（媒体查询驱动）**：`sn-page` 的样式里用 `@media (prefers-color-scheme: light)` / `@media (prefers-color-scheme: dark)` 声明内置默认风格的全部 `--sn-*` 颜色变量，主题变化由框架重新匹配媒体查询完成，脚本不参与上色（需 HBuilderX 5.25+ 蒸汽模式）。页面内所有组件与弹出层（必须位于 `sn-page` 根节点下）通过 `var(--sn-xxx)` 引用即随主题自动切换；乘数与动画时长变量仍由 `sn-page` 差量写入。
+- **自定义配色的回落**：调用 `$snui.setColor` / `setColorBase` 或切换到非默认内置风格后，颜色改由脚本写入内联变量（覆盖媒体查询色板），切换主题时脚本会按新主题重写。
 - **`$` 简化语法**：颜色类 props 统一经 [useResolve](/api/hooks/use-resolve) 钩子的 `resolveColor` 处理，`$primaryTextDark` 自动转换为 `var(--sn-primary-text-dark)`，非 `$` 开头的值原样返回。
+
+全部 `--sn-*` 颜色变量的命名规则、完整清单与用法示例，以及与它们等价的 JS 读写方式，见 [CSS 变量](/get-started/css-variables)。
 
 
 
@@ -114,7 +117,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 | paddingFactor | 内间距乘数 |
 | aniTimeFactor | 动画时长乘数 |
 
-还提供了三个常用动画时长，以保持应用全局动画的一致性： `$snui.aniTimeShort(150ms)` / `$snui.aniTimeNormal(250ms)` / `$snui.aniTimeLong(400ms)`。这些常用动画时长会自动适配 `aniTimeFactor` 机制，无需您自行处理。并提供 `uts` 和 `css` 两种使用方法，`CSS` 变量由 `sn-page` 以 `--ani-time-short/normal/long` CSS 变量注入页面。
+还提供了三个常用动画时长，以保持应用全局动画的一致性： `$snui.aniTimeShort(150ms)` / `$snui.aniTimeNormal(250ms)` / `$snui.aniTimeLong(400ms)`。这些常用动画时长会自动适配 `aniTimeFactor` 机制，无需您自行处理。脚本侧直接读 `$snui` 属性，样式侧引用 `sn-page` 注入的 `--ani-time-short` / `--ani-time-normal` / `--ani-time-long`，两套写法的对应关系见 [CSS 变量 · 动画时长变量](/get-started/css-variables#动画时长变量)。
 
 ### 乘数的三种用法
 
@@ -134,17 +137,27 @@ const radius = 8 * $snui.radiusFactor
 
 **③ CSS 中的乘数变量**
 
-使用 HBuilderX Alpha 5.31 或更高版本时，`sn-page` 还会注入五个数值 CSS 变量：`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`。它们适合直接用于 `calc()`，例如：
+使用 HBuilderX Alpha 5.31 或更高版本时，`sn-page` 还会注入五个数值 CSS 变量：`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`，并为每个乘数并列注入一个同值缩写变量：`--mf`、`--pf`、`--rf`、`--ff`、`--af`（缩写与全称是各自独立的字面值，不是 `var()` 引用）。它们适合直接用于 `calc()`，写起来更短：
 
 ```scss
 .card {
-  padding: calc(var(--paddingFactor) * 12px);
-  border-radius: calc(var(--radiusFactor) * 8px);
-  font-size: calc(var(--fontsizeFactor) * 14px);
+  padding: calc(var(--pf) * 12px);
+  border-radius: calc(var(--rf) * 8px);
+  font-size: calc(var(--ff) * 14px);
 }
 ```
 
-CSS 变量的作用域是 `sn-page` 根节点及其后代。乘数变化时，`sn-page` 会差量更新变量；脱离 `sn-page` 的独立组件或弹出页面不会自动获得这些变量。
+| 全称变量 | 缩写变量 | 对应乘数 |
+| :--- | :--- | :--- |
+| `--marginFactor` | `--mf` | 外间距乘数 |
+| `--paddingFactor` | `--pf` | 内间距乘数 |
+| `--radiusFactor` | `--rf` | 圆角乘数 |
+| `--fontsizeFactor` | `--ff` | 字号乘数 |
+| `--aniTimeFactor` | `--af` | 动画时长乘数（不可用于 `calc()`） |
+
+CSS 变量的作用域是 `sn-page` 根节点及其后代。乘数变化时，`sn-page` 会差量更新变量；脱离 `sn-page` 的独立组件不会自动获得这些变量。框架内的三个弹窗页（`snu.showModal` / `snu.showActionsheet` / `snu.showLoading`）是 dialogPage，不在任何 `sn-page` 子树内，页面会自行把颜色、动画时长与五个乘数变量一并注入到自己的根节点，因此在这些弹窗的 `customStyle` 中写 `calc(var(--xxxFactor) * Npx)` 同样有效；而 `snu.showToast` 走原生弹层、不涉及 CSS 变量，尺寸只走 `$` 动态值。
+
+三类变量的完整清单（含每个变量的用途与典型写法）与更多示例见 [CSS 变量](/get-started/css-variables)。
 
 #### **`$` 动态尺寸语法**
 
