@@ -24,7 +24,7 @@
 | 日志开关 | `$snui.configs` 无专门日志开关 | `$snui.logging`（默认开启），`setLogging` / `getLogging` |
 | 日志方法 | `log / info / debug / warn / error`（`[Snui]` 前缀） | 同左（经 `sinle-logger` 提供，`warn` / `error` 接收 `UniError` 并抛出） |
 | 错误码查询 | `getErrMsg` 语义错误码表 | 保留（迁至 `sinle-logger`） |
-| 使用约束 | 组件内可随意 | **禁止组件内直接 `console`**，一律经框架日志接口（`core/private/logger.uts`） |
+| 使用约束 | 组件内可随意 | **禁止组件内直接 `console`**，一律经框架日志接口（`core/private/logger.ts`） |
 
 ## 错误码标准
 

@@ -5,7 +5,7 @@
 从对应源文件导入：
 
 ```typescript
-import { useBacktop } from '@/uni_modules/sinle-ui/core/private/use-backtop.uts'
+import { useBacktop } from '@/uni_modules/sinle-ui/core/private/use-backtop.ts'
 ```
 
 ## 返回值
@@ -30,7 +30,7 @@ import { useBacktop } from '@/uni_modules/sinle-ui/core/private/use-backtop.uts'
 `sn-page` 是框架中最简的接入范例：`onScroll` 里通知滚动位置，再经 provide 暴露给 `sn-backtop`。
 
 ```typescript
-import { useBacktop } from '../../core/private/use-backtop.uts'
+import { useBacktop } from '../../core/private/use-backtop.ts'
 
 const backtop = useBacktop()
 

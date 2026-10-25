@@ -5,7 +5,7 @@
 从对应源文件导入：
 
 ```typescript
-import { useExternalStyle } from '@/uni_modules/sinle-ui/core/private/use-external-style.uts'
+import { useExternalStyle } from '@/uni_modules/sinle-ui/core/private/use-external-style.ts'
 ```
 
 ## 参数与返回值
@@ -24,7 +24,7 @@ import { useExternalStyle } from '@/uni_modules/sinle-ui/core/private/use-extern
 框架组件（如 `sn-alert`）的标准写法：每个 externalStyle 类 prop 各调用一次，得到可直接绑定的样式字符串。
 
 ```typescript
-import { useExternalStyle } from '../../core/private/use-external-style.uts'
+import { useExternalStyle } from '../../core/private/use-external-style.ts'
 
 const customStyleText = useExternalStyle((): SnStyleValue => props.customStyle)
 const textStyleText = useExternalStyle((): SnStyleValue => props.textStyle)

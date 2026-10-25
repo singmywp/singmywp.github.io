@@ -17,7 +17,7 @@
 	<sn-arc-slider v-model="value"></sn-arc-slider>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<number>(36)
 </script>
 ```
@@ -41,7 +41,7 @@ const value = ref<number>(36)
 	<sn-arc-slider v-model="hue" v-model:color="color" is-hue size="$190" @color-change="onColorChange"></sn-arc-slider>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const hue = ref<number>(210)
 const color = ref<string>('#0080FF')
 

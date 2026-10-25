@@ -15,7 +15,7 @@
 	<sn-stepper v-model="value"></sn-stepper>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<number>(0)
 </script>
 ```

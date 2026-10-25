@@ -24,8 +24,8 @@ HarmonyOS 端消息条默认阴影较轻。
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import type { SnMessageParams } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnMessageParams } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const messageRef = ref<SnMessageComponentPublicInstance | null>(null)
 
@@ -47,8 +47,8 @@ function showMessage(): void {
 	<sn-message ref="messageRef" @close="onMessageClose"></sn-message>
 </template>
 
-<script lang="uts" setup>
-import type { SnMessageParams } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnMessageParams } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const messageRef = ref<SnMessageComponentPublicInstance | null>(null)
 let msgId = ''

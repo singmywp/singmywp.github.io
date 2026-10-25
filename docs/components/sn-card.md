@@ -31,8 +31,8 @@
 	</sn-card>
 </template>
 
-<script lang="uts" setup>
-import type { SnAvatarConfig } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnAvatarConfig } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const avatarConfig = {
 	mode: 'text',

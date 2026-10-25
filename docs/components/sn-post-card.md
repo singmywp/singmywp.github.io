@@ -18,8 +18,8 @@
 		</template>
 	</sn-post-card>
 </template>
-<script lang="uts" setup>
-import type { SnAvatarConfig, SnPostCardAction } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnAvatarConfig, SnPostCardAction } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const datetime: number = Date.now()
 const avatarConfig: SnAvatarConfig = {
@@ -58,8 +58,8 @@ function onActionClick(action: SnPostCardAction, index: number): void {
 		<sn-text text="看到一个填词挑战，也试着填一下。"></sn-text>
 	</sn-post-card>
 </template>
-<script lang="uts" setup>
-import type { SnAvatarConfig, SnPostCardComment } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnAvatarConfig, SnPostCardComment } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const comments: SnPostCardComment[] = [
 	{ id: 'c1', user: '聆江', content: '写得很安静，喜欢。' },

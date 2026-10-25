@@ -18,7 +18,7 @@
 		active-level="second"></sn-switch-button>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<boolean>(false)
 </script>
 ```
@@ -42,7 +42,7 @@ const value = ref<boolean>(false)
 	<sn-switch-button v-model="value2" type="primary" level="least" active-type="primary" active-level="first"></sn-switch-button>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<boolean>(false)
 const value2 = ref<boolean>(true)
 </script>
@@ -58,7 +58,7 @@ const value2 = ref<boolean>(true)
 		text-color="#7c5cff" active-bg-color="#7c5cff" active-text-color="#ffffff"></sn-switch-button>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<boolean>(false)
 </script>
 ```

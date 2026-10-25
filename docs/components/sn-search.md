@@ -15,7 +15,7 @@
 	<sn-search v-model="keyword" @change="onChange" @confirm="onConfirm" @cancel="onCancel"></sn-search>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const keyword = ref<string>('')
 
 function onChange(value: string): void {
@@ -44,7 +44,7 @@ function onCancel(): void {
 		cancel-text-color="$error"></sn-search>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const keyword = ref<string>('')
 </script>
 ```
@@ -60,7 +60,7 @@ const keyword = ref<string>('')
 	</sn-search>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const keyword = ref<string>('')
 
 function onScan(): void {

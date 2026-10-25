@@ -19,7 +19,7 @@
 	<sn-slider v-model="value"></sn-slider>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<number>(30)
 </script>
 ```

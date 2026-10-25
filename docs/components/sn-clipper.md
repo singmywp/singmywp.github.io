@@ -42,7 +42,7 @@
 	<sn-clipper image-url="/static/images/photo.png" initial-ratio-id="id-card"
 		:ratio-list="ratios"></sn-clipper>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const ratios = [
 		{ id: 'free', text: '自由', ratio: 0 },
 		{ id: 'id-card', text: '身份证', ratio: 85.6 / 54.0 }
@@ -56,7 +56,7 @@
 <template>
 	<sn-clipper ref="clipperRef" image-url="/static/images/photo.png"></sn-clipper>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const clipperRef = ref<SnClipperComponentPublicInstance | null>(null)
 	function rotate() {
 		clipperRef.value?.$callMethod('rotateClockwise')

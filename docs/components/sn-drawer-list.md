@@ -26,7 +26,7 @@
 	</sn-page>
 </template>
 
-<script lang="uts" setup
+<script lang="ts" setup
 const drawerRef = ref<SnDrawerListComponentPublicInstance | null>(null)
 const items = ref<any[]>([])
 for (let i = 1; i <= 50; i++) {
@@ -61,7 +61,7 @@ function open(): void {
 	</sn-drawer-list>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 
 const drawerRef = ref<SnDrawerListComponentPublicInstance | null>(null)
 const loadmoreStatus = ref<string>('loadmore')

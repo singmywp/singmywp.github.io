@@ -59,7 +59,7 @@
 <template>
 	<sn-region-picker v-model="value" :custom-filter="filter"></sn-region-picker>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const filter = (type: SnRegionLevel, columns: SnDataItem[]): SnDataItem[] => {
 		if (type == 'province') {
 			return columns.filter((item: SnDataItem): boolean => item.id != '110000')

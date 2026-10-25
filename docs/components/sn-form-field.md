@@ -24,7 +24,7 @@
 	</sn-form-field>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const nickname = ref<string>('')
 	const gender = ref<number>(0)
 	const city = ref<number>(0)
@@ -53,7 +53,7 @@
 	</sn-form>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnFormItemRule } from '@/uni_modules/sinle-ui'
 
 	const genderRule = ref<SnFormItemRule>({

@@ -18,7 +18,7 @@
 	<sn-input-field v-model="pwd" label="密码" password placeholder="请输入密码" clearable />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const value = ref<string>('')
 	const pwd = ref<string>('')
 </script>
@@ -36,7 +36,7 @@
 	<sn-input-field v-model="valueR" label="标签靠右" label-align="right" label-width="80px" placeholder="标签靠右" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const valueV = ref<string>('')
 	const valueR = ref<string>('')
 </script>
@@ -57,7 +57,7 @@
 	<sn-button text="提交" type="primary" custom-style="margin-top:16px;" @click="onFormSubmit" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnFormItemRule, SnFormItemVerifyResult, SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnInputFieldComponentPublicInstance | null>(null)

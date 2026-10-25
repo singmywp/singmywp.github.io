@@ -5,7 +5,7 @@
 | 项目 | 旧版 | 新版 |
 | :--- | :--- | :--- |
 | 获取入口 | `import { $snui } from '@/uni_modules/sinle-ui'` → `const snu = $snui.utils` | `import { snu } from '@/uni_modules/sinle-ui'`（独立命名导出） |
-| 分组 | 分组不对外强调 | 11 个分组静态类 + `snu` 聚合门面，三层架构 |
+| 分组 | 分组不对外强调 | 10 个分组静态类 + `snu` 聚合门面，三层架构 |
 
 ## 方法级差异
 
@@ -30,7 +30,7 @@
 | Text | `roundAmount(value, decimals=2, mode='round')` | 字符串级金额舍入（round/ceil/floor/trunc），避免 toFixed 浮点陷阱 |
 | Text | `numToUpperAmount(value)` | 金额中文大写转换（符合央行票据规范） |
 | Ui | `showLoading(config)` / `hideLoading()` | 全局加载弹层（旧版无独立 loading 弹窗 API） |
-| Resolve | `resolveSize` / `resolveSizeNum` / `resolveColor` | **全新分组**，`$` 动态尺寸/颜色解析（驱动组件尺寸乘数与主题色语法） |
+| [useResolve](/api/hooks/use-resolve)（钩子） | `resolveSize` / `resolveSizeNum` / `resolveColor` | **2.0 起由 Utils 分组迁移为钩子**（`core/private/use-resolve.ts`），不再属于 `snu` 分组；`$` 动态尺寸/颜色解析（驱动组件尺寸乘数与主题色语法） |
 | Perm | `setPermTips` / `setPermTipsStyle` / `registerPermListener` / `unregisterPermListener` / `hidePermTips` | **全新分组**，权限用途提示配置与监听（配套 `sn-perm-listener` 插件）；另有自 platform 分组迁入的 `checkSystemPermissionGranted` / `getSystemPermissionDenied` / `requestSystemPermission` / `gotoSystemPermissionActivity` / `requestMediaPermission` / `checkMediaPermission`（签名不变） |
 
 ### 移除方法
@@ -48,8 +48,8 @@
 ### 更名/归属调整
 
 - `randomComId`：旧版归入 Basic 分组，新版归入 **Random** 分组（对外用法不变）。
-- `getOsTheme`：旧 platform 分组，新版归入 System 分组（平台.uts）。
-- 权限相关方法旧版分散在 `permission.md`/`platform.md`，新版统一归入 **Perm 分组**（`core/utils/perm.uts`）。
+- `getOsTheme`：旧 platform 分组，新版归入 System 分组（`core/utils/platform.ts`）。
+- 权限相关方法旧版分散在 `permission.md`/`platform.md`，新版统一归入 **Perm 分组**（`core/utils/perm.ts`）。
 
 ## 行为变化要点
 

@@ -4,7 +4,7 @@ SinleUI 向外暴露全局可操作的框架对象 `$snui`（框架配置与全�
 
 >[!WARNING] 注意
 >
->不可直接从插件内部任何 `.uts` 文件导入对象或类型，所有对象及类型均从 `@/uni_modules/sinle-ui` 导入；`UniError` / `SourceError` 等错误对象为 uni-app x 运行时内置全局对象，无需导入。
+>不可直接从插件内部任何 `.ts` 文件导入对象或类型，所有对象及类型均从 `@/uni_modules/sinle-ui` 导入；`UniError` / `SourceError` 等错误对象为 uni-app x 运行时内置全局对象，无需导入。
 
 ```typescript
 import {
@@ -164,7 +164,7 @@ const SN_DEFAULT_STYLE_ID = 'default'
 
 # $snui
 
-`$snui` 是 `Snui` 类的单例实例，是 SinleUI 的全局配置中心。所有风格、主题、尺寸乘数、动画时长、页面背景等设置均通过它读写，修改后自动持久化，并实时驱动页面（`sn-page` 会差量更新 CSS 变量）。
+`$snui` 是 `Snui` 类的单例实例，是 SinleUI 的全局配置中心。所有风格、主题、尺寸乘数、动画时长、页面背景等设置均通过它读写，修改后自动持久化，并实时驱动页面：颜色变量由 `sn-page` 样式中的系统外观媒体查询提供，乘数与动画时长变量由 `sn-page` 差量写入。
 
 ### 属性
 

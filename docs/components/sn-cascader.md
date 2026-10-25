@@ -36,7 +36,7 @@
 <template>
 	<sn-cascader ref="cascaderEle" v-model="value" :load-data="loadData" @load-error="onLoadError"></sn-cascader>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	function loadData(parent: SnCascaderOption | null, level: number, resolve: SnCascaderResolve, reject: SnCascaderReject): void {
 		if (parent == null) {
 			resolve(rootOptions)

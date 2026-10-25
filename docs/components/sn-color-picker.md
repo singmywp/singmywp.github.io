@@ -18,7 +18,7 @@
 	<sn-color-picker ref="picker" v-model="color" title="选择颜色" @confirm="onConfirm"></sn-color-picker>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 
 	const picker = ref<SnColorPickerComponentPublicInstance | null>(null)
 	const color = ref<string>('#F5222D')
@@ -152,7 +152,7 @@
 	</sn-color-picker>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const picker = ref<SnColorPickerComponentPublicInstance | null>(null)
 	const color = ref<string>('#F5222D')
 	const palette = ref<string[]>(['#1F1F1F', '#EF4444', '#3B82F6'])
@@ -177,7 +177,7 @@
 	<sn-color-picker-view v-model="color" @change="onChange"></sn-color-picker-view>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const color = ref<string>('#F5222D')
 
 	function onChange(value: string) {

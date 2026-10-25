@@ -26,18 +26,18 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 | :--- | :--- |
 | `components/` | 全部 `sn-*` 组件，每个组件一个独立目录（如 `sn-button/sn-button.uvue`） |
 | `core/` | 框架核心模块 |
-| `core/snui.uts` | `Snui` 单例类定义，`$snui` 全局实例 |
-| `core/state.uts` | 全局响应式状态（主题、风格）、持久化与主题监听 |
-| `core/types/index.uts` | 全部核心类型定义与导出（SnColorBase、SnStyle 等） |
+| `core/snui.ts` | `Snui` 单例类定义，`$snui` 全局实例 |
+| `core/state.ts` | 全局响应式状态（主题、风格）、持久化与主题监听 |
+| `core/types/index.ts` | 全部核心类型定义与导出（SnColorBase、SnStyle 等） |
 | `core/theme/` | 内置风格文件（`default-style`、`ink-style`、`chinese-style` 等 6 套）与风格注册中心 |
-| `core/utils/` | 工具库分组静态类（Random、Basic、Easing、ObjectUtils、System、Resolve、Sort、Text、Ui、Perm、Verify） |
-| `core/utils/index.uts` | `snu` 聚合门面 |
+| `core/utils/` | 工具库分组静态类（Random、Basic、Easing、ObjectUtils、System、Sort、Text、Ui、Perm、Verify） |
+| `core/utils/index.ts` | `snu` 聚合门面 |
 | `core/color/` | 颜色库（`ColorLib`、`TinyColor`） |
 | `core/date/` | 日期库（`DateLib`、`Dayuts`、国际化） |
 | `core/private/` | 内部钩子与机制（`use-theme`、`use-style`、`use-factors`、`use-hover`、`use-external-style`、`use-backtop`、`logger`、`dialog-store`） |
 | `pages/popups/` | 全局弹窗页面（showModal、showActionsheet、showLoading） |
 | `pages_init.json` | 注册插件内置弹窗页面 |
-| `index.uts` | 插件入口，统一导出全部公开 API |
+| `index.ts` | 插件入口，统一导出全部公开 API |
 
 
 
@@ -47,7 +47,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 一个应用可同时注册多套风格（皮肤），如现代、简约、古风、梦幻、科幻等。每套风格是一个 `SnStyle` 对象，包含：颜色集（亮/暗两套）、导航栏高度、亮/暗页面背景色，以及五个乘数与三个基础动画时长。
 
-- **注册与切换**：`core/theme/index.uts` 在框架加载时执行 `initStyles()` 注册内置风格；`$snui.currentStyleId` 切换风格（`switchStyle` 会深拷贝目标风格再替换当前风格，避免互相污染）。
+- **注册与切换**：`core/theme/index.ts` 在框架加载时执行 `initStyles()` 注册内置风格；`$snui.currentStyleId` 切换风格（`switchStyle` 会深拷贝目标风格再替换当前风格，避免互相污染）。
 
 - **内置风格**：`default`（默认）、`ink`（水墨）、`chinese`（国风）、`new-year`（新年）、`morandi-green`（莫兰迪绿）、`orange`（活力橙）共 6 套。
 
@@ -129,7 +129,7 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 五个乘数都可通过 `$snui` 直接读取或修改，修改后会持久化到当前风格：
 
-```uts
+```typescript
 $snui.paddingFactor = 1.2
 const padding = 12 * $snui.paddingFactor
 const radius = 8 * $snui.radiusFactor
@@ -258,9 +258,9 @@ function enlarge(): void {
 
 ## 工具库三层架构
 
-1. **分组静态类**（`core/utils/*.uts`）：按功能拆分为 Random、Basic、Easing、ObjectUtils、System、Resolve、Sort、Text、Ui、Perm、Verify 共 11 组。
-2. **聚合门面**（`core/utils/index.uts`）：`snu` 静态类，每个方法一行转发。
-3. **插件出口**（`index.uts`）：`export { snu }`。
+1. **分组静态类**（`core/utils/*.ts`）：按功能拆分为 Random、Basic、Easing、ObjectUtils、System、Sort、Text、Ui、Perm、Verify 共 10 组。
+2. **聚合门面**（`core/utils/index.ts`）：`snu` 静态类，每个方法一行转发。
+3. **插件出口**（`index.ts`）：`export { snu }`。
 
 用户侧统一使用 `snu.xxx`；组件内部为减小体积直接导入分组类。平台相关方法（系统、权限等）经 `sinle-api` 插件按平台目录（`utssdk/app-android`、`utssdk/app-ios`、`utssdk/app-harmony`）分别实现，无需条件编译。
 
@@ -277,7 +277,7 @@ function enlarge(): void {
 `snu.showToast` / `snu.showModal` / `snu.showActionsheet` / `snu.showLoading` 实现"任意位置调用、无需放置组件"的全局弹窗：
 
 1. 框架内置 3 个弹窗页面（showModal、showActionsheet、showLoading），经 `pages_init.json` 注册；
-2. `core/private/dialog-store.uts` 提供一个键值存储，保存本次弹窗的配置对象；
+2. `core/private/dialog-store.ts` 提供一个键值存储，保存本次弹窗的配置对象；
 3. `snu` 的 UI 方法把配置写入 dialog-store，并通过 `uni.openDialogPage` 打开对应弹窗页；弹窗页 `onLoad` 时按 id 取回配置并展示，交互完成后触发 `success/fail/complete` 回调并关闭页面。
 
 `showToast` 与 `highlight` 类轻提示由组件实现而非页面，其中 `showToast` 同样可在任意位置调用。
@@ -286,7 +286,7 @@ function enlarge(): void {
 
 ## 日志与错误
 
-- **日志**：框架内部统一使用 `core/private/logger.uts`（转发自 `sinle-logger` 插件）输出 `[Snui]` 前缀日志，受 `$snui.logging` 控制开关。组件禁止直接使用 `console`。
+- **日志**：框架内部统一使用 `core/private/logger.ts`（转发自 `sinle-logger` 插件）输出 `[Snui]` 前缀日志，受 `$snui.logging` 控制开关。组件禁止直接使用 `console`。
 - **错误**：`UniError` 为框架统一错误类型（遵循 uni 错误规范），全局 API 失败时通过 `fail` 回调返回，详见[错误与日志](/api/error/error)。
 ---
 
@@ -340,6 +340,6 @@ SUPPORTED_LOCALES // [{ code: 'zh-Hans', name: '简体中文' }, ...]
 
 ### 消息文件
 
-- 插件消息：`uni_modules/sinle-ui/core/i18n/locale/*.uts`（每语言一个文件，键形如 `common.confirm`、`loadmore.more`）。
+- 插件消息：`uni_modules/sinle-ui/core/i18n/locale/*.ts`（每语言一个文件，键形如 `common.confirm`、`loadmore.more`）。
 - 组件 props 默认值均已改为空串 + `t()` 兜底：用户传入自定义文本时优先显示用户值，否则回落到当前语言。
 - 日历、日期格式化等组件（weekdays / 月份 / 相对时间）同样接入插件 i18n。

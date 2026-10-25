@@ -14,7 +14,7 @@
 		@expand="onExpand" @collapse="onCollapse"></sn-ellipsis>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const longText = 'SinleUI 提供统一的组件样式、主题能力和跨平台交互。'
 function onExpand(): void {
 	console.log('已展开')
@@ -45,7 +45,7 @@ function onCollapse(): void {
 	</sn-ellipsis>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const longText = '支持 48dB 混合主动降噪，通透模式智能过滤环境噪音。'
 </script>
 ```

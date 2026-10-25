@@ -161,7 +161,7 @@
 	</sn-page>
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 	import type { ComponentPublicInstance } from 'vue'
 
 	const text = ref<string>('')

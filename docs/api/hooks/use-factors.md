@@ -44,8 +44,8 @@ import { useFactors } from '@/uni_modules/sinle-ui'
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import { $snui, useFactors } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+import { $snui, useFactors } from '@/uni_modules/sinle-ui/index.ts'
 
 const { marginFactor, paddingFactor, fontsizeFactor, radiusFactor, aniTimeFactor } = useFactors()
 

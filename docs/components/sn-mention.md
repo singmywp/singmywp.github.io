@@ -13,7 +13,7 @@
 		@removemention="onRemove"></sn-mention>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 const mentionRef = ref<SnMentionComponentPublicInstance | null>(null)
 
@@ -47,7 +47,7 @@ function selectFriend(name: string): void {
 	<sn-mention ref="mentionRef" v-model="text" :before-remove="beforeRemove" @removemention="onRemove"></sn-mention>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 const mentionRef = ref<SnMentionComponentPublicInstance | null>(null)
 
@@ -68,7 +68,7 @@ function onRemove(tag: string): void {
 	<sn-mention ref="mentionRef" v-model="text" mention-char="#" placeholder="输入 # 触发话题提及"></sn-mention>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 const mentionRef = ref<SnMentionComponentPublicInstance | null>(null)
 </script>

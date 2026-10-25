@@ -22,7 +22,7 @@ SinleUI 扫码插件的核心模块，基于 CameraX + ML Kit 实现摄像头预
 <template>
 	<sn-e-scan-provider ref="scanEle" scan-type="all" enable-zoom @scanned="onScanned" @error="onError"></sn-e-scan-provider>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 import { SnScanResult } from '@/uni_modules/sn-e-scan-provider'
 
 function onScanned(res: SnScanResult): void {

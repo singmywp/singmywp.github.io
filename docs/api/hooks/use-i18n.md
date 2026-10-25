@@ -56,7 +56,7 @@ const { locale } = useI18n()
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 import { useI18n } from '@/uni_modules/sinle-ui'
 
 const { locale } = useI18n()
@@ -71,7 +71,7 @@ const currentLocale = computed<string>(() => locale.value)
 
 ```typescript
 import { useI18n } from 'vue-i18n'
-import { $snui } from '@/uni_modules/sinle-ui/index.uts'
+import { $snui } from '@/uni_modules/sinle-ui/index.ts'
 
 const { t, locale: appLocale } = useI18n()
 

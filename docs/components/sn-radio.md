@@ -23,7 +23,7 @@
 	</sn-radio-group>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const current = ref<number>(0)
 </script>
 ```

@@ -27,8 +27,8 @@ HarmonyOS 端菜单透明度由入退场动画控制，遮罩独立淡入淡出�
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const show = ref<boolean>(false)
 const items: SnDataItem[] = [
@@ -53,7 +53,7 @@ function onSelect(index: number, item: SnDataItem): void {
 		:width="220" :show-arrow="false" :items="items"></sn-menu>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const show = ref<boolean>(false)
 const items: SnDataItem[] = [
 	{ text: '选项一' },

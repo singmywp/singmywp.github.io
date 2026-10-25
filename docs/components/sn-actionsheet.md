@@ -18,6 +18,10 @@
 推荐使用 [snu.showActionsheet](/libs/utils/ui#snu-showactionsheet)：无需在页面放置组件或绑定 `ref`，配置字段与组件 props 一致，结果经 `success` 回调返回；作为整页弹层可覆盖导航栏 / tabbar 并拦截返回键。组件本身不提供插槽，需先放置到页面再通过 `ref` 调用。
 :::
 
+::: info 内部间距随乘数缩放
+标题 / 操作项内边距随 `paddingFactor`、取消项外边距随 `marginFactor` 缩放，无需额外配置。
+:::
+
 ```typescript
 snu.showActionsheet({
 	title: '请选择',
@@ -36,8 +40,8 @@ snu.showActionsheet({
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const sheetRef = ref<SnActionsheetComponentPublicInstance | null>(null)
 const actions = ref<SnDataItem[]>([
@@ -67,8 +71,8 @@ function onClickItem(item: SnDataItem): void {
 	<sn-actionsheet ref="sheetRef" title="分享到" :actions="actions"></sn-actionsheet>
 </template>
 
-<script lang="uts" setup>
-import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const actions = ref<SnDataItem[]>([
 	{ text: '微信', color: '$success' },

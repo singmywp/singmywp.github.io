@@ -62,7 +62,7 @@ Android 的 `animate` 仅支持 `fill: 'forwards'`。为避免首帧显示终态
 	</sn-popup>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const bounceOpenAnim = (overlay: UniElement | null, content: UniElement | null, duration: number): void => {
 	if (overlay != null) {
 		overlay.animate(

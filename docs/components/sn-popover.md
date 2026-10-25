@@ -25,7 +25,7 @@
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 
 	const popoverEle = ref<SnPopoverComponentPublicInstance | null>(null)
 
@@ -58,7 +58,7 @@
 	</sn-popover>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnTouchEvent } from '@/uni_modules/sinle-ui'
 
 	const popoverEle = ref<SnPopoverComponentPublicInstance | null>(null)

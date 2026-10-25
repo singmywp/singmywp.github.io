@@ -24,7 +24,7 @@
 <template>
 	<sn-tree v-model="value" :data="data" checkable cascade :load-data="loadData" @load-error="onLoadError"></sn-tree>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	function loadData(item: SnTreeItem, resolve: SnTreeLoadResolve, reject: SnTreeLoadReject): void {
 		requestChildren(item.id).then((children: SnTreeData) => {
 			resolve(children)

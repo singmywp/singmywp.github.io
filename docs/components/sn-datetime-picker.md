@@ -61,7 +61,7 @@
 <template>
 	<sn-datetime-picker v-model="value" :custom-filter="filter"></sn-datetime-picker>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const filter = (type: SnDatetimePickerTimeModeValue, columns: SnDataItem[]): SnDataItem[] => {
 		if (type == 'date') {
 			return columns.filter((item: SnDataItem): boolean => parseInt(item.id!) % 2 != 0)
@@ -81,7 +81,7 @@
 <template>
 	<sn-datetime-picker v-model="value" :render-label="renderLabel"></sn-datetime-picker>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const renderLabel = (type: string, value: string): string => {
 		if (type == 'year') return `Y${value}`
 		if (type == 'month') return `M${value}`

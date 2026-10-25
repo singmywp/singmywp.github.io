@@ -23,7 +23,7 @@
 	</sn-checkbox-group>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const checked = ref<number[]>([])
 </script>
 ```

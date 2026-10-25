@@ -18,7 +18,7 @@
 	<sn-textarea-field v-model="comment" label="评论" :maxlength="50" placeholder="最多 50 字" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const value = ref<string>('')
 	const comment = ref<string>('')
 </script>
@@ -36,7 +36,7 @@
 	<sn-textarea-field v-model="value2" direction="horizontal" label="吐槽" height="80px" :maxlength="200" placeholder="横向标签在左" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const value1 = ref<string>('')
 	const value2 = ref<string>('')
 </script>
@@ -56,7 +56,7 @@
 	<sn-button text="提交" type="primary" custom-style="margin-top:16px;" @click="onFormSubmit" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnFormItemRule, SnFormItemVerifyResult, SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnTextareaFieldComponentPublicInstance | null>(null)

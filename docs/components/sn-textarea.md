@@ -15,7 +15,7 @@
 	<sn-textarea v-model="text" :maxlength="50" placeholder="请输入内容"></sn-textarea>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 </script>
 ```
@@ -31,7 +31,7 @@ const text = ref<string>('')
 	<sn-textarea v-model="text" auto-height placeholder="自动增高"></sn-textarea>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 </script>
 ```
@@ -47,7 +47,7 @@ const text = ref<string>('')
 		placeholder="大字加粗 + 橙色计数器"></sn-textarea>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const text = ref<string>('')
 </script>
 ```

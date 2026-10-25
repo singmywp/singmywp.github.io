@@ -15,7 +15,7 @@
 	<sn-rate v-model="value"></sn-rate>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<number>(3)
 </script>
 ```

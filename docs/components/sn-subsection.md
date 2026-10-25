@@ -15,7 +15,7 @@
 	<sn-subsection v-model="current" :data="list"></sn-subsection>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const current = ref<number>(0)
 const list = ['已付款', '已发货', '已收货', '已评价']
 </script>
@@ -33,7 +33,7 @@ const list = ['已付款', '已发货', '已收货', '已评价']
 		block-style="border-radius:0; border-bottom:2px solid var(--sn-primary);"></sn-subsection>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const current = ref<number>(0)
 const list = ['已付款', '已发货', '已收货', '已评价']
 </script>

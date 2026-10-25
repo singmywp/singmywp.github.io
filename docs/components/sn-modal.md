@@ -17,6 +17,10 @@
 推荐使用 [snu.showModal](/libs/utils/ui#snu-showmodal)：无需在页面放置组件或绑定 `ref`，配置字段与组件 props 一致，结果经 `success` 返回。组件与 API 的唯一差异是组件支持 `header` / `content` / `actions` 三个插槽，不需要插槽定制时推荐使用 API。
 :::
 
+::: info 内部间距随乘数缩放
+标题 / 内容区的内边距随 `paddingFactor`、按钮区外边距随 `marginFactor` 缩放，无需额外配置。
+:::
+
 ```typescript
 snu.showModal({
 	title: '提示',
@@ -43,7 +47,7 @@ snu.showModal({
 	<sn-modal ref="modalEle" title="弹跳进入" :open-animation="bounceOpenAnim"></sn-modal>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const bounceOpenAnim = (mask: UniElement | null, content: UniElement | null, duration: number): void => {
 		if (mask != null) {
 			mask.animate(

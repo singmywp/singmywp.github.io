@@ -78,7 +78,7 @@
 		</template>
 	</sn-swipe-action>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const action = ref<SnSwipeActionComponentPublicInstance | null>(null)
 
 	function openLeft() {

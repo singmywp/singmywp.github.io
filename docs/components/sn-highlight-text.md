@@ -26,7 +26,7 @@
 	<sn-highlight-text :text="content" :keywords="keyword"></sn-highlight-text>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const keyword = ref<string>('组件')
 const content = ref<string>('SinleUI 提供统一的组件样式、主题能力和跨平台交互。')
 </script>

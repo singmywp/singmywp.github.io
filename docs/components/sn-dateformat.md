@@ -10,7 +10,7 @@
 - 支持中文与英文两种本地化文案
 
 ```vue
-<script setup lang="uts">
+<script setup lang="ts">
 	const date = Date.now()
 </script>
 <template>

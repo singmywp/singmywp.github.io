@@ -12,7 +12,7 @@
 <template>
 	<sn-album :urls="urls"></sn-album>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 const urls: string[] = [
 	'https://example.com/1.jpg',
 	'https://example.com/2.jpg',
@@ -31,7 +31,7 @@ const urls: string[] = [
 <template>
 	<sn-album :urls="urls" :max-row="2" :preview-actions="actions"></sn-album>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 const actions: string[] = ['保存图片', '发送给朋友']
 </script>
 ```
@@ -44,7 +44,7 @@ const actions: string[] = ['保存图片', '发送给朋友']
 <template>
 	<sn-album :urls="urls" :preview="false" @click="onClick"></sn-album>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 function onClick(index: number): void {
 	console.log(`点击了第 ${index + 1} 张图片`)
 }

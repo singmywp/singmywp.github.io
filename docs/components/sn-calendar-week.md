@@ -13,9 +13,9 @@
 	<sn-calendar-week v-model="date" @week-change="onWeekChange"></sn-calendar-week>
 </template>
 
-<script lang="uts" setup>
-	import { dayuts } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarValue, SnCalendarWeekChangeDetail } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { dayuts } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarValue, SnCalendarWeekChangeDetail } from '@/uni_modules/sinle-ui/index.ts'
 
 	const date = ref<SnCalendarValue>(dayuts().startOf('day').valueOf())
 
@@ -37,9 +37,9 @@
 		:disabled-dates="disabledDates" :format="markFormatter" week-start="monday"></sn-calendar-week>
 </template>
 
-<script lang="uts" setup>
-	import { dayuts, createCalendarDayContent } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { dayuts, createCalendarDayContent } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const date = ref<SnCalendarValue>(dayuts().startOf('day').valueOf())
 	const minDate = ref<number>(dayuts().subtract(1, 'month').startOf('day').valueOf())

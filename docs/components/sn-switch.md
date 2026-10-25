@@ -15,7 +15,7 @@
 	<sn-switch v-model="value"></sn-switch>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<boolean>(false)
 </script>
 ```
@@ -31,7 +31,7 @@ const value = ref<boolean>(false)
 	<sn-switch v-model="value" text="开" icon="star-fill" width="60px"></sn-switch>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<boolean>(false)
 </script>
 ```

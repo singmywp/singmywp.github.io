@@ -19,7 +19,7 @@
 	<sn-menu target="#menu-btn" :items="items" v-model:show="show" @select="onSelect" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	type MenuItem = {
 		text: string
 		icon?: string | null

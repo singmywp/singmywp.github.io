@@ -24,8 +24,8 @@ HarmonyOS 端通知卡片默认阴影较轻。
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import type { SnNotificationParams } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnNotificationParams } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const notificationRef = ref<SnNotificationComponentPublicInstance | null>(null)
 
@@ -54,8 +54,8 @@ function showNotice(): void {
 	</sn-notification>
 </template>
 
-<script lang="uts" setup>
-import type { SnNotificationParams } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import type { SnNotificationParams } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const notificationRef = ref<SnNotificationComponentPublicInstance | null>(null)
 

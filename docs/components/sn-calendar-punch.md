@@ -13,9 +13,9 @@
 	<sn-calendar-punch v-model="selected" :signed-dates="signedDates" @select="onSelect"></sn-calendar-punch>
 </template>
 
-<script lang="uts" setup>
-	import { dayuts } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarPunchDay, SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { dayuts } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarPunchDay, SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const signedDates = ref<string[]>([dayuts().format('YYYY-MM-06'), dayuts().format('YYYY-MM-09')])
 	const selected = ref<SnCalendarValue>(null)

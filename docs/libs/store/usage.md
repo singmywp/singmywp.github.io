@@ -52,7 +52,7 @@ let v = store.get('captcha')
 	<text>{{ nick }}</text>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import { computed } from 'vue'
 	import { store } from '@/uni_modules/sinle-ui'
 
@@ -85,7 +85,7 @@ unsubscribe()
 订阅返回的取消函数应在组件卸载时调用，避免内存泄漏：
 
 ```vue
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import { onUnmounted } from 'vue'
 	import { store } from '@/uni_modules/sinle-ui'
 

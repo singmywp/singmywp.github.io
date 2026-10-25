@@ -23,9 +23,9 @@
    ```
 
 ::: warning 注意
-不可直接从插件内部任何 `uts` 文件导入对象或类型，大部分类型均从 `@/uni_modules/sinle-ui` 导入
+不可直接从插件内部任何 `ts` 文件导入对象或类型，大部分类型均从 `@/uni_modules/sinle-ui` 导入
 
-扩展组件内部的类型，请从组件目录下的 `interface.uts` 导入。
+组件专属类型同样从插件入口 `@/uni_modules/sinle-ui` 统一重导出，不再需要从组件目录导入。
 
 **部分特殊类型**请参考 [类型](/api/types/index) 内容或按照其文档说明路径导入。
 

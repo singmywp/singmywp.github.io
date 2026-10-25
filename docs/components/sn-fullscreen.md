@@ -34,7 +34,7 @@
 		</view>
 	</sn-fullscreen>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const fsRef = ref<SnFullscreenComponentPublicInstance | null>(null)
 	function openFs() {
 		fsRef.value?.$callMethod('open')

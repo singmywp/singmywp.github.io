@@ -16,8 +16,8 @@ Web 端额外支持鼠标点击与拖动选择。
 	<sn-calendar-view v-model="date" type="single" height="420px"></sn-calendar-view>
 </template>
 
-<script lang="uts" setup>
-	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const date = ref<SnCalendarValue>(null)
 </script>
@@ -35,9 +35,9 @@ Web 端额外支持鼠标点击与拖动选择。
 		height="420px" title-picker></sn-calendar-view>
 </template>
 
-<script lang="uts" setup>
-	import { dayuts } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { dayuts } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const viewEle = ref<SnCalendarViewComponentPublicInstance | null>(null)
 	const range = ref<SnCalendarValue>([])
@@ -57,9 +57,9 @@ Web 端额外支持鼠标点击与拖动选择。
 	<sn-calendar-view v-model="date" :format="formatDay" full-fill-dates></sn-calendar-view>
 </template>
 
-<script lang="uts" setup>
-	import { createCalendarDayContent } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { createCalendarDayContent } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const date = ref<SnCalendarValue>(null)
 
@@ -321,7 +321,7 @@ Web 端额外支持鼠标点击与拖动选择。
 
 ### SnCalendarDayFormatter
 
-`(day: SnCalendarDay) => SnCalendarDayContent | null`：单日内容格式化函数。返回 `null` 保持默认渲染；返回的 `prefix` / `text` / `suffix` / `paint` 仅覆盖对应字段。推荐使用工厂函数 `createCalendarDayContent` / `createCalendarDayPaint` 构造返回值（均已从插件出口 `@/uni_modules/sinle-ui/index.uts` 导出）。
+`(day: SnCalendarDay) => SnCalendarDayContent | null`：单日内容格式化函数。返回 `null` 保持默认渲染；返回的 `prefix` / `text` / `suffix` / `paint` 仅覆盖对应字段。推荐使用工厂函数 `createCalendarDayContent` / `createCalendarDayPaint` 构造返回值（均已从插件出口 `@/uni_modules/sinle-ui/index.ts` 导出）。
 
 :::type-fields SnCalendarDayContent
 

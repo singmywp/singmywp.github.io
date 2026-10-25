@@ -20,8 +20,8 @@
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import type { SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const calendarEle = ref<SnCalendarComponentPublicInstance | null>(null)
 	const date = ref<SnCalendarValue>(null)
@@ -64,9 +64,9 @@
 	<sn-calendar v-model="date" :format="formatDay" title="排班日历"></sn-calendar>
 </template>
 
-<script lang="uts" setup>
-	import { createCalendarDayContent } from '@/uni_modules/sinle-ui/index.uts'
-	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.uts'
+<script lang="ts" setup>
+	import { createCalendarDayContent } from '@/uni_modules/sinle-ui/index.ts'
+	import type { SnCalendarDay, SnCalendarDayFormatter, SnCalendarValue } from '@/uni_modules/sinle-ui/index.ts'
 
 	const date = ref<SnCalendarValue>(null)
 

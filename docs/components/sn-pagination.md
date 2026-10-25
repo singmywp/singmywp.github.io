@@ -13,7 +13,7 @@
 	<sn-pagination v-model:page="page" :page-count="20"></sn-pagination>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const page = ref<number>(1)
 </script>
 ```

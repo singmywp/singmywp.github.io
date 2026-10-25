@@ -1,6 +1,6 @@
 # 权限类
 
-`snu` 的权限分组（`Perm`，对应 `core/utils/perm.uts`），负责系统权限的检查、申请与设置页跳转，以及权限提示弹层的内容配置、样式配置与申请监听。
+`snu` 的权限分组（`Perm`，对应 `core/utils/perm.ts`），负责系统权限的检查、申请与设置页跳转，以及权限提示弹层的内容配置、样式配置与申请监听。
 
 - 权限检查 / 申请类方法（`checkSystemPermissionGranted` / `getSystemPermissionDenied` / `requestSystemPermission` / `gotoSystemPermissionActivity` / `requestMediaPermission` / `checkMediaPermission`）在 Web、Android、iOS 与 HarmonyOS 端均可调用。
 

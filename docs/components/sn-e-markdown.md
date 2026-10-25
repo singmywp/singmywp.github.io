@@ -24,7 +24,7 @@ Markdown 渲染组件，Web 端与 Android 端使用各自的解析与渲染引�
 <template>
 	<sn-e-markdown :text="md"></sn-e-markdown>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 const md = ref<string>('# Hello World\n\nThis is **markdown** content.')
 </script>
 ```
@@ -49,7 +49,7 @@ const md = ref<string>('# Hello World\n\nThis is **markdown** content.')
 <template>
 	<sn-e-markdown :text="md" @linkclick="onLinkClick"></sn-e-markdown>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 import type { SnMarkdownLinkEvent } from '@/uni_modules/sn-e-markdown/index.uts'
 function onLinkClick(e: SnMarkdownLinkEvent): void {
 	console.log(e.href)

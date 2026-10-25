@@ -14,7 +14,7 @@
 		@click="onCellClick"></sn-cell>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 function onCellClick(name: string | number): void {
 	console.log(name)
 }

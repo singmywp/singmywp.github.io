@@ -69,9 +69,9 @@ import { useStyle } from '@/uni_modules/sinle-ui'
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
-import { useStyle } from '@/uni_modules/sinle-ui/index.uts'
-import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.uts'
+<script lang="ts" setup>
+import { useStyle } from '@/uni_modules/sinle-ui/index.ts'
+import type { SnDataItem } from '@/uni_modules/sinle-ui/core/types/index.ts'
 
 const { styleId, setStyle } = useStyle()
 

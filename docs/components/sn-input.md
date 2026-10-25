@@ -18,7 +18,7 @@
 	<sn-input v-model="value" placeholder="请输入内容"></sn-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<string>('')
 </script>
 ```
@@ -34,7 +34,7 @@ const value = ref<string>('')
 	<sn-input v-model="pwd" password placeholder="请输入密码"></sn-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const pwd = ref<string>('')
 </script>
 ```
@@ -50,7 +50,7 @@ const pwd = ref<string>('')
 		placeholder="大字加粗 + 红色图标"></sn-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const value = ref<string>('')
 </script>
 ```

@@ -44,7 +44,7 @@ App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元�
 <template>
 	<sn-signature ref="sigRef"></sn-signature>
 </template>
-<script lang="uts" setup>
+<script lang="ts" setup>
 	const sigRef = ref<SnSignatureComponentPublicInstance | null>(null)
 	function toLandscape() {
 		sigRef.value?.$callMethod('setLandscape', true)

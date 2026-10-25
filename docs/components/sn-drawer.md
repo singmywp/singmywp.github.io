@@ -28,7 +28,7 @@
 	</sn-page>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 
 const drawerRef = ref<SnDrawerComponentPublicInstance | null>(null)
 

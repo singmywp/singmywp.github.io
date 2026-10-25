@@ -18,7 +18,7 @@
 	<sn-keyboard type="number" v-model:show="show" v-model="value" :maxlength="10" @confirm="onConfirm"></sn-keyboard>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const show = ref<boolean>(false)
 const value = ref<string>('')
 
@@ -40,7 +40,7 @@ function onConfirm(): void {
 	<sn-keyboard type="car" v-model:show="carShow" v-model="car" :maxlength="8"></sn-keyboard>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const pwdShow = ref<boolean>(false)
 const pwd = ref<string>('')
 const carShow = ref<boolean>(false)
@@ -61,7 +61,7 @@ const car = ref<string>('')
 		key-text-style="color:#1D4ED8;font-size:18px;font-weight:600;"></sn-keyboard>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const show = ref<boolean>(false)
 const value = ref<string>('')
 </script>

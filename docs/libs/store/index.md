@@ -58,7 +58,7 @@ unsubscribe()
 	<text>{{ count }}</text>
 </template>
 
-<script setup lang="uts">
+<script setup lang="ts">
 	import { store } from '@/uni_modules/sinle-ui'
 
 	const count = computed(() => store.get('count', 0))

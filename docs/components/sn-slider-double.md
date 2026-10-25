@@ -13,7 +13,7 @@
 	<sn-slider-double v-model="range"></sn-slider-double>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const range = ref<number[]>([20, 40])
 </script>
 ```

@@ -13,7 +13,7 @@
 	<sn-code-input v-model="code" :length="6" format="number" @finish="onFinish"></sn-code-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const code = ref<string>('')
 
 function onFinish(value: string): void {
@@ -33,7 +33,7 @@ function onFinish(value: string): void {
 	<sn-code-input v-model="pwd" :length="6" format="number" mode="line" :mask="true"></sn-code-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const pwd = ref<string>('')
 </script>
 ```
@@ -48,7 +48,7 @@ const pwd = ref<string>('')
 	<sn-code-input ref="codeRef" v-model="code" :length="4"></sn-code-input>
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 const code = ref<string>('')
 const codeRef = ref<SnCodeInputComponentPublicInstance | null>(null)
 

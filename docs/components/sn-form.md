@@ -25,7 +25,7 @@
 	<sn-button text="提交" type="primary" custom-style="margin-top:16px;" @click="onSubmit" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnFormItemRule, SnFormItemVerifyResult, SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnFormComponentPublicInstance | null>(null)
@@ -152,7 +152,7 @@ const adultRule = ref<SnFormItemRule>({
 	<sn-button text="仅校验" @click="onValidateOnly" />
 </template>
 
-<script lang="uts" setup>
+<script lang="ts" setup>
 	import type { SnFormValidResult } from '@/uni_modules/sinle-ui'
 
 	const formRef = ref<SnFormComponentPublicInstance | null>(null)
