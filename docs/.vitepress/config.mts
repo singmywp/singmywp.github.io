@@ -108,6 +108,10 @@ export default defineConfig({
             {
               "text": "框架设计",
               "link": "/get-started/framework"
+            },
+            {
+              "text": "CSS 变量",
+              "link": "/get-started/css-variables"
             }
           ]
         }
