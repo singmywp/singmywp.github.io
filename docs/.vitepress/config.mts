@@ -178,6 +178,7 @@ export default defineConfig({
             { "text": "useFactors", "link": "/api/hooks/use-factors" },
             { "text": "useHover", "link": "/api/hooks/use-hover" },
             { "text": "useResolve", "link": "/api/hooks/use-resolve" },
+            { "text": "useHistory", "link": "/api/hooks/use-history" },
             { "text": "useTabbarHeights", "link": "/api/hooks/use-tabbar-heights" },
             { "text": "useI18n", "link": "/api/hooks/use-i18n" },
             { "text": "useExternalStyle", "link": "/api/hooks/use-external-style" },
@@ -686,6 +687,10 @@ export default defineConfig({
             {
               "text": "Signature 签名",
               "link": "/components/sn-signature"
+            },
+            {
+              "text": "Sketchpad 画板",
+              "link": "/components/sn-sketchpad"
             },
             {
               "text": "CalendarPunch 签到日历",

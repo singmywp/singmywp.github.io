@@ -1,0 +1,1 @@
+import{aU as a,aV as t,aW as s,aX as e,aY as i,aZ as r}from"./index-B5NTQjgR.js";class o{static openLink(t){a(t)}static showSysToast(a){t(a)}static viewUrlByWebview(a){s(a)}static getOsTheme(){return e()}static setClipboardData(a){i(a)}static getClipboardData(){return r()}}export{o as S};

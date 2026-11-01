@@ -267,7 +267,7 @@ let bro = snu.findBrother(instance, ['sn-icon'])
 | textColor | String | 否 | 提示文本颜色（支持 `$` 简写），默认 `'#fff'` |
 | borderRadius | String \| Number | 否 | 轻提示圆角，默认 `$12` |
 | padding | String \| Number | 否 | 内边距，默认 `'$12px $15px'`（支持多段写法） |
-| icon | String | 否 | 提示图标名（`success` / `error` / `info` / `warning` 等标准值） |
+| icon | String | 否 | 提示图标名（`success` / `error` / `info` / `warning` 等标准值）；`none` 或不传表示不显示图标 |
 | iconSize | String \| Number | 否 | 图标字号，默认 `$20` |
 | iconColor | String | 否 | 图标颜色（支持 `$` 简写），默认 `'#fff'` |
 | textAlign | String | 否 | 文本对齐方式 |

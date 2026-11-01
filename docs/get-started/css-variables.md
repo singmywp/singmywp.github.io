@@ -202,10 +202,14 @@ const panelStyles = computed<Map<string, any>>(() => {
 
 | 场景 | 颜色变量来源 |
 | :--- | :--- |
-| 使用内置**默认**风格（未调用 `setColor` / `setColorBase`） | `sn-page` 样式中的 `@media (prefers-color-scheme: light \| dark)` 声明，主题切换由框架重新匹配媒体查询完成，脚本不参与上色（需 HBuilderX 5.25+ 蒸汽模式） |
-| 调用过 `setColor` / `setColorBase`，或切换到其它内置风格 | 改由脚本按当前主题把颜色写成 `sn-page` 根节点的**内联变量**（覆盖媒体查询色板），切换主题时按新主题重写 |
+| 使用内置**默认**风格（未调用 `setColor` / `setColorBase`） | `sn-page` 根节点的 `sn-theme-light` / `sn-theme-dark` 类（随应用主题切换），样式中的 `@media (prefers-color-scheme: light \| dark)` 作为系统外观兜底（需 HBuilderX 5.25+ 蒸汽模式） |
+| 调用过 `setColor` / `setColorBase`，或切换到其它内置风格 | 改由脚本按当前主题把颜色写成 `sn-page` 根节点的**内联变量**（覆盖类色板与媒体查询色板），切换主题时按新主题重写 |
 
 无论哪种来源，页面内的写法都是 `var(--sn-*)`，不需要区分。乘数与动画时长变量则由 `sn-page` 差量写入，与颜色无关。
+
+::: info 应用主题优先于系统外观
+颜色变量按「内联 > `sn-theme-*` 类 > `prefers-color-scheme` 媒体查询」的顺序生效。这意味着**用户在应用内切换主题后，颜色以应用选择为准**，不会因为浏览器或系统外观相反而出现底色与文字割裂；只有当 `autoTheme` 开启、应用跟随系统外观时，两者才一致。
+:::
 
 三个内置弹窗页（`snu.showModal` / `snu.showActionsheet` / `snu.showLoading`）是独立的 dialogPage，不在任何 `sn-page` 子树内，页面会自行把颜色、动画时长与五个乘数变量注入自己的根节点，因此在它们的 `customStyle` 中写 `calc(var(--xxxFactor) * Npx)` 同样有效。`snu.showToast` 走原生弹层、不涉及 CSS 变量，尺寸只走 `$` 动态值。
 
@@ -222,7 +226,7 @@ CSS 变量负责**"在样式里用颜色"**，JS 负责**"读取与修改"**。�
 | 在原生弹层 / 原生元素中使用主题色 | 不支持（原生层不解析 CSS 变量） | `useResolve().resolveColorValue('$primary')` → `'#4d82ff'` |
 | 修改单个颜色键 | 不支持 | `$snui.setColor('light', 'primary', '#4d82ff')` |
 | 整体替换一套配色 | 不支持 | `$snui.setColorBase('dark', myColorBase)` |
-| 切换亮 / 暗主题 | 媒体查询自动匹配 | `$snui.theme = 'dark'`、`useTheme().setTheme()` |
+| 切换亮 / 暗主题 | `sn-theme-*` 类自动切换 | `$snui.theme = 'dark'`、`useTheme().setTheme()` |
 | 跟随系统外观 | — | `$snui.autoTheme = true`、`useTheme().setAutoTheme()` |
 | 在样式中使用尺寸乘数 | `calc(var(--pf) * 16px)` | `useResolve().resolveSize('$16', 'padding')` → `'16px'` |
 | 读取尺寸乘数 | 不支持 | `$snui.paddingFactor` 等、`useFactors()` |

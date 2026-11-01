@@ -1,1 +1,0 @@
-import{c as a,ad as r}from"./index-BVG7Fm-U.js";function o(){return{marginFactor:a((()=>r.value.marginFactor)),paddingFactor:a((()=>r.value.paddingFactor)),radiusFactor:a((()=>r.value.radiusFactor)),fontsizeFactor:a((()=>r.value.fontsizeFactor)),aniTimeFactor:a((()=>r.value.aniTimeFactor))}}export{o as u};

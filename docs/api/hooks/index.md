@@ -3,7 +3,7 @@
 SinleUI 采用 Vue3 组合式 API 设计，向组件与开发者暴露一组钩子，用于获取框架状态并在组件内响应式使用。所有 hooks 统一从插件入口导出：
 
 ```typescript
-import { useTheme, useStyle, useFactors, useHover, useResolve, useI18n, useTabbarHeights } from '@/uni_modules/sinle-ui'
+import { useTheme, useStyle, useFactors, useHover, useResolve, useHistory, useI18n, useTabbarHeights } from '@/uni_modules/sinle-ui'
 ```
 
 > [!TIP] 提示
@@ -19,12 +19,13 @@ import { useTheme, useStyle, useFactors, useHover, useResolve, useI18n, useTabba
 | [useFactors](/api/hooks/use-factors) | 响应式读取五个全局尺寸乘数 | 插件出口导出 |
 | [useHover](/api/hooks/use-hover) | 统一点击态（按下反馈）机制 | 插件出口导出 |
 | [useResolve](/api/hooks/use-resolve) | `$` 前缀动态尺寸解析与颜色简写解析 | 插件出口导出 |
+| [useHistory](/api/hooks/use-history) | 增量操作日志式的撤销/重做存储引擎 | 插件出口导出 |
 | [useI18n](/api/hooks/use-i18n) | 组件语言响应式读取与翻译函数 | 插件出口导出 |
 | [useTabbarHeights](/api/hooks/use-tabbar-heights) | 读取当前 sn-page 内按 key 登记的 Tabbar 实际高度 | 插件出口导出 |
 | [useExternalStyle](/api/hooks/use-external-style) | 外部样式（SnStyleValue）转样式字符串 | 组件内部使用，可复用 |
 | [useBacktop](/api/hooks/use-backtop) | 滚动容器与 sn-backtop 回顶联动机制 | 组件内部使用，可复用 |
 
-其中 `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useI18n` / `useTabbarHeights` 从插件入口 `@/uni_modules/sinle-ui` 导出，可直接在业务代码中使用；`useExternalStyle` 与 `useBacktop` 主要供框架内部组件复用，自定义组件开发时同样可以引入使用（从对应源文件路径导入）。
+其中 `useTheme` / `useStyle` / `useFactors` / `useHover` / `useResolve` / `useHistory` / `useI18n` / `useTabbarHeights` 从插件入口 `@/uni_modules/sinle-ui` 导出，可直接在业务代码中使用；`useExternalStyle` 与 `useBacktop` 主要供框架内部组件复用，自定义组件开发时同样可以引入使用（从对应源文件路径导入）。
 
 ## 使用约定
 

@@ -1,3 +1,15 @@
+## 2.0.5（2026-11-01）
+- 新增 `sn-sketchpad` 画板组件，内置 18 种笔触（含橡皮），支持取色器、侧面色板、多指绘制，以及画布背景、垫层与网格定制
+- 新增 画板固定尺寸与全屏铺满模式，支持画布漫游拖拽、双指缩放、惯性滑行、横竖屏切换及图片导出，并提供 `newCanvas`、`resetView` 等方法
+- 新增 `useHistory` 撤销与重做 Hook，支持最大步骤数、累计权重预算、历史裁剪与状态统计，并对外导出 `SnHistoryStep`、`SnHistoryStats`、`UseHistoryOptions` 类型
+- 新增 `sn-signature` 的 `gridStyle` 属性与 `SnSignatureGridStyle` 类型，支持点阵、方格、横线三种网格；设置面板新增最大撤销步骤数调节
+- 优化 `sn-signature` 撤销与重做的历史管理，接入增量操作记录，按步数与权重预算裁剪历史，减少大量笔画时的响应式处理开销
+- 新增 Demo 画板页面及组件导航入口，支持全屏绘制与导出图片弹窗预览，补齐画板相关多语言文案
+- 优化 Demo 多个组件、API 与设计页面的说明文字和数值配色，统一使用主题颜色变量，随应用主题与风格切换同步更新
+- 修复 Web 端初始主题可能固定为亮色、手动切换主题后页面色板与应用主题不一致的问题；`sn-page` 以应用主题色板优先、系统外观媒体查询兜底
+- 修复 `sn-page` 页面恢复显示或背景色变化后，状态栏未及时同步的问题，并补充 Demo 导航栏文字的主题适配
+- 修复 `snu.showToast` 显式传入 `icon: 'none'` 时误报不支持图标的日志，纯文字提示不再产生该提示
+
 ## 2.0.4（2026-10-25）
 - 【重要】优化 主题链路改为由框架应用主题驱动：颜色变量（`--sn-*`）改由 `sn-page` 样式中的系统外观媒体查询声明，组件内不再由脚本写入颜色变量；主题状态改为跟随框架应用主题（应用启动、系统外观变化与手动切换三处统一），App 端建议在 `manifest.json` 配置 `app.defaultAppTheme` 为 `auto`，冷启动首帧即与系统一致（需 HBuilderX 5.25 及以上蒸汽模式）
 - 优化 文档阅读体验，丰富了框架特性相关介绍
@@ -13,10 +25,10 @@
 
 ## 2.0.3（2026-10-18）
 - 新增 `SnStyleValue`（外部样式值：样式字符串或样式对象）、`SnFormData`（表单数据）等公共类型并由插件对外导出，样式类属性统一使用这些具名类型，替代原有的 `UTSJSONObject` 写法（`UTSJSONObject` 仅保留在 `utssdk/` 原生插件中，不影响既有传参方式）
-- 新增 `resolveColorValue` 颜色解析：$ 简写或 `var(--sn-*)` 均解析为当前主题下的**实际色值**，供原生弹层等脱离页面 CSS 变量作用域的场景使用
-- 新增 UI 形式 API（`showToast` / `showModal` / `showActionsheet` / `showLoading` / 权限提示样式）的颜色字段支持 $ 简写、尺寸字段支持 $ 动态值与纯数字，且尺寸字段放宽为 `String | Number`
-- 优化 尺寸类属性全量统一走 `resolveSize`：支持 $ 动态尺寸与裸数字（含 `sn-select` / `sn-drawer` / `sn-drawer-list` / `sn-keyboard` / `sn-float-board` / `sn-sidebar` / `sn-cell` / `sn-input` / `sn-input-field` / `sn-form-field` / `sn-textarea` / `sn-textarea-field` / `sn-tabbar-item` / `sn-tabs` / `sn-line` / `sn-menu` / `sn-view` / `sn-upload-media` / `sn-upload-media-unicloud`），修复 `width="$150"`、`width="150"` 等写法输出非法 CSS 导致宽度失效的问题
-- 修复 `resolveSize` 对无 $ 的纯数字字符串未补单位：`border-radius="10"` 现在正确解析为 `10px`，且不再误乘全局乘数
+- 新增 `resolveColorValue` 颜色解析：主题色简写或 `var(--sn-*)` 均解析为当前主题下的**实际色值**，供原生弹层等脱离页面 CSS 变量作用域的场景使用
+- 新增 UI 形式 API（`showToast` / `showModal` / `showActionsheet` / `showLoading` / 权限提示样式）的颜色字段支持主题色简写、尺寸字段支持带动态标记的尺寸值与纯数字，且尺寸字段放宽为 `String | Number`
+- 优化 尺寸类属性全量统一走 `resolveSize`：支持带动态标记的尺寸值与裸数字（含 `sn-select` / `sn-drawer` / `sn-drawer-list` / `sn-keyboard` / `sn-float-board` / `sn-sidebar` / `sn-cell` / `sn-input` / `sn-input-field` / `sn-form-field` / `sn-textarea` / `sn-textarea-field` / `sn-tabbar-item` / `sn-tabs` / `sn-line` / `sn-menu` / `sn-view` / `sn-upload-media` / `sn-upload-media-unicloud`），修复带动态标记的宽度值、`width="150"` 等写法输出非法 CSS 导致宽度失效的问题
+- 修复 `resolveSize` 对不带动态标记的纯数字字符串未补单位：`border-radius="10"` 现在正确解析为 `10px`，且不再误乘全局乘数
 - 修复 `sn-swipe-action` 组件销毁或长列表回收后写内联样式触发空引用崩溃
 - 优化 项目自有脚本由 `uts` 全面迁移为 `ts`（`main` / `i18n`、核心模块、组件内部工具、工具库与 Demo 页面，共 94 个文件），加快编译速度并统一类型体验；原 `.uts` 路径与导入后缀已同步调整，如你的工程中直接引用了这些内部模块，请改为 `.ts`
 ## 2.0.2（2026-10-11）
@@ -27,9 +39,9 @@
 - 新增 `sn-color-picker`、`sn-color-picker-view` 新增 `preset` 与 `extra` 插槽，可替换「内置颜色」预设区或在其下方追加自定义内容
 - 新增 `sn-slider`、`sn-slider-double` 新增 `showGlow` 属性，可关闭按下滑块时的拖拽光晕
 - 新增 `sn-tabbar` 新增 `customClass` 属性与 `changeToIndex` 方法；`sn-tabbar-item` 新增 `padding` 属性（`itemPadding` 保留兼容）
-- 新增 `$snui.topbarHeightResolved` 只读属性，返回当前平台实际渲染的导航栏高度（Web 端为 `topbarHeight` + 8px）
+- 新增 框架实例的 `topbarHeightResolved` 只读属性，返回当前平台实际渲染的导航栏高度（Web 端为 `topbarHeight` + 8px）
 - 新增 Demo 新增「颜色库」「日期库」「状态存储」API 页面，原「工具库」页面拆分为 23 个分组页面，并新增「乘数设计」页与「弹层登录」模板页
-- 优化 导航栏高度体系调整：`$snui.topbarHeight` 默认值由 88px 调整为 48px（六套内置风格同步）；`sn-topbar` 固定模式不再自动生成等高占位，高度语义改为导航栏内容区高度（`statusBar` 开启时向上覆盖状态栏并按实际高度占位），`zIndex` 默认值调整为 998
+- 优化 导航栏高度体系调整：框架实例的 `topbarHeight` 默认值由 88px 调整为 48px（六套内置风格同步）；`sn-topbar` 固定模式不再自动生成等高占位，高度语义改为导航栏内容区高度（`statusBar` 开启时向上覆盖状态栏并按实际高度占位），`zIndex` 默认值调整为 998
 - 优化 弹层层级：`sn-popup` 打开时按栈内已有弹层自动抬升层级，`sn-select`、`sn-drawer` 移除固定层级，多个弹出层同时使用时不再互相遮挡
 - 优化 点击命中区域：`sn-input` 的前后缀图标、清除按钮、密码切换与 `sn-notice-bar` 关闭按钮改为独立可点击容器，避免点击无效
 - 优化 `sn-color-picker` 打开期间外部 `v-model` 变化会同步进草稿值；底部按钮改用 `sn-button` 自带文本渲染
@@ -58,10 +70,10 @@
 - 新增 `SnColorBase.shadow` 阴影色字段，随主题自动切换
 - 新增 全局弹窗 `showLoading` / `hideLoading`；`showToast` 新增 `title` 兼容写法与 `passThrough` 点击穿透，`showModal` / `showActionsheet` 新增 `openAnimation` / `closeAnimation` 自定义开合动画
 - 新增 `snu` 金额工具 `roundAmount` / `numToUpperAmount`（字符串级舍入，规避浮点陷阱）与全新 Resolve、Perm 方法分组
-- 新增 `$snui.logging` 日志开关与 `log` / `info` / `debug` / `warn` / `error` 统一日志接口，组件内部不再直接 `console` 来报日志。
+- 新增 框架实例的 `logging` 日志开关与 `log` / `info` / `debug` / `warn` / `error` 统一日志接口，组件内部不再直接 `console` 来报日志。
 - 新增 Utils 工具库 `hideToast` 隐藏轻提示
 - 新增 Utils 工具库 `clamp` 夹具函数，对所给值限制范围
-- 新增 `$snui.colors` 颜色 `light`，与 `dark` 相对应。亮色模式下，`light` 即 `#fff`，`dark` 即 `#000`；暗黑模式下，两者颜色互换，`light` 即 `#000`，`dark` 即 `#fff`
+- 新增 框架实例的 `colors` 颜色 `light`，与 `dark` 相对应。亮色模式下，`light` 即 `#fff`，`dark` 即 `#000`；暗黑模式下，两者颜色互换，`light` 即 `#000`，`dark` 即 `#fff`
 - 新增 `syncStatusBarColor` / `createCalendarDayPaint` / `createCalendarDayContent` 全局函数与 `SN_DEFAULT_STYLE_ID` 常量
 - 新增 `sn-agreement` 协议勾选：支持链接文本与勾选状态双向绑定
 - 新增 `sn-album` 相册：网格宫格展示图片组并支持点击预览
@@ -109,8 +121,8 @@
 - 新增 `sn-watermark` 水印：页面或局部水印覆盖，不影响其他组件，无副作用。
 - 新增 `Demo` 手势库实例，结合可视化元素演示手势库应用
 - 新增 `sn-e-toast` 插件：替换 `snu.showToast` 基于 `dialogPage ` 实现的不可透穿手势的 Toast 轻提示，原生弹层实现同官方 `uni.showToast` 基本一致的体验。同时相对于官方的 UI 新增了动画和丰富的样式支持。
-- 优化 “$” 动态变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
-- 优化 动画统一由 UniElement DOM animate / transition + `--ani-time-*` 变量实现，支持 “$” 简写并随 `aniTimeFactor` 全局调速
+- 优化 带动态标记的变量解析，在原有的仅支持基础上支持解析任意尺寸，自动计算符合当前框架尺寸乘数的结果。新增 `Resolve` 相关解析 API （详见文档）暴露给开发者使用以适配框架样式。
+- 优化 动画统一由 UniElement DOM animate / transition + `--ani-time-*` 变量实现，支持动态标记简写并随 `aniTimeFactor` 全局调速
 - 优化 点击态统一为 `useHover` + `hover-style` 机制，替代旧 `hover-class`，配套 `hover-start-time` / `hover-stay-time` / `hover-trans-time`
 - 优化 内部列表项 / 子项布局统一复用 `sn-cell`，子元素样式经 `itemStyle` / `itemHoverStyle` / `itemTextStyle` / `itemIconStyle` / `itemClass` / `itemBorder` 传递链透传
 - 优化 长列表组件（`sn-list-view` / `sn-waterflow`）改为数据驱动 + 作用域插槽渲染，条目按数据项 type 分组复用回收，避免了直接传入 `list-item` / `flow-item` 组件被渲染为普通view 而引发的内存泄露问题
@@ -132,7 +144,7 @@
 - 【重要】更改【破坏性变更】重构原有 API 架构，具体见文档。
 - 更改【破坏性变更】 全部组件样式扩展统一为 `customStyle` + `{语义}Style` / `Class` 透传体系，适配蒸汽模式样式隔离 2.0
 - 更改 【破坏性变更】 `SnError` ：字段变更为 `scope` / `funName` / `errCode` / `err`，旧 `moduleName` / `apiname` / `errSubject` / `errMsg` 全部失效
-- 更改 【破坏性变更】`$snui.setColorSet` 更名 `setColorBase`，颜色键校验更严格
+- 更改 【破坏性变更】框架实例的 `setColorSet` 更名 `setColorBase`，颜色键校验更严格
 - 更改 组件 v-model 规范化：旧 `vModel` / `modelValue` 统一为 `v-model`（`sn-checkbox` / `sn-radio` / `sn-switch` / `sn-rate` / `sn-slider` / `sn-progress` 等）
 - 更改 【破坏性变更】弹出层组件 `open` / `close` 事件改为六段动画生命周期事件 `beforeenter` / `enter` / `afterenter` / `beforeleave` / `leave` / `afterleave`，`clickMask` 统一更名 `clickoverlay`
 - 更改 【破坏性变更】扩展插件收编为内置组件：`sn-e-gesture` → `sn-gesture`、`sn-e-qrcode` → `sn-qrcode`、`sn-e-barcode` → `sn-barcode`
@@ -142,10 +154,10 @@
 - 更改 【破坏性变更】 `sn-form-item` 拆分为 `sn-form-field` / `sn-input-field` / `sn-textarea-field`，`submited` 事件更名 `submit`
 - 更改 【破坏性变更】`sn-menu` 菜单类组件的子组件从 `sn-menu-item` 改为 `sn-cell`  ，移除插槽并新增 `select` 事件。
 - 更改 重新设计 `sn-signature` 组件布局，适配横屏模式。
-- 更改 尺寸 / 时间类 props 统一放宽为 `String | Number` 并接入 “$” 乘数语法，颜色类 props 使用 `String(色值)` 支持 “$” 主题色
+- 更改 尺寸 / 时间类 props 统一放宽为 `String | Number` 并接入动态标记乘数语法，颜色类 props 使用 `String(色值)` 支持主题色简写
 - 更改 【破坏性变更】字号板（`font.baseSize` + size 等级）、圆角等级板、动画等级板，改为乘数体系
 - 更改 【破坏性变更】各组件 `customXxxStyle`（UTSJSONObject）更名去 `custom` 前缀为 `{语义}Style` 并成对新增 `{语义}Class`，`customStyle` 类型放宽为 `UTSJSONObject | String`
-- 更改 【破坏性变更】`$snui.configs` 六大子配置体系，改为 `$snui` 扁平属性直接读写
+- 更改 【破坏性变更】框架实例的 `configs` 六大子配置体系，改为框架实例扁平属性直接读写
 - 修复 Android 端跟手组件拖动卡顿问题，触摸交互改 DOM 直写保证帧率
 - 修复 `sn-notice` 组件在横屏或宽屏场景下文字完全隐藏后需要等待较长时间才会再次显示的问题
 - 修复 `sn-notice` 组件过长文本会被截断的问题
@@ -156,7 +168,7 @@
 - 修复 Utils 工具库 isDate 在高版本 uni-app x 上报空指针异常的问题
 - 修复 sn-scan 图片扫描成功后预览图与识别点错位的问题
 - 修复 sn-scan 手指在扫描线上无法触发缩放事件的问题（即缩放具有明显的卡顿感的问题）
-- 移除 【破坏性变更】Store 状态管理库（`$snui.store` 及 `StoreLib` 全部废弃），蒸汽模式可直接使用 `pinia` 。
+- 移除 【破坏性变更】Store 状态管理库（框架实例的 `store` 及 `StoreLib` 全部废弃），蒸汽模式可直接使用 `pinia` 。
 - 移除 【破坏性变更】`configs.font.mainFamily` 内置字体配置与 `configs.app.grayMode` 哀悼置灰模式
 - 移除 【破坏性变更】`snu` 方法：`makePhoneCall`、`vibrate`、`addPx`、`share`、`chooseMedia`、`previewImage`、`showToasty`。上述方法官方基本已有实现或已不实用。
 - 移除 废弃类型：`SnShareConfig`、`SnChooseMediaOptions`、`SnPreviewImageConfig`、`SnPreviewImageLongPressActions`、`SnToastyConfig`
@@ -207,7 +219,7 @@
 - 优化 文档 Utils 库所有方法新增示例代码
 - 优化 文档阅读体验
 - 新增 Utils 工具库 `share` 方法，调用系统分享功能，支持分享任何文件至其他应用
-- 新增 `$snui.configs.app.grayMode` 哀悼模式配置，支持为应用全局置灰，适用于全国性哀悼活动、重大人物逝世时设置
+- 新增 框架实例的 `configs.app.grayMode` 哀悼模式配置，支持为应用全局置灰，适用于全国性哀悼活动、重大人物逝世时设置
 - 新增 `sn-actionsheet` 操作菜单组件
 - 新增 `sn-e-blurview` 高斯模糊组件
 - 新增 `sn-avatar-group` 头像组组件
@@ -227,21 +239,21 @@
 ## 1.1.3（2024-09-22）
 - 新增 `sn-e-scankit` 华为扫码 ScanKit 扩展插件
 - 新增 `sn-dateformat` 日期格式化组件，基本与 `uni-dateformat` 对齐
-- 调整 `$snui.configs.radius.circle` 为变量，当 `baseSize` 为 0 时，`$circle` 也为 0
+- 调整 框架实例的 `configs.radius.circle` 为变量，当 `baseSize` 为 0 时，圆角变量也为 0
 - 修复 Web 端 `sn-drawer` 和 `sn-float-board` 组件 手势操作穿透的问题
 - 修复 `sn-drawer` 组件 当 `position` 为 `top` | `left` 时进行手势操作 移动方向不正确的问题
-- 修复 `sn-avatar`、`sn-collapse-group` 组件 `borderRadius` 属性无法使用 $ 变量的问题
+- 修复 `sn-avatar`、`sn-collapse-group` 组件 `borderRadius` 属性无法使用动态标记变量的问题
 - 修复 `sn-form-item` 组件 文档及代码提示缺失 `label` 属性的问题
 ## 1.1.2（2024-09-17）
-* **【重要】**新增 所有组件的颜色、圆角、字体大小、动画时长等支持使用 $ 变量，和文档[简写表达式](http://sinleui.pages.dev/components/#%E7%89%B9%E6%AE%8A%E5%80%BC)一样的体验。如输入`$primary` 直接映射到 `$snui.colors.primary`
-* **【重要】**调整 所有组件 `aniTime` 属性类型改为 String ，支持 $ 变量，如需自行输入请带单位（`ms`）
+* **【重要】**新增 所有组件的颜色、圆角、字体大小、动画时长等支持使用动态标记变量，和文档[简写表达式](http://sinleui.pages.dev/components/#%E7%89%B9%E6%AE%8A%E5%80%BC)一样的体验。如传入 primary 对应的主题色简写，直接映射到框架实例的 `colors.primary`
+* **【重要】**调整 所有组件 `aniTime` 属性类型改为 String ，支持动态标记变量，如需自行输入请带单位（`ms`）
 * **【重要】**优化 所有组件属性处理底层逻辑
 * 新增 `sn-picker-view` 选择器容器组件
 * 新增 `sn-picker` 选择器组件
 * 新增 `sn-label-radio` 标签单选组件
 * 新增 `sn-label-checkbox` 标签多选组件
-* 新增 `$snui.setColor` 动态配置框架各颜色值
-* 新增 `$snui.setColorSet` 动态配置框架各主题颜色变量集合，一键修改项目配色。[详见](https://sinleui.pages.dev/api/#方法)。使用[示例](https://sinleui.pages.dev/api/config/init)。
+* 新增 框架实例的 `setColor` 动态配置框架各颜色值
+* 新增 框架实例的 `setColorSet` 动态配置框架各主题颜色变量集合，一键修改项目配色。[详见](https://sinleui.pages.dev/api/#方法)。使用[示例](https://sinleui.pages.dev/api/config/init)。
 * 新增 `sn-menu-item` 组件属性 `iconPosition` 图标位置，支持左侧或右侧
 * 新增 `sn-collapse-group` 组件属性 `borderRadius` 圆角大小
 * 新增 `sn-gap` 组件属性 `borderRadius` 圆角大小

@@ -7,7 +7,7 @@
 页面根组件，占据整个页面并内置纵向滚动的内容区（不显示滚动条），无需手动管理滚动容器。
 
 - 在页面加载时自动将背景色写入原生页面，避免加载初期白屏闪烁
-- 在根节点提供全部主题颜色 CSS 变量（内置默认风格随系统外观自动切换）
+- 在根节点提供全部主题颜色 CSS 变量，应用主题优先、系统外观兜底
 - 在根节点注入乘数与动画时长 CSS 变量，页面内子组件直接引用
 - 为后代组件提供独立的 Tabbar 高度登记作用域，卸载时清理
 
@@ -16,7 +16,12 @@
 :::
 
 ::: details 注入的 CSS 变量
-- 在根节点提供全部主题颜色 CSS 变量（如 `--sn-primary`、`--sn-front`、`--sn-transparent` 等；内置默认风格由样式中的 `@media (prefers-color-scheme: light|dark)` 声明，自定义配色或非默认风格时由脚本写入内联变量）、五个乘数 CSS 变量（`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`）及其同值缩写（`--mf`、`--pf`、`--rf`、`--ff`、`--af`）与动画时长变量（`--ani-time-short`、`--ani-time-normal`、`--ani-time-long`），页面内所有子组件通过 `var()` 引用这些变量
+- 在根节点提供全部主题颜色 CSS 变量（如 `--sn-primary`、`--sn-front`、`--sn-transparent` 等）：根节点始终带 `sn-theme-light` 或 `sn-theme-dark` 类，由它声明当前应用主题的完整色板；样式中的 `@media (prefers-color-scheme: light|dark)` 色板作为系统外观兜底。自定义配色或非默认风格时改由脚本写入内联变量
+- 五个乘数 CSS 变量（`--marginFactor`、`--paddingFactor`、`--radiusFactor`、`--fontsizeFactor`、`--aniTimeFactor`）及其同值缩写（`--mf`、`--pf`、`--rf`、`--ff`、`--af`）与动画时长变量（`--ani-time-short`、`--ani-time-normal`、`--ani-time-long`），页面内所有子组件通过 `var()` 引用这些变量
+:::
+
+::: info 应用主题与系统外观的关系
+颜色变量的优先级为**应用主题（`$snui.theme`）> 系统外观（`prefers-color-scheme`）**。用户在应用内手动切换亮/暗主题后，即使浏览器或系统外观相反，页面颜色也以应用选择为准；未手动切换（`autoTheme` 开启）时跟随系统外观。
 :::
 
 ```vue
@@ -68,7 +73,7 @@
 
 ## 实现原理
 
-在 `onLoad` 时自动将页面背景色写入原生页面（同时设置 `navigationStyle` 为 `custom`），避免页面加载初期白屏闪烁。
+在 `onLoad` 时自动将页面背景色写入原生页面（同时设置 `navigationStyle` 为 `custom`），避免页面加载初期白屏闪烁。页面显示和主题切换更新背景色时，会在写入页面样式后同步状态栏前景色：亮色为黑色，暗色为白色。自定义导航栏模式下状态栏背景透明，由页面顶部背景决定。
 
 ## 属性
 

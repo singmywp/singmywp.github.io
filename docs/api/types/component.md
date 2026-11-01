@@ -1220,6 +1220,12 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 
 ---
 
+# SnSignatureGridStyle
+
+签名板网格样式。可选值：`dot`（点阵）、`square`（方格）、`line`（横线）。
+
+---
+
 # SnStepStatus
 
 步骤条步骤状态。
@@ -1413,6 +1419,18 @@ Web 平台下 `sn-upload-media` / `sn-upload-media-unicloud` 的内置文件选�
 | contentClass | String | 是 | 内容外部样式类 |
 | lineStyle | SnStyleValue | 是 | 连接线自定义样式 |
 | lineClass | String | 是 | 连接线外部样式类 |
+
+---
+
+# SnSketchpadBrush
+
+画板笔触类型。可选值：`default`、`pen`、`gel`、`pencil`、`marker`、`brush`、`eraser`、`crayon`、`fur`、`ink`、`longfur`、`ribbon`、`shaded`、`sketchy`、`spray`、`squares`、`circle`、`web`。
+
+---
+
+# SnSketchpadGridStyle
+
+画板网格样式。可选值：`dot`（点阵）、`square`（方格）、`line`（横线）。
 
 ---
 

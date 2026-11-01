@@ -78,7 +78,7 @@ const valueColor = computed<string>(() => isDark.value ? '#73a2ff' : '#4d82ff')
 - 返回值中 `theme` / `isDark` / `isLight` / `isAuto` 均为 `computed`，模板中自动解包；在 `script` 中需写 `.value`。
 - `setTheme` 与 `toggleTheme` **都会关闭自动跟随**（`autoTheme` 置为 `false`），这是为了让手动选择生效；想恢复跟随系统必须显式调用 `setAutoTheme(true)`。
 - 样式与模板统一用 `var(--sn-xxx)` 或 `$` 简写（`$primary` 等自动转 `var(--sn-primary)`）；`$snui.colors.xxx` 只用于需要实色的原生弹层（配合 `resolveColorValue`），不要在脚本里用它拼样式值。
-- 颜色由 CSS 媒体查询提供：`sn-page` 样式中的 `@media (prefers-color-scheme: light|dark)` 声明全部 `--sn-*` 变量（需 HBuilderX 5.25+ 蒸汽模式），主题切换由框架重新匹配样式完成。
-- 框架已监听应用/系统外观变化（App 端 `uni.onAppThemeChange`、Web 端 `window.matchMedia`）并回写 `theme`，无需自行监听。
+- 颜色由 `sn-page` 根节点上的 `sn-theme-light` / `sn-theme-dark` 类提供（随应用主题切换），样式中的 `@media (prefers-color-scheme: light|dark)` 作为系统外观兜底（需 HBuilderX 5.25+ 蒸汽模式）。应用主题优先于系统外观，手动切换后不会被相反的浏览器/系统外观覆盖。
+- 框架已监听应用/系统外观变化（App 端 `uni.onAppThemeChange`、Web 端 `uni.onHostThemeChange`）并回写 `theme`，无需自行监听。
 - App 端建议在 `manifest.json` 配置 `app.defaultAppTheme: "auto"`，冷启动首帧即跟随系统。
-- 切换主题时框架会同步原生状态栏颜色（`syncStatusBarColor`），无需手动处理。
+- App 端需在 `pages.json` 的 `globalStyle` 引用 `theme.json` 中的 `navigationBarTextStyle`，使新页面从首帧就能按主题显示状态栏文字。切换主题时框架会调用 `syncStatusBarColor` 同步当前页面状态栏前景色（亮色为黑色，暗色为白色）；Android 6.0 以下不支持动态切换状态栏前景色。

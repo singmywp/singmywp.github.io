@@ -393,7 +393,7 @@ const formData = ref<SnFormData>({
 | textColor | String | 否 | 提示文本颜色（支持 `$` 简写），默认 `'#fff'` |
 | borderRadius | String \| Number | 否 | 轻提示圆角，默认 `$12` |
 | padding | String \| Number | 否 | 内边距，默认 `'$12px $15px'`（支持多段写法） |
-| icon | String | 否 | 提示图标名（`success` / `error` / `info` / `warning` 等标准值） |
+| icon | String | 否 | 提示图标名（`success` / `error` / `info` / `warning` 等标准值）；`none` 或不传表示不显示图标 |
 | iconSize | String \| Number | 否 | 图标字号，默认 `$20` |
 | iconColor | String | 否 | 图标颜色（支持 `$` 简写），默认 `'#fff'` |
 | textAlign | String | 否 | 文本对齐方式 |
@@ -510,6 +510,41 @@ const formData = ref<SnFormData>({
 
 ---
 
+# UseHistoryOptions
+
+[useHistory](/api/hooks/use-history) 的参数类型，各字段为返回当前配置的函数。
+
+| 字段 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| maxSteps | () => number | 最大历史步数，取值不大于 0 时按默认值 20 处理 |
+| maxWeight | () => number | 最大累计权重（内存预算），取值不大于 0 表示只按步数限制 |
+
+---
+
+# SnHistoryStep
+
+[useHistory](/api/hooks/use-history) 的单步历史记录。引擎只保存这三个数字，宿主载荷由调用方自持，因此历史内存与变更量成正比而非与文档总量成正比。
+
+| 字段 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| kind | number | 步类型，由调用方自定义语义（框架内 0 表示「新增一笔」） |
+| ref | number | 载荷引用，通常是该步在调用方文档集合中的下标 |
+| weight | number | 该步权重，参与最大权重预算淘汰，常用点数或字节量估算 |
+
+---
+
+# SnHistoryStats
+
+[useHistory](/api/hooks/use-history) 的时间线统计快照，由 `stats` 返回。
+
+| 字段 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| cursor | number | 当前已应用步数（游标位置） |
+| total | number | 时间线内保留的总步数 |
+| weight | number | 时间线内保留步骤的累计权重 |
+| evicted | number | 因超出步数或权重预算被淘汰的步数 |
+
+---
 # 其他类型
 
 - 颜色库类型 `LColorOptions` / `LGenerateOptions` 见 [Color 颜色库类型](/libs/color/types)。

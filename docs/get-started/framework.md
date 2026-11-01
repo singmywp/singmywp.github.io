@@ -81,11 +81,12 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 主题指亮色（`light`）与暗色（`dark`）两种颜色模式。一套风格的 `colorBases` 包含两套 `SnColorBase` 颜色集。
 
-- **切换**：`$snui.theme = 'light' | 'dark'`；`autoTheme`（默认开启）跟随系统外观。两者都经 `uni.setAppTheme` 驱动框架应用主题，框架再回写 `currentTheme`（App 端 `uni.onAppThemeChange`、Web 端 `window.matchMedia`）。App 端建议在 `manifest.json` 配置 `app.defaultAppTheme: "auto"`，让冷启动首帧即与系统一致。
+- **切换**：`$snui.theme = 'light' | 'dark'`；`autoTheme`（默认开启）跟随系统外观。两者都经 `uni.setAppTheme` 驱动框架应用主题，框架再回写 `currentTheme`（App 端 `uni.onAppThemeChange`、Web 端 `uni.onHostThemeChange`）。App 端建议在 `manifest.json` 配置 `app.defaultAppTheme: "auto"`，让冷启动首帧即与系统一致。
 - **状态栏同步**：切换与初始化时会调用 `syncStatusBarColor()` 同步原生状态栏文字/背景色。
 - **App 端原生主题**：通过 `uni.setAppTheme` 同步系统暗黑模式，保证 `window` 等系统 UI 与页面一致。
+- **Web 端主题源**：Web 没有 `osTheme`（只有宿主 `hostTheme`），框架读取 `uni.getAppBaseInfo().hostTheme` 并监听 `uni.onHostThemeChange`，`autoTheme` 在浏览器中同样能正确跟随。手动切换主题时以**应用主题为准**，不受浏览器外观反向影响。
 
-`core/state.ts` 中导出的响应式状态构成了框架状态的根基：`currentStyleId`、`currentStyle`、`currentTheme`、`autoTheme`、`cssPalette`（颜色变量是否由媒体查询提供），以及由 `currentStyle × currentTheme` 计算出的 `colors`（当前颜色集）。
+`core/state.ts` 中导出的响应式状态构成了框架状态的根基：`currentStyleId`、`currentStyle`、`currentTheme`、`autoTheme`、`cssPalette`（颜色变量是否回落到脚本内联写入），以及由 `currentStyle × currentTheme` 计算出的 `colors`（当前颜色集）。
 
 ---
 
@@ -97,8 +98,8 @@ SinleUI 是一个面向 uni-app x 蒸汽模式（vapor）的轻量级移动端 U
 
 > 注意：后缀带 `Dark` 的是比原色更深的颜色，并非暗黑主题专属；带 `Light` 的是更浅的颜色。暗黑主题与亮色主题各自拥有独立的 `SnColorBase` 对象。
 
-- **颜色变量（媒体查询驱动）**：`sn-page` 的样式里用 `@media (prefers-color-scheme: light)` / `@media (prefers-color-scheme: dark)` 声明内置默认风格的全部 `--sn-*` 颜色变量，主题变化由框架重新匹配媒体查询完成，脚本不参与上色（需 HBuilderX 5.25+ 蒸汽模式）。页面内所有组件与弹出层（必须位于 `sn-page` 根节点下）通过 `var(--sn-xxx)` 引用即随主题自动切换；乘数与动画时长变量仍由 `sn-page` 差量写入。
-- **自定义配色的回落**：调用 `$snui.setColor` / `setColorBase` 或切换到非默认内置风格后，颜色改由脚本写入内联变量（覆盖媒体查询色板），切换主题时脚本会按新主题重写。
+- **颜色变量（应用主题优先，媒体查询兜底）**：`sn-page` 根节点始终带 `sn-theme-light` / `sn-theme-dark` 类，声明内置默认风格的全部 `--sn-*` 颜色变量，随 `$snui.theme` 切换；同样的色板另由 `@media (prefers-color-scheme: light)` / `@media (prefers-color-scheme: dark)` 声明，作为系统外观兜底（需 HBuilderX 5.25+ 蒸汽模式）。优先级为「内联 > `sn-theme-*` 类 > 媒体查询」，因此**手动切换主题后颜色不会被相反的系统外观覆盖**。页面内所有组件与弹出层（必须位于 `sn-page` 根节点下）通过 `var(--sn-xxx)` 引用即随主题自动切换；乘数与动画时长变量仍由 `sn-page` 差量写入。
+- **自定义配色的回落**：调用 `$snui.setColor` / `setColorBase` 或切换到非默认内置风格后，颜色改由脚本写入内联变量（覆盖类色板与媒体查询色板），切换主题时脚本会按新主题重写。
 - **`$` 简化语法**：颜色类 props 统一经 [useResolve](/api/hooks/use-resolve) 钩子的 `resolveColor` 处理，`$primaryTextDark` 自动转换为 `var(--sn-primary-text-dark)`，非 `$` 开头的值原样返回。
 
 全部 `--sn-*` 颜色变量的命名规则、完整清单与用法示例，以及与它们等价的 JS 读写方式，见 [CSS 变量](/get-started/css-variables)。

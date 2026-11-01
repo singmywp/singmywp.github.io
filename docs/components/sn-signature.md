@@ -3,15 +3,17 @@
 > [查看 sn-signature 的 2.0 版本差异](/differences/components/sn-signature)
 
 ## 基础用法
-- 基于 canvas 的手写签名板，底部操作栏提供横/竖屏切换、撤销、重做、清空、设置与导出
-- 内置 17 种笔触，设置面板按「笔触」「画布」分类，可点选标签或左右滑动切换
-- 通过 ref 可调用撤销、重做、清空、导出与横竖屏方法
-- 设置面板为组件内部自实现的覆盖层，展开期间画布区不响应落笔
+
+手写签名板，适用于电子签署与自由书写。
+
+- 提供多种笔触和画布背景、网格设置
+- 支持撤销、重做、清空、导出与横竖屏切换
+- 设置面板支持分类切换与滚动操作
 
 ::: details 设置面板与笔触说明
 设置面板为组件内部自实现的覆盖层（非 `sn-drawer`），左右滑出动画只做 `transform` 过渡、显隐交给 `visibility`，无打开闪动；面板展开期间画布区不响应落笔，面板内 Tabs、滑块、开关等交互在横竖屏下一致可用；App 端面板内容区为组件内自实现的拖动滚动与横向 Tabs 切换，避免原生全屏容器内 `scroll-view` 子元素点击/触摸异常。
 
-内置 17 种笔触（钢笔、毛笔、蜡笔、喷漆等），设置面板采用 Tabs 分类：「笔触」（笔触类型、线条颜色与粗细）与「画布」（画布背景、网格背景），点选标签或左右滑动内容区切换分类，面板内容区可上下拖动滚动；通过 ref 调用 `undo`、`redo`、`clear`、`exportImage`、`setLandscape` 方法可编程控制签名板。
+内置 17 种笔触（钢笔、毛笔、蜡笔、喷漆等），设置面板采用 Tabs 分类：「笔触」（笔触类型、线条颜色与粗细）与「画布」（画布背景、网格背景），点选标签或左右滑动内容区切换分类，面板内容区可上下拖动滚动；滚动后仍可点击当前可见的笔触按钮、色块和滑块。通过 ref 调用 `undo`、`redo`、`clear`、`exportImage`、`setLandscape` 方法可编程控制签名板。
 :::
 
 ```vue
@@ -36,9 +38,9 @@
 
 ### 横屏签名
 
-点击操作栏的横屏图标可全屏横置签名板（Web 端以固定定位铺满视口，App 端调用原生全屏横屏）；也可通过 ref 调用 `setLandscape` 方法控制。
+点击操作栏的横屏图标可全屏横置签名板（Web 端铺满视口，App 端调用原生全屏横屏）；也可通过 ref 调用 `setLandscape` 方法控制。横屏后签名板按当前窗口高度铺满屏幕，画布自动占据操作栏之外的全部空间。
 
-App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元素收不到点击/触摸事件（只有原生滚动仍生效），因此设置面板内容区在 App 端改为组件内自实现的拖动滚动与横向 Tabs 切换，横屏下 Tabs、滑块、开关、取色块均正常响应。横屏根节点固定在视口中，避免外层页面滚动后触摸命中区域偏移。
+App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元素收不到点击/触摸事件（只有原生滚动仍生效），因此设置面板内容区在 App 端改为组件内自实现的拖动滚动与横向 Tabs 切换，横屏下 Tabs、滑块、开关、取色块均正常响应。
 
 ```vue
 <template>
@@ -64,6 +66,7 @@ App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元�
 | brush | 笔触样式 | [[SnSignatureBrush]] | `default` | `default`(默认) \| `pen`(钢笔) \| `gel`(中性笔) \| `pencil`(铅笔) \| `brush`(毛笔) \| `marker`(马克笔) \| `crayon`(蜡笔) \| `fur`(毛皮) \| `ink`(墨水) \| `longfur`(长绒毛) \| `ribbon`(丝带) \| `shaded`(阴影) \| `sketchy`(速写) \| `spray`(喷漆) \| `squares`(方格) \| `circle`(圆泡) \| `web`(蛛网) |
 | showBrushSettings | 设置面板中是否显示笔触选项 | Boolean | `true` | `true` \| `false` |
 | gridEnabled | 是否显示网格背景 | Boolean | `false` | `true` \| `false` |
+| gridStyle | 网格样式，`gridEnabled` 为 `true` 时生效 | [[SnSignatureGridStyle]] | `square` | `dot` \| `square` \| `line` |
 | gridColor | 网格线颜色 | String | `#B8B8B8` | - |
 | gridLineWidth | 网格线宽（px） | Number | `1` | - |
 | gridDensity | 网格密度，即网格间距（px） | Number | `20` | - |
@@ -119,6 +122,11 @@ App 端原生全屏（`requestFullscreen`）容器内，`scroll-view` 的子元�
 | clear | () => Void | 清空签名板时触发 |
 | orientationchange | (landscape: boolean) => Void | 横竖屏切换时触发，参数为是否横屏 |
 
+:::type-fields SnSignatureGridStyle
+
+签名板网格样式：`dot`（点阵）、`square`（方格）、`line`（横线）。
+
+:::
 :::type-fields SignatureData
 
 `change`、`exported` 事件回调参数。
